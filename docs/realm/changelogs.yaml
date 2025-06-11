@@ -14468,6 +14468,13 @@
     dependencies:
       '@redocly/theme': 0.6.0
 '@redocly/config':
+  0.26.1:
+    timestamp: 1749646162000
+    changes:
+      minor: []
+      patch:
+        - Added support for the `extends` property in the Redocly config schema.
+    dependencies: {}
   0.26.0:
     timestamp: 1749026344000
     changes:
