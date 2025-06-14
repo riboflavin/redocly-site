@@ -129,6 +129,8 @@ To insert custom scripts in the head or body of a page.
 
 ## Examples
 
+### Add scripts to page header and body
+
 ```yaml
 scripts:
   head:
@@ -140,7 +142,7 @@ scripts:
       defer: true
 ```
 
-The example above will produce following script tags:
+This configuration produces the following script tags:
 
 ```html
   <script src="https://example.com/script.js"></script>
@@ -150,6 +152,22 @@ The example above will produce following script tags:
   ...
   <script src="https://analytics.google.com/ga.js" crossorigin="anonymous" defer>
 </body>
+```
+
+### Add cookie blocking scripts
+
+The following configuration adds OneTrust's Cookie Auto-Blocking script and an initialization script for OneTrust's cookie consent and privacy compliance platform:
+
+```yaml {% title="redocly.yaml" %}
+scripts:
+  head:
+    - src: https://cdn.cookielaw.org/consent/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/OtAutoBlock.js
+      type: text/javascript
+    - src: https://cdn.cookielaw.org/scripttemplates/otSDKStub.js
+      data-document-language: "true"
+      data-domain-script: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+      type: text/javascript
+      charset: UTF-8
 ```
 
 ## Resources
