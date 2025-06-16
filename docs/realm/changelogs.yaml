@@ -23852,4 +23852,5 @@ reunite:
       minor: []
       patch:
         - Configured `AssertionConsumerServiceURL` for SAML to use the correct value instead of the default first entry.
+        - Fixed project build failure when `redocly.yaml` was missing.
     dependencies: {}
