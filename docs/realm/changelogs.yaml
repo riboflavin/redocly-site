@@ -23853,3 +23853,10 @@ reunite:
       patch:
         - Configured `AssertionConsumerServiceURL` for SAML to use the correct value instead of the default first entry.
     dependencies: {}
+  v2025-06-16.3:
+    timestamp: 1750080983000
+    changes:
+      minor: []
+      patch:
+        - Fixed project build failure when `redocly.yaml` was missing.
+    dependencies: {}
