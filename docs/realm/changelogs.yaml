@@ -1,4 +1,11 @@
 '@redocly/realm':
+  0.123.0-next.4:
+    timestamp: 1750098674000
+    changes:
+      minor: []
+      patch:
+        - Downgraded `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748969604`.
+    dependencies: {}
   0.123.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -3300,6 +3307,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.123.0-next.4:
+    timestamp: 1750098674000
+    changes:
+      minor: []
+      patch:
+        - Downgraded `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748969604`.
+    dependencies: {}
   0.123.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -5916,6 +5930,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.123.0-next.4:
+    timestamp: 1750098674000
+    changes:
+      minor: []
+      patch:
+        - Downgraded `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748969604`.
+    dependencies: {}
   0.123.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -8533,6 +8554,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.123.0-next.4:
+    timestamp: 1750098674000
+    changes:
+      minor: []
+      patch:
+        - Downgraded `@redocly/openapi-core` dependency to version `0.0.0-snapshot.1748969604`.
+    dependencies: {}
   0.123.0-next.3:
     timestamp: 1750087903000
     changes:
@@ -16047,6 +16075,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.6.0-next.4:
+    timestamp: 1750098674000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.123.0-next.4
+      '@redocly/redoc': 0.123.0-next.4
+      '@redocly/redoc-reef': 0.123.0-next.4
+      '@redocly/redoc-revel': 0.123.0-next.4
   1.6.0-next.3:
     timestamp: 1750087903000
     changes:
