@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.123.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
+        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
+    dependencies:
+      '@redocly/openapi-docs': 3.11.0-next.2
+      '@redocly/theme': 0.55.0-next.2
+      '@redocly/asyncapi-docs': 0.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.8.0-next.2
+      '@redocly/graphql-docs': 0.12.0-next.1
   0.123.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -3274,6 +3287,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.123.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
+    dependencies:
+      '@redocly/openapi-docs': 3.11.0-next.2
+      '@redocly/theme': 0.55.0-next.2
+      '@redocly/asyncapi-docs': 0.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.8.0-next.2
+      '@redocly/graphql-docs': 0.12.0-next.1
   0.123.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -5866,6 +5891,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.123.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
+    dependencies:
+      '@redocly/openapi-docs': 3.11.0-next.2
+      '@redocly/theme': 0.55.0-next.2
+      '@redocly/asyncapi-docs': 0.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.8.0-next.2
+      '@redocly/graphql-docs': 0.12.0-next.1
   0.123.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -8458,6 +8495,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.123.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
+        - Fixed an issue where decorators were not used from the root `redocly.yaml`.
+    dependencies:
+      '@redocly/openapi-docs': 3.11.0-next.2
+      '@redocly/theme': 0.55.0-next.2
+      '@redocly/asyncapi-docs': 0.4.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.8.0-next.2
+      '@redocly/graphql-docs': 0.12.0-next.1
   0.123.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -11041,6 +11091,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.55.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
+    dependencies: {}
   0.55.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -12890,6 +12947,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.11.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch:
+        - Fixed broken `openapi.events` configuration to ensure custom event hooks trigger as expected.
+    dependencies:
+      '@redocly/replay': 0.14.0-next.2
   3.11.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -15918,6 +15983,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.6.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.55.0-next.2
+      '@redocly/realm': 0.123.0-next.2
+      '@redocly/redoc': 0.123.0-next.2
+      '@redocly/redoc-reef': 0.123.0-next.2
+      '@redocly/redoc-revel': 0.123.0-next.2
   1.6.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -18983,6 +19059,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.8.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.11.0-next.2
   0.8.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -20699,6 +20782,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.14.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.55.0-next.2
   0.14.0-next.1:
     timestamp: 1749821473000
     changes:
@@ -21570,6 +21660,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.6.0-next.2:
+    timestamp: 1750043732000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.55.0-next.2
   0.6.0-next.1:
     timestamp: 1749821473000
     changes:
