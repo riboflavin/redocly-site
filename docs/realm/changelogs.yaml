@@ -23995,3 +23995,10 @@ reunite:
       patch:
         - Fixed project build failure when `redocly.yaml` was missing.
     dependencies: {}
+  v2025-06-17.2:
+    timestamp: 1750162356000
+    changes:
+      minor: []
+      patch:
+        - Fixed file path insertion in the editor for non-Markdown files by using plain paths instead of Markdown link format.
+    dependencies: {}
