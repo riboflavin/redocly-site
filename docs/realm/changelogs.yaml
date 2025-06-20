@@ -1,11 +1,23 @@
 '@redocly/realm':
+  0.122.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
       minor: []
       patch:
         - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Fixed touch event issue with the `markdoc` tabs tag on mobile devices.
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
     dependencies:
       '@redocly/theme': 0.55.0-next.6
       '@redocly/asyncapi-docs': 0.4.0-next.6
@@ -93,7 +105,7 @@
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch:
@@ -122,7 +134,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -138,6 +150,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
+        - Improved AI Search and `llms.txt` chunk content.
         - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
@@ -174,6 +187,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
@@ -189,7 +203,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -3350,13 +3364,25 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.122.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
       minor: []
       patch:
         - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Fixed touch event issue with the `markdoc` tabs tag on mobile devices.
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
     dependencies:
       '@redocly/theme': 0.55.0-next.6
       '@redocly/asyncapi-docs': 0.4.0-next.6
@@ -3442,7 +3468,7 @@
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch:
@@ -3471,7 +3497,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -3484,6 +3510,7 @@
           properties and components for future compatibility.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
+        - Improved AI Search and `llms.txt` chunk content.
         - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
@@ -3506,6 +3533,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
@@ -3520,7 +3548,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Allowed debugging of API functions using `console`.
@@ -6016,13 +6044,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.122.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
       minor: []
       patch:
         - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Fixed touch event issue with the `markdoc` tabs tag on mobile devices.
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
     dependencies:
       '@redocly/theme': 0.55.0-next.6
       '@redocly/asyncapi-docs': 0.4.0-next.6
@@ -6108,7 +6148,7 @@
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch:
@@ -6137,7 +6177,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Added the `lightboxStyle` attribute that customizes the image lightbox styles.
@@ -6145,6 +6185,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
+        - Improved AI Search and `llms.txt` chunk content.
         - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
@@ -6168,6 +6209,7 @@
         - Fixed search history behavior to prevent frequent or redundant query entries.
         - Fixed incorrect paths in Markdoc tags with `REDOCLY_PREFIX_PATHS` when paths were relative or included file extensions.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
@@ -6183,7 +6225,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -8682,12 +8724,24 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.122.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
       minor: []
       patch:
-        - Fixed touch event issue with the `markdoc` tabs tag on mobile devices.
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
     dependencies:
       '@redocly/theme': 0.55.0-next.6
       '@redocly/asyncapi-docs': 0.4.0-next.6
@@ -8770,7 +8824,7 @@
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
   0.122.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch:
@@ -8797,7 +8851,7 @@
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.122.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Added the `lightboxStyle` attribute that customizes the image lightbox styles.
@@ -8808,6 +8862,7 @@
         - Upgraded React to `19.x`.
         - Added support for closing the image lightbox using the Escape key.
         - Added a possibility to override icon colors for "Search with AI" stars.
+        - Improved AI Search and `llms.txt` chunk content.
         - Improved AI Search chunk content.
         - Added `llms.txt` file generation.
         - Improved `Tabs` styles and added options to disable tabs and set their size to `small` or `medium`.
@@ -8842,6 +8897,7 @@
         - Fixed an issue where an OpenAPI page would jump unexpectedly while scrolling.
         - Fixed an issue where AI search failed to find information described in OpenAPI tags.
         - Fixed header display issue in files starting with a byte order mark (`BOM`).
+        - Improved Markdoc tag error reporting for missing quotation marks.
         - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
         - Fixed redirect handling for complex preview URLs.
         - Removed duplicate teams from `$rbac` variable.
@@ -8856,7 +8912,7 @@
           unauthorized access.
     dependencies: {}
   0.122.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -11337,13 +11393,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.54.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
+    dependencies: {}
   0.55.0-next.6:
     timestamp: 1750340065000
     changes:
       minor: []
       patch:
         - Fixed SSR style attribute issue in `img` tag string formatting.
-        - Fixed touch event issue with the `markdoc` tabs tag on mobile devices.
+        - Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on mobile devices.
     dependencies: {}
   0.55.0-next.5:
     timestamp: 1750327265000
@@ -11384,7 +11447,7 @@
         - Improved accessibility by adding descriptive `alt` text to footer icons.
     dependencies: {}
   0.54.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch:
@@ -11401,7 +11464,7 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
   0.54.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -11435,7 +11498,7 @@
         - Fixed list formatting in code walkthroughs.
     dependencies: {}
   0.54.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch:
@@ -13223,6 +13286,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.10.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/replay': 0.13.2
   3.11.0-next.6:
     timestamp: 1750340065000
     changes:
@@ -13267,7 +13337,7 @@
     dependencies:
       '@redocly/replay': 0.14.0-next.1
   3.10.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch: []
@@ -13283,7 +13353,7 @@
       '@redocly/replay': 0.14.0-next.0
       '@redocly/theme': 0.55.0-next.0
   3.10.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - >-
@@ -13306,7 +13376,7 @@
     dependencies:
       '@redocly/replay': 0.13.0
   3.10.0-next.10:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -15377,7 +15447,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.0
   0.11.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -16227,7 +16297,7 @@
         - Enter prerelease mode.
     dependencies: {}
   0.5.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -16301,6 +16371,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.5.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.2
+      '@redocly/redoc': 0.122.2
+      '@redocly/redoc-reef': 0.122.2
+      '@redocly/redoc-revel': 0.122.2
+      '@redocly/theme': 0.54.2
   1.6.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -16378,7 +16459,7 @@
       '@redocly/theme': 0.55.0-next.1
       '@redocly/redoc': 0.123.0-next.1
   1.5.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch: []
@@ -16401,7 +16482,7 @@
       '@redocly/redoc': 0.123.0-next.0
       '@redocly/theme': 0.55.0-next.0
   1.5.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`.
@@ -16413,7 +16494,7 @@
       '@redocly/redoc-reef': 0.122.0
       '@redocly/redoc-revel': 0.122.0
   1.5.0-next.14:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -19431,6 +19512,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.7.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/openapi-docs': 3.10.2
   0.8.0-next.6:
     timestamp: 1750340065000
     changes:
@@ -19474,7 +19562,7 @@
     dependencies:
       '@redocly/openapi-docs': 3.11.0-next.1
   0.7.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch: []
@@ -19489,14 +19577,14 @@
     dependencies:
       '@redocly/openapi-docs': 3.11.0-next.0
   0.7.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
     dependencies:
       '@redocly/openapi-docs': 3.10.0
   0.7.0-next.10:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -21182,6 +21270,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.13.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.2
   0.14.0-next.6:
     timestamp: 1750340065000
     changes:
@@ -21227,7 +21322,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.1
   0.13.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch: []
@@ -21244,7 +21339,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.0
   0.13.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -21253,7 +21348,7 @@
     dependencies:
       '@redocly/theme': 0.54.0
   0.13.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
@@ -22090,6 +22185,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.5.2:
+    timestamp: 1750345067000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.2
   0.6.0-next.6:
     timestamp: 1750340065000
     changes:
@@ -22133,7 +22235,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.1
   0.5.1:
-    timestamp: 1749653836000
+    timestamp: 1749650348000
     changes:
       minor: []
       patch: []
@@ -22148,7 +22250,7 @@
     dependencies:
       '@redocly/theme': 0.55.0-next.0
   0.5.0:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor:
         - Upgraded React to `19.x`. Removed support for React `18.x` and `17.x`.
@@ -22156,7 +22258,7 @@
     dependencies:
       '@redocly/theme': 0.54.0
   0.5.0-next.8:
-    timestamp: 1749548911000
+    timestamp: 1749544964000
     changes:
       minor: []
       patch: []
