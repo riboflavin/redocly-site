@@ -24439,3 +24439,10 @@ reunite:
       patch:
         - Fixed file path insertion in the editor for non-Markdown files by using plain paths instead of Markdown link format.
     dependencies: {}
+  v2025-06-23.1:
+    timestamp: 1750658354000
+    changes:
+      minor: []
+      patch:
+        - Updated authentication email templates for clarity and consistency.
+    dependencies: {}
