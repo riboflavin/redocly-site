@@ -24712,3 +24712,10 @@ reunite:
       patch:
         - Updated authentication email templates for clarity and consistency.
     dependencies: {}
+  v2025-06-24.1:
+    timestamp: 1750761675000
+    changes:
+      minor: []
+      patch:
+        - Improved error handling for JavaScript heap out of memory during project build.
+    dependencies: {}
