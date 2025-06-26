@@ -242,8 +242,8 @@ See [rbac](./rbac.md) reference documentation for more options and examples.
 
 The following is an example of a catalog configuration.
 
-```yaml
-catalog:
+```yaml {% title="redocly.yaml" %}
+catalogClassic:
   acme-catalog:
     title: Acme API catalog
     description: 'This is a description of the API Catalog'
@@ -267,6 +267,23 @@ catalog:
 {% admonition type="info" %}
 To make the catalog accessible by link, you must add the catalog `slug` to the `sidebars.yaml` file or the `navbar` configuration in the `redocly.yaml` file.
 {% /admonition %}
+
+### `x-metadata` filters in classic catalog
+
+The following is an example of a classic catalog that uses `tags` property from `x-metadata` defined in the API description files.
+
+```yaml {% title="redocly.yaml" %}
+catalogClassic:
+  simple-catalog:
+    title: Simple API catalog
+    description: Discover how our APIs can support your business
+    slug: /apis/
+    filters:
+      - title: Content type
+        property: tags
+        options: [Books, Magazines]
+        type: select
+```
 
 ## Related options
 
