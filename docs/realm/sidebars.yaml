@@ -334,8 +334,6 @@
       items:
         # - page: config/search.md
         #   label: Search configuration
-        - page: setup/how-to/exclude-api-from-search.md
-          label: Exclude API from search
         - page: extend/how-to/configure-search-facets.md
           label: Configure search facets
         - page: setup/how-to/add-sitemap.md
