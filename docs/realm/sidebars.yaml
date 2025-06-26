@@ -34,7 +34,9 @@
         - page: ./setup/how-to/configure-sso.md
           label: Configure SSO
         - page: ./setup/how-to/configure-azure-ad.md
-          label: Azure AD
+          label: Microsoft Entra ID
+        - page: ./setup/how-to/configure-google-sso.md
+          label: Google Workspace
     - page: setup/how-to/access-compliance-reports.md
       label: Compliance reports
 
