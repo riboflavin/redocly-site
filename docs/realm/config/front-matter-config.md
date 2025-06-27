@@ -49,6 +49,13 @@ These options are available exclusively in front matter:
   Use relative paths for local templates and absolute paths for templates from node modules.
   See [Override a page template](../style/how-to/custom-page-templates.md) for details.
 
+---
+
+- navigation
+- [`page` and `label` options](./navigation.md#options-that-apply-to-front-matter-only)
+- Customize the links and button labels of `nextButton` and `previousButton`.
+  These options are available for front matter config only.
+
 {% /table %}
 
 ## Options that override global configuration
