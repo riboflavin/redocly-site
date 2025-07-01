@@ -24852,3 +24852,12 @@ reunite:
       patch:
         - Fixed API registry snapshot details not displaying in the UI.
     dependencies: {}
+  v2025-07-01.2:
+    timestamp: 1751371660000
+    changes:
+      minor: []
+      patch:
+        - Resolved permissions conflict that restricted project administrators’ access with the `MEMBER` organization role.
+        - Fixed issue where user session omitted some teams after SSO login.
+        - Added email notifications for failed remote content auto-merges.
+    dependencies: {}
