@@ -25318,3 +25318,10 @@ reunite:
         - Fixed issue where user session omitted some teams after SSO login.
         - Added email notifications for failed remote content auto-merges.
     dependencies: {}
+  v2025-07-04.1:
+    timestamp: 1751620137000
+    changes:
+      minor: []
+      patch:
+        - Fixed crash when deleting a remote subfolder.
+    dependencies: {}
