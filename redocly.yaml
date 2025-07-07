@@ -169,7 +169,45 @@ responseHeaders:
     - name: Strict-Transport-Security
       value: max-age=31536000; includeSubDomains; preload
     - name: Content-Security-Policy
-      value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.hsforms.net http://js.hsforms.net https://js.hs-scripts.com https://forms.hsforms.com https://www.google.com https://www.gstatic.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:;"
+      value: "
+        script-src 
+          'self' 
+          'report-sample'
+          https://js.hsforms.net 
+          http://js.hsforms.net 
+          https://js.hs-scripts.com 
+          https://forms.hsforms.com  
+          https://www.google.com/recaptcha/ 
+          https://www.gstatic.com/recaptcha/
+          https://www.googletagmanager.com
+          https://cdn.rudderlabs.com
+          https://cdn.usefathom.com
+          https://www.clarity.ms
+          https://js.hscollectedforms.net
+          https://js.hs-analytics.net
+          https://js.hs-banner.com
+          'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
+          'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs=' 
+          'sha256-/mLWo7as1uoH7YxKP28RczpTaAJYtZFOdU0Okz4RWRo=' 
+          'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU=' 
+          'sha256-FHfozmosNdt5yUG9l8OmVM1S/oTxw2TNWHPejSjEr58='
+          'sha256-2VNfiq6Um2ua9MLfzend4JESqZeD1VSgkWvUrPvrlZE='
+          'sha256-6Z9XwT1XsndpCDjoLgO3W3g2Dptc9WedO+nSCr9k3no=';
+        object-src 'none'; 
+        base-uri 'self'; 
+        connect-src 
+          'self'
+          https://webhook.frontapp.com
+          https://api.rebilly.com
+          https://forms.hsforms.com
+          https://hubspot-forms-static-embed.s3.amazonaws.com;
+        form-action 
+          'self'
+          https://forms.hsforms.com 
+          https://webhook.frontapp.com;
+          https:;
+        style-src 'self' 'unsafe-inline'; 
+        img-src 'self' data: https: blob:;"
 
 metadataGlobs:
   'blog/**':
