@@ -1,4 +1,18 @@
 '@redocly/realm':
+  0.124.0-next.7:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/asyncapi-docs': 0.5.0-next.4
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.4
+      '@redocly/portal-legacy-ui': 0.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
+      '@redocly/theme': 0.56.0-next.1
   0.124.0-next.6:
     timestamp: 1752151894000
     changes:
@@ -3551,6 +3565,20 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.124.0-next.7:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/asyncapi-docs': 0.5.0-next.4
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.4
+      '@redocly/portal-legacy-ui': 0.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
+      '@redocly/theme': 0.56.0-next.1
   0.124.0-next.6:
     timestamp: 1752151894000
     changes:
@@ -6411,6 +6439,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.124.0-next.7:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/asyncapi-docs': 0.5.0-next.4
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.4
+      '@redocly/portal-legacy-ui': 0.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
+      '@redocly/theme': 0.56.0-next.1
   0.124.0-next.6:
     timestamp: 1752151894000
     changes:
@@ -9266,6 +9308,20 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.124.0-next.7:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/asyncapi-docs': 0.5.0-next.4
+      '@redocly/graphql-docs': 0.13.0-next.1
+      '@redocly/openapi-docs': 3.12.0-next.4
+      '@redocly/portal-legacy-ui': 0.7.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.9.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
+      '@redocly/theme': 0.56.0-next.1
   0.124.0-next.6:
     timestamp: 1752151894000
     changes:
@@ -12099,6 +12155,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.56.0-next.1:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.2.0-next.1
   0.56.0-next.0:
     timestamp: 1751613974000
     changes:
@@ -14056,6 +14120,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/openapi-docs':
+  3.12.0-next.4:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/replay': 0.15.0-next.1
   3.12.0-next.3:
     timestamp: 1752138689000
     changes:
@@ -16285,6 +16357,13 @@
       patch: []
     dependencies: {}
 '@redocly/graphql-docs':
+  0.13.0-next.1:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies: {}
   0.13.0-next.0:
     timestamp: 1751613974000
     changes:
@@ -17173,6 +17252,13 @@
         - Redocly Mock Server release
     dependencies: {}
 '@redocly/portal-legacy-ui':
+  0.7.0-next.1:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies: {}
   0.7.0-next.0:
     timestamp: 1751613974000
     changes:
@@ -17268,6 +17354,18 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.7.0-next.7:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/realm': 0.124.0-next.7
+      '@redocly/redoc': 0.124.0-next.7
+      '@redocly/redoc-reef': 0.124.0-next.7
+      '@redocly/redoc-revel': 0.124.0-next.7
+      '@redocly/theme': 0.56.0-next.1
   1.7.0-next.6:
     timestamp: 1752151894000
     changes:
@@ -20546,6 +20644,14 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.9.0-next.4:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/openapi-docs': 3.12.0-next.4
   0.9.0-next.3:
     timestamp: 1752138689000
     changes:
@@ -22375,6 +22481,14 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.15.0-next.1:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.1
   0.15.0-next.0:
     timestamp: 1751613974000
     changes:
@@ -23345,6 +23459,14 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.7.0-next.1:
+    timestamp: 1752154800000
+    changes:
+      minor: []
+      patch:
+        - Updated internal dependencies.
+    dependencies:
+      '@redocly/theme': 0.56.0-next.1
   0.7.0-next.0:
     timestamp: 1751613974000
     changes:
