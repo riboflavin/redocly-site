@@ -25790,3 +25790,11 @@ reunite:
       patch:
         - Fixed crash when deleting a remote subfolder.
     dependencies: {}
+  v2025-07-10.3:
+    timestamp: 1752156024000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` dependency to version `2.0.0-next.1`.
+        - Updated `@redocly/openapi-core` dependency to version `2.0.0-next.1`.
+    dependencies: {}
