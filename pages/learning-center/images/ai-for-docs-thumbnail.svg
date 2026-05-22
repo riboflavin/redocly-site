@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<svg xmlns="http://www.w3.org/2000/svg" width="378" height="112" viewBox="0 0 378 112">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0B1220"/>
@@ -10,53 +10,43 @@
       <stop offset="100%" stop-color="#10B981"/>
     </linearGradient>
     <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="60" result="blur"/>
+      <feGaussianBlur stdDeviation="14" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M 14 0 L 0 0 0 14" fill="none" stroke="#fff" stroke-width="0.5"/>
+    </pattern>
   </defs>
 
-  <!-- background -->
-  <rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
-  
-  <!-- subtle grid -->
-  <g opacity="0.06">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="1"/>
-      </pattern>
-    </defs>
-    <rect x="0" y="0" width="1200" height="630" fill="url(#grid)"/>
+  <rect x="0" y="0" width="378" height="112" rx="12" fill="url(#bg)"/>
+  <rect x="0" y="0" width="378" height="112" rx="12" fill="url(#grid)" opacity="0.06"/>
+
+  <circle cx="70" cy="30" r="44" fill="url(#accent)" opacity="0.28" filter="url(#softGlow)"/>
+  <circle cx="320" cy="92" r="50" fill="url(#accent)" opacity="0.22" filter="url(#softGlow)"/>
+  <circle cx="300" cy="22" r="28" fill="url(#accent)" opacity="0.18" filter="url(#softGlow)"/>
+
+  <g transform="translate(24, 22)">
+    <rect rx="6" ry="6" width="92" height="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+    <text x="46" y="12" text-anchor="middle" dominant-baseline="middle"
+          font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          font-size="9" fill="#cbd5e1" letter-spacing="0.5">learning center</text>
   </g>
 
-  <!-- decorative blobs -->
-  <circle cx="250" cy="120" r="160" fill="url(#accent)" opacity="0.25" filter="url(#softGlow)"/>
-  <circle cx="1020" cy="520" r="180" fill="url(#accent)" opacity="0.22" filter="url(#softGlow)"/>
-  <circle cx="920" cy="120" r="110" fill="url(#accent)" opacity="0.18" filter="url(#softGlow)"/>
-
-  <!-- pill label -->
-  <g transform="translate(120, 230)">
-    <rect rx="14" ry="14" width="210" height="40" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
-    <text x="105" y="26" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="18" fill="#cbd5e1" letter-spacing="0.5">learning center</text>
-  </g>
-
-  <!-- headline -->
-  <text x="120" y="330"
+  <text x="24" y="72"
         font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
         font-weight="700"
-        font-size="92"
+        font-size="26"
         fill="#F8FAFC"
-        letter-spacing="-1.2">AI for Docs</text>
+        letter-spacing="-0.4">AI for Docs</text>
 
-  <!-- subline -->
-  <text x="120" y="400"
+  <text x="24" y="96"
         font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
-        font-size="28"
+        font-size="10"
         fill="#93C5FD"
         opacity="0.9">practical ways AI accelerates writing, editing, and review</text>
 
-  <!-- accent underline -->
-  <rect x="120" y="355" width="360" height="6" fill="url(#accent)" rx="3"/>
+  <rect x="24" y="78" width="118" height="3" fill="url(#accent)" rx="1.5"/>
 </svg>
