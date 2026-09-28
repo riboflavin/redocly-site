@@ -37,6 +37,12 @@ Configure your custom domain on the project's **Settings** > **Custom domain** p
     A **Pending** badge displays next to the domain, until it is verified.
     Once the domain is verified, a **Verified** badge displays next to the domain.
 
+## SSL/TLS certificates
+
+Redocly automatically manages SSL/TLS certificates for your custom domains.
+Once you have successfully verified your DNS records (CNAME and TXT), Redocly provisions and renews certificates using Let's Encrypt.
+You do not need to provide or manually manage your own certificates for domains pointed at Redocly.
+
 ## Serve from a subdirectory
 
 Set a project's path prefix to serve pages from somewhere other than the root of a domain.
