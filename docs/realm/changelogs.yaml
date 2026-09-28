@@ -55808,6 +55808,14 @@ reunite:
         - Added the requester's email as the reply-to address on AI assistant support escalation emails.
       patch: []
     dependencies: {}
+  v2026-09-28.2:
+    timestamp: 1790590014000
+    changes:
+      minor: []
+      patch:
+        - Fixed remote content sync and commit status failures for repositories with many remotes.
+        - Updated the generated CI/CD snippets to use organization and project IDs instead of slugs when addressing the Reunite API.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
