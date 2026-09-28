@@ -55813,6 +55813,9 @@ reunite:
     changes:
       minor: []
       patch:
+        - >-
+          Fixed the "Configure SSO and Access" step of the Reunite "Go live" checklist, which stayed incomplete when a project set
+          `access.requiresLogin`.
         - Fixed remote content sync and commit status failures for repositories with many remotes.
         - Updated the generated CI/CD snippets to use organization and project IDs instead of slugs when addressing the Reunite API.
     dependencies: {}
