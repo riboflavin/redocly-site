@@ -30629,6 +30629,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.59.0:
+    timestamp: 1790691266000
+    changes:
+      minor:
+        - Added the `overlays` option to API entries in `redocly.yaml` to list the Overlay files that Redocly CLI applies when it bundles the API.
+        - Added the `tab` and `menu` entry types for `sidebars.yaml`.
+      patch: []
+    dependencies: {}
   0.58.0:
     timestamp: 1790355013000
     changes:
