@@ -2108,6 +2108,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- openapi.deepLink.tooltip
+- Tooltip for the link icon next to a heading or property in API docs
+- Link to this section
+
+---
+
 - openapi.noResponseExample
 - Message when there's no response example in OpenAPI description
 - No response example
