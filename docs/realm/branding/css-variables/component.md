@@ -1425,8 +1425,12 @@
 --navbar-border-color: var(--border-color-secondary);
 --navbar-border: 1px solid var(--navbar-border-color);
 
+--navbar-row-bottom-border-color: var(--navbar-border-color);
+
 --navbar-text-color: var(--text-color-secondary);
 --navbar-height: 64px;
+--navbar-stack-height: var(--navbar-height);
+--navbar-offset: calc(var(--navbar-stack-height) + var(--banner-height));
 --navbar-font-size: var(--font-size-base);
 --navbar-padding: 0 var(--spacing-xl);
 --navbar-font-family: var(--font-family-base);
@@ -1955,6 +1959,57 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 </details>
 
+## Navigation tabs
+
+<details>
+<summary>Navigation tabs</summary>
+
+```css
+--navigation-tabs-height: 48px;
+--navigation-tabs-bg-color: transparent;
+--navigation-tabs-border-color: var(--border-color-secondary);
+--navigation-tabs-border-width: 1px;
+--navigation-tabs-bottom-border: var(--navigation-tabs-border-width) solid
+  var(--navigation-tabs-border-color);
+--navigation-tabs-padding-vertical: 0;
+--navigation-tabs-padding-horizontal: var(--spacing-xl);
+--navigation-tabs-padding: var(--navigation-tabs-padding-vertical)
+  var(--navigation-tabs-padding-horizontal);
+--navigation-tabs-gap: var(--spacing-base);
+```
+
+</details>
+<details>
+<summary>Navigation tab item</summary>
+
+```css
+--navigation-tabs-item-padding-vertical: var(--spacing-xxs);
+--navigation-tabs-item-padding-horizontal: 0;
+--navigation-tabs-item-padding: var(--navigation-tabs-item-padding-vertical)
+  var(--navigation-tabs-item-padding-horizontal);
+--navigation-tabs-item-content-gap: var(--spacing-xs);
+--navigation-tabs-item-font-size: var(--font-size-base);
+--navigation-tabs-item-line-height: var(--line-height-base);
+--navigation-tabs-item-font-weight: var(--font-weight-regular);
+--navigation-tabs-item-font-weight-active: var(--font-weight-medium);
+--navigation-tabs-item-text-color: var(--navbar-text-color);
+--navigation-tabs-item-text-color-hover: var(--text-color-primary);
+--navigation-tabs-item-text-color-active: var(--text-color-primary);
+--navigation-tabs-item-bottom-border: var(--navigation-tabs-border-width) solid transparent;
+--navigation-tabs-item-bottom-border-hover: var(--navigation-tabs-border-width) solid
+  var(--border-color-primary);
+--navigation-tabs-item-bottom-border-active: var(--navigation-tabs-border-width) solid
+  var(--border-color-inverse);
+--navigation-tabs-item-border-color-focused: var(--button-border-color-focused);
+--navigation-tabs-item-border-radius: var(--navbar-item-border-radius);
+--navigation-tabs-item-icon-size: 1.25em;
+--navigation-tabs-item-external-icon-margin-left: 0;
+--navigation-tabs-item-label-font-weight-active: var(--navigation-tabs-item-font-weight-active);
+--navigation-tabs-item-transition: 150ms ease-in-out;
+```
+
+</details>
+
 ## Segmented
 
 <details>
@@ -2169,7 +2224,7 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
   var(--menu-mobile-margin-horizontal);
 --menu-mobile-line-height: var(--line-height-base);
 --menu-mobile-padding-top: var(--spacing-sm);
---menu-mobile-margin-horizontal: var(--spacing-xs);
+--menu-mobile-margin-horizontal: 0;
 --menu-mobile-items-margin-top: var(--spacing-xxs);
 
 --menu-mobile-profile-bg-color: var(--bg-color);
@@ -2200,6 +2255,48 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --menu-mobile-product-name-margin: var(--menu-item-label-margin);
 
 --menu-container-padding-top: var(--sidebar-offset-top);
+```
+
+</details>
+<details>
+<summary>Sidebar mobile menu select</summary>
+
+```css
+--menu-select-margin-top: 0;
+--menu-select-margin-bottom: var(--spacing-xs);
+--menu-select-margin-horizontal: var(--menu-item-label-margin-horizontal);
+--menu-select-margin: var(--menu-select-margin-top) var(--menu-select-margin-horizontal) var(--menu-select-margin-bottom);
+--menu-select-height: 32px;
+--menu-select-padding-horizontal: calc(var(--spacing-sm) - var(--border-width));
+--menu-select-gap: var(--spacing-xxs);
+--menu-select-font-size: var(--font-size-base);
+--menu-select-line-height: var(--line-height-base);
+--menu-select-text-color: var(--input-content-color-active);
+--menu-select-bg-color: var(--input-bg-color);
+--menu-select-border: var(--input-border);
+--menu-select-border-color-focused: var(--input-border-color-focused);
+--menu-select-border-radius: var(--input-border-radius);
+--menu-select-icon-size: 16px;
+--menu-select-icon-color: var(--icon-color-secondary);
+--menu-select-transition: transform 150ms ease-in-out;
+--menu-select-menu-offset: var(--spacing-xs);
+--menu-select-menu-padding: calc(var(--dropdown-menu-padding) - var(--border-width));
+--menu-select-menu-border-radius: var(--border-radius-lg);
+--menu-select-option-gap: calc(var(--spacing-unit) / 2);
+--menu-select-option-content-gap: var(--spacing-xs);
+--menu-select-option-padding-vertical: var(--dropdown-menu-item-padding-vertical);
+--menu-select-option-padding-left: var(--spacing-md);
+--menu-select-option-padding-right: var(--spacing-sm);
+--menu-select-option-padding: var(--menu-select-option-padding-vertical) var(--menu-select-option-padding-right) var(--menu-select-option-padding-vertical) var(--menu-select-option-padding-left);
+--menu-select-option-border-radius: var(--border-radius-md);
+--menu-select-option-font-weight: var(--font-weight-regular);
+--menu-select-option-font-weight-active: var(--font-weight-medium);
+--menu-select-option-text-color-active: var(--text-color-primary);
+--menu-select-option-bg-color-active: transparent;
+--menu-select-option-icon-size: var(--menu-item-icon-size);
+--menu-select-option-external-icon-size: var(--menu-item-external-icon-size);
+--menu-select-option-checkmark-size: 14px;
+--menu-select-option-checkmark-offset: calc((var(--menu-select-option-padding-left) - var(--menu-select-option-checkmark-size)) / 2);
 ```
 
 </details>

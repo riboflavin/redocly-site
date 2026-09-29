@@ -44,6 +44,8 @@ To customize the internal organization of your API, use OpenAPI extensions like 
 You can customize the sidebar by adding a `sidebars.yaml` file to the root of your project.
 A `sidebars.yaml` file must include all files or directories you want to have in a sidebar: new files and directories aren't added automatically.
 
+To split a large site into sections with their own sidebars, see [Navigation tabs](./navigation-tabs.md).
+
 Link titles in the sidebar are by default the first heading title on the page.
 You can use the [`label`](#link-options) option in a `sidebars.yaml` file to change the link title.
 
@@ -83,7 +85,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - labelTranslationKey
 - string
 - Sets the translation key for an item's link text.
-  Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
+  Used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
@@ -162,7 +164,7 @@ Specify the order and link text for side navigation items by creating a `sidebar
 - groupTranslationKey
 - string
 - Sets the translation key for a group.
-  Used for [localization](../content/localization/localize-labels.md#localize-base-ui-components).
+  Used for [localization](../content/localization/localize-labels.md#localize-user-defined-ui-elements).
 
 ---
 
@@ -247,6 +249,17 @@ Specify the order and link text for side navigation items by creating a `sidebar
   Entries from the referenced sidebar expand into this sidebar.
 
 {% /table %}
+
+### Tab options
+
+Use `tab` entries as the top-level entries of a `sidebars.yaml` file to split it into [navigation tabs](./navigation-tabs.md).
+When one top-level entry is a tab, all top-level entries must be tabs.
+
+{% partial file="../_partials/nav-tab-options-table.md" /%}
+
+### Menu entry options
+
+{% partial file="../_partials/nav-menu-entry-options-table.md" /%}
 
 ### Badge object
 
@@ -483,6 +496,7 @@ Use `badges` to add visual indicators to sidebar items:
 
 ## Resources
 
+- **[Navigation tabs](./navigation-tabs.md)** - Add a second row of navigation that splits a sidebar into sections
 - **[Navigation elements](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
 - **[Navbar configuration](../config/navbar.md)** - Configure the navbar navigation with links
 - **[Footer configuration](../config/footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
