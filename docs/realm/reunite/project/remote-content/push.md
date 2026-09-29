@@ -39,7 +39,7 @@ To set up a remote content folder for pushing:
 Authentication is required to push from another platform to Redocly, and this is done using an API key.
 To get the value and set it up for use in the CI/CD platform:
 
-1. Get your personal or organization API key by visiting your organization dashboard and selecting **API keys** from the **Security** section of the left hand menu.
+1. Get your personal or organization API key by visiting your organization dashboard and selecting **Access** > **API keys** in the navigation menu on the left side of the page.
 1. Add an environment variable named `REDOCLY_AUTHORIZATION` with the value of your API key to your CI/CD platform.
 1. Use this variable with the command or workflow you copied in the previous step.
 

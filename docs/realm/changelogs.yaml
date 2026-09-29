@@ -55917,6 +55917,15 @@ reunite:
           Fixed the "Configure SSO and Access" step of the Reunite "Go live" checklist, which stayed incomplete when a project set
           `access.requiresLogin`.
     dependencies: {}
+  v2026-09-29.4:
+    timestamp: 1790697108000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed silent webhook setup failures after Git credential updates by showing a warning that names the repository and error when permissions
+          are missing, such as an Azure DevOps token lacking rights to manage service hooks.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
