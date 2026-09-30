@@ -51,14 +51,14 @@ Use one of the following Redirect and Webhooks URIs based on your location:
 {% tab label="US residency" %}
 
 - Redirect URI: `https://app.cloud.redocly.com/callback/oauth2`.
-- Webhooks URI: `https://app.cloud.redocly.com/webhooks/git/github_server`.
+- Webhooks URI: `https://app.cloud.redocly.com/api/webhooks/git/github_server`.
 
 {% /tab %}
 
 {% tab label="EU residency" %}
 
 - Redirect URI: `https://app.cloud.eu.redocly.com/callback/oauth2`.
-- Webhooks URI: `https://app.cloud.eu.redocly.com/webhooks/git/github_server`.
+- Webhooks URI: `https://app.cloud.eu.redocly.com/api/webhooks/git/github_server`.
 
 
 {% /tab %}
