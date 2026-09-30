@@ -14,6 +14,12 @@ plans:
 Reunite's deployment process has a Lint step that performs scorecard tests and validation of API description files in your project.
 This step relies on the [`scorecardClassic` configuration](../../config/scorecard-classic.md).
 
+{% admonition type="info" %}
+The **Lint** step focuses on API descriptions and configuration files.
+It does not validate Markdoc or Markdown syntax.
+Content syntax errors, such as unclosed tags, are typically caught during the **Build** step.
+{% /admonition %}
+
 Scorecard tests API description files against built-in or custom rulesets.
 These rulesets help maintaining quality across your existing APIs and ensure that newly-added or updated APIs match your criteria.
 Your project can include multiple sets of rules, corresponding to different quality levels.
