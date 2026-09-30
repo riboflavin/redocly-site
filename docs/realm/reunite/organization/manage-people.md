@@ -58,6 +58,10 @@ To directly invite people to your organization:
 1. Select the organization **Role** you want to assign to the user.
 1. Click **Send invite**.
 
+{% admonition type="info" name="Check spam folder" %}
+If invited users do not receive the invitation email, suggest they check their spam folder.
+{% /admonition %}
+
 You can also give users single sign-on (SSO) access to your Reunite organization by [adding an identity provider](./sso/add-idp.md).
 
 ## Invite viewers
@@ -79,7 +83,6 @@ To invite viewers to your organization:
 3. (Optional) Select **Teams** you want the user to be a member of.
 4. Select **Viewer** as the organization **Role**.
 5. Select the **Project** you want to viewer to start with.
-6. (Optional) Add a *Custom Message* in plain text format to be shown in the invitation email.
 6. (Optional) Add a **Custom Message** in plain text format, that will be shown in the invitation email.
 7. Click **Send invite**.
 
