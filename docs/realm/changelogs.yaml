@@ -55926,6 +55926,13 @@ reunite:
           Fixed silent webhook setup failures after Git credential updates by showing a warning that names the repository and error when permissions
           are missing, such as an Azure DevOps token lacking rights to manage service hooks.
     dependencies: {}
+  v2026-09-30.2:
+    timestamp: 1790767896000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.55.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
