@@ -55933,6 +55933,14 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.55.0`.
     dependencies: {}
+  v2026-09-30.4:
+    timestamp: 1790779041000
+    changes:
+      minor:
+        - Improved the pull request code diff in Reunite with syntax highlighting, expandable hidden lines, and a refreshed UI.
+      patch:
+        - Fixed secondary text in Reunite to use consistent styling across light and dark themes.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
