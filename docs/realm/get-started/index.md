@@ -18,8 +18,8 @@ For development, you can use the built-in Reunite editor, or work locally using 
 
 Start your first project either in your browser with Reunite, or using your local development tools:
 
-- [Get started with the Reunite editor](start-reunite-editor.md): Use the built-in editor in Reunite.
-- [Get started locally](start-local-dev.md): Use a code editor on your local device.
+- [Start with the web editor](start-reunite-editor.md): Use the built-in editor in Reunite.
+- [Start with local development](start-local-dev.md): Use a code editor on your local device.
 
 ## Next steps
 

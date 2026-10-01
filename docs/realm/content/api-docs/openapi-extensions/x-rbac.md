@@ -56,8 +56,8 @@ paths:
 
 ## Resources
 
-- **[Role-based access control concepts](../../../access/rbac.md)** - Learn about RBAC fundamentals and how it integrates with OpenAPI documentation
-- **[RBAC configuration guide](../../../access/index.md)** - Complete implementation guide for adding role-based access control to your project
+- **[Role-based access control](../../../access/rbac.md)** - Learn about RBAC fundamentals and how it integrates with OpenAPI documentation
+- **[Control site access](../../../access/index.md)** - Complete implementation guide for adding role-based access control to your project
 - **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
 - **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
 - **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation

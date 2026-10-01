@@ -32,7 +32,7 @@ Base UI component labels include predefined keys; however, you must create keys 
 Make sure you have the following:
 
 - a project with an `@l10n` folder containing your translated content organized into locales.
-  See [l10n configuration](../../config/l10n.md) for setup information and [Add translated content](./localize-content.md) for content localization.
+  See [l10n configuration](../../config/l10n.md) for setup information and [Localize content](./localize-content.md) for content localization.
 
 ## Localize base UI components
 
@@ -40,12 +40,12 @@ Redocly provides default translations for the most popular languages.
 See [Supported default translations](../../config/l10n.md#supported-default-translations) for a list of supported languages.
 
 Each label from the components that come bundled with the project has a predefined translation key assigned to it.
-See [l10n translation keys](./translation-keys.md) for a list of predefined translation keys available.
+See [Predefined translation keys](./translation-keys.md) for a list of predefined translation keys available.
 
 To customize default translations or add new translations for the base UI components:
 
 1. If you haven't already, add a `translations.yaml` file to each of your locale folders.
-2. Copy and paste the [l10n translation keys](./translation-keys.md) into each `translations.yaml` file in the locale folders.
+2. Copy and paste the [Predefined translation keys](./translation-keys.md) into each `translations.yaml` file in the locale folders.
 3. Add the translated values for the translation keys.
 
 For example, to translate the login button text to Spanish, use the following key value pair in your `translations.yaml` file in the `es-ES` subfolder:
@@ -74,7 +74,7 @@ Translation keys for most user-defined UI elements are included in the `redocly.
 Sidebars are an exception and have their configuration in the `sidebars.yaml` files.
 
 To add translation keys to user-defined elements, add translation key options to elements in your `redocly.yaml` or `sidebars.yaml` files.
-For more information on the types of keys a UI element uses, see [Configure Redocly](../../config/index.md) and navigate to the relevant reference documentation.
+For more information on the types of keys a UI element uses, see [Configuration options](../../config/index.md) and navigate to the relevant reference documentation.
 
 The following example shows a complete `redocly.yaml` file with translation keys configured for navbar and footer elements:
 
@@ -193,7 +193,7 @@ You can configure a `translations.yaml` file to override these labels, accomplis
 To change the built-in UI labels:
 
 1. Add a `translations.yaml` file to the root of your project.
-2. Copy and paste the [l10n translation keys](./translation-keys.md) to the file.
+2. Copy and paste the [Predefined translation keys](./translation-keys.md) to the file.
 3. Add your customized values for the translation keys.
 4. Commit your changes.
 
@@ -230,4 +230,4 @@ Now you can add the key to the `translations.yaml` file and use it to localize o
 ## Resources
 
 - **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
-- **[Localize content files](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure
+- **[Localize content](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure

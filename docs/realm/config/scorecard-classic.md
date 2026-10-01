@@ -116,6 +116,7 @@ An API scorecard can include multiple sets of rules, corresponding to different 
 - Specify which API descriptions to apply the `minimumLevel` to.
 
 ---
+
 - rules
 - [Rule Object](https://redocly.com/docs/cli/configuration/rules)
 - Customize rules for the target.
@@ -156,7 +157,6 @@ An API scorecard can include multiple sets of rules, corresponding to different 
   Specify a string with a leading and trailing slash to match against a regex.
 
 {% /table %}
-
 
 ### Example
 
@@ -319,7 +319,9 @@ rules:
 ```
 
 ### Ignore example
+
 To ignore a specific file from the scorecard calculation, for example `openapi.yaml`, use `ignore` property:
+
 ```yaml
 scorecardClassic:
   ignore:
@@ -327,6 +329,7 @@ scorecardClassic:
 ```
 
 To ignore a directory, for example `catalog/`:
+
 ```yaml
 scorecardClassic:
   ignore:
@@ -334,6 +337,7 @@ scorecardClassic:
 ```
 
 To ignore every file with a specific extension, for example `.yaml`:
+
 ```yaml
 scorecardClassic:
   ignore:
@@ -341,7 +345,9 @@ scorecardClassic:
 ```
 
 ### fromProjectUrl example
+
 To enable the [Redocly OpenAPI VS Code extension](https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code) to validate your local API descriptions against remote scorecard rules:
+
 ```yaml
 scorecardClassic:
   fromProjectUrl: https://app.cloud.redocly.com/org/my-org/project/my-project
@@ -349,7 +355,7 @@ scorecardClassic:
 
 ## Resources
 
-- **[Lint](../reunite/project/lint.md)** - Understand the Lint deployment step, what the scorecard displays, how to access reports, and the scorecard's role in API quality management
+- **[API linting](../reunite/project/lint.md)** - Understand the Lint deployment step, what the scorecard displays, how to access reports, and the scorecard's role in API quality management
 - **[Configure classic scorecard](../reunite/project/configure-classic-scorecard.md)** - Add Redocly built-in or custom rulesets to the classic scorecard for comprehensive API quality assessment and tracking
 - **[OpenAPI reference](./openapi/index.md)** - Customize the behavior and appearance of integrated API documentation for comprehensive scorecard integration
 - **[Catalog reference](./catalog-classic.md)** - Configure a classic version of the API catalog with different customization options for effective scorecard management

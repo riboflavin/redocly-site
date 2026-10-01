@@ -114,4 +114,4 @@ When you are working in Reunite's editor, you can use the following keyboard sho
 
 - **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects in Reunite for effective documentation workflow management
 - **[Use the editor](./use-editor.md)** - Edit content directly in Reunite with collaborative editing tools and real-time collaboration features
-- **[Project user interface](./project-ui.md)** - Reference the user interface elements in Reunite's project workspace
+- **[Reunite project interface](./project-ui.md)** - Reference the user interface elements in Reunite's project workspace

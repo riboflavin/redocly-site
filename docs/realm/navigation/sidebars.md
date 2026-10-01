@@ -497,7 +497,7 @@ Use `badges` to add visual indicators to sidebar items:
 ## Resources
 
 - **[Navigation tabs](./navigation-tabs.md)** - Add a second row of navigation that splits a sidebar into sections
-- **[Navigation elements](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
+- **[Build navigation](./index.md)** - Overview of all navigation components and patterns for creating comprehensive site navigation structures
 - **[Navbar configuration](../config/navbar.md)** - Configure the navbar navigation with links
 - **[Footer configuration](../config/footer.md)** - Configure the footer navigation with links, copyright information, and organizational elements
-- **[Front matter configuration](../config/front-matter-config.md)** - Use front matter add a sidebar on individual pages for custom page layouts
+- **[Front matter configuration options](../config/front-matter-config.md)** - Use front matter add a sidebar on individual pages for custom page layouts

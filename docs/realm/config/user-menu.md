@@ -112,9 +112,9 @@ userMenu:
 
 ## Resources
 
-- **[Configure RBAC](../access/index.md)** - Configure role-based access control to manage user permissions and access levels for user menu functionality
-- **[Configure SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
-- **[RBAC concepts](../access/rbac.md)** - Understand how role-based access control works in Redocly products for comprehensive user menu and permission management
+- **[Control site access](../access/index.md)** - Configure role-based access control to manage user permissions and access levels for user menu functionality
+- **[Configure project SSO](../reunite/organization/sso/configure-sso.md)** - Set up single sign-on integration to enable seamless user authentication and menu personalization
+- **[Role-based access control](../access/rbac.md)** - Understand how role-based access control works in Redocly products for comprehensive user menu and permission management
 - **[Navbar configuration](./navbar.md)** - Add additional links to the navbar and configure navbar appearance to complement the user menu
 - **[SSO configuration](./access/sso.md)** - Configure SSO authentication required for user menu display and functionality
 - **[RBAC configuration](./access/rbac.md)** - Set up role-based access control as an alternative to requiresLogin for user menu access management

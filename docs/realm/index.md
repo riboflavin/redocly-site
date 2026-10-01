@@ -79,4 +79,4 @@ Role-based access control (RBAC) applies to:
 - [Configure the sidebar](./navigation/sidebars.md)
 - [Structure your project](./content/project-structure.md)
 - [Customize your branding](./branding/index.md)
-- [Set up integrations](./reunite/project/connect-git/connect-git-provider.md)
+- [Connect a Git provider](./reunite/project/connect-git/connect-git-provider.md)

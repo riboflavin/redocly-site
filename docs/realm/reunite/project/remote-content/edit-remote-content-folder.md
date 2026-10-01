@@ -64,6 +64,6 @@ To edit remote content settings:
 
 ## Resources
 
-- **[Remote content concepts](./remote-content.md)** - Understand the remote content feature including supported source types, sync mechanisms, and auto-merge capabilities
+- **[Remote content](./remote-content.md)** - Understand the remote content feature including supported source types, sync mechanisms, and auto-merge capabilities
 - **[Add remote files with one-way sync](./index.md)** - Guides for setting up remote content from Git providers, URLs, or CI/CD pipelines
-- **[Manually sync remote content](./manually-sync-remote-content.md)** - Trigger remote content synchronization manually when auto-sync is disabled
+- **[Sync remote content folders manually](./manually-sync-remote-content.md)** - Trigger remote content synchronization manually when auto-sync is disabled

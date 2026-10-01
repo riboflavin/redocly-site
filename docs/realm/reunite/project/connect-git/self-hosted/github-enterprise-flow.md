@@ -56,4 +56,4 @@ These webhooks notify Reunite about changes in your repositories, triggering act
 
 - **[Connect a GitHub Enterprise Server](./github.md)** - Step-by-step setup for creating or adding a GitHub App and connecting your GitHub Enterprise Server instance to Reunite
 - **[Connect a Git provider](../connect-git-provider.md)** - Overview of connecting Git providers to Reunite projects, including self-hosted instances and allowed IP addresses
-- **[Manage self-hosted Git providers](../manage-self-hosted.md)** - Add and manage self-hosted Git providers at the organization level so they are available for all projects
+- **[Self-hosted Git providers](../manage-self-hosted.md)** - Add and manage self-hosted Git providers at the organization level so they are available for all projects

@@ -164,4 +164,4 @@ In this example:
 
 ## Resources
 
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

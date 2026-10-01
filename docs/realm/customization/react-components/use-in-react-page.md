@@ -14,7 +14,8 @@ plans:
 There are several ways to use theme components.
 Below are some of the most common approaches.
 
-You can find the list of components you can customize [List of customizable components](./list/index.md) and icons [List of customizable icons](./list/icons.md).
+For the list of components you can customize, see [Built-in React components](./list/index.md).
+For icons, see [List of customizable icons](./list/icons.md).
 
 We use the `Admonition` component as an example to illustrate different integration methods.
 
@@ -138,5 +139,5 @@ export default function () {
 ## Resources
 
 - **[Customize theme components](./wrap-components.md)** - Learn to wrap and customize built-in components to create reusable, branded versions for your project
-- **[List of customizable components](./list/index.md)** - Browse all available built-in React components that you can customize and extend in your projects
-- **[Customizable icons list](./list/icons.md)** - Explore available icon components that you can customize and extend with your own styling and functionality
+- **[Built-in React components](./list/index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[List of customizable icons](./list/icons.md)** - Explore available icon components that you can customize and extend with your own styling and functionality

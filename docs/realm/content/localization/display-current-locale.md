@@ -48,4 +48,4 @@ export default function () {
 ## Resources
 
 - **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
-- **[Localize content files](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure
+- **[Localize content](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure

@@ -154,5 +154,5 @@ The example above will produce following link tags:
 
 ## Resources
 
-- **[Custom CSS styles](../branding/customize-styles.md)** - Customize link appearance and styling using CSS variables and custom stylesheets for brand consistency
+- **[Customize styles](../branding/customize-styles.md)** - Customize link appearance and styling using CSS variables and custom stylesheets for brand consistency
 - **[Scripts configuration](./scripts.md)** - Add custom JavaScript and other scripts to pages for enhanced functionality alongside custom links

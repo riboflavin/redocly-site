@@ -64,8 +64,8 @@ versionPicker:
 
 ## Resources
 
-- **[Add multiple versions](../content/versions.md)** - Configure your versions.yaml file to specify the default version and manage multiple documentation versions
+- **[Version content](../content/versions.md)** - Configure your versions.yaml file to specify the default version and manage multiple documentation versions
 - **[Products configuration](./products.md)** - Organize your project with multiple products and version management for complex documentation structures
 - **[Configure localization](./l10n.md)** - Add a language picker for content translated into multiple languages alongside version management
-- **[Front matter configuration](./front-matter-config.md)** - Toggle version picker visibility on individual pages using front matter for custom layouts
+- **[Front matter configuration options](./front-matter-config.md)** - Toggle version picker visibility on individual pages using front matter for custom layouts
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

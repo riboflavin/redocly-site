@@ -167,6 +167,6 @@ If your users primarily use Cursor, consider showing only that option to reduce 
 ## Resources
 
 - **[MCP configuration](../../config/mcp.md)** - Configure the MCP server and Connect MCP button visibility
-- **[MCP servers overview](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
+- **[Model Context Protocol server](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

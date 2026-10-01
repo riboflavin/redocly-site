@@ -115,6 +115,6 @@ Your AsyncAPI documentation is rendered using the built-in tool.
 ## Resources
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including AsyncAPI specifications with catalogs for better user experience and navigation
-- **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your AsyncAPI documentation content
+- **[Configure sidebars](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your AsyncAPI documentation content
 - **[AsyncAPI extensions](./asyncapi-extensions/index.md)** - Use custom extensions in your AsyncAPI descriptions to create richer, more detailed documentation with enhanced features
 - **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

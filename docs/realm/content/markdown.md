@@ -329,9 +329,9 @@ Learn more about [table formatting](./markdoc-tags/table.md) for structured data
 
 ## Resources
 
-- **[Markdoc tags reference](./markdoc-tags/tag-library.md)** - Complete library of interactive components like cards, tabs, admonitions, and code groups for enhanced content
-- **[Content reuse with partials](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages to maintain consistency and reduce duplication
-- **[Project structure guide](./project-structure.md)** - Organize your content files and directories for optimal navigation and maintenance
-- **[Links and navigation](./links.md)** - Create internal and external links with automatic validation and cross-references between pages and sections
-- **[Static assets management](../customization/static-assets.md)** - Host images, files, and other static resources with predictable URLs and optimization
+- **[Built-in Markdoc tags](./markdoc-tags/tag-library.md)** - Complete library of interactive components like cards, tabs, admonitions, and code groups for enhanced content
+- **[Partial tag](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages to maintain consistency and reduce duplication
+- **[Project structure](./project-structure.md)** - Organize your content files and directories for optimal navigation and maintenance
+- **[Manage links](./links.md)** - Create internal and external links with automatic validation and cross-references between pages and sections
+- **[Static assets](../customization/static-assets.md)** - Host images, files, and other static resources with predictable URLs and optimization
 - **[Markdown configuration](../config/markdown.md)** - Customize Markdown processing, syntax highlighting, and rendering behavior

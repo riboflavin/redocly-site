@@ -83,6 +83,6 @@ To add multiple GraphQL schemas using `group` keys, update your `sidebars.yaml` 
 ## Resources
 
 - **[API catalog configuration](../../config/catalog-classic.md)** - Organize multiple API descriptions including GraphQL schemas with catalogs for better user experience and navigation
-- **[Sidebar navigation setup](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your GraphQL API documentation content
+- **[Configure sidebars](../../navigation/sidebars.md)** - Configure navigation structures to help users discover and access your GraphQL API documentation content
 - **[GraphQL configuration reference](../../config/graphql/index.md)** - Complete customization options for GraphQL schema rendering and documentation behavior
 - **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages

@@ -92,7 +92,7 @@ Store your registry credentials as environment variables:
 - For Reunite projects, add them through the **Settings** > **Environment variables** page and mark them as secrets.
   Reunite supports environment variable names that start with `NPM_` for private package registries.
 
-For more information about managing environment variables, see **[Environment variables](../reunite/project/env-variables.md)**.
+For more information about managing environment variables, see **[Use environment variables](../reunite/project/env-variables.md)**.
 
 ## Import and use components
 
@@ -170,7 +170,7 @@ You can use the icon tag in your Markdoc files, as in the following example:
 
 ## Resources
 
-- **[Environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
-- **[Build custom Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported npm libraries for enhanced functionality
-- **[Built-in icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Use environment variables](../reunite/project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
+- **[Build Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported npm libraries for enhanced functionality
+- **[Icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

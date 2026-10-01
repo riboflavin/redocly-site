@@ -119,5 +119,5 @@ logo:
 ## Resources
 
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Add custom color modes to support logo variations for different themes and branding needs
+- **[Customize color modes](../branding/customize-color-modes.md)** - Set a different logo for each color mode, style light and dark modes with CSS, or add new color modes
 - **[Navbar configuration](navbar.md)** - Configure navbar settings and appearance to complement your custom logo design and branding

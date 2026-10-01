@@ -97,7 +97,7 @@ Afterward, view your change locally or in Reunite.
 
 ## Resources
 
-- **[Custom styles guide](./customize-styles.md)** - Explore comprehensive styling examples and learn to customize your project's appearance using CSS variables
-- **[Color mode customization](./customize-color-modes.md)** - Apply different font styling for light and dark modes with mode-specific CSS rules
+- **[Customize styles](./customize-styles.md)** - Explore comprehensive styling examples and learn to customize your project's appearance using CSS variables
+- **[Customize color modes](./customize-color-modes.md)** - Apply different font styling for light and dark modes with mode-specific CSS rules
 - **[Links configuration](../config/links.md)** - Add additional links to the `<head>` HTML element for external font files and preconnect optimizations
-- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of typography-related CSS variables for font customization
+- **[CSS variables](./css-variables/index.md)** - Complete dictionary of typography-related CSS variables for font customization

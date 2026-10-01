@@ -109,6 +109,6 @@ export function MyComponent() {
 
 ## Resources
 
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
-- **[Built-in icon components](./icons.md)** - Use Redocly's built-in SVG icon system for consistent design
+- **[Built-in React components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[List of customizable icons](./icons.md)** - Use Redocly's built-in SVG icon system for consistent design
 - **[FontAwesome Icons website](https://fontawesome.com/icons)** - Browse the complete Font Awesome icon library

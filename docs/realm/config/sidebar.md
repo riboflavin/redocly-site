@@ -50,8 +50,7 @@ sidebar:
 
 ## Resources
 
-- **[Sidebar configuration guide](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
-- **[Navigation elements overview](../navigation/index.md)** - Explore navigation components available for your project
+- **[Configure sidebars](../navigation/sidebars.md)** - Complete guide to configuring sidebar navigation structure and content organization for optimal user experience
+- **[Build navigation](../navigation/index.md)** - Explore navigation components available for your project
 - **[Footer configuration](./footer.md)** - Configure footer settings and appearance to complement sidebar design and overall site navigation
 - **[Navbar configuration](./navbar.md)** - Configure navbar settings and navigation elements to work seamlessly with your sidebar configuration
-

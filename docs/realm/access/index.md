@@ -106,7 +106,7 @@ Show basic content to all users while revealing advanced features and configurat
 ## Resources
 
 - **[Roles and permissions](./roles.md)** - Configure user roles and permissions to control access levels across your documentation project
-- **[RBAC implementation](./rbac.md)** - Understand how role-based access control works and implement security best practices for your content
-- **[Page-level access control](./page-permissions.md)** - Control access to individual pages and content sections based on user roles and permissions
-- **[Navigation permissions](./links-and-groups-permissions.md)** - Manage visibility of navigation links and groups to create role-specific navigation experiences
+- **[Role-based access control](./rbac.md)** - Understand how role-based access control works and implement security best practices for your content
+- **[Configure RBAC for pages and content](./page-permissions.md)** - Control access to individual pages and content sections based on user roles and permissions
+- **[Configure RBAC for navigation](./links-and-groups-permissions.md)** - Manage visibility of navigation links and groups to create role-specific navigation experiences
 - **[`access` configuration](../config/access/index.md)** - Explore access configuration options

@@ -46,7 +46,7 @@ Follow the steps to configure Google Workspace SAML SSO integration with Reunite
 
 ## Resources
 
-- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types in Reunite and their implementation for project authentication
-- **[Add an identity provider](./add-idp.md)** - Complete guide for adding identity providers in Reunite for streamlined authentication management
-- **[Configure SSO](./configure-sso.md)** - Set up multiple identity provider types to provide users with flexible authentication options for your projects
-- **[Role-based access control (RBAC)](../../../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider types in Reunite and their implementation for project authentication
+- **[Add identity providers](./add-idp.md)** - Complete guide for adding identity providers in Reunite for streamlined authentication management
+- **[Configure project SSO](./configure-sso.md)** - Set up multiple identity provider types to provide users with flexible authentication options for your projects
+- **[Role-based access control](../../../access/rbac.md)** - Implement advanced access control scenarios to grant specific users access to specific content and features

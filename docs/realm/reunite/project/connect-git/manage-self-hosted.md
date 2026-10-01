@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Manage self-hosted Git providers
+# Self-hosted Git providers
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -19,12 +19,6 @@ After you add self-hosted Git providers to an organization, those providers beco
 Users can then connect repositories, or add remote content to Redocly projects.
 You can add one or more Git self-hosted providers, depending on your infrastructure.
 Currently Reunite supports 2 types of self-hosted providers: GitLab self-managed and GitHub Enterprise Server.
-
-## Before you begin
-
-Make sure you have the following:
-
-- an OWNER role in your Reunite organization
 
 ## Add a self-hosted Git provider
 

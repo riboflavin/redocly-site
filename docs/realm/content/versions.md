@@ -535,4 +535,4 @@ versions:
 
 ## Resources
 
-- **[Sidebar configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization for versioned content with detailed syntax and options reference
+- **[Configure sidebars](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization for versioned content with detailed syntax and options reference

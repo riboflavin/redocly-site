@@ -127,7 +127,7 @@ The build fails if a `sidebars.yaml` file breaks one of these rules:
 
 ## Resources
 
-- **[Sidebars](./sidebars.md)** - Configure the links, groups, and referenced sidebar files that go into a tab's `items`
-- **[Navigation elements](./index.md)** - Overview of navigation areas and how they work together
+- **[Configure sidebars](./sidebars.md)** - Configure the links, groups, and referenced sidebar files that go into a tab's `items`
+- **[Build navigation](./index.md)** - Overview of navigation areas and how they work together
 - **[Component CSS variables](../branding/css-variables/component.md#navigation-tabs)** - Full list of variables that style the navigation tabs row
-- **[Add versioned content](../content/versions.md)** - Organize versioned folders and their sidebars
+- **[Version content](../content/versions.md)** - Organize versioned folders and their sidebars

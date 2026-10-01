@@ -326,7 +326,7 @@ You can change the name of this directory in the [`apiFunctions` config](../conf
 Redocly supports versioned content by using a special folder structure.
 
 Folders prefixed with `@` (e.g., `@v1`, `@v2`) are treated as separate content versions.
-For information how to set up versioned content in your project, see [Add versioned content](./versions.md).
+For information how to set up versioned content in your project, see [Version content](./versions.md).
 
 ## Multi-product
 
@@ -375,5 +375,5 @@ These files usually belong alongside your content files or within the `@theme` d
 
 - **[Multiple products configuration](../config/products.md)** - Set up product switching and organize documentation for multiple products with separate navigation and branding
 - **[Multiple languages setup](../config/l10n.md)** - Configure localization and internationalization for multi-language documentation projects
-- **[Content reuse with partials](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages and projects to maintain consistency and reduce duplication
-- **[Sidebars configuration](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization with detailed syntax and options reference
+- **[Partial tag](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages and projects to maintain consistency and reduce duplication
+- **[Configure sidebars](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization with detailed syntax and options reference

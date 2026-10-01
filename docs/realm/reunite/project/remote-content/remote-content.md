@@ -229,7 +229,7 @@ If Auto-merge is enabled, it takes effect at this point.
 
 ## Resources
 
-- **[How to add remote content](./index.md)** - Step-by-step guide to integrate external content sources into your Reunite projects for centralized documentation management
+- **[Add remote files with one-way sync](./index.md)** - Step-by-step guide to integrate external content sources into your Reunite projects for centralized documentation management
 - **[Edit remote content settings](./edit-remote-content-folder.md)** - Update provider, repository, branch, or sync settings for existing remote content
-- **[Remote content verification](./verify-remote-content.md)** - Understand automatic verification processes that ensure remote content integrity and compatibility with your project
+- **[Remote content automation](./verify-remote-content.md)** - Understand automatic verification processes that ensure remote content integrity and compatibility with your project
 - **[Connect a Git provider](../connect-git/connect-git-provider.md)** - Source entire projects from external repositories while maintaining access to Reunite's collaborative editing and workflow features

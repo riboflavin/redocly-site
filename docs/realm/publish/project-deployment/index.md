@@ -25,7 +25,7 @@ Control which branches deploy, review deployment history, and enforce API qualit
 
 - [API linting](../../reunite/project/lint.md): Understand the Lint deployment step and how scorecard reports surface API validation results.
 - [Configure classic scorecard](../../reunite/project/configure-classic-scorecard.md): Add built-in or custom rulesets to evaluate API description files against your quality standards.
-- [Ignore link checker](../../reunite/project/ignore-link-checker.md): Publish deployments with broken links by overriding the default link checker behavior.
+- [Ignore the link checker](../../reunite/project/ignore-link-checker.md): Publish deployments with broken links by overriding the default link checker behavior.
 
 ## Resources
 

@@ -48,6 +48,6 @@ To manually sync remote content folders:
 
 ## Resources
 
-- **[Remote content concepts](./remote-content.md)** - Understand remote content fundamentals including sync mechanisms, auto-merge capabilities, and folder path management
+- **[Remote content](./remote-content.md)** - Understand remote content fundamentals including sync mechanisms, auto-merge capabilities, and folder path management
 - **[Add remote files with one-way sync](./index.md)** - Discover supported remote content sources and learn step-by-step setup processes for various integration types
-- **[Edit remote content folder settings](./edit-remote-content-folder.md)** - Modify configuration settings for existing remote content folders to optimize synchronization and workflow
+- **[Edit remote content settings](./edit-remote-content-folder.md)** - Modify configuration settings for existing remote content folders to optimize synchronization and workflow

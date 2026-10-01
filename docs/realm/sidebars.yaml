@@ -81,6 +81,7 @@
         - page: content/markdoc-functions/includes.md
           label: includes
     - group: Logic and templating
+      selectFirstItemOnExpand: true
       items:
         - page: content/markdoc-tags/if-else.md
           label: If and else
@@ -129,6 +130,7 @@
     - page: content/api-docs/configure-mock-server.md
       label: Mock server
     - group: Try-it console
+      selectFirstItemOnExpand: true
       items:
         - page: customization/configure-request-values.md
           label: Configure request values
@@ -221,7 +223,7 @@
           label: Review pull requests
     - page: reunite/project/use-previews.md
       label: Previews
-    - group: Git hosting
+    - group: Connect a Git provider
       page: reunite/project/connect-git/connect-git-provider.md
       items:
         - page: reunite/project/connect-git/github.md
@@ -255,7 +257,7 @@
           label: Edit content folder
         - page: reunite/project/remote-content/verify-remote-content.md
           label: Remote content automation
-    - group: Project deployment
+    - group: Deploy your project
       page: publish/project-deployment/index.md
       items:
         - page: reunite/project/branches-and-deployments.md
@@ -324,7 +326,7 @@
   page: search-and-seo/index.md
   items:
     - page: navigation/search.md
-      label: Configure search
+      label: Site search
     - page: content/realm-seo.md
       label: SEO
     - group: Search API
@@ -446,6 +448,7 @@
         - page: customization/react-components/list/tag.md
           label: Tag
     - group: Build tags and functions
+      selectFirstItemOnExpand: true
       items:
         - page: customization/build-markdoc-tags.md
           label: Build Markdoc tags
@@ -466,6 +469,7 @@
         - page: customization/api-functions/api-functions-reference.md
           label: Reference
     - group: Component ejection
+      selectFirstItemOnExpand: true
       items:
         - page: customization/eject-components/index.md
           label: Eject components

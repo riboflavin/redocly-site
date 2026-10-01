@@ -119,5 +119,5 @@ If an unsupported pattern appears, simplify the markup or use Markdown/Markdoc f
 
 ## Resources
 
-- **[Content types](./index.md)** - Explore the different types of content you can use in your project
+- **[Create content](./index.md)** - Explore the different types of content you can use in your project
 - **[Add diagrams](./add-diagram.md)** - Learn how to enhance your project with diagrams

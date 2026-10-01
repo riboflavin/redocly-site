@@ -375,7 +375,7 @@ catalogClassic:
 
 ## Resources
 
-- **[Sidebars configuration](../navigation/sidebars.md)** - Configure sidebar navigation structure to control how catalog items route when clicked by users
+- **[Configure sidebars](../navigation/sidebars.md)** - Configure sidebar navigation structure to control how catalog items route when clicked by users
 - **[x-metadata extension](../content/api-docs/openapi-extensions/x-metadata.md)** - Add metadata to OpenAPI files that can be used as catalog filters and displayed in API documentation
 - **[Hide info metadata](./openapi/hide-info-metadata.md)** - Exclude metadata from API reference documentation when you want cleaner, focused documentation presentation
 - **[API Governance](https://redocly.com/docs/cli/api-standards)** - Learn about API standards and governance practices for maintaining quality and consistency

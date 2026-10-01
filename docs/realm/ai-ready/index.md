@@ -20,12 +20,12 @@ For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 
 - **[Agent skills](../customization/agent-skills/index.md)** - Package task instructions that agents load on demand
 - **[llms.txt configuration](../config/seo.md#llmstxt-object)** - Set the file's title, description, and sections, or turn it off
-- **[MCP servers](../customization/mcp-server/index.md)** - Serve your documentation and APIs over the Model Context Protocol
+- **[Model Context Protocol server](../customization/mcp-server/index.md)** - Serve your documentation and APIs over the Model Context Protocol
 - **[x-mcp extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Control how API operations appear to MCP clients
 - **[Page actions](../config/navigation.md#pageaction-object)** - Copy or view any page as Markdown, ask ChatGPT or Claude about it, or connect an editor to your MCP server
 - **[WebMCP tools](../customization/webmcp/index.md)** - Publish tools to the AI agent in the reader's own browser, so it can search, read, and open your pages
 
 ## Resources
 
-- **[AI governance FAQ](../faq/ai-governance.md)** - Answers for security and compliance reviews of Redocly AI features
+- **[AI governance and security FAQ](../faq/ai-governance.md)** - Answers for security and compliance reviews of Redocly AI features
 - **[Tune search and SEO](../search-and-seo/index.md)** - Help people and search engines find your documentation

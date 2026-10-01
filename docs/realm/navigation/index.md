@@ -23,6 +23,7 @@ From simple link organization to advanced multi-product sites, you can configure
 ## Available navigation elements
 
 ### Core navigation
+
 - **[Navbar](../config/navbar.md)** - Top navigation bar with links, groups, and dropdowns
 - **[Sidebar](../config/sidebar.md)** - Left navigation panel (configure content with [sidebars.yaml](./sidebars.md))
 - **[Navigation tabs](./navigation-tabs.md)** - Second row of navigation that splits a sidebar into sections, each with its own tab
@@ -30,11 +31,13 @@ From simple link organization to advanced multi-product sites, you can configure
 - **[Search](../config/search.md)** - Site-wide search functionality with faceting capabilities
 
 ### Page navigation
+
 - **[Navigation buttons](../config/navigation.md)** - Previous/Next page navigation
 - **[Table of Contents (TOC)](../config/markdown.md#table-of-contents-object)** - Page-level heading navigation
 - **[Breadcrumbs](../config/breadcrumbs.md)** - Page hierarchy trail
 
 ### Advanced navigation
+
 - **[Multi-product picker](../config/products.md)** - Switch between different product documentation
 - **[Version picker](../config/version-picker.md)** - Navigate between documentation versions
 - **[Locale picker](../config/l10n.md)** - Switch between localized content
@@ -42,6 +45,7 @@ From simple link organization to advanced multi-product sites, you can configure
 ## Quick start examples
 
 ### Basic site navigation
+
 For a simple documentation site with standard navigation:
 
 ```yaml {% title="redocly.yaml" %}
@@ -70,6 +74,7 @@ search:
 ```
 
 ### Multi-product site
+
 For documentation covering multiple products or services:
 
 ```yaml {% title="redocly.yaml" %}
@@ -98,6 +103,7 @@ sidebar:
 ```
 
 ### Enterprise search setup
+
 For advanced search with faceting (Enterprise+ plans):
 
 ```yaml {% title="redocly.yaml" %}
@@ -118,10 +124,12 @@ search:
 ## Navigation patterns
 
 ### Landing page pattern
+
 For sites with a dedicated landing page, typically hide the sidebar on the landing page by not including it in a `sidebars.yaml` file.
 If you don't have a `sidebars.yaml` file, you can exclude it in front matter.
 
 In a Markdown file:
+
 ```yaml {% title="index.md" %}
 ---
 sidebar:
@@ -130,6 +138,7 @@ sidebar:
 ```
 
 In a TSX file:
+
 ```tsx {% title="index.page.tsx" %}
 export const frontmatter = {
   sidebar: {
@@ -139,6 +148,7 @@ export const frontmatter = {
 ```
 
 ### Documentation section pattern
+
 For traditional documentation with hierarchical navigation:
 
 ```treeview
@@ -156,6 +166,7 @@ docs/
 ```
 
 ### API documentation pattern
+
 For API-focused sites with reference and guides:
 
 ```yaml {% title="redocly.yaml" %}
@@ -181,18 +192,22 @@ catalogClassic:
 ## Configuration tips
 
 ### Responsive navigation
+
 All navigation elements are responsive by default.
 For mobile-optimized experiences:
+
 - Keep navbar items concise (5-7 top-level items max)
 - Use groups sparingly in navbar dropdowns
 - Consider shorter labels for mobile: `label: API Ref` instead of `label: API Reference`
 
 ### Performance considerations
+
 - **Search facets**: More facets mean more processing - use only necessary facets
 - **Sidebar depth**: Deep nesting can impact performance and UX
 - **External links**: Use `external: true` for links opening in new tabs
 
 ### Accessibility
+
 - Always provide meaningful `label` values for screen readers
 - Use descriptive link text instead of "click here" or "read more"
 - Maintain logical navigation hierarchy
@@ -224,7 +239,7 @@ See the [localization configuration](../config/l10n.md) for complete setup detai
 
 ## Resources
 
-- **[Front matter options](../config/front-matter-config.md)** - Page-specific navigation overrides
-- **[Sidebar file reference](./sidebars.md)** - Complete sidebars.yaml syntax
-- **[Branding and styling](../branding/index.md)** - Visual customization of navigation elements
-- **[Search in Realm](./search.md)** - Learn how Realm processes your content and serves search results
+- **[Front matter configuration options](../config/front-matter-config.md)** - Page-specific navigation overrides
+- **[Configure sidebars](./sidebars.md)** - Complete sidebars.yaml syntax
+- **[Style your site](../branding/index.md)** - Visual customization of navigation elements
+- **[Site search](./search.md)** - Learn how Realm processes your content and serves search results

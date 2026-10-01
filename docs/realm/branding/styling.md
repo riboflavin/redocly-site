@@ -397,7 +397,7 @@ Overriding CSS variables in the correct scope allows you to preserve the relatio
 
 ## Resources
 
-- **[Custom styles guide](./customize-styles.md)** - Customize your project's appearance using CSS variables and custom stylesheets for precise brand control
-- **[Color mode customization](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes
-- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its implementation using CSS variables
-- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling your documentation
+- **[Customize styles](./customize-styles.md)** - Customize your project's appearance using CSS variables and custom stylesheets for precise brand control
+- **[Customize color modes](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes
+- **[Color mode](./color-mode.md)** - Understand how the color mode feature works and its implementation using CSS variables
+- **[CSS variables](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling your documentation

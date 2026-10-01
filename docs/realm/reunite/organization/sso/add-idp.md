@@ -103,9 +103,9 @@ If they do not have SSO credentials, they lose access to the organization.
 ## Resources
 
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (early access on request)
-- **[Configure SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
-- **[Configure RBAC](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
+- **[Configure project SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
+- **[Control site access](../../../access/index.md)** - Limit user access to specific pages and features in your project and Reunite using role-based access control
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details
-- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider categories and their configuration options for both Reunite and redocly.yaml file setup
-- **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand the components and architecture of Redocly's role-based access control system
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider categories and their configuration options for both Reunite and redocly.yaml file setup
+- **[Role-based access control](../../../access/rbac.md)** - Understand the components and architecture of Redocly's role-based access control system
 - **[RBAC configuration reference](../../../config/access/rbac.md)** - Examples and configuration options for implementing RBAC in your redocly.yaml file with detailed setup instructions

@@ -493,7 +493,7 @@ The following screenshots show the styling rules applied:
 
 ## Resources
 
-- **[Color mode customization](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes and advanced CSS rules
-- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
-- **[Color mode concepts](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation
-- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for comprehensive styling customization
+- **[Customize color modes](./customize-color-modes.md)** - Create custom styling for light and dark modes with mode-specific color schemes and advanced CSS rules
+- **[Style your site](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
+- **[Color mode](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation
+- **[CSS variables](./css-variables/index.md)** - Complete dictionary of available CSS variables for comprehensive styling customization

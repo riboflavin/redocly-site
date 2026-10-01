@@ -58,7 +58,8 @@ Add your own content or use the following sample Markdown:
 The content can be a Markdown file with all the supported features of Markdoc, or a React file.
 It can also be an API description (such as an OpenAPI, GraphQL, or AsyncAPI description).
 
-Learn more about [Markdown in Redocly](../content/markdown.md) for all formatting options, or see [Use the editor](../reunite/project/use-editor.md) for details about the editor toolbar and features.
+For all formatting options, see the [Markdown guide](../content/markdown.md).
+For details about the editor toolbar and features, see [Use the editor](../reunite/project/use-editor.md).
 
 Now that you have added some content to your landing page, you can preview your project.
 
@@ -383,8 +384,8 @@ You can also commit your update to view it [in the preview build](#in-the-deploy
 
 ## Resources
 
-- **[Sidebars configuration](../navigation/sidebars.md)** - Configure `sidebars.yaml` with nested items and groups for custom navigation structure
-- **[CSS variables dictionary](../branding/css-variables/index.md)** - Complete reference for customizing colors, fonts, spacing, and visual styling
-- **[Configure Redocly](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
-- **[User profile menu](../reunite/user-profile-menu.md)** - Manage notification settings, Git provider connections, and Reunite appearance preferences
+- **[Configure sidebars](../navigation/sidebars.md)** - Configure `sidebars.yaml` with nested items and groups for custom navigation structure
+- **[CSS variables](../branding/css-variables/index.md)** - Complete reference for customizing colors, fonts, spacing, and visual styling
+- **[Configuration options](../config/index.md)** - All configuration options available in the `redocly.yaml` file for project customization
+- **[Reunite user profile menu](../reunite/user-profile-menu.md)** - Manage notification settings, Git provider connections, and Reunite appearance preferences
 - **[Markdown overview for technical writers](https://redocly.com/learn/markdoc)** - Learn Markdoc syntax for adding interactive elements to your documentation

@@ -42,5 +42,5 @@ In addition to the standard set, Redocly provides custom functions:
 
 ## Resources
 
-- **[Markdoc functions overview](./index.md)** - Learn about using built-in and custom functions for dynamic content manipulation and processing
-- **[Build custom Markdoc functions](../../customization/build-custom-function.md)** - Define and integrate your own custom functions for advanced content processing and dynamic features
+- **[Markdoc functions](./index.md)** - Learn about using built-in and custom functions for dynamic content manipulation and processing
+- **[Build Markdoc functions](../../customization/build-custom-function.md)** - Define and integrate your own custom functions for advanced content processing and dynamic features

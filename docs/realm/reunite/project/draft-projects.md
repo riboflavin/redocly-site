@@ -61,7 +61,7 @@ This makes draft mode useful for controlled review and internal validation befor
 Before you click **Go live**, review the following:
 
 - Who can view the project after you remove draft protection.
-- Whether you need to review or configure [access control](../../access/index.md) for the project.
+- Whether you need to review or configure [site access](../../access/index.md) for the project.
 - If your production branch and deployment settings are ready for a live deployment.
 - If your content, API descriptions, and custom domain settings are ready to reach external users.
 
@@ -114,5 +114,5 @@ The project switches to high-availability production scaling.
 - **[Deployments](./deployments.md)** - Track the new build after you click **Go live**
 - **[Manage projects](./manage-projects.md)** - Create, configure, and organize projects in Reunite
 - **[Branches and deployments](./branches-and-deployments.md)** - Configure production branches, branch deployments, and preview behavior
-- **[Access control](../../access/index.md)** - Understand authentication, authorization, roles, teams, and how they affect who can view your project and content
+- **[Control site access](../../access/index.md)** - Understand authentication, authorization, roles, teams, and how they affect who can view your project and content
 - **[Roles and permissions](../../access/roles.md)** - Learn how organization and project permissions affect access to project actions

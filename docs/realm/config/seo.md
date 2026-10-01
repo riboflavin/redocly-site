@@ -542,9 +542,9 @@ export const frontmatter = {
 
 ## Resources
 
-- **[Static assets](../customization/theme-static-assets.md)** - Host and manage static assets in Redocly projects for enhanced SEO performance and content delivery
-- **[Custom domain setup](../reunite/project/custom-domain.md)** - Personalize your URL to reflect your brand and improve SEO ranking with custom domain configuration
-- **[Front matter configuration](./front-matter-config.md)** - Configure SEO settings on individual pages using front matter for granular search optimization control
+- **[Theme static assets](../customization/theme-static-assets.md)** - Host and manage static assets in Redocly projects for enhanced SEO performance and content delivery
+- **[Set a custom domain](../reunite/project/custom-domain.md)** - Personalize your URL to reflect your brand and improve SEO ranking with custom domain configuration
+- **[Front matter configuration options](./front-matter-config.md)** - Configure SEO settings on individual pages using front matter for granular search optimization control
 - **[Response headers](./response-headers.md)** - Configure response headers for advanced search engine indexing control and optimization strategies
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Build LLM-friendly Markdoc tags](../customization/build-markdoc-tags.md)** - Learn how to create custom Markdoc tags that emit content to LLMs
+- **[Build Markdoc tags](../customization/build-markdoc-tags.md)** - Learn how to create custom Markdoc tags that emit content to LLMs

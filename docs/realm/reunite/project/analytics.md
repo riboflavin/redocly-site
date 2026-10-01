@@ -133,5 +133,5 @@ On this page you can:
 
 ## Resources
 
-- **[Reunite features overview](../reunite.md)** - Explore other collaborative content management and project workflow features available in Reunite
+- **[About Reunite](../reunite.md)** - Explore other collaborative content management and project workflow features available in Reunite
 - **[Analytics configuration reference](../../config/analytics/index.md)** - Configure third-party analytics tools like Google Analytics for comprehensive project usage tracking

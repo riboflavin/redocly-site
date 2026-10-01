@@ -183,6 +183,6 @@ To hide the product picker globally:
 
 ## Resources
 
-- **[Multi-product overview](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
-- **[Navigation elements](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
+- **[Multi-product](../navigation/multi-product.md)** - Conceptual guide to multi-product documentation including product switching and organization strategies
+- **[Build navigation](../navigation/index.md)** - Configure navigation elements and structures for multi-product sites with product-specific navigation
 - **[Style products individually](../branding/customize-styles.md#style-products-individually)** - Add custom styling to individual products

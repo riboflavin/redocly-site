@@ -103,6 +103,6 @@ A GitHub brand icon: {% icon name="brands github" /%}
 ## Resources
 
 - **[Navbar configuration](../../config/navbar.md)** - Add icons to navbar elements
-- **[Sidebar configuration](../../navigation/sidebars.md)** - Add icons to sidebar elements
+- **[Configure sidebars](../../navigation/sidebars.md)** - Add icons to sidebar elements
 - **[Footer configuration](../../config/footer.md)** - Add icons to footer links
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

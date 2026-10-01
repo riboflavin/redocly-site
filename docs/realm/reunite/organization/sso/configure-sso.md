@@ -32,9 +32,8 @@ Make sure you have:
 
 and either:
 
--  `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
--  [`requiresLogin`](../../../config/access/requires-login.md)
-
+- `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
+- [`requiresLogin`](../../../config/access/requires-login.md)
 
 ## Specify IdPs for a project
 
@@ -71,10 +70,10 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 
 ## Resources
 
-- **[Add an identity provider](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
-- **[Configure RBAC](../../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
+- **[Add identity providers](./add-idp.md)** - Add identity providers in Reunite for unified authentication across projects and Reunite login
+- **[Control site access](../../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
 - **[SSO configuration reference](../../../config/access/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
-- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
-- **[Role-based access control (RBAC) concepts](../../../access/rbac.md)** - Understand how RBAC works in projects and Reunite for comprehensive access management
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
+- **[Role-based access control](../../../access/rbac.md)** - Understand how RBAC works in projects and Reunite for comprehensive access management
 - **[RBAC configuration reference](../../../config/access/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 user provisioning for your SSO identity provider (early access on request)

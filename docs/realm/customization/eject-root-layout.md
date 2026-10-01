@@ -72,5 +72,5 @@ export function RootLayout(props) {
 
 ## Resources
 
-- **[Component ejection guide](./eject-components/index.md)** - Learn the fundamentals of ejecting and customizing built-in components before tackling root layout customization
-- **[Customization](./index.md)** - Discover customizable components and customization options for your project
+- **[Eject components](./eject-components/index.md)** - Learn the fundamentals of ejecting and customizing built-in components before tackling root layout customization
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

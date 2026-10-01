@@ -267,8 +267,8 @@ switchColorMode('dark'); // sets dark mode if supported
 
 ## Resources
 
-- **[Custom styles guide](./customize-styles.md)** - Learn to customize your documentation's appearance using CSS variables and custom stylesheets for precise brand control
-- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of CSS variables available for color mode customization and styling
-- **[Branding overview](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
-- **[Component ejection guide](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components like ColorModeIcon for advanced color mode features
+- **[Customize styles](./customize-styles.md)** - Learn to customize your documentation's appearance using CSS variables and custom stylesheets for precise brand control
+- **[CSS variables](./css-variables/index.md)** - Complete dictionary of CSS variables available for color mode customization and styling
+- **[Style your site](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component ejection
+- **[Eject components](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components like ColorModeIcon for advanced color mode features
 - **[Color mode configuration](../config/color-mode.md)** - Configuration reference for setting up color modes, default modes, and mode-specific options

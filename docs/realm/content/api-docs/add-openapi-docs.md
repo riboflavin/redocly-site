@@ -73,7 +73,7 @@ For all available options, see [Sidebar configuration](../../navigation/sidebars
 
 ## Resources
 
-- **[Sidebar configuration](../../navigation/sidebars.md)** - Organize and customize the sidebar navigation for your API references and other content
+- **[Configure sidebars](../../navigation/sidebars.md)** - Organize and customize the sidebar navigation for your API references and other content
 - **[Navbar configuration](../../config/navbar.md)** - Add top-level links to your API references and other pages
 - **[API catalog configuration](../../config/catalog-classic.md)** - Showcase multiple REST, GraphQL, and AsyncAPI descriptions together in a catalog
 - **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features used in reference documentation

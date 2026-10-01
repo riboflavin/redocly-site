@@ -36,6 +36,6 @@ To download the security reports:
 
 ## Resources
 
-- **[Manage organizations](manage-orgs.md)** - Set up the details and manage your Redocly organization
-- **[Reunite features](../reunite.md)** - Explore Reunite's collaborative content management and project workflow capabilities
-- **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control
+- **[Manage your organization](manage-orgs.md)** - Set up the details and manage your Redocly organization
+- **[About Reunite](../reunite.md)** - Explore Reunite's collaborative content management and project workflow capabilities
+- **[Manage teams](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control

@@ -230,5 +230,5 @@ When info is defined in multiple places, they merge with this priority (highest 
 
 ## Resources
 
-- **[Add GraphQL documentation](../../content/api-docs/add-graphql-docs.md)** - Add GraphQL schemas to your project and configure documentation
+- **[Add GraphQL API descriptions](../../content/api-docs/add-graphql-docs.md)** - Add GraphQL schemas to your project and configure documentation
 - **[GraphQL configuration reference](./index.md)** - Complete reference for all GraphQL configuration options

@@ -1,4 +1,45 @@
 '@redocly/realm':
+  0.138.0-next.6:
+    timestamp: 1790844100000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+    dependencies: {}
+  0.138.0-next.5:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - |-
+          Added a "Link to this section" tooltip and hover, pressed, and current states to the link icon next to headings and properties in API docs.
+          A click on the icon scrolls smoothly to the section and leaves a gap below the header.
+        - Improved the **Expand all** and **Collapse all** controls in API reference schema sections.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Fixed an issue in OpenAPI docs where `label`, `icon`, and `badges` from `sidebars.yaml` were not applied to the API overview sidebar item.
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+        - >-
+          Fixed an issue where the `openapi-code-sample` tag omitted the authentication line when the API description declared `security` at the root
+          instead of on the operation.
+        - >-
+          Fixed an issue where the link checker reported links to the `/mcp` and `/mcp-public` MCP server setup pages as broken when those pages were
+          served.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - Fixed an issue where a React page rendered blank if its page component was wrapped in `React.memo` or `forwardRef`.
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.4
+      '@redocly/theme': 0.70.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.0
   0.138.0-next.4:
     timestamp: 1790595002000
     changes:
@@ -7611,6 +7652,29 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.6:
+    timestamp: 1790844100000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+    dependencies: {}
+  0.138.0-next.5:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+        - >-
+          Fixed an issue where the link checker reported links to the `/mcp` and `/mcp-public` MCP server setup pages as broken when those pages were
+          served.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.4
+      '@redocly/theme': 0.70.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.0
   0.138.0-next.4:
     timestamp: 1790595002000
     changes:
@@ -14098,6 +14162,30 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.6:
+    timestamp: 1790844100000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+    dependencies: {}
+  0.138.0-next.5:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+        - >-
+          Fixed an issue where the link checker reported links to the `/mcp` and `/mcp-public` MCP server setup pages as broken when those pages were
+          served.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed an issue where a React page rendered blank if its page component was wrapped in `React.memo` or `forwardRef`.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.4
+      '@redocly/theme': 0.70.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.0
   0.138.0-next.4:
     timestamp: 1790595002000
     changes:
@@ -20580,6 +20668,46 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.6:
+    timestamp: 1790844100000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+    dependencies: {}
+  0.138.0-next.5:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - |-
+          Added a "Link to this section" tooltip and hover, pressed, and current states to the link icon next to headings and properties in API docs.
+          A click on the icon scrolls smoothly to the section and leaves a gap below the header.
+        - Improved the **Expand all** and **Collapse all** controls in API reference schema sections.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Fixed an issue in OpenAPI docs where `label`, `icon`, and `badges` from `sidebars.yaml` were not applied to the API overview sidebar item.
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+        - >-
+          Fixed an issue where the `openapi-code-sample` tag omitted the authentication line when the API description declared `security` at the root
+          instead of on the operation.
+        - >-
+          Fixed an issue where the link checker reported links to the `/mcp` and `/mcp-public` MCP server setup pages as broken when those pages were
+          served.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.4
+      '@redocly/theme': 0.70.0-next.4
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.0
   0.138.0-next.4:
     timestamp: 1790595002000
     changes:
@@ -27251,6 +27379,17 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.4:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - |-
+          Added a "Link to this section" tooltip and hover, pressed, and current states to the link icon next to headings and properties in API docs.
+          A click on the icon scrolls smoothly to the section and leaves a gap below the header.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+    dependencies: {}
   0.70.0-next.3:
     timestamp: 1790356272000
     changes:
@@ -31421,6 +31560,29 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.4:
+    timestamp: 1790838154000
+    changes:
+      minor:
+        - |-
+          Added a "Link to this section" tooltip and hover, pressed, and current states to the link icon next to headings and properties in API docs.
+          A click on the icon scrolls smoothly to the section and leaves a gap below the header.
+        - Improved the **Expand all** and **Collapse all** controls in API reference schema sections.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+      patch:
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+        - >-
+          Fixed an issue where the `openapi-code-sample` tag omitted the authentication line when the API description declared `security` at the root
+          instead of on the operation.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.4
+      '@redocly/replay': 0.29.0-next.4
   0.3.0-next.3:
     timestamp: 1790356272000
     changes:
@@ -31815,6 +31977,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.12.0-next.0:
+    timestamp: 1790838154000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.55.0`.
+    dependencies: {}
   0.11.0:
     timestamp: 1789472140000
     changes:
@@ -32903,6 +33072,27 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.6:
+    timestamp: 1790844100000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.6
+      '@redocly/redoc': 0.138.0-next.6
+      '@redocly/redoc-revel': 0.138.0-next.6
+      '@redocly/redoc-reef': 0.138.0-next.6
+  1.21.0-next.5:
+    timestamp: 1790838154000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.5
+      '@redocly/redoc': 0.138.0-next.5
+      '@redocly/redoc-revel': 0.138.0-next.5
+      '@redocly/redoc-reef': 0.138.0-next.5
+      '@redocly/theme': 0.70.0-next.4
   1.21.0-next.4:
     timestamp: 1790595002000
     changes:
@@ -38737,6 +38927,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.23.0-next.0:
+    timestamp: 1790838154000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.12.0-next.0
   0.22.0:
     timestamp: 1789472140000
     changes:
@@ -41919,6 +42116,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.4:
+    timestamp: 1790838154000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.4
   0.29.0-next.3:
     timestamp: 1790356272000
     changes:
@@ -44513,6 +44720,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.4:
+    timestamp: 1790838154000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.4
   0.21.0-next.3:
     timestamp: 1790356272000
     changes:
@@ -55963,6 +56177,13 @@ reunite:
         - Improved the pull request code diff in Reunite with syntax highlighting, expandable hidden lines, and a refreshed UI.
       patch:
         - Fixed secondary text in Reunite to use consistent styling across light and dark themes.
+    dependencies: {}
+  v2026-10-01.2:
+    timestamp: 1790863298000
+    changes:
+      minor: []
+      patch:
+        - Fixed SCIM group sync in Reunite removing members from other teams when an identity provider replaced a group's member list.
     dependencies: {}
 replay:
   0.0.2:

@@ -242,5 +242,5 @@ After you publish the updated project, the listed API description files are excl
 
 - **[Add OpenAPI descriptions](../../content/api-docs/add-openapi-docs.md)** - Step-by-step guide to add OpenAPI descriptions to your project for scorecard evaluation and documentation
 - **[Classic catalog configuration reference](../../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
-- **[Lint APIs](./lint.md)** - Understand the Lint deployment step, what scorecards display, how to access reports, and their role in API quality management
+- **[API linting](./lint.md)** - Understand the Lint deployment step, what scorecards display, how to access reports, and their role in API quality management
 - **[Classic scorecard configuration reference](../../config/scorecard-classic.md)** - Complete reference for all `scorecardClassic` configuration options, rulesets, and customization settings

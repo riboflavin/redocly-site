@@ -278,7 +278,7 @@ The **More actions** icon on the right side of each tabs header provides group-l
 
 ## Resources
 
-- **[Reunite](../reunite.md)** - Learn about Reunite's features
+- **[About Reunite](../reunite.md)** - Learn about Reunite's features
 - **[Reunite user profile menu](../user-profile-menu.md)** - Step-by-step instructions setting up notifications, color mode, and a Git provider account
 - **[Use the Webview](./use-webview.md)** - View live previews of your content changes while editing for immediate visual feedback
 - **[Use the editor](./use-editor.md)** - Learn to edit content in Reunite's integrated editor with syntax highlighting and collaborative features

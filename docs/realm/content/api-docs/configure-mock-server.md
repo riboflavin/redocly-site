@@ -105,6 +105,6 @@ The `position` property controls _where_ the mock server is located on the list 
 ## Resources
 
 - **[Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay)** - Learn about the interactive API testing features and capabilities used in API reference documentation
-- **[Add OpenAPI reference docs](./add-openapi-docs.md)** - Set up API documentation in your project
+- **[Add OpenAPI descriptions](./add-openapi-docs.md)** - Set up API documentation in your project
 - **[API catalog configuration](../../config/catalog-classic.md)** - Configure catalogs to organize multiple API descriptions with better user experience and navigation
 - **[Mock server configuration reference](../../config/mock-server.md)** - Complete configuration options and parameters for mock server setup and customization

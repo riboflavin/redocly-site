@@ -120,7 +120,7 @@ Build serverless functions to extend your project with custom APIs and data proc
 ## Resources
 
 - **[API functions reference](./api-functions/api-functions-reference.md)** - Complete guide to available serverless function capabilities for extending your project with custom APIs
-- **[Built-in components library](./react-components/list/index.md)** - Browse and learn to use Redocly's built-in React components in your custom pages and templates
-- **[Component ejection tutorial](./eject-components/eject-components-tutorial/index.md)** - Step-by-step hands-on guide to ejecting and customizing built-in components
-- **[Attribute resolvers guide](./markdoc-attribute-resolvers/index.md)** - Advanced Markdoc customization using attribute resolvers for tag processing and transformation
+- **[Built-in React components](./react-components/list/index.md)** - Browse and learn to use Redocly's built-in React components in your custom pages and templates
+- **[Eject components tutorial](./eject-components/eject-components-tutorial/index.md)** - Step-by-step hands-on guide to ejecting and customizing built-in components
+- **[Markdoc attribute resolvers](./markdoc-attribute-resolvers/index.md)** - Advanced Markdoc customization using attribute resolvers for tag processing and transformation
 

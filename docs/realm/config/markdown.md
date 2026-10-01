@@ -204,8 +204,8 @@ Amazing markdown content...
 
 ## Resources
 
-- **[Override a page template](../customization/custom-page-templates.md)** - Create custom page templates and assign them per file, folder, or glob pattern
+- **[Customize page templates](../customization/custom-page-templates.md)** - Create custom page templates and assign them per file, folder, or glob pattern
 - **[Breadcrumbs configuration](./breadcrumbs.md)** - Configure page breadcrumbs to improve navigation and user orientation within your documentation
 - **[Links configuration](./links.md)** - Configure link behavior and styling for consistent navigation and external link handling
-- **[Front matter configuration](./front-matter-config.md)** - Use front matter to configure Markdown options on individual pages for granular control
+- **[Front matter configuration options](./front-matter-config.md)** - Use front matter to configure Markdown options on individual pages for granular control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation customization

@@ -19,4 +19,4 @@ Feedback collects reactions and comments directly on your pages, so readers can 
 ## Resources
 
 - **[Tune search and SEO](../search-and-seo/index.md)** - Act on search terms readers use before they reach your site
-- **[Publish, sync, and collaborate](../reunite/project/manage-projects.md)** - Turn what you learn into changes through the project workflow
+- **[Publish, sync, and collaborate](../publish/index.md)** - Turn what you learn into changes through the project workflow

@@ -53,7 +53,7 @@ To push changes to Redocly:
 
 ## Resources
 
-- **[Adding remote content types](./index.md)** - Explore different methods for integrating various external content sources into your Reunite projects
-- **[Remote content concepts](./remote-content.md)** - Understand remote content fundamentals including sync mechanisms, folder paths, and auto-merge capabilities
-- **[GitHub Action configuration](./reunite-push-action.md)** - Configure the Reunite push GitHub Action for automated content synchronization and deployment workflows
+- **[Add remote files with one-way sync](./index.md)** - Explore different methods for integrating various external content sources into your Reunite projects
+- **[Remote content](./remote-content.md)** - Understand remote content fundamentals including sync mechanisms, folder paths, and auto-merge capabilities
+- **[Push remote content using GitHub Actions](./reunite-push-action.md)** - Configure the Reunite push GitHub Action for automated content synchronization and deployment workflows
 - **[CLI push command](https://redocly.com/docs/cli/commands/push)** - Complete reference for the Redocly CLI push command with usage examples and configuration options

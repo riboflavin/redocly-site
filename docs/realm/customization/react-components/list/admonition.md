@@ -56,4 +56,4 @@ import { Admonition } from '@redocly/theme/components/Admonition/Admonition';
 
 ## Resources
 
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Built-in React components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects

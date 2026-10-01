@@ -131,5 +131,5 @@ seo:
 ## Resources
 
 - **[seo](../config/seo.md)** - Explore configuration options that optimize your content for search engines
-- **[Front matter configuration](../config/front-matter-config.md)** - Configure information for the `<head>` tag for specific pages
+- **[Front matter configuration options](../config/front-matter-config.md)** - Configure information for the `<head>` tag for specific pages
 - **[SEO best practices for documentation](https://redocly.com/blog/seo-best-practices-documentation)** - Read Redocly's blog post about making your project work better with search engines

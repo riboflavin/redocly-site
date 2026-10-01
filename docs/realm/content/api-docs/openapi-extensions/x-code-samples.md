@@ -96,4 +96,4 @@ paths:
 - **[Show extensions configuration](../../../config/openapi/show-extensions.md)** - Control which extensions are included in your API reference documentation for optimal presentation
 - **[OpenAPI configuration settings](../../../config/openapi/index.md)** - Complete reference for all available OpenAPI configuration options and customization settings
 - **[Supported OpenAPI extensions](./index.md)** - Complete list of all OpenAPI extensions supported by Redocly for enhanced API documentation
-- **[Configure environment variables](../../../customization/configure-request-values.md)** - Set up environment variable placeholders for dynamic code samples and request customization
+- **[Configure request values](../../../customization/configure-request-values.md)** - Set up environment variable placeholders for dynamic code samples and request customization

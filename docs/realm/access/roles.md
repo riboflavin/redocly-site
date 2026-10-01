@@ -12,7 +12,7 @@ plans:
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
-Roles and permissions are used to configure [role-based access control (RBAC)](./rbac.md) for your projects.
+Roles and permissions are used to configure [role-based access control](./rbac.md) for your projects.
 
 A permission is a key that grants access to some piece of functionality.
 A role is a unique set of permissions.
@@ -503,8 +503,8 @@ When users become members of a team, they are granted access based on the roles 
 
 ## Resources
 
-- **[RBAC concepts](./rbac.md)** - Understand the different components involved in Redocly's role-based access control system and how they work together
-- **[Teams and users management](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
-- **[RBAC configuration guide](./index.md)** - Step-by-step instructions for implementing RBAC with examples for projects, pages, and navigation
+- **[Role-based access control](./rbac.md)** - Understand the different components involved in Redocly's role-based access control system and how they work together
+- **[Manage teams](../reunite/organization/teams.md)** - Configure teams and manage user assignments, including adding users to multiple teams for flexible access control
+- **[Control site access](./index.md)** - Step-by-step instructions for implementing RBAC with examples for projects, pages, and navigation
 - **[RBAC configuration reference](../config/access/rbac.md)** - Complete configuration details and options for role-based access control implementation
 - **[Link duplicate users](../reunite/organization/manage-people.md#link-duplicate-users)** - Resolve duplicate user entries by linking committer accounts to their Reunite user accounts

@@ -142,7 +142,7 @@ If you are using [RBAC](../../access/rbac.md), you can grant permissions to the 
 
 {% admonition type="warning" name="Add team first" %}
 You must add your team **before** you can complete these steps.
-See [Teams](./teams.md#create-a-new-team) for more information.
+See [Manage teams](./teams.md#create-a-new-team) for more information.
 {% /admonition %}
 
 To add a person to a team:
@@ -185,6 +185,6 @@ To link duplicate users:
 
 ## Resources
 
-- **[Add an identity provider](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
-- **[Teams and users](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
+- **[Add identity providers](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
+- **[Manage teams](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
 - **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects

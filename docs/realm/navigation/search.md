@@ -9,7 +9,7 @@ plans:
   - Enterprise
   - Enterprise+
 ---
-# Configure search
+# Site search
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
@@ -53,6 +53,7 @@ Both FlexSearch and Typesense have been configured to optimize the results for A
 - {% icon name="check" /%}
 
 ---
+
 - Group filters
 - label only
 - labels with counts
@@ -88,4 +89,4 @@ It improves the accuracy of document discovery based on primary subject matter r
 ## Resources
 
 - **[search](../config/search.md)** - Configure search in your project
-- **[Navigation](./index.md)** - Explore navigation elements in Realm
+- **[Build navigation](./index.md)** - Explore navigation elements in Realm

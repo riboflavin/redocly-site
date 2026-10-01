@@ -211,5 +211,5 @@ navigation:
 
 ## Resources
 
-- **[Front matter configuration](./front-matter-config.md)** - Configure navigation button options on individual pages using front matter for granular control
+- **[Front matter configuration options](./front-matter-config.md)** - Configure navigation button options on individual pages using front matter for granular control
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

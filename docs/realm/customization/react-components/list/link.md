@@ -87,4 +87,4 @@ import { Link } from '@redocly/theme/components/Link/Link';
 
 ## Resources
 
-- **[List of customizable components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects
+- **[Built-in React components](./index.md)** - Browse all available built-in React components that you can customize and extend in your projects

@@ -19,7 +19,7 @@ This can be useful if you want to customize how certain UI elements look or chan
 Make sure you have the following:
 
 - a Redocly project with a `l10n` folder containing your translated content organized into locales.
-  See [l10n configuration](../../config/l10n.md) and [Add translated content](./localize-content.md) for more information.
+  See [l10n configuration](../../config/l10n.md) and [Localize content](./localize-content.md) for more information.
 - a `@theme/styles.css` file in your project.
   See [custom styles](../../branding/customize-styles.md) for more information.
 
@@ -50,5 +50,5 @@ l10n:
 ## Resources
 
 - **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project
-- **[Localize content files](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure
-- **[Custom styles guide](../../branding/customize-styles.md)** - Learn to customize your project's appearance using CSS variables and locale-specific styling techniques
+- **[Localize content](./localize-content.md)** - Translate your documentation content into multiple languages with proper file organization and structure
+- **[Customize styles](../../branding/customize-styles.md)** - Learn to customize your project's appearance using CSS variables and locale-specific styling techniques

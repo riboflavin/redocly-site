@@ -179,5 +179,5 @@ After merging, the updates appear in the main branch and trigger a deployment to
 ## Resources
 
 - **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with collaborative editing features and real-time preview capabilities
-- **[Reunite platform](../../reunite.md)** - Understand Redocly's cloud platform features for collaborative content management and workflow automation
+- **[About Reunite](../../reunite.md)** - Understand Redocly's cloud platform features for collaborative content management and workflow automation
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure deployment settings to allow publishing builds despite broken links or Markdoc syntax issues

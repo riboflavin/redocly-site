@@ -130,10 +130,9 @@ You can also [set a custom domain](./project/custom-domain.md), [add environment
 
 ## Resources
 
-- **[Feedback mechanism configuration](../config/feedback.md)** - Configure user feedback collection in your redocly.yaml file and view feedback data within Reunite
-- **[Project management](./project/manage-projects.md)** - Explore different ways to organize, configure, and manage projects in Reunite for optimal workflow
-- **[Pull request workflow](./project/pull-request/open-pull-request.md)** - Complete guide to pull request creation, review, and management processes in Reunite
-- **[Remote content integration](./project/remote-content/remote-content.md)** - Learn about remote content features including mount folder paths, auto-sync, and auto-merge capabilities
+- **[Feedback configuration](../config/feedback.md)** - Configure user feedback collection in your redocly.yaml file and view feedback data within Reunite
+- **[Manage projects](./project/manage-projects.md)** - Explore different ways to organize, configure, and manage projects in Reunite for optimal workflow
+- **[Open a pull request in Reunite](./project/pull-request/open-pull-request.md)** - Complete guide to pull request creation, review, and management processes in Reunite
+- **[Remote content](./project/remote-content/remote-content.md)** - Learn about remote content features including mount folder paths, auto-sync, and auto-merge capabilities
 - **[Reunite configuration reference](../config/reunite.md)** - Configure Reunite deployment settings including options to deploy regardless of link checker or Markdoc errors
-- **[Feedback mechanisms guide](../config/feedback.md)** - Choose and configure different types of user feedback collection mechanisms for your documentation projects
-- **[Project user interface](./project/project-ui.md)** - Reference the user interface elements in Reunite's project workspace
+- **[Reunite project interface](./project/project-ui.md)** - Reference the user interface elements in Reunite's project workspace

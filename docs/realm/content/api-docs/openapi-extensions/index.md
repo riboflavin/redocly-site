@@ -32,4 +32,4 @@ Additionally, the following extensions are supported for the older OpenAPI 2.x f
 
 ## Resources
 
-- **[Add OpenAPI definitions to your project](../add-openapi-docs.md)** - Complete guide for integrating OpenAPI documentation into your Redocly project with extensions support
+- **[Add OpenAPI descriptions](../add-openapi-docs.md)** - Complete guide for integrating OpenAPI documentation into your Redocly project with extensions support

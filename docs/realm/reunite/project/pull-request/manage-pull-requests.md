@@ -147,6 +147,6 @@ In that case, select **Invite member** if you have the [permissions to invite us
 
 ## Resources
 
-- **[Using the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's integrated collaborative editing environment
-- **[Reunite platform features](../../reunite.md)** - Explore Reunite's comprehensive collaborative content management and workflow automation capabilities
+- **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's integrated collaborative editing environment
+- **[About Reunite](../../reunite.md)** - Explore Reunite's comprehensive collaborative content management and workflow automation capabilities
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure deployment options to publish builds even when they contain broken links or validation issues

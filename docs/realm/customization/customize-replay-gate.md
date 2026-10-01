@@ -852,8 +852,8 @@ Ejecting `ReplayGate`, `ReplayTopBarActions`, and `ReplaySecuritySchemeActions` 
 
 ## Resources
 
-- **[Configure Replay with dynamic API data](./configure-dynamic-replay-values.md)** - Fetch tokens and other request values dynamically using the `useConfigureReplay` hook
+- **[Configure dynamic API data for Replay](./configure-dynamic-replay-values.md)** - Fetch tokens and other request values dynamically using the `useConfigureReplay` hook
 - **[Configure request values](./configure-request-values.md)** - Set static request values for headers, parameters, and security details in your OpenAPI descriptions
 - **[API functions reference](./api-functions/api-functions-reference.md)** - Function signature, routing, context helpers, and access control
-- **[Component ejection guide](./eject-components/index.md)** - Learn to eject and customize built-in components
-- **[Customization](./index.md)** - Discover all customization options for your project
+- **[Eject components](./eject-components/index.md)** - Learn to eject and customize built-in components
+- **[Extend with code](./index.md)** - Discover all customization options for your project

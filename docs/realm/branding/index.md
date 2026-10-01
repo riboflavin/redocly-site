@@ -15,14 +15,17 @@ Customize your project's appearance using configuration options in your `redocly
 No CSS knowledge required.
 
 ### Logo and branding
+
 - **Logo configuration** - Set logos for different color modes using the [`logo`](../config/logo.md) configuration
 - **Favicon** - Configure your site's favicon and browser tab appearance
 
 ### Colors and themes
+
 - **Color modes** - Enable light/dark mode switching using [`colorMode`](../config/color-mode.md) configuration
 - **Basic color customization** - Set brand colors using CSS variables
 
 ### Typography
+
 - **Font selection** - Choose from built-in font families using configuration options
 - **Font loading** - Configure web fonts and font display settings
 
@@ -34,11 +37,13 @@ Customize your project's appearance using CSS variables and custom stylesheets.
 Requires basic to intermediate CSS knowledge.
 
 ### Custom styling
+
 - **CSS variables** - Override [CSS variables](./css-variables/index.md) to customize colors, spacing, typography, and component appearance
 - **Custom stylesheets** - Add custom CSS rules in your `@theme/styles.css` file using the [custom styling guide](./styling.md)
 - **Color mode styling** - Create custom styling for light and dark modes
 
 ### Component styling
+
 - **Typography customization** - [Customize fonts](./customize-fonts.md) with web fonts, custom font stacks, and advanced typography
 - **Color mode customization** - [Customize color modes](./customize-color-modes.md) with custom color schemes and mode-specific styling
 - **Table styling** - [Customize table appearance](./customize-tables.md) with custom borders, colors, and layouts
@@ -109,9 +114,11 @@ For complex customization needs that go beyond CSS styling.
 Requires React and/or advanced web development knowledge.
 
 ### Component customization
+
 - **Component ejection** - [Eject and customize components](../customization/eject-components/index.md) like navbar, footer, search, or 404 pages for extensive brand customization
 
 ### Custom functionality
+
 - **React pages** - [Create React pages](../customization/create-react-page.md) for complex layouts, interactive content, or custom landing pages
 - **Custom page templates** - [Create custom page templates](../customization/custom-page-templates.md) for specific page layouts like blog posts or specialized content types
 - **Markdoc tags** - [Build custom Markdoc tags](../customization/build-markdoc-tags.md) to add custom functionality and interactive components to your content
@@ -145,6 +152,6 @@ You can always start simple and add more advanced customization as your needs gr
 
 ## Resources
 
-- **[CSS variables reference](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling
-- **[Configuration reference](../config/index.md)** - All available configuration options for easy customization
-- **[Component ejection guide](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components
+- **[CSS variables](./css-variables/index.md)** - Complete dictionary of available CSS variables for styling
+- **[Configuration options](../config/index.md)** - All available configuration options for easy customization
+- **[Eject components](../customization/eject-components/index.md)** - Technical guide to ejecting and customizing components

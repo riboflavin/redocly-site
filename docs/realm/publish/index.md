@@ -33,7 +33,7 @@ Use Reunite to edit your project, collaborate with your team through pull reques
 
 - [Previews](../reunite/project/use-previews.md): See how updates to a branch would look when applied to the production deployment.
 
-## Git hosting
+## Connect a Git provider
 
 - [Connect a Git provider](../reunite/project/connect-git/connect-git-provider.md): Connect your Redocly project to a Git provider to keep the two in sync.
   - [GitHub](../reunite/project/connect-git/github.md): Store your project files in a repository on GitHub.
@@ -55,14 +55,14 @@ Use Reunite to edit your project, collaborate with your team through pull reques
   - [Edit content folder](../reunite/project/remote-content/edit-remote-content-folder.md): Edit settings for remote content folders and files after creation.
   - [Remote content automation](../reunite/project/remote-content/verify-remote-content.md): Understand the verification processes Reunite runs on remote content changes.
 
-## Project deployment
+## Deploy your project
 
 - [Deploy your project](./project-deployment/index.md): Control which branches deploy, review deployment history, and enforce API quality gates.
   - [Branches and deployments](../reunite/project/branches-and-deployments.md): Control which branches Reunite deploys and how it handles preview deployments.
   - [Deployments](../reunite/project/deployments.md): View the history of deployments in your project.
   - [API linting](../reunite/project/lint.md): Understand the Lint deployment step and how scorecard reports surface API validation results.
   - [Configure classic scorecard](../reunite/project/configure-classic-scorecard.md): Add built-in or custom rulesets to evaluate API description files against your quality standards.
-  - [Ignore link checker](../reunite/project/ignore-link-checker.md): Publish deployments with broken links by overriding the default link checker behavior.
+  - [Ignore the link checker](../reunite/project/ignore-link-checker.md): Publish deployments with broken links by overriding the default link checker behavior.
 
 ## Respect Monitoring
 
@@ -73,7 +73,7 @@ Use Reunite to edit your project, collaborate with your team through pull reques
 ## Project configuration
 
 - [Manage projects](../reunite/project/manage-projects.md): Create, switch between, and manage the settings of your Reunite projects.
-- [Upgrade product version](../get-started/upgrade-realm-version.md): Update your project when new versions are released and trigger a new build.
+- [Upgrade your product version](../get-started/upgrade-realm-version.md): Update your project when new versions are released and trigger a new build.
 - [Set custom domain](../reunite/project/custom-domain.md): Configure a custom domain for your project and optionally serve it from a subdirectory path.
 - [Use environment variables](../reunite/project/env-variables.md): Define environment variables to use in `redocly.yaml` and in Markdown and React pages.
 

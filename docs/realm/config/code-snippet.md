@@ -277,7 +277,7 @@ For complete details, refer to the [Translation Keys Reference](../content/local
 
 ## Resources
 
-- **[Code-snippet Markdoc tag](../content/markdoc-tags/code-snippet.md)** - Display code snippets loaded from local files with syntax highlighting and interactive features
+- **[Code snippet tag](../content/markdoc-tags/code-snippet.md)** - Display code snippets loaded from local files with syntax highlighting and interactive features
 - **[Feedback configuration](./feedback.md)** - Configure the feedback mechanism that appears on all pages and code snippets for user input collection
-- **[Front matter configuration](./front-matter-config.md)** - Configure code snippet behavior and appearance on individual pages using front matter settings
+- **[Front matter configuration options](./front-matter-config.md)** - Configure code snippet behavior and appearance on individual pages using front matter settings
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

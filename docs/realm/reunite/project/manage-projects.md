@@ -124,7 +124,7 @@ It also covers how to serve your project from a subdomain.
 
 ### Manage environment variables
 
-To learn how to add and utilize environment variables in your project, see [Environment variables](./env-variables.md).
+To learn how to add and utilize environment variables in your project, see [Use environment variables](./env-variables.md).
 
 ### Download your project files
 
@@ -155,5 +155,5 @@ To learn how to change which branches Reunite deploys and how it handles preview
 
 - **[Configure RBAC](../../config/access/rbac.md)** - Set up role-based access control for granular project and content access permissions
 - **[Connect a Git provider](./connect-git/connect-git-provider.md)** - Integrate your projects with Git repositories from various providers for version control and collaboration
-- **[Remote content](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
+- **[Add remote files with one-way sync](./remote-content/index.md)** - Integrate and synchronize content from external repositories and sources into your Reunite projects
 - **[Roles and permissions](../../access/roles.md)** - Understand user roles and permission levels available for project access control and team collaboration

@@ -325,4 +325,4 @@ ssoDirect:
 ## Resources
 
 - **[RBAC configuration reference](./access/rbac.md)** - Complete configuration options for role-based access control integration with direct SSO authentication
-- **[Role-based access control (RBAC) concepts](../access/rbac.md)** - Understand RBAC fundamentals and how they work with direct SSO for comprehensive access management
+- **[Role-based access control](../access/rbac.md)** - Understand RBAC fundamentals and how they work with direct SSO for comprehensive access management

@@ -58,7 +58,7 @@ Add more pages to create a complete site.
 
 {% admonition type="info" name="Supported formats" %}
 These examples use Markdown, but Markdoc is also supported.
-Learn more about [Markdown in Redocly](../content/markdown.md) for all available formatting options and Markdoc features.
+See the [Markdown guide](../content/markdown.md) for all available formatting options and Markdoc features.
 {% /admonition %}
 
 Create files named `style-guide.md` and `about.md`.
@@ -250,7 +250,7 @@ Publish your content to Redocly when you're satisfied with the results:
 
 - **[Multi-sidebar example project](https://github.com/Redocly/warp-multi-sidebars)** - Complete template project demonstrating API documentation with multiple sidebars, guides, tutorials, and advanced navigation
 - **[Configuration options](../config/index.md)** - Complete reference for all `redocly.yaml` configuration settings and customization options
-- **[Working with sidebars](../navigation/sidebars.md)** - Advanced sidebar configuration including nested navigation, groups, and custom labels
-- **[CSS variables reference](../branding/css-variables/index.md)** - Complete dictionary of available CSS variables for styling customization
+- **[Configure sidebars](../navigation/sidebars.md)** - Advanced sidebar configuration including nested navigation, groups, and custom labels
+- **[CSS variables](../branding/css-variables/index.md)** - Complete dictionary of available CSS variables for styling customization
 - **[OpenAPI configuration](../config/openapi/index.md)** - Configure API reference documentation rendering and behavior options
-- **[Connect Git provider](../reunite/project/connect-git/connect-git-provider.md)** - Set up automatic builds and deployment from your Git repository
+- **[Connect a Git provider](../reunite/project/connect-git/connect-git-provider.md)** - Set up automatic builds and deployment from your Git repository

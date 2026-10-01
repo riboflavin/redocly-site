@@ -43,5 +43,5 @@ After you enter the connection details in Redocly, a pull request to merge your 
 
 ## Resources
 
-- **[Adding remote content types](./index.md)** - Explore guides for integrating various remote content sources including Git repositories, URLs, and other external systems
-- **[Remote content concepts](./remote-content.md)** - Understand remote content fundamentals including URL-based sync, verification processes, and integration capabilities
+- **[Add remote files with one-way sync](./index.md)** - Explore guides for integrating various remote content sources including Git repositories, URLs, and other external systems
+- **[Remote content](./remote-content.md)** - Understand remote content fundamentals including URL-based sync, verification processes, and integration capabilities

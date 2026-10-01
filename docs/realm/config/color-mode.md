@@ -104,6 +104,6 @@ The first `mode` from the `modes` list applies by default if `ignoreDetection` i
 
 ## Resources
 
-- **[Custom color modes](../branding/customize-color-modes.md#add-new-color-modes)** - Add custom color modes beyond light and dark themes for enhanced brand customization
-- **[Front matter configuration](./front-matter-config.md)** - Use front matter to show or hide the color mode switcher on individual pages for custom layouts
+- **[Customize color modes](../branding/customize-color-modes.md)** - Style light and dark modes with CSS, set a logo for each mode, or add new color modes
+- **[Front matter configuration options](./front-matter-config.md)** - Use front matter to show or hide the color mode switcher on individual pages for custom layouts
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization

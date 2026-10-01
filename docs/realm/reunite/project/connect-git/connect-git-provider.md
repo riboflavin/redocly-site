@@ -50,8 +50,8 @@ Redocly connects from them to deploy previews and production updates:
 
 ## Resources
 
-- **[Manage self-hosted Git providers](./manage-self-hosted.md)** - Register a self-managed GitLab or GitHub Enterprise instance so Redocly can reach it
-- **[Include remote content](../remote-content/index.md)** - Pull files from other repositories into your project
+- **[Self-hosted Git providers](./manage-self-hosted.md)** - Register a self-managed GitLab or GitHub Enterprise instance so Redocly can reach it
+- **[Add remote files with one-way sync](../remote-content/index.md)** - Pull files from other repositories into your project
 - **[Use the Editor](../use-editor.md)** - Edit and review project content in Reunite
 - **[Manage projects](../manage-projects.md)** - Find feedback, deployment details, and project settings
-- **[Configuration reference](../../../config/index.md)** - All the options you can set in redocly.yaml
+- **[Configuration options](../../../config/index.md)** - All the options you can set in redocly.yaml

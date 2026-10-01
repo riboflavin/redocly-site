@@ -109,4 +109,4 @@ graphql:
 ## Resources
 
 - **[GraphQL](https://graphql.org/)** - Official GraphQL specification and documentation for understanding query language fundamentals
-- **[Add GraphQL documentation to your project](../../content/api-docs/add-graphql-docs.md)** - Step-by-step guide to adding GraphQL API documentation to your Redocly project
+- **[Add GraphQL API descriptions](../../content/api-docs/add-graphql-docs.md)** - Step-by-step guide to adding GraphQL API documentation to your Redocly project

@@ -78,6 +78,6 @@ To prevent Auth0 from changing users' roles to the default organization role spe
 
 ## Resources
 
-- **[Single sign-on (SSO) concepts](./sso.md)** - Understand different identity provider types in Reunite and how they integrate with your project authentication
-- **[Add an identity provider](./add-idp.md)** - Step-by-step guide for adding identity providers in Reunite for centralized authentication management
-- **[Configure SSO](./configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider types in Reunite and how they integrate with your project authentication
+- **[Add identity providers](./add-idp.md)** - Step-by-step guide for adding identity providers in Reunite for centralized authentication management
+- **[Configure project SSO](./configure-sso.md)** - Enable multiple identity provider types to give users flexible authentication options for your projects

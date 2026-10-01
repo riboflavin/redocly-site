@@ -52,7 +52,7 @@ The access token is required in both contexts.
 
 ## Resources
 
-- **[Include remote content](../remote-content/index.md)** - Integrate content from external GitLab repositories into your Reunite projects for streamlined documentation workflows
+- **[Add remote files with one-way sync](../remote-content/index.md)** - Integrate content from external GitLab repositories into your Reunite projects for streamlined documentation workflows
 - **[Use the Editor](../use-editor.md)** - Leverage Reunite's collaborative editing tools for content creation with GitLab repository integration and version control
 - **[Manage projects](../manage-projects.md)** - Access feedback, deployment details, and project settings for GitLab-connected documentation projects
-- **[Configuration reference](../../../config/index.md)** - Complete redocly.yaml configuration options for GitLab integration, automated deployment, and project customization
+- **[Configuration options](../../../config/index.md)** - Complete redocly.yaml configuration options for GitLab integration, automated deployment, and project customization

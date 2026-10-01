@@ -74,4 +74,4 @@ The IdP with unique ID `acme-corp-saml` is offered together with the standard Re
 
 - **[SSO configuration](./sso.md)** - Filter identity providers by category (`REDOCLY`, `CORPORATE`, `GUEST`)
 - **[Access configuration](./index.md)** - Group authentication and access settings together
-- **[Add an identity provider](../../reunite/organization/sso/add-idp.md)** - Add, configure, and assign unique IDs to identity providers
+- **[Add identity providers](../../reunite/organization/sso/add-idp.md)** - Add, configure, and assign unique IDs to identity providers

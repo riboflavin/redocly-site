@@ -243,7 +243,7 @@ Syncing pulls in the changes from main since you created your development branch
 
 - **[Keyboard shortcuts](./keyboard-shortcuts.md)** - Navigate the editor faster with built-in shortcuts
 - **[Use previews](./use-previews.md)** - Access deployment previews to see how your changes will appear before publishing to production
-- **[Use Webview](./use-webview.md)** - Adjust the live preview of your content updates while editing for real-time visual feedback
-- **[Add remote files](./remote-content/index.md)** - Include and synchronize files from remote locations and external repositories in your project
+- **[Use the Webview](./use-webview.md)** - Adjust the live preview of your content updates while editing for real-time visual feedback
+- **[Add remote files with one-way sync](./remote-content/index.md)** - Include and synchronize files from remote locations and external repositories in your project
 - **[Markdoc tag library](https://redocly.com/docs/learn-markdoc/tags/tag-library/)** - Explore available Markdoc tags and components for enhanced content formatting and functionality
 - **[Project structure](../../content/project-structure.md)** - Learn best practices for organizing files and content structure in your documentation projects

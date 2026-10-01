@@ -70,7 +70,7 @@ Then eject your component in one of the following ways:
 ## Resources
 
 - **[Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject)** - Complete command reference and options for ejecting components using the command line interface
-- **[Component ejection tutorial](./eject-components-tutorial/index.md)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples
+- **[Eject components tutorial](./eject-components-tutorial/index.md)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples
 - **[Eject components in Reunite](./eject-components-in-reunite.md)** - Learn how to eject components to customize in Reunite
-- **[Eject components using the CLI](./eject-components-using-cli.md)** - Learn how to eject components to customize using the CLI
+- **[Eject components using Redocly CLI](./eject-components-using-cli.md)** - Learn how to eject components to customize using the CLI
 - **[Customize styles](../../branding/customize-styles.md)** - Learn how to apply custom styling to your project

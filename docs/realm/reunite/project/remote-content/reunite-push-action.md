@@ -157,5 +157,5 @@ When the action runs, it updates with the build statuses of any scorecards and t
 
 ## Resources
 
-- **[Add remote content](./index.md)** - Comprehensive guide to integrate various types of remote content sources into your Reunite projects for centralized documentation management
+- **[Add remote files with one-way sync](./index.md)** - Comprehensive guide to integrate various types of remote content sources into your Reunite projects for centralized documentation management
 - **[Push CLI command](https://redocly.com/docs/cli/commands/push)** - Alternative method for sending remote content to Reunite projects using the Redocly CLI for non-GitHub users and custom workflows

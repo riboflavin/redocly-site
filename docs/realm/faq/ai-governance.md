@@ -467,7 +467,7 @@ Short answers to frequent AI governance questionnaire items:
 
 - **[`aiAssistant` configuration](../config/ai-assistant.md)** - Configure, customize, or hide the AI assistant in your project
 - **[`mcp` configuration](../config/mcp.md)** - Configure or disable the MCP server for your project
-- **[MCP server overview](../customization/mcp-server/index.md)** - Connect AI tools to the MCP server and restrict access to it
-- **[Project analytics](../reunite/project/analytics.md)** - Review AI assistant conversations, feedback, and usage data
+- **[Model Context Protocol server](../customization/mcp-server/index.md)** - Connect AI tools to the MCP server and restrict access to it
+- **[Analytics](../reunite/project/analytics.md)** - Review AI assistant conversations, feedback, and usage data
 - **[Compliance reports](../reunite/organization/access-compliance-reports.md)** - Download the SOC 2 Type 2 report, penetration test report, CAIQ answers, and ISO 27001, ISO 27017, and ISO 27018 certificates
 - **[Security vulnerability fixes](./security-fixes.md)** - How Redocly detects and releases security fixes

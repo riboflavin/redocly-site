@@ -121,7 +121,7 @@ In that case, you must assign another user the Owner role before you can leave.
 
 ## Resources
 
-- **[Add an identity provider](./sso/add-idp.md)** - Configure identity providers for automated user management and authentication across your organization
-- **[Manage organization-wide API keys](api-keys.md)** - Create and manage API keys that provide programmatic access to your organization's resources
-- **[Teams and users](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control
+- **[Add identity providers](./sso/add-idp.md)** - Configure identity providers for automated user management and authentication across your organization
+- **[Manage API keys](api-keys.md)** - Create and manage API keys that provide programmatic access to your organization's resources
+- **[Manage teams](./teams.md)** - Organize users into teams with role-based permissions for effective collaboration and access control
 - **[Single sign-on (SSO) configuration](../../config/access/sso.md)** - Complete SSO configuration reference with examples for various identity providers

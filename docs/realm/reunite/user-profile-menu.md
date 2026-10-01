@@ -92,5 +92,5 @@ Your session ends and you are redirected to the Login screen.
 
 ## Resources
 
-- **[Reunite + Realm system overview](../index.md)** - Understand how Reunite collaborates with Realm to provide a complete documentation platform solution
-- **[Reunite features](./reunite.md)** - Explore Reunite's collaborative content management and project workflow capabilities
+- **[Reunite + Realm overview](../index.md)** - Understand how Reunite collaborates with Realm to provide a complete documentation platform solution
+- **[About Reunite](./reunite.md)** - Explore Reunite's collaborative content management and project workflow capabilities

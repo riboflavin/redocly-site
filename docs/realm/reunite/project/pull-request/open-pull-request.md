@@ -63,6 +63,6 @@ To reopen it later, select **Reopen pull request** from the same menu.
 
 ## Resources
 
-- **[Using the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's collaborative editing tools and syntax highlighting
-- **[Reunite platform overview](../../reunite.md)** - Explore the features and capabilities of Reunite, Redocly's collaborative content management platform
+- **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with Reunite's collaborative editing tools and syntax highlighting
+- **[About Reunite](../../reunite.md)** - Explore the features and capabilities of Reunite, Redocly's collaborative content management platform
 - **[Reunite configuration reference](../../../config/reunite.md)** - Configure Reunite deployment settings including options to publish builds with broken links or syntax issues
