@@ -30629,6 +30629,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.61.0:
+    timestamp: 1790832443000
+    changes:
+      minor:
+        - >-
+          Exported the parts of the recheck config schema as named schemas (`recheckRuleSchema`, `recheckRulesSchema`, `recheckMarkdocSchema`, and the
+          others), so other packages can build their validation from them.
+      patch: []
+    dependencies: {}
   0.60.0:
     timestamp: 1790818306000
     changes:
