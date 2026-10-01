@@ -783,8 +783,8 @@ The following example shows the same sidebar configuration using old and new syn
 
 After your sidebar config works with Realm, explore the following new sidebar features:
 
-- Build sidebars using configuration from [multiple files](/docs/realm/navigation/sidebars#add-multiple-sidebars) using fragments.
-- [Add a sidebar to a single page](/docs/realm/navigation/sidebars#add-a-sidebar-to-a-single-page) to show the sidebar on a page without listing it on `sidebars.yaml`.
+- Build sidebars using configuration from [multiple files](/docs/realm/navigation/sidebars#complete-sidebar-configuration) using fragments.
+- [Add a sidebar to a single page](/docs/realm/navigation/sidebars) to show the sidebar on a page without listing it on `sidebars.yaml`.
 - Control the visibility of [sidebar entries with RBAC](/docs/realm/access/links-and-groups-permissions#in-the-sidebar).
 
 ### Migrate configuration

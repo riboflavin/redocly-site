@@ -21,7 +21,7 @@ A project refers to any API definitions, Reference or Portals you create using t
 - People with the `Owner` role at the organization level are automatically assigned the `Admin` role at project level.
 - Any other person with the `Member` role at the organization level has a `Maintain` role at a project level. If an organization `Member` creates a new project, they are assigned the `Admin` role for that project.
 
-For more information on the organization to project level mapping, refer to the [Roles and permissions](../people/roles-permissions.md#mapping-organization-to-project-levels) topic.
+For more information on the organization to project level mapping, refer to the [Roles and permissions](../people/roles-permissions.md#map-an-organization-to-a-project-level) topic.
 {% /admonition %}
 
 People with an `Admin` role at a project level can manage access for other users on that project.

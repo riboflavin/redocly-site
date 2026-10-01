@@ -126,7 +126,7 @@ For more complex APIs, returning multiple response examples becomes even more us
 
 ## Add linting for examples
 
-[Redocly CLI](https://github.com/Redocly/redocly-cli/) is a widely-used tool for linting OpenAPI descriptions; it has specific rules available to help check that the examples in an OpenAPI description are present and valid. Read more about [setting up your own linting rules](../docs/cli/rules/built-in-rules#rule-configuration-syntax) and try enabling these example-specific rules in your own projects:
+[Redocly CLI](https://github.com/Redocly/redocly-cli/) is a widely-used tool for linting OpenAPI descriptions; it has specific rules available to help check that the examples in an OpenAPI description are present and valid. Read more about [setting up your own linting rules](../docs/cli/configuration/reference/rules) and try enabling these example-specific rules in your own projects:
 
 - [no-invalid-parameter-examples](../docs/cli/rules/oas/no-invalid-parameter-examples): Parameter examples must match declared schema types.
 - [scalar-property-missing-example](../docs/cli/rules/oas/scalar-property-missing-example): All required scalar (non-object) properties must have examples defined.

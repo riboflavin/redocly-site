@@ -208,6 +208,7 @@ responseHeaders:
           https://cdn.redocly.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U=' 
           'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
+          'sha256-5J0uFsfOnnQLaj24Qu33NmcMDn4J4ywSeieIv0EPIio='
           'sha256-uDN+KkW4ljf+D4DbsWP5KpxyfG/7h+LNmZxMzbz/+1E='
           'sha256-9seBUu3uBabJT/26wJPQEjpi+FB2ayw9N8BnQJlh/ls='
           'sha256-mqxawUgIH8vW3/GxWmOFDp5zt8IejNl5rNH2j9PXF88='
@@ -222,7 +223,9 @@ responseHeaders:
           'sha256-9qgU5FDrauEgF+e1iJWvsh46OwsIkNOLjkXggr/02jk='
           'sha256-v7ddZtWCUr5oF3kgrlEot4fG861CKDXUt0aTaNaIk6Q='
           'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0='
-          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk=';
+          'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk='
+          'sha256-zytJQbY9Qb7BSt1XrdvDrm7lXcfLKCQHqVdo21OBqU8='
+          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -277,13 +280,16 @@ responseHeaders:
       value: "
         script-src 
           'self' 
+          'sha256-zytJQbY9Qb7BSt1XrdvDrm7lXcfLKCQHqVdo21OBqU8='
+          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ='
           'unsafe-eval'
           https://cdn.jsdelivr.net
           https://www.googletagmanager.com
           'sha256-M28mypAFwwpIwIF9e1/A6867PQiwVvOrdqFSTFSa8/U='
           'sha256-Tq4uREmlYInMCBRtudvmIOCc+VdyPNg3t18I9xtvdgs='
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU='
-          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c=';
+          'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
+          'sha256-5J0uFsfOnnQLaj24Qu33NmcMDn4J4ywSeieIv0EPIio=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 'self' https://cdn.jsdelivr.net;
@@ -316,7 +322,7 @@ search:
 
 # Custom plugin registration
 plugins:
-  - '@redocly/marketing-pages/mcp-tools/plugin.js'
+  - '@redocly/marketing-pages/mcp-tools/realm-plus-plugin.js'
 
 links:
   - href: https://redocly.com/docs/changelog/feed.xml
