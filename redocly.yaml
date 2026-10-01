@@ -232,14 +232,13 @@ responseHeaders:
           'self'
           https://*.redocly.com
           https://webhook.frontapp.com
-          https://j.clarity.ms/*
+          https://*.clarity.ms
           https://api.github.com
           https://api.rebilly.com
           https://forms.hsforms.com
           https://forms.hscollectedforms.net
           https://*.google-analytics.com
           https://hubspot-forms-static-embed.s3.amazonaws.com
-          https://v.clarity.ms/collect
           https://cdn.jsdelivr.net
           https://forms-na2.hscollectedforms.net
           https://forms-na2.hsforms.com
