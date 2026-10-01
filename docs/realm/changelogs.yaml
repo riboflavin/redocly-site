@@ -30629,6 +30629,20 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.60.0:
+    timestamp: 1790818306000
+    changes:
+      minor:
+        - >-
+          Removed the `baseline` option from the `recheck` block of the `redocly.yaml` schema, so `check-config` and the `redocly recheck` command
+          accept the same keys.
+
+
+          **Note**: `recheck.baseline` is no longer accepted.
+
+          Recheck finds the baseline file by its presence: put `.redocly.recheck-baseline.yaml` next to `redocly.yaml`.
+      patch: []
+    dependencies: {}
   0.59.0:
     timestamp: 1790691266000
     changes:
