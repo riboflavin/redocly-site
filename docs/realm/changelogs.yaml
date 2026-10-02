@@ -56291,6 +56291,13 @@ reunite:
       patch:
         - Fixed SCIM group sync in Reunite removing members from other teams when an identity provider replaced a group's member list.
     dependencies: {}
+  v2026-10-02.2:
+    timestamp: 1790951646000
+    changes:
+      minor: []
+      patch:
+        - Fixed review comments in Reunite pull requests being shown in reverse order.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
