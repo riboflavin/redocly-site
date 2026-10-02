@@ -132,6 +132,27 @@ const ClientOnlyComponent = dynamic(() => import('../components/ClientComponent'
 });
 ```
 
+### Load a component before it renders
+
+A component from `dynamic` has a `preload` method that loads the component code.
+After the returned promise resolves, the component renders without its loading state.
+On the server, `preload` does not load a component that has `ssr: false`.
+
+```tsx
+import { dynamic } from '@redocly/theme';
+
+const PricingCalculator = dynamic(() => import('../components/PricingCalculator'));
+
+export function OpenCalculatorButton({ onOpen }) {
+  // Start the download when the pointer enters the button, before the click.
+  return (
+    <button onMouseEnter={() => PricingCalculator.preload()} onClick={onOpen}>
+      Open calculator
+    </button>
+  );
+}
+```
+
 ### Import packages
 
 ```tsx
