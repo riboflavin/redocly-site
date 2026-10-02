@@ -4,7 +4,7 @@
   "description": "Redocly website",
   "type": "module",
   "scripts": {
-    "start": "npx @redocly/cli preview",
+    "start": "realm dev --port 4000",
     "lint:markdown": "markdownlint-cli2 '**/*.md'",
     "lint:markdown:fix": "markdownlint-cli2 '**/*.md' --fix",
     "recheck": "npx @redocly/recheck run --stats",
