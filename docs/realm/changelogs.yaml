@@ -56178,6 +56178,13 @@ reunite:
       patch:
         - Fixed secondary text in Reunite to use consistent styling across light and dark themes.
     dependencies: {}
+  v2026-10-02.1:
+    timestamp: 1790928607000
+    changes:
+      minor: []
+      patch:
+        - Fixed SCIM group sync in Reunite removing members from other teams when an identity provider replaced a group's member list.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
