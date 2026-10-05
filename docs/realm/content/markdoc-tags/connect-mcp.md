@@ -62,7 +62,8 @@ Users can click to connect their editor or copy the configuration.
 
 - options
 - array
-- Specifies which connection options to display in the dropdown.
+- Specifies which connection options to display and their order.
+  The first option is the main button, and the other options appear in the dropdown in the given order.
   Accepts an array containing any combination of: `cursor`, `vscode`, `claude-code`, `codex`, `copy`.
   **Default:** `["cursor", "vscode", "claude-code", "codex", "copy"]`.
 
@@ -131,6 +132,18 @@ Display only the Copy option configuration:
 {% markdoc-example %}
 ```markdoc {% process=false %}
 {% connect-mcp options=["copy"] /%}
+```
+{% /markdoc-example %}
+
+### Option order
+
+Make **Copy MCP Configuration** the main button and show the Cursor option in the dropdown:
+
+{% connect-mcp options=["copy", "cursor"] /%}
+
+{% markdoc-example %}
+```markdoc {% process=false %}
+{% connect-mcp options=["copy", "cursor"] /%}
 ```
 {% /markdoc-example %}
 
