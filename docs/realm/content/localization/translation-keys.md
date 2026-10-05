@@ -529,9 +529,9 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
-- search.ai.toolCall.withArgs
-- Connector text shown before serialized tool call arguments
-- with args
+- search.ai.toolCall.usedTools
+- Summary of an AI assistant step that used more than one kind of tool
+- Used tools
 
 ---
 

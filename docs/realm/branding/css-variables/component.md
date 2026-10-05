@@ -1891,11 +1891,31 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 </details>
 
 <details>
+<summary>Search AI tool call activity</summary>
+
+```css
+--search-ai-activity-font-size: var(--font-size-base);
+--search-ai-activity-line-height: var(--line-height-sm);
+--search-ai-activity-count-font-size: var(--font-size-sm);
+--search-ai-activity-count-bg-color: var(--border-color-secondary);
+--search-ai-activity-text-color: var(--text-color-description);
+--search-ai-activity-text-color-hover: var(--text-color-primary);
+--search-ai-activity-detail-color: var(--text-color-secondary);
+--search-ai-activity-shimmer-color: var(--text-color-primary);
+--search-ai-activity-rail-color: var(--border-color-primary);
+--search-ai-activity-icon-size: 14px;
+--search-ai-activity-fade-duration: 200ms;
+--search-ai-activity-expand-duration: 250ms;
+--search-ai-activity-shimmer-duration: 2s;
+--search-ai-activity-easing: cubic-bezier(0.32, 0.72, 0, 1);
+```
+
+</details>
+
+<details>
 <summary>Search AI thinking animation</summary>
 
 ```css
---search-ai-thinking-dots-gap: 4px;
---search-ai-thinking-dots-padding: 4px 0;
 --search-ai-thinking-dot-size: 6px;
 --search-ai-thinking-dot-color: var(--search-ai-gradient);
 ```
