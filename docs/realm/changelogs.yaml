@@ -56298,8 +56298,8 @@ reunite:
       patch:
         - Fixed review comments in Reunite pull requests being shown in reverse order.
     dependencies: {}
-  v2026-10-05.1:
-    timestamp: 1791191911000
+  v2026-10-05.2:
+    timestamp: 1791195548000
     changes:
       minor:
         - Improved the accuracy of feedback spam detection in Reunite.
