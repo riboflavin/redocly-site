@@ -100,7 +100,7 @@ export function MenuMobile({ className, hideUserProfile }: MobileMenuProps): JSX
             to={backLink.slug}
             onClick={popDrilldownState}
           >
-            {`${prevLevelName} / ${menuType === MobileMenuType.PAGE ? "Docs" : menuItems[0].label}`}
+            Back
           </DrilldownBackButton>
         ) : null}
         <MenuWrapper

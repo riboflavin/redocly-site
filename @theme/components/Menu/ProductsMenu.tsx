@@ -3,7 +3,17 @@ import React from 'react';
 
 import type { DrilldownMenuItemDetails, ItemState } from '@redocly/theme/core/types';
 
-import { MenuItem } from '@redocly/theme/components/Menu/MenuItem';
+import { Link } from '@redocly/theme/components/Link/Link';
+import { ArrowRightIcon } from '@redocly/theme/icons/ArrowRightIcon/ArrowRightIcon';
+
+import {
+  CLI_COMMANDS,
+  REDOCLY_CLI_LINK,
+  REUNITE_LINK,
+  SIDEBAR_PRODUCT_LINKS,
+  getProductMeta,
+  groupBySeparator,
+} from '../Navbar/productsMenuData';
 import { FooterBlock, StyledLogInButton, StyledSignUpButton } from './MainMenu';
 
 export type MenuListProps = {
@@ -14,83 +24,94 @@ export type MenuListProps = {
   onDrilldownOpen?: (drilldownDetails: DrilldownMenuItemDetails) => void;
 };
 
-export function ProductsMenu({
-  depth = 0,
-  items,
-  className,
-  isMobile,
-}: MenuListProps): JSX.Element {
-  const activeItem = items.find(({ active }) => active);
+/**
+ * Mobile drilldown for the Products navbar group. Mirrors the desktop
+ * `ProductsDropdown` grouping: Reunite, Respect Monitoring and the agents come
+ * first, then the remaining products, then the open-source cards. Section
+ * headings are intentionally not rendered; a divider separates the two groups.
+ */
+export function ProductsMenu({ items, className }: MenuListProps): JSX.Element {
+  const sections = groupBySeparator(items);
+  const products = sections['Products'] ?? [];
+  const agents = sections['Agents'] ?? [];
+  const openSource = sections['Open Source'] ?? [];
 
-  const descriptions = [
-    'Build your API with',
-    'Combo of Redoc, Revel, and Reef',
-    'External developer showcase',
-    'API reference and mock server',
-    'Internal service catalog',
-    'API monitoring',
+  const reunite = products.find((item) => item.link === REUNITE_LINK);
+  const platformItems = [
+    ...(reunite ? [reunite] : []),
+    ...products.filter((item) => SIDEBAR_PRODUCT_LINKS.includes(item.link as string)),
+    ...agents,
   ];
+  const productItems = products.filter(
+    (item) => item !== reunite && !SIDEBAR_PRODUCT_LINKS.includes(item.link as string),
+  );
+  const cli = openSource.find((item) => item.link === REDOCLY_CLI_LINK);
+  const openSourceCards = openSource.filter((item) => item !== cli);
 
-  for (let i = 0; i < descriptions.length; i++) {
-    items[i + 1].sublabel = descriptions[i];
-  }
-
-  const products = getSectionItems(items, 'Products');
-  const openSourceTools = getSectionItems(items, 'Open Source');
   return (
     <MenuWrapper className={className} data-component-name="Menu/ProductsMenu">
-      <div>
-        {products.map((item, index) => {
-          return item.label === 'Reunite' && item.type !== 'separator' ? (
-            <ReuniteItem
-              item={item}
-              key={`${item.link || item.label}-${index}`}
-              activeItem={activeItem}
-              isMobile={isMobile}
-              depth={depth}
-            />
-          ) : (
-            <>
-              {item.type !== 'separator' && (
-                <>
-                  <MenuItem
-                    item={item}
-                    key={`${item.link || item.label}-${index}`}
-                    activeItem={activeItem}
-                    isMobile={isMobile}
-                    depth={depth}
-                  />
-                  <Separator />
-                </>
-              )}
-            </>
-          );
-        })}
-        {openSourceTools.length > 0 && (
-          <OpenSourceToolsWrapper>
-            <OpenSourceSeparator>
-              <img src={require('../Navbar/images/open-source-icon.svg')} />
-              <Title>Open source tools</Title>
-            </OpenSourceSeparator>
-            <div style={{backgroundColor: "var(--border-color-primary)", height: "1px"}}/>
-            <Items>
-              {openSourceTools.map((item, index) => (
-                <OpenSourceItem
-                  item={item}
-                  key={`${item.link || item.label}-${index}`}
-                  activeItem={activeItem}
-                  isMobile={isMobile}
-                  depth={depth}
-                  isLast={index === openSourceTools.length - 2}
-                />
-              ))}
-            </Items>
-          </OpenSourceToolsWrapper>
-        )}
-      </div>
-      <FooterBlock
-      // style={{ position: 'fixed', bottom: '0', backgroundColor: 'white', width: '100%' }}
-      >
+      <Content>
+        <Group>
+          {platformItems.map((item) => (
+            <ProductItem key={item.link} item={item} />
+          ))}
+        </Group>
+        <Divider />
+        <Group>
+          {productItems.map((item) => (
+            <ProductItem key={item.link} item={item} />
+          ))}
+        </Group>
+        <Cards>
+          {cli && (
+            <Card>
+              <CardLink to={cli.link as string}>
+                <CardText>
+                  <Title>{cli.label}</Title>
+                  <Description>{getProductMeta(cli.link)?.description}</Description>
+                </CardText>
+                <ArrowCircle aria-hidden="true">
+                  <ArrowRightIcon size="14px" color="--color-arrow" />
+                </ArrowCircle>
+              </CardLink>
+              <Commands>
+                {CLI_COMMANDS.map(({ command, link }) => (
+                  <Command key={command} to={link}>
+                    <Prompt aria-hidden="true">$</Prompt>
+                    <CommandName>{command}</CommandName>
+                  </Command>
+                ))}
+              </Commands>
+              <SeeAll to={cli.link as string}>
+                See all commands
+                <SeeAllArrow aria-hidden="true">
+                  <ArrowRightIcon size="13px" color="--bg-color" />
+                </SeeAllArrow>
+              </SeeAll>
+            </Card>
+          )}
+          {openSourceCards.map((item) => {
+            const meta = getProductMeta(item.link);
+            return (
+              <Card key={item.link}>
+                <CardLink to={item.link as string}>
+                  <CardText>
+                    <TitleRow>
+                      <Title>{item.label}</Title>
+                      {meta?.tag && <PillTag>{meta.tag}</PillTag>}
+                    </TitleRow>
+                    <Description>{meta?.description}</Description>
+                  </CardText>
+                  <ArrowCircle aria-hidden="true">
+                    <ArrowRightIcon size="14px" color="--color-arrow" />
+                  </ArrowCircle>
+                </CardLink>
+              </Card>
+            );
+          })}
+        </Cards>
+      </Content>
+      <FooterBlock>
         <StyledSignUpButton
           to="https://auth.cloud.redocly.com/registration"
           className="landing-button"
@@ -105,114 +126,21 @@ export function ProductsMenu({
   );
 }
 
-const getSectionItems = (arr: ItemState[], separatorLabel: string) => {
-  const start = arr.findIndex(
-    (item) => item.type === 'separator' && item.label === separatorLabel,
+function ProductItem({ item }: { item: ItemState }): JSX.Element {
+  const meta = getProductMeta(item.link);
+  return (
+    <ItemLink to={item.link as string}>
+      <TitleRow>
+        <IconText>
+          {item.icon && <ProductIcon src={item.icon} alt="" />}
+          <Title>{item.label}</Title>
+        </IconText>
+        {meta?.tag && <Tag>{meta.tag}</Tag>}
+      </TitleRow>
+      {meta?.description && <ItemDescription>{meta.description}</ItemDescription>}
+    </ItemLink>
   );
-
-  if (start === -1) {
-    return [];
-  }
-
-  const rest = arr.slice(start + 1);
-  const nextSeparatorIndex = rest.findIndex((item) => item.type === 'separator');
-
-  return nextSeparatorIndex === -1 ? rest : rest.slice(0, nextSeparatorIndex);
-};
-
-const OpenSourceItem = styled(MenuItem)<{isLast?: boolean}>`
-  margin: 0 !important;
-  border-bottom: 1px solid var(--border-color-primary);
-  border-radius: 0 !important;
-
-  a {
-    margin: 8px 0 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    border-left: ${({isLast}) => isLast && '1px solid var(--border-color-primary)'};
-    li div span span {
-      padding-left: ${({isLast}) => isLast && '16px'};
-    }
-  }
-
-  &:last-child {
-    border-bottom: none;
-
-    a {
-      margin: 8px 0 0 0 !important;
-    }
-  }
-`
-
-const Items = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`;
-
-const Title = styled.p`
-  color: var(--text-color-secondary);
-
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 20px;
-
-  margin: 0;
-`;
-
-const OpenSourceSeparator = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  margin-bottom: 8px;
-`;
-
-const OpenSourceToolsWrapper = styled.div`
-  display: flex;
-  padding: 8px 16px;
-  flex-direction: column;
-
-  border-radius: 4px;
-  background: var(--bg-color-active);
-
-  margin: 8px 12px 8px 12px;
-`;
-
-const Separator = styled.div`
-  height: 1px;
-  background-color: var(--border-color-secondary);
-  margin: 0 12px;
-`;
-
-const ReuniteItem = styled(MenuItem)`
-  padding: 16px 16px 18px 16px !important;
-  border-bottom: 0 !important;
-  background-image: url(${require('../Navbar/images/eclipse.svg')});
-  background-size: cover;
-  margin-top: 8px !important;
-  -webkit-text-fill-color: initial;
-
-  a {
-    padding: 0 !important;
-    :active {
-      background-color: transparent !important;
-    }
-  }
-
-  img {
-    width: 20px;
-    height: 20px;
-    border-radius: 0;
-  }
-
-  li {
-    background-color: transparent !important;
-    div a {
-      width: auto !important;
-    }
-  }
-`;
+}
 
 const MenuWrapper = styled.ul`
   padding: var(--menu-padding);
@@ -223,68 +151,193 @@ const MenuWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: Inter, var(--font-family-base);
 
-  img {
-    width: 24px;
-    height: 24px;
-    border-radius: 0;
+  a {
+    text-decoration: none;
+    color: inherit;
   }
+`;
 
-  .menu-item-type-separator {
-    padding: 8px 12px 0;
-    color: var(--text-color-description);
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 20px;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 20px;
+`;
 
-    li {
-      background-color: transparent;
-      margin: 0;
-      padding: 0;
-    }
+const Group = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const Divider = styled.div`
+  height: 1px;
+  background: var(--products-menu-border-color);
+`;
+
+const Cards = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const TitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+`;
+
+const IconText = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+`;
+
+const ProductIcon = styled.img`
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+`;
+
+const Title = styled.span`
+  color: var(--text-color-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const Description = styled.span`
+  color: var(--text-color-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+`;
+
+const ItemDescription = styled(Description)`
+  padding-left: 24px;
+`;
+
+const Tag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  min-width: 20px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--products-menu-tag-bg);
+  color: var(--products-menu-tag-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: nowrap;
+`;
+
+const PillTag = styled(Tag)`
+  padding: 0 8px;
+  border-radius: 9999px;
+`;
+
+const ItemLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 8px;
+  border-radius: 8px;
+
+  &:active {
+    background: var(--products-menu-item-bg-hover);
   }
+`;
 
-  .menu-item-type-default {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    align-self: stretch;
-    border-radius: 4px;
-    margin: 8px 12px;
-    padding: 0;
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--products-menu-layer-bg);
 
-    a {
-      width: 100%;
-      padding: 4px 16px;
-      border-radius: 4px;
-
-      :active {
-        background-color: var(--menu-item-bg-color-active);
-      }
-
-      li {
-        margin: 0;
-        padding: 0;
-        align-items: flex-start;
-        background-color: transparent !important;
-
-        div {
-          span {
-            overflow: hidden;
-            color: var(--text-color-primary);
-            text-overflow: ellipsis;
-            font-family: 'Red Hat Display';
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 20px;
-          }
-          div {
-            margin: 0;
-          }
-        }
-      }
-    }
+  &:last-child {
+    padding: 14px 16px;
   }
+`;
+
+const CardLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+`;
+
+const CardText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+  min-width: 0;
+`;
+
+const ArrowCircle = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-ontonal);
+`;
+
+const Commands = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-bottom: 16px;
+`;
+
+const Command = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--products-menu-command-bg);
+  font-family: 'DM Mono', var(--code-font-family);
+  font-size: 12px;
+  line-height: 18px;
+`;
+
+const Prompt = styled.span`
+  color: var(--text-color-disabled);
+`;
+
+const CommandName = styled.span`
+  color: var(--text-color-primary);
+`;
+
+const SeeAll = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+`;
+
+const SeeAllArrow = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--button-bg);
 `;

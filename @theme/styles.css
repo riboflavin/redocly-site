@@ -275,6 +275,17 @@
     --tag-basic-bg-color: #EDEDF2;
     --tag-basic-content-color: #2A2B33;
 
+    /* Products navbar dropdown */
+    --products-menu-bg: var(--color-white);
+    --products-menu-layer-bg: #FBFBFC;
+    --products-menu-border-color: #EDEDF2;
+    --products-menu-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.12), 0px 8px 24px -4px rgba(24, 39, 75, 0.08);
+    --products-menu-item-bg-hover: #F3F3F6;
+    --products-menu-tag-bg: #E7F3FF;
+    --products-menu-tag-color: #2467F2;
+    --products-menu-command-bg: #F3F3F6;
+    --products-menu-command-bg-hover: #EDEDF2;
+
     --navbar-height: 64px;
     --navbar-logo-width: 103px;
     --navbar-logo-height: 32px;
@@ -410,6 +421,14 @@
     --hover-last-navbar-color: #3B3C45;
     --tag-basic-bg-color: #3B3C45;
     --tag-basic-content-color: #EDEDF2;
+    --products-menu-bg: var(--bg-color);
+    --products-menu-layer-bg: #2A2B33;
+    --products-menu-border-color: #3B3C45;
+    --products-menu-item-bg-hover: #3B3C45;
+    --products-menu-tag-bg: #1F2A3F;
+    --products-menu-tag-color: #B1D0FF;
+    --products-menu-command-bg: #3B3C45;
+    --products-menu-command-bg-hover: #474853;
 }
 
 :root.dark nav img {

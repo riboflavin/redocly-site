@@ -55,28 +55,26 @@ navbar:
         - label: Reunite
           page: ./pages/reunite/reunite.page.tsx
           icon: ./images/icons/reunite.svg
-        - label: Realm
-          page: ./pages/realm/realm.page.tsx
-          icon: ./images/icons/realm.svg
         - label: Revel
           page: ./pages/revel/revel.page.tsx
           icon: ./images/icons/revel.svg
-        - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
-          icon: ./images/icons/redoc.svg
         - label: Reef
           page: ./pages/reef/reef.page.tsx
           icon: ./images/icons/reef.svg
+        - label: Realm
+          page: ./pages/realm/realm.page.tsx
+          icon: ./images/icons/realm.svg
+        - label: Redoc
+          page: ./pages/redoc/redoc.page.tsx
+          icon: ./images/icons/redoc.svg
         - label: Respect Monitoring
           page: ./pages/respect/respect.page.tsx
           icon: ./images/icons/respect.svg
         - separator: Open Source
-        - label: Redoc
-          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
-        - label: Respect
-          href: /respect-cli
+        - label: Redoc CE
+          page: ./pages/redoc-ce/redoc-ce.page.tsx
         - separator: Agents
         - label: Reviewer
           page: ./pages/reviewer/reviewer.page.tsx
