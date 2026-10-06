@@ -517,6 +517,24 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.actions.copy
+- Tooltip of the button that copies an AI assistant answer
+- Copy the response
+
+---
+
+- search.ai.actions.like
+- Tooltip of the button that rates an AI assistant answer as helpful
+- Like the response
+
+---
+
+- search.ai.actions.dislike
+- Tooltip of the button that rates an AI assistant answer as not helpful
+- Dislike the response
+
+---
+
 - search.ai.toolCall.executed
 - Prefix shown after an AI tool call finishes
 - Executed
