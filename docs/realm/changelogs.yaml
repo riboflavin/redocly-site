@@ -195,6 +195,15 @@
       '@redocly/theme': 0.70.0-next.0
       '@redocly/api-docs': 0.3.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.16.0-next.0
+  0.137.2:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch:
+        - Hardened the built-in CORS proxy.
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+    dependencies:
+      '@redocly/api-docs': 0.2.1
   0.137.1:
     timestamp: 1790601784000
     changes:
@@ -7827,6 +7836,14 @@
       '@redocly/theme': 0.70.0-next.0
       '@redocly/api-docs': 0.3.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.16.0-next.0
+  0.137.2:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch:
+        - Hardened the built-in CORS proxy.
+    dependencies:
+      '@redocly/api-docs': 0.2.1
   0.137.1:
     timestamp: 1790601784000
     changes:
@@ -14369,6 +14386,14 @@
       '@redocly/theme': 0.70.0-next.0
       '@redocly/api-docs': 0.3.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.16.0-next.0
+  0.137.2:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch:
+        - Hardened the built-in CORS proxy.
+    dependencies:
+      '@redocly/api-docs': 0.2.1
   0.137.1:
     timestamp: 1790601784000
     changes:
@@ -20952,6 +20977,15 @@
       '@redocly/theme': 0.70.0-next.0
       '@redocly/api-docs': 0.3.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.16.0-next.0
+  0.137.2:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch:
+        - Hardened the built-in CORS proxy.
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+    dependencies:
+      '@redocly/api-docs': 0.2.1
   0.137.1:
     timestamp: 1790601784000
     changes:
@@ -31845,6 +31879,13 @@
     dependencies:
       '@redocly/theme': 0.70.0-next.0
       '@redocly/replay': 0.29.0-next.0
+  0.2.1:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue that could cause the project to crash when rendering API docs with cyclic OpenAPI schemas.
+    dependencies: {}
   0.2.0:
     timestamp: 1789472140000
     changes:
@@ -33371,6 +33412,16 @@
       '@redocly/redoc-revel': 0.138.0-next.0
       '@redocly/redoc-reef': 0.138.0-next.0
       '@redocly/theme': 0.70.0-next.0
+  1.20.2:
+    timestamp: 1791275970813
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.137.2
+      '@redocly/redoc': 0.137.2
+      '@redocly/redoc-revel': 0.137.2
+      '@redocly/redoc-reef': 0.137.2
   1.20.1:
     timestamp: 1790601784000
     changes:
