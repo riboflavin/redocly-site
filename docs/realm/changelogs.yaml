@@ -1,4 +1,22 @@
 '@redocly/realm':
+  0.138.0-next.9:
+    timestamp: 1791267572000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for option order in the Markdoc `connect-mcp` tag.
+      patch:
+        - Hardened CORS proxy handling of direct browser navigation to proxied responses.
+        - Fixed an issue where dropdown menus were cut off at the left or right edge of the viewport.
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+
+          Responses don't have to include `writeOnly` properties.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/api-docs': 0.3.0-next.6
   0.138.0-next.8:
     timestamp: 1791205217000
     changes:
@@ -7674,6 +7692,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.9:
+    timestamp: 1791267572000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for option order in the Markdoc `connect-mcp` tag.
+      patch:
+        - Hardened CORS proxy handling of direct browser navigation to proxied responses.
+        - Fixed an issue where dropdown menus were cut off at the left or right edge of the viewport.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/api-docs': 0.3.0-next.6
   0.138.0-next.8:
     timestamp: 1791205217000
     changes:
@@ -14206,6 +14236,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.9:
+    timestamp: 1791267572000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for option order in the Markdoc `connect-mcp` tag.
+      patch:
+        - Hardened CORS proxy handling of direct browser navigation to proxied responses.
+        - Fixed an issue where dropdown menus were cut off at the left or right edge of the viewport.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/api-docs': 0.3.0-next.6
   0.138.0-next.8:
     timestamp: 1791205217000
     changes:
@@ -20731,6 +20773,23 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.9:
+    timestamp: 1791267572000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+      patch:
+        - Hardened CORS proxy handling of direct browser navigation to proxied responses.
+        - Fixed an issue where dropdown menus were cut off at the left or right edge of the viewport.
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+
+          Responses don't have to include `writeOnly` properties.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/api-docs': 0.3.0-next.6
   0.138.0-next.8:
     timestamp: 1791205217000
     changes:
@@ -27461,6 +27520,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.6:
+    timestamp: 1791267572000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for option order in the Markdoc `connect-mcp` tag.
+      patch:
+        - Fixed an issue where dropdown menus were cut off at the left or right edge of the viewport.
+    dependencies: {}
   0.70.0-next.5:
     timestamp: 1790947567000
     changes:
@@ -31668,6 +31736,14 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.6:
+    timestamp: 1791267572000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/replay': 0.29.0-next.6
   0.3.0-next.5:
     timestamp: 1790947567000
     changes:
@@ -33188,6 +33264,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.9:
+    timestamp: 1791267572000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
+      '@redocly/realm': 0.138.0-next.9
+      '@redocly/redoc': 0.138.0-next.9
+      '@redocly/redoc-revel': 0.138.0-next.9
+      '@redocly/redoc-reef': 0.138.0-next.9
   1.21.0-next.8:
     timestamp: 1791205217000
     changes:
@@ -42253,6 +42340,19 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.6:
+    timestamp: 1791267572000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+
+          Responses don't have to include `writeOnly` properties.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
   0.29.0-next.5:
     timestamp: 1790947567000
     changes:
@@ -44864,6 +44964,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.6:
+    timestamp: 1791267572000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.6
   0.21.0-next.5:
     timestamp: 1790947567000
     changes:
