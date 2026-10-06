@@ -30862,6 +30862,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.62.0:
+    timestamp: 1791266409000
+    changes:
+      minor:
+        - Added the `color` and `list` form control hints. Marked more multi-line text options with `textarea`.
+      patch: []
+    dependencies: {}
   0.61.1:
     timestamp: 1790945832000
     changes:
