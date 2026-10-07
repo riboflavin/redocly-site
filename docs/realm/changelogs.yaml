@@ -56704,6 +56704,13 @@ reunite:
         - Improved the accuracy of feedback spam detection in Reunite.
       patch: []
     dependencies: {}
+  v2026-10-07.1:
+    timestamp: 1791356320000
+    changes:
+      minor: []
+      patch:
+        - Fixed the build log in Reunite dropping the indentation of indented lines.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
