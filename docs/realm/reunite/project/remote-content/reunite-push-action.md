@@ -37,14 +37,18 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 - organization
 - string
 - **REQUIRED**.
-  Your Redocly organization slug.
+  Your Redocly organization ID.
+  Copy it from the **General** settings page of your organization in Reunite.
+  Organization slugs are still accepted but deprecated.
 
 ---
 
 - project
 - string
 - **REQUIRED**.
-  Your Redocly project slug.
+  Your Redocly project ID.
+  Copy it from the [General settings page](../manage-projects.md#view-and-edit-project-details) of your project.
+  Project slugs are still accepted but deprecated.
 
 ---
 
@@ -94,6 +98,11 @@ When you add a new Remote from CI/CD, you'll be presented with a starter templat
 
 {% /table %}
 
+{% admonition type="warning" name="Slugs are deprecated" %}
+Workflows that pass the organization and project slugs still work, but the action logs a warning with the IDs to use instead.
+Update the `organization` and `project` inputs to the IDs.
+{% /admonition %}
+
 ## Authorization
 
 This action requires authorization using an API key for your organization.
@@ -119,7 +128,7 @@ This action requires:
 ## Examples
 
 The following example shows a GitHub workflow that pushes a `src/redocly-museum.yaml` file.
-The file goes from the remote content repo to the `src/docs/museum` folder inside an `example-project` in Reunite.
+The file goes from the remote content repo to the `src/docs/museum` folder in the Reunite project.
 
 The action will run for pushes to any branch.
 But Redocly API will detect pushes to main branch and non main branch and triggers corresponding preview or production deployments.
@@ -145,8 +154,8 @@ jobs:
       - name: Redocly Reunite push
         uses: redocly/reunite-push-action@v1
         with:
-          organization: 'example-org'
-          project: 'example-project'
+          organization: 'org_01h1s5z6vf2mm1mz3hevnn9va7'
+          project: 'prj_01hh1t9sa6gwfv5naz04gr7ehm'
           mountPath: 'src/docs/museum'
           files: 'src/redocly-museum.yaml'
         env:
