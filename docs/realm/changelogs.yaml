@@ -56790,14 +56790,6 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.58.1`.
         - Updated `@redocly/openapi-core` to version `2.58.1`.
     dependencies: {}
-  v2026-10-07.3:
-    timestamp: 1791372601000
-    changes:
-      minor:
-        - 'Added MCP server usage to the project Analytics page in Reunite: requests, tool calls, top tools, and AI clients, with sortable tables.'
-      patch:
-        - Fixed an issue where SSO login and logout failed on preview builds of projects with path prefixes.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
