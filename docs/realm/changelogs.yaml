@@ -1,4 +1,26 @@
 '@redocly/realm':
+  0.138.0-next.13:
+    timestamp: 1791387070000
+    changes:
+      minor:
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+      patch:
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - Fixed an issue where the link checker reported links to API reference pages as broken when the link used the original letter case of a name.
+        - Improved API reference page load performance.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - >-
+          Fixed an issue in Replay where usage data from the **Try it** console and the `replay-openapi` tag was attributed to whichever of them was
+          opened first after the page loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.10
+      '@redocly/theme': 0.70.0-next.8
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.4
   0.138.0-next.12:
     timestamp: 1791363174000
     changes:
@@ -7743,6 +7765,22 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.13:
+    timestamp: 1791387070000
+    changes:
+      minor:
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+      patch:
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.10
+      '@redocly/theme': 0.70.0-next.8
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.4
   0.138.0-next.12:
     timestamp: 1791363174000
     changes:
@@ -14330,6 +14368,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.13:
+    timestamp: 1791387070000
+    changes:
+      minor:
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+      patch:
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.10
+      '@redocly/theme': 0.70.0-next.8
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.4
   0.138.0-next.12:
     timestamp: 1791363174000
     changes:
@@ -20910,6 +20964,28 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.13:
+    timestamp: 1791387070000
+    changes:
+      minor:
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+      patch:
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - Fixed an issue where the link checker reported links to API reference pages as broken when the link used the original letter case of a name.
+        - Improved API reference page load performance.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - >-
+          Fixed an issue in Replay where usage data from the **Try it** console and the `replay-openapi` tag was attributed to whichever of them was
+          opened first after the page loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.10
+      '@redocly/theme': 0.70.0-next.8
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.4
   0.138.0-next.12:
     timestamp: 1791363174000
     changes:
@@ -27708,6 +27784,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.8:
+    timestamp: 1791387070000
+    changes:
+      minor:
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+      patch:
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - >-
+          Fixed an issue in Replay where usage data from the **Try it** console and the `replay-openapi` tag was attributed to whichever of them was
+          opened first after the page loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+    dependencies: {}
   0.70.0-next.7:
     timestamp: 1791295634000
     changes:
@@ -31956,6 +32047,19 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.10:
+    timestamp: 1791387070000
+    changes:
+      minor: []
+      patch:
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - Improved API reference page load performance.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.8
+      '@redocly/replay': 0.29.0-next.8
   0.3.0-next.9:
     timestamp: 1791363174000
     changes:
@@ -33521,6 +33625,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.13:
+    timestamp: 1791387070000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.13
+      '@redocly/redoc': 0.138.0-next.13
+      '@redocly/redoc-revel': 0.138.0-next.13
+      '@redocly/redoc-reef': 0.138.0-next.13
+      '@redocly/theme': 0.70.0-next.8
   1.21.0-next.12:
     timestamp: 1791363174000
     changes:
@@ -42646,6 +42761,16 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.8:
+    timestamp: 1791387070000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Replay where usage data from the **Try it** console and the `replay-openapi` tag was attributed to whichever of them was
+          opened first after the page loaded.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.8
   0.29.0-next.7:
     timestamp: 1791295634000
     changes:
@@ -45280,6 +45405,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.8:
+    timestamp: 1791387070000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.8
   0.21.0-next.7:
     timestamp: 1791295634000
     changes:
