@@ -126,9 +126,11 @@ Control the **Previous** and **Next** navigation buttons on project pages.
     Supported only on public pages.
   - `docs-mcp-cursor`: connect to MCP server via Cursor.
   - `docs-mcp-vscode`: connect to MCP server via VS Code.
+  - `docs-mcp-claude`: connect to MCP server via Claude.
+    Opens claude.ai with the server name and URL filled in.
 
   The first item in the list is the default action.
-  Default: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode` in this order.
+  Default: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode`, `docs-mcp-claude` in this order.
 
 ---
 

@@ -861,6 +861,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.claude
+- Connect to Claude page action title and button on the MCP connection page
+- Connect to Claude
+
+---
+
+- page.actions.connectMcp.claudeDescription
+- Connect to Claude page action description
+- Add MCP server to your Claude account
+
+---
+
 - page.actions.connectMcp.claudeCode
 - Connect to Claude Code option title in Connect MCP dropdown
 - Connect to Claude Code
@@ -1013,14 +1025,20 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - page.mcpNotAllowed.snippets.claudeDesktop.headline
-- Claude Desktop entry headline on the MCP connection page
-- Claude Desktop
+- Claude app entry headline on the MCP connection page
+- Claude app
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.accountHint
+- Claude app note on the MCP connection page about where the connector is available
+- Claude adds the connector to your account and syncs it between Claude on the web and Claude Desktop.
 
 ---
 
 - page.mcpNotAllowed.snippets.claudeDesktop.instruction
-- Claude Desktop setup instruction on the MCP connection page
-- Open **Customize** → **Connectors** → **Add custom connector** and paste this server URL:
+- Claude app manual setup instruction on the MCP connection page
+- Or open **Customize** → **Connectors** → **Add custom connector** and paste this server URL:
 
 ---
 

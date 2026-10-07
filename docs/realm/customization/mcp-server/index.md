@@ -210,13 +210,20 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
 
   {% /tab %}
 
-  {% tab label="Claude Desktop" %}
+  {% tab label="Claude app" %}
 
-### Connect Claude Desktop to the MCP server
+### Connect the Claude app to the MCP server
+
+To add the server in one step, select **Connect to Claude** in the page actions menu, or on the setup page that opens when you visit the MCP server URL in a browser.
+Claude opens the **Add custom connector** dialog on claude.ai with the server name and URL filled in.
+Click **Add**.
+Claude adds the connector to your account and syncs it between Claude on the web and Claude Desktop.
+
+To add the server manually:
 
 {% numbered-list %}
   {% numbered-item %}
-  In Claude Desktop, open **Customize** → **Connectors** and select **Add custom connector**.
+  In the Claude app, open **Customize** → **Connectors** and select **Add custom connector**.
   {% /numbered-item %}
   {% numbered-item %}
   Paste the MCP server URL, for example `https://example.com/mcp`.
@@ -226,11 +233,11 @@ In the Claude Code CLI, ask the AI agent to perform an instruction that uses an 
   {% /numbered-item %}
 {% /numbered-list %}
 
-If the MCP server requires authentication, Claude Desktop prompts you to sign in when you connect.
+If the MCP server requires authentication, Claude prompts you to sign in when you connect.
 
-#### Test the Claude Desktop connection
+#### Test the Claude app connection
 
-In a Claude Desktop chat, ask a question that uses an MCP tool.
+In a Claude chat, ask a question that uses an MCP tool.
 
   {% /tab %}
 
