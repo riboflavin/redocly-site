@@ -37,6 +37,7 @@ export const CLI_COMMANDS: { command: string; link: string }[] = [
   { command: 'generate-client', link: '/client-generator' },
   { command: 'generate-spec', link: '/generate-spec' },
   { command: 'drift', link: '/drift' },
+  { command: 'recheck', link: '/recheck' },
 ];
 
 export function getProductMeta(link?: string): ProductMeta | undefined {
