@@ -131,6 +131,42 @@ On this page you can:
 - filter the results by  **All queries** or **Most not found**
 - search query text
 
+## MCP server
+
+The **MCP server** section shows how AI clients use your project's [MCP server](../../customization/mcp-server/index.md).
+The section appears when your plan includes the MCP server.
+
+Analytics count two kinds of MCP activity:
+
+- **Requests:** calls that an AI client sends to your MCP server, for example a code run or a direct tool call
+- **Tool calls:** calls to documentation tools, such as `search` or `get-endpoint-info`, directly or inside a code run
+
+One request can run several tool calls.
+
+### Top 5 tools
+
+The **Top 5 tools** table displays the five most called tools, with their number of calls.
+
+### Requests and tool calls
+
+The **Requests and tool calls** section displays a time series chart with requests and tool calls.
+
+Click the **View details** button to open **MCP server**.
+
+The **MCP server** page opens with a row of summary tiles for the selected period:
+
+- **Requests:** the number of requests from AI clients
+- **Tool calls:** the number of tool calls, and the average number of tool calls for each request
+- **MCP clients:** the number of distinct AI clients that report a name, such as `claude-code` or `cursor`
+
+The page also lists up to 100 tools with their calls, and up to 100 clients with their requests.
+Requests from clients that do not report a name display as **Not reported**.
+
+On this page you can:
+
+- change the period for the displayed data
+- sort the tools and the clients by name or by count
+
 ## Resources
 
 - **[About Reunite](../reunite.md)** - Explore other collaborative content management and project workflow features available in Reunite
