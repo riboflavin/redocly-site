@@ -56779,6 +56779,17 @@ reunite:
       patch:
         - Fixed the build log in Reunite dropping the indentation of indented lines.
     dependencies: {}
+  v2026-10-07.2:
+    timestamp: 1791365159000
+    changes:
+      minor:
+        - >-
+          Improved keyboard and screen reader access in Reunite for the sidebar, the project card menu, editor tabs, resolved comments in pull
+          requests, and the resolution picker in visual review.
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.58.1`.
+        - Updated `@redocly/openapi-core` to version `2.58.1`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
