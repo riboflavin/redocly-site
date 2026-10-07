@@ -31128,6 +31128,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.65.0:
+    timestamp: 1791386194000
+    changes:
+      minor:
+        - Added the `docs-mcp-claude` value to `navigation.actions.items` for the **Connect to Claude** page action.
+        - Improved TypeScript compatibility.
+      patch: []
+    dependencies: {}
   0.64.0:
     timestamp: 1791362086000
     changes:
@@ -56789,6 +56797,14 @@ reunite:
       patch:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.58.1`.
         - Updated `@redocly/openapi-core` to version `2.58.1`.
+    dependencies: {}
+  v2026-10-07.4:
+    timestamp: 1791386263000
+    changes:
+      minor:
+        - 'Added MCP server usage to the project Analytics page in Reunite: requests, tool calls, top tools, and AI clients, with sortable tables.'
+      patch:
+        - Fixed an issue where SSO login and logout failed on preview builds of projects with path prefixes.
     dependencies: {}
 replay:
   0.0.2:
