@@ -43,6 +43,9 @@ breadcrumbs:
   hide: true
 feedback:
   type: mood
+mcp:
+  docs:
+    name: Redocly
 navigation:
   previousButton:
     hide: true
