@@ -1,4 +1,35 @@
 '@redocly/realm':
+  0.138.0-next.14:
+    timestamp: 1791467275000
+    changes:
+      minor:
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+      patch:
+        - Fixed an issue where Go, Java, C#, PHP and R code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Fixed API docs deep links that opened the wrong `oneOf` or discriminator variant when the target was the 11th option or later.
+        - Fixed an issue where API docs deep links to a `oneOf` or discriminator variant also selected variants of other properties.
+        - >-
+          Fixed an issue where a `oneOf` or discriminator variant selected in an API docs request body, response or callback also changed the same
+          field in sections that used a different schema.
+        - Fixed GraphQL schema downloads to follow the `access.rbac.content` rules of their docs pages.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+        - Fixed an issue where embedded Replay lost the entered request when the page URL changed.
+        - |-
+          Fixed an issue where a file directly in the `@l10n` folder duplicated every page of the project under a path named after that file.
+          The build ignores these files and returns a warning.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.11
+      '@redocly/theme': 0.70.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.5
   0.138.0-next.13:
     timestamp: 1791387070000
     changes:
@@ -7765,6 +7796,22 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.14:
+    timestamp: 1791467275000
+    changes:
+      minor:
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+      patch:
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.11
+      '@redocly/theme': 0.70.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.5
   0.138.0-next.13:
     timestamp: 1791387070000
     changes:
@@ -14368,6 +14415,25 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.14:
+    timestamp: 1791467275000
+    changes:
+      minor:
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+      patch:
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+        - |-
+          Fixed an issue where a file directly in the `@l10n` folder duplicated every page of the project under a path named after that file.
+          The build ignores these files and returns a warning.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.11
+      '@redocly/theme': 0.70.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.5
   0.138.0-next.13:
     timestamp: 1791387070000
     changes:
@@ -20964,6 +21030,34 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.14:
+    timestamp: 1791467275000
+    changes:
+      minor:
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+      patch:
+        - Fixed an issue where Go, Java, C#, PHP and R code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Fixed API docs deep links that opened the wrong `oneOf` or discriminator variant when the target was the 11th option or later.
+        - Fixed an issue where API docs deep links to a `oneOf` or discriminator variant also selected variants of other properties.
+        - >-
+          Fixed an issue where a `oneOf` or discriminator variant selected in an API docs request body, response or callback also changed the same
+          field in sections that used a different schema.
+        - Fixed GraphQL schema downloads to follow the `access.rbac.content` rules of their docs pages.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+        - Fixed an issue where embedded Replay lost the entered request when the page URL changed.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.11
+      '@redocly/theme': 0.70.0-next.9
+      '@redocly/realm-asyncapi-sdk': 0.16.0-next.5
   0.138.0-next.13:
     timestamp: 1791387070000
     changes:
@@ -27784,6 +27878,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0-next.9:
+    timestamp: 1791467275000
+    changes:
+      minor:
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+      patch:
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+    dependencies: {}
   0.70.0-next.8:
     timestamp: 1791387070000
     changes:
@@ -32047,6 +32151,24 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.11:
+    timestamp: 1791467275000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Go, Java, C#, PHP and R code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Fixed API docs deep links that opened the wrong `oneOf` or discriminator variant when the target was the 11th option or later.
+        - Fixed an issue where API docs deep links to a `oneOf` or discriminator variant also selected variants of other properties.
+        - >-
+          Fixed an issue where a `oneOf` or discriminator variant selected in an API docs request body, response or callback also changed the same
+          field in sections that used a different schema.
+    dependencies:
+      '@redocly/theme': 0.70.0-next.9
+      '@redocly/replay': 0.29.0-next.9
   0.3.0-next.10:
     timestamp: 1791387070000
     changes:
@@ -33625,6 +33747,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.14:
+    timestamp: 1791467275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.14
+      '@redocly/redoc': 0.138.0-next.14
+      '@redocly/redoc-revel': 0.138.0-next.14
+      '@redocly/redoc-reef': 0.138.0-next.14
+      '@redocly/theme': 0.70.0-next.9
   1.21.0-next.13:
     timestamp: 1791387070000
     changes:
@@ -42761,6 +42894,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.9:
+    timestamp: 1791467275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.9
   0.29.0-next.8:
     timestamp: 1791387070000
     changes:
@@ -45405,6 +45545,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0-next.9:
+    timestamp: 1791467275000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0-next.9
   0.21.0-next.8:
     timestamp: 1791387070000
     changes:
