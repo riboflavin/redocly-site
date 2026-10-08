@@ -915,6 +915,72 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- promptTag.copy.buttonText
+- Copy button label of the prompt tag in the button-only mode
+- Copy prompt
+
+---
+
+- promptTag.showPrompt
+- Button label that shows a hidden prompt body in the prompt tag
+- Show prompt
+
+---
+
+- promptTag.hidePrompt
+- Button label that hides the prompt body in the prompt tag
+- Hide prompt
+
+---
+
+- promptTag.showFullPrompt
+- Button label that expands a truncated prompt body in the prompt tag
+- Show full prompt
+
+---
+
+- promptTag.showLess
+- Button label that truncates the prompt body again in the prompt tag
+- Show less
+
+---
+
+- promptTag.openIn.cursor
+- Open in Cursor action title in the prompt tag
+- Open in Cursor
+
+---
+
+- promptTag.openIn.cursorDescription
+- Open in Cursor action description in the prompt tag dropdown
+- Send this prompt to Cursor
+
+---
+
+- promptTag.openIn.claude
+- Open in Claude action title in the prompt tag
+- Open in Claude
+
+---
+
+- promptTag.openIn.claudeDescription
+- Open in Claude action description in the prompt tag dropdown
+- Send this prompt to Claude
+
+---
+
+- promptTag.openIn.chatgpt
+- Open in ChatGPT action title in the prompt tag
+- Open in ChatGPT
+
+---
+
+- promptTag.openIn.chatgptDescription
+- Open in ChatGPT action description in the prompt tag dropdown
+- Send this prompt to ChatGPT
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated
