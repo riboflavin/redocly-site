@@ -56938,6 +56938,15 @@ reunite:
       patch:
         - Fixed an issue where SSO login and logout failed on preview builds of projects with path prefixes.
     dependencies: {}
+  v2026-10-08.2:
+    timestamp: 1791456755000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed the Visual review check that stayed pending on pull requests in external Git repositories when no preview build ran for the pull
+          request.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
