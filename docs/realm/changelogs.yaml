@@ -57238,24 +57238,6 @@ reunite:
           Fixed the Visual review check that stayed pending on pull requests in external Git repositories when no preview build ran for the pull
           request.
     dependencies: {}
-  v2026-10-08.3:
-    timestamp: 1791479548000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue that prevented deleting a Reunite branch when a Git remote content repository contained a branch with the same name.
-        - |-
-          Fixed a server error in Reunite that occurred when users connected a repository from a GitHub organization with an IP allow list.
-          Reunite explains how to allow the Redocly IP addresses.
-        - Fixed slow GitHub commit status updates in Reunite when many projects build at the same time.
-        - Fixed server errors in Reunite responses to GitLab rejections, such as missing projects, by returning GitLab's status code.
-        - >-
-          Fixed an issue that could prevent Git remote content from syncing when webhook permissions were missing. Reunite displays an error
-          explaining which webhook permissions are required.
-        - >-
-          Fixed an issue in Respect Monitoring where pausing or resuming one workflow switched the Pause and Resume actions for every workflow in the
-          list.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
