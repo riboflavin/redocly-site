@@ -48,7 +48,7 @@ AI Search is now named the **AI assistant**.
 - Gives AI tools read-only access to your documentation and API descriptions.
   An early access capability also lets them call the APIs you document, using credentials the user supplies.
 - Enterprise and Enterprise+.
-  API execution is early access, off by default, and enabled for each organization by Redocly.
+  API calls are early access, off by default, and enabled for each organization by Redocly.
 
 ---
 
@@ -280,13 +280,15 @@ Its tools list APIs, return endpoint details and security schemes, and search do
 It does not call your backend APIs.
 It cannot change your content.
 
-Redocly can enable an early access capability that adds API execution.
-API execution is not a separate server.
-It is functionality inside the same server, and it stays off until you ask Redocly for it.
-When it is on:
+Redocly can enable an early access capability that adds API calls.
+API calls are not a separate server.
+They are functionality inside the same server, and they stay off until you ask Redocly for them.
+When they are on:
 
-- The execution tool can call the APIs you document, with credentials the user supplies.
-- The tool declares itself as no longer read-only, so MCP clients that ask for confirmation begin to prompt the user.
+- The execution tool can call the documented operations of your APIs, with credentials the user supplies.
+- By default, the tool sends only `GET`, `HEAD`, and `OPTIONS` requests, and it declares itself read-only.
+  When your project allows other methods, the tool no longer declares itself read-only.
+  MCP clients that ask for confirmation then prompt the user.
 - Tools for the user to manage their API credentials become available.
 
 ### How does the MCP server authenticate clients?
@@ -311,22 +313,24 @@ A token that an attacker obtained in another context cannot reach your backend A
 No forwarding path exists.
 The effect of a stolen valid token is limited to the documentation content that the token's owner can read in the portal.
 
-This stays true when API execution is on.
+This stays true when API calls are on.
 API calls use credentials that the user supplies separately, never the token from the MCP request.
 
-### How does authenticated API execution work?
+### How do authenticated API calls work?
 
-API execution is an early access capability of the MCP server.
-It is off by default.
-Redocly enables it for each organization on request, and each non-public API must opt in.
+API calls are an early access capability of the MCP server.
+They are off by default.
+Redocly enables them for each organization on request.
+Each client can call only the APIs and operations that its teams can read in the portal.
 
-Its design separates portal tokens from API credentials:
+Their design separates portal tokens from API credentials:
 
 - The server never uses the caller's MCP token for API calls.
 - The user supplies API credentials on a dedicated secure page, never in the AI conversation.
 - Redocly stores these credentials for each user with AES-256-GCM encryption, and with a limited lifetime.
-- The server only calls hosts listed in the API description's `servers` URLs.
+- The server only calls the operations that the API description documents, on the hosts listed in its `servers` URLs.
   It is not an open proxy.
+- By default, the server sends only `GET`, `HEAD`, and `OPTIONS` requests.
 - Protections against server-side request forgery (SSRF), redirect controls, response size caps, timeouts, and request budgets apply to every call.
 
 ### Which MCP controls can customers apply?
@@ -335,8 +339,10 @@ Its design separates portal tokens from API credentials:
 - Restrict access to specific teams with `rbac.features.mcp`.
 - Use content RBAC to control which APIs and pages each team can read.
 - Exclude files from the MCP server with `mcp.docs.ignore`.
-- Keep API execution off, which is the default.
-  When it is on, each non-public API must still opt in.
+- Keep API calls off, which is the default.
+  When they are on, content RBAC controls which APIs and operations each team can call.
+- Narrow API calls with `mcp.apiCalls` in `redocly.yaml`: turn them off, limit the HTTP methods, or exclude API files and operations.
+  In an API description, `x-mcp.apiCalls.hide` excludes an API, a path, or an operation.
 
 ### Does Redocly support new MCP specification versions?
 
@@ -382,7 +388,7 @@ You own your content and your optional project prompt (the [`aiAssistant.prompt`
 
 - The assistant grounds answers in content retrieved from your own project.
 - Access control filters retrieval for every request, including tool calls inside a conversation.
-- The MCP server is read-only until you ask Redocly to enable API execution.
+- The MCP server calls no API until you ask Redocly to enable API calls.
 - Redocly Agent tools run in a sandbox with secret redaction.
 - Input size limits apply to all questions.
 
