@@ -29,8 +29,9 @@ You can connect these Git providers:
 - [Azure DevOps](azure-devops.md)
 - [Bitbucket Cloud](bitbucket-cloud.md)
 
-{% admonition type="info" name="Self-hosted Git providers" %}
-If you use self-managed GitLab or GitHub Enterprise, allow these IP addresses.
+## IP allow lists
+
+If you use self-managed GitLab, GitHub Enterprise, or a GitHub organization with an IP allow list, allow these IP addresses.
 Redocly connects from them to deploy previews and production updates:
 
 **US region:**
@@ -46,7 +47,6 @@ Redocly connects from them to deploy previews and production updates:
 52.58.255.31
 3.66.111.193
 ```
-{% /admonition %}
 
 ## Resources
 
