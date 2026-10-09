@@ -61,8 +61,8 @@ Each event provides information about a specific event as well as some basic inf
 
 - tryItSent
 - string
-- A function called when the user clicks the “Send” button in the “Try it” panel.
-  Captures whether the request was successfully sent (Sent) or if there was a validation failure (ValidationFailed).
+- A function called when a request sent from the **Try it** panel receives a response, whatever its HTTP status.
+  The event's `action` is `Sent`.
 
 ---
 
