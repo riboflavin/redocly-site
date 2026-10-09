@@ -57256,6 +57256,15 @@ reunite:
           Fixed an issue in Respect Monitoring where pausing or resuming one workflow switched the Pause and Resume actions for every workflow in the
           list.
     dependencies: {}
+  v2026-10-09.3:
+    timestamp: 1791534807000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed security vulnerabilities `CVE-2026-102827`, `CVE-2026-102828`, `CVE-2026-102829` and `GHSA-g4wm-2vf7-vfgr` by upgrading `simple-git`
+          to version `4.0.2`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
