@@ -57265,6 +57265,15 @@ reunite:
           Fixed security vulnerabilities `CVE-2026-102827`, `CVE-2026-102828`, `CVE-2026-102829` and `GHSA-g4wm-2vf7-vfgr` by upgrading `simple-git`
           to version `4.0.2`.
     dependencies: {}
+  v2026-10-09.4:
+    timestamp: 1791538423000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where quickly renaming a project in the create project dialog reverted its domain to the one associated with its previous
+          name.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
