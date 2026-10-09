@@ -57394,6 +57394,14 @@ reunite:
           Fixed an issue where quickly renaming a project in the create project dialog reverted its domain to the one associated with its previous
           name.
     dependencies: {}
+  v2026-10-09.8:
+    timestamp: 1791562669000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.62.1`.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
