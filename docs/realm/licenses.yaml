@@ -1305,9 +1305,6 @@ packages:
   - name: supports-preserve-symlinks-flag
     license: MIT
     repository: https://github.com/inspect-js/node-supports-preserve-symlinks-flag
-  - name: swagger2openapi
-    license: BSD-3-Clause
-    repository: https://github.com/Mermade/oas-kit
   - name: to-regex-range
     license: MIT
     repository: https://github.com/micromatch/to-regex-range
