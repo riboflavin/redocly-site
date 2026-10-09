@@ -17,6 +17,10 @@ description: Configure custom response headers for your project.
 Configure custom response headers for your project.
 Custom headers are added to the response header object if requested resource matches a configured pattern.
 
+Pages that ask for credentials or for access approval keep the security headers they set, such as `Content-Security-Policy`.
+These pages are the MCP server authorization page and the page where users add API credentials for MCP clients.
+Your configured headers do not replace those headers, but other configured headers still apply.
+
 ## Options
 
 ### Patterns map
