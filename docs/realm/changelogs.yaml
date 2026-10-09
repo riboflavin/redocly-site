@@ -1,4 +1,25 @@
 '@redocly/realm':
+  0.138.0-next.17:
+    timestamp: 1791554942000
+    changes:
+      minor:
+        - >-
+          Improved Swagger 2.0 support: documents load about three times faster and with less memory, keep `$ref` descriptions and nullable
+          references.
+      patch:
+        - Reduced the size of API reference pages that have many headings and schema fields.
+        - >-
+          Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run when users sent a request from the **Try it**
+          panel.
+
+          The callback runs with the `Sent` action when the request receives a response.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - >-
+          Updated the `simple-git` dependency to version 4.0.2 to resolve security vulnerabilities GHSA-g4wm-2vf7-vfgr, CVE-2026-102827,
+          CVE-2026-102828, and CVE-2026-102829.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.2
   0.138.0-next.16:
     timestamp: 1791475133000
     changes:
@@ -7812,6 +7833,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.17:
+    timestamp: 1791554942000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - >-
+          Updated the `simple-git` dependency to version 4.0.2 to resolve security vulnerabilities GHSA-g4wm-2vf7-vfgr, CVE-2026-102827,
+          CVE-2026-102828, and CVE-2026-102829.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.2
   0.138.0-next.16:
     timestamp: 1791475133000
     changes:
@@ -14447,6 +14480,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.17:
+    timestamp: 1791554942000
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - >-
+          Updated the `simple-git` dependency to version 4.0.2 to resolve security vulnerabilities GHSA-g4wm-2vf7-vfgr, CVE-2026-102827,
+          CVE-2026-102828, and CVE-2026-102829.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.2
   0.138.0-next.16:
     timestamp: 1791475133000
     changes:
@@ -21078,6 +21123,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.17:
+    timestamp: 1791554942000
+    changes:
+      minor:
+        - >-
+          Improved Swagger 2.0 support: documents load about three times faster and with less memory, keep `$ref` descriptions and nullable
+          references.
+      patch:
+        - Reduced the size of API reference pages that have many headings and schema fields.
+        - >-
+          Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run when users sent a request from the **Try it**
+          panel.
+
+          The callback runs with the `Sent` action when the request receives a response.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - >-
+          Updated the `simple-git` dependency to version 4.0.2 to resolve security vulnerabilities GHSA-g4wm-2vf7-vfgr, CVE-2026-102827,
+          CVE-2026-102828, and CVE-2026-102829.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.14
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.2
   0.138.0-next.16:
     timestamp: 1791475133000
     changes:
@@ -32229,6 +32295,22 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.14:
+    timestamp: 1791554942000
+    changes:
+      minor:
+        - >-
+          Improved Swagger 2.0 support: documents load about three times faster and with less memory, keep `$ref` descriptions and nullable
+          references.
+      patch:
+        - Reduced the size of API reference pages that have many headings and schema fields.
+        - >-
+          Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run when users sent a request from the **Try it**
+          panel.
+
+          The callback runs with the `Sent` action when the request receives a response.
+    dependencies:
+      '@redocly/replay': 0.29.0-next.12
   0.3.0-next.13:
     timestamp: 1791475133000
     changes:
@@ -32739,6 +32821,15 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.12.0-next.2:
+    timestamp: 1791554942000
+    changes:
+      minor:
+        - >-
+          Improved Swagger 2.0 support: documents load about three times faster and with less memory, keep `$ref` descriptions and nullable
+          references.
+      patch: []
+    dependencies: {}
   0.12.0-next.1:
     timestamp: 1791356046000
     changes:
@@ -33841,6 +33932,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.17:
+    timestamp: 1791554942000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.17
+      '@redocly/redoc': 0.138.0-next.17
+      '@redocly/redoc-revel': 0.138.0-next.17
+      '@redocly/redoc-reef': 0.138.0-next.17
   1.21.0-next.16:
     timestamp: 1791475133000
     changes:
@@ -39814,6 +39915,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.23.0-next.2:
+    timestamp: 1791554942000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.12.0-next.2
   0.23.0-next.1:
     timestamp: 1791356046000
     changes:
@@ -43010,6 +43118,18 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0-next.12:
+    timestamp: 1791554942000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run when users sent a request from the **Try it**
+          panel.
+
+          The callback runs with the `Sent` action when the request receives a response.
+        - Improved panel resizing in the **Try it** console.
+    dependencies: {}
   0.29.0-next.11:
     timestamp: 1791475133000
     changes:
