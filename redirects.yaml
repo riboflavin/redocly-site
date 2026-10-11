@@ -232,8 +232,8 @@
   to: '/docs/cli/rules/oas/no-empty-servers'
 '/docs/cli/rules/no-enum-type-mismatch':
   to: '/docs/cli/rules/oas/no-enum-type-mismatch'
-# '/docs/cli/rules/no-example-value-and-externalValue':
-#   to: '/docs/cli/rules/oas/no-example-value-and-externalValue'
+'/docs/cli/rules/no-example-value-and-externalValue':
+  to: '/docs/cli/rules/oas/no-example-value-and-externalValue'
 '/docs/cli/rules/no-http-verbs-in-paths':
   to: '/docs/cli/rules/oas/no-http-verbs-in-paths'
 '/docs/cli/rules/no-identical-paths':
@@ -268,14 +268,12 @@
   to: '/docs/cli/rules/oas/operation-4xx-response'
 '/docs/cli/rules/operation-description':
   to: '/docs/cli/rules/oas/operation-description'
-# '/docs/cli/rules/operation-operationId-unique/':
-#   to: '/docs/cli/rules/oas/operation-operationId-unique'
-# '/docs/cli/rules/operation-operationid-unique/':
-#   to: '/docs/cli/rules/oas/operation-operationId-unique'
-# '/docs/cli/rules/operation-operationId-url-safe':
-#   to: '/docs/cli/rules/oas/operation-operationId-url-safe'
-# '/docs/cli/rules/operation-operationId':
-#   to: '/docs/cli/rules/oas/operation-operationId'
+'/docs/cli/rules/operation-operationId-unique/':
+  to: '/docs/cli/rules/oas/operation-operationId-unique'
+'/docs/cli/rules/operation-operationId-url-safe':
+  to: '/docs/cli/rules/oas/operation-operationId-url-safe'
+'/docs/cli/rules/operation-operationId':
+  to: '/docs/cli/rules/oas/operation-operationId'
 '/docs/cli/rules/operation-parameters-unique':
   to: '/docs/cli/rules/oas/operation-parameters-unique'
 '/docs/cli/rules/operation-singular-tag':
@@ -343,7 +341,7 @@
 '/docs/openapi-visual-reference/*':
   to: '/learn/openapi/openapi-visual-reference/*'
 '/docs/yaml/*':
-  to: '/docs/yaml/*'
+  to: '/learn/yaml/*'
 '/docs/resources/all-of/':
   to: '/learn/openapi/all-of/'
 '/docs/resources/discriminator/':
@@ -785,3 +783,122 @@
 # AI governance
 '/docs/realm/faq/ai-search-privacy':
   to: '/docs/realm/faq/ai-governance'
+
+# -- Redirects for 404s reported by Google Search Console (coverage report, 2026-10-09)
+
+# Old top-level and product URLs
+'/cli/*':
+  to: '/docs/cli/*'
+'/tools/cli/openapi-lint/':
+  to: '/docs/cli/commands/lint'
+'/docs/installation/':
+  to: '/docs/cli/installation'
+'/docs/redocReact':
+  to: '/docs/redoc/deployment/react'
+'/docs/redoc/deployment':
+  to: '/docs/redoc/deployment/intro'
+'/docs/openapi/':
+  to: '/demo/openapi/museum-api'
+'/docs/openapi/museum-api/*':
+  to: '/demo/openapi/museum-api/*'
+'/docs/api-reference/organization-api-keys/':
+  to: '/docs/realm/reunite/organization/api-keys'
+'/ai-reviewer':
+  to: '/reviewer'
+'/careers/data-engineer':
+  to: '/careers'
+'/careers/product-led-growth-manager':
+  to: '/careers'
+'/support/':
+  to: '/contact-us'
+'/startup-discount/':
+  to: '/pricing'
+'/gsod-2024-proposal':
+  to: '/gsod'
+# SSO claim namespace URIs (https://redocly.com/sso/...) get crawled as pages
+'/sso/*':
+  to: '/docs/realm/reunite/organization/sso/sso'
+'/sso/teams':
+  to: '/docs/realm/reunite/organization/teams'
+'/roles':
+  to: '/docs/realm/access/roles'
+
+# Redocly CLI rules that were moved, renamed, or removed
+'/docs/cli/rules/no-server-example.com/':
+  to: '/docs/cli/rules/oas/no-server-example-com'
+'/docs/cli/rules/arazzo/sourcedescriptions-name-unique':
+  to: '/docs/cli/rules/arazzo/sourcedescription-name-unique'
+'/docs/cli/rules/arazzo/sourcedescriptions-type':
+  to: '/docs/cli/rules/arazzo/sourcedescription-type'
+'/docs/cli/rules/arazzo/struct':
+  to: '/docs/cli/rules/common/struct'
+'/docs/cli/rules/respect/respect-supported-versions':
+  to: '/docs/cli/v1/rules/respect/respect-supported-versions'
+'/docs/cli/rules/respect/x-security-schema-required-values':
+  to: '/docs/cli/rules/respect/x-security-scheme-required-values'
+'/docs/cli/guides/overlay/':
+  to: '/docs/cli/guides/apply-overlays'
+
+# Legacy docs
+'/docs-legacy/api-reference-docs-legacy/settings/custom-domain':
+  to: '/docs-legacy/api-reference-docs/settings/custom-domain'
+'/docs-legacy/api-reference-docs/configuration/functions':
+  to: '/docs-legacy/api-reference-docs/configuration/functionality'
+'/docs-legacy/api-reference-docs/specification-extensions':
+  to: '/docs-legacy/api-reference-docs/spec-extensions'
+'/docs-legacy/api-reference-docs/specification-extensions/x-extended-discriminator':
+  to: '/docs-legacy/api-reference-docs/spec-extensions'
+'/docs-legacy/developer-portal/guides/mdx':
+  to: '/docs-legacy/developer-portal/guides/markdown'
+'/docs-legacy/workflows/manage-docs-access/':
+  to: '/docs-legacy/workflows/manage-access'
+
+# Realm docs pages that were moved, merged, or removed
+'/docs/realm/author/concepts/navigation':
+  to: '/docs/realm/navigation'
+'/docs/realm/author/concepts/reunite':
+  to: '/docs/realm/reunite/reunite'
+'/docs/realm/config/logout-return-url':
+  to: '/docs/realm/config/access/logout-return-url'
+'/docs/realm/config/requires-login':
+  to: '/docs/realm/config/access/requires-login'
+'/docs/realm/config/residency':
+  to: '/docs/realm/config/access/residency'
+'/docs/realm/config/sso':
+  to: '/docs/realm/config/access/sso'
+'/docs/realm/config/scorecard':
+  to: '/docs/realm/config/scorecard-classic'
+'/docs/realm/config/palette':
+  to: '/docs/realm/branding/customize-styles'
+'/docs/realm/content/add-excalidraw-diagram':
+  to: '/docs/realm/content/add-diagram'
+'/docs/realm/content/api-docs/openapi-extensions/webhooks':
+  to: '/docs/realm/content/api-docs/openapi-extensions/x-webhooks'
+'/docs/realm/content/localization/':
+  to: '/docs/realm/config/l10n'
+'/docs/realm/customization/api-functions/kv-storage':
+  to: '/docs/realm/customization/api-functions'
+'/docs/realm/customization/react-components/list/utils':
+  to: '/docs/realm/customization/react-components/list/dynamic'
+'/docs/realm/extend/tutorials/build-custom-function':
+  to: '/docs/realm/customization/build-custom-function'
+'/docs/realm/navigation/navigation':
+  to: '/docs/realm/navigation'
+'/docs/realm/reunite/project/branches-and-deploys':
+  to: '/docs/realm/reunite/project/branches-and-deployments'
+'/docs/realm/reunite/project/projects':
+  to: '/docs/realm/reunite/project/manage-projects'
+'/docs/realm/setup/concepts/remote-content':
+  to: '/docs/realm/reunite/project/remote-content'
+'/docs/realm/setup/concepts/replay':
+  to: '/docs/end-user/test-apis-replay'
+'/docs/realm/setup/how-to/custom-domain':
+  to: '/docs/realm/reunite/project/custom-domain'
+'/docs/realm/style/concepts/color-mode':
+  to: '/docs/realm/branding/color-mode'
+'/docs/realm/style/concepts/styling':
+  to: '/docs/realm/branding/styling'
+'/docs/realm/style/how-to/customize-fonts':
+  to: '/docs/realm/branding/customize-fonts'
+'/docs/realm/style/how-to/customize-styles':
+  to: '/docs/realm/branding/customize-styles'
