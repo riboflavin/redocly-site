@@ -57473,6 +57473,15 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.62.1`.
         - Updated `@redocly/openapi-core` to version `2.62.1`.
     dependencies: {}
+  v2026-10-12.3:
+    timestamp: 1791801894000
+    changes:
+      minor:
+        - Added sticky parent folders to the editor file tree so the open folders stay visible at the top when you scroll.
+      patch:
+        - Fixed SSO logout on the custom domain of projects configured with a path prefix (`REDOCLY_PREFIX_PATHS`).
+        - Improved scrolling performance in the editor file tree.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
