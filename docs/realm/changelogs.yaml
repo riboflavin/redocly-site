@@ -1,4 +1,14 @@
 '@redocly/realm':
+  0.138.0-next.18:
+    timestamp: 1791787963000
+    changes:
+      minor:
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.3
   0.138.0-next.17:
     timestamp: 1791554942000
     changes:
@@ -7833,6 +7843,16 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0-next.18:
+    timestamp: 1791787963000
+    changes:
+      minor:
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.3
   0.138.0-next.17:
     timestamp: 1791554942000
     changes:
@@ -14480,6 +14500,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0-next.18:
+    timestamp: 1791787963000
+    changes:
+      minor:
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.3
   0.138.0-next.17:
     timestamp: 1791554942000
     changes:
@@ -21123,6 +21153,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0-next.18:
+    timestamp: 1791787963000
+    changes:
+      minor:
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies:
+      '@redocly/api-docs': 0.3.0-next.15
+      '@redocly/portal-plugin-mock-server': 0.23.0-next.3
   0.138.0-next.17:
     timestamp: 1791554942000
     changes:
@@ -32295,6 +32335,13 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0-next.15:
+    timestamp: 1791787963000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies: {}
   0.3.0-next.14:
     timestamp: 1791554942000
     changes:
@@ -32821,6 +32868,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.12.0-next.3:
+    timestamp: 1791787963000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies: {}
   0.12.0-next.2:
     timestamp: 1791554942000
     changes:
@@ -33932,6 +33986,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0-next.18:
+    timestamp: 1791787963000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.0-next.18
+      '@redocly/redoc': 0.138.0-next.18
+      '@redocly/redoc-revel': 0.138.0-next.18
+      '@redocly/redoc-reef': 0.138.0-next.18
   1.21.0-next.17:
     timestamp: 1791554942000
     changes:
@@ -39915,6 +39979,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.23.0-next.3:
+    timestamp: 1791787963000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.12.0-next.3
   0.23.0-next.2:
     timestamp: 1791554942000
     changes:
