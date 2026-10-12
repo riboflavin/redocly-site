@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.139.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where Markdoc tags in API descriptions ignored their `renderForLlms` output in the Markdown for LLMs and AI search of API
+          docs pages, and appeared as raw tag source instead.
+        - Fixed an issue where the `sanitize` option was not applied to parameter and schema property descriptions in API docs.
+        - Fixed an issue where webhooks in API docs displayed a server switcher with URLs that combined an API server with the webhook name.
+        - Fixed an issue in GraphQL docs where Markdown and HTML in descriptions displayed as raw text in the field and argument lists.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.1
   0.139.0-next.0:
     timestamp: 1791814615000
     changes:
@@ -7999,6 +8012,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.1
   0.139.0-next.0:
     timestamp: 1791814615000
     changes:
@@ -14743,6 +14763,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.1
   0.139.0-next.0:
     timestamp: 1791814615000
     changes:
@@ -21486,6 +21513,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where Markdoc tags in API descriptions ignored their `renderForLlms` output in the Markdown for LLMs and AI search of API
+          docs pages, and appeared as raw tag source instead.
+        - Fixed an issue where the `sanitize` option was not applied to parameter and schema property descriptions in API docs.
+        - Fixed an issue where webhooks in API docs displayed a server switcher with URLs that combined an API server with the webhook name.
+        - Fixed an issue in GraphQL docs where Markdown and HTML in descriptions displayed as raw text in the field and argument lists.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.1
   0.139.0-next.0:
     timestamp: 1791814615000
     changes:
@@ -32863,6 +32903,18 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where Markdoc tags in API descriptions ignored their `renderForLlms` output in the Markdown for LLMs and AI search of API
+          docs pages, and appeared as raw tag source instead.
+        - Fixed an issue where the `sanitize` option was not applied to parameter and schema property descriptions in API docs.
+        - Fixed an issue where webhooks in API docs displayed a server switcher with URLs that combined an API server with the webhook name.
+        - Fixed an issue in GraphQL docs where Markdown and HTML in descriptions displayed as raw text in the field and argument lists.
+    dependencies: {}
   0.4.0-next.0:
     timestamp: 1791814615000
     changes:
@@ -34594,6 +34646,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.1:
+    timestamp: 1791819593000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.1
+      '@redocly/redoc': 0.139.0-next.1
+      '@redocly/redoc-revel': 0.139.0-next.1
+      '@redocly/redoc-reef': 0.139.0-next.1
   1.22.0-next.0:
     timestamp: 1791814615000
     changes:
