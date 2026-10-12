@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.138.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Improved the AI assistant's progress display to keep generated answers stable.
@@ -7990,7 +7990,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.138.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Improved the AI assistant's progress display to keep generated answers stable.
@@ -14724,7 +14724,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.138.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Improved the AI assistant's progress display to keep generated answers stable.
@@ -21457,7 +21457,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.138.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Improved the AI assistant's progress display to keep generated answers stable.
@@ -28486,7 +28486,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.70.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Improved the AI assistant's progress display to keep generated answers stable.
@@ -32817,7 +32817,7 @@
     dependencies: {}
 '@redocly/api-docs':
   0.3.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Added a tooltip to the link icon next to headings and properties in API docs.
@@ -33412,7 +33412,7 @@
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
   0.12.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - |-
@@ -34540,7 +34540,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.21.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor: []
       patch: []
@@ -40544,7 +40544,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.23.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor: []
       patch: []
@@ -43761,7 +43761,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.29.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor:
         - Added the ejectable `ReplaySecuritySchemeActions` component which renders inside the security scheme card in the **Try it** console.
@@ -46459,7 +46459,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.21.0:
-    timestamp: 1791799136000
+    timestamp: 1791805236000
     changes:
       minor: []
       patch: []
@@ -58072,8 +58072,8 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.62.1`.
         - Updated `@redocly/openapi-core` to version `2.62.1`.
     dependencies: {}
-  v2026-10-12.3:
-    timestamp: 1791801894000
+  v2026-10-12.4:
+    timestamp: 1791803730000
     changes:
       minor:
         - Added sticky parent folders to the editor file tree so the open folders stay visible at the top when you scroll.
