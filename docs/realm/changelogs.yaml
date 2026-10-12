@@ -1,4 +1,150 @@
 '@redocly/realm':
+  0.138.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added a tooltip to the link icon next to headings and properties in API docs.
+        - Added support for ordering options in the Markdoc `connect-mcp` tag.
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+        - Added support for project-specific MCP tools defined in an `@mcp` folder.
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+        - Added a `submit-feedback` tool to report documentation issues through the MCP server.
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - |-
+          Improved Swagger `2.0` support with faster loading times and less memory used.
+          Preserved `$ref` descriptions and nullable references.
+        - >-
+          Changed the defaults of the `analytics.segment.trackPage`, `analytics.segment.includeTitleInPageCall`, and `analytics.rudderstack.trackPage`
+          options to disable page view tracking by default.
+        - Added the ejectable `ReplaySecuritySchemeActions` component which renders inside the security scheme card in the **Try it** console.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+        - Improved the reliability of AI assistant answers during streaming.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+      patch:
+        - Fixed an issue where tooltips were missing for the **Copy**, **Like**, and **Dislike** buttons in AI assistant answers.
+        - Fixed an issue where code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - Fixed an issue where the link checker falsely reported broken links to API reference pages.
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Reduced the size of API reference pages with many headings and schema fields.
+        - Improved API reference page load performance.
+        - Fixed regressions of `oneOf` and discriminator behavior in API docs.
+        - Fixed an issue in OpenAPI docs where `label`, `icon`, and `badges` from `sidebars.yaml` were not applied to the API overview sidebar item.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Hardened authentication.
+        - Fixed an issue where unknown key in `redocly.yaml` caused its entire object to be removed.
+        - Fixed an issue where dropdown menus were cut off at edge of the viewport.
+        - Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run.
+        - Fixed an issue where GraphQL enum pages didn't render the **Referenced in** panel.
+        - Fixed GraphQL schema downloads to follow the `access.rbac.content` rules of their docs pages.
+        - Improved security for API functions and custom MCP tools in projects hosted in Reunite.
+        - Fixed an issue in API docs where links in the **Operations** panel of had duplicated path prefix.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+        - >-
+          Improved keyboard navigation for catalog filters, scorecard table sorting, and the "API keys" and "Logs" tabs on app pages in developer
+          onboarding.
+        - >-
+          Improved keyboard and screen reader accessibility for image lightboxes, feedback reasons, select menus such as the version picker, and
+          schema variant switches in API reference.
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+        - Fixed an issue where the `openapi-code-sample` tag omitted the authentication with `security` at the root instead of operation.
+        - Fixed an issue where the `markdoc-example` tag rendered an empty result panel with `renderDemo=true`.
+        - Updated the Claude Desktop instructions on the `/mcp` page to add the Docs MCP server as a custom connector.
+        - Fixed an issue where MCP server lookups failed when several API description files shared a title.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - Fixed an issue where the link checker falsely reported broken links to `/mcp` and `/mcp-public`.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - >-
+          Fixed an issue where the `openapi-response-sample` tag reverted to the first response code after in-page navigation or browser Back and
+          Forward navigation.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - >-
+          Fixed an issue in API docs where clicking an anchor link on a heading inside a partial caused a 404 error instead of navigating to the
+          heading.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - Fixed SSO login for branch previews of projects configured to use path prefixes.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed divider color in button groups, such as the page actions split button, to match custom theme button colors.
+        - Fixed an issue where the search dialog reset the selected category to "All" every time it was reopened.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where a React page rendered blank if its page component was wrapped in `React.memo` or `forwardRef`.
+        - Fixed an issue where embedded Replay lost the entered request when the page URL changed.
+        - Fixed an issue in Replay where closing a tab while a request was running in another tab left the sending tab stuck on `Sending request ...`.
+        - Fixed webhook and callback payload schemas in OpenAPI docs to correctly display read-only and write-only fields.
+        - >-
+          Fixed MCP server returning an empty result instead of an error when code execution produced a value too large or invalid for JSON
+          conversion.
+        - Fixed the API docs sidebar incorrectly highlighting an adjacent section while content was being lazy-loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group scrolled the page to the group heading instead of expanding the
+          operations in place.
+        - |-
+          Fixed an issue where a file directly in the `@l10n` folder duplicated every page of the project under a path named after that file.
+          The build ignores these files and returns a warning.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+        - Updated the tooltip arrow to render as a compact 16 pixels pointer with a softly rounded tip.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+        - Fixed the split button so the menu toggle and divider use the same `danger` tone as the main button.
+        - Fixed an issue where the tooltip arrows failed to render in browsers that didn't support CSS anchor positioning.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Improved rendering of AsyncAPI `2.0–2.6` channels, operations, messages, servers, and traits to match AsyncAPI `3.0`.
+        - Fixed server-side rendering of localized projects where UI labels appeared in the wrong language alongside hydration warnings.
+        - >-
+          Resolved security vulnerabilities `GHSA-g4wm-2vf7-vfgr`, `CVE-2026-102827`, `CVE-2026-102828`, and `CVE-2026-102829` by upgrading
+          `simple-git` dependency to version `4.0.2`.
+        - >-
+          Fixed an issue in the **Try it** console where query parameters with `allowReserved` caused reserved characters such as `/`, `:`, and `,` to
+          be percent-encoded.
+        - >-
+          Updated the **Try it** console's example picker to label unnamed examples as `Default` instead of an internal identifier from the API
+          description.
+        - >-
+          Fixed an issue where the **Try it** console opened on the first request body example in OpenAPI docs instead of the example selected in the
+          request panel.
+        - Fixed an issue in the **Try it** console where operations displayed empty or incorrect request bodies and missing parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appeared in the operations
+          list.
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+        - Fixed an issue where some of the UI text didn't switch to a new language after navigation.
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/api-docs': 0.3.0
+      '@redocly/realm-asyncapi-sdk': 0.16.0
+      '@redocly/portal-plugin-mock-server': 0.23.0
   0.138.0-next.18:
     timestamp: 1791787963000
     changes:
@@ -7843,6 +7989,83 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.138.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for ordering options in the Markdoc `connect-mcp` tag.
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+        - Added support for project-specific MCP tools defined in an `@mcp` folder.
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+        - Added a `submit-feedback` tool to report documentation issues through the MCP server.
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - >-
+          Changed the defaults of the `analytics.segment.trackPage`, `analytics.segment.includeTitleInPageCall`, and `analytics.rudderstack.trackPage`
+          options to disable page view tracking by default.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+        - Improved the reliability of AI assistant answers during streaming.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+      patch:
+        - Fixed an issue where tooltips were missing for the **Copy**, **Like**, and **Dislike** buttons in AI assistant answers.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Hardened authentication.
+        - Fixed an issue where unknown key in `redocly.yaml` caused its entire object to be removed.
+        - Fixed an issue where dropdown menus were cut off at edge of the viewport.
+        - Improved security for API functions and custom MCP tools in projects hosted in Reunite.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+        - >-
+          Improved keyboard navigation for catalog filters, scorecard table sorting, and the "API keys" and "Logs" tabs on app pages in developer
+          onboarding.
+        - >-
+          Improved keyboard and screen reader accessibility for image lightboxes, feedback reasons, select menus such as the version picker, and
+          schema variant switches in API reference.
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+        - Fixed an issue where the `markdoc-example` tag rendered an empty result panel with `renderDemo=true`.
+        - Updated the Claude Desktop instructions on the `/mcp` page to add the Docs MCP server as a custom connector.
+        - Fixed an issue where MCP server lookups failed when several API description files shared a title.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - Fixed an issue where the link checker falsely reported broken links to `/mcp` and `/mcp-public`.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - Fixed SSO login for branch previews of projects configured to use path prefixes.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed divider color in button groups, such as the page actions split button, to match custom theme button colors.
+        - Fixed an issue where the search dialog reset the selected category to "All" every time it was reopened.
+        - Hardened RBAC enforcement for page content.
+        - >-
+          Fixed MCP server returning an empty result instead of an error when code execution produced a value too large or invalid for JSON
+          conversion.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+        - Updated the tooltip arrow to render as a compact 16 pixels pointer with a softly rounded tip.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+        - Fixed the split button so the menu toggle and divider use the same `danger` tone as the main button.
+        - Fixed an issue where the tooltip arrows failed to render in browsers that didn't support CSS anchor positioning.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - >-
+          Resolved security vulnerabilities `GHSA-g4wm-2vf7-vfgr`, `CVE-2026-102827`, `CVE-2026-102828`, and `CVE-2026-102829` by upgrading
+          `simple-git` dependency to version `4.0.2`.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/api-docs': 0.3.0
+      '@redocly/realm-asyncapi-sdk': 0.16.0
+      '@redocly/portal-plugin-mock-server': 0.23.0
   0.138.0-next.18:
     timestamp: 1791787963000
     changes:
@@ -14500,6 +14723,86 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.138.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added support for ordering options in the Markdoc `connect-mcp` tag.
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+        - Added support for project-specific MCP tools defined in an `@mcp` folder.
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+        - Added a `submit-feedback` tool to report documentation issues through the MCP server.
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - >-
+          Changed the defaults of the `analytics.segment.trackPage`, `analytics.segment.includeTitleInPageCall`, and `analytics.rudderstack.trackPage`
+          options to disable page view tracking by default.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+        - Improved the reliability of AI assistant answers during streaming.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+      patch:
+        - Fixed an issue where tooltips were missing for the **Copy**, **Like**, and **Dislike** buttons in AI assistant answers.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Hardened authentication.
+        - Fixed an issue where unknown key in `redocly.yaml` caused its entire object to be removed.
+        - Fixed an issue where dropdown menus were cut off at edge of the viewport.
+        - Improved security for API functions and custom MCP tools in projects hosted in Reunite.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+        - >-
+          Improved keyboard and screen reader accessibility for image lightboxes, feedback reasons, select menus such as the version picker, and
+          schema variant switches in API reference.
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+        - Fixed an issue where the `markdoc-example` tag rendered an empty result panel with `renderDemo=true`.
+        - Updated the Claude Desktop instructions on the `/mcp` page to add the Docs MCP server as a custom connector.
+        - Fixed an issue where MCP server lookups failed when several API description files shared a title.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - Fixed an issue where the link checker falsely reported broken links to `/mcp` and `/mcp-public`.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - Fixed SSO login for branch previews of projects configured to use path prefixes.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed divider color in button groups, such as the page actions split button, to match custom theme button colors.
+        - Fixed an issue where the search dialog reset the selected category to "All" every time it was reopened.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where a React page rendered blank if its page component was wrapped in `React.memo` or `forwardRef`.
+        - >-
+          Fixed MCP server returning an empty result instead of an error when code execution produced a value too large or invalid for JSON
+          conversion.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - |-
+          Fixed an issue where a file directly in the `@l10n` folder duplicated every page of the project under a path named after that file.
+          The build ignores these files and returns a warning.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+        - Updated the tooltip arrow to render as a compact 16 pixels pointer with a softly rounded tip.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+        - Fixed the split button so the menu toggle and divider use the same `danger` tone as the main button.
+        - Fixed an issue where the tooltip arrows failed to render in browsers that didn't support CSS anchor positioning.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Fixed server-side rendering of localized projects where UI labels appeared in the wrong language alongside hydration warnings.
+        - >-
+          Resolved security vulnerabilities `GHSA-g4wm-2vf7-vfgr`, `CVE-2026-102827`, `CVE-2026-102828`, and `CVE-2026-102829` by upgrading
+          `simple-git` dependency to version `4.0.2`.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+        - Fixed an issue where some of the UI text didn't switch to a new language after navigation.
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/api-docs': 0.3.0
+      '@redocly/realm-asyncapi-sdk': 0.16.0
+      '@redocly/portal-plugin-mock-server': 0.23.0
   0.138.0-next.18:
     timestamp: 1791787963000
     changes:
@@ -21153,6 +21456,140 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.138.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added a tooltip to the link icon next to headings and properties in API docs.
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+        - Added support for project-specific MCP tools defined in an `@mcp` folder.
+        - Improved the `preview` command to use the next free port and log a warning when the requested port is already in use.
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - Added output schema to the MCP `execute` tool and complete tool annotations to the MCP server tools.
+        - Added a `submit-feedback` tool to report documentation issues through the MCP server.
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - |-
+          Improved Swagger `2.0` support with faster loading times and less memory used.
+          Preserved `$ref` descriptions and nullable references.
+        - >-
+          Changed the defaults of the `analytics.segment.trackPage`, `analytics.segment.includeTitleInPageCall`, and `analytics.rudderstack.trackPage`
+          options to disable page view tracking by default.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+        - Improved the reliability of AI assistant answers during streaming.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+      patch:
+        - Fixed an issue where tooltips were missing for the **Copy**, **Like**, and **Dislike** buttons in AI assistant answers.
+        - Fixed an issue where code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - Fixed an issue where the link checker falsely reported broken links to API reference pages.
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Reduced the size of API reference pages with many headings and schema fields.
+        - Improved API reference page load performance.
+        - Fixed regressions of `oneOf` and discriminator behavior in API docs.
+        - Fixed an issue in OpenAPI docs where `label`, `icon`, and `badges` from `sidebars.yaml` were not applied to the API overview sidebar item.
+        - Fixed the AI assistant providing answers without using the project API tools on projects with protected content.
+        - Hardened authentication.
+        - Fixed an issue where unknown key in `redocly.yaml` caused its entire object to be removed.
+        - Fixed an issue where dropdown menus were cut off at edge of the viewport.
+        - Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run.
+        - Fixed an issue where GraphQL enum pages didn't render the **Referenced in** panel.
+        - Fixed GraphQL schema downloads to follow the `access.rbac.content` rules of their docs pages.
+        - Improved security for API functions and custom MCP tools in projects hosted in Reunite.
+        - Fixed an issue in API docs where links in the **Operations** panel of had duplicated path prefix.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+        - >-
+          Improved keyboard and screen reader accessibility for image lightboxes, feedback reasons, select menus such as the version picker, and
+          schema variant switches in API reference.
+        - Fixed an issue where search returned an error on built projects with a very large search index.
+        - Fixed an issue where the `openapi-code-sample` tag omitted the authentication with `security` at the root instead of operation.
+        - Updated the Claude Desktop instructions on the `/mcp` page to add the Docs MCP server as a custom connector.
+        - Fixed an issue where MCP server lookups failed when several API description files shared a title.
+        - Fixed portal server crashes under MCP traffic on Redoc and Revel projects.
+        - Fixed an issue where the link checker falsely reported broken links to `/mcp` and `/mcp-public`.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - >-
+          Fixed an issue where the `openapi-response-sample` tag reverted to the first response code after in-page navigation or browser Back and
+          Forward navigation.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - >-
+          Fixed an issue in API docs where clicking an anchor link on a heading inside a partial caused a 404 error instead of navigating to the
+          heading.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - Fixed security vulnerabilities `GHSA-6688-9rhm-gjv2` and `GHSA-p98j-92pf-mc4p` by upgrading `dompurify` to version `3.4.16`.
+        - Fixed SSO login for branch previews of projects configured to use path prefixes.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed divider color in button groups, such as the page actions split button, to match custom theme button colors.
+        - Fixed an issue where the search dialog reset the selected category to "All" every time it was reopened.
+        - Hardened RBAC enforcement for page content.
+        - Fixed an issue where embedded Replay lost the entered request when the page URL changed.
+        - Fixed an issue in Replay where closing a tab while a request was running in another tab left the sending tab stuck on `Sending request ...`.
+        - Fixed webhook and callback payload schemas in OpenAPI docs to correctly display read-only and write-only fields.
+        - >-
+          Fixed MCP server returning an empty result instead of an error when code execution produced a value too large or invalid for JSON
+          conversion.
+        - Fixed the API docs sidebar incorrectly highlighting an adjacent section while content was being lazy-loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group scrolled the page to the group heading instead of expanding the
+          operations in place.
+        - |-
+          Fixed an issue where search returned results titled with raw HTML element names such as `table`, `th` or `div`.
+          The issue occurred on Markdown pages that contained raw HTML.
+        - Updated the tooltip arrow to render as a compact 16 pixels pointer with a softly rounded tip.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+        - Fixed the split button so the menu toggle and divider use the same `danger` tone as the main button.
+        - Fixed an issue where the tooltip arrows failed to render in browsers that didn't support CSS anchor positioning.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+        - Improved rendering of AsyncAPI `2.0–2.6` channels, operations, messages, servers, and traits to match AsyncAPI `3.0`.
+        - >-
+          Resolved security vulnerabilities `GHSA-g4wm-2vf7-vfgr`, `CVE-2026-102827`, `CVE-2026-102828`, and `CVE-2026-102829` by upgrading
+          `simple-git` dependency to version `4.0.2`.
+        - >-
+          Fixed an issue in the **Try it** console where query parameters with `allowReserved` caused reserved characters such as `/`, `:`, and `,` to
+          be percent-encoded.
+        - >-
+          Updated the **Try it** console's example picker to label unnamed examples as `Default` instead of an internal identifier from the API
+          description.
+        - >-
+          Fixed an issue where the **Try it** console opened on the first request body example in OpenAPI docs instead of the example selected in the
+          request panel.
+        - Fixed an issue in the **Try it** console where operations displayed empty or incorrect request bodies and missing parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appeared in the operations
+          list.
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+        - Fixed an issue where the version picker listed versions of a page that RBAC hid from the user.
+        - Fixed an issue where the version picker disappeared on pages that had no items in the sidebar.
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/api-docs': 0.3.0
+      '@redocly/realm-asyncapi-sdk': 0.16.0
+      '@redocly/portal-plugin-mock-server': 0.23.0
   0.138.0-next.18:
     timestamp: 1791787963000
     changes:
@@ -28048,6 +28485,50 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.70.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Improved the AI assistant's progress display to keep generated answers stable.
+        - Added a tooltip to the link icon next to headings and properties in API docs.
+        - Added support for ordering options in the Markdoc `connect-mcp` tag.
+        - Added a **Connect to Claude** option to page actions and the MCP server setup page.
+        - >-
+          Added the `consent` option to display a cookie consent banner or privacy choices link that loads analytics and gated scripts only after
+          visitor approval.
+        - Improved the **Expand all** and **Collapse all** controls in JSON samples.
+        - |-
+          Added the `prompt` Markdoc tag that displays an AI prompt on a page.
+          Readers can copy the prompt with one click or open in Cursor, Claude, or ChatGPT.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - Added vertical alignment support for cells in the Markdoc `table` tag.
+        - Added the ejectable `ReplaySecuritySchemeActions` component which renders inside the security scheme card in the **Try it** console.
+        - 'Improved the page load progress bar: it fills and fades out when a page finishes loading instead of disappearing at once.'
+      patch:
+        - Fixed an issue where tooltips were missing for the **Copy**, **Like**, and **Dislike** buttons in AI assistant answers.
+        - Fixed an issue where dropdown menus were cut off at edge of the viewport.
+        - >-
+          Improved keyboard navigation for catalog filters, scorecard table sorting, and the "API keys" and "Logs" tabs on app pages in developer
+          onboarding.
+        - >-
+          Improved keyboard and screen reader accessibility for image lightboxes, feedback reasons, select menus such as the version picker, and
+          schema variant switches in API reference.
+        - Fixed an issue where the `markdoc-example` tag rendered an empty result panel with `renderDemo=true`.
+        - Updated the Claude Desktop instructions on the `/mcp` page to add the Docs MCP server as a custom connector.
+        - Fixed an issue where groups in the mobile menu and drilldown sidebar collapsed if user expanded them right after a page loaded.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed divider color in button groups, such as the page actions split button, to match custom theme button colors.
+        - Fixed an issue where the search dialog reset the selected category to "All" every time it was reopened.
+        - Fixed the API docs sidebar incorrectly highlighting an adjacent section while content was being lazy-loaded.
+        - Fixed an issue where the search box in the navbar shifted on page load when the keyboard shortcut hint appeared.
+        - Updated the tooltip arrow to render as a compact 16 pixels pointer with a softly rounded tip.
+        - Fixed an issue with the `tabs` Markdoc tag that caused nested tabs to cover the **More** dropdown on narrow screens.
+        - Fixed the split button so the menu toggle and divider use the same `danger` tone as the main button.
+        - Fixed an issue where the tooltip arrows failed to render in browsers that didn't support CSS anchor positioning.
+        - Fixed an issue where the AI assistant send button had no accessible name for screen readers.
+    dependencies: {}
   0.70.0-next.11:
     timestamp: 1791475133000
     changes:
@@ -32335,6 +32816,68 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.3.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Added a tooltip to the link icon next to headings and properties in API docs.
+        - Added `tab` entries to `sidebars.yaml` for organizing projects into logical sections.
+        - |-
+          Improved Swagger `2.0` support with faster loading times and less memory used.
+          Preserved `$ref` descriptions and nullable references.
+        - Added the ejectable `ReplaySecuritySchemeActions` component which renders inside the security scheme card in the **Try it** console.
+        - Added WebMCP support, which enables AI agents in the reader's browser to search, read, and navigate your documentation.
+      patch:
+        - Fixed an issue where code samples in API docs failed to compile when a form field value contained quotes.
+        - >-
+          Fixed an issue where API docs request samples for `application/x-www-form-urlencoded` bodies ignored the `encoding` object and didn't repeat
+          array field names, such as `tags=red&tags=green`.
+        - Fixed API reference pages that failed to render when descriptions contained HTML blocks with escaped generic types, such as `GridItem\<T\>`.
+        - |-
+          Fixed an issue in API docs where overview pages displayed only the text of `info.description` that came before the first heading.
+          The sections under the headings were missing from both the page and the sidebar.
+        - Fixed a `ResizeObserver loop` error in Safari and Firefox when navigating API reference pages from the sidebar.
+        - Fixed an issue where the API docs search results displayed the source code of `<script>` and `<style>` tags from descriptions.
+        - Reduced the size of API reference pages with many headings and schema fields.
+        - Improved API reference page load performance.
+        - Fixed regressions of `oneOf` and discriminator behavior in API docs.
+        - Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run.
+        - Fixed an issue where GraphQL enum pages didn't render the **Referenced in** panel.
+        - Fixed an issue in API docs where links in the **Operations** panel of had duplicated path prefix.
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+        - Fixed an issue where the `openapi-code-sample` tag omitted the authentication with `security` at the root instead of operation.
+        - Fixed an issue where samples in OpenAPI docs displayed the wrong variant for a `oneOf` nested inside another `oneOf`.
+        - Fixed an issue in OpenAPI docs where links to headings in API description overview partials briefly displayed a "Page not found" error.
+        - >-
+          Fixed an issue in API docs where clicking an anchor link on a heading inside a partial caused a 404 error instead of navigating to the
+          heading.
+        - Fixed API docs link icons so they open the heading or property link without changing clipboard contents.
+        - >-
+          Fixed an issue where portal pages, such as API reference pages, stopped working after browser translation or a browser extension changed the
+          page.
+        - Fixed webhook and callback payload schemas in OpenAPI docs to correctly display read-only and write-only fields.
+        - Fixed the API docs sidebar incorrectly highlighting an adjacent section while content was being lazy-loaded.
+        - >-
+          Fixed an issue in API docs where the **Show** button on a collapsed group scrolled the page to the group heading instead of expanding the
+          operations in place.
+        - Improved rendering of AsyncAPI `2.0–2.6` channels, operations, messages, servers, and traits to match AsyncAPI `3.0`.
+        - >-
+          Fixed an issue in the **Try it** console where query parameters with `allowReserved` caused reserved characters such as `/`, `:`, and `,` to
+          be percent-encoded.
+        - >-
+          Updated the **Try it** console's example picker to label unnamed examples as `Default` instead of an internal identifier from the API
+          description.
+        - >-
+          Fixed an issue where the **Try it** console opened on the first request body example in OpenAPI docs instead of the example selected in the
+          request panel.
+        - Fixed an issue in the **Try it** console where operations displayed empty or incorrect request bodies and missing parameter types.
+        - >-
+          Fixed an issue in the **Try it** console where referenced path item operations did not open in request tabs or appeared in the operations
+          list.
+        - Fixed an issue where the **Try it** console did not validate the response body against the documented response schema.
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/replay': 0.29.0
   0.3.0-next.15:
     timestamp: 1791787963000
     changes:
@@ -32868,6 +33411,16 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.12.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - |-
+          Improved Swagger `2.0` support with faster loading times and less memory used.
+          Preserved `$ref` descriptions and nullable references.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.62.1`.
+    dependencies: {}
   0.12.0-next.3:
     timestamp: 1791787963000
     changes:
@@ -33986,6 +34539,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.21.0:
+    timestamp: 1791799136000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0
+      '@redocly/realm': 0.138.0
+      '@redocly/redoc': 0.138.0
+      '@redocly/redoc-revel': 0.138.0
+      '@redocly/redoc-reef': 0.138.0
   1.21.0-next.18:
     timestamp: 1791787963000
     changes:
@@ -39979,6 +40543,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.23.0:
+    timestamp: 1791799136000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.12.0
   0.23.0-next.3:
     timestamp: 1791787963000
     changes:
@@ -43189,6 +43760,27 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.29.0:
+    timestamp: 1791799136000
+    changes:
+      minor:
+        - Added the ejectable `ReplaySecuritySchemeActions` component which renders inside the security scheme card in the **Try it** console.
+      patch:
+        - Fixed an issue in OpenAPI docs where the `openapi.events.tryItSent` callback did not run.
+        - >-
+          Updated HTTP authentication in the **Try it** console to accept capitalized schemes like `Basic` and display a message for unsupported
+          schemes.
+        - Improved panel resizing in the **Try it** console.
+        - Fixed an issue in Replay where closing a tab while a request was running in another tab left the sending tab stuck on `Sending request ...`.
+        - >-
+          Fixed an issue in the **Try it** console where the toolbar in the **Body**, **Headers**, and **Cookies** tabs hid the copy button in a
+          narrow response panel.
+        - >-
+          Improved response validation in the **Try it** console: the response body is checked against the schema for its status code, status code
+          range or `default`, and for its media type.
+        - Fixed an issue where the **Try it** console froze on request and response schemas that expand to a very large number of nodes.
+    dependencies:
+      '@redocly/theme': 0.70.0
   0.29.0-next.12:
     timestamp: 1791554942000
     changes:
@@ -45866,6 +46458,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.21.0:
+    timestamp: 1791799136000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.0
   0.21.0-next.11:
     timestamp: 1791475133000
     changes:
