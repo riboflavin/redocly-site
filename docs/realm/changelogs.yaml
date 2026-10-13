@@ -58240,10 +58240,6 @@ reunite:
           Large repositories no longer show an incomplete list of paths.
       patch:
         - >-
-          Fixed an issue that allowed CI/CD pushes using an RBAC API key to modify files in folders the key's teams couldn't edit. Reunite rejects
-          these pushes with a 403 error.
-        - Fixed branch search in Reunite to list exact-name matches first for Bitbucket Cloud and Azure DevOps repositories.
-        - >-
           Fixed remote content not appearing in the editor until a page reload when a folder with the same content existed on the project's default
           branch.
         - Fixed the editor file tree jumping up when a file is selected after scrolling to the bottom.
