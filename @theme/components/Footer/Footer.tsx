@@ -28,7 +28,7 @@ export function Footer({ className }: FooterProps): JSX.Element | null {
 
   const { pathname } = useLocation();
 
-  const colorfulPagesList = ['/', '/reunite', '/contact-us', '/reef'];
+  const colorfulPagesList = ['/', '/reunite', '/contact-us', '/reef', '/config-rules-builder'];
 
   return (
     <FooterContainer
