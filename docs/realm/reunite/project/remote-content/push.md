@@ -45,6 +45,11 @@ To get the value and set it up for use in the CI/CD platform:
 
 ## Push changes
 
+Each push has a maximum request size of 500 MiB.
+The limit includes all files, form fields, and multipart overhead.
+Reunite returns a HTTP 413 error when a push exceeds this limit.
+Reduce the files in the push before you retry.
+
 To push changes to Redocly:
 
 1. Make a change to the remote content source.
