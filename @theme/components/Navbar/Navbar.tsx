@@ -53,7 +53,6 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
   ];
 
   const { pathname } = useLocation();
-  const showVSCodeExtensionBanner = pathname?.startsWith('/redocly-cli');
 
   const isDocsPage = pathname?.includes('/docs') && pathname !== '/docs-like-code';
   const isLearnPage = pathname?.startsWith('/learn/');
@@ -113,12 +112,10 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
       isColorful={colorfulPagesList.includes(pathname)}
       isDefault={defaultPageList.includes(pathname)}
       isDocs={isDocsOrLearnPage || isEditorPage}
-      showVSCodeExtensionBanner={showVSCodeExtensionBanner}
       isMobile={isOpen}
       isRespect={pathname === '/respect'}
     >
-      {!showVSCodeExtensionBanner && <Banner />}
-      {showVSCodeExtensionBanner && <VSCodeExtensionBanner />}
+      <Banner />
       {isOpen && <MenuMobile />}
       <NavbarRow>
         <LogoMenuWrapper>
@@ -163,48 +160,6 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
     </NavbarContainer>
   );
 }
-
-const VSCodeExtensionBanner = () => {
-  const [vsCodeExtensionBanner, setVSCodeExtensionBanner] = useLocalStorage(
-    'vsCodeExtensionBanner',
-    true,
-  );
-
-  if (vsCodeExtensionBanner === false) return <></>;
-  return (
-    <VSCodeExtWrapper>
-      <Box alignItems="center">
-        <TextSmall color="var(--secondary-color)">
-          Open source strikes again! Check out our VS Code extension
-        </TextSmall>
-        <NewLabel>New</NewLabel>
-      </Box>
-      <Box marginLeft="auto" display="flex" alignItems="center">
-        <InstallButton
-          to="https://marketplace.visualstudio.com/items?itemName=Redocly.openapi-vs-code"
-          target="_blank"
-          variant="outlined"
-          size="large"
-        >
-          Install
-        </InstallButton>
-        <MoreButton
-          to="https://github.com/Redocly/redocly-vs-code"
-          variant="text"
-          target="_blank"
-          size="medium"
-        >
-          Learn more
-        </MoreButton>
-        <CloseVSCodeExtensionBannerButton
-          onClick={() => setVSCodeExtensionBanner(false)}
-          variant="text"
-          target="_blank"
-        />
-      </Box>
-    </VSCodeExtWrapper>
-  );
-};
 
 const RightPanelWrapper = styled.div`
   display: flex;
@@ -270,17 +225,6 @@ const VSCodeExtWrapper = styled(Box)`
   @media screen and (min-width: ${breakpoints.large}) {
     display: flex;
   }
-`;
-
-const CloseVSCodeExtensionBannerButton = styled(Button)`
-  background-image: url(${require('../../../images/icons/close.svg')});
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 20px;
-  width: 20px;
-  position: relative;
-  padding: 5px;
-  min-width: auto;
 `;
 
 const StyledSignUpButton = styled(Button)`
@@ -355,7 +299,6 @@ const NavbarContainer = styled.nav<{
   isTop: boolean;
   isColorful: boolean;
   isDocs: boolean;
-  showVSCodeExtensionBanner: boolean;
   isMobile: boolean;
   isRespect: boolean;
 }>`
@@ -416,11 +359,10 @@ const NavbarContainer = styled.nav<{
   @media screen and (min-width: ${breakpoints.medium}) {
     border-bottom: ${({ isTop, isDocs }) =>
     (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
-    height: ${({ showVSCodeExtensionBanner }) => showVSCodeExtensionBanner && 'auto'};
+    height: auto;
 
     ${NavbarRow} {
-      padding: ${({ showVSCodeExtensionBanner }) =>
-        showVSCodeExtensionBanner ? '0 40px' : 'var(--navbar-padding)'};
+      padding: var(--navbar-padding);
     }
   }
 `;
