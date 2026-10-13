@@ -58223,6 +58223,13 @@ reunite:
         - Fixed SSO logout on the custom domain of projects configured with a path prefix (`REDOCLY_PREFIX_PATHS`).
         - Improved scrolling performance in the editor file tree.
     dependencies: {}
+  v2026-10-13.1:
+    timestamp: 1791883141000
+    changes:
+      minor: []
+      patch:
+        - Fixed repository names displaying a `null/` prefix for inaccessible GitLab projects in Reunite.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
