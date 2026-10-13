@@ -58230,20 +58230,6 @@ reunite:
       patch:
         - Fixed repository names displaying a `null/` prefix for inaccessible GitLab projects in Reunite.
     dependencies: {}
-  v2026-10-13.2:
-    timestamp: 1791885595000
-    changes:
-      minor:
-        - Improved namespace selection in Reunite Git remote setup with broader search and more results as you scroll.
-        - |-
-          Improved the content path picker in Reunite Git remote setup: users open one repository folder at a time and can type a path manually.
-          Large repositories no longer show an incomplete list of paths.
-      patch:
-        - >-
-          Fixed remote content not appearing in the editor until a page reload when a folder with the same content existed on the project's default
-          branch.
-        - Fixed the editor file tree jumping up when a file is selected after scrolling to the bottom.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
