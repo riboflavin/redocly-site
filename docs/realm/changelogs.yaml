@@ -58305,6 +58305,16 @@ reunite:
           branch.
         - Fixed the editor file tree jumping up when a file is selected after scrolling to the bottom.
     dependencies: {}
+  v2026-10-13.4:
+    timestamp: 1791894195000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue that allowed CI/CD pushes using an RBAC API key to modify files in folders the key's teams couldn't edit. Reunite rejects
+          these pushes with a 403 error.
+        - Fixed branch search in Reunite to list exact-name matches first for Bitbucket Cloud and Azure DevOps repositories.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
