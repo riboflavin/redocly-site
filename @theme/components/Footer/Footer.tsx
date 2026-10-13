@@ -28,14 +28,15 @@ export function Footer({ className }: FooterProps): JSX.Element | null {
 
   const { pathname } = useLocation();
 
-  const colorfulPagesList = ['/', '/reunite', '/contact-us', '/reef', '/config-rules-builder', '/redocly-cli'];
+  const grey2PagesList = ['/', '/reunite', '/contact-us', '/reef', '/config-rules-builder'];
+  const grey1PagesList = ['/respect', '/redocly-cli'];
 
   return (
     <FooterContainer
       data-component-name="Footer/Footer"
       className={className}
-      isColorful={colorfulPagesList.includes(pathname)}
-      respect={pathname === '/respect'}
+      grey2Background={grey2PagesList.includes(pathname)}
+      grey1Background={grey1PagesList.includes(pathname)}
     >
       <ColumnsSection>
         <FooterColumns columns={items as unknown as ResolvedNavItem[]} copyrightText={copyrightText} />
@@ -72,16 +73,16 @@ const ColumnsSection = styled.div`
   }
 `;
 
-const FooterContainer = styled.footer<{ isColorful?: boolean; respect?: boolean }>`
+const FooterContainer = styled.footer<{ grey2Background?: boolean; grey1Background?: boolean }>`
   flex-shrink: 0;
   color: var(--footer-text-color);
   font-weight: var(--footer-font-weight);
   z-index: 10;
-  background-color: ${({ isColorful, respect }) => {
-    if (respect) {
+  background-color: ${({ grey2Background, grey1Background }) => {
+    if (grey1Background) {
       return 'var(--color-warm-grey-1)';
     }
-    if (isColorful) {
+    if (grey2Background) {
       return 'var(--color-warm-grey-2)';
     }
     return 'transparent';
