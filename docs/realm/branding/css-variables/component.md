@@ -1612,6 +1612,63 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 
 </details>
 
+## Prompt
+
+<details>
+<summary>Prompt container</summary>
+
+```css
+--prompt-bg-color: var(--bg-color);
+--prompt-border-color: var(--border-color-secondary);
+--prompt-border-width: var(--border-width);
+--prompt-border-radius: var(--border-radius-xl);
+--prompt-margin: var(--spacing-base) 0;
+--prompt-padding-vertical: var(--spacing-sm);
+--prompt-padding-horizontal: var(--spacing-base);
+--prompt-gap: var(--spacing-sm);
+--prompt-border-highlight-color-start: var(--search-ai-gradient-start-color, var(--search-ai-gradient-start-color-legacy));
+--prompt-border-highlight-color-end: var(--search-ai-gradient-end-color, var(--search-ai-gradient-end-color-legacy));
+--prompt-border-highlight-size: 120px;
+--prompt-border-highlight-transition: opacity 0.2s ease-out;
+```
+
+</details>
+
+<details>
+<summary>Prompt header</summary>
+
+```css
+--prompt-header-gap: var(--spacing-xs);
+--prompt-header-actions-gap: var(--spacing-xxs);
+--prompt-header-copy-button-padding: var(--spacing-xxs);
+--prompt-icon-size: 18px;
+--prompt-icon-color: var(--color-primary-base, var(--color-warm-grey-11));
+--prompt-title-font-size: var(--font-size-base);
+--prompt-title-font-weight: var(--font-weight-semibold);
+--prompt-title-line-height: var(--line-height-base);
+--prompt-title-text-color: var(--text-color-primary);
+```
+
+</details>
+
+<details>
+<summary>Prompt body</summary>
+
+```css
+--prompt-body-bg-color: var(--color-primary-bg, var(--color-warm-grey-2));
+--prompt-body-border-radius: var(--border-radius-lg);
+--prompt-body-padding-vertical: var(--spacing-xs);
+--prompt-body-padding-horizontal: var(--spacing-sm);
+--prompt-body-gap: var(--spacing-xxs);
+--prompt-body-font-size: var(--font-size-base);
+--prompt-body-line-height: var(--line-height-base);
+--prompt-body-text-color: var(--text-color-primary);
+--prompt-body-max-lines: 5;
+--prompt-body-toggle-gap: var(--spacing-xxs);
+```
+
+</details>
+
 ## Scorecard
 
 <details>

@@ -245,6 +245,20 @@ Additional information and syntax: [Partial tag](./partial.md)
 
 ---
 
+## Prompt
+
+Use the Prompt tag to add an AI prompt that readers copy with one click or open in an AI tool.
+
+Additional information and syntax: [Prompt tag](./prompt.md)
+
+**Example prompt element:**
+
+{% prompt title="Explain the authentication flow" actions=["claude", "chatgpt", "cursor"] %}
+Explain how authentication works in the Museum API and show a request with a valid API key.
+{% /prompt %}
+
+---
+
 ## Replay OpenAPI
 
 Use the Replay OpenAPI tag to allow users to send live calls to your API.
