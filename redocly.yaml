@@ -46,6 +46,12 @@ feedback:
 mcp:
   docs:
     name: Redocly
+    ignore:
+      - demo/openapi/museum-api.yaml
+      - docs/realm/customization/search-api/openapi.yaml
+      - docs/realm/openapi-files/redocly-museum.yaml
+      - docs/realm/scout/agent-api/openapi.yaml
+      - docs/realm/scout/api/openapi.yaml
 navigation:
   previousButton:
     hide: true
