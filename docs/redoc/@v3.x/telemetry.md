@@ -8,51 +8,69 @@ seo:
 Redoc CE collects anonymous telemetry data to help understand how people are using the documentation tool.
 It also shows what sort of issues they are experiencing.
 
+Telemetry is on by default in Redoc CE.
+Only production bundles send data: the CDN, npm, Docker, and CLI builds do, while a local development server built from source does not.
+
 ## Configure telemetry settings
 
-You can enable or disable telemetry collection entirely.
-Use the `disableTelemetry` option, which varies depending on how you deploy Redoc CE.
+You can turn off telemetry collection entirely.
+How you set the `disableTelemetry` option depends on how you deploy Redoc CE.
 
-### HTML deployment
+### HTML element
 
-When using Redoc as an HTML element, add the `disable-telemetry="true"` attribute:
+When using Redoc CE as an HTML element, add the `disable-telemetry="true"` attribute:
 
 ```html
-<redoc spec-url="https://redocly.github.io/redoc/museum.yaml" disable-telemetry="true"></redoc>
-<script type="module" src="https://cdn.redoc.ly/redoc/v3.0.0-rc.0/redoc.standalone.js"></script>
+<redoc spec-url="https://redocly.github.io/redoc/cafe.yaml" disable-telemetry="true"></redoc>
+<script type="module" src="https://cdn.redoc.ly/redoc/v3.x/bundles/redoc.standalone.js"></script>
+```
+
+The value must be the literal `true`.
+A bare `disable-telemetry` attribute without a value does not disable telemetry.
+
+### JavaScript `init` function
+
+When calling `init`, pass `disableTelemetry: true` in the options:
+
+```js
+import { init } from 'https://cdn.redoc.ly/redoc/v3.x/bundles/redoc.standalone.js';
+
+init('https://redocly.github.io/redoc/cafe.yaml', { disableTelemetry: true });
 ```
 
 ### React component
 
-When using Redoc as a React component, pass the `disableTelemetry` prop:
+When using the React component, set `disableTelemetry` in the `options` prop:
 
 ```jsx
 import { RedocStandalone } from 'redoc';
 
 <RedocStandalone
-  specUrl="https://redocly.github.io/redoc/museum.yaml"
-  disableTelemetry={true}
+  specUrl="https://redocly.github.io/redoc/cafe.yaml"
+  options={{ disableTelemetry: true }}
 />
 ```
 
-### CLI and configuration file
+### Redocly CLI
 
-When using Redocly CLI, you can disable telemetry by passing the `--disableTelemetry` flag:
+When you build documentation with Redocly CLI, the page follows the CLI telemetry setting.
+Turning off [Redocly CLI usage data](https://redocly.com/docs/cli/usage-data) also turns off telemetry in the built page.
+
+To turn off both, set `telemetry: off` at the root of your `redocly.yaml` configuration file:
+
+```yaml {% title="redocly.yaml" %}
+telemetry: off
+```
+
+Or set the `REDOCLY_TELEMETRY` environment variable to `off`:
 
 ```sh
-redocly build-docs openapi.yaml --disableTelemetry
+REDOCLY_TELEMETRY=off npx @redocly/cli build-docs openapi.yaml
 ```
 
-Or add the `disableTelemetry` option to your `redocly.yaml` configuration file:
+### Docker image
 
-```yaml
-openapi:
-  disableTelemetry: true
-```
-
-### Docker deployment
-
-When using Docker, disable telemetry by passing the `disable-telemetry="true"` attribute through the `REDOC_OPTIONS` environment variable:
+When using Docker, pass the `disable-telemetry="true"` attribute through the `REDOC_OPTIONS` environment variable:
 
 ```bash
 docker run -p 8080:80 \
@@ -77,17 +95,6 @@ We currently use:
 To improve Redoc CE and understand how it is being used, Redoc CE optionally collects usage data including:
 
 - **Performance metrics**: core Web Vitals.
-  These are Cumulative Layout Shift (`CLS`), Largest Contentful Paint (`LCP`), First Contentful Paint (`FCP`), Time to First Byte (`TTFB`), and Interaction to Next Paint (`INP`).
-  Also the time spent resolving and rendering the API description.
-- **API description shape**: counts of operations, schemas, tags, webhooks, callbacks, channels, messages, servers and security schemes.
-  Also the specification version and which Redoc extensions (such as `x-logo` or `x-tagGroups`) the description uses.
-- **Reading behavior**: how long a page stays open and visible, and how many sections the reader viewed.
-  Also how deep the reader expanded nested schemas, which response status classes they opened, and how many searches they made.
-- **User interactions**: sidebar navigation, layout and color mode changes, language selection, definition downloads, and example switching.
-  Also expand/collapse actions, code snippet copying, security detail views, the Copy for LLM and Open in Claude/ChatGPT actions, and the MCP connect button.
-- **Configuration data**: options that differ from their defaults, router type (`hash` or `history`), and layout type (`stacked` or `three-panel`).
-  Also the usage method (`HTML`, `CLI`, `React`, or `Docker`) and whether the page runs on a local or private address.
-- **Performance metrics**: core Web Vitals.
   These are: Cumulative Layout Shift (`CLS`), Largest Contentful Paint (`LCP`), First Contentful Paint (`FCP`), Time to First Byte (`TTFB`), and Interaction to Next Paint (`INP`).
   Additionally, these metrics include the time spent resolving and rendering the API description.
 - **API description shape**: counts of operations, schemas, tags, webhooks, callbacks, channels, messages, servers and security schemes.
@@ -98,14 +105,14 @@ To improve Redoc CE and understand how it is being used, Redoc CE optionally col
   This category also covers the expand and collapse actions, code snippet copying, security detail views, the Copy for LLM and Open in Claude or ChatGPT actions, and the MCP connect button.
 - **Configuration data**: options that differ from their defaults, router type (`hash` or `history`), and layout type (`stacked` or `three-panel`).
   These options also include the usage method (`HTML`, `CLI`, `React`, or `Docker`) and whether the page runs on a local or private address.
-- **Health**: rendering errors (error class and frame count) and API descriptions that failed to load, with the failing stage and HTTP status.
+- **Health**: rendering errors (error class, frame count, and the error message and component stack with URLs and file paths removed) and API descriptions that failed to load, with the failing stage and HTTP status.
 
 Usage data does not include any of your API description content, sensitive project details, or personal information.
 
 ### Event types
 
 Redoc CE tracks the following events.
-Every payload carries counts, positions, kinds, durations and fixed-list values only.
+Every payload carries counts, positions, kinds, durations and fixed-list values only, except the error message and component stack of the **Error** event.
 
 **Page events**
 
@@ -154,6 +161,7 @@ Every payload carries counts, positions, kinds, durations and fixed-list values 
 ### Data collection details
 
 All telemetry events include:
+
 - **Event ID**: unique identifier for each event
 - **Timestamp**: when the event occurred
 - **Session ID**: a random identifier created for the page load and kept in memory only
@@ -165,10 +173,12 @@ The telemetry data does not include personally identifiable information.
 
 - Redoc CE transmits all telemetry data over HTTPS.
 - Redoc CE never collects API description content: no operation, field, message, server, or type names, and no search text.
-- Redoc CE never sends the URL where the documentation is hosted or the referrer.
+- Redoc CE never includes the URL where the documentation is hosted or the referrer in telemetry data.
   It also removes URLs and file paths from error messages.
-- Redoc CE uses no cookies and no local storage.
+  The browser still sends the page origin in the request headers, and the full page URL when the page's referrer policy allows it.
+- Telemetry uses no cookies or browser storage.
   The session identifier lives in memory for one page load.
+  Redoc CE itself keeps the reader's display preferences, such as the layout, the code sample language, and the color mode, in a cookie and in browser storage.
 - Redoc CE stores no personally identifiable information.
 - You can disable telemetry using the configuration options described in [Configure telemetry settings](#configure-telemetry-settings).
 - Redocly uses this data solely to improve Redoc CE and understand usage patterns.
@@ -179,4 +189,5 @@ If you have concerns about telemetry, feel free to [open an issue on GitHub](htt
 
 ## Resources
 
-- **[Configure Redoc](./config.md)** - Explore Redoc CE's configuration options
+- **[Configure Redoc CE](./config.md)** - Redoc CE's configuration options
+- **[Use Redoc CE in HTML](./deployment/html.md)** - The attribute rules that apply to `disable-telemetry`
