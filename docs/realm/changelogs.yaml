@@ -58315,6 +58315,15 @@ reunite:
           these pushes with a 403 error.
         - Fixed branch search in Reunite to list exact-name matches first for Bitbucket Cloud and Azure DevOps repositories.
     dependencies: {}
+  v2026-10-14.1:
+    timestamp: 1791963749000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Reunite project analytics where the **Not found** label appeared on answered AI search questions and was missing from
+          unanswered ones, including non-English questions and multi-message conversations.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
