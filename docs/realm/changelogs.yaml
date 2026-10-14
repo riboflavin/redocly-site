@@ -58320,11 +58320,9 @@ reunite:
     changes:
       minor: []
       patch:
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.63.0`.
         - >-
           Fixed an issue in Reunite project analytics where the **Not found** label appeared on answered AI search questions and was missing from
           unanswered ones, including non-English questions and multi-message conversations.
-        - Updated `@redocly/openapi-core` to version `2.63.0`.
     dependencies: {}
 replay:
   0.0.2:
