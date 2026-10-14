@@ -72,6 +72,17 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Fixed security vulnerability `CVE-2026-93687` by removing the `braces` dependency.
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/api-docs': 0.3.1
   0.138.0:
     timestamp: 1791805236000
     changes:
@@ -8114,6 +8125,16 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+        - Fixed security vulnerability `CVE-2026-93687` by removing the `braces` dependency.
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/api-docs': 0.3.1
   0.138.0:
     timestamp: 1791805236000
     changes:
@@ -14901,6 +14922,17 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Fixed security vulnerability `CVE-2026-93687` by removing the `braces` dependency.
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/api-docs': 0.3.1
   0.138.0:
     timestamp: 1791805236000
     changes:
@@ -21707,6 +21739,17 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Fixed security vulnerability `CVE-2026-93687` by removing the `braces` dependency.
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/api-docs': 0.3.1
   0.138.0:
     timestamp: 1791805236000
     changes:
@@ -28759,6 +28802,13 @@
       patch:
         - Fixed an issue where page content jumped to the side while long pages were loading.
     dependencies: {}
+  0.70.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+    dependencies: {}
   0.70.0:
     timestamp: 1791805236000
     changes:
@@ -33156,6 +33206,14 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/replay': 0.30.0-next.0
+  0.3.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/replay': 0.29.1
   0.3.0:
     timestamp: 1791805236000
     changes:
@@ -34949,6 +35007,17 @@
       '@redocly/redoc': 0.139.0-next.0
       '@redocly/redoc-revel': 0.139.0-next.0
       '@redocly/redoc-reef': 0.139.0-next.0
+  1.21.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.1
+      '@redocly/realm': 0.138.1
+      '@redocly/redoc': 0.138.1
+      '@redocly/redoc-revel': 0.138.1
+      '@redocly/redoc-reef': 0.138.1
   1.21.0:
     timestamp: 1791805236000
     changes:
@@ -44213,6 +44282,13 @@
       patch: []
     dependencies:
       '@redocly/theme': 0.71.0-next.0
+  0.29.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.1
   0.29.0:
     timestamp: 1791805236000
     changes:
@@ -46932,6 +47008,13 @@
       patch: []
     dependencies:
       '@redocly/theme': 0.71.0-next.0
+  0.21.1:
+    timestamp: 1791988646558
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.70.1
   0.21.0:
     timestamp: 1791805236000
     changes:
