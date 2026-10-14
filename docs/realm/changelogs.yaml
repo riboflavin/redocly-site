@@ -1,4 +1,21 @@
 '@redocly/realm':
+  0.139.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Fixed an issue where screen readers announced the close button without a name in **Try it** console.
+        - Fixed an issue in **Try it** console where pressing <kbd>Space</kbd> on the focused close button did not close the console.
+        - >-
+          Fixed the **Close all tabs** action in the **Try it** panel of API docs to ask for confirmation before it closes open requests and discards
+          entered values.
+        - >-
+          Fixed an issue in the **Try it** console in OpenAPI docs where the first request left out parameters with an empty example value (`''`,
+          `[]`, or `null`) and query parameters with `allowEmptyValue: true`.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
+      '@redocly/api-docs': 0.4.0-next.5
   0.139.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -8045,6 +8062,14 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
+      '@redocly/api-docs': 0.4.0-next.5
   0.139.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -14823,6 +14848,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
+      '@redocly/api-docs': 0.4.0-next.5
   0.139.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -21600,6 +21634,23 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Fixed an issue where screen readers announced the close button without a name in **Try it** console.
+        - Fixed an issue in **Try it** console where pressing <kbd>Space</kbd> on the focused close button did not close the console.
+        - >-
+          Fixed the **Close all tabs** action in the **Try it** panel of API docs to ask for confirmation before it closes open requests and discards
+          entered values.
+        - >-
+          Fixed an issue in the **Try it** console in OpenAPI docs where the first request left out parameters with an empty example value (`''`,
+          `[]`, or `null`) and query parameters with `allowEmptyValue: true`.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
+      '@redocly/api-docs': 0.4.0-next.5
   0.139.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -28685,6 +28736,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.71.0-next.2:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed the **Close all tabs** action in the **Try it** panel of API docs to ask for confirmation before it closes open requests and discards
+          entered values.
+    dependencies: {}
   0.71.0-next.1:
     timestamp: 1791970604000
     changes:
@@ -33037,6 +33097,17 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in the **Try it** console in OpenAPI docs where the first request left out parameters with an empty example value (`''`,
+          `[]`, or `null`) and query parameters with `allowEmptyValue: true`.
+    dependencies:
+      '@redocly/replay': 0.30.0-next.3
+      '@redocly/theme': 0.71.0-next.2
   0.4.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -34815,6 +34886,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.5:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc': 0.139.0-next.5
+      '@redocly/redoc-revel': 0.139.0-next.5
+      '@redocly/realm': 0.139.0-next.5
+      '@redocly/redoc-reef': 0.139.0-next.5
+      '@redocly/theme': 0.71.0-next.2
   1.22.0-next.4:
     timestamp: 1791970604000
     changes:
@@ -44095,6 +44177,21 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.3:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where screen readers announced the close button without a name in **Try it** console.
+        - Fixed an issue in **Try it** console where pressing <kbd>Space</kbd> on the focused close button did not close the console.
+        - >-
+          Fixed the **Close all tabs** action in the **Try it** panel of API docs to ask for confirmation before it closes open requests and discards
+          entered values.
+        - >-
+          Fixed an issue in the **Try it** console in OpenAPI docs where the first request left out parameters with an empty example value (`''`,
+          `[]`, or `null`) and query parameters with `allowEmptyValue: true`.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
   0.30.0-next.2:
     timestamp: 1791970604000
     changes:
@@ -46814,6 +46911,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.22.0-next.2:
+    timestamp: 1791982868000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.2
   0.22.0-next.1:
     timestamp: 1791970604000
     changes:
