@@ -32202,6 +32202,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.66.0:
+    timestamp: 1791980908000
+    changes:
+      minor:
+        - Added the `asyncapi` key to the root and per-API configuration schemas.
+      patch: []
+    dependencies: {}
   0.65.0:
     timestamp: 1791386194000
     changes:
