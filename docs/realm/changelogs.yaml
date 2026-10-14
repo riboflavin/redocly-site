@@ -58686,6 +58686,20 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.63.0`.
         - Updated `@redocly/openapi-core` to version `2.63.0`.
     dependencies: {}
+  v2026-10-14.5:
+    timestamp: 1792003866000
+    changes:
+      minor:
+        - Redesigned the editor tabs and the editor sidebar tabs in Reunite.
+        - >-
+          Added suggested organization names based on company email domains and removed the role and intent questions from the organization creation
+          screen in Reunite.
+      patch:
+        - Fixed an issue in Reunite where a new project with a Redocly-hosted repository sometimes did not start its first build.
+        - Fixed a closed URL remote pull request in Reunite that did not reopen on sync when the default branch lacked its content.
+        - Improved the MCP server analytics page layout in Reunite with a toggle to switch between the tools and clients tables.
+        - Fixed an issue in the Reunite editor where the file tree showed no loading indicator for new remote content while Reunite linked it.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
