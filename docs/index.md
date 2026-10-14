@@ -66,7 +66,7 @@ Ready to build something amazing?
 
   {% card
     title="Redoc Community Edition"
-    to="redoc"
+    to="/docs/redoc"
     icon="images/home-page/develop-docs-icon.svg"
   %}
     A clean and easy way to produce web-ready documentation from an OpenAPI description.
