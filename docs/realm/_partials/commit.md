@@ -16,7 +16,7 @@
       framed=true
     /%}
 
-   When you are finished reviewing the diff, you can close the tab on the (changes) file.
+   When you finish reviewing the diff, you can close the tab on the (diff) file.
 1. (Optional) you can deselect the files you want to exclude from the commit.
 1. Enter a commit message describing your updates.
    For example, "Update index.md"
