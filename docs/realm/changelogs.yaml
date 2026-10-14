@@ -73,7 +73,7 @@
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
   0.138.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch:
@@ -8126,7 +8126,7 @@
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
   0.138.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch:
@@ -14923,7 +14923,7 @@
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
   0.138.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch:
@@ -21740,7 +21740,7 @@
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
   0.138.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch:
@@ -28803,7 +28803,7 @@
         - Fixed an issue where page content jumped to the side while long pages were loading.
     dependencies: {}
   0.70.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch:
@@ -33207,7 +33207,7 @@
       '@redocly/theme': 0.71.0-next.0
       '@redocly/replay': 0.30.0-next.0
   0.3.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch: []
@@ -35008,7 +35008,7 @@
       '@redocly/redoc-revel': 0.139.0-next.0
       '@redocly/redoc-reef': 0.139.0-next.0
   1.21.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch: []
@@ -44283,7 +44283,7 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
   0.29.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch: []
@@ -47009,7 +47009,7 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
   0.21.1:
-    timestamp: 1791988646558
+    timestamp: 1791989559000
     changes:
       minor: []
       patch: []
