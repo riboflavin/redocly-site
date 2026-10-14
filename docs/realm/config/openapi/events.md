@@ -12,8 +12,9 @@ plans:
 Use event hooks to get notified about various user events in your API reference documentation.
 This feature provides access to in-page analytics.
 
-{% admonition type="info" %}
-{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "events"} /%}
+{% admonition type="info" name="Redoc CE" %}
+Redoc CE triggers these events: `codeSamplesLanguageSwitch`, `targetServerSwitch`, and `codeSamplesCopy`.
+The `tryItOpen` and `tryItSent` events require the **Try it** panel, which is not part of Redoc CE.
 {% /admonition %}
 
 Each event provides information about a specific event as well as some basic information:
@@ -63,14 +64,6 @@ Each event provides information about a specific event as well as some basic inf
 - string
 - A function called when a request sent from the **Try it** panel receives a response, whatever its HTTP status.
   The event's `action` is `Sent`.
-
----
-
-- panelToggle
-- string
-- A function that records when a user expands or collapses any panel in the Reference docs UI.
-  Example panels: request, responses, request samples, or response samples.
-  Includes details about the panel type (panelType) and its state (expanded or collapsed).
 
 ---
 

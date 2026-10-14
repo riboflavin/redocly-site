@@ -171,7 +171,7 @@ schema
 ## Schema docstring (fallback)
 
 You can also provide title and description using GraphQL's standard docstring syntax.
-This has the lowest priority and is used only when values are not provided in config or directives.
+This fallback configuration has the lowest priority and is used only when values are not provided in config or directives.
 
 ```graphql
 """
@@ -186,7 +186,7 @@ schema {
 ```
 
 The docstring can start with `#` (followed by a space) on the first line.
-That line is extracted as the title and the rest as the description.
+This line is extracted as the title and the rest as the description.
 Otherwise, the entire docstring is used as the description.
 
 ## Per-API customization

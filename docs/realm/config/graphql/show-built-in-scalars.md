@@ -10,6 +10,7 @@ plans:
 # `showBuiltInScalars`
 
 Built-in scalars:
+
 - Int
 - Float
 - String

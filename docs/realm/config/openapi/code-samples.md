@@ -11,8 +11,10 @@ plans:
 
 Configure the code samples generated from your OpenAPI description.
 
-{% admonition type="info" %}
-{% partial file="../../_partials/config/_unsupported-redoc-ce.md" variables={"optionName": "codeSamples"} /%}
+{% admonition type="info" name="Redoc Community Edition" %}
+Redoc Community Edition does not generate code samples and supports only the `languages` option.
+Use it to set the order and labels of the language tabs and to choose which `x-codeSamples` languages are displayed.
+A sample provided for a language that is not listed is not displayed.
 {% /admonition %}
 
 ## Options

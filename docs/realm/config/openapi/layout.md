@@ -45,7 +45,7 @@ openapi:
 
 {% img
   src="../images/stacked-layout.png"
-  alt="Screnshot of API documentation in stacked layout"
+  alt="Screenshot of API documentation in stacked layout"
   withLightbox=true
   framed=true
 /%}
