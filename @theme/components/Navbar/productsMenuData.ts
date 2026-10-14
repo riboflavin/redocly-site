@@ -18,7 +18,7 @@ export const PRODUCT_META: Record<string, ProductMeta> = {
   '/realm': { description: 'Combo of Redoc, Revel, and Reef' },
   '/redoc': { description: 'API reference and mock server' },
   '/respect': { description: 'API monitoring' },
-  '/redoc-ce': { description: 'Open source API docs', tag: '3.0 coming soon' },
+  '/redoc-ce': { description: 'Open source API docs', tag: '3.0' },
   '/redocly-cli': { description: 'Open source command line' },
   '/reviewer': { description: 'Reads pull requests, leaves expert feedback', tag: 'New' },
 };
