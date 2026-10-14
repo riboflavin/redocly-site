@@ -1,4 +1,19 @@
 '@redocly/realm':
+  0.139.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the samples panel displayed a variant dropdown that had no effect on schemas with an `example` and a
+          nested `oneOf` or `anyOf`.
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+        - >-
+          Fixed an issue where Reunite project analytics displayed the number of result categories instead of the number of results for each search
+          query.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.0
   0.139.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -8022,6 +8037,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+        - >-
+          Fixed an issue where Reunite project analytics displayed the number of result categories instead of the number of results for each search
+          query.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.0
   0.139.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -14780,6 +14807,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+        - >-
+          Fixed an issue where Reunite project analytics displayed the number of result categories instead of the number of results for each search
+          query.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.0
   0.139.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -21537,6 +21576,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the samples panel displayed a variant dropdown that had no effect on schemas with an `example` and a
+          nested `oneOf` or `anyOf`.
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+        - >-
+          Fixed an issue where Reunite project analytics displayed the number of result categories instead of the number of results for each search
+          query.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.0
   0.139.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -32937,6 +32991,16 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the samples panel displayed a variant dropdown that had no effect on schemas with an `example` and a
+          nested `oneOf` or `anyOf`.
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+    dependencies: {}
   0.4.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -33562,6 +33626,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.13.0-next.0:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+    dependencies: {}
   0.12.0:
     timestamp: 1791805236000
     changes:
@@ -34690,6 +34761,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.3:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.3
+      '@redocly/redoc': 0.139.0-next.3
+      '@redocly/redoc-revel': 0.139.0-next.3
+      '@redocly/redoc-reef': 0.139.0-next.3
   1.22.0-next.2:
     timestamp: 1791892481000
     changes:
@@ -40725,6 +40806,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.24.0-next.0:
+    timestamp: 1791967337000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.13.0-next.0
   0.23.0:
     timestamp: 1791805236000
     changes:
@@ -58323,6 +58411,14 @@ reunite:
         - >-
           Fixed an issue in Reunite project analytics where the **Not found** label appeared on answered AI search questions and was missing from
           unanswered ones, including non-English questions and multi-message conversations.
+    dependencies: {}
+  v2026-10-14.2:
+    timestamp: 1791966875000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.63.0`.
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
     dependencies: {}
 replay:
   0.0.2:
