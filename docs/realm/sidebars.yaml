@@ -340,6 +340,8 @@
   items:
     - page: customization/mcp-server/index.md
       label: MCP servers
+    - page: customization/mcp-server/redocly-mcp.md
+      label: Redocly MCP server
     - page: customization/mcp-server/custom-tools.md
       label: Custom MCP tools
     - page: customization/agent-skills/index.md

@@ -357,5 +357,6 @@ Users discover the public endpoint in three ways:
 ## Resources
 
 - **[MCP configuration reference](../../config/mcp.md)** - Configure MCP for your project
+- **[Redocly MCP server](./redocly-mcp.md)** - Connect your AI tools to Redocly's own documentation server to see the Docs MCP server in action
 - **[RBAC configuration reference](../../config/access/rbac.md)** - Restrict MCP server access to specific teams
 - **[Agent skills](../agent-skills/index.md)** - Publish task-focused `SKILL.md` instructions and the discovery endpoints agents read to find them
