@@ -74,14 +74,20 @@ Redocly extends standard Markdown with additional capabilities:
 
 ### Front matter configuration
 
-Control page behavior with YAML front matter:
+Control page behavior with YAML front matter.
+The page title comes from the first H1 heading.
+Set `seo.title` in front matter to override the `<title>` tag.
+Set `seo.description` to add a description for search engines:
 
 ```yaml
 ---
-title: Custom page title
-description: Page description for SEO
+seo:
+  title: Custom page title
+  description: Page description for search engines
 ---
 ```
+
+Learn more about [front matter configuration options](../config/front-matter-config.md).
 
 ### Enhanced code blocks
 
@@ -238,21 +244,21 @@ This shows how Markdoc syntax renders in practice.
 {% /markdoc-example %}
 ```
 
-```markdoc {% process=false %}
+````markdoc {% process=false %}
 {% code-group %}
-{% code title="JavaScript" lang="javascript" %}
-fetch('/api/users')
-  .then(response => response.json())
-  .then(data => console.log(data));
-{% /code %}
-{% code title="Python" lang="python" %}
-import requests
-response = requests.get('/api/users')
-data = response.json()
-print(data)
-{% /code %}
+  ```js {% title="users.js" %}
+  fetch('/api/users')
+    .then(response => response.json())
+    .then(data => console.log(data));
+  ```
+  ```python {% title="users.py" %}
+  import requests
+  response = requests.get('/api/users')
+  data = response.json()
+  print(data)
+  ```
 {% /code-group %}
-```
+````
 
 Learn more about [code snippets](./markdoc-tags/code-snippet.md), [code groups](./markdoc-tags/code-group.md), and [Markdoc examples](./markdoc-tags/markdoc-example.md) for displaying code.
 
