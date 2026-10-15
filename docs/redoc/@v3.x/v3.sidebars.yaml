@@ -13,8 +13,8 @@
     - page: deployment/cli.md
     - page: deployment/frameworks.md
 - group: Configure Redoc CE
+  page: config.md
   items:
-    - page: config.md
     - page: config-migration.md
 - page: redoc-vendor-extensions.md
   label: Specification extensions
