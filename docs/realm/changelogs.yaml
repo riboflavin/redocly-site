@@ -1,4 +1,17 @@
 '@redocly/realm':
+  0.139.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor:
+        - Added the ejectable `layouts/CustomContexts.tsx` component that allows to wrap every page of a project in custom React context providers.
+      patch:
+        - Fixed an issue in the **Try it** console where request body validation reported required `readOnly` properties as missing.
+        - |-
+          Fixed an issue in the **Try it** console that caused `QUERY` and custom HTTP methods to reach the server as `POST`.
+          The console displays an error for `TRACE`, `CONNECT`, and `TRACK` requests, which browsers block.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/api-docs': 0.4.0-next.6
   0.139.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -8073,6 +8086,14 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/api-docs': 0.4.0-next.6
   0.139.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -14869,6 +14890,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor:
+        - Added the ejectable `layouts/CustomContexts.tsx` component that allows to wrap every page of a project in custom React context providers.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/api-docs': 0.4.0-next.6
   0.139.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -21666,6 +21696,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in the **Try it** console where request body validation reported required `readOnly` properties as missing.
+        - |-
+          Fixed an issue in the **Try it** console that caused `QUERY` and custom HTTP methods to reach the server as `POST`.
+          The console displays an error for `TRACE`, `CONNECT`, and `TRACK` requests, which browsers block.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/api-docs': 0.4.0-next.6
   0.139.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -28779,6 +28821,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.71.0-next.3:
+    timestamp: 1792029048000
+    changes:
+      minor:
+        - Added the ejectable `layouts/CustomContexts.tsx` component that allows to wrap every page of a project in custom React context providers.
+      patch: []
+    dependencies: {}
   0.71.0-next.2:
     timestamp: 1791982868000
     changes:
@@ -33147,6 +33196,14 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/replay': 0.30.0-next.4
   0.4.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -34944,6 +35001,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.6:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
+      '@redocly/realm': 0.139.0-next.6
+      '@redocly/redoc-revel': 0.139.0-next.6
+      '@redocly/redoc': 0.139.0-next.6
+      '@redocly/redoc-reef': 0.139.0-next.6
   1.22.0-next.5:
     timestamp: 1791982868000
     changes:
@@ -44246,6 +44314,17 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.4:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue in the **Try it** console where request body validation reported required `readOnly` properties as missing.
+        - |-
+          Fixed an issue in the **Try it** console that caused `QUERY` and custom HTTP methods to reach the server as `POST`.
+          The console displays an error for `TRACE`, `CONNECT`, and `TRACK` requests, which browsers block.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
   0.30.0-next.3:
     timestamp: 1791982868000
     changes:
@@ -46987,6 +47066,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.22.0-next.3:
+    timestamp: 1792029048000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.3
   0.22.0-next.2:
     timestamp: 1791982868000
     changes:
