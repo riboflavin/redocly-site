@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Products, Plan } from '../utils/types';
 import PropertyCondition from './PropertyCondition';
+import { useThemeHooks } from '@redocly/theme/core/hooks';
 import { withPathPrefix } from '@redocly/theme/core/utils';
 
 type PropertyManifestItem = {
@@ -12,49 +13,20 @@ type PropertyManifestItem = {
   plans?: Plan[];
 };
 
+type SharedDataHooks = {
+  usePageSharedData: <T>(key: string) => T | undefined;
+};
+
+// Built by docs/realm/@theme/plugins/config-properties.js, keyed by the
+// option page's path relative to docs/realm/config/.
+const PROPERTIES_KEY = 'realm-config-properties';
+
 function normalizeFileKey(p: string): string {
   let r = p.trim();
   if (r.startsWith('./')) r = r.slice(2);
   if (r.startsWith('/')) r = r.slice(1);
-  if (r.startsWith('docs/realm/')) r = r.slice('docs/realm/'.length);
+  if (r.startsWith('docs/realm/config/')) r = r.slice('docs/realm/config/'.length);
   return r;
-}
-
-function fileToSlug(file: string): string {
-  const key = normalizeFileKey(file);
-  let p = key.replace(/\.md$/, '');
-  p = p.replace(/\/index$/, '');
-  p = `${window.location.pathname.replace(/\/$/, '')}/${p}`;
-  return p;
-}
-
-async function loadFromPageData(file: string): Promise<PropertyManifestItem | null> {
-  try {
-    const slug = fileToSlug(file);
-    const slugPath = slug.replace(/^\//, '').replace(/\/$/, '');
-    const url = withPathPrefix(`/page-data/${encodeURI(slugPath)}/data.json`);
-    // eslint-disable-next-line no-console
-    console.debug('[ConfigProperty] Fallback page-data fetch for', file, '→', url);
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    const data = await res.json();
-    // shape: see portal PageData; we need props.frontmatter and props.seo
-    const fm = data?.props?.frontmatter || {};
-    const seo = data?.props?.seo || {};
-    const title: string = seo.title || slugPath.split('/').pop();
-    const description: string = (fm.description as string) || seo.description || '';
-    return {
-      route: slug,
-      title,
-      description,
-      products: fm.products as Products[] | undefined,
-      plans: fm.plans as Plan[] | undefined,
-    };
-  } catch {
-    // eslint-disable-next-line no-console
-    console.warn('[ConfigProperty] Fallback page-data fetch failed for', file);
-    return null;
-  }
 }
 
 export interface ConfigPropertyProps {
@@ -62,40 +34,9 @@ export interface ConfigPropertyProps {
 }
 
 export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElement {
-  const [meta, setMeta] = React.useState<PropertyManifestItem | null>(null);
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
-
-  function fileToFallbackTitle(f: string): string {
-    const key = normalizeFileKey(f);
-    let p = key.replace(/\.md$/, '').replace(/\/index$/, '');
-    const parts = p.split('/');
-    return parts[parts.length - 1] || 'config property';
-  }
-
-  React.useEffect(() => {
-    let mounted = true;
-    setIsLoading(true);
-    void (async () => {
-      const found = await loadFromPageData(file);
-      if (!mounted) return;
-      setMeta(found);
-      setIsLoading(false);
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, [file]);
-
-  if (isLoading) {
-    return (
-      <PropertyItem>
-        <PropertyTitleContainer>
-          <PropertyTitle as={'span'}>{fileToFallbackTitle(file)}</PropertyTitle>
-        </PropertyTitleContainer>
-        <PropertyDescription>Loading description and requirements…</PropertyDescription>
-      </PropertyItem>
-    );
-  }
+  const { usePageSharedData } = useThemeHooks() as unknown as SharedDataHooks;
+  const properties = usePageSharedData<Record<string, PropertyManifestItem>>(PROPERTIES_KEY);
+  const meta = properties?.[normalizeFileKey(file)];
 
   if (!meta) {
     return (
@@ -110,7 +51,7 @@ export function ConfigProperty({ file }: ConfigPropertyProps): React.ReactElemen
   return (
     <PropertyItem>
       <PropertyTitleContainer>
-        <PropertyTitle href={meta.route}>{meta.title}</PropertyTitle>
+        <PropertyTitle href={withPathPrefix(meta.route)}>{meta.title}</PropertyTitle>
         <PropertyCondition plans={meta.plans} products={meta.products} />
       </PropertyTitleContainer>
       <PropertyDescription>{meta.description}</PropertyDescription>
