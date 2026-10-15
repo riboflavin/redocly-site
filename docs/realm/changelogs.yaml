@@ -58934,8 +58934,8 @@ reunite:
         - Fixed an issue in Reunite where a pull request's file changes could show the diff of a different set of files.
         - Fixed an issue in Reunite where the collapsed project sidebar expanded again after opening an organization page.
     dependencies: {}
-  v2026-10-15.5:
-    timestamp: 1792075534000
+  v2026-10-15.6:
+    timestamp: 1792081505000
     changes:
       minor:
         - Updated Reunite sign-in; users must sign in again once after the update.
