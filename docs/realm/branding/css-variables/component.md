@@ -1316,6 +1316,45 @@
 </details>
 
 <details>
+<summary>Markdown numbered list</summary>
+
+```css
+--md-numbered-list-margin: var(--spacing-sm) 0;
+--md-numbered-list-gap: var(--spacing-base);
+
+--md-numbered-list-marker-bg-color: var(--color-warm-grey-2);
+--md-numbered-list-marker-text-color: var(--text-color-primary);
+--md-numbered-list-marker-font-size: var(--font-size-base);
+
+--md-numbered-list-marker-medium-size: 28px;
+--md-numbered-list-icon-medium-size: 16px;
+--md-numbered-list-marker-small-size: 24px;
+--md-numbered-list-icon-small-size: 12px;
+--md-numbered-list-dot-size: 10px;
+--md-numbered-list-dot-rail-padding-top: 7px;
+
+--md-numbered-list-marker-link-gap: 10px;
+--md-numbered-list-marker-link-size: 20px;
+--md-numbered-list-marker-link-icon-color: var(--md-numbered-list-marker-text-color);
+--md-numbered-list-marker-link-bg-color: var(--bg-color-tonal);
+
+--md-numbered-list-tail-width: 1px;
+--md-numbered-list-tail-bg-color: var(--md-numbered-list-marker-bg-color);
+--md-numbered-list-tail-fade-gradient: linear-gradient(to bottom, var(--md-numbered-list-tail-bg-color), transparent);
+
+--md-numbered-list-headline-text-color: var(--text-color-primary);
+--md-numbered-list-headline-font-size: var(--font-size-base);
+--md-numbered-list-headline-font-weight: var(--font-weight-medium);
+--md-numbered-list-headline-line-height: var(--line-height-base);
+
+--md-numbered-list-body-text-color: var(--text-color-secondary);
+--md-numbered-list-body-gap: var(--spacing-xs);
+--md-numbered-list-body-font-size: var(--font-size-base);
+```
+
+</details>
+
+<details>
 <summary>Markdown tabs component</summary>
 
 ```css
