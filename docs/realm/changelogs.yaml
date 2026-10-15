@@ -58786,19 +58786,6 @@ reunite:
         - Improved the MCP server analytics page layout in Reunite with a toggle to switch between the tools and clients tables.
         - Fixed an issue in the Reunite editor where the file tree showed no loading indicator for new remote content while Reunite linked it.
     dependencies: {}
-  v2026-10-15.2:
-    timestamp: 1792058078000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed the **Sign Up** and **Log in** links on the Reunite login and registration pages, which were broken when the login challenge was
-          missing or contained special characters.
-        - Fixed the commit list on the Reunite **Create pull request** page, which grouped commits by different authors under one author.
-        - Fixed an issue in Reunite where clicking the **Production** or **Preview** button in the project header did not open the deployment.
-        - Fixed an issue in Reunite where a pull request's file changes could show the diff of a different set of files.
-        - Fixed an issue in Reunite where the collapsed project sidebar expanded again after opening an organization page.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
