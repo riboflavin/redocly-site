@@ -53,7 +53,7 @@ docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/r
 The same variable serves an AsyncAPI document or a GraphQL schema:
 
 ```bash
-docker run -p 8080:80 -e SPEC_URL=https://redocly.github.io/redoc/3.x/specs/cafe-asyncapi-amqp.yaml redocly/redoc
+docker run -p 8080:80 -e SPEC_URL=https://redocly.github.io/redoc/specs/cafe-asyncapi-amqp.yaml redocly/redoc
 ```
 
 ### Local file

@@ -41,7 +41,7 @@ Replace the `spec-url` attribute with the URL or path to your description file.
 ```
 
 The `spec-url` value can be an OpenAPI, AsyncAPI, or GraphQL description, and Redoc CE detects the specification type from the file.
-To try the other specifications, point `spec-url` at `https://redocly.github.io/redoc/3.x/specs/cafe-asyncapi-amqp.yaml` or `https://redocly.github.io/redoc/3.x/specs/cafe.graphql`.
+To try the other specifications, point `spec-url` at `https://redocly.github.io/redoc/specs/cafe-asyncapi-amqp.yaml` or `https://redocly.github.io/redoc/specs/cafe.graphql`.
 See [Supported specifications](./supported-specifications.md) for the detection rules.
 
 A relative `spec-url` is resolved against the page URL, like any other link: `spec-url="openapi.yaml"` on the page `/docs/index.html` loads `/docs/openapi.yaml`.

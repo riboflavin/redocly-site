@@ -30,7 +30,7 @@ Readers can switch to a stacked layout that moves the examples into the main col
 
 ## Demo
 
-[Try the live demo](https://redocly.github.io/redoc/3.x) to see Redoc CE render the sample descriptions.
+[Try the live demo](https://redocly.github.io/redoc/) to see Redoc CE render the sample descriptions.
 
 ## Usage
 

@@ -56,11 +56,11 @@ The message includes the underlying error.
 The same element renders AsyncAPI and GraphQL descriptions, and Redoc CE detects the specification type from the file.
 
 ```html
-<redoc spec-url="https://redocly.github.io/redoc/3.x/specs/cafe-asyncapi-amqp.yaml"></redoc>
+<redoc spec-url="https://redocly.github.io/redoc/specs/cafe-asyncapi-amqp.yaml"></redoc>
 ```
 
 ```html
-<redoc spec-url="https://redocly.github.io/redoc/3.x/specs/cafe.graphql"></redoc>
+<redoc spec-url="https://redocly.github.io/redoc/specs/cafe.graphql"></redoc>
 ```
 
 A GraphQL schema served from an API endpoint works as well.

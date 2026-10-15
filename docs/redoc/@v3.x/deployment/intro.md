@@ -41,9 +41,9 @@ For testing purposes, you can use one of the following sample description files:
   - [Thingful OpenAPI description](https://raw.githubusercontent.com/thingful/openapi-spec/master/spec/swagger.yaml)
   - [Fitbit Plus OpenAPI description](https://raw.githubusercontent.com/TwineHealth/TwineDeveloperDocs/master/spec/swagger.yaml)
 - AsyncAPI
-  - [Redocly Cafe events](https://redocly.github.io/redoc/3.x/specs/cafe-asyncapi-amqp.yaml)
+  - [Redocly Cafe events](https://redocly.github.io/redoc/specs/cafe-asyncapi-amqp.yaml)
 - GraphQL
-  - [Redocly Cafe schema](https://redocly.github.io/redoc/3.x/specs/cafe.graphql)
+  - [Redocly Cafe schema](https://redocly.github.io/redoc/specs/cafe.graphql)
 
 {% admonition type="info" name="OpenAPI specification" %}
 For more information on the OpenAPI specification, see [Learning OpenAPI 3](https://redocly.com/docs/resources/learning-openapi/).
