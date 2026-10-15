@@ -9,4 +9,8 @@ In both instances, team mapping is a way to specify what you want your IdP group
 You can also use team mapping to assign different teams and roles than the defaults.
 Assign users in your IdP groups [project RBAC teams](../config/access/rbac.md#team-to-role-map) or [organization roles](../access/roles.md#reserved-organization-role-names).
 
-When users log in with an IdP, the groups assigned in the IdP override the RBAC teams assigned in Reunite.
+When users log in with an IdP, their groups become synced teams in Reunite.
+Both the group name and the mapped team name become teams.
+A group mapped to an organization role sets that role and never becomes a team.
+A sign-in that carries no group claim removes the person from the synced teams of that IdP but keeps them in the IdP's default team.
+Teams managed in Reunite do not change.

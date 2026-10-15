@@ -16,20 +16,32 @@ plans:
 Teams are groups of users that form an important part of configuring [role-based access control](../../access/rbac.md) for your projects.
 You can assign users to more than one team and manage team composition to control project access.
 
-## Team management modes
+## Teams you manage and teams your identity provider syncs
 
-Teams can be managed in two different ways depending on your authentication setup:
+The **Teams** page has three tabs.
 
-**Identity Provider Managed Teams (SSO):**
-- Teams are imported and synchronized from your identity provider
-- Team membership is controlled by your identity provider (e.g., Active Directory groups)
-- **Cannot be managed through the Reunite Teams page** - changes must be made in your identity provider
-- Team assignments from SSO **override** any manual team assignments in Reunite
+**Managed:**
 
-**Reunite Managed Teams:**
-- Teams are created and managed directly in Reunite
-- Team membership is controlled through the [Reunite Teams page](#manage-teams)
-- Full control over team composition, managers, and team names within Reunite
+- Owners and team managers create these teams, add and remove members, and rename or delete them.
+- Signing in and directory sync never change them.
+
+**Synced from IdP:**
+
+- Only owners see this tab.
+- These teams come from an identity provider group claim or from a SCIM group.
+- Each team displays where it comes from and when it last synced.
+- They are read-only in Reunite.
+  To change their members, change the group in your identity provider.
+- Each sign-in through an identity provider replaces the person's teams from that identity provider.
+  A sign-in that carries no group claim removes the person from that identity provider's teams but keeps them in its default team.
+
+**Automatic:**
+
+- Teams Reunite fills on its own: `authenticated` holds everyone who signs in, and each organization role has a team with the people who have that role.
+- You can't edit them, but you can grant them roles in `redocly.yaml` like any other team.
+
+A synced team with the same name as a team you manage is a separate team.
+Both grant the roles configured for that name in `redocly.yaml`.
 
 {% admonition type="info" name="Use team names from RBAC" %}
 
@@ -40,9 +52,9 @@ Otherwise, the permissions are not granted.
 
 Add users to teams in one of the following ways:
 
-- [Import teams with your SSO identity provider](./sso/add-idp.md#team-mapping) (identity provider managed)
-- [Assign users to teams with an invitation](./manage-people.md#invite-people) (Reunite managed)
-- [Add users to teams in Reunite](#add-members-to-a-team) (Reunite managed)
+- [Sync teams from your SSO identity provider](./sso/add-idp.md#team-mapping) (synced)
+- [Assign users to teams with an invitation](./manage-people.md#invite-people) (managed in Reunite)
+- [Add users to teams in Reunite](#add-members-to-a-team) (managed in Reunite)
 
 ## Default teams
 
@@ -80,7 +92,10 @@ Redocly also includes built-in teams based on organization roles in Reunite:
 These teams are useful when adding an identity provider (IdP) in Reunite.
 You have the option when adding an IdP to configure team mapping.
 Team mapping connects groups in your IdP to RBAC teams in Reunite.
-When users log in with an IdP, the groups assigned in the IdP override the RBAC teams assigned in Reunite.
+
+When users log in with an IdP, their IdP groups become synced teams.
+A group mapped to one of these organization role teams sets the role and never becomes a team.
+Teams managed in Reunite do not change.
 See the SSO concept documentation for more information on [team mapping](./sso/sso.md#team-mapping).
 
 ## Multiple teams
@@ -126,7 +141,7 @@ Team managers can:
 ## Manage teams
 
 Log in to Reunite with an [Owner organization role](../../access/roles.md#organization-roles).
-You can then view and manage **Reunite-managed teams** from the **Teams** page in the following ways:
+You can then view and manage teams **managed in Reunite** from the **Teams** page in the following ways:
 
 - Create a new team
 - Add members to a team
@@ -136,22 +151,17 @@ You can then view and manage **Reunite-managed teams** from the **Teams** page i
 - Rename a team
 - Delete a team from your organization
 
-{% admonition type="warning" name="Imported teams are read-only" %}
-**Identity provider managed teams cannot be edited** through the Teams page.
-A team can be imported from your identity provider.
-In that case, make changes to team membership and composition in your identity provider system (e.g., Active Directory, Okta, etc.).
+{% admonition type="warning" name="Synced teams are read-only" %}
+Teams synced from your identity provider or from SCIM cannot be edited on the **Teams** page.
+Change their members in your identity provider (for example, Okta or Microsoft Entra ID).
 {% /admonition %}
 
 Only users with an Owner organization role and members assigned as team managers can access the **Teams** page.
 Team managers can only view and manage their assigned teams.
 
-Use the filter next to the search box to display:
+Use the tabs above the list to switch between **Managed**, **Synced from IdP** and **Automatic** teams.
 
-- **All teams**
-- **Managed in Reunite**
-- **Synced from SSO**
-
-Identity provider managed teams have an **SSO** badge with the name of the identity provider.
+Synced teams show their identity provider or SCIM and the time of their last sync.
 
 The **Teams** page does not include options for determining who has access to projects.
 Project access is determined by the permissions of the teams users are members of.
