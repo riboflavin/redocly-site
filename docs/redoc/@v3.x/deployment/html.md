@@ -253,6 +253,42 @@ The standalone bundle includes React and every other dependency, so a single fil
   {% /tab %}
 {% /tabs %}
 
+## Use Redoc CE with FastAPI
+
+FastAPI serves Redoc CE 2.x at `/redoc` with its `get_redoc_html()` function.
+The function loads the script with a classic `<script>` tag, and the Redoc CE 3.x bundle loads only as a module script.
+Passing a 3.x URL in `redoc_js_url` alone renders a blank page, and the browser console shows `Cannot use 'import.meta' outside a module`.
+
+To serve Redoc CE 3.x, turn off the built-in page and add a route that changes the tag to `<script type="module">`:
+
+```python
+from fastapi import FastAPI
+from fastapi.openapi.docs import get_redoc_html
+from fastapi.responses import HTMLResponse
+
+app = FastAPI(redoc_url=None)
+
+
+@app.get("/redoc", include_in_schema=False)
+async def redoc():
+    response = get_redoc_html(
+        openapi_url=app.openapi_url,
+        title=f"{app.title} - Redoc",
+        redoc_js_url="https://cdn.redoc.ly/redoc/v3.x/bundles/redoc.standalone.js",
+        with_google_fonts=False,
+    )
+    html = response.body.decode("utf-8")
+    html = html.replace("<script src=", '<script type="module" src=', 1)
+    return HTMLResponse(html)
+```
+
+`with_google_fonts=False` skips the Google Fonts stylesheet.
+Redoc CE 3.x uses the system font, instead of the Montserrat and Roboto fonts that FastAPI loads for Redoc CE 2.x.
+
+The [FastAPI example](https://github.com/Redocly/redoc/tree/main/examples/fastapi) is a complete app with this route.
+The route depends on the HTML that `get_redoc_html()` generates.
+To own the whole page instead, return the HTML template from the start of this page, with `spec-url` set to `app.openapi_url`.
+
 ## Resources
 
 - **[Redoc CE deployment guide](./intro.md)** - Step-by-step instructions for setting up your Redoc CE project

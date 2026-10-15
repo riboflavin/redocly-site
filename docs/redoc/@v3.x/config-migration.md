@@ -16,6 +16,9 @@ The `latest` CDN URL and the `latest` Docker image tag serve Redoc CE 3.x.
 A page that loads the `latest` bundle with a classic `<script src>` tag stays blank.
 To keep a page on 2.x until you migrate it, pin the major version, for example `https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js` or the `redocly/redoc:v2.5.3` image.
 
+FastAPI's built-in `/redoc` page pins Redoc CE 2.x and loads it with a classic `<script src>` tag.
+To move it to 3.x, follow [Use Redoc CE with FastAPI](./deployment/html.md#use-redoc-ce-with-fastapi).
+
 ## Page and API changes
 
 {% table %}
