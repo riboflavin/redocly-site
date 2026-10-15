@@ -58934,6 +58934,23 @@ reunite:
         - Fixed an issue in Reunite where a pull request's file changes could show the diff of a different set of files.
         - Fixed an issue in Reunite where the collapsed project sidebar expanded again after opening an organization page.
     dependencies: {}
+  v2026-10-15.5:
+    timestamp: 1792075534000
+    changes:
+      minor:
+        - Updated Reunite sign-in; users must sign in again once after the update.
+        - Added name and avatar editing in Reunite account settings for people who sign in through SSO.
+        - >-
+          Added a "Last used" marker to the sign-in buttons on the login page. It shows the method last used in this browser for the same portal or
+          Reunite organization.
+      patch:
+        - Fixed Bitbucket Cloud OAuth connections so they continue working after access tokens expire.
+        - >-
+          Fixed SSO sign-in changing a person's name across all Reunite organizations. Names from an identity provider apply only to the organization
+          associated with that provider.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.64.0`.
+        - Updated `@redocly/openapi-core` to version `2.64.0`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
