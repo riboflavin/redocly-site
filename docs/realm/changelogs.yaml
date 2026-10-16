@@ -58951,6 +58951,26 @@ reunite:
         - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.64.0`.
         - Updated `@redocly/openapi-core` to version `2.64.0`.
     dependencies: {}
+  v2026-10-16.1:
+    timestamp: 1792155699000
+    changes:
+      minor:
+        - >-
+          Added email notifications for Git credential owners who have enabled them when Reunite can no longer use their credentials, helping them
+          reconnect and restore builds, content syncs, and pull request updates.
+        - >-
+          Added an email notification and a **Failed** tag in the Reunite remote content list that warn when Reunite turns off auto-sync for a remote
+          after five failed updates in a row.
+      patch:
+        - Fixed an issue in Reunite where auto-sync for a remote turned off again after one failed update when a user turned it back on.
+        - >-
+          Fixed an issue in Reunite where the **What's new** announcement opened on top of the dialog to create a project. The announcement shows on
+          the next page instead.
+        - Fixed spacing around the "No deployments" message on the Reunite **Deployments** page.
+        - >-
+          Fixed avatar colors in Reunite so each user has a consistent color across pull request activity and the editor. Existing avatar colors
+          changed once.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
