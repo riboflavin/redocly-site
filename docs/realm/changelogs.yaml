@@ -59086,7 +59086,6 @@ reunite:
           after five failed updates in a row.
       patch:
         - Fixed an issue in Reunite where auto-sync for a remote turned off again after one failed update when a user turned it back on.
-        - The Replay tab in the Reunite editor now opens a new request by default instead of an empty screen.
         - >-
           Fixed an issue in Reunite where the **What's new** announcement opened on top of the dialog to create a project. The announcement shows on
           the next page instead.
