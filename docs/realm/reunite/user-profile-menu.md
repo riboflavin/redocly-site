@@ -57,6 +57,9 @@ To connect your Git provider account:
 1. In the row with your Git provider, click the **Connect** button.
 1. Log in to your Git provider and authorize Redocly to access your account.
 
+If Reunite cannot use a Git credential that you own, Reunite sends you an email with a link to reconnect it.
+You get this email only if [email notifications](#set-email-notification-preferences) are on.
+
 ## Switch between your Git provider accounts
 
 If you have multiple accounts with a single Git provider, you can choose which account to use with Redocly.
