@@ -109,7 +109,7 @@ Results also include default versions from other APIs and non-versioned content.
 ## Usage limits
 
 The AI assistant is available on Enterprise and Enterprise Plus plans with a monthly limit of 3500 questions per organization.
-The limit resets at the beginning of each month.
+The limit resets at the beginning of each calendar month.
 Above the limit, users receive regular search results instead of AI answers.
 These limits can change.
 
