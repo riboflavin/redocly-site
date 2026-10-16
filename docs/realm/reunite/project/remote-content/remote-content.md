@@ -208,6 +208,10 @@ Configure how the remote content is adopted into the Redocly project:
   - For remote content on a **URL**, a pull request is created with the updated content, and auto-merge rules apply.
   - For **pushed content**, the auto-sync setting is not used.
 
+  If the updates of the remote content fail many times in a row, Reunite turns off auto-sync and sends an email to the organization members.
+  Members who turned off [email notifications](../../user-profile-menu.md#set-email-notification-preferences), or cleared **Auto-sync turned off** under **Remote content**, do not get this email.
+  To restore the updates, make sure that the source is available, then turn on auto-sync again.
+
 - **Auto-merge:** Automatically merges the pull request to the default branch if all tests pass.
 
 {% admonition type="info" name="Branch protection rules and auto-merge" %}
