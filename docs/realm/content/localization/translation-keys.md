@@ -927,6 +927,18 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.connectMcp.copyUrl
+- Copy MCP server URL action title in page actions
+- Copy MCP server URL
+
+---
+
+- page.actions.connectMcp.copyUrlDescription
+- Copy MCP server URL action description in page actions
+- Copy the MCP server URL to the clipboard
+
+---
+
 - page.actions.connectMcp.moreOptions
 - More options button aria-label in Connect MCP dropdown
 - More options
