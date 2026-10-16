@@ -13,16 +13,16 @@ plans:
 
 From the **Compliance** page in Reunite, view and download Redocly's compliance and security reports.
 The available reports are SOC 2 Type 2, Penetration test, and CAIQ.
-Certifications include ISO 27001, ISO 27017, and ISO 27018.
+You can also download Redocly's ISO/IEC 27001:2022 certificate.
 
 The CAIQ (Consensus Assessments Initiative Questionnaire) is a survey provided by the Cloud Security Alliance (CSA).
 Cloud consumers and auditors use it to assess the security capabilities of a cloud service provider.
 
-The ISO certifications cover the following areas:
+Redocly holds ISO/IEC 27001:2022 certification for information security management.
+The certificate's Statement of Applicability also includes the control sets of these standards:
 
-- ISO 27001: information security management
-- ISO 27017: cloud-specific security controls
-- ISO 27018: protection of personally identifiable information (PII) in the cloud
+- ISO/IEC 27017: cloud-specific security controls
+- ISO/IEC 27018: protection of personally identifiable information (PII) in the cloud
 
 ## Download compliance reports
 
