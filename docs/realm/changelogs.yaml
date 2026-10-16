@@ -1,4 +1,26 @@
 '@redocly/realm':
+  0.139.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added CSV rendering for request and response examples with a CSV media type.
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - >-
+          Fixed an issue in API docs where the title and close button of the security, AsyncAPI server, and GraphQL required scopes dialogs scrolled
+          out of view, and the dialogs did not fit in short browser windows.
+        - Fixed an issue in API docs dialogs where the `Tab` key moved focus out of the dialog or skipped links that appeared after the dialog opened.
+        - Fixed an issue where custom Markdoc tags in GraphQL descriptions ignored their `renderForLlms` output in AI search and `llms.txt`.
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+        - >-
+          Improved the readability of JSON in the **Try it** console: keys, string values, numbers, and `true`, `false`, and `null` values have
+          distinct colors.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where a search for an operation by its path returned no results.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.8
+      '@redocly/theme': 0.71.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.0
   0.139.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -8109,6 +8131,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.8
+      '@redocly/theme': 0.71.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.0
   0.139.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -14925,6 +14959,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.8
+      '@redocly/theme': 0.71.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.0
   0.139.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -21742,6 +21788,28 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added CSV rendering for request and response examples with a CSV media type.
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - >-
+          Fixed an issue in API docs where the title and close button of the security, AsyncAPI server, and GraphQL required scopes dialogs scrolled
+          out of view, and the dialogs did not fit in short browser windows.
+        - Fixed an issue in API docs dialogs where the `Tab` key moved focus out of the dialog or skipped links that appeared after the dialog opened.
+        - Fixed an issue where custom Markdoc tags in GraphQL descriptions ignored their `renderForLlms` output in AI search and `llms.txt`.
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+        - >-
+          Improved the readability of JSON in the **Try it** console: keys, string values, numbers, and `true`, `false`, and `null` values have
+          distinct colors.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where a search for an operation by its path returned no results.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.8
+      '@redocly/theme': 0.71.0-next.5
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.0
   0.139.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -28889,6 +28957,16 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.71.0-next.5:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - Fixed an issue in API docs dialogs where the `Tab` key moved focus out of the dialog or skipped links that appeared after the dialog opened.
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+    dependencies: {}
   0.71.0-next.4:
     timestamp: 1792071782000
     changes:
@@ -33271,6 +33349,22 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor:
+        - Added CSV rendering for request and response examples with a CSV media type.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - >-
+          Fixed an issue in API docs where the title and close button of the security, AsyncAPI server, and GraphQL required scopes dialogs scrolled
+          out of view, and the dialogs did not fit in short browser windows.
+        - |-
+          Fixed an issue where the **Try it** console opened empty in OpenAPI docs rendered with the standalone script or `RedocStandalone`.
+          The issue occurred when the API description kept path items in separate files.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.5
+      '@redocly/replay': 0.30.0-next.6
   0.4.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -35096,6 +35190,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.8:
+    timestamp: 1792157423000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.8
+      '@redocly/redoc': 0.139.0-next.8
+      '@redocly/redoc-revel': 0.139.0-next.8
+      '@redocly/redoc-reef': 0.139.0-next.8
+      '@redocly/theme': 0.71.0-next.5
   1.22.0-next.7:
     timestamp: 1792071782000
     changes:
@@ -44427,6 +44532,17 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.6:
+    timestamp: 1792157423000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved the readability of JSON in the **Try it** console: keys, string values, numbers, and `true`, `false`, and `null` values have
+          distinct colors.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where a search for an operation by its path returned no results.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.5
   0.30.0-next.5:
     timestamp: 1792071782000
     changes:
@@ -47194,6 +47310,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.22.0-next.5:
+    timestamp: 1792157423000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.5
   0.22.0-next.4:
     timestamp: 1792071782000
     changes:
