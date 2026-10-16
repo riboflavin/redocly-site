@@ -59094,6 +59094,13 @@ reunite:
           Fixed avatar colors in Reunite so each user has a consistent color across pull request activity and the editor. Existing avatar colors
           changed once.
     dependencies: {}
+  v2026-10-16.3:
+    timestamp: 1792168624000
+    changes:
+      minor: []
+      patch:
+        - The Replay tab in the Reunite editor now opens a new request by default instead of an empty screen.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
