@@ -331,6 +331,7 @@ search:
 # Custom plugin registration
 plugins:
   - '@redocly/marketing-pages/mcp-tools/realm-plus-plugin.js'
+  - './docs/realm/@theme/plugins/config-properties.js'
 
 links:
   - href: https://redocly.com/docs/changelog/feed.xml

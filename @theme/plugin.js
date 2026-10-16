@@ -2,7 +2,7 @@
 // components read, one resolved entity per post, and the RSS feed.
 
 import yaml from 'js-yaml';
-import { createEntityLoader, defineContentPlugin } from 'realm-plus/plugin';
+import { createEntityLoader, defineContentPlugin } from '@redocly/realm-plus/plugin';
 
 import {
   indexBlogMetadata,
