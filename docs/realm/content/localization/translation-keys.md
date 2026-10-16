@@ -831,6 +831,24 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.actions.grokButtonText
+- Open in Grok button text in page actions
+- Open in Grok
+
+---
+
+- page.actions.grokTitle
+- Open in Grok action title in page actions
+- Open in Grok
+
+---
+
+- page.actions.grokDescription
+- Open in Grok action description in page actions
+- Get insights from Grok
+
+---
+
 - page.actions.connectMcp
 - Connect MCP button label
 - Connect MCP
