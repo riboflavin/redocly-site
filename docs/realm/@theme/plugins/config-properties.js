@@ -2,7 +2,7 @@
 // `{% configProperty file="…" /%}` reads its option page's title, description,
 // products, and plans from this map instead of fetching page data at runtime.
 
-import { createInlineEntity, defineContentPlugin } from 'realm-plus/plugin';
+import { createInlineEntity, defineContentPlugin } from '@redocly/realm-plus/plugin';
 
 const PLUGIN_ID = 'realm-config-properties';
 const CONFIG_DIR = 'docs/realm/config/';
