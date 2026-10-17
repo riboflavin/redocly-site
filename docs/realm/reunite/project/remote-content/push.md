@@ -56,6 +56,11 @@ To push changes to Redocly:
 1. Check that the CI/CD steps you set up earlier in this guide ran as expected.
 1. Visit Redocly to review the new deployment.
 
+{% admonition type="info" name="Branch protection" %}
+Pushes from CI/CD are subject to your Git provider's branch protection rules.
+For example, if you have enabled "Require a pull request before merging" for your default branch, a push to that branch fails to merge automatically.
+{% /admonition %}
+
 ## Resources
 
 - **[Add remote files with one-way sync](./index.md)** - Explore different methods for integrating various external content sources into your Reunite projects
