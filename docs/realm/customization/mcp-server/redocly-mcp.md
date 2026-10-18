@@ -1,11 +1,11 @@
 ---
 seo:
   title: Redocly MCP server
-  description: Connect Claude, Claude Code, Cursor, VS Code, Codex, or ChatGPT to the Redocly MCP server and ask about Redocly products, docs, and APIs.
+  description: Connect Claude, Claude Code, Cursor, VS Code, Codex, or ChatGPT to the Redocly MCP server and ask about Redocly products and docs.
 ---
 # Redocly MCP server
 
-Use the Redocly MCP server to ask your AI assistant about Redocly products and to explore the API descriptions published on redocly.com.
+Use the Redocly MCP server to let your AI assistant answer questions about Redocly products from the documentation published on redocly.com.
 The server is a hosted [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server.
 It is public: you do not need a Redocly account, a sign-in, or an API key.
 
@@ -182,18 +182,19 @@ Add `https://redocly.com/mcp` to your client as a remote server over the Streama
 The server doesn't require headers or credentials.
 Each client uses its own configuration keys, so follow your client's instructions for remote servers.
 
-Some clients work better with one tool for each operation.
+Some clients work better with one tool for each documentation function.
 For these clients, use `https://redocly.com/mcp?mode=tools`.
 
 ### Verify the connection
 
-Ask your assistant: "Using the Redocly MCP server, list the APIs it documents."
+Ask your assistant: "Using the Redocly MCP server, how do I split an OpenAPI description into several files with Redocly CLI?"
 
 {% prompt title="Verify the connection" actions=["claude", "chatgpt"] %}
-Using the Redocly MCP server, list the APIs it documents.
+Using the Redocly MCP server, how do I split an OpenAPI description into several files with Redocly CLI?
 {% /prompt %}
 
-The answer lists the APIs published on redocly.com, for example the Redocly Museum API, which is a demo API.
+The chat shows a call to the Redocly MCP server, and the answer uses the `redocly split` command.
+If the chat shows no call to the server, the assistant answered from memory.
 
 ## Example prompts
 
@@ -204,20 +205,12 @@ The assistant decides which documentation functions to call.
 Using the Redocly MCP server, what is Reunite, and how is it different from Realm?
 {% /prompt %}
 
-{% prompt title="Explore an API" actions=["claude", "chatgpt"] %}
-What endpoints does the Redocly Museum API have?
-{% /prompt %}
-
-{% prompt title="Check API authentication" actions=["claude", "chatgpt"] %}
-Which authentication scheme does the Redocly Museum API use, and how do I send the credentials?
-{% /prompt %}
-
 {% prompt title="Get started with Redocly CLI" actions=["claude", "chatgpt"] %}
-How do I install Redocly CLI and lint an OpenAPI file?
+Using the Redocly MCP server, how do I install Redocly CLI and lint an OpenAPI file?
 {% /prompt %}
 
 {% prompt title="Configure a docs site" actions=["claude", "chatgpt"] %}
-Show me an example sidebar configuration for a Realm project.
+Using the Redocly MCP server, show me an example sidebar configuration for a Realm project.
 {% /prompt %}
 
 If the assistant answers from memory instead of the documentation, name the server in the prompt.
@@ -267,28 +260,18 @@ The documentation functions are the following:
 
 ---
 
-- `listApis`
-- Lists the APIs published on redocly.com, with their versions and servers.
+- `listPages`
+- Lists the navigation of the pages on redocly.com, one level per call.
 
 ---
 
-- `getEndpoints`
-- Lists the endpoints of an API with the method, path, summary, and security requirements of each one.
+- `getPage`
+- Returns a page as Markdown, 200 lines per call by default, with the outline of its headings.
 
 ---
 
-- `getEndpointInfo`
-- Returns the details of one endpoint: parameters, request body, responses, and security schemes.
-
----
-
-- `getSecuritySchemes`
-- Returns the security schemes and the default security requirements of an API.
-
----
-
-- `getFullApiDescription`
-- Returns the complete OpenAPI description of an API.
+- `grepPages`
+- Finds the lines in the pages that contain the text that you give.
 
 {% /table %}
 
@@ -326,6 +309,7 @@ Agents that support discovery can read the [server card](https://redocly.com/.we
 - Redocly receives the tool calls that your assistant sends, not your conversation.
 - The documentation tools only read data.
   The feedback tool adds a report for the Redocly documentation team.
+  The report holds the page and the text of the report.
   No tool changes your Redocly account or your projects.
 - Redocly keeps usage statistics, such as the tool name, the duration, the response size, and the name and version of your client.
 - The [Redocly Privacy Notice](https://redocly.com/privacy-notice) covers requests to the server.
