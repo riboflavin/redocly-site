@@ -50,27 +50,6 @@ All other configuration is done through team-role mapping.
 - Describes feature access by team.
   Use this option when you need to manage access for specific features.
 
----
-
-- teamFolders
-- [[Team folder](#team-folder)]
-- Use with pattern-based access to describe the folders that can be accessed in this way.
-  Only folders listed here can have access granted through pattern-based access.
-  This option is used in combination with the `teamNamePatterns` option.
-
----
-
-- teamFoldersBaseRoles
-- [[Team to role map](#team-to-role-map)]
-- Default access for named teams to the folders defined in the `teamFolders` list.
-
----
-
-- teamNamePatterns
-- [[Team name pattern](#team-name-pattern)]
-- Team name pattern for giving pattern-based access to the folders in `teamFolders`.
-  This option is used in combination with the `teamFolders` option.
-
 {% /table %}
 
 ### Team to role map
@@ -146,44 +125,6 @@ rbac:
 - mcp
 - Map[string, string](#team-to-role-map)
 - Map of teams to roles to define the team and role for MCP server access.
-
-{% /table %}
-
-### Team folder
-
-{% table %}
-
-- Option
-- Type
-- Description
-
----
-
-- teamPathSegment
-- string
-- Team folder pattern.
-  The `{teamPathSegment}` segment is used as the path segment.
-  Example: `/some/path/_{teamPathSegment}_`
-
-{% /table %}
-
-### Team name pattern
-
-{% table %}
-
-- Option
-- Type
-- Description
-
----
-
-- PREFIX-_{teamPathSegment}-{projectRole}_
-- `string`
-- The format that the team name follows.
-  The prefix is optional but can be useful if you have many teams.
-  The `{teamPathSegment}` is used as the path segment where the role access is applied,
-  and the `{projectRole}` part sets the access level.
-  The `{teamPathSegment}` segments are transformed to lower case.
 
 {% /table %}
 
@@ -311,52 +252,6 @@ access:
 ```
 
 This configuration directs users to a login page where they can authenticate using configured identity providers.
-
-### Pattern-based access
-
-Define the folders and the patterns that the team names match.
-The following is an example configuration; the curly braces `{` and `}` and the placeholder names are shown as they should be used in a configuration file.
-
-```yaml
-  teamFolders:
-    - /docs/{teamPathSegment}
-    - /apis/{teamPathSegment}
-  teamNamePatterns:
-    - REDOCLY-{teamPathSegment}-{projectRole}
-    - BUSINESS-{teamPathSegment}-{projectRole}
-```
-
-Given the above configuration and the following list of team names:
-
-- REDOCLY-PEARL-triage
-- REDOCLY-PEARL-admin
-- BUSINESS-AMETHYST-maintain
-
-The effective access control settings would be like the following example configuration:
-
-```yaml {% title="redocly.yaml" %}
-access:
-  rbac:
-    reunite:
-      REDOCLY-PEARL-triage: triage
-      REDOCLY-PEARL-admin: admin
-      BUSINESS-AMETHYST-maintain: maintain
-    content:
-      '/docs/pearl/**':
-        REDOCLY-PEARL-triage: triage
-        REDOCLY-PEARL-admin: admin
-        authenticated: read
-      '/apis/pearl/**':
-        REDOCLY-PEARL-triage: triage
-        REDOCLY-PEARL-admin: admin
-        authenticated: read
-      '/docs/amethyst/**':
-        BUSINESS-AMETHYST-maintain: maintain
-        authenticated: read
-      '/apis/amethyst/**':
-        BUSINESS-AMETHYST-maintain: maintain
-        authenticated: read
-```
 
 ### Feature access
 
