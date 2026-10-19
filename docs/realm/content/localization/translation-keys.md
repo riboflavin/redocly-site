@@ -1102,6 +1102,12 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- page.mcpNotAllowed.tabs.grok
+- Grok tab label on the MCP connection page
+- Grok
+
+---
+
 - page.mcpNotAllowed.tabs.json
 - JSON tab label on the MCP connection page
 - JSON
@@ -1154,6 +1160,30 @@ This page contains the list of all predefined translation keys used in default U
 - ChatGPT desktop app setup instruction on the MCP connection page
 - In the ChatGPT desktop app, go to Settings → Plugins → MCPs.
   Add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
+
+---
+
+- page.mcpNotAllowed.snippets.grokBuild.headline
+- Grok Build entry headline on the MCP connection page
+- Grok Build
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.headline
+- Grok app entry headline on the MCP connection page
+- Grok app
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.openConnectors
+- Grok app button on the MCP connection page that opens the Grok connectors page
+- Open Grok connectors
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.instruction
+- Grok app setup instruction on the MCP connection page
+- On grok.com, open Connectors → New Connector → Custom and paste this server URL:
 
 ---
 
