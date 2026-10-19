@@ -59101,18 +59101,6 @@ reunite:
       patch:
         - The Replay tab in the Reunite editor now opens a new request by default instead of an empty screen.
     dependencies: {}
-  v2026-10-19.1:
-    timestamp: 1792394493000
-    changes:
-      minor: []
-      patch:
-        - Fixed images and other binary files not being restored in the Reunite editor for branches whose name contains `/`.
-        - Fixed the **Access** group in the Reunite sidebar staying collapsed when the **OAuth2 clients** page was opened from a direct link.
-        - >-
-          Fixed sidebar groups in Reunite to follow the pages available to the user. Maintainers see the **Settings** group when the AI assistant
-          settings are available to them, and groups with no available pages, such as **Reports** on a plan without project analytics, are hidden
-          instead of opening empty.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
