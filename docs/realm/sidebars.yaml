@@ -491,3 +491,7 @@
       label: Theme static assets
     - page: customization/enable-source-maps.md
       label: Enable source maps
+    - group: Reunite API
+      items:
+        - page: customization/reunite-api/openapi.yaml
+          label: Reference
