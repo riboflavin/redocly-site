@@ -63,6 +63,7 @@ For projects deployed through Reunite, set the page prefix using environment var
 
 1. Go to the project **Settings** > **Environment variables** page.
 1. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
+   The prefix is part of every page URL, so it cannot be a secret.
 1. Click the **Deployments** hyperlink in the banner.
 1. Click the **Trigger deployment** button.
 
