@@ -1,4 +1,58 @@
 '@redocly/realm':
+  0.139.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added Grok setup instructions to the MCP server page.
+        - Added the `showMissingTranslationNotice` locale option that displays a notice on pages that have no translation.
+        - >-
+          Added the **deprecated** badges to the **Try it** console to mark deprecated operations and security schemes and to match the badges on the
+          API reference page.
+        - |-
+          Added a resize handle between the name and value columns of the parameter tables in the **Try it** console.
+          Readers can widen either column to read long parameter names or values.
+      patch:
+        - >-
+          Fixed an issue where **Copy for LLM**, **Open in Claude**, and **Open in ChatGPT** included default credentials and server values stored in
+          the API description.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples and schemas for a `discriminator` displayed placeholder values or fields
+          from other options instead of the selected option.
+        - >-
+          Fixed an issue where GraphQL docs showed argument names in the operation overview list with a capital first letter instead of the case
+          defined in the schema.
+        - Improved page load times on pages that don't use GraphQL.
+        - Fixed an issue in API docs where the example selected in the request samples and in **Try it** got out of sync.
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - >-
+          Fixed an issue where Markdown images (`![]()`) with a relative path were broken on localized pages when the locale folder did not contain
+          the image.
+
+          Markdown images fall back to the the default-locale file, like other localized content.
+
+          Images in the locale folder still take priority.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - Improved page load by not loading the API reference code on pages that do not show API docs.
+        - Fixed an issue where the mock server rejected valid query parameter, cookie, and form body values that contained URL-encoded characters.
+        - >-
+          Fixed an issue where the `replay-openapi` embed started loading about two seconds after the page and moved the content below it when it
+          appeared.
+        - Fixed OIDC sign-in failures after an identity provider rotated its signing key.
+        - >-
+          Fixed an issue where the sidebar highlight and the page URL stayed on the previous section when users scrolled a long distance in one step
+          on Markdown pages and in API reference docs.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.9
+      '@redocly/theme': 0.71.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.2
   0.139.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -8131,6 +8185,29 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added Grok setup instructions to the MCP server page.
+      patch:
+        - Improved page load times on pages that don't use GraphQL.
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - Improved page load by not loading the API reference code on pages that do not show API docs.
+        - Fixed OIDC sign-in failures after an identity provider rotated its signing key.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.9
+      '@redocly/theme': 0.71.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.2
   0.139.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -14959,6 +15036,37 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added Grok setup instructions to the MCP server page.
+        - Added the `showMissingTranslationNotice` locale option that displays a notice on pages that have no translation.
+      patch:
+        - Improved page load times on pages that don't use GraphQL.
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - >-
+          Fixed an issue where Markdown images (`![]()`) with a relative path were broken on localized pages when the locale folder did not contain
+          the image.
+
+          Markdown images fall back to the the default-locale file, like other localized content.
+
+          Images in the locale folder still take priority.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - Improved page load by not loading the API reference code on pages that do not show API docs.
+        - Fixed OIDC sign-in failures after an identity provider rotated its signing key.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.9
+      '@redocly/theme': 0.71.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.2
   0.139.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -21788,6 +21896,52 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added Grok setup instructions to the MCP server page.
+        - >-
+          Added the **deprecated** badges to the **Try it** console to mark deprecated operations and security schemes and to match the badges on the
+          API reference page.
+        - |-
+          Added a resize handle between the name and value columns of the parameter tables in the **Try it** console.
+          Readers can widen either column to read long parameter names or values.
+      patch:
+        - >-
+          Fixed an issue where **Copy for LLM**, **Open in Claude**, and **Open in ChatGPT** included default credentials and server values stored in
+          the API description.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples and schemas for a `discriminator` displayed placeholder values or fields
+          from other options instead of the selected option.
+        - >-
+          Fixed an issue where GraphQL docs showed argument names in the operation overview list with a capital first letter instead of the case
+          defined in the schema.
+        - Improved page load times on pages that don't use GraphQL.
+        - Fixed an issue in API docs where the example selected in the request samples and in **Try it** got out of sync.
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - Improved page load by not loading the API reference code on pages that do not show API docs.
+        - Fixed an issue where the mock server rejected valid query parameter, cookie, and form body values that contained URL-encoded characters.
+        - >-
+          Fixed an issue where the `replay-openapi` embed started loading about two seconds after the page and moved the content below it when it
+          appeared.
+        - Fixed OIDC sign-in failures after an identity provider rotated its signing key.
+        - >-
+          Fixed an issue where the sidebar highlight and the page URL stayed on the previous section when users scrolled a long distance in one step
+          on Markdown pages and in API reference docs.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.9
+      '@redocly/theme': 0.71.0-next.6
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.1
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.2
   0.139.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -28957,6 +29111,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.71.0-next.6:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added Grok setup instructions to the MCP server page.
+        - Added the `showMissingTranslationNotice` locale option that displays a notice on pages that have no translation.
+      patch:
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - >-
+          Fixed an issue where the sidebar highlight and the page URL stayed on the previous section when users scrolled a long distance in one step
+          on Markdown pages and in API reference docs.
+    dependencies: {}
   0.71.0-next.5:
     timestamp: 1792157423000
     changes:
@@ -33358,6 +33532,38 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - Added the `showMissingTranslationNotice` locale option that displays a notice on pages that have no translation.
+        - >-
+          Added the **deprecated** badges to the **Try it** console to mark deprecated operations and security schemes and to match the badges on the
+          API reference page.
+      patch:
+        - >-
+          Fixed an issue where **Copy for LLM**, **Open in Claude**, and **Open in ChatGPT** included default credentials and server values stored in
+          the API description.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples and schemas for a `discriminator` displayed placeholder values or fields
+          from other options instead of the selected option.
+        - >-
+          Fixed an issue where GraphQL docs showed argument names in the operation overview list with a capital first letter instead of the case
+          defined in the schema.
+        - Improved page load times on pages that don't use GraphQL.
+        - Fixed an issue in API docs where the example selected in the request samples and in **Try it** got out of sync.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - >-
+          Fixed an issue where the `replay-openapi` embed started loading about two seconds after the page and moved the content below it when it
+          appeared.
+        - >-
+          Fixed an issue where the sidebar highlight and the page URL stayed on the previous section when users scrolled a long distance in one step
+          on Markdown pages and in API reference docs.
+    dependencies:
+      '@redocly/replay': 0.30.0-next.7
+      '@redocly/theme': 0.71.0-next.6
   0.4.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -34057,6 +34263,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.13.0-next.2:
+    timestamp: 1792511434000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the mock server rejected valid query parameter, cookie, and form body values that contained URL-encoded characters.
+    dependencies: {}
   0.13.0-next.1:
     timestamp: 1792071782000
     changes:
@@ -35199,6 +35412,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.9:
+    timestamp: 1792511434000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.9
+      '@redocly/redoc': 0.139.0-next.9
+      '@redocly/redoc-revel': 0.139.0-next.9
+      '@redocly/redoc-reef': 0.139.0-next.9
+      '@redocly/theme': 0.71.0-next.6
   1.22.0-next.8:
     timestamp: 1792157423000
     changes:
@@ -41310,6 +41534,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.24.0-next.2:
+    timestamp: 1792511434000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.13.0-next.2
   0.24.0-next.1:
     timestamp: 1792071782000
     changes:
@@ -44541,6 +44772,23 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.7:
+    timestamp: 1792511434000
+    changes:
+      minor:
+        - >-
+          Added the **deprecated** badges to the **Try it** console to mark deprecated operations and security schemes and to match the badges on the
+          API reference page.
+        - |-
+          Added a resize handle between the name and value columns of the parameter tables in the **Try it** console.
+          Readers can widen either column to read long parameter names or values.
+      patch:
+        - Fixed an issue in API docs where the example selected in the request samples and in **Try it** got out of sync.
+        - >-
+          Fixed an issue where the `replay-openapi` embed started loading about two seconds after the page and moved the content below it when it
+          appeared.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.6
   0.30.0-next.6:
     timestamp: 1792157423000
     changes:
@@ -47319,6 +47567,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.22.0-next.6:
+    timestamp: 1792511434000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.6
   0.22.0-next.5:
     timestamp: 1792157423000
     changes:
