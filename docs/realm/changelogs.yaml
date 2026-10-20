@@ -59126,6 +59126,17 @@ reunite:
           Fixed an issue in Reunite where an organization page showed "Page not found" when the user had no access or the server failed; it shows the
           access denied or server error page with a request ID instead.
     dependencies: {}
+  v2026-10-20.3:
+    timestamp: 1792495197000
+    changes:
+      minor:
+        - Updated the Starter project template in Reunite to use the Redocly Cafe API instead of the Museum API.
+      patch:
+        - >-
+          Fixed an issue in Reunite where a project that keeps its default domain next to a custom domain showed outdated pages on the default domain
+          after a publish.
+        - Fixed an issue in Reunite where a live production build did not show the Published tag and the Visit button on the deployment page.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
