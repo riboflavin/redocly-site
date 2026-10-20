@@ -5,7 +5,7 @@ import { useElementSize } from '@redocly/theme/core/hooks';
 import { NumberedItem } from '@redocly/theme/markdoc/components/NumberedList/NumberedItem';
 import { NumberedList } from '@redocly/theme/markdoc/components/NumberedList/NumberedList';
 
-import type { ColorKey, PlaygroundConfig, Tab } from './types';
+import type { ColorKey, ColorMode, PlaygroundConfig, Tab } from './types';
 
 import {
   CDN_SCRIPT_URL,
@@ -295,10 +295,19 @@ function SwitchField({
 export type AiAssistantPlaygroundProps = {
   /** `_ask-ai` endpoint the preview asks. Defaults to the page's own origin. */
   apiUrl?: string;
+  /** Color mode the preview starts with and returns to on reset. Defaults to `system`. */
+  colorMode?: ColorMode;
 };
 
-export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): React.ReactElement {
-  const [config, setConfig] = React.useState<PlaygroundConfig>(DEFAULT_CONFIG);
+export function AiAssistantPlayground({
+  apiUrl,
+  colorMode = DEFAULT_CONFIG.colorMode,
+}: AiAssistantPlaygroundProps): React.ReactElement {
+  const initialConfig = React.useMemo<PlaygroundConfig>(
+    () => ({ ...DEFAULT_CONFIG, colorMode }),
+    [colorMode],
+  );
+  const [config, setConfig] = React.useState<PlaygroundConfig>(initialConfig);
   const [projectUrl, setProjectUrl] = React.useState('');
   const [customizeOpen, setCustomizeOpen] = React.useState(true);
   const [tab, setTab] = React.useState<Tab>('Layout');
@@ -417,8 +426,8 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
   };
 
   const isDefault = React.useMemo(
-    () => JSON.stringify(config) === JSON.stringify(DEFAULT_CONFIG),
-    [config],
+    () => JSON.stringify(config) === JSON.stringify(initialConfig),
+    [config, initialConfig],
   );
 
   const previewScale = toPreviewScale(canvasSize.width);
@@ -653,7 +662,7 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
             <PopoverFooter>
               <ResetButton
                 type="button"
-                onClick={() => setConfig(DEFAULT_CONFIG)}
+                onClick={() => setConfig(initialConfig)}
                 disabled={isDefault}
               >
                 Reset to defaults
