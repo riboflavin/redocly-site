@@ -259,13 +259,13 @@ Add the following sample configuration to your `sidebars.yaml` file:
   label: Home
 - page: style-guide.md
 - page: about.md
-- group: Museum API
+- group: Cafe API
   items:
     - page: ./openapi.yaml
 ```
 
 The sample configuration adds the index page with the link text "Home" and your new Markdown pages, using the first heading as the link text.
-It also adds the Museum API reference documentation, generated from the OpenAPI file.
+It also adds the Cafe API reference documentation, generated from the OpenAPI file.
 
 {% admonition type="info" %}
 
