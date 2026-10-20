@@ -839,6 +839,7 @@ paths:
         The complete multipart body must not exceed 500 MiB, including files, fields, and multipart overhead.
 
         Requires `project.remotes.update` permission.
+        The CLI `push` command creates or updates the remote before it pushes files, so it also requires `project.remotes.create`.
       tags:
         - Pushes
       parameters:
@@ -1175,6 +1176,8 @@ components:
         - com.redocly.team.deleted
         - com.redocly.teamMember.added
         - com.redocly.teamMember.removed
+        - com.redocly.syncedTeamMember.added
+        - com.redocly.syncedTeamMember.removed
         - com.redocly.teamManager.added
         - com.redocly.teamManager.removed
         - com.redocly.organization.created
