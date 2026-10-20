@@ -1,4 +1,12 @@
 '@redocly/realm':
+  0.139.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch:
+        - Fixed the **Expand all** and **Collapse all** buttons on GraphQL pages so they respect fields expanded or collapsed manually.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.10
   0.139.0-next.9:
     timestamp: 1792511434000
     changes:
@@ -8185,6 +8193,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.10
   0.139.0-next.9:
     timestamp: 1792511434000
     changes:
@@ -15036,6 +15051,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.10
   0.139.0-next.9:
     timestamp: 1792511434000
     changes:
@@ -21896,6 +21918,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch:
+        - Fixed the **Expand all** and **Collapse all** buttons on GraphQL pages so they respect fields expanded or collapsed manually.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.10
   0.139.0-next.9:
     timestamp: 1792511434000
     changes:
@@ -33532,6 +33562,13 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch:
+        - Fixed the **Expand all** and **Collapse all** buttons on GraphQL pages so they respect fields expanded or collapsed manually.
+    dependencies: {}
   0.4.0-next.9:
     timestamp: 1792511434000
     changes:
@@ -35412,6 +35449,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.10:
+    timestamp: 1792514012000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.10
+      '@redocly/redoc': 0.139.0-next.10
+      '@redocly/redoc-revel': 0.139.0-next.10
+      '@redocly/redoc-reef': 0.139.0-next.10
   1.22.0-next.9:
     timestamp: 1792511434000
     changes:
