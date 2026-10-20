@@ -1,11 +1,11 @@
-// @ts-ignore eslint-disable-next-line
 import * as React from 'react';
 import styled from 'styled-components';
 import dynamicReact from '@markdoc/markdoc/dist/react';
 import markdoc from '@markdoc/markdoc';
 import { Highlight, HighlightContext } from './Highlight';
 import { Heading } from '@redocly/theme/markdoc/components/Heading/Heading';
-import { SHORT_NAMES } from '../../changelog.page';
+import { AiStarsGradientIcon } from '@redocly/theme/icons/AiStarsGradientIcon/AiStarsGradientIcon';
+import { SHORT_NAMES, toAnchorName } from '../../changelog.page';
 import { RealmIcon } from '../_icons/Realm';
 import { ReefIcon } from '../_icons/Reef';
 import { RevelIcon } from '../_icons/Revel';
@@ -21,6 +21,7 @@ const PRODUCT_ICONS = {
   '@redocly/redoc': RedocIcon,
   reunite: ReuniteIcon,
   replay: ReplayIcon,
+  '@redocly/ai-assistant': AiStarsGradientIcon,
 };
 
 type ChangelogSectionProps = {
@@ -123,7 +124,7 @@ const RecordTitle = ({
   isNext = false,
   timestamp = null,
 }) => {
-  const id = SHORT_NAMES[packageName] + '@' + version;
+  const id = toAnchorName(SHORT_NAMES[packageName]) + '@' + version;
 
   return (
     <StyledHeading level={2} id={id}>

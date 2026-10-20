@@ -1,4 +1,3 @@
-// @ts-ignore eslint-disable-next-line
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -22,7 +21,7 @@ import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
 import { RssSubscription } from './@theme/_components/RssSubscription';
 
-// @ts-ignore
+// @ts-expect-error -- the YAML module has no type declaration
 import changelogData from './changelogs.yaml';
 
 export enum CHANGE_TYPE {
@@ -36,11 +35,17 @@ export const SHORT_NAMES = {
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
   reunite: 'Reunite',
+  '@redocly/ai-assistant': 'AI assistant web component',
   // TODO: uncomment before first replay release
   // replay: 'Replay',
 };
 
 export type ShortNameValues = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
+
+/** Entry ids and hash links use this form, because an HTML id cannot contain spaces. */
+export function toAnchorName(shortName: string): string {
+  return shortName.replaceAll(' ', '-');
+}
 
 const DEFAULT_FILTERS = ['Realm', 'Reunite'];
 const DEFAULT_ITEMS_TO_RENDER = 20;
@@ -235,10 +240,12 @@ export default function Changelog() {
     const [productPart] = hash.slice(1).split('@');
     if (!productPart) return;
 
-    const knownShortNames = Object.values(SHORT_NAMES) as ShortNameValues[];
-    if (!knownShortNames.includes(productPart as ShortNameValues)) return;
+    const shortName = (Object.values(SHORT_NAMES) as ShortNameValues[]).find(
+      (name) => toAnchorName(name) === productPart,
+    );
+    if (!shortName) return;
 
-    setPackages([productPart as ShortNameValues]);
+    setPackages([shortName]);
   }, []);
 
   React.useEffect(() => {
@@ -417,7 +424,7 @@ const Wrapper = styled.div`
 
   [data-component-name='Dropdown/Dropdown'] {
     button + div {
-      width: 100%;
+      min-width: 100%;
     }
     ul {
       width: 100%;

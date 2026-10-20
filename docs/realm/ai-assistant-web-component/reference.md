@@ -22,8 +22,9 @@ The `latest` URL gets each new release in one minute or less:
 https://cdn.redocly.com/ai-assistant/releases/latest/main.js
 ```
 
-To decide when you get a release, use a version URL instead, for example `releases/v1.2.3/main.js`.
+To decide when you get a release, use a version URL instead, for example `releases/v1.0.0/main.js`.
 A version URL never changes.
+The [changelog](../changelog.page.tsx#AI-assistant-web-component) lists each version and its changes.
 To find the version of the script on a page, enter `RedoclyAssistant.version` in the browser console.
 
 Add the script only one time on each page.
