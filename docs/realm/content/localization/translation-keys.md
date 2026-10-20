@@ -1011,6 +1011,27 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- missingTranslationNotice.title
+- Title of the notice on a page that displays the default language because the translation is missing
+  (requires the `showMissingTranslationNotice` option of the locale)
+- This page has not yet been translated
+
+---
+
+- missingTranslationNotice.content
+- Text of the notice on a page that displays the default language because the translation is missing.
+  Supports Markdown
+- You are viewing the original {{language}} version, because a translation is not yet available for this page.
+
+---
+
+- missingTranslationNotice.close
+- Accessible label (`aria-label`) of the button that closes the notice.
+  Screen readers announce it, but it doesn't appear on the page.
+- Close
+
+---
+
 - page.lastUpdated.timeago
 - Page last updated (when referring to a period of time, e.g. 10min)
 - Last updated
