@@ -1,10 +1,25 @@
 import * as React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { CodeBlock } from '@redocly/theme/components/CodeBlock/CodeBlock';
+import { useElementSize } from '@redocly/theme/core/hooks';
 import { NumberedItem } from '@redocly/theme/markdoc/components/NumberedList/NumberedItem';
 import { NumberedList } from '@redocly/theme/markdoc/components/NumberedList/NumberedList';
 
-const CDN_SCRIPT_URL = 'https://cdn.redocly.com/ai-assistant/releases/latest/main.js';
+import type { ColorKey, PlaygroundConfig, Tab } from './types';
+
+import {
+  CDN_SCRIPT_URL,
+  COLOR_KEYS,
+  COLOR_LABELS,
+  COLOR_MODES,
+  DEFAULT_CONFIG,
+  MANAGED_ATTRIBUTES,
+  POSITIONS,
+  PROJECT_URL_PLACEHOLDER,
+  TABS,
+  VARIANTS,
+} from './constants';
+import { buildSnippet, buildStyleSheet, formatOption, toAttributes } from './utils';
 
 /**
  * The preview asks the page's own origin, so the published site, a preview deployment, and a
@@ -15,147 +30,29 @@ const CDN_SCRIPT_URL = 'https://cdn.redocly.com/ai-assistant/releases/latest/mai
  */
 const ASK_AI_PATH = '/_ask-ai';
 
-const VARIANTS = ['widget', 'modal', 'panel'] as const;
-const THEMES = ['light', 'dark', 'system'] as const;
-const SIDES = ['bottom', 'top', 'left', 'right', 'inline-start', 'inline-end'] as const;
-const ALIGNS = ['start', 'center', 'end'] as const;
-
-type Variant = (typeof VARIANTS)[number];
-type Theme = (typeof THEMES)[number];
-type Side = (typeof SIDES)[number];
-type Align = (typeof ALIGNS)[number];
-
-type PlaygroundConfig = {
-  variant: Variant;
-  theme: Theme;
-  side: Side;
-  align: Align;
-  width: string;
-  height: string;
-  resizable: boolean;
-  headerTitle: string;
-  logo: string;
-  triggerText: string;
-  welcomeMessage: string;
-  suggestions: string;
-  suggestionsHeading: string;
-  placeholder: string;
-  disclaimer: string;
-};
-
-const DEFAULT_CONFIG: PlaygroundConfig = {
-  variant: 'widget',
-  theme: 'light',
-  side: 'bottom',
-  align: 'end',
-  width: '',
-  height: '',
-  resizable: false,
-  headerTitle: '',
-  logo: '',
-  triggerText: '',
-  welcomeMessage: 'Welcome to AI Assistant! Feel free to ask me anything. How can I help you?',
-  suggestions: 'How do I configure the sidebar?\nHow do I add an OpenAPI description?',
-  suggestionsHeading: '',
-  placeholder: '',
-  disclaimer: '',
-};
-
-/** Every attribute the playground writes, so a cleared control removes it from the element. */
-const MANAGED_ATTRIBUTES = [
-  'variant',
-  'theme',
-  'side',
-  'align',
-  'width',
-  'height',
-  'resizable',
-  'header-title',
-  'logo',
-  'trigger-text',
-  'welcome-message',
-  'suggestions',
-  'suggestions-heading',
-  'placeholder',
-  'disclaimer',
-] as const;
-
-const TABS = ['Layout', 'Branding', 'Content'] as const;
-type Tab = (typeof TABS)[number];
-
 type RedoclyAssistantApi = {
   setConfig(config: Record<string, unknown> | null): void;
+  close(): void;
 };
 
 type PreviewWindow = Window & { RedoclyAssistant?: RedoclyAssistantApi };
 
-/** `inline-start` reads as "Inline start" in the controls, while the attribute keeps its own value. */
-function formatOption(value: string): string {
-  const spaced = value.replace(/-/g, ' ');
-  return spaced.charAt(0).toUpperCase() + spaced.slice(1);
-}
+/**
+ * At a width of 768px or less, the widget does not let users move or resize it. In the preview,
+ * the widget measures the width of the iframe.
+ */
+const PREVIEW_MIN_WIDTH = 800;
 
-function parseSuggestions(value: string): string[] {
-  return value
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
-}
+const PREVIEW_MIN_SCALE = 0.75;
 
-/** Attribute name/value pairs for the current config, skipping values equal to the widget's defaults. */
-function toAttributes(config: PlaygroundConfig): Array<[string, string]> {
-  const suggestions = parseSuggestions(config.suggestions);
-  const pairs: Array<[string, string | null]> = [
-    ['variant', config.variant === 'widget' ? null : config.variant],
-    ['theme', config.theme === 'light' ? null : config.theme],
-    ['side', config.side === 'bottom' ? null : config.side],
-    ['align', config.align === 'end' ? null : config.align],
-    ['width', config.width.trim() || null],
-    ['height', config.height.trim() || null],
-    ['resizable', config.resizable ? '' : null],
-    ['header-title', config.headerTitle.trim() || null],
-    ['logo', config.logo.trim() || null],
-    ['trigger-text', config.triggerText.trim() || null],
-    ['welcome-message', config.welcomeMessage.trim() || null],
-    ['suggestions', suggestions.length > 0 ? JSON.stringify(suggestions) : null],
-    ['suggestions-heading', config.suggestionsHeading.trim() || null],
-    ['placeholder', config.placeholder.trim() || null],
-    ['disclaimer', config.disclaimer.trim() || null],
-  ];
-
-  return pairs.filter((pair): pair is [string, string] => pair[1] !== null);
-}
-
-function escapeAttribute(value: string): string {
-  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-}
-
-function buildSnippet(config: PlaygroundConfig): string {
-  const lines = [
-    `<script src="${CDN_SCRIPT_URL}"></script>`,
-    '',
-    '<redocly-ai-assistant',
-    '  api-url="https://your-project.com/_ask-ai"',
-  ];
-
-  for (const [name, value] of toAttributes(config)) {
-    if (name === 'resizable') {
-      lines.push('  resizable');
-    } else if (name === 'suggestions') {
-      lines.push(`  suggestions='${value.replace(/&/g, '&amp;').replace(/'/g, '&#39;')}'`);
-    } else {
-      lines.push(`  ${name}="${escapeAttribute(value)}"`);
-    }
-  }
-
-  lines.push('></redocly-ai-assistant>');
-
-  return lines.join('\n');
+function toPreviewScale(stageWidth: number): number {
+  const scale = stageWidth / PREVIEW_MIN_WIDTH;
+  return scale >= 1 || scale < PREVIEW_MIN_SCALE ? 1 : scale;
 }
 
 /**
  * Two of the widget's own rules measure the iframe instead of the browser window. Its
- * `max-width: 768px` panel rules would give a stage narrower than 768px the full-width mobile
+ * `max-width: 768px` panel rules would give a frame narrower than 768px the full-width mobile
  * panel; the override points the mobile width variables back at the desktop one, on the panel
  * element itself, because a `width` attribute lands there as an inline
  * `--ai-assistant-widget-panel-width` that a host-level rule cannot see. The conversation input's
@@ -184,17 +81,31 @@ function injectPreviewLayoutStyle(shadowRoot: ShadowRoot): void {
   shadowRoot.append(style);
 }
 
+const PLAYGROUND_STYLE_ATTRIBUTE = 'data-playground-style';
+
+function applyPlaygroundStyle(previewDoc: Document, styleSheet: string): void {
+  let style = previewDoc.head.querySelector<HTMLStyleElement>(
+    `style[${PLAYGROUND_STYLE_ATTRIBUTE}]`,
+  );
+  if (!style) {
+    style = previewDoc.createElement('style');
+    style.setAttribute(PLAYGROUND_STYLE_ATTRIBUTE, '');
+    previewDoc.head.append(style);
+  }
+  style.textContent = styleSheet;
+}
+
 /**
  * The preview runs in an iframe so the widget's fixed-position launcher, backdrop, and drawer
  * anchor to the stage instead of the documentation page. The stage paints its own light and dark
- * grounds, which keeps `theme="system"` honest: it follows the reader's `prefers-color-scheme`.
+ * grounds, which keeps `color-mode="system"` honest: it follows the reader's `prefers-color-scheme`.
  *
  * The document carries no script and no `api-url`. A `srcdoc` frame inherits the host page's
  * Content Security Policy, and redocly.com allows no inline script, so the parent sets the
  * attribute and injects the layout style over the frame's DOM instead.
  */
 const PREVIEW_DOCUMENT = `<!DOCTYPE html>
-<html data-stage-theme="light">
+<html data-stage-theme="${DEFAULT_CONFIG.colorMode}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -240,48 +151,6 @@ function SlidersIcon(): React.ReactElement {
     </svg>
   );
 }
-
-function SunIcon(): React.ReactElement {
-  return (
-    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <circle cx="8" cy="8" r="3.1" stroke="currentColor" strokeWidth="1.4" />
-      <path
-        d="M8 1.2v1.9M8 12.9v1.9M1.2 8h1.9M12.9 8h1.9M3.2 3.2l1.34 1.34M11.46 11.46l1.34 1.34M12.8 3.2l-1.34 1.34M4.54 11.46 3.2 12.8"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MoonIcon(): React.ReactElement {
-  return (
-    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path
-        d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SystemThemeIcon(): React.ReactElement {
-  return (
-    <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true">
-      <circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M8 1.7A6.3 6.3 0 0 1 8 14.3z" fill="currentColor" />
-    </svg>
-  );
-}
-
-const THEME_ICONS: Record<Theme, () => React.ReactElement> = {
-  light: SunIcon,
-  dark: MoonIcon,
-  system: SystemThemeIcon,
-};
 
 type SelectRowProps<T extends string> = {
   id: string;
@@ -388,6 +257,41 @@ function TextAreaRow({
   );
 }
 
+type SwitchFieldProps = {
+  id: string;
+  label: string;
+  description: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+};
+
+function SwitchField({
+  id,
+  label,
+  description,
+  checked,
+  onChange,
+}: SwitchFieldProps): React.ReactElement {
+  return (
+    <SwitchRow>
+      <SwitchText>
+        <SwitchLabel htmlFor={id}>{label}</SwitchLabel>
+        <SwitchDescription id={`${id}-description`}>{description}</SwitchDescription>
+      </SwitchText>
+      <SwitchControl>
+        <SwitchInput
+          id={id}
+          type="checkbox"
+          aria-describedby={`${id}-description`}
+          checked={checked}
+          onChange={(event) => onChange(event.target.checked)}
+        />
+        <SwitchTrack aria-hidden="true" />
+      </SwitchControl>
+    </SwitchRow>
+  );
+}
+
 export type AiAssistantPlaygroundProps = {
   /** `_ask-ai` endpoint the preview asks. Defaults to the page's own origin. */
   apiUrl?: string;
@@ -395,12 +299,15 @@ export type AiAssistantPlaygroundProps = {
 
 export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): React.ReactElement {
   const [config, setConfig] = React.useState<PlaygroundConfig>(DEFAULT_CONFIG);
+  const [projectUrl, setProjectUrl] = React.useState('');
   const [customizeOpen, setCustomizeOpen] = React.useState(true);
   const [tab, setTab] = React.useState<Tab>('Layout');
   const [frameEpoch, setFrameEpoch] = React.useState(0);
+  const [canvasSize, canvasRef] = useElementSize<HTMLDivElement>({ detectSizes: 'width' });
   const iframeRef = React.useRef<HTMLIFrameElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
   const customizeButtonRef = React.useRef<HTMLButtonElement>(null);
+  const appliedPositionRef = React.useRef(DEFAULT_CONFIG.position);
 
   // Attribute changes go straight to the live element. `setConfig({})` makes every instance
   // re-read its attributes, so the preview updates without reloading the frame. The frame's CDN
@@ -420,6 +327,7 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
       }
 
       injectPreviewLayoutStyle(shadowRoot);
+      applyPlaygroundStyle(previewDoc, buildStyleSheet(config));
       element.setAttribute('api-url', askAiUrl);
 
       const attributes = new Map(toAttributes(config));
@@ -432,8 +340,14 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
         }
       }
 
-      previewDoc.documentElement.dataset.stageTheme = config.theme;
+      previewDoc.documentElement.dataset.stageTheme = config.colorMode;
       previewWindow.RedoclyAssistant.setConfig({});
+
+      // The open chat window hides the Ask AI button, so close it to show where the button goes.
+      if (appliedPositionRef.current !== config.position) {
+        appliedPositionRef.current = config.position;
+        previewWindow.RedoclyAssistant.close();
+      }
       return true;
     };
 
@@ -457,7 +371,7 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && popoverRef.current?.contains(document.activeElement)) {
         setCustomizeOpen(false);
         customizeButtonRef.current?.focus();
       }
@@ -485,6 +399,10 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
     setConfig((current) => ({ ...current, [key]: value }));
   };
 
+  const updateColor = (palette: 'lightColors' | 'darkColors', key: ColorKey, value: string) => {
+    setConfig((current) => ({ ...current, [palette]: { ...current[palette], [key]: value } }));
+  };
+
   const onTabKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
     if (step === 0) {
@@ -499,17 +417,19 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
   };
 
   const isDefault = React.useMemo(
-    () =>
-      (Object.keys(DEFAULT_CONFIG) as Array<keyof PlaygroundConfig>).every(
-        (key) => config[key] === DEFAULT_CONFIG[key],
-      ),
+    () => JSON.stringify(config) === JSON.stringify(DEFAULT_CONFIG),
     [config],
   );
+
+  const previewScale = toPreviewScale(canvasSize.width);
+  const controlsOnRight = config.position.endsWith('-left');
+  const showLightColors = config.colorMode !== 'dark';
+  const showDarkColors = config.colorMode !== 'light';
 
   return (
     <Wrapper data-component-name="AiAssistantPlayground/AiAssistantPlayground">
       <Stage>
-        <StageOverlay>
+        <StageOverlay $mirrored={controlsOnRight}>
           <OverlayButton
             ref={customizeButtonRef}
             type="button"
@@ -519,28 +439,19 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
             <SlidersIcon />
             Customize
           </OverlayButton>
-          <ThemeSwitch role="group" aria-label="Preview color scheme">
-            {THEMES.map((theme) => {
-              const Icon = THEME_ICONS[theme];
-              return (
-                <ThemeOption
-                  key={theme}
-                  type="button"
-                  title={`${formatOption(theme)} color scheme`}
-                  aria-label={`${formatOption(theme)} color scheme`}
-                  aria-pressed={config.theme === theme}
-                  $selected={config.theme === theme}
-                  onClick={() => update('theme', theme)}
-                >
-                  <Icon />
-                </ThemeOption>
-              );
-            })}
-          </ThemeSwitch>
+          <LiveBadge>
+            <LiveDot aria-hidden="true" />
+            Live preview
+          </LiveBadge>
         </StageOverlay>
 
         {customizeOpen ? (
-          <Popover ref={popoverRef} role="dialog" aria-label="Customize the assistant">
+          <Popover
+            ref={popoverRef}
+            role="dialog"
+            aria-label="Customize the assistant"
+            $mirrored={controlsOnRight}
+          >
             <TabList role="tablist" aria-label="Setting groups" onKeyDown={onTabKeyDown}>
               {TABS.map((name) => (
                 <TabButton
@@ -574,18 +485,11 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
                     onChange={(value) => update('variant', value)}
                   />
                   <SelectRow
-                    id="playground-side"
-                    label="Placement"
-                    value={config.side}
-                    options={SIDES}
-                    onChange={(value) => update('side', value)}
-                  />
-                  <SelectRow
-                    id="playground-align"
-                    label="Alignment"
-                    value={config.align}
-                    options={ALIGNS}
-                    onChange={(value) => update('align', value)}
+                    id="playground-position"
+                    label="Position"
+                    value={config.position}
+                    options={POSITIONS}
+                    onChange={(value) => update('position', value)}
                   />
                   <TextRow
                     id="playground-width"
@@ -601,20 +505,76 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
                     placeholder="640px"
                     onChange={(value) => update('height', value)}
                   />
-                  <SwitchRow>
-                    <SwitchText>
-                      <span>Resizable</span>
-                      <SwitchDescription>
-                        Readers can drag the panel edge to resize it.
-                      </SwitchDescription>
-                    </SwitchText>
-                    <SwitchInput
-                      type="checkbox"
-                      checked={config.resizable}
-                      onChange={(event) => update('resizable', event.target.checked)}
+                  <SwitchField
+                    id="playground-resizable"
+                    label="Resizable"
+                    description="Users can drag a handle to change the size."
+                    checked={config.resizable}
+                    onChange={(checked) => update('resizable', checked)}
+                  />
+                  {config.variant === 'widget' ? (
+                    <SwitchField
+                      id="playground-movable"
+                      label="Movable"
+                      description="Users can move the widget window by its header."
+                      checked={config.movable}
+                      onChange={(checked) => update('movable', checked)}
                     />
-                    <SwitchTrack aria-hidden="true" />
-                  </SwitchRow>
+                  ) : null}
+                </>
+              ) : null}
+
+              {tab === 'Style' ? (
+                <>
+                  <SelectRow
+                    id="playground-color-mode"
+                    label="Color mode"
+                    value={config.colorMode}
+                    options={COLOR_MODES}
+                    onChange={(value) => update('colorMode', value)}
+                  />
+                  <ColorGrid $columns={Number(showLightColors) + Number(showDarkColors)}>
+                    <span />
+                    {showLightColors ? <ColorHeading>Light</ColorHeading> : null}
+                    {showDarkColors ? <ColorHeading>Dark</ColorHeading> : null}
+                    {COLOR_KEYS.map((key) => (
+                      <React.Fragment key={key}>
+                        <ColorName>{COLOR_LABELS[key]}</ColorName>
+                        {showLightColors ? (
+                          <ColorSwatch
+                            type="color"
+                            aria-label={`${COLOR_LABELS[key]}, light`}
+                            value={config.lightColors[key]}
+                            onChange={(event) =>
+                              updateColor('lightColors', key, event.target.value)
+                            }
+                          />
+                        ) : null}
+                        {showDarkColors ? (
+                          <ColorSwatch
+                            type="color"
+                            aria-label={`${COLOR_LABELS[key]}, dark`}
+                            value={config.darkColors[key]}
+                            onChange={(event) => updateColor('darkColors', key, event.target.value)}
+                          />
+                        ) : null}
+                      </React.Fragment>
+                    ))}
+                  </ColorGrid>
+                  <TextRow
+                    id="playground-font"
+                    label="Font"
+                    value={config.fontFamily}
+                    placeholder="Inter, sans-serif"
+                    onChange={(value) => update('fontFamily', value)}
+                  />
+                  <TextRow
+                    id="playground-corner-radius"
+                    label="Corner radius"
+                    value={config.cornerRadius}
+                    placeholder="12px"
+                    onChange={(value) => update('cornerRadius', value)}
+                  />
                 </>
               ) : null}
 
@@ -702,9 +662,15 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
           </Popover>
         ) : null}
 
-        <StageCanvas>
+        <StageCanvas ref={canvasRef}>
           <PreviewFrame
             ref={iframeRef}
+            style={{
+              width: `${100 / previewScale}%`,
+              height: `${100 / previewScale}%`,
+              maxWidth: 'none',
+              transform: `scale(${previewScale})`,
+            }}
             srcDoc={PREVIEW_DOCUMENT}
             title="AI assistant preview"
             onLoad={() => setFrameEpoch((epoch) => epoch + 1)}
@@ -713,35 +679,35 @@ export function AiAssistantPlayground({ apiUrl }: AiAssistantPlaygroundProps): R
       </Stage>
 
       <InstallHeader>
-        <InstallHeading>Install</InstallHeading>
+        <InstallHeading>Install AI assistant</InstallHeading>
       </InstallHeader>
       <NumberedList>
         <NumberedItem
           index={1}
           isLast={false}
           headlineLevel={4}
-          headline="Copy the configured snippet into your page"
+          headline="Enter the URL of your Redocly project."
         >
-          <CodeBlock
-            lang="html"
-            source={buildSnippet(config)}
-            header={{ title: 'index.html', controls: { copy: {} } }}
+          <ProjectUrlField
+            id="playground-project-url"
+            aria-label="URL of your Redocly project"
+            value={projectUrl}
+            placeholder={PROJECT_URL_PLACEHOLDER}
+            $stacked
+            onChange={(event) => setProjectUrl(event.target.value)}
           />
         </NumberedItem>
         <NumberedItem
           index={2}
           isLast={true}
           headlineLevel={4}
-          headline={
-            <>
-              Point <code>api-url</code> at your project
-            </>
-          }
+          headline="Copy the snippet to your site."
         >
-          <p>
-            Replace <code>https://your-project.com/_ask-ai</code> with your project&apos;s URL
-            followed by <code>/_ask-ai</code>.
-          </p>
+          <CodeBlock
+            lang="html"
+            source={buildSnippet(config, projectUrl)}
+            header={{ title: 'index.html', controls: { copy: {} } }}
+          />
         </NumberedItem>
       </NumberedList>
     </Wrapper>
@@ -752,9 +718,11 @@ const Wrapper = styled.div`
   margin: var(--spacing-lg, 24px) 0;
 `;
 
+const TOOLBAR_HEIGHT = '56px';
+
 const Stage = styled.div`
   position: relative;
-  min-height: 640px;
+  min-height: calc(640px + ${TOOLBAR_HEIGHT});
   border: 1px solid var(--border-color-primary);
   border-radius: var(--border-radius-lg, 8px);
   overflow: hidden;
@@ -762,17 +730,17 @@ const Stage = styled.div`
 
 const StageCanvas = styled.div`
   position: absolute;
-  inset: 0;
+  inset: ${TOOLBAR_HEIGHT} 0 0;
+  border-top: 1px solid var(--border-color-primary);
 `;
 
 const PreviewFrame = styled.iframe`
   display: block;
-  width: 100%;
-  height: 100%;
   border: 0;
+  transform-origin: 0 0;
 `;
 
-const StageOverlay = styled.div`
+const StageOverlay = styled.div<{ $mirrored: boolean }>`
   position: absolute;
   top: var(--spacing-sm, 12px);
   right: var(--spacing-sm, 12px);
@@ -781,6 +749,7 @@ const StageOverlay = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-direction: ${({ $mirrored }) => ($mirrored ? 'row-reverse' : 'row')};
   pointer-events: none;
 
   > * {
@@ -812,40 +781,19 @@ const OverlayButton = styled.button`
   }
 `;
 
-const ThemeSwitch = styled.div`
+const LiveBadge = styled.span`
   ${overlaySurface}
-  gap: 2px;
-  padding: 3px;
+  padding: 4px 10px;
   border-radius: 999px;
+  font-size: var(--font-size-xs, 12px);
+  color: var(--text-color-secondary);
 `;
 
-const ThemeOption = styled.button<{ $selected: boolean }>`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border: 0;
+const LiveDot = styled.span`
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    color 0.15s ease;
-
-  ${({ $selected }) =>
-    $selected
-      ? css`
-          background: var(--bg-color-tonal, rgba(128, 128, 128, 0.14));
-          color: var(--text-color-primary);
-        `
-      : css`
-          background: none;
-          color: var(--text-color-secondary);
-
-          &:hover {
-            color: var(--text-color-primary);
-          }
-        `}
+  background: #22c55e;
 `;
 
 const popoverIn = keyframes`
@@ -859,10 +807,10 @@ const popoverIn = keyframes`
   }
 `;
 
-const Popover = styled.div`
+const Popover = styled.div<{ $mirrored: boolean }>`
   position: absolute;
   top: calc(var(--spacing-sm, 12px) + 42px);
-  left: var(--spacing-sm, 12px);
+  ${({ $mirrored }) => ($mirrored ? 'right' : 'left')}: var(--spacing-sm, 12px);
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -1025,6 +973,55 @@ const Chevron = styled.svg`
   color: var(--text-color-secondary);
 `;
 
+const ColorGrid = styled.div<{ $columns: number }>`
+  display: grid;
+  grid-template-columns: 1fr repeat(${({ $columns }) => $columns}, 48px);
+  align-items: center;
+  gap: 6px var(--spacing-xs, 8px);
+  padding: var(--spacing-xxs, 4px) 0;
+`;
+
+const ColorHeading = styled.span`
+  font-size: var(--font-size-xs, 12px);
+  color: var(--text-color-description);
+  text-align: center;
+`;
+
+const ColorName = styled.span`
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+`;
+
+const ColorSwatch = styled.input`
+  width: 48px;
+  height: 28px;
+  padding: 2px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color-primary);
+  border-radius: var(--border-radius-md, 6px);
+  cursor: pointer;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: 0;
+    border-radius: 4px;
+  }
+
+  &::-moz-color-swatch {
+    border: 0;
+    border-radius: 4px;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-primary-base, currentColor);
+    box-shadow: 0 0 0 3px var(--color-primary-bg, rgba(128, 128, 128, 0.2));
+  }
+`;
+
 const SwitchTrack = styled.span`
   position: relative;
   display: block;
@@ -1049,15 +1046,25 @@ const SwitchTrack = styled.span`
   }
 `;
 
-const SwitchRow = styled.label`
-  position: relative;
+const SwitchRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-sm, 12px);
   min-height: 32px;
+`;
+
+const SwitchLabel = styled.label`
+  align-self: flex-start;
   font-size: var(--font-size-sm);
   color: var(--text-color-primary);
+  cursor: pointer;
+`;
+
+const SwitchControl = styled.label`
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
   cursor: pointer;
 `;
 
@@ -1115,6 +1122,10 @@ const ResetButton = styled.button`
     opacity: 0.4;
     cursor: default;
   }
+`;
+
+const ProjectUrlField = styled(TextInput)`
+  max-width: 420px;
 `;
 
 const InstallHeader = styled.div`

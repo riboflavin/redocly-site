@@ -40,7 +40,7 @@ AI Search is now named the **AI assistant**.
 
 - AI assistant web component
 - Embeds the AI assistant on other websites.
-- Early access.
+- Enterprise+.
 
 ---
 

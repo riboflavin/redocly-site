@@ -13,6 +13,9 @@ description: Customize the AI assistant functionality in your project.
 
 {% configOptionRequirements products=$frontmatter.products plans=$frontmatter.plans /%}
 
+The AI assistant is on by default.
+To turn it off, set `hide` to `true`.
+
 By default, users can access the AI assistant with the floating **Ask AI** button in the bottom-right corner.
 Users can also open it through the **Search** modal in the top navigation bar.
 

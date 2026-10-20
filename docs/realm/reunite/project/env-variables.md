@@ -67,6 +67,11 @@ You can also add environment variables individually through the Redocly interfac
 1. Enter the Environment variable name and value.
 1. If the variable is a secret, select the secret checkbox to store it in an encrypted format and exclude it from the logs.
 
+{% admonition type="info" name="Redeploy after a change" %}
+A new, changed, or removed variable takes effect only after the next deployment.
+After you change the variables on the **Settings** page, [redeploy](./deployments.md) the project.
+{% /admonition %}
+
 ## Usage
 
 {% admonition type="warning" name="Protect sensitive information" %}

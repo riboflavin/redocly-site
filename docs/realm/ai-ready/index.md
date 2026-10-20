@@ -10,6 +10,8 @@ Readers ask a question and get an answer grounded in your documentation.
 
 - **[AI assistant configuration](../config/ai-assistant.md)** - Enable and configure the AI assistant on your site
 - **[AI assistant web component](../ai-assistant-web-component/ai-assistant-web-component.md)** - Embed the assistant in your own applications outside the docs site
+- **[Answer from login-protected content](../ai-assistant-web-component/identity-tokens.md)** - Let the assistant use protected content for the users who sign in to your site
+- **[Analytics](../reunite/project/analytics.md#ai-assistant)** - See the questions that users ask the AI assistant and how they rate the answers
 
 ## Serve your docs to agents
 
