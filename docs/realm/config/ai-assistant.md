@@ -36,6 +36,11 @@ The AI assistant indexes and searches across all content in your project:
 When you have multiple versions of an API, the AI assistant shows results from the active version by default.
 Results also include default versions from other APIs and non-versioned content.
 
+The index includes content that RBAC protects.
+The AI assistant serves users only the content that they can access.
+To build the index, Redocly sends the content to a Google embedding model.
+To keep content out of the index, see the [AI governance FAQ](../faq/ai-governance.md#does-the-content-index-include-rbac-protected-content).
+
 ## Options
 
 {% table %}

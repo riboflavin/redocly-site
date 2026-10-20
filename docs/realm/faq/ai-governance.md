@@ -77,6 +77,12 @@ Each feature has its own control:
 - Restrict either feature to specific teams with the `rbac.features.aiSearch` and `rbac.features.mcp` options in [RBAC](../config/access/rbac.md#features-configuration).
 - Early access features stay off until you ask Redocly to enable them.
 
+The AI assistant and the MCP server share one content index.
+Redocly builds the index while either feature is on.
+To stop indexing, hide both the AI assistant and the MCP server with the [`aiAssistant.hide`](../config/ai-assistant.md) and [`mcp.hide`](../config/mcp.md) options.
+Restricting the AI assistant or the MCP server to specific teams does not prevent indexing.
+For details, see [Does the content index include RBAC-protected content?](#does-the-content-index-include-rbac-protected-content)
+
 ## Models and architecture
 
 ### What type of AI do Redocly AI features use?
@@ -94,6 +100,7 @@ Redocly calls models through two providers:
 - **AWS Bedrock**
 - **Google**, including Vertex AI
 
+Google also creates the embeddings for the [content index](#does-the-content-index-include-rbac-protected-content).
 Both providers run in inference-only mode and do not train models on your data.
 For the provider terms, see [AWS Bedrock privacy](https://aws.amazon.com/bedrock/amazon-models/privacy/) and [Gemini data governance](https://cloud.google.com/gemini/docs/discover/data-governance).
 
@@ -104,7 +111,8 @@ Contact Redocly if your review needs the current model names and versions.
 ### How does the AI assistant work?
 
 1. When you publish a production build, Redocly indexes your content.
-   The index keeps the original role-based access control (RBAC) tags.
+   Redocly splits the content into chunks and sends each chunk to a Google embedding model.
+   The index includes [RBAC-protected content](#does-the-content-index-include-rbac-protected-content) and keeps the original role-based access control (RBAC) tags.
 1. When a user asks a question, the assistant can retrieve matching content.
    Redocly enforces RBAC above the assistant, so it cannot retrieve content that the user cannot access.
 1. The assistant sends the question, a Redocly system prompt, your optional project prompt, and the retrieved content to the LLM.
@@ -144,6 +152,35 @@ Scaffold with AI uses the description, files, and links that you provide when yo
 If you connect other tools (early access), the assistant can also use data from those tools.
 You decide which data sources it can use.
 
+### Does the content index include RBAC-protected content?
+
+Yes.
+On each production build, Redocly indexes all published content, including pages and API descriptions that RBAC or [`requiresLogin`](../config/access/requires-login.md) protects.
+To create the index, Redocly sends the full text of that content to a Google embedding model.
+Google processes it in inference-only mode and does not train on it.
+Redocly stores the resulting index in its own platform.
+
+RBAC still controls who sees the content.
+The index keeps the RBAC tags, so the AI assistant and the MCP server only retrieve content that the user can access.
+
+Use these controls to keep content out of the index:
+
+- **Exclude a page** - Set [`excludeFromSearch: true`](../config/front-matter-config.md#front-matter-only-options) in the page front matter.
+  The page also leaves keyword search, `llms.txt`, and the sitemap.
+- **Exclude an API description** - Set [`excludeFromSearch: true`](../config/openapi/index.md#exclude-an-api-from-search) for the API in `redocly.yaml`.
+- **Stop indexing for the project** - Set [`aiAssistant.hide: true`](../config/ai-assistant.md) and turn off the Docs MCP server with [`mcp.hide: true`](../config/mcp.md) or `mcp.docs.hide: true`.
+  Redocly indexes content while either feature is on.
+
+These options do not keep content out of the index:
+
+- `rbac.features.aiSearch` and `rbac.features.mcp` - They control who can use a feature, not what Redocly indexes.
+- `mcp.docs.ignore` - It removes content from MCP results, but the content stays in the shared index.
+
+Changes take effect at the next production build.
+When you exclude content, it leaves the index at that build.
+When you hide both the AI assistant and the MCP server, Redocly stops updating the index, but the existing index remains on the platform.
+Contact Redocly to delete it.
+
 ### Do AI features process personal data?
 
 The features process the content you publish and the questions users type.
@@ -177,6 +214,7 @@ You act as the data controller: you determine the purposes and means of processi
 
 - **Content index** - Redocly rebuilds the index on each production build.
   Removed content leaves the index at the next production build.
+  When you hide both the AI assistant and the MCP server, the existing index stays until you ask Redocly to delete it.
 - **Conversation logs** - Redocly keeps the question, answer, and sources to power your analytics reports.
 - **Usage counters** - Redocly keeps monthly totals to enforce quotas.
 
@@ -185,6 +223,8 @@ Contact Redocly if your review needs retention details for a specific data class
 ### Is our data shared with third parties?
 
 Prompts go to AWS and Google model endpoints for inference only.
+To build the content index, Redocly sends the text of all published content to a Google embedding model for inference only.
+This content includes RBAC-protected pages and API descriptions.
 Redocly does not sell your data.
 Redocly does not share your data with other parties for model training.
 
@@ -453,6 +493,14 @@ Short answers to frequent AI governance questionnaire items:
 - Yes.
   Redocly operates it inside the platform.
   Your content is not sent to a third-party vector database.
+  A Google embedding model creates the vectors in inference-only mode.
+
+---
+
+- Is access-controlled content sent to a model provider?
+- Yes, for indexing.
+  Redocly sends the text of RBAC-protected content to a Google embedding model in inference-only mode.
+  Exclude content with `excludeFromSearch`, or hide both the AI assistant and the MCP server to stop indexing.
 
 ---
 
