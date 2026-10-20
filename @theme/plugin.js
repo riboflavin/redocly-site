@@ -86,7 +86,8 @@ const postsLoader = createEntityLoader(POSTS_ENTITY_KEY, async (context) => {
 
 const latestPostsLoader = createEntityLoader(LATEST_POSTS_ENTITY_KEY, async (context) => {
   const { posts } = await context.entities.load(POSTS_ENTITY_KEY);
-  return { value: posts.slice(0, context.args.limit) };
+  const { limit, excludeSlug } = context.args;
+  return { value: posts.filter((post) => post.slug !== excludeSlug).slice(0, limit) };
 });
 
 const postLoader = createEntityLoader(`${PLUGIN_ID}:post`, async (context) => {
@@ -107,7 +108,7 @@ const feedLoader = createEntityLoader(FEED_ENTITY_KEY, async (context) => {
 
 export default defineContentPlugin({
   id: PLUGIN_ID,
-  version: '1.0.1',
+  version: '1.0.2',
   content: {
     filter: { match: (path) => isBlogPost(path) || path === BLOG_METADATA_PATH },
     async extractAll(ctx) {
@@ -174,8 +175,15 @@ export default defineContentPlugin({
         { slug: post.slug },
         { stableKey: `${PLUGIN_ID}:post:${post.slug}` },
       );
-      entities.push(ref);
-      attach.push({ slug: post.slug, deps: { [POST_KEY]: ref, [LATEST_POSTS_KEY]: latest } });
+      const latestExceptPost = latestPostsLoader.withArgs(
+        { limit: LATEST_POSTS_COUNT, excludeSlug: post.slug },
+        { stableKey: `${LATEST_POSTS_ENTITY_KEY}:${post.slug}` },
+      );
+      entities.push(ref, latestExceptPost);
+      attach.push({
+        slug: post.slug,
+        deps: { [POST_KEY]: ref, [LATEST_POSTS_KEY]: latestExceptPost },
+      });
     }
 
     for (const category of metadata.categories ?? []) {
