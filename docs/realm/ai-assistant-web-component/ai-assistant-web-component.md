@@ -133,37 +133,37 @@ To turn it on, see [Configure AI assistant support escalation](../reunite/projec
 ## Troubleshoot
 
 {% accordion-group %}
-  {% accordion title="Something went wrong" %}
-  The browser blocks the request to your project.
-  The browser console shows a CORS error.
+{% accordion title="Something went wrong" %}
+The browser blocks the request to your project.
+The browser console shows a CORS error.
 
-  - Make sure that `REDOCLY_CORS_ORIGINS` has the exact address of your site: the scheme, the host, and the port.
-    Wildcards, such as `*`, do not work.
-  - Redeploy the project after you change the variable.
-  - If your project uses a path prefix, add the prefix to `api-url`, for example `https://acme.com/docs`.
-  - Each IP address can send 25 requests in 5 minutes.
-  {% /accordion %}
-  {% accordion title="Authentication Required" %}
-  The project does not let anonymous users use the AI assistant.
-  If you set `access.rbac.features.aiSearch`, add `anonymous: read` to it.
-  {% /accordion %}
-  {% accordion title="Feature Unavailable" %}
-  The AI assistant is off for the project.
-  Make sure that `aiAssistant.hide` is not `true` in `redocly.yaml`, and that the organization is on the Enterprise+ plan.
-  {% /accordion %}
-  {% accordion title="The assistant does not use your docs" %}
-  - The content requires login.
-    Send [identity tokens](./identity-tokens.md).
-  - The `locale`, `product`, or version attributes do not match your content.
-  - The pages are new.
-    The assistant uses a page only after the next production deployment.
-  {% /accordion %}
-  {% accordion title="The Ask AI button does not show" %}
-  - The `api-url` attribute is missing.
-    The browser console displays a warning.
-  - The Content Security Policy of your site blocks the script.
-    See [Content Security Policy](./reference.md#content-security-policy).
-  {% /accordion %}
+- Make sure that `REDOCLY_CORS_ORIGINS` has the exact address of your site: the scheme, the host, and the port.
+  Wildcards, such as `*`, do not work.
+- Redeploy the project after you change the variable.
+- If your project uses a path prefix, add the prefix to `api-url`, for example `https://acme.com/docs`.
+- Each IP address can send 25 requests in 5 minutes.
+{% /accordion %}
+{% accordion title="Authentication Required" %}
+The project does not let anonymous users use the AI assistant.
+If you set `access.rbac.features.aiSearch`, add `anonymous: read` to it.
+{% /accordion %}
+{% accordion title="Feature Unavailable" %}
+The AI assistant is off for the project.
+Make sure that `aiAssistant.hide` is not `true` in `redocly.yaml`, and that the organization is on the Enterprise+ plan.
+{% /accordion %}
+{% accordion title="The assistant does not use your docs" %}
+- The content requires login.
+  Send [identity tokens](./identity-tokens.md).
+- The `locale`, `product`, or version attributes do not match your content.
+- The pages are new.
+  The assistant uses a page only after the next production deployment.
+{% /accordion %}
+{% accordion title="The Ask AI button does not show" %}
+- The `api-url` attribute is missing.
+  The browser console displays a warning.
+- The Content Security Policy of your site blocks the script.
+  See [Content Security Policy](./reference.md#content-security-policy).
+{% /accordion %}
 {% /accordion-group %}
 
 ## Resources

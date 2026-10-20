@@ -151,24 +151,24 @@ The assistant calls the function before each request, so each request has a vali
 ## Troubleshoot
 
 {% accordion-group %}
-  {% accordion title="Check the token status" %}
-  Open the **Network** tab of the browser developer tools, ask a question, and select the `_ask-ai` request.
-  The `x-redocly-ai-assistant-identity-status` response header displays the status of the token:
+{% accordion title="Check the token status" %}
+Open the **Network** tab of the browser developer tools, ask a question, and select the `_ask-ai` request.
+The `x-redocly-ai-assistant-identity-status` response header displays the status of the token:
 
-  - `ok`: Redocly accepted the token.
-  - `absent`: the request had no token.
-  - `invalid`: Redocly rejected the token.
-    Check the algorithm, the `aud` claim, the `kid`, and the JWKS URL.
-  - `expired`: the token expired.
-  {% /accordion %}
-  {% accordion title="The assistant does not use a protected page" %}
-  - The teams in the token must match the teams in the RBAC rule of the page exactly.
-    Redocly changes the team names in the token to lowercase, so use lowercase team names.
-  - The assistant uses a changed page or RBAC rule only after the next production deployment.
+- `ok`: Redocly accepted the token.
+- `absent`: the request had no token.
+- `invalid`: Redocly rejected the token.
+  Check the algorithm, the `aud` claim, the `kid`, and the JWKS URL.
+- `expired`: the token expired.
+{% /accordion %}
+{% accordion title="The assistant does not use a protected page" %}
+- The teams in the token must match the teams in the RBAC rule of the page exactly.
+  Redocly changes the team names in the token to lowercase, so use lowercase team names.
+- The assistant uses a changed page or RBAC rule only after the next production deployment.
 
-  A token with the wrong teams does not cause an error.
-  The assistant answers, but without the protected page.
-  {% /accordion %}
+A token with the wrong teams does not cause an error.
+The assistant answers, but without the protected page.
+{% /accordion %}
 {% /accordion-group %}
 
 ## Resources
