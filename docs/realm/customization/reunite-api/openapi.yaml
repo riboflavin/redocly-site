@@ -1198,6 +1198,7 @@ components:
         - com.redocly.gitAccess.pushed
         - com.redocly.remote.created
         - com.redocly.remote.deleted
+        - com.redocly.gitCredential.rotated
         - com.redocly.notificationSettings.updated
         - com.redocly.notifications.disabled
         - com.redocly.subscription.updated
