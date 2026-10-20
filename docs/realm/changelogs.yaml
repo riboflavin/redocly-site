@@ -56062,6 +56062,14 @@
     dependencies:
       '@redocly/theme': 0.53.0-next.3
       '@redocly/openapi-docs': 3.9.0-next.3
+'@redocly/ai-assistant':
+  1.0.0:
+    timestamp: 1791285403000
+    changes:
+      minor:
+        - Released the AI assistant web component for general availability.
+      patch: []
+    dependencies: {}
 reunite:
   v2023-11-15.1:
     timestamp: 1700042189000
