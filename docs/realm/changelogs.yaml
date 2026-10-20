@@ -59154,15 +59154,6 @@ reunite:
           after a publish.
         - Fixed an issue in Reunite where a live production build did not show the Published tag and the Visit button on the deployment page.
     dependencies: {}
-  v2026-10-20.5:
-    timestamp: 1792506543000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue in Reunite where committers were linked to viewer and billing members by email or connected Git account. Committers link only
-          to members and owners.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
