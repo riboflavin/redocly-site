@@ -1,4 +1,33 @@
 '@redocly/realm':
+  0.139.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor:
+        - >-
+          Added a schema status (**No schema**, **Loading schema...**, **Schema loaded**) to the **Query** editor header of GraphQL requests in Replay
+          and the **Try it** console.
+
+          Schema notifications appear only after **Fetch schema** or **Load schema file**.
+      patch:
+        - Improved access control to better protect customer resources.
+        - Fixed performance issues with the **Expand all** and **Collapse all** controls on GraphQL pages with many fields.
+        - >-
+          Fixed an issue in OpenAPI docs where `llms.txt` showed the API `description` from the `metadata` configuration two times: as the API
+          description and again in the metadata list.
+        - >-
+          Fixed an issue in API docs where the `.md` routes and `llms.txt` left out Markdoc tags that resolved data at build time, such as
+          `json-schema` and the OpenAPI sample tags, from the API description and operation descriptions.
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+        - >-
+          Fixed an issue where a wildcard redirect to a file in the `static` folder returned a 404 error when the file name contained uppercase
+          characters.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.11
+      '@redocly/theme': 0.71.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.3
   0.139.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -8193,6 +8222,22 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+        - >-
+          Fixed an issue where a wildcard redirect to a file in the `static` folder returned a 404 error when the file name contained uppercase
+          characters.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.11
+      '@redocly/theme': 0.71.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.3
   0.139.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -15051,6 +15096,22 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+        - >-
+          Fixed an issue where a wildcard redirect to a file in the `static` folder returned a 404 error when the file name contained uppercase
+          characters.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.11
+      '@redocly/theme': 0.71.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.3
   0.139.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -21918,6 +21979,32 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor:
+        - >-
+          Added a schema status (**No schema**, **Loading schema...**, **Schema loaded**) to the **Query** editor header of GraphQL requests in Replay
+          and the **Try it** console.
+
+          Schema notifications appear only after **Fetch schema** or **Load schema file**.
+      patch:
+        - Improved access control to better protect customer resources.
+        - Fixed performance issues with the **Expand all** and **Collapse all** controls on GraphQL pages with many fields.
+        - >-
+          Fixed an issue in OpenAPI docs where `llms.txt` showed the API `description` from the `metadata` configuration two times: as the API
+          description and again in the metadata list.
+        - >-
+          Fixed an issue in API docs where the `.md` routes and `llms.txt` left out Markdoc tags that resolved data at build time, such as
+          `json-schema` and the OpenAPI sample tags, from the API description and operation descriptions.
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.11
+      '@redocly/theme': 0.71.0-next.7
+      '@redocly/portal-plugin-mock-server': 0.24.0-next.3
   0.139.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -29141,6 +29228,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.71.0-next.7:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+    dependencies: {}
   0.71.0-next.6:
     timestamp: 1792511434000
     changes:
@@ -33562,6 +33658,20 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issues with the **Expand all** and **Collapse all** controls on GraphQL pages with many fields.
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+        - Fixed API reference builds failing with the next version of Realm.
+    dependencies:
+      '@redocly/theme': 0.71.0-next.7
+      '@redocly/replay': 0.30.0-next.8
   0.4.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -34300,6 +34410,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.13.0-next.3:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+    dependencies: {}
   0.13.0-next.2:
     timestamp: 1792511434000
     changes:
@@ -35449,6 +35566,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.11:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.11
+      '@redocly/redoc': 0.139.0-next.11
+      '@redocly/redoc-revel': 0.139.0-next.11
+      '@redocly/redoc-reef': 0.139.0-next.11
+      '@redocly/theme': 0.71.0-next.7
   1.22.0-next.10:
     timestamp: 1792514012000
     changes:
@@ -41581,6 +41709,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.24.0-next.3:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.13.0-next.3
   0.24.0-next.2:
     timestamp: 1792511434000
     changes:
@@ -44819,6 +44954,18 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.8:
+    timestamp: 1792583611000
+    changes:
+      minor:
+        - >-
+          Added a schema status (**No schema**, **Loading schema...**, **Schema loaded**) to the **Query** editor header of GraphQL requests in Replay
+          and the **Try it** console.
+
+          Schema notifications appear only after **Fetch schema** or **Load schema file**.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.7
   0.30.0-next.7:
     timestamp: 1792511434000
     changes:
@@ -47614,6 +47761,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.22.0-next.7:
+    timestamp: 1792583611000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.7
   0.22.0-next.6:
     timestamp: 1792511434000
     changes:
