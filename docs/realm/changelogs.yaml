@@ -59662,6 +59662,22 @@ reunite:
           Fixed an issue in Reunite where committers were linked to viewer and billing members by email or connected Git account. Committers link only
           to members and owners.
     dependencies: {}
+  v2026-10-21.2:
+    timestamp: 1792588041000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed `redocly push` and other API key requests failing with `403 Missing required project permissions` for RBAC keys assigned to teams
+          synced from an identity provider. Restored support for assigning API keys to synced teams in **Access** > **API keys**.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.66.0`.
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - |-
+          Fixed organization settings in Reunite so that each save changes only its own settings.
+          Saving the default project role no longer fails when SSO is required and the identity provider was removed.
+        - Improved scrollbars in Reunite so they stay hidden until a sidebar, panel, table, or modal is scrolled, which reduces visual noise.
+        - Fixed duplicate success and error notifications when saving organization settings in Reunite.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
