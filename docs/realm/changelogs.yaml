@@ -56365,6 +56365,13 @@
       '@redocly/theme': 0.53.0-next.3
       '@redocly/openapi-docs': 3.9.0-next.3
 '@redocly/ai-assistant':
+  1.0.1:
+    timestamp: 1792569535000
+    changes:
+      minor: []
+      patch:
+        - Fixed the AI assistant status message for MCP tool discovery.
+    dependencies: {}
   1.0.0:
     timestamp: 1791285403000
     changes:
