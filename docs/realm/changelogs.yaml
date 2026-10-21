@@ -221,6 +221,13 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.2:
+    timestamp: 1792587490000
+    changes:
+      minor: []
+      patch:
+        - Improved access control to better protect customer resources.
+    dependencies: {}
   0.138.1:
     timestamp: 1791989559000
     changes:
@@ -8352,6 +8359,12 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.2:
+    timestamp: 1792587490000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.138.1:
     timestamp: 1791989559000
     changes:
@@ -15235,6 +15248,12 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.2:
+    timestamp: 1792587490000
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.138.1:
     timestamp: 1791989559000
     changes:
@@ -22188,6 +22207,13 @@
     dependencies:
       '@redocly/theme': 0.71.0-next.0
       '@redocly/api-docs': 0.4.0-next.0
+  0.138.2:
+    timestamp: 1792587490000
+    changes:
+      minor: []
+      patch:
+        - Improved access control to better protect customer resources.
+    dependencies: {}
   0.138.1:
     timestamp: 1791989559000
     changes:
@@ -35694,6 +35720,16 @@
       '@redocly/redoc': 0.139.0-next.0
       '@redocly/redoc-revel': 0.139.0-next.0
       '@redocly/redoc-reef': 0.139.0-next.0
+  1.21.2:
+    timestamp: 1792587490000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.138.2
+      '@redocly/redoc': 0.138.2
+      '@redocly/redoc-revel': 0.138.2
+      '@redocly/redoc-reef': 0.138.2
   1.21.1:
     timestamp: 1791989559000
     changes:
