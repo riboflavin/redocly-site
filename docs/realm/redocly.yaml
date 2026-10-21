@@ -81,7 +81,7 @@ apis:
   auth-api:
     root: ../intranet/apis/auth/openapi/openapi.yaml
     rules:
-      operation-4xx-problem-details-rfc7807: off # kratos/hydra APIs don't follow this rule
+      operation-4xx-problem-details-rfc7807: off # the auth API doesn't follow this rule
       rule/operation-summary:
         subject:
           type: Operation
