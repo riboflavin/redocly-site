@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   description: |
-    Reunite API is a REST API over HTTPS for accessing and managing Reunite resources.
+    Redocly platform API is a REST API over HTTPS for accessing and managing Redocly platform resources.
 
     The API supports the following use cases:
 
@@ -199,7 +199,7 @@ info:
     - Expected request rate
     - Business justification
   version: 1.0.1
-  title: Reunite
+  title: Redocly platform
   termsOfService: https://redocly.com/subscription-agreement
   contact:
     name: API Support
@@ -1697,7 +1697,7 @@ components:
             statuses:
               type: array
               readOnly: true
-              description: List of commit statuses set by Reunite to the commit that triggered push.
+              description: List of commit statuses set by the platform to the commit that triggered push.
               items:
                 type: object
                 properties:
@@ -1828,7 +1828,7 @@ components:
       scheme: bearer
       description: |-
         API key is required to access API.
-        Create an API key by visiting [Reunite](https://app.cloud.redocly.com/) and navigating to **Access** > **API Keys** page.
+        Create an API key by visiting [Platform](https://app.cloud.redocly.com/) and navigating to **Access** > **API Keys** page.
   responses:
     BadRequestError:
       description: Bad Request.
