@@ -1,0 +1,309 @@
+---
+plans:
+  - Enterprise
+description: Use team-based access controls to assign permissions required to files and project access.
+---
+# `rbac`
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+Use team-based access controls to assign permissions required to files and project access.
+Access control is done using [RBAC (role-based access control)](./rbac.md).
+By default, all authenticated users are assigned to the `authenticated` team, and unauthenticated users are automatically assigned to the `anonymous` team.
+All other configuration is done through team-role mapping.
+
+## Options
+
+### Configuration map
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- reunite
+- [Map[string, string]](#team-to-role-map)]
+- Map of teams to roles.
+  Use this option when needs to manage project access to a specific team, like allowing the team to manage branches or builds.
+
+---
+
+- content
+- [[Content configuration](#content-configuration)]
+- Describes file access for the given team.
+  Use this option when needs to manage file access to a specific team.
+  This option is used for page access as well.
+
+---
+
+- features
+- [[Features configuration](#features-configuration)]
+- Describes feature access by team.
+  Use this option when you need to manage access for specific features.
+
+{% /table %}
+
+### Team to role map
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- _team name_
+- `none`, `read`, `write`, `triage`, `maintain`, or `admin`
+- Map of teams to project roles.
+  The team names include `anonymous` (meaning all users who are not logged in) and `authenticated` (meaning any user who is logged in).
+  Team names can also come from the identity provider through the [single-sign-on (SSO) configuration](./sso.md).
+  In addition, the team name `*` represents the rest of the teams not defined in sibling properties including `anonymous` and `authenticated`.
+  Possible values for project roles are: `none`, `read`, `write`, `triage`, `maintain`, or `admin`.
+  {% partial file="../../_partials/config/_supported-config.md" variables={"optionName": "rbac"} /%}
+
+{% /table %}
+
+### Content configuration
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- _{glob pattern}\*_
+- [Map[string, string]](#team-to-role-map)
+- Use a glob pattern linked to a map of teams and roles to define specific page access.
+  Use the unique key `**` to describe all pages.
+
+{% /table %}
+
+{% admonition type="info" name="Wildcard key" %}
+
+When describing team to project role relations, you can use a special key `*`.
+A project role assigned to that key is applied to the rest of the teams that are not described for the given glob pattern.
+
+In the following example, only users assigned to the Admin team can view the content on the `secrets.md` file:
+
+```yaml
+rbac:
+  content:
+    secrets.md:
+      'Admin': read
+```
+
+{% /admonition %}
+
+### Features configuration
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- aiSearch
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for AI search feature access.
+
+---
+
+- mcp
+- Map[string, string](#team-to-role-map)
+- Map of teams to roles to define the team and role for MCP server access.
+
+{% /table %}
+
+## Examples
+
+### Use the access object (recommended)
+
+The recommended way to configure `rbac` is within the `access` object:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    content:
+      '**':
+        authenticated: read
+```
+
+### Root-level configuration (deprecated)
+
+{% admonition type="warning" name="Deprecated configuration" %}
+Root-level `rbac` configuration displays warnings when the `access` object is present.
+Migrate to the `access` object format.
+{% /admonition %}
+
+### File access
+
+In the following example, default team permissions are assigned
+to all pages that do not match any other glob patterns.
+Different permissions are assigned to the `developer-keys.md` page,
+the pages in the `/secret/chapter` folder, and any TypeScript (`.tsx`) pages:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    content:
+      '**':
+        Admin: admin
+        Developer: maintain
+        Employee: read
+        authenticated: read
+      developer-keys.md:
+        Developer: read
+      '/secret/chapter':
+        Admin: write
+        Developer: read
+        Employee: read
+      '**/*.tsx':
+        Developer: write
+```
+
+### Project access
+
+In the following example, only the Developer team can create a branch, create a pull request, or create a deployment.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    reunite:
+      Developer: write
+```
+
+### Complete RBAC setup
+
+The following example shows a comprehensive RBAC configuration with project access, content access, environment variables, and authentication requirements:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    # Project administration access
+    reunite:
+      Developers: write
+      Writers: read
+      Admin: admin
+    
+    # File and content access
+    content:
+    # Default permissions for all files
+    '**':
+      Developers: maintain
+      Writers: write
+      authenticated: read
+    
+    # Specific permissions for sensitive files
+    'security/*.md':
+      Admin: admin
+      Developers: read
+    
+    # API documentation access
+    'apis/**':
+      Developers: write
+      Writers: read
+
+  # Feature access
+  features:
+    aiSearch:
+      authenticated: read
+```
+
+### Use environment variables
+
+Environment variables can be used for role assignments, useful for different deployment environments:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    reunite:
+      Writers: '{{process.env.RBAC_WRITERS_ROLE}}'
+      Developers: '{{process.env.RBAC_DEVELOPERS_ROLE}}'
+    content:
+      '**':
+        Developers: '{{process.env.RBAC_DEFAULT_ROLE}}'
+        authenticated: read
+```
+
+### Require authentication
+
+To require users to log in before viewing any content:
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    content:
+      '**':
+        authenticated: read
+```
+
+This configuration directs users to a login page where they can authenticate using configured identity providers.
+
+### Feature access
+
+In the following example, anonymous users have no access to the AI search feature,
+while authenticated users can access the AI search feature.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      aiSearch:
+        authenticated: read
+```
+
+Access to the MCP server is controlled the same way through the `mcp` feature.
+In the following example, only members of the Developers team can access the MCP server, while all other users are denied access.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    features:
+      mcp:
+        Developers: read
+```
+
+When a team-based role is set for the `mcp` feature, only teams with a role other than `none` can access the MCP server.
+Users must sign in unless the `anonymous` team is granted such a role, either directly or through the `*` wildcard.
+The wildcard covers all teams that are not listed explicitly, including `anonymous`.
+
+### Disallow access to one specific page
+
+In the following example, members of the Developers team can access Markdown files in the `/security` folder, except `top-secret.md`.
+That file has the `none` value for Developers in its front matter.
+
+```yaml {% title="redocly.yaml" %}
+access:
+  rbac:
+    content:
+      'security/*.md':
+          Admin: admin
+        Developers: read
+```
+
+```md {% title="security/top-secret.md" %}
+---
+rbac:
+  Admin: admin
+  Developers: none
+---
+```
+
+## Resources
+
+- **[Role-based access control](../../access/rbac.md)** - Understand the fundamentals and components of RBAC systems for comprehensive access management
+- **[Control site access](../../access/index.md)** - Complete implementation guide with examples for projects, pages, and navigation access control
+- **[Front matter configuration options](../front-matter-config.md)** - Configure role-based access on individual pages using front matter for granular permission control
+- **[Configuration options](../index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[SSO configuration](./sso.md)** - Configure single sign-on to identify users and integrate with RBAC for comprehensive authentication and authorization
+- **[SSO Direct configuration](../ssoDirect.md)** - Configure direct SSO integration for streamlined user identification and RBAC implementation
+- **[Requires login configuration](./requires-login.md)** - Set up login requirements to enforce authentication before accessing RBAC-protected content
+- **[Restrict access to the MCP server](../../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Grant MCP server access only to specific teams with the `mcp` feature role

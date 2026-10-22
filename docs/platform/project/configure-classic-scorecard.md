@@ -1,0 +1,242 @@
+---
+plans:
+  - Scale
+  - Enterprise
+---
+# Configure classic scorecard
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+{% admonition type="warning" name="Deprecated configuration" %}
+The `scorecard` property is deprecated.
+Use `scorecardClassic` instead.
+The `scorecard` property continues to work with a deprecation warning.
+{% /admonition %}
+
+In the Redocly platform, you can configure the classic scorecard feature to evaluate your API description files against rules.
+The platform includes the following three built-in rulesets:
+
+- [`minimal`](https://redocly.com/docs/cli/rules/minimal):
+The minimal ruleset is a good starting point for an existing API that doesn't currently conform to any standard.
+It has fewer rules that cause an error, with others either downgraded to a warning or turned off.
+- [`recommended`](https://redocly.com/docs/cli/rules/recommended):
+The recommended ruleset is our unabashedly opinionated recommendation of what we think a good API looks like.
+It's a great place to start, before adapting to your own context.
+- [`recommended-strict`](https://redocly.com/docs/cli/rules/recommended#recommended-strict-ruleset):
+The recommended-strict ruleset is identical to the recommended ruleset, except it elevates all warnings to errors.
+It's the ideal option for those who don't want to miss anything.
+
+You can use these rulesets only, or extend them with custom rules according to your needs.
+
+## Add classic scorecard to your project with Redocly rulesets
+
+To add a classic version of the scorecard to your project using only the built-in rules:
+
+1. Add the following configuration to your `redocly.yaml` file:
+
+   ```yaml {% title="redocly.yaml" %}
+   scorecardClassic:
+     levels: # an ordered list of levels (from lowest to highest)
+       - name: Baseline
+         extends:
+           - minimal
+       - name: Superior
+         extends:
+           - recommended
+   ```
+
+1. (Optional) You can change the level `name` values to suit your project.
+1. Commit and merge your changes.
+
+After you commit, the scorecard information displays in Redocly and the preview build.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
+
+## Configure custom scorecard rulesets
+
+Instead of using Redocly's built-in rulesets, you can define your own scorecard levels and build rulesets with your criteria.
+Building rules in Redocly is similar to [building API standard rulesets in Redocly CLI](https://redocly.com/docs/cli/api-standards).
+
+### Configure rulesets in `redocly.yaml` for classic scorecard
+
+You might have a small amount of custom rules and want to include them all in the `redocly.yaml` file.
+In that case, add your rules directly.
+
+To configure custom rules in `redocly.yaml`:
+
+1. Add the following configuration to your `redocly.yaml` file:
+
+    ```yaml {% title="redocly.yaml" %}
+    scorecardClassic:
+      levels:
+    ```
+
+1. For each level you want to add, add the following configuration:
+
+    ```yaml {% title="redocly.yaml" %}
+        - name: # provide a name for the ruleset
+          rules:
+    ```
+
+    The levels are listed in order from the lowest to the highest.
+
+1. In the `rules` object, add a map of rules.
+   You can use any combination of Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or create [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
+
+    Example:
+
+    ```yaml {% title="redocly.yaml" %}
+    scorecardClassic:
+      levels:
+        - name: Baseline
+          rules: # The following rules are built-in rules with their severity set to error
+            no-unresolved-refs: error # This rule checks that the $ref mentioned in the description exists
+            no-server-example.com: error # This rule checks that example.com is not being used for the server URL
+        - name: Superior
+          rules: # The following rules are built-in rules except for rule/operation-summary-min-length, which is a configurable rule
+            no-unresolved-refs: error
+            no-unused-components: error # This rule checks to make sure all components listed in the description are used
+            no-server-example.com: error
+            rule/operation-summary-min-length: # This configurable rule checks that the summary for an operation OpenAPI node type is at least 20 characters in length
+              subject:
+                type: Operation
+                property: summary
+              message: Operation summary must have minimum of 20 chars length
+              assertions:
+                minLength: 20
+    ```
+
+1. Commit and merge your changes.
+
+After you commit, the scorecard information displays in Redocly and the preview build.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
+
+### Configure rulesets for classic scorecard in separate files
+
+If you have many rulesets or your rulesets are complex, you can put them into separate YAML files.
+Putting your rulesets in different files means you can have one file per scorecard level.
+This makes it easier to maintain rule sets and your `redocly.yaml` file.
+
+To configure rulesets for classic scorecard in separate files:
+
+1. Create a YAML file for each scorecard level you want to add.
+1. In each of the files, add a `rules` object and a map of rules for this scorecard level.
+  You can use any combination of Redocly's [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) or create [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules).
+
+    Example:
+
+    ```yaml {% title="api-ruleset-baseline.yaml" %}
+      rules:
+        no-empty-servers: warn
+        rule/info-description-property-defined: # This configurable rule enforces the inclusion of a description the the info OpenAPI node type
+          subject:
+            type: Info
+            property: description
+          assertions:
+            defined: true
+          severity: warning
+        boolean-parameter-prefixes: # This built-in rule enforces specific and consistent naming for request parameters with boolean type by requiring they all start with "is" or "can"
+          severity: error
+          prefixes:
+            - is
+            - can
+        info-license: error # This built-in rule enforces the license section of the info OpenAPI node type to be defined
+        info-license-url: error # This built-in rule enforces a url be included in the license section of the info OpenAPI node type
+    ```
+
+1. Add the following configuration to your `redocly.yaml` file:
+
+    ```yaml
+    scorecardClassic:
+      levels:
+    ```
+
+1. For each level, add a `name` object and an `extends` object with a path to the ruleset file.
+
+    Example:
+
+    ```yaml {% title="redocly.yaml" %}
+    scorecardClassic:
+      levels:
+        - name: Baseline
+          extends:
+            - ./api-ruleset-baseline.yaml
+          rules:
+            boolean-parameter-prefixes: # This turns off the boolean-parameter-prefixes rule for the baseline ruleset
+              severity: off
+        - name: Silver
+          extends:
+            - ./api-ruleset-silver.yaml
+        - name: Gold
+          extends:
+            - ./api-ruleset-gold.yaml
+    ```
+
+1. Commit and merge your changes.
+
+After you commit, the scorecard information displays in Redocly and the preview build.
+When you merge and the production deployment completes, the scorecard labels and reports also display on your production environment.
+
+## Publish project with non-compliant APIs
+
+By default, one or more of your API description files can fail the rules in the lowest level ruleset.
+In that case, your project's build succeeds, but the deployment to production is blocked.
+In certain situations, you might want to bypass this behavior.
+
+To publish projects with non-compliant APIs:
+
+1. In `redocly.yaml`, inside `reunite` add the `ignoreLint: true` parameter, as in the following example:
+
+    ```yaml {% title="redocly.yaml" %}
+    reunite:
+      ignoreLint: true
+    ```
+
+    You can also choose specific files or directories to be ignored by the linter:
+    ```yaml {% title="redocly.yaml" %}
+    reunite:
+      ignoreLint:
+        docs/museum/**: true
+        docs/travel.yaml: true
+    ```
+
+1. Commit and merge your changes.
+
+After the production build finishes, the APIs that do not meet the lowest level criteria are marked.
+They get a "Non-compliant" label in Redocly and on your published project.
+
+## Exclude APIs from the classic scorecard
+
+The classic scorecard feature evaluates all API description files in your project, regardless of their location in the file tree.
+You might want to exclude APIs that are still being developed, or sample APIs you use for training or testing.
+
+If you have APIs you want to exclude from evaluation, list the API description files' locations in the `ignore` object in `redocly.yaml`.
+
+{% admonition type="warning" name="Prevent broken links" %}
+API description files added to the `ignore` object are not published.
+To avoid broken links, make sure you remove all links to that file from your project.
+{% /admonition %}
+
+To exclude API description files from scorecard and publishing:
+
+1. In your `redocly.yaml` file, add an `ignore` object.
+1. Inside the object, add an array of paths to the API description files to exclude.
+
+    For example:
+
+    ```yaml {% title="redocly.yaml" %}
+    ignore:
+      - ./apis/WIP/my-work-in-progress.yaml 
+      - ./test-api2.yaml
+      - ./internal/projects/user-management.yaml
+    ```
+
+1. Commit and merge your changes.
+
+After you publish the updated project, the listed API description files are excluded from the scorecard reports in Redocly and on your published project.
+
+## Resources
+
+- **[Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md)** - Step-by-step guide to add OpenAPI descriptions to your project for scorecard evaluation and documentation
+- **[Classic catalog configuration reference](../config/catalog-classic.md)** - Organize multiple API descriptions with structured catalogs for better navigation and user experience
+- **[API linting](./lint.md)** - Understand the Lint deployment step, what scorecards display, how to access reports, and their role in API quality management
+- **[Classic scorecard configuration reference](../config/scorecard-classic.md)** - Complete reference for all `scorecardClassic` configuration options, rulesets, and customization settings

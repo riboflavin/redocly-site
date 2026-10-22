@@ -1,0 +1,3118 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Predefined translation keys
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+This page contains the list of all predefined translation keys used in default UI components.
+
+{% table %}
+
+- Key
+- Description
+- Default value
+
+---
+
+- asyncapi.info.title
+- Title for the info section in AsyncAPI description
+- Overview
+
+---
+
+- asyncapi.download.description.title
+- Title for the download description section in AsyncAPI description
+- Download AsyncAPI description
+
+---
+
+- asyncapi.info.contact.url
+- Label for the contact URL in the info section of AsyncAPI description
+- URL
+
+---
+
+- asyncapi.info.contact.name
+- Label for the contact name in the info section of AsyncAPI description
+- E-mail
+
+---
+
+- asyncapi.info.license
+- Label for the license in the info section of AsyncAPI description
+- License
+
+---
+
+- asyncapi.info.termsOfService
+- Label for the terms of service in the info section of AsyncAPI description
+- Terms of Service
+
+---
+
+- asyncapi.key
+- Label for key in AsyncAPI description
+- Key
+
+---
+
+- asyncapi.value
+- Label for value in AsyncAPI description
+- Value
+
+---
+
+- asyncapi.variables
+- Label for variables in AsyncAPI description
+- variables
+
+---
+
+- asyncapi.required
+- Label for required fields in AsyncAPI description
+- required
+
+---
+
+- asyncapi.requiredScopes
+- Label for required scopes in AsyncAPI security schemes
+- Required scopes
+
+---
+
+- asyncapi.viewSecurityDetails
+- Label for the view security details button in AsyncAPI description
+- View security details
+
+---
+
+- asyncapi.badges.deprecated
+- Label for the deprecated badge in AsyncAPI description
+- deprecated
+
+---
+
+- asyncapi.actions.show
+- Label for the show action in AsyncAPI description
+- Show
+
+---
+
+- asyncapi.actions.hide
+- Label for the hide action in AsyncAPI description
+- Hide
+
+---
+
+- asyncapi.actions.more
+- Label for the more action in AsyncAPI description
+- more
+
+---
+
+- asyncapi.payload
+- Label for the payload in AsyncAPI description
+- Payload
+
+---
+
+- asyncapi.parameters
+- Label for the channel parameters section in AsyncAPI description
+- Parameters
+
+---
+
+- asyncapi.messages
+- Label for the channel messages section in AsyncAPI description
+- Messages
+
+---
+
+- asyncapi.contentType
+- Label for the media type selector in AsyncAPI payload examples
+- Content type
+
+---
+
+- asyncapi.moreDetails
+- Label for the "More details" expander on AsyncAPI broker / channel binding panels
+- More details
+
+---
+
+- asyncapi.property
+- Singular noun used to count schema fields in AsyncAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- asyncapi.properties
+- Plural noun used to count schema fields in AsyncAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- asyncapi.details
+- Fallback noun used on the schema "Show details" expander in AsyncAPI when no property count is available
+- details
+
+---
+
+- asyncapi.reply
+- Label for the operation reply section in AsyncAPI description
+- Reply
+
+---
+
+- asyncapi.servers.title
+- Title for the servers section in AsyncAPI description
+- Servers
+
+---
+
+- userMenu.login
+- Login button label
+- Log in
+
+---
+
+- userMenu.logout
+- Logout button label
+- Log out
+
+---
+
+- languagePicker.label
+- Aria-label for the language picker dropdown in the page footer / navigation
+- Select language
+
+---
+
+- userMenu.devOnboardingLabel
+- Developer onboarding dashboard link label
+- My apps
+
+---
+
+- dev.create.app.dialog.callbackUrls
+- Label for callback URLs when creating a developer app (Apigee)
+- Callback URLs
+
+---
+
+- dev.create.app.dialog.callbackUrls.placeholder
+- Placeholder for callback URLs field when creating a developer app
+- https://example.com/callback
+
+---
+
+- dev.create.app.dialog.callbackUrls.hint
+- Helper text for entering multiple callback URLs when creating a developer app
+- Separate multiple URLs with a comma
+
+---
+
+- dev.app.callbackUrls.title
+- Section title for callback URLs on the developer app detail page
+- Callback URLs
+
+---
+
+- dev.edit.callbackUrls.dialog.title
+- Title of the dialog for editing callback URLs on a developer app
+- Change callback URLs
+
+---
+
+- dev.edit.callbackUrls.dialog.placeholder
+- Placeholder in the edit callback URLs dialog
+- https://example.com/callback
+
+---
+
+- dev.edit.callbackUrls.dialog.hint
+- Helper text in the edit callback URLs dialog
+- Separate multiple URLs with a comma
+
+---
+
+- dev.edit.callbackUrls.dialog.save
+- Save button in the edit callback URLs dialog
+- Save changes
+
+---
+
+- dev.edit.callbackUrls.dialog.cancel
+- Cancel button in the edit callback URLs dialog
+- Cancel
+
+---
+
+- search.navbar.label
+- Search navbar label
+- Search
+
+---
+
+- search.label
+- Search input placeholder
+- Search all products...
+
+---
+
+- search.recent
+- Recent searches label
+- Recent searches
+
+---
+
+- search.suggested
+- Search suggested pages label
+- Suggested pages
+
+---
+
+- search.groups.all
+- Label for the "All" search result group
+- All
+
+---
+
+- search.loading
+- Label displayed when search is loading
+- Loading...
+
+---
+
+- search.noResults.title
+- Label displayed when search gives no results
+- No results
+
+---
+
+- search.searchItem.deprecated
+- Badge label for deprecated items in search results
+- Deprecated
+
+---
+
+- search.searchItem.enum
+- Label for the matched enum values shown on a search result row
+- Enum
+
+---
+
+- search.searchItem.example
+- Label for the matched example value shown on a search result row
+- Example
+
+---
+
+- search.showMore
+- Link displayed in each group of search results to get more results
+- Show more
+
+---
+
+- search.cancel
+- Search cancel button text
+- Cancel
+
+---
+
+- search.keys.navigate
+- Label for navigate key in search footer
+- to navigate
+
+---
+
+- search.keys.select
+- Label for select key in search footer
+- to select
+
+---
+
+- search.keys.exit
+- Label for exit key in search footer
+- to exit
+
+---
+
+- search.filter.field.placeholder
+- Placeholder text for search filter input field
+- Search
+
+---
+
+- search.filter.field.reset
+- Button text to reset a specific search filter field
+- Reset
+
+---
+
+- search.filter.field.footer
+- Footer text in search filter fields suggesting additional search
+- Search to show more items...
+
+---
+
+- search.error.title
+- Error message title displayed when a search request fails
+- Oops!
+  Something went wrong.
+
+---
+
+- search.error.button
+- Button text to retry a failed search request
+- Try again
+
+---
+
+- search.filter.reset
+- Button text to reset all search filters
+- Reset filters
+
+---
+
+- search.filter.title
+- Title for the search filter section
+- Advanced filter
+
+---
+
+- search.ai.backToSearch
+- Button text to return to standard search from the AI assistant
+- Back to Search
+
+---
+
+- search.ai.button
+- Button text to open the AI assistant
+- Search with AI
+
+---
+
+- search.ai.disclaimer
+- Disclaimer text for AI assistant functionality
+- AI assistant might provide incomplete or incorrect results.
+  Verify important information.
+
+---
+
+- search.ai.followUpQuestion
+- Placeholder or label for AI assistant follow-up questions
+- Ask a follow-up question?
+
+---
+
+- search.ai.generatingResponse
+- Text displayed while the AI assistant is generating a response
+- Generating response...
+
+---
+
+- search.ai.label
+- General label for the AI assistant feature
+- Ask AI assistant
+
+---
+
+- search.ai.newConversation
+- Button text to start a new AI assistant conversation
+- New conversation
+
+---
+
+- search.ai.placeholder
+- Placeholder text for the AI assistant input
+- Ask a question...
+
+---
+
+- search.ai.resourcesFound
+- General label indicating resources were found by the AI assistant
+- resources found
+
+---
+
+- search.ai.resourcesFound.basedOn
+- Text indicating the basis for AI assistant results
+- Based on
+
+---
+
+- search.ai.resourcesFound.resources
+- Label for resources found by the AI assistant
+- resources
+
+---
+
+- search.ai.send
+- Accessible name of the button that submits a question to the AI assistant
+- Send question
+
+---
+
+- search.ai.suggestionsTitle
+- Title for AI assistant suggestions section
+- Suggestions
+
+---
+
+- search.ai.thinkingText
+- Text displayed while the AI assistant is processing
+- Thinking...
+
+---
+
+- search.ai.welcomeText
+- Welcome message displayed in the AI assistant interface
+- Welcome to AI assistant!
+  Feel free to ask me anything.
+  How can I help you?
+
+---
+
+- search.ai.back
+- Button text to go back from AI assistant results
+- Back
+
+---
+
+- search.ai.assistant
+- Title text displayed in the AI assistant dialog header
+- Assistant
+
+---
+
+- search.ai.feedback.title
+- Title for AI assistant feedback dialog
+- What didn't you like about this response?
+
+---
+
+- search.ai.feedback.detailsPlaceholder
+- Placeholder text for AI assistant feedback details input
+- Add specific details
+
+---
+
+- search.ai.feedback.thanks
+- Thank you message after submitting AI assistant feedback
+- Thanks for your feedback!
+
+---
+
+- search.ai.feedback.more
+- Option text to provide additional feedback details in AI assistant feedback form
+- More...
+
+---
+
+- search.ai.actions.copy
+- Tooltip of the button that copies an AI assistant answer
+- Copy the response
+
+---
+
+- search.ai.actions.like
+- Tooltip of the button that rates an AI assistant answer as helpful
+- Like the response
+
+---
+
+- search.ai.actions.dislike
+- Tooltip of the button that rates an AI assistant answer as not helpful
+- Dislike the response
+
+---
+
+- search.ai.toolCall.executed
+- Prefix shown after an AI tool call finishes
+- Executed
+
+---
+
+- search.ai.toolCall.executing
+- Prefix shown while an AI tool call is still running
+- Executing
+
+---
+
+- search.ai.toolCall.usedTools
+- Summary of an AI assistant step that used more than one kind of tool
+- Used tools
+
+---
+
+- aiAssistant.trigger
+- Button text to trigger the AI assistant
+- Ask AI
+
+---
+
+- aiAssistant.triggerLabel
+- Accessible name of the AI assistant trigger button
+- AI Assistant button
+
+---
+
+- aiAssistant.triggerLabel.answering
+- Accessible name of the AI assistant trigger button while an answer streams with the panel closed
+- AI Assistant button, answering
+
+---
+
+- aiAssistant.triggerLabel.unread
+- Accessible name of the AI assistant trigger button when an answer finished with the panel closed
+- AI Assistant button, new answer
+
+---
+
+- aiAssistant.headerTitle
+- Title in the AI assistant panel header
+- AI Assistant
+
+---
+
+- aiAssistant.closeWidget
+- Accessible name of the button that closes the AI assistant panel
+- Close widget
+
+---
+
+- aiAssistant.resizeHandle
+- Tooltip of the handle that resizes the AI assistant panel
+- Drag to resize
+
+---
+
+- aiAssistant.contactSupport
+- Button text that opens the support request form
+- Contact support
+
+---
+
+- aiAssistant.support.intro
+- Text above the support request form
+- To reach the support team, fill in the form below:
+
+---
+
+- aiAssistant.support.name
+- Label of the name field in the support request form
+- Name (optional)
+
+---
+
+- aiAssistant.support.email
+- Label of the email field in the support request form
+- Email
+
+---
+
+- aiAssistant.support.message
+- Label of the message field in the support request form
+- Message (optional)
+
+---
+
+- aiAssistant.support.cancel
+- Button text that closes the support request form
+- Cancel
+
+---
+
+- aiAssistant.support.send
+- Button text that submits the support request form
+- Send
+
+---
+
+- aiAssistant.support.sending
+- Button text while the support request is sending
+- Sending…
+
+---
+
+- aiAssistant.support.error
+- Message shown when the support request fails
+- Failed to send your request.
+  Try again.
+
+---
+
+- aiAssistant.support.created
+- Message shown after the support request reaches the support team
+- Your request has been sent to the support team.
+  They will get back to you by email.
+
+---
+
+- toc.header
+- Table of content header
+- On this page
+
+---
+
+- versionPicker.label
+- Version picker label
+- Version :
+
+---
+
+- versionPicker.unversioned
+- Version picker placeholder for unversioned content
+- All versions
+
+---
+
+- navigationTabs.label
+- Accessible label for the navigation tabs row
+- Navigation tabs
+
+---
+
+- sidebar.menu.backToLabel
+- Label of back button displayed in sidebar drilldown menu
+- Back
+
+---
+
+- sidebar.actions.show
+- Label of a button for showing a collapsed sidebar
+- Show sidebar
+
+---
+
+- sidebar.actions.hide
+- Label of back button for collapsing a sidebar
+- Hide sidebar
+
+---
+
+- sidebar.actions.singleColumn
+- Label for single column layout option
+- Single column
+
+---
+
+- sidebar.actions.changeToSingleColumn
+- Tooltip for button to switch to single column layout
+- Switch to single column
+
+---
+
+- sidebar.actions.twoColumns
+- Label for two columns layout option
+- Two columns
+
+---
+
+- sidebar.actions.changeToTwoColumns
+- Tooltip for button to switch to two columns layout
+- Switch to two columns
+
+---
+
+- sidebar.menu.backLabel
+- Label for the back button in sidebar menu
+- Back
+
+---
+
+- markdown.editPage.text
+- Edit page button label on markdown pages (displayed if configured in `redocly.yaml`)
+- Edit page
+
+---
+
+- page.homeButton
+- Button label on default 403 Forbidden and 404 Not Found pages
+- Go home
+
+---
+
+- page.previousButton
+- Previous button's label for page navigation
+- Previous page
+
+---
+
+- page.nextButton
+- Next button's label for page navigation
+- Next page
+
+---
+
+- page.actions.moreActions
+- More actions toggle aria-label in page actions
+- More actions
+
+---
+
+- page.actions.copyButtonText
+- Copy for LLM button text in page actions
+- Copy
+
+---
+
+- page.actions.copyTitle
+- Copy for LLM action title in page actions
+- Copy for LLM
+
+---
+
+- page.actions.copyDescription
+- Copy for LLM action description in page actions
+- Copy page as Markdown for LLMs
+
+---
+
+- page.actions.viewAsMdButtonText
+- View as Markdown button text in page actions
+- View as Markdown
+
+---
+
+- page.actions.viewAsMdTitle
+- View as Markdown action title in page actions
+- View as Markdown
+
+---
+
+- page.actions.viewAsMdDescription
+- View as Markdown action description in page actions
+- Open this page as Markdown
+
+---
+
+- page.actions.chatGptButtonText
+- Open in ChatGPT button text in page actions
+- Open in ChatGPT
+
+---
+
+- page.actions.chatGptTitle
+- Open in ChatGPT action title in page actions
+- Open in ChatGPT
+
+---
+
+- page.actions.chatGptDescription
+- Open in ChatGPT action description in page actions
+- Get insights from ChatGPT
+
+---
+
+- page.actions.claudeButtonText
+- Open in Claude button text in page actions
+- Open in Claude
+
+---
+
+- page.actions.claudeTitle
+- Open in Claude action title in page actions
+- Open in Claude
+
+---
+
+- page.actions.claudeDescription
+- Open in Claude action description in page actions
+- Get insights from Claude
+
+---
+
+- page.actions.grokButtonText
+- Open in Grok button text in page actions
+- Open in Grok
+
+---
+
+- page.actions.grokTitle
+- Open in Grok action title in page actions
+- Open in Grok
+
+---
+
+- page.actions.grokDescription
+- Open in Grok action description in page actions
+- Get insights from Grok
+
+---
+
+- page.actions.connectMcp
+- Connect MCP button label
+- Connect MCP
+
+---
+
+- page.actions.connectMcp.cursor
+- Connect to Cursor option title in Connect MCP dropdown
+- Connect to Cursor
+
+---
+
+- page.actions.connectMcp.cursorDescription
+- Connect to Cursor option description in Connect MCP dropdown
+- Install MCP server on Cursor
+
+---
+
+- page.actions.connectMcp.vscode
+- Connect to VS Code option title in Connect MCP dropdown
+- Connect to VS Code
+
+---
+
+- page.actions.connectMcp.vscodeDescription
+- Connect to VS Code option description in Connect MCP dropdown
+- Install MCP server on VS Code
+
+---
+
+- page.actions.connectMcp.claude
+- Connect to Claude page action title and button on the MCP connection page
+- Connect to Claude
+
+---
+
+- page.actions.connectMcp.claudeDescription
+- Connect to Claude page action description
+- Add MCP server to your Claude account
+
+---
+
+- page.actions.connectMcp.claudeCode
+- Connect to Claude Code option title in Connect MCP dropdown
+- Connect to Claude Code
+
+---
+
+- page.actions.connectMcp.claudeCodeDescription
+- Connect to Claude Code option description in Connect MCP dropdown
+- Copy the Claude Code CLI command
+
+---
+
+- page.actions.connectMcp.codex
+- Connect to Codex CLI option title in Connect MCP dropdown
+- Connect to Codex CLI
+
+---
+
+- page.actions.connectMcp.codexDescription
+- Connect to Codex CLI option description in Connect MCP dropdown
+- Copy the Codex CLI command
+
+---
+
+- page.actions.connectMcp.copyConfig
+- Copy MCP configuration option title in Connect MCP dropdown
+- Copy MCP Configuration
+
+---
+
+- page.actions.connectMcp.copyConfigDescription
+- Copy MCP configuration option description in Connect MCP dropdown
+- Copy MCP JSON Configuration
+
+---
+
+- page.actions.connectMcp.copyUrl
+- Copy MCP server URL action title in page actions
+- Copy MCP server URL
+
+---
+
+- page.actions.connectMcp.copyUrlDescription
+- Copy MCP server URL action description in page actions
+- Copy the MCP server URL to the clipboard
+
+---
+
+- page.actions.connectMcp.moreOptions
+- More options button aria-label in Connect MCP dropdown
+- More options
+
+---
+
+- promptTag.copy.buttonText
+- Copy button label of the prompt tag in the button-only mode
+- Copy prompt
+
+---
+
+- promptTag.showPrompt
+- Button label that shows a hidden prompt body in the prompt tag
+- Show prompt
+
+---
+
+- promptTag.hidePrompt
+- Button label that hides the prompt body in the prompt tag
+- Hide prompt
+
+---
+
+- promptTag.showFullPrompt
+- Button label that expands a truncated prompt body in the prompt tag
+- Show full prompt
+
+---
+
+- promptTag.showLess
+- Button label that truncates the prompt body again in the prompt tag
+- Show less
+
+---
+
+- promptTag.openIn.cursor
+- Open in Cursor action title in the prompt tag
+- Open in Cursor
+
+---
+
+- promptTag.openIn.cursorDescription
+- Open in Cursor action description in the prompt tag dropdown
+- Send this prompt to Cursor
+
+---
+
+- promptTag.openIn.claude
+- Open in Claude action title in the prompt tag
+- Open in Claude
+
+---
+
+- promptTag.openIn.claudeDescription
+- Open in Claude action description in the prompt tag dropdown
+- Send this prompt to Claude
+
+---
+
+- promptTag.openIn.chatgpt
+- Open in ChatGPT action title in the prompt tag
+- Open in ChatGPT
+
+---
+
+- promptTag.openIn.chatgptDescription
+- Open in ChatGPT action description in the prompt tag dropdown
+- Send this prompt to ChatGPT
+
+---
+
+- missingTranslationNotice.title
+- Title of the notice on a page that displays the default language because the translation is missing
+  (requires the `showMissingTranslationNotice` option of the locale)
+- This page has not yet been translated
+
+---
+
+- missingTranslationNotice.content
+- Text of the notice on a page that displays the default language because the translation is missing.
+  Supports Markdown
+- You are viewing the original {{language}} version, because a translation is not yet available for this page.
+
+---
+
+- missingTranslationNotice.close
+- Accessible label (`aria-label`) of the button that closes the notice.
+  Screen readers announce it, but it doesn't appear on the page.
+- Close
+
+---
+
+- page.lastUpdated.timeago
+- Page last updated (when referring to a period of time, e.g. 10min)
+- Last updated
+
+---
+
+- page.lastUpdated.on
+- Page last updated (when referring to specific date, e.g. December 1st)
+- Last updated on
+
+---
+
+- page.notFound.title
+- 404 Not Found page header text
+- Something went missing...
+
+---
+
+- page.notFound.description
+- 404 Not Found page description text
+- The page you were trying to reach doesn't exist or may have been moved.
+  You can go back to the previous page, return to the homepage, or use the search bar to find what you're looking for.
+
+---
+
+- page.apiNotFound.title
+- API docs 404 Not Found page header text
+- No page at this address
+
+---
+
+- page.apiNotFound.description
+- API docs 404 Not Found page description text (the missing page path follows it)
+- There's no page at
+
+---
+
+- page.apiNotFound.hint
+- API docs 404 Not Found page hint text
+- It may have been moved or deleted.
+
+---
+
+- page.apiNotFound.backButton
+- API docs 404 Not Found page button text (links back to the API docs root)
+- Back to docs
+
+---
+
+- page.mcpNotAllowed.title
+- MCP connection page header text (shown when the MCP endpoint is opened in a browser)
+- Connect to the MCP server
+
+---
+
+- page.mcpNotAllowed.description
+- MCP connection page description text
+- To use this MCP server, register it in your MCP client (for example: VS Code, Cursor, or Claude Code).
+
+---
+
+- page.mcpNotAllowed.publicNote
+- Note on the public MCP endpoint connection page (`/mcp-public`)
+- This endpoint serves publicly available content only and requires no login.
+
+---
+
+- page.mcpNotAllowed.mainEndpointHint
+- Link back to the main MCP endpoint, shown on the public endpoint connection page; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To access content available to your account, use the \<link\>main MCP endpoint\</link\>.
+
+---
+
+- page.mcpNotAllowed.publicEndpointHint
+- Link to the public MCP endpoint, shown on the main MCP connection page when the public endpoint is enabled; the `<link>` markers wrap the linked phrase and must stay in the translation
+- To connect anonymously without an account, use the \<link\>public endpoint\</link\>.
+
+---
+
+- page.mcpNotAllowed.tabs.claude
+- Claude tab label on the MCP connection page
+- Claude
+
+---
+
+- page.mcpNotAllowed.tabs.chatgpt
+- ChatGPT tab label on the MCP connection page
+- ChatGPT
+
+---
+
+- page.mcpNotAllowed.tabs.grok
+- Grok tab label on the MCP connection page
+- Grok
+
+---
+
+- page.mcpNotAllowed.tabs.json
+- JSON tab label on the MCP connection page
+- JSON
+
+---
+
+- page.mcpNotAllowed.snippets.terminal.hint
+- Hint above CLI commands on the MCP connection page
+- Run this command in your terminal:
+
+---
+
+- page.mcpNotAllowed.snippets.claudeCode.headline
+- Claude Code entry headline on the MCP connection page
+- Claude Code
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.headline
+- Claude app entry headline on the MCP connection page
+- Claude app
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.accountHint
+- Claude app note on the MCP connection page about where the connector is available
+- Claude adds the connector to your account and syncs it between Claude on the web and Claude Desktop.
+
+---
+
+- page.mcpNotAllowed.snippets.claudeDesktop.instruction
+- Claude app manual setup instruction on the MCP connection page
+- Or open **Customize** → **Connectors** → **Add custom connector** and paste this server URL:
+
+---
+
+- page.mcpNotAllowed.snippets.codexCli.headline
+- Codex CLI entry headline on the MCP connection page
+- Codex CLI
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.headline
+- ChatGPT desktop app entry headline on the MCP connection page
+- ChatGPT desktop app
+
+---
+
+- page.mcpNotAllowed.snippets.chatgptApp.instruction
+- ChatGPT desktop app setup instruction on the MCP connection page
+- In the ChatGPT desktop app, go to Settings → Plugins → MCPs.
+  Add a server with the "Streamable HTTP" type and this URL (restart the app afterwards):
+
+---
+
+- page.mcpNotAllowed.snippets.grokBuild.headline
+- Grok Build entry headline on the MCP connection page
+- Grok Build
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.headline
+- Grok app entry headline on the MCP connection page
+- Grok app
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.openConnectors
+- Grok app button on the MCP connection page that opens the Grok connectors page
+- Open Grok connectors
+
+---
+
+- page.mcpNotAllowed.snippets.grokApp.instruction
+- Grok app setup instruction on the MCP connection page
+- On grok.com, open Connectors → New Connector → Custom and paste this server URL:
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.headline
+- Assistant prompt entry headline on the MCP connection page
+- Prompt
+
+---
+
+- page.mcpNotAllowed.snippets.prompt.hint
+- Hint above the assistant install prompt on the MCP connection page
+- Or paste this prompt into the chat to have it add the server for you:
+
+---
+
+- page.mcpNotAllowed.snippets.json.hint
+- Hint above the JSON configuration on the MCP connection page
+- Add this server entry to your MCP client configuration file:
+
+---
+
+- page.forbidden.title
+- 403 Forbidden header text
+- Access forbidden
+
+---
+
+- page.forbidden.description
+- 403 Forbidden description text
+- You don't have permission to access this page.
+  If you believe this is an error, contact your administrator or return to the homepage.
+
+---
+
+- codeSnippet.expand.tooltipText
+- Code snippet expand all button tooltip
+- Expand all
+
+---
+
+- codeSnippet.collapse.tooltipText
+- Code snippet collapse all button tooltip
+- Collapse all
+
+---
+
+- codeSnippet.copy.buttonText
+- Code snippet copy button text
+- Copy
+
+---
+
+- codeSnippet.copy.tooltipText
+- Code snippet copy button tooltip
+- Copy to clipboard
+
+---
+
+- codeSnippet.copy.toasterText
+- A toast notification text displayed after code snippet has been successfully copied
+- Copied!
+
+---
+
+- codeSnippet.report.buttonText
+- Code snippet report button text
+- Report
+
+---
+
+- codeSnippet.report.tooltipText
+- Code snippet report button tooltip
+- Report a problem
+
+---
+
+- codeSnippet.report.label
+- Code snippet report a problem title
+- What is wrong with this code?
+
+---
+
+- jsonViewer.showMore
+- Toggle button that reveals a truncated long string value in a JSON sample
+- Show more
+
+---
+
+- jsonViewer.showLess
+- Toggle button that collapses an expanded long string value in a JSON sample
+- Show less
+
+---
+
+- feedback.settings.label
+- Page rating question text
+- How helpful was this page?
+
+---
+
+- feedback.settings.submitText
+- Message displayed after successful page rating submit
+- Thank you for helping improve our documentation!
+
+---
+
+- feedback.settings.reasons.label
+- Feedback prompt text
+- Which statement describes your thoughts about this page?
+
+---
+
+- feedback.settings.reasons.items.${Expr}
+- Displays the reason text at the given index in the reasons list from `redocly.yaml`
+- Default is the value from `redocly.yaml`
+
+---
+
+- feedback.settings.comment.dissatisfiedLabel
+- Label for feedback when user is dissatisfied
+- What can we improve?
+
+---
+
+- feedback.settings.comment.label
+- Label for the comment input field in feedback settings
+- Please share your feedback with us.
+
+---
+
+- feedback.settings.comment.neutralLabel
+- Label for feedback when user has neutral sentiment
+- What can we improve?
+
+---
+
+- feedback.settings.comment.satisfiedLabel
+- Label for feedback when user is satisfied
+- What was the most helpful on this page?
+
+---
+
+- feedback.settings.leftScaleLabel
+- Label for the left side of rating scale in feedback
+- Not helpful at all
+
+---
+
+- feedback.settings.optionalEmail.label
+- Label for optional email input in feedback form
+- Your email (optional, for follow-up)
+
+---
+
+- feedback.settings.optionalEmail.placeholder
+- Placeholder text for optional email input
+- yourname@example.com
+
+---
+
+- feedback.settings.rightScaleLabel
+- Label for the right side of rating scale in feedback
+- Extremely helpful
+
+---
+
+- feedback.submit
+- Submit feedback button text
+- Submit
+
+---
+
+- feedback.cancel
+- Cancel feedback button text
+- Cancel
+
+---
+
+- feedback.settings.comment.submitText
+- Message displayed after successful page comment submit
+- Thank you for helping improve our documentation!
+
+---
+
+- feedback.settings.comment.likeLabel
+- Question displayed after positive feedback on the page
+- What was most helpful?
+
+---
+
+- feedback.settings.comment.dislikeLabel
+- Question displayed after negative feedback on the page
+- What can we improve?
+
+---
+
+- feedback.settings.comment.send
+- Send comment feedback submit button text
+- Send
+
+---
+
+- feedback.settings.comment.cancel
+- Send comment feedback cancel button text
+- Cancel
+
+---
+
+- feedback.settings.comment.maxLength
+- Message displayed when feedback comment reaches maximum character limit (interpolates `maxLength` variable)
+- Maximum content length of {{maxLength}} characters reached
+
+---
+
+- feedback.sentiment.thumbUp
+- Feedback "thumb up" aria-label in sentiment section
+- Like
+
+---
+
+- feedback.sentiment.thumbDown
+- Feedback "thumb down" aria-label in sentiment section
+- Dislike
+
+---
+
+- catalog.filters.select.all
+- Select all filters option label in catalog
+- All
+
+---
+
+- catalog.filters.placeholder
+- Catalog filter input placeholder
+- Filter...
+
+---
+
+- catalog.filters.title
+- Catalog filters sidebar title
+- Filters
+
+---
+
+- catalog.filters.add
+- Button text to add or apply a filter in catalog
+- Add filter
+
+---
+
+- catalog.filters.clearAll
+- Button text to clear all selected filters in catalog
+- Clear filters
+
+---
+
+- catalog.filters.done
+- Button text to confirm filter selection in catalog
+- Done
+
+---
+
+- catalog.filters.close
+- Button text to close the mobile catalog filters panel
+- Close
+
+---
+
+- filter.dateRange.from
+- Label for start date in date range filter
+- From:
+
+---
+
+- filter.dateRange.to
+- Label for end date in date range filter
+- To:
+
+---
+
+- catalog.backToAllLabel
+- Button label to go back to all catalog items
+- Catalog
+
+---
+
+- catalog.catalogs.label
+- Label for catalog selector
+- Catalogs
+
+---
+
+- catalog.notConnected
+- Placeholder label shown when a catalog item has no connected values
+- Not connected
+
+---
+
+- catalog.sort
+- Label for sort button in catalog view
+- Sort
+
+---
+
+- catalog.tags.label
+- Label for tags in catalog entity properties
+- Tags
+
+---
+
+- catalog.owners.label
+- Label for owners in catalog entity properties
+- Owners
+
+---
+
+- catalog.repositories.label
+- Label for repositories in catalog entity properties
+- Repositories
+
+---
+
+- catalog.email.label
+- Label for email in catalog entity properties
+- Email
+
+---
+
+- catalog.format.label
+- Label for format in catalog entity properties
+- Format
+
+---
+
+- catalog.entityType.label
+- Label for entity type in catalog entity properties
+- Entity type
+
+---
+
+- catalog.domains.label
+- Label for domains in catalog entity properties
+- Domains
+
+---
+
+- catalog.contact.label
+- Label for contact channels in catalog entity properties
+- Slack channels
+
+---
+
+- catalog.methodAndPath.label
+- Label for method and path in catalog entity properties
+- Method & Path
+
+---
+
+- catalog.links.label
+- Title for links section in catalog entity view
+- Links
+
+---
+
+- catalog.metadata.domains
+- Label for domains metadata in catalog cards
+- Domains:
+
+---
+
+- catalog.metadata.owners
+- Label for owners metadata in catalog cards
+- Owners:
+
+---
+
+- catalog.history.button.label
+- Label for catalog entity version history button
+- Version
+
+---
+
+- catalog.history.sidebar.title
+- Title for catalog entity version history sidebar
+- Version
+
+---
+
+- catalog.history.sidebar.close
+- Accessible label for closing catalog entity version history sidebar
+- Close version history
+
+---
+
+- catalog.history.version.label
+- Label for version in catalog entity history
+- Version
+
+---
+
+- catalog.history.version.notSpecified
+- Label for unspecified version in catalog entity history
+- not specified
+
+---
+
+- catalog.history.version.latest
+- Marker appended to the default version in catalog entity history
+- latest
+
+---
+
+- catalog.history.revisions.limitMessage
+- Message shown when older revisions are not available in catalog entity history
+- Older revisions are not stored.
+
+---
+
+- catalog.history.revision.current
+- Label for current revision in catalog entity history
+- Current
+
+---
+
+- catalog.history.revisions.showLess
+- Button text to collapse catalog entity revisions list
+- Show less
+
+---
+
+- catalog.history.revisions.showMore
+- Button text to expand catalog entity revisions list (interpolates `count` variable)
+- Show {{count}} more
+
+---
+
+- catalog.catalogs.all.title
+- Title for the "All" catalog view
+- All
+
+---
+
+- catalog.catalogs.all.description
+- Description for the "All" catalog view
+- All entities
+
+---
+
+- catalog.catalogs.all.switcherLabel
+- Switcher label for the "All" catalog view
+- All
+
+---
+
+- catalog.catalogs.service.title
+- Title for the "Services" catalog view
+- Services
+
+---
+
+- catalog.catalogs.service.description
+- Description for the "Services" catalog view
+- Service entities
+
+---
+
+- catalog.catalogs.service.switcherLabel
+- Switcher label for the "Services" catalog view
+- Services
+
+---
+
+- catalog.catalogs.domain.title
+- Title for the "Domains" catalog view
+- Domains
+
+---
+
+- catalog.catalogs.domain.description
+- Description for the "Domains" catalog view
+- Domain entities
+
+---
+
+- catalog.catalogs.domain.switcherLabel
+- Switcher label for the "Domains" catalog view
+- Domains
+
+---
+
+- catalog.catalogs.team.title
+- Title for the "Teams" catalog view
+- Teams
+
+---
+
+- catalog.catalogs.team.description
+- Description for the "Teams" catalog view
+- Team entities
+
+---
+
+- catalog.catalogs.team.switcherLabel
+- Switcher label for the "Teams" catalog view
+- Teams
+
+---
+
+- catalog.catalogs.user.title
+- Title for the "Users" catalog view
+- Users
+
+---
+
+- catalog.catalogs.user.description
+- Description for the "Users" catalog view
+- User entities
+
+---
+
+- catalog.catalogs.user.switcherLabel
+- Switcher label for the "Users" catalog view
+- Users
+
+---
+
+- catalog.catalogs.apiDescription.title
+- Title for the "API Descriptions" catalog view
+- API Descriptions
+
+---
+
+- catalog.catalogs.apiDescription.description
+- Description for the "API Descriptions" catalog view
+- API description entities
+
+---
+
+- catalog.catalogs.apiDescription.switcherLabel
+- Switcher label for the "API Descriptions" catalog view
+- API Descriptions
+
+---
+
+- catalog.catalogs.dataSchema.title
+- Title for the "Data Schemas" catalog view
+- Data Schemas
+
+---
+
+- catalog.catalogs.dataSchema.description
+- Description for the "Data Schemas" catalog view
+- Data schema entities
+
+---
+
+- catalog.catalogs.dataSchema.switcherLabel
+- Switcher label for the "Data Schemas" catalog view
+- Data Schemas
+
+---
+
+- catalog.catalogs.apiOperation.title
+- Title for the "API Operations" catalog view
+- API Operations
+
+---
+
+- catalog.catalogs.apiOperation.description
+- Description for the "API Operations" catalog view
+- API operation entities
+
+---
+
+- catalog.catalogs.apiOperation.switcherLabel
+- Switcher label for the "API Operations" catalog view
+- API Operations
+
+---
+
+- catalog.entity.metadata.title
+- Title for entity metadata section in catalog
+- Metadata
+
+---
+
+- catalog.entity.schema.title
+- Title for entity schema section in catalog
+- Schema
+
+---
+
+- select.noResults
+- Message shown when no options are available in select components
+- No results
+
+---
+
+- loaders.loading
+- Text shown by generic loading indicators
+- Loading...
+
+---
+
+- footer.copyrightText
+- Footer copyright text
+- Default is configured in `redocly.yaml`
+
+---
+
+- consent.title
+- Title in the consent banner
+- We value your privacy
+
+---
+
+- consent.message
+- Message in the consent banner
+- By selecting "Accept all cookies", you agree to the use of cookies to improve site navigation, understand how our site is used, and support our marketing efforts.
+  Select "Customize" to choose which types of cookies you allow.
+
+---
+
+- consent.privacyPolicy
+- Label of the privacy policy link in the banner and the dialog
+- Privacy policy
+
+---
+
+- consent.customize
+- Label of the banner button that opens the settings dialog
+- Customize
+
+---
+
+- consent.rejectAll
+- Label of the button that rejects every optional category
+- Reject all
+
+---
+
+- consent.acceptAll
+- Label of the dialog button that accepts every optional category
+- Accept all
+
+---
+
+- consent.acceptAllCookies
+- Label of the banner button that accepts every optional category
+- Accept all cookies
+
+---
+
+- consent.savePreferences
+- Label of the dialog button that saves the toggled categories
+- Save preferences
+
+---
+
+- consent.dialog.title
+- Title of the consent settings dialog
+- Cookie preferences
+
+---
+
+- consent.dialog.description
+- Text under the dialog title
+- Choose which cookies this site may use.
+  You can change your choice at any time.
+
+---
+
+- consent.dialog.close
+- Accessible label of the dialog close button
+- Close
+
+---
+
+- consent.alwaysOn
+- Accessible label of the necessary category toggle, which the visitor cannot change
+- Always on
+
+---
+
+- consent.alwaysOff
+- Accessible label of the marketing category toggle when the browser sends Global Privacy Control
+- Always off
+
+---
+
+- consent.gpcNotice
+- Note under the marketing category when the browser sends Global Privacy Control
+- Your browser asked us not to share your data, so this stays off.
+
+---
+
+- consent.category.necessary.title
+- Title of the necessary category
+- Necessary
+
+---
+
+- consent.category.necessary.description
+- Description of the necessary category
+- Needed for the site to work: your consent choice, your color mode, and anonymous usage data.
+
+---
+
+- consent.category.analytics.title
+- Title of the analytics category
+- Analytics
+
+---
+
+- consent.category.analytics.description
+- Description of the analytics category
+- Helps us understand which pages are useful.
+
+---
+
+- consent.category.marketing.title
+- Title of the marketing category
+- Marketing
+
+---
+
+- consent.category.marketing.description
+- Description of the marketing category
+- Lets us measure which campaigns bring visitors to this site.
+
+---
+
+- consent.settingsLink
+- Label of the settings link that opens the dialog
+- Cookie preferences
+
+---
+
+- openapi.download.description.title
+- Title for the `download description` section in OpenAPI description
+- Download the OpenAPI description file
+
+---
+
+- openapi.info.title
+- Title for the info section in OpenAPI description
+- Overview
+
+---
+
+- openapi.info.contact.url
+- Label for the contact URL in the info section of OpenAPI description
+- URL
+
+---
+
+- openapi.info.contact.name
+- Label for the contact name in the info section of OpenAPI description
+- E-mail
+
+---
+
+- openapi.info.license
+- Label for the license in the info section of OpenAPI description
+- License
+
+---
+
+- openapi.info.termsOfService
+- Label for the terms of service in the info section of OpenAPI description
+- Terms of Service
+
+---
+
+- openapi.info.metadata.title
+- Title for the metadata section in OpenAPI description
+- Metadata
+
+---
+
+- openapi.key
+- Label for key in OpenAPI description
+- Key
+
+---
+
+- openapi.value
+- Label for value in OpenAPI description
+- Value
+
+---
+
+- openapi.viewSecurityDetails
+- Label for the view security details button in OpenAPI description
+- View details
+
+---
+
+- openapi.enum
+- Label for enum in OpenAPI description
+- Enum
+
+---
+
+- openapi.default
+- Label for default values in OpenAPI description
+- Default
+
+---
+
+- openapi.property
+- Singular noun used to count schema fields in OpenAPI description (e.g. "Show 1 property")
+- property
+
+---
+
+- openapi.properties
+- Plural noun used to count schema fields in OpenAPI description (e.g. "Show 3 properties")
+- properties
+
+---
+
+- openapi.array
+- Localized "array" word inserted into the "Show N array properties" button on array-of-object schema rows
+- array
+
+---
+
+- openapi.details
+- Fallback noun used on the schema "Show details" expander when no property count is available
+- details
+
+---
+
+- openapi.variable
+- Label for variable in OpenAPI description
+- variable
+
+---
+
+- openapi.variables
+- Label for variables in OpenAPI description
+- variables
+
+---
+
+- openapi.actions.show
+- Label for the show action in OpenAPI description
+- Show
+
+---
+
+- openapi.actions.hide
+- Label for the hide action in OpenAPI description
+- Hide
+
+---
+
+- openapi.actions.more
+- Label for the more action in OpenAPI description
+- more
+
+---
+
+- openapi.languages.title
+- Title for the languages section in OpenAPI description
+- Languages
+
+---
+
+- openapi.languages.moreButton.tooltipText
+- Tooltip for `View more languages` button in OpenAPI description
+- View more languages
+
+---
+
+- openapi.servers.title
+- Title for the servers section in OpenAPI description
+- Servers
+
+---
+
+- openapi.operations
+- Label for operations in OpenAPI description
+- Operations
+
+---
+
+- openapi.webhooks
+- Label for webhooks in OpenAPI description
+- Webhooks
+
+---
+
+- openapi.badges.deprecated
+- Label for the deprecated badge in OpenAPI description
+- deprecated
+
+---
+
+- openapi.badges.webhook
+- Label for the webhook badge in OpenAPI description
+- Webhook
+
+---
+
+- openapi.request
+- Label for the request in OpenAPI description
+- Request
+
+---
+
+- openapi.path
+- Label for the path parameter in OpenAPI description
+- Path
+
+---
+
+- openapi.query
+- Label for the query parameter in OpenAPI description
+- Query
+
+---
+
+- openapi.querystring
+- Label for query string parameter section in OpenAPI description
+- Query String
+
+---
+
+- openapi.cookie
+- Label for the cookie parameter in OpenAPI description
+- Cookies
+
+---
+
+- openapi.header
+- Label for the header parameter in OpenAPI description
+- Headers
+
+---
+
+- openapi.body
+- Label for the request body in OpenAPI description
+- Body
+
+---
+
+- openapi.responses
+- Label for the responses section in OpenAPI description
+- Responses
+
+---
+
+- openapi.response
+- Label for a single response in OpenAPI description
+- Response
+
+---
+
+- openapi.callbacks
+- Label for callbacks in OpenAPI description
+- Callbacks
+
+---
+
+- openapi.callbackRequest
+- Label for the callback request in OpenAPI description
+- Callback Request
+
+---
+
+- openapi.callbackResponse
+- Label for the callback response in OpenAPI description
+- Callback Response
+
+---
+
+- openapi.payload
+- Label for the payload in OpenAPI description
+- Payload
+
+---
+
+- openapi.discriminator
+- Label for the discriminator in OpenAPI description
+- Discriminator
+
+---
+
+- openapi.contentType
+- Label for the content type in OpenAPI description
+- Content type
+
+---
+
+- openapi.tryIt
+- Label for the Try it button in OpenAPI description
+- Try it
+
+---
+
+- openapi.loading
+- Label for the loading state in OpenAPI description
+- Loading...
+
+---
+
+- openapi.example
+- Label for a single example in OpenAPI description
+- Example
+
+---
+
+- openapi.examples
+- Label for multiple examples in OpenAPI description
+- Examples
+
+---
+
+- openapi.additionalProperties
+- Label for additional properties in OpenAPI schemas
+- additional property
+
+---
+
+- openapi.patternProperties
+- Label for the pattern properties in OpenAPI schemas
+- pattern property
+
+---
+
+- openapi.required
+- Label for the required fields in OpenAPI description
+- required
+
+---
+
+- openapi.recursive
+- Label for the recursive schemas in OpenAPI description
+- Recursive
+
+---
+
+- openapi.hideExample
+- Label for hiding an example in OpenAPI description
+- Hide example
+
+---
+
+- openapi.hideOptionalScopes
+- Label for hiding optional scopes in OpenAPI description
+- Hide optional scopes
+
+---
+
+- openapi.showOptionalScopes
+- Label for showing optional scopes in OpenAPI description
+- Show optional scopes
+
+---
+
+- openapi.showMoreScopes
+- Label for showing additional scopes in OpenAPI security (interpolates `hiddenCount` variable)
+- Show {{hiddenCount}} more scopes
+
+---
+
+- openapi.showExample
+- Label for showing an example in OpenAPI description
+- Show example
+
+---
+
+- openapi.expandAll
+- Label for expanding all sections in OpenAPI description
+- Expand all
+
+---
+
+- openapi.collapseAll
+- Label for collapsing all sections in OpenAPI description
+- Collapse all
+
+---
+
+- openapi.deepLink.tooltip
+- Tooltip for the link icon next to a heading or property in API docs
+- Link to this section
+
+---
+
+- openapi.noResponseExample
+- Message when there's no response example in OpenAPI description
+- No response example
+
+---
+
+- openapi.discriminator.searchPlaceholder
+- Placeholder text for search input in dropdown components
+- Search items
+
+---
+
+- openapi.discriminator.searchNoResults
+- Message displayed when no search results are found in dropdown components
+- No items found
+
+---
+
+- openapi.discriminator.defaultMapping
+- Label for the default mapping option in discriminator dropdown
+- Default mapping
+
+---
+
+- openapi.discriminator.defaultMappingTooltip
+- Tooltip text explaining the default mapping option for OpenAPI 3.2
+- OpenAPI 3.2: When other mappings don't match, use the default mapping.
+
+---
+
+- openapi.noResponseContent
+- Message displayed when a response contains no content in an OpenAPI description
+- No content
+
+---
+
+- openapi.noRequestPayload
+- Message when there's no request payload in OpenAPI description
+- No request payload
+
+---
+
+- openapi.noRequestData
+- Message when an operation has no request data (no parameters, body, or security) in an OpenAPI description
+- No request data
+
+---
+
+- openapi.hidePattern
+- Label for hiding a pattern in OpenAPI description
+- Hide pattern
+
+---
+
+- openapi.showPattern
+- Label for showing a pattern in OpenAPI description
+- Show pattern
+
+---
+
+- openapi.authorizationUrl
+- Label for the authorization URL in OpenAPI security schemes
+- Authorization URL
+
+---
+
+- openapi.tokenUrl
+- Label for the token URL in OpenAPI security schemes
+- Token URL
+
+---
+
+- openapi.refreshUrl
+- Label for the refresh URL in OpenAPI security schemes
+- Refresh URL
+
+---
+
+- openapi.deviceAuthorizationUrl
+- Label for the device authorization URL in OpenAPI security schemes
+- Device Authorization URL
+
+---
+
+- openapi.oauth2MetadataUrl
+- Label for the OAuth2 metadata URL in OpenAPI security schemes
+- OAuth2 Metadata URL
+
+---
+
+- openapi.schemas
+- Label for schemas section in OpenAPI
+- Schemas
+
+---
+
+- openapi.security
+- Label for the security section in OpenAPI description
+- Security
+
+---
+
+- openapi.httpAuthorizationScheme
+- Label for HTTP Authorization Scheme in OpenAPI security schemes
+- HTTP Authorization Scheme
+
+---
+
+- openapi.bearerFormat
+- Label for Bearer Format in OpenAPI security schemes
+- Bearer Format
+
+---
+
+- openapi.parameterName
+- Label for parameter name in OpenAPI description
+- parameter name
+
+---
+
+- openapi.flowType
+- Label for flow type in OpenAPI OAuth2 security schemes
+- Flow type
+
+---
+
+- openapi.connectUrl
+- Label for connect URL in OpenAPI OAuth2 security schemes
+- Connect URL
+
+---
+
+- openapi.requiredScopes
+- Label for required scopes in OpenAPI security schemes
+- Required scopes
+
+---
+
+- openapi.unsupportedLanguage
+- Message displayed when a code sample from the OpenAPI description file is written in an unsupported language
+- The code sample's language is not supported.
+
+---
+
+- openapi.schemaCatalogLink.title
+- Title for shared schema link in OpenAPI
+- Shared schema
+
+---
+
+- openapi.schemaCatalogLink.copyButtonTooltip
+- Tooltip for copy button in schema catalog link
+- Copy to clipboard
+
+---
+
+- openapi.schemaCatalogLink.copiedTooltip
+- Tooltip shown after successfully copying schema catalog link
+- Copied!
+
+---
+
+- openapi.failedToGenerateCodeSample
+- Message displayed when code sample generation fails
+- Failed to generate code sample.
+
+---
+
+- openapi.mcp.title
+- Label for MCP server in OpenAPI sidebar
+- MCP Server
+
+---
+
+- openapi.mcp.endpoint
+- Label for MCP endpoint in OpenAPI sidebar
+- Endpoint
+
+---
+
+- openapi.mcp.tools
+- Label for MCP tools group in OpenAPI sidebar
+- MCP Tools
+
+---
+
+- openapi.mcp.toolName
+- Label for tool name in MCP tool details
+- Tool name
+
+---
+
+- openapi.mcp.resources
+- Label for MCP resources group in OpenAPI sidebar
+- MCP Resources
+
+---
+
+- openapi.mcp.prompts
+- Label for MCP prompts group in OpenAPI sidebar
+- MCP Prompts
+
+---
+
+- openapi.mcp.protocolVersion
+- Label for MCP protocol version in OpenAPI sidebar
+- Protocol Version
+
+---
+
+- openapi.mcp.capabilities
+- Label for MCP capabilities in OpenAPI sidebar
+- Capabilities
+
+---
+
+- openapi.mcp.experimentalCapabilities
+- Label for MCP experimental capabilities in OpenAPI sidebar
+- Experimental capabilities
+
+---
+
+- openapi.mcp.inputSchema
+- Label for MCP input schema in OpenAPI sidebar
+- Input schema
+
+---
+
+- openapi.mcp.inputExample
+- Label for MCP input example in OpenAPI sidebar
+- Input example
+
+---
+
+- openapi.mcp.outputSchema
+- Label for MCP output schema in OpenAPI sidebar
+- Output schema
+
+---
+
+- openapi.mcp.outputExample
+- Label for MCP output example in OpenAPI sidebar
+- Output example
+
+---
+
+- openapi.mcp.uriTitle
+- Label for resource URI in MCP resource details
+- Resource URI
+
+---
+
+- openapi.mcp.mimeTypeTitle
+- Label for resource MIME type in MCP resource details
+- Resource MIME type
+
+---
+
+- openapi.mcp.exampleTitle
+- Label for resource content in MCP resource details
+- Resource content
+
+---
+
+- openapi.mcp.argumentsExample
+- Label for the prompt arguments example in MCP prompt details
+- Arguments example
+
+---
+
+- graphql.queries
+- Label for queries group in GraphQL sidebar
+- Queries
+
+---
+
+- graphql.mutations
+- Label for mutations group in GraphQL sidebar
+- Mutations
+
+---
+
+- graphql.subscriptions
+- Label for subscriptions group in GraphQL sidebar
+- Subscriptions
+
+---
+
+- graphql.directives
+- Label for directives group in GraphQL sidebar
+- Directives
+
+---
+
+- graphql.objects
+- Label for objects group in GraphQL sidebar
+- Objects
+
+---
+
+- graphql.interfaces
+- Label for interfaces group in GraphQL sidebar
+- Interfaces
+
+---
+
+- graphql.unions
+- Label for unions group in GraphQL sidebar
+- Unions
+
+---
+
+- graphql.enums
+- Label for enums group in GraphQL sidebar
+- Enums
+
+---
+
+- graphql.inputs
+- Label for the inputs group in GraphQL sidebar
+- Inputs
+
+---
+
+- graphql.scalars
+- Label for the scalars group in GraphQL sidebar
+- Scalars
+
+---
+
+- graphql.actions.show
+- Label for the show action in GraphQL description
+- Show
+
+---
+
+- graphql.actions.hide
+- Label for the hide action in GraphQL description
+- Hide
+
+---
+
+- graphql.actions.more
+- Label for the more action in GraphQL description
+- more
+
+---
+
+- graphql.fields
+- Label for the fields section in GraphQL object and interface content
+- Fields
+
+---
+
+- graphql.inputFields
+- Label for the input fields section in GraphQL input type content
+- Input Fields
+
+---
+
+- graphql.values
+- Label for the values section in GraphQL enum content
+- Values
+
+---
+
+- graphql.arguments.label
+- Label for the arguments section in GraphQL content
+- Arguments
+
+---
+
+- graphql.arguments.show
+- Text for showing arguments in GraphQL content
+- Show arguments
+
+---
+
+- graphql.arguments.hide
+- Text for hiding arguments in GraphQL content
+- Hide arguments
+
+---
+
+- graphql.returnTypes.label
+- Label for the return type section in GraphQL content
+- Return type
+
+---
+
+- graphql.returnTypes.show
+- Text for showing return type in GraphQL content
+- Show return type
+
+---
+
+- graphql.returnTypes.hide
+- Text for hiding return type in GraphQL content
+- Hide return type
+
+---
+
+- graphql.possibleTypes
+- Label for possible types in GraphQL content
+- Possible types
+
+---
+
+- graphql.defaultValue
+- Label for the default value in GraphQL content
+- Default
+
+---
+
+- graphql.arguments.here
+- Placeholder for arguments in GraphQL content
+- Arguments Here
+
+---
+
+- graphql.deprecationReason
+- Label for the deprecation reason admonition in GraphQL content
+- Deprecation reason
+
+---
+
+- graphql.implementedInterfaces
+- Label for implemented interfaces in GraphQL content
+- Implements interfaces
+
+---
+
+- graphql.implementedBy
+- Label for types that implement a GraphQL interface
+- Implemented by
+
+---
+
+- graphql.nonNull
+- Label for non-null fields in GraphQL content
+- non-null
+
+---
+
+- graphql.required
+- Label for required fields in GraphQL content
+- required
+
+---
+
+- graphql.badges.deprecated
+- Label for the deprecated badge in GraphQL content
+- deprecated
+
+---
+
+- graphql.requiredScopes
+- Label for required scopes in GraphQL security
+- Required scopes
+
+---
+
+- graphql.viewSecurityDetails
+- Button text to view security details in GraphQL
+- View details
+
+---
+
+- graphql.objectScopes
+- Label for object scopes in GraphQL security
+- Object scopes
+
+---
+
+- graphql.fieldScopes
+- Label for field scopes in GraphQL security
+- Field scopes
+
+---
+
+- graphql.overview
+- Label for overview section in GraphQL
+- Overview
+
+---
+
+- graphql.info.metadata.title
+- Label for the metadata section in GraphQL description
+- Metadata
+
+---
+
+- graphql.key
+- Label for key in GraphQL metadata
+- Key
+
+---
+
+- graphql.value
+- Label for value in GraphQL metadata
+- Value
+
+---
+
+- graphql.download.description.title
+- Title for download description section in GraphQL
+- Download GraphQL description
+
+---
+
+- graphql.info.title
+- Title for info section in GraphQL description
+- Overview
+
+---
+
+- graphql.info.contact.url
+- Label for the contact URL in GraphQL info section
+- URL
+
+---
+
+- graphql.info.contact.name
+- Label for the contact name in GraphQL info section
+- E-mail
+
+---
+
+- graphql.info.license
+- Label for the license in GraphQL info section
+- License
+
+---
+
+- graphql.info.termsOfService
+- Label for the terms of service in GraphQL info section
+- Terms of Service
+
+---
+
+- graphql.variables
+- Label for the variables section in GraphQL right section
+- Variables
+
+---
+
+- graphql.querySample
+- Label for the query sample in GraphQL right section
+- Query sample
+
+---
+
+- graphql.mutationSample
+- Label for the mutation sample in GraphQL right section
+- Mutation sample
+
+---
+
+- graphql.subscriptionSample
+- Label for the subscription sample in GraphQL right section
+- Subscription sample
+
+---
+
+- graphql.responseSample
+- Label for the response sample in GraphQL right section
+- Response sample
+
+---
+
+- graphql.requestSample
+- Label for the request sample in GraphQL right section
+- Request sample
+
+---
+
+- graphql.locations
+- Label for the locations section in GraphQL right section
+- Locations
+
+---
+
+- graphql.referenced
+- Label for the referenced section in GraphQL right section
+- Referenced in
+
+---
+
+- graphql.content.fragment
+- Label for a fragment in GraphQL content
+- Fragment
+
+---
+
+- button.download.tooltipText
+- Tooltip for download button
+- Download description
+
+---
+
+- button.externalLink.tooltipText
+- Tooltip for external link button
+- Open in new tab
+
+---
+
+- button.email.tooltipText
+- Tooltip for email button
+- Send email
+
+---
+
+- time.justNow
+- Text for a short period of time from a certain event
+- just now
+
+---
+
+- time.past.second
+- Text for a period of time equal to 1 second from a certain event
+- 1 second ago
+
+---
+
+- time.past.seconds
+- Text for a period of time less than 1 minute from a certain event.
+- {{value}} seconds ago
+
+---
+
+- time.past.minute
+- Text for a period of time equal to 1 minute from a certain event
+- 1 minute ago
+
+---
+
+- time.past.minutes
+- Text for a period of time less than 1 hour from a certain event
+- {{value}} minutes ago
+
+---
+
+- time.past.hour
+- Text for a period of time equal to 1 hour from a certain event
+- 1 hour ago
+
+---
+
+- time.past.hours
+- Text for a period of time less than 1 day from a certain event
+- {{value}} hours ago
+
+---
+
+- time.past.day
+- Text for a period of time equal to 1 day from a certain event
+- 1 day ago
+
+---
+
+- time.past.days
+- Text for a period of time less than 1 week from a certain event
+- {{value}} days ago
+
+---
+
+- time.past.week
+- Text for a period of time equal to 1 week from a certain event
+- 1 week ago
+
+---
+
+- time.past.weeks
+- Text for a period of time less than 1 month from a certain event
+- {{value}} weeks ago
+
+---
+
+- time.past.month
+- Text for a period of time equal to 1 month from a certain event
+- 1 month ago
+
+---
+
+- time.past.months
+- Text for a period of time less than 1 year from a certain event
+- {{value}} months ago
+
+---
+
+- time.past.year
+- Text for a period of time equal to 1 year from a certain event
+- 1 year ago
+
+---
+
+- time.past.years
+- Text for a period of time equal or greater than 2 years from a certain event
+- {{value}} years ago
+
+---
+
+- codeWalkthrough.download
+- Label for the download button in code walkthrough feature
+- Download
+
+---
+
+- codeWalkthrough.preview
+- Label for the preview button in code walkthrough feature
+- Preview
+
+---
+
+- mobileMenu.mainMenu
+- Label for the main menu in mobile view
+- Main menu
+
+---
+
+- mobileMenu.previous
+- Label for back/previous button in mobile menu navigation
+- Previous
+
+---
+
+- mobileMenu.products
+- Label for products link/section in the mobile menu
+- Products
+
+---
+
+- mobileMenu.version
+- Label for version picker in the mobile menu
+- Version
+
+---
+
+- navbar.label
+- Accessible label for the navbar
+- Main navigation
+
+---
+
+- navbar.products
+- Label for products link/section in the navbar
+- Products
+
+---
+
+- page.internalServerError.description
+- "500 Internal server error" page description text
+- Something went wrong on our end.
+  Please try again later or contact support if the problem persists.
+
+---
+
+- page.internalServerError.title
+- "500 Internal server error" page header text
+- Internal server error
+
+---
+
+- page.skipToContent.label
+- Label for the `skipContent` button.
+- Skip to content
+
+---
+
+- diagram.openFullscreen
+- Accessible label for diagram click to open in fullscreen
+- Click to open diagram in fullscreen
+
+---
+
+- diagram.zoomIn
+- Tooltip for zoom in button in diagram viewer
+- Zoom in
+
+---
+
+- diagram.zoomOut
+- Tooltip for zoom out button in diagram viewer
+- Zoom out
+
+---
+
+- diagram.reset
+- Tooltip for fit to view button in diagram viewer
+- Fit to view
+
+---
+
+- diagram.close
+- Tooltip for close button in diagram viewer
+- Close
+
+---
+
+- diagram.viewer
+- Accessible label for diagram viewer dialog
+- Diagram viewer
+
+{% /table %}
+
+## Dynamic values in translations
+
+Translations use template syntax with placeholders like `{{value}}` to enable dynamic content generation.
+This templating mechanism allows the application to inject variable data at runtime, producing contextually appropriate text without requiring separate translation entries for each possible value.
+
+For example, the `time.past.seconds` translation key uses `{{value}}` to represent the number of seconds.
+Instead of creating separate translation keys for each possible number of seconds in a minute, the application automatically inserts the correct number at runtime:
+
+```md
+"{{value}} seconds ago" → "5 seconds ago", "42 seconds ago", etc.
+```
+
+When creating or modifying translations with dynamic values, always preserve these placeholders in your text.
+
+## Resources
+
+- **[Localization configuration](../../config/l10n.md)** - Configure language support, default locales, and localization behavior for your multi-language project

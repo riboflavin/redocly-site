@@ -1,0 +1,121 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Set a custom domain
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+You can configure a custom domain for your project and optionally serve your documentation from a subdirectory path.
+This allows you to host your docs at URLs like `docs.example.com` or `docs.example.com/api/`.
+
+## Set up a custom domain
+
+Configure your custom domain on the project's **Settings** > **Custom domain** page:
+
+1. Log in to your Redocly instance.
+1. Select your project.
+1. Select **Settings** > **Custom domain**.
+1. Click **Add domain**.
+1. Enter the **Custom Domain** without the protocol.
+   For example, "docs.example.com".
+1. (Optional) Disable the default domain by unchecking the **Use proxy to URL** checkbox.
+1. Click **Save**.
+1. Log in to your DNS management provider and complete the following steps:
+   - Add a new TXT record with the **name/host** and **value** listed in the Domain verification admonition.
+     The admonition is on the **Custom domain** section of the **Settings** page in your project.
+   - Point the domain CNAME record to `ssl.redocly.app`.
+     If you have EU data residency, point the CNAME record to `ssl.eu.redocly.app`.
+1.  Click **Verify**.
+    A **Pending** badge displays next to the domain, until it is verified.
+    Once the domain is verified, a **Verified** badge displays next to the domain.
+
+## SSL/TLS certificates
+
+Redocly automatically manages SSL/TLS certificates for your custom domains.
+Once you have successfully verified your DNS records (CNAME and TXT), Redocly provisions and renews certificates using Let's Encrypt.
+You do not need to provide or manually manage your own certificates for domains pointed at Redocly.
+
+## Serve from a subdirectory
+
+Set a project's path prefix to serve pages from somewhere other than the root of a domain.
+This can help organize URLs or make the separation of content more clear.
+For example, a SaaS company serving their developer documentation from `/developers` or `/api/`.
+
+To serve from a subdirectory, you also need to proxy requests to the website.
+Any proxy should be capable of doing that; we are not responsible for supporting third-party products.
+
+The path prefix is set using the `REDOCLY_PREFIX_PATHS` [environment variable](./env-variables.md).
+
+URL _without_ prefix: `https://docs.example.com/page`
+URL _with_ `api-v2` prefix: `https://docs.example.com/api-v2/page`
+
+### Set prefix in the Redocly platform
+
+For projects deployed through Redocly, set the page prefix using environment variables in Redocly:
+
+1. Go to the project **Settings** > **Environment variables** page.
+1. Click **Add environment variable** and add `REDOCLY_PREFIX_PATHS` with your desired prefix value (for example, `api-v2`).
+   The prefix is part of every page URL, so it cannot be a secret.
+1. Click the **Deployments** hyperlink in the banner.
+1. Click the **Trigger deployment** button.
+
+{% admonition type="warning" name="Deployment considerations" %}
+Setting `REDOCLY_PREFIX_PATHS` only in your project's `.env` file can cause health checks and publish steps to fail during deployment.
+Use Redocly's environment variables feature for reliable deployments.
+{% /admonition %}
+
+### Set prefix for local development
+
+For local development, you can add `REDOCLY_PREFIX_PATHS` to a `.env` file in the root of your project:
+
+```shell {% title=".env" %}
+REDOCLY_PREFIX_PATHS=api-v2
+```
+
+This approach is suitable for local testing but should not be used as the primary method for deployed projects.
+
+{% admonition type="info" name="Separate environment files" %}
+Use named environment files for more control, such as `.env.development`, `.env.preview`, and `.env.production`.
+{% /admonition %}
+
+### Prefixed links in Markdown
+
+After setting a page prefix, links to Markdown pages and related assets are _automatically transformed_ to support the path prefix.
+That transformation includes the sidebar, navbar, footer, and links used in content.
+
+You do not need to update any links to Markdown content after setting a page prefix.
+
+### Prefixed links in React
+
+In React, you can automatically apply the path prefix to the URL by using the `Link` component, as in the following example:
+
+```javascript {% title="ExampleComponent.tsx" %}
+import { Link } from '@redocly/theme/components/Link/Link';
+
+export default function ExampleComponent() {
+    return (
+        <Link to="/guide/another-page">Another page</Link>
+    )
+}
+```
+
+The `withPathPrefix` helper function provides an alternative way of adding the prefix to links, as in the following example:
+
+```javascript {% title="ExampleComponent.tsx" %}
+import { withPathPrefix } from '@redocly/theme/core/utils';
+
+export default function ExampleComponent() {
+    return (
+        <a href={withPathPrefix("/guide/another-page")}>Another page</a>
+    )
+}
+```
+
+## Resources
+
+- **[Use environment variables](./env-variables.md)** - Configure additional project settings using environment variables for dynamic content and customization
+- **[Manage links](../content/links.md)** - Understand how link prefixes are automatically handled when adding links to Markdown content
+- **[Add OpenAPI descriptions](../content/api-docs/add-openapi-docs.md)** - Add API documentation that automatically uses your custom domain's page prefix for generated reference pages

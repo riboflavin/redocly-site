@@ -1,0 +1,185 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Manage people
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+The **People** page is where you can manage users.
+Log in to Redocly with an [Owner organization role](../access/roles.md#organization-roles).
+You can then view and manage users from the **People** page in the following ways:
+
+- Invite users to your organization.
+- Assign or change their organization roles.
+- Add them to teams.
+- Remove them from the organization.
+- Link duplicate users.
+
+Only users with an Owner organization role can access the **People** page.
+
+The **People** page does not include options for determining who has access to projects.
+Project access is determined by the permissions of the [teams](./teams.md) users are members of.
+See [Configure RBAC](../access/index.md) for more information.
+By default, users with the Owner or Member organization role can access all projects from the organization **Overview** page, unless restricted by RBAC.
+
+## Seats quota notifications
+
+Your organization can approach its seats limit (90% of available seats used).
+All organization owners then receive a warning email and see a dismissible warning banner in the app.
+
+{% admonition type="warning" name="Exceeding the seats quota blocks project builds" %}
+When the seats quota is exceeded, **project builds are blocked** until usage returns within the limit.
+All organization owners receive an alert email, and everyone in the organization sees an alert banner.
+{% /admonition %}
+
+Each email is sent once per occurrence - there are no repeated reminders and no follow-up email when usage recovers.
+A seat is any organization member with the Owner or Member role.
+A committer active within the last 30 days who isn't linked to one of those accounts also uses a seat.
+Linking a committer's duplicate account to their member account (see [Link duplicate users](#link-duplicate-users) below) merges them into a single seat instead of counting twice.
+To resolve the quota, review members on the **People** page or add seats.
+
+## Invite people
+
+Invite other users to your Redocly organization.
+
+To directly invite people to your organization:
+
+1. Click **Send Invite**.
+1. Enter the **Email** address of the user you are inviting.
+1. (Optional) Select **Teams** you want the user to be a member of.
+1. Select the organization **Role** you want to assign to the user.
+1. Click **Send invite**.
+
+{% admonition type="info" name="Check spam folder" %}
+If invited users do not receive the invitation email, suggest they check their spam folder.
+{% /admonition %}
+
+You can also give users single sign-on (SSO) access to your Redocly organization by [adding an identity provider](./sso/add-idp.md).
+
+## Invite viewers
+
+If your documentation requires login to view, you can invite viewers to your organization.
+Viewers have read-only access to projects and cannot access the platform.
+Viewer accounts don't count as paid seats.
+
+{% admonition type="info" name="Viewer permissions" %}
+Viewers can only see your projects they have links to.
+
+After successful registration, users are redirected to the the homepage of the project selected in the invitation form.
+{% /admonition %}
+
+To invite viewers to your organization:
+
+1. Click **Send Invite**.
+2. Enter the **Email** address of the user you are inviting.
+3. (Optional) Select **Teams** you want the user to be a member of.
+4. Select **Viewer** as the organization **Role**.
+5. Select the **Project** you want to viewer to start with.
+6. (Optional) Add a **Custom Message** in plain text format, that will be shown in the invitation email.
+7. Click **Send invite**.
+
+### Manage pending invites
+
+Cancel or resend invitations to your Redocly organization.
+You can also view invitation details such as:
+- When the invite was created
+- When the invite expires
+- Copy the invitation link for active (non-expired) invites
+
+To cancel an invitation to people to your organization:
+
+1. Select the **Invites** tab.
+1. Click the more options menu icon for the invite.
+1. Select **Cancel**.
+1. Click **Yes**.
+
+To resend an invitation to people to your organization:
+
+1. Select the **Invites** tab.
+1. Click the more options menu icon for the invite.
+1. Select **Resend**.
+
+{% admonition type="info" name="Invite expiration" %}
+Invite links automatically expire after **7 days**.
+You can see when an invite link expires.
+Hover over the creation time column to display a tooltip with the exact expiration date and time.
+Expired invites are marked with a warning icon (⚠️) next to the creation time, and their invite links can no longer be copied or shared.
+You can resend expired invites to generate a new invite link.
+{% /admonition %}
+
+## Change organization role
+
+Change the organization roles of other users in your Redocly organization.
+You may need to update another user's organization role to Owner.
+For instance, do this if you need to leave the organization and you are the only Owner.
+For more information on the organization roles see [Roles and permissions](../access/roles.md).
+
+To change the organization role of a person in your organization:
+
+1. Click the current organization role listed in the **Role** column for the person.
+2. Select the new role from the list.
+
+{% admonition type="warning" name="SSO overrides roles assigned on People page" %}
+Organization roles assigned when [adding an identity provider](./sso/add-idp.md) override roles assigned in Redocly on the **People** page.
+So if you change a user's role on the **People** page in Redocly, this role is only applied for the current session.
+As soon as the user logs out and logs back in to Redocly, their role assigned by SSO is reassigned.
+It overrides the role assigned on the **People** page.
+{% /admonition %}
+
+## Add people to teams
+
+Add other users to teams in your Redocly organization.
+Teams is a way to organize users.
+If you are using [RBAC](../access/rbac.md), you can grant permissions to the team that apply to all users included in the team.
+
+{% admonition type="warning" name="Add team first" %}
+You must add your team **before** you can complete these steps.
+See [Manage teams](./teams.md#create-a-new-team) for more information.
+{% /admonition %}
+
+To add a person to a team:
+
+1. Select **People** in the navigation menu on the left side of the page.
+2. Click the more options menu icon in the **Actions** column for the person and select **Add to team**.
+3. Click into **Teams** text field and select team from list.
+4. Click **Add**.
+
+## Delete people from organization
+
+Delete other users from your Redocly organization if they leave the company or no longer need access to the organization.
+
+To delete a person from your organization:
+
+1. Select **People** in the navigation menu on the left side of the page.
+1. Click the more options menu icon in the **Actions** column for the person and select **Delete from organization**.
+1. Click **Delete**.
+
+## Link duplicate users
+
+Users can commit content to your project through an integrated Git connection or remote content source.
+These users are automatically assigned a committer role and are displayed on your **People** page.
+This automatic assignment may cause a single user to display as two different users on the **People** page.
+This happens if the user has an alternative email address for logging into the different systems.
+You can link duplicate users with the committer role to member or owner user account so you don't have duplicate entries for a single user.
+
+{% admonition type="warning" name="Viewer role cannot be linked" %}
+You can't link users with the committer role to users with the viewer role.
+The committer role is a paid seat and the viewer role is not.
+{% /admonition %}
+
+To link duplicate users:
+
+1. Click the **Actions** menu icon for the user account with the committer role.
+2. Select **Link to another member**.
+3. Select the member you want to connect this user account to from the dropdown menu.
+   You can also enter the user's name or email in the search box to find the user.
+4. Click **Link**.
+
+## Resources
+
+- **[Add identity providers](./sso/add-idp.md)** - Set up identity providers to import and manage users in bulk for streamlined user onboarding
+- **[Manage teams](./teams.md)** - Learn about assigning users to teams and managing team-based access control within your organization
+- **[Single sign-on (SSO) configuration](../config/access/sso.md)** - Complete configuration reference and examples for implementing SSO in your projects

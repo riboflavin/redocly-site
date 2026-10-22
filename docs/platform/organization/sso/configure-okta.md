@@ -1,0 +1,157 @@
+---
+plans:
+  - Scale
+  - Enterprise
+---
+# Configure SSO with Okta and SAML2
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+In this video, we integrate Okta with Redocly to set up Single Sign-On (SSO) using SAML2.
+
+This step-by-step tutorial shows you how to create an identity provider in Redocly, configure an Okta application, assign user groups, and test the connection.
+
+It also covers using group attributes for customized access controls, giving you complete flexibility in managing team permissions.
+Follow along and simplify your Redocly access with Okta!
+
+<iframe width="720" height="405" src="https://www.youtube.com/embed/NMayl8FTZ7c?si=TnkEnfp0XTLdf2ev" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Preserve the Owner organization role
+
+{% admonition type="danger" name="Critical step" %}
+Complete this step before clicking **Save** in the Redocly platform to prevent getting locked out of your organization.
+{% /admonition %}
+
+To prevent Okta from changing users' roles to the default organization role specified in the SSO settings:
+
+1. In Okta, navigate to **Directory** > **Groups**.
+2. Create a group named `redocly.owners`.
+3. Navigate to **Directory** > **People** and assign users with an Owner role in your organization to the `redocly.owners` group.
+4. Return to Redocly and click **Save** to complete the identity provider setup.
+
+## Configure SSO in Redocly
+
+1. Log into your Redocly account.
+1. Navigate to **Organization settings** > **SSO**.
+1. Click **Create identity provider**.
+1. Select **SAML 2.0** as the SSO method.
+1. Choose **Corporate SSO account** to enable SSO for both the platform and internal projects.
+1. Keep this page open - you'll need to copy values from here to Okta and then return to complete the setup.
+
+## Create SAML application in Okta
+
+1. In your Okta dashboard, navigate to **Applications**.
+1. Click **Create App Integration**.
+1. Select **SAML 2.0** as the sign-in method.
+1. Click **Next**.
+1. Fill out the general settings:
+   - **App name**: Enter a descriptive name like "Platform"
+   - **App logo**: Upload your company logo (optional)
+1. Copy the **Single sign-on URL** and **Audience URI** from your platform SSO page and paste them into the corresponding fields in Okta.
+
+## Configure attribute statements
+
+Attributes enable role-based access control (RBAC) by passing Okta group memberships to Redocly.
+
+{% tabs %}
+  {% tab label="Attribute statements" %}
+    1. Navigate to the **Attribute statements** section of your Okta SAML app.
+    1. Click **Add expression** and enter the following:
+        - **Name**: https://redocly.com/sso/teams
+        - **Expression**: `user.getGroups({'group.profile.name': 'redocly.*'}).![profile.name]`
+    1. Click **Next**.
+    1. Select **This is an internal app that we have created**.
+    1. Click **Finish**.
+  {% /tab %}
+  {% tab label="Group attribute statements (legacy)" %}
+    1. Navigate to the Attribute statements section of your Okta SAML app.
+    1. Expand **Show legacy configuration** and click **Edit**.
+    1. In the **Group Attribute Statements** section:
+       - **Name**: Enter `https://redocly.com/sso/teams`
+       - **Name format**: Select **URI Reference**
+       - **Filter**: Enter `redocly.`
+         This filter passes all groups that start with "redocly." to Redocly.
+    1. Click **Next**.
+    1. Select **This is an internal app that we have created**.
+    1. Click **Finish**.
+  {% /tab %}
+{% /tabs %}
+
+## Get SAML setup information
+
+1. In your newly created Okta app, click **View SAML setup instructions**.
+1. Copy the following information - you'll need it to complete the platform setup:
+   - **Identity Provider Single Sign-On URL**
+   - **Identity Provider Issuer**
+   - **X.509 Certificate**
+
+## Complete SSO setup in Redocly
+
+1. Return to your platform SSO configuration page.
+1. Fill out the remaining fields with information from Okta:
+   - **Single sign-on URL**: Paste the URL from Okta
+   - **Issuer ID**: Paste the issuer URL from Okta
+   - **X.509 Certificate**: Paste the certificate from Okta
+1. Set the **Default organization role** to **Owner** initially to ensure you don't lose administrative access.
+1. Click **Save** to create the identity provider.
+
+## Create and assign Okta groups
+
+1. In Okta, navigate to **Directory** > **Groups**.
+1. Create groups using the naming pattern that starts with "redocly.":
+   - `redocly.owners` (for organization owners)
+   - `redocly.members` (for organization members)
+   - Add any project-specific groups as needed
+1. Navigate to **Directory** > **People**.
+1. Assign users to the appropriate groups.
+1. Return to your SAML application in Okta.
+1. Go to the **Assignments** tab.
+1. Click **Assign** > **Assign to Groups**.
+1. Assign your newly created groups to the application.
+
+## Test SSO login
+
+1. Log out of Redocly.
+1. Navigate to your organization's SSO login URL: `https://app.redocly.com/org/YOUR_ORG_SLUG`
+1. Click **Login with SSO**.
+1. Complete the Okta authentication flow.
+1. If you're using the same email address as your existing Redocly account, you'll be prompted to link accounts.
+1. Verify you can access all expected features and that your organization role is preserved.
+
+## Update default organization role
+
+After confirming SSO works correctly, you can adjust the default role for new users:
+
+1. In the platform, navigate to **Organization settings** > **SSO**.
+1. Edit your identity provider.
+1. Change the **Default organization role** to **Member** or **Viewer** based on your security requirements.
+1. Save the changes.
+1. Test by logging out and back in to ensure you retain access.
+
+## Test project SSO and RBAC
+
+To test project-level access control using Okta groups:
+
+1. In your project's `redocly.yaml` file, configure SSO and RBAC:
+   ```yaml
+   sso:
+     type: corporate
+   rbac:
+     content:
+       "**": read
+     tutorials:
+       redocly.developers: read
+   ```
+   This example allows everyone to read all content, but restricts tutorials to the `redocly.developers` group.
+
+1. Create the `redocly.developers` group in Okta.
+1. Assign users to the group.
+1. Assign the group to your SAML application in Okta.
+1. Test access by logging into your project - users should only see content they have permissions for.
+
+## Resources
+
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider types and how they apply to project authentication and access control
+- **[Add identity providers](./add-idp.md)** - Add identity providers in Redocly for centralized authentication management across your projects
+- **[Configure project SSO](./configure-sso.md)** - Enable multiple identity provider types for flexible project authentication options
+- **[Role-based access control](../../access/rbac.md)** - Grant specific users access to specific content using role-based permissions and access controls

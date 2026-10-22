@@ -1,0 +1,74 @@
+---
+plans:
+  - Scale
+  - Enterprise
+---
+# Configure project SSO
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+After you have [added an identity provider (IdP)](add-idp.md) in the Redocly platform, the IdP can then be configured in the `redocly.yaml` configuration file for individual projects.
+Adding an IdP to the configuration file for a project is not required for users to be able to use it to log in.
+You might not configure `sso` in the `redocly.yaml` file for a project.
+In that case, users can log in to the project using IdPs you have added in Redocly in the default priority order.
+You can configure `sso` in the `redocly.yaml` file of a project, to specify identity providers for that project.
+See the [Single sign-on (SSO) concept doc](./sso.md#default-priority-order) for more information on the default priority order.
+
+{% admonition type="info" name="attention" %}
+Configuring `sso` does not require users to log in to your project.
+To require login to a project, [`rbac`](../../config/access/rbac.md) or [`requiresLogin`](../../config/access/requires-login.md) must also be configured.
+{% /admonition %}
+
+## Before you begin
+
+Make sure you have:
+
+- [identity provider (IdP) information added in Redocly](./add-idp.md)
+
+and either:
+
+- `rbac` defined for the [`authenticated` default team](../teams.md#default-teams)
+- [`requiresLogin`](../../config/access/requires-login.md)
+
+## Specify IdPs for a project
+
+You can specify which identity providers (IdPs) users can log in to your project with.
+Configure `sso` in the `redocly.yaml` configuration file.
+
+For example, the following `sso` configuration limits users to the CORPORATE IdP, if it has been added in Redocly:
+
+```yaml {% title="redocly.yaml" %}
+sso: 
+  - CORPORATE
+```
+
+The following example allows users to use both the GUEST IdP (if it has been added in Redocly) and REDOCLY credentials:
+
+```yaml {% title="redocly.yaml" %}
+sso:
+  - GUEST
+  - REDOCLY
+```
+
+Redocly credentials are credentials created and saved in Redocly.
+
+## Disable SSO
+
+If you have configured `rbac`, but want to disable SSO, use the following `sso` configuration:
+
+```yaml {% title="redocly.yaml" %}
+sso: []
+```
+
+Disabling SSO is only necessary if you have `rbac` configured, but you don't want to require login to your project.
+Disabling SSO removes the login page, but does not disable `rbac`.
+
+## Resources
+
+- **[Add identity providers](./add-idp.md)** - Add identity providers in Redocly for unified authentication across projects and the Redocly login
+- **[Control site access](../../access/index.md)** - Implement role-based access control to restrict user access to specific project content and features
+- **[SSO configuration reference](../../config/access/sso.md)** - Complete reference documentation for all available SSO configuration options and settings
+- **[Single sign-on and login](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
+- **[Role-based access control](../../access/rbac.md)** - Understand how RBAC works in projects and Redocly for comprehensive access management
+- **[RBAC configuration reference](../../config/access/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 user provisioning for your SSO identity provider (early access on request)

@@ -1,0 +1,52 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Connect a Git provider
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+Connect your Redocly project to a Git provider to keep the two in sync.
+Changes you save in Redocly appear in your repository, and changes you push to your repository appear in your published project.
+You can connect a whole repository or one folder in it.
+You can connect a repository when you [create a project](../manage-projects.md#create-a-project-from-an-existing-repository), or later in the project's **Settings > Git hosting** page.
+
+The connection also drives builds.
+When you open a pull request, or commit and push, your Git provider notifies Redocly.
+Redocly then acts on the change, such as building a preview or deploying to production.
+
+You can connect these Git providers:
+
+- [GitHub](github.md)
+- [GitLab and GitLab self-managed](gitlab.md)
+- [Azure DevOps](azure-devops.md)
+- [Bitbucket Cloud](bitbucket-cloud.md)
+
+## IP allow lists
+
+If you use self-managed GitLab, GitHub Enterprise, or a GitHub organization with an IP allow list, allow these IP addresses.
+Redocly connects from them to deploy previews and production updates:
+
+**US region:**
+```sh
+3.211.34.228
+44.206.14.241
+54.156.60.142
+```
+
+**EU region:**
+```sh
+3.78.112.49
+52.58.255.31
+3.66.111.193
+```
+
+## Resources
+
+- **[Self-hosted Git providers](./manage-self-hosted.md)** - Register a self-managed GitLab or GitHub Enterprise instance so Redocly can reach it
+- **[Add remote files with one-way sync](../remote-content/index.md)** - Pull files from other repositories into your project
+- **[Use the Editor](../use-editor.md)** - Edit and review project content in the Redocly platform
+- **[Manage projects](../manage-projects.md)** - Find feedback, deployment details, and project settings
+- **[Configuration options](../../config/index.md)** - All the options you can set in redocly.yaml

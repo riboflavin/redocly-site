@@ -1,0 +1,178 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Review a pull request in the Redocly platform
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+Select a pull request from the list on the **Pull requests** page and click the **Review** tab to begin your review.
+
+You cannot approve or request changes in pull requests that you authored, but you can leave comments.
+
+## Review visual and code diff
+
+The **Review** tab opens with the **Visual** view by default, showing rendered pages before and after updates for visual comparison.
+
+Click **Code** on the toggle to view the text diff instead.
+For multi-file updates, select different pages from the sidebar navigation.
+
+Use the file tree filter on the left to find specific pages.
+
+## Add comments to reviews
+
+Add feedback as comments in either visual or code diff views.
+
+To add comments in the visual or code diff view:
+
+1. Click the comments icon on the right side.
+
+    {% img
+      src="../../images/comment-icon.png"
+      alt="Screenshot of top right side of review tab in Redocly with arrow pointing to the comments icon"
+      withLightbox=true
+      framed=true
+    /%}
+
+1. Enter your feedback.
+1. Click **Comment**.
+
+To add line-specific comments in code diff view:
+
+1. Hover over the line numbers.
+1. Click the plus icon.
+
+    {% img
+      src="../../images/plus-icon.png"
+      alt="Screenshot of code diff view in Redocly with arrow pointing towards plus icon"
+      withLightbox=true
+      framed=true
+    /%}
+
+1. Enter your feedback.
+1. Select one option:
+   - **Add a single comment**: to add a standalone comment.
+   - **Start a review**: to add multiple comments in a complete review.
+
+Use the text field toolbar to format text, add links, or insert images.
+Mention people or teams with the `@` symbol followed by their name.
+
+To add line-specific suggestions in code diff view:
+
+1. Hover over the line numbers.
+1. Click the plus icon.
+1. Click the suggestion icon.
+
+    {% img
+      src="../../images/review-suggestion-icon.png"
+      alt="Screenshot of comment form in Redocly with arrow pointing towards suggestion icon"
+      withLightbox=true
+      framed=true
+    /%}
+
+1. Make changes inside the suggestion code block.
+1. Select one option:
+   - **Add a single comment**: to add a standalone comment.
+   - **Start a review**: to add multiple comments in a complete review.
+
+You can then let the author of the pull request respond or commit your suggestion.
+You can also commit the suggestion yourself, depending on your ownership and workflow.
+
+## Filter pull request files
+
+With larger pull requests, not all edited files may be in your ownership or area of expertise.
+Additionally, pull requests with many large diffs can become more challenging to navigate.
+You can filter the edited files or mark them as viewed.
+
+To filter the files in the pull request:
+
+- In the sidebar on the left, enter a string that matches a part of a file name, file extension, or a folder.
+
+You can remove the filter by clicking the x icon in the filter text field.
+
+To hide the files you have already reviewed:
+
+- In the top-right corner of a file, tick the **Viewed** checkbox.
+
+You can also mark all files as viewed, by clicking the **Review all** button.
+
+## Approve or request changes
+
+After reviewing the pull request, click the **Review** button, add your final thoughts, and select one option:
+
+- **Comment**: to provide feedback without explicit approval or rejection.
+- **Approve**: to indicate the pull request is ready to merge.
+- **Request changes**: to specify issues that require resolution before approval.
+
+Format your review comment using the toolbar options, then click **Submit review**.
+To configure PR approval requirements (such as the minimum number of required approvals), use your Git provider's settings (for example, GitHub branch protection rules).
+
+Your project can use a [connected Git provider](../connect-git/connect-git-provider.md) (GitHub, GitLab, Azure DevOps, or Bitbucket).
+In that case, after the review is submitted, you will see a **Visual review** check on it.
+
+The check links back to the **Visual review** tab in Redocly and displays a short status (for example, **Pending**, **Approved**, **Changes requested**, or **No changes**).
+**Visual review** check updates automatically when you push a commit, submit a review or comment in Redocly.
+
+{% img
+  src="../../images/reunite-pull-request-visual-review-check.png"
+  alt="Screenshot of pull request checks in GitHub with an arrow pointing to the pending Visual review check"
+  withLightbox=true
+  framed=true
+/%}
+
+Projects have the **Visual review** check enabled by default.
+To disable it:
+
+- In your project, navigate to **Settings > Git hosting** and switch off **Visual review check**.
+
+When the check is disabled, a pull request that waits for a review gets the **Skipped** status instead of **Pending**.
+Approvals and change requests are still reported.
+
+If you connect your Git provider and the Redocly accounts before submitting your review, it will post a review to your Git repository.
+
+    {% img
+      src="../../images/reunite-pull-request-external-connect.png"
+      alt="Screenshot showing the Git provider connection banner in Redocly"
+      withLightbox=true
+      framed=true
+    /%}
+
+Comments synced to an external provider have a cloud icon next to them.
+Click this icon to view the comment on the provider’s platform.
+
+    {% img
+      src="../../images/reunite-pull-request-review-external-comments.png"
+      alt="Screenshot showing synchronized and unsynchronized comments in a pull request review"
+      withLightbox=true
+      framed=true
+    /%}
+
+{% admonition type="warning" name="Review posting behavior" %}
+Your accounts can be connected while you do not have review permissions in the provider.
+In that case, your review appears in Redocly only and is never posted to the provider.
+{% /admonition %}
+
+## Merge a pull request
+
+After a **Ready for review** pull request receives approval and passes checks, click **Merge**.
+
+{% admonition type="warning" name="Emergency merge process" %}
+Click **Merge without requirements** only for urgent changes when you're certain they won't cause build issues.
+
+{% img
+  src="../../images/reunite-pull-request-merge-without-requirements.png" alt="Screenshot of pull request in Redocly with arrow pointing to the Merge without requirements option" withLightbox=true width="" height=""
+  framed=true
+/%}
+
+The **Merge without requirements** button visibility is not customizable.
+{% /admonition %}
+
+After merging, the updates appear in the main branch and trigger a deployment to publish changes to the production project.
+
+## Resources
+
+- **[Use the editor](../use-editor.md)** - Create and edit content in Markdown and Markdoc with collaborative editing features and real-time preview capabilities
+- **[About Redocly platform](../../platform.md)** - Understand Redocly's cloud platform features for collaborative content management and workflow automation
+- **[the platform configuration reference](../../config/reunite.md)** - Configure deployment settings to allow publishing builds despite broken links or Markdoc syntax issues

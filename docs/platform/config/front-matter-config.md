@@ -1,0 +1,239 @@
+# Front matter configuration options
+
+Add front matter to Markdown pages to configure page-specific options.
+Front matter must appear at the beginning of a Markdown file in valid YAML format between triple-dashed lines (`---`).
+
+Front matter options fall into two categories:
+- Options available **only** in page front matter
+- Options that **override** global configurations from `redocly.yaml`
+
+## Front matter-only options
+
+These options are available exclusively in front matter:
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- excludeFromSearch
+- boolean
+- Exclude the page from search results (both AI search and keyword search), `llms.txt`, and the sitemap when set to `true`.
+  Default: `false`.
+
+  Search indexes are only built on the production branch.
+  Changes to `excludeFromSearch` appear in search results after the next production build.
+
+  To exclude OpenAPI description files from search, see: [`openapi` configuration](./openapi/index.md).
+
+---
+
+- sidebar
+- object
+- Sidebar to display for this page.
+  Set `path` to the `sidebars.yaml` file, for example `sidebar:` then `path: sidebars.yaml`.
+
+  Redocly deprecates the older form that sets the path as a string directly.
+  That form still works, and Redocly logs a deprecation warning that names the file.
+
+---
+
+- slug
+- string | [string]
+- Custom URL path for this page, instead of the default path based on folder and file names.
+  Define multiple slugs to make content available at multiple URLs.
+  Slugs can contain multiple segments, for example: `'/custom-pages/page-1'`.
+
+---
+
+- template
+- string
+- Path to a custom template for the Markdown page.
+  Omit file extensions.
+  Use relative paths for local templates and absolute paths for templates from node modules.
+  Overrides a template assigned by [`markdown.template`](./markdown.md#options) in `redocly.yaml`.
+  See [Customize page templates](../customization/custom-page-templates.md) for details.
+
+---
+
+- navigation
+- [`page` and `label` options](./navigation.md#options-that-apply-to-front-matter-only)
+- Customize the links and button labels of `nextButton` and `previousButton`.
+  These options are available for front matter config only.
+
+---
+
+- keywords
+- object
+- Curate search results for the page with `includes` and `excludes` lists.
+  See [Curate search results](./search.md#curate-search-results).
+  Requires the Typesense search engine.
+
+{% /table %}
+
+## Options that override global configuration
+
+These options work in both front matter and `redocly.yaml`.
+When defined in front matter, they override the global configuration:
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- [banner](./banner.md)
+- array
+- Configure page-specific announcement banners.
+  When defined in front matter, banners automatically target the page where they're configured and take priority over global banners.
+  The `target` option is not needed for front matter banners.
+
+---
+
+- [breadcrumbs](./breadcrumbs.md)
+- object
+- Toggle breadcrumbs display or prefix them with custom links.
+
+---
+
+- [codeSnippet](./code-snippet.md)
+- object
+- Configure code snippet controls such as `copy`, `report`, `expand`, and `collapse`.
+
+---
+
+- [colorMode](./color-mode.md)
+- object
+- Toggle color mode switcher display with the `hide` option.
+
+---
+
+- [feedback](./feedback.md)
+- object
+- Customize or hide the sentiment feedback form at the bottom of pages.
+
+---
+
+- [footer](./footer.md)
+- object
+- Toggle footer display with the `hide` option (the only footer property available in front matter).
+
+---
+
+- [markdown](./markdown.md)
+- object
+- Customize element behavior and appearance, including [last updated](./markdown.md#last-updated-object), [table of contents](./markdown.md#table-of-contents-object), and [edit page](./markdown.md#edit-page-object).
+
+---
+
+- [metadata](./metadata.md)
+- object
+- Attach metadata to the page for catalogs, filtering, and search.
+
+---
+
+- [navigation](./navigation.md)
+- object
+- Customize the behavior and appearance of the **Next page** and **Previous page** navigation buttons.
+
+---
+
+- [navbar](./navbar.md)
+- object
+- Toggle navbar display with the `hide` option (the only navbar property available in front matter).
+
+---
+
+- rbac
+- [Map[string, string]](./access/rbac.md#team-to-role-map)
+- Map of teams to roles.
+  Set access permissions for the page.
+
+---
+
+- [redirects](./redirects.md)
+- object
+- Map paths that should redirect to this page, each with an optional `type` (default `301`).
+
+---
+
+- [search](./search.md)
+- object
+- Customize the behavior and appearance of the **Search** dialog.
+
+---
+
+- [seo](./seo.md)
+- object
+- Configure SEO information in the page's `<head>` element.
+
+---
+
+- [versionPicker](./version-picker.md)
+- object
+- Set the visibility of the version picker.
+
+{% /table %}
+
+## Examples
+
+### Example 1: Custom URL and page template
+
+This configuration:
+- Creates two interchangeable URL paths: `/pricing` and `/subscribe`
+- Uses a custom blog post template
+- Hides the color mode switcher
+
+```yaml
+---
+slug:
+  - /pricing
+  - /subscribe
+template: './@theme/Templates/BlogPost'
+colorMode:
+  hide: true
+---
+```
+
+### Example 2: SEO and component configuration
+
+This configuration:
+- Prevents search engine indexing
+- Hides the report button on code snippets
+- Limits table of contents to h2 headers
+- Adds a "Home" link to the page breadcrumbs
+
+```yaml
+---
+seo:
+  meta:
+    - name: robots
+      content: noindex
+codeSnippet:
+  report:
+    hide: true
+markdown:
+  toc:
+    depth: 2
+breadcrumbs:
+  prefixItems:
+    - page: index.page.tsx
+      label: Home
+      labelTranslationKey: home.title
+---
+```
+
+## Best practices
+
+Use `redocly.yaml` for most configuration settings and use front matter only for page-specific overrides.
+
+## Resources
+
+- **[Customize page templates](../customization/custom-page-templates.md)** - Create custom page templates to override default layouts and implement unique page designs
+- **[Configuration options](./index.md)** - Complete configuration reference for the redocly.yaml file and project settings
+- **[Block search indexing](./seo.md#control-search-indexing)** - Use the noindex rule in front matter to control search engine indexing on specific pages

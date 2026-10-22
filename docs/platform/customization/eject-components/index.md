@@ -1,0 +1,73 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+
+# Eject components
+
+In some cases, it may be necessary to extend the functionality of existing components, such as the Search, Footer, Markdoc Card, `NotFound`, or `Forbidden` components.
+The eject feature allows you to create a local copy of the component’s source code within your project.
+After that, you can customize the component's styles, structure, or behavior.
+
+For example, you can eject the `NotFound` or `Forbidden` components to customize your 404 and 403 error pages with custom styling, messaging, or additional functionality.
+
+{% admonition type="warning" name="Eject component warning" %}
+  Once a component is ejected and customized, it's your responsibility to maintain the implementation moving forward.
+  Make sure a component cannot be customized [in other ways](#before-you-begin) before ejecting.
+{% /admonition %}
+
+## Before you begin
+
+Check if it is possible to customize your component without ejecting:
+
+- You can configure some components using the [redocly.yaml configuration file](../../config/index.md).
+- You can customize component styles using CSS variables in a [styles.css file](../../branding/customize-styles.md).
+- You can customize component text and labels using a [translations.yaml file](../../content/localization/translation-keys.md).
+
+## Find components with browser dev tools
+
+Before you eject a component, you need to determine the correct files to eject to achieve the effect you want to make.
+The browser developer tools can help you identify which components are ejectable.
+
+To determine the component to eject using Google Chrome developer tools do the following:
+
+1. Open developer tools - right-click the element you're interested in and select **Inspect** or press `F12`.
+
+    {% img
+      alt="Inspect component"
+      src="../images/inspect-component.png"
+      height=300
+      withLightbox=true
+      framed=true
+    /%}
+
+1. Identify component name - find `data-component-name` attribute and see its value.
+
+    {% img
+      alt="Find data component name"
+      src="../images/find-data-component-name.png"
+      height=400
+      withLightbox=true
+      framed=true
+    /%}
+
+## Eject component
+
+First determine that you need to alter a component by ejecting it and which component you want to alter.
+Then eject your component in one of the following ways:
+
+- [Using the Redocly platform web editor (recommended)](./eject-components-in-platform.md): Use the UI in Redocly to select the component and eject the files into your project.
+- [Using Redocly CLI](./eject-components-using-cli.md): Use Redocly CLI to select the component and eject the files.
+  Before you can eject components using Redocly CLI, you must download all of your project files, so you can work with them locally.
+  Afterward, the ejected component files need to be added to your files in Redocly.
+
+
+## Resources
+
+- **[Redocly CLI eject command](https://redocly.com/docs/cli/commands/eject)** - Complete command reference and options for ejecting components using the command line interface
+- **[Eject components tutorial](./eject-components-tutorial/index.md)** - Step-by-step practical guide to ejecting and customizing built-in components with real examples
+- **[Eject components in Redocly](./eject-components-in-platform.md)** - Learn how to eject components to customize in Redocly
+- **[Eject components using Redocly CLI](./eject-components-using-cli.md)** - Learn how to eject components to customize using the CLI
+- **[Customize styles](../../branding/customize-styles.md)** - Learn how to apply custom styling to your project

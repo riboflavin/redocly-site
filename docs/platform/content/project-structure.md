@@ -1,0 +1,374 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+title: Project structure
+description: An introduction to the file structure of a Redocly project.
+---
+
+# Project structure
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+Redocly follows a **zero-config** philosophy.
+While it provides an opinionated structure for clarity, the only hard requirement is **at least one content file** to generate a documentation site.
+
+Knowing the common conventions helps you navigate, contribute to, and customize your project more effectively.
+
+## Common directories and files
+
+A typical Redocly project includes the following folders and files.
+Only one content file is strictly required — the rest are optional but help organize and extend your project:
+
+- content files and folders: the files that generate pages (see [Content Files](#content-files) below).
+  This is the only *required* element - you need at least one file of content.
+- `redocly.yaml`: the primary configuration file used to customize features, navigation, theming, and more.
+  While optional for a basic start, it's essential for most customizations.
+- `package.json`: the project manifest for managing Node.js dependencies.
+  It is required only if you want to specify a particular version of Redocly packages or install any third-party dependencies.
+- `_partials/`: a directory for reusable Markdoc partials
+- `@l10n/`: a directory for locale folders
+- `@api`: a directory for API functions
+- `@theme/`: a directory for customizing the look, feel, and components of your portal
+- `static/`: optional directory for assets that should be copied directly to the build output without processing
+- `sidebars.yaml`: optional file(s) that define the structure of one or multiple navigation sidebars
+
+### Example project tree
+
+A common Redocly project directory might look like this:
+
+{% tabs %}
+{% tab label="Multiple Sidebars" %}
+
+```treeview
+.
+├── @theme/                 # Theme customizations and custom components
+│   ├── layouts/
+│   ├── markdoc/            # Markdoc configuration
+│   │   ├── components.tsx  # Markdoc custom components
+│   │   └── schema.ts       # Markdoc custom schema
+│   └── styles.css          # Custom global CSS
+├── _partials/              # Reusable Markdoc partials
+├── apis/                   # API description files (e.g., OpenAPI, AsyncAPI, GraphQL)
+│   └── museum.yaml
+├── guides/                 # Guides
+│   ├── guide-1.md
+│   ├── guide-2.md
+│   ├── images/             # Images for the specific content
+│   │   └── guide-1-screenshot.png
+│   ├── index.md
+│   └── sidebars.yaml       # Sidebar specific to the 'guides' section
+├── images/                 # Various shared images
+│   ├── favicon.png
+│   └── header-image.png
+├── tutorials/              # Tutorials
+│   ├── tutorial-1.md
+│   ├── tutorial-2.md
+│   ├── index.md
+│   └── sidebars.yaml       # Sidebar specific to the 'tutorials' section
+├── static/                 # Static assets copied directly to build output
+│   └── robots.txt
+├── index.page.tsx          # Custom React component for the landing page
+├── package.json            # Node.js project manifest
+└── redocly.yaml            # Main Redocly configuration file
+```
+
+{% /tab %}
+
+{% tab label="Single Sidebar" %}
+
+```treeview
+.
+├── @theme/                 # Theme customizations and custom components
+│   ├── layouts/
+│   ├── markdoc/            # Markdoc configuration
+│   │   ├── components.tsx  # Markdoc custom components
+│   │   └── schema.ts       # Markdoc custom schema
+│   └── styles.css          # Custom global CSS
+├── _partials/              # Reusable Markdoc partials
+├── apis/                   # API description files (e.g., OpenAPI, AsyncAPI, GraphQL)
+│   └── museum.yaml
+├── guides/                 # Guides
+│   ├── guide-1.md
+│   ├── guide-2.md
+│   ├── images/             # Images for the specific content
+│   │   └── guide-1-screenshot.png
+│   └── index.md            # Landing page for guides
+├── images/                 # Various shared images
+│   ├── favicon.png
+│   └── header-image.png
+├── tutorials/              # Tutorials
+│   ├── tutorial-1.md
+│   ├── tutorial-2.md
+│   └── index.md            # Landing page for tutorials
+├── static/                 # Static assets copied directly to build output
+│   └── robots.txt
+├── index.md                # Landing page as markdown file
+├── package.json            # Node.js project manifest
+├── redocly.yaml            # Main Redocly configuration file
+└── sidebars.yaml           # Single sidebar definition for the entire site
+```
+
+{% /tab %}
+
+{% tab label="Multiple locales" %}
+
+The following example file structure is for a Redocly project that includes three locales - Spanish-Spain, French and English (default):
+
+```treeview
+.
+├── @l10n/
+│   ├── es-ES/
+|   |   ├── tutorials/
+|   |   │   ├── getting-started.md
+|   |   │   └── index.md
+|   |   ├── how-tos/
+|   |   │   ├── install.md
+|   |   │   └── index.md
+|   |   ├── concepts/
+|   |   │   ├── terms.md
+|   |   │   └── index.md
+|   |   └── translations.yaml
+│   ├── fr/
+|   |   ├── tutorials/
+|   |   │   ├── getting-started.md
+|   |   │   └── index.md
+|   |   ├── how-tos/
+|   |   │   ├── install.md
+|   |   │   └── index.md
+|   |   ├── notions/
+|   |   │   ├── terms.md
+|   |   │   └── index.md
+|   |   └── translations.yaml
+├── tutorials/
+│   ├── getting-started.md
+│   └── index.md
+├── how-tos/
+│   ├── install.md
+│   └── index.md
+├── concepts/
+│   ├── terms.md
+│   └── index.md
+├── sidebars.yaml
+├── index.md
+└── redocly.yaml
+```
+{% /tab %}
+
+{% tab label="Multiple products" %}
+
+```treeview
+.
+├── @theme/                 # Theme customizations and custom components
+│   ├── layouts/
+│   ├── markdoc/            # Markdoc configuration
+│   │   ├── components.tsx  # Markdoc custom components
+│   │   └── schema.ts       # Markdoc custom schema
+│   └── styles.css          # Custom global CSS
+├── _partials/              # Reusable Markdoc partials
+├── products/               # Guides
+│   ├── product-1/          # Product 1
+|   |   ├── apis/           # The nested project structure can use any content structure
+|   |   ├── concepts/
+|   |   ├── how-tos/
+|   |   ├── tutorials/
+|   |   ├── index.md
+|   |   └── sidebars.yaml
+│   ├── product-2/          # Product 2
+|   |   ├── apis/
+│   │   ├── concepts/
+│   │   ├── how-tos/
+│   │   ├── tutorials/
+│   │   ├── index.md
+│   │   └── sidebars.yaml
+├── images/                 # Various shared images
+│   ├── favicon.png
+│   └── header-image.png
+├── static/                 # Static assets copied directly to build output
+│   └── robots.txt
+├── index.page.tsx          # Custom React component for the landing page
+├── package.json            # Node.js project manifest
+└── redocly.yaml            # Main Redocly configuration file
+```
+{% /tab %}
+
+{% tab label="Minimal" %}
+
+```treeview
+.
+└── index.md                # Landing page as markdown file
+```
+{% /tab %}
+
+{% /tabs %}
+
+*(Note: This is an illustrative example.
+Your specific structure might vary based on configuration and content organization.)*
+
+## Core configuration
+
+### `redocly.yaml`
+
+This is the central configuration file for your Redocly project.
+
+Refer to the [Redocly configuration documentation](../config/index.md) for a complete overview.
+
+### `package.json`
+
+Standard Node.js project file used by package managers (like `pnpm`, `npm`, `yarn` or `bun`) to manage project dependencies.
+
+It is optional but when it exists it must list your Redocly package as a dependency (e.g. `@redocly/framework`).
+It may also include other packages for custom React-based pages or specific features.
+
+### `sidebars.yaml`
+
+You can create one or more `sidebars.yaml` files to define custom navigation structures.
+Each file declares a hierarchy of items (pages, groups, links, separators).
+
+A sidebar appears only if the current page is explicitly listed in a `sidebars.yaml`.
+If `sidebars.yaml` file doesn't exist, Redocly falls back to generating a basic sidebar from the folder structure.
+
+For complex projects, using multiple `sidebars.yaml` files (e.g., one per major section) provides fine-grained navigation control.
+
+Refer to the [Sidebars configuration options](../config/sidebar.md) for detailed syntax and options.
+
+## Content files
+
+Redocly treats several file types as primary content sources, automatically generating documentation pages from them based on their location in the filesystem.
+
+Supported content file types include:
+
+- **Markdown (`.md`)**: The most common format for documentation pages.
+  Redocly uses [**Markdoc**](https://markdoc.io/), an extensible Markdown format, allowing for custom tags, partials, and advanced content features.
+- **React pages (`.page.tsx`)**: React components used for pages requiring complex layouts, dynamic data fetching, or custom interactive elements.
+  These allow full control over layout, interactivity, and data fetching.
+- **API descriptions (`.yaml`, `.json`, `.graphql`)**: API specification files (OpenAPI, AsyncAPI, GraphQL schemas).
+
+## File-based routing
+
+Redocly uses a file-based routing system.
+The path and name of a content file within your project root directly determine the URL path for the generated page.
+The file extension is automatically removed.
+
+- `get-started/installation.md` becomes `/get-started/installation`
+- `concepts/markdoc.md` becomes `/concepts/markdoc`
+- `changelog.page.tsx` becomes `/changelog`
+- `api/reference/museum.yaml` becomes `/api/reference/museum`
+
+Content files named `index` (e.g., `index.md`, `index.page.tsx`, or even `index.yaml`) serve as the default page for their directory.
+
+- `/index.md` or `/index.page.tsx` at the root becomes the site's home page (`/`).
+- `concepts/index.md` becomes the page accessed at the `/concepts` URL path.
+- `api/reference/index.yaml` becomes `/api/reference`.
+
+When content is versioned, the URL path includes the version subfolder.
+The default version subfolder is the exception: that segment is omitted from the path.
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` (default version) becomes `/config/guide`.
+- `/config/@v3/guide.md` becomes `/config/v3/guide`.
+
+When the default version changes to `v3`, the paths also change:
+
+- `/config/@v1/guide.md` becomes `/config/v1/guide`.
+- `/config/@v2/guide.md` becomes `/config/v2/guide`.
+- `/config/@v3/guide.md` (default version) becomes `/config/guide`.
+
+Some of your content files in the same location may share a name but have different extensions.
+A file can also be an index file in a folder with the same name as files in the parent folder:
+
+```treeview {% title="Example of files with identical names in the same folder" %}
+...
+├── payments/
+│   └── index.md
+├── payments.md
+├── payments.page.tsx
+└── payments.yaml
+```
+
+After building the project, all four files would generate the same route: `/payments`.
+To avoid having the same route leading to different resources, the build process appends a number (`-n`) to each path.
+In this case, paths to the files would be:
+
+- `/payments`
+- `/payments-1`
+- `/payments-2`
+- `/payments-3`
+
+## Content reuse
+
+You can reuse content across your project by using the [partial markdoc tag](./markdoc-tags/partial.md).
+Reusable content should be stored in the `_partials` directory.
+Learn more about [Markdoc tags](./markdoc-tags/tag-library.md) for other content enhancement options.
+
+## @l10n
+
+The `@l10n` directory is used to store locale files.
+Each locale has its own folder, and within each locale folder, you can create subfolders for different sections of your documentation.
+
+There is also an optional `translations.yaml` file that contains the list of UI labels for the locale.
+
+For more information, see [l10n configuration](../config/l10n.md).
+
+## @api
+
+The `@api` directory is the default location for [API functions](../customization/api-functions/index.md) in your project.
+You can change the name of this directory in the [`apiFunctions` config](../config/api-functions.md).
+
+## Versioned content
+
+Redocly supports versioned content by using a special folder structure.
+
+Folders prefixed with `@` (e.g., `@v1`, `@v2`) are treated as separate content versions.
+For information how to set up versioned content in your project, see [Version content](./versions.md).
+
+## Multi-product
+
+You can include multiple products in your project that users can switch between using a product picker in the navbar.
+A product can be any set of content you want to separate from other documentation.
+
+For more information, see [Multi-product overview](../navigation/multi-product.md) and [products configuration](../config/products.md).
+
+## Customization
+
+### `@theme`
+
+This special directory allows you to customize the default Redocly theme.
+You can override or add various elements:
+
+- **Components (Ejected/Overridden)**: Replace or extend default theme components (like headers, buttons, code blocks, layouts) by placing your custom React components in corresponding paths within `@theme/*`.
+  This process is often referred to as **"ejecting"**.
+  Refer to the [Eject components](../customization/eject-components/index.md) for more information.
+- **Styles**: Add global custom CSS rules or modify [theme variables](../branding/css-variables/index.md) in the `@theme/styles.css` file.
+  This file serves as the main entry point for your custom global styles.
+- **Custom Markdoc tags and functions**: Create [new Markdoc tags](../customization/build-markdoc-tags.md) and [functions](../customization/build-custom-function.md) within the `@theme/markdoc` directory to enhance your Markdoc.
+
+### Static files (`static/`)
+
+Assets referenced directly within your content files (like images in Markdown using relative paths `./images/diagram.png`) are typically processed and bundled by Redocly.
+However, you often need files that are copied directly to the root of the final build output without any changes.
+
+The `static/` directory serves this purpose.
+Any files placed inside the `static/` folder will be copied verbatim to the root of your built site.
+
+Use `static/` for things like:
+- `robots.txt`
+- `favicon.ico` and other site icons/manifest files
+- verification files for search engines or other services
+- other assets that must exist at specific paths and shouldn't be processed (e.g., fonts referenced by external CSS, specific JS libraries).
+
+{% admonition type="info" name="Static files impact on your project" %}
+
+Files in `static/` are *not* processed or optimized by Redocly's build system.
+Avoid placing regular images, CSS, or JavaScript that you author yourself in the `static/` directory if you expect them to be bundled or optimized.
+These files usually belong alongside your content files or within the `@theme` directory.
+
+{% /admonition %}
+
+## Resources
+
+- **[Multiple products configuration](../config/products.md)** - Set up product switching and organize documentation for multiple products with separate navigation and branding
+- **[Multiple languages setup](../config/l10n.md)** - Configure localization and internationalization for multi-language documentation projects
+- **[Partial tag](./markdoc-tags/partial.md)** - Share and reuse content across multiple pages and projects to maintain consistency and reduce duplication
+- **[Configure sidebars](../navigation/sidebars.md)** - Configure navigation structures and sidebar organization with detailed syntax and options reference

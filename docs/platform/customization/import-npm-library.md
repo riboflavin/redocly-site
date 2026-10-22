@@ -1,0 +1,173 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Import npm libraries
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+This topic explains how to incorporate external React component libraries from npm into your project.
+You'll learn how to install and import UI components from popular React libraries.
+
+## Install the library
+
+### Install the library locally
+
+Use npm to install the external library.
+For example, to install React Icons, use the following command:
+
+```bash
+npm install react-icons
+```
+
+### Install the library in the Redocly platform
+
+If you are working in Redocly, you can install the library by adding it to the `package.json` file.
+
+```json
+{
+  // ...
+  "dependencies": {
+    // existing dependencies
+    "react-icons": "^4.11.0"
+  }
+}
+```
+
+Follow the steps in [Run a specific product version in Redocly](../get-started/upgrade-realm-version.md#run-a-specific-product-version-in-redocly)
+to create a `package.json` file if you don't have one already.
+
+## Configure private registries
+
+You might need to install libraries from private npm registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
+Configure registry access using either `.npmrc` or `bunfig.toml` files.
+
+### Use `.npmrc`
+
+Create a `.npmrc` file in your project root:
+
+```text
+@myorg:registry=https://registry.myorg.com/
+//registry.myorg.com/:_authToken=${NPM_TOKEN}
+```
+
+### Use `bunfig.toml` (recommended)
+
+For enhanced flexibility, create a `bunfig.toml` file in your project root:
+
+```toml
+[install.scopes]
+# Using environment variables for credentials
+"@myorg" = { token = "$NPM_TOKEN", url = "https://registry.myorg.com/" }
+
+# Alternative with username/password
+"@mycompany" = {
+  username = "$NPM_USERNAME",
+  password = "$NPM_PASSWORD",
+  url = "https://registry.mycompany.com/"
+}
+```
+
+### Secure credential management
+
+{% admonition type="warning" name="Protect sensitive information" %}
+Never commit registry credentials directly to your repository.
+Always use environment variables for sensitive information like tokens, usernames, and passwords.
+{% /admonition %}
+
+Store your registry credentials as environment variables:
+
+- For local development, add them to your `.env` file (do not commit secrets to Git):
+   ```text
+   NPM_TOKEN=your-private-token-here
+   NPM_USERNAME=your-username
+   NPM_PASSWORD=your-password
+   ```
+
+- For the Redocly projects, add them through the **Settings** > **Environment variables** page and mark them as secrets.
+  The platform supports environment variable names that start with `NPM_` for private package registries.
+
+For more information about managing environment variables, see **[Use environment variables](../project/env-variables.md)**.
+
+## Import and use components
+
+After installation, you can import components directly in your React files, as in the following example:
+
+```tsx
+import * as React from 'react';
+import { FaHeart, FaThumbsUp } from 'react-icons/fa';
+
+export function MyComponent() {
+  return (
+    <div>
+      <FaHeart color="red" size={24} />
+      <FaThumbsUp color="blue" size={24} />
+    </div>
+  );
+}
+```
+
+## Usage with Markdoc
+
+For more information about how to register and use custom Markdoc tags, see [Build markdoc tags](./build-markdoc-tags.md).
+
+To use external components within Markdoc, you'll need to register them in your schema, as in the following example:
+
+```ts {% title="@theme/markdoc/schema.ts" %}
+// @theme/markdoc/schema.ts
+import type { MarkdocTagSchema } from '@redocly/theme/markdoc/tags/types';
+
+export const tags: Record<string, MarkdocTagSchema> = {
+  // ... existing tags ...
+  reactIcon: {
+    render: 'ReactIcon',
+    attributes: {
+      name: {
+        type: 'string',
+        required: true,
+      },
+      size: {
+        type: 'number',
+        default: 24,
+      },
+      color: {
+        type: 'string',
+        default: 'currentColor',
+      },
+    },
+  },
+};
+```
+
+You also need to export your components as in the following example:
+
+```tsx {% title="@theme/markdoc/components.ts" %}
+import * as React from 'react';
+import { FaHeart, FaThumbsUp } from 'react-icons/fa';
+
+export function ReactIcon({ name, size = 24, color = 'currentColor' }) {
+  const icons = {
+    heart: FaHeart,
+    thumbsUp: FaThumbsUp,
+  };
+
+  const IconComponent = icons[name];
+  return <IconComponent size={size} color={color} />;
+}
+```
+
+You can use the icon tag in your Markdoc files, as in the following example:
+
+```markdoc {% process=false %}
+{% reactIcon name="heart" color="red" /%}
+{% reactIcon name="thumbsUp" color="blue" size=32 /%}
+```
+
+## Resources
+
+- **[Use environment variables](../project/env-variables.md)** - Configure secure credentials for private registry access using environment variables
+- **[Build Markdoc tags](./build-markdoc-tags.md)** - Create reusable Markdoc tags using imported npm libraries for enhanced functionality
+- **[Icon tag](../content/markdoc-tags/icon.md)** - Use Redocly's built-in icon system and learn patterns for extending it with external icon libraries
+- **[Extend with code](./index.md)** - Discover customizable components and customization options for your project

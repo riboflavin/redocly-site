@@ -1,0 +1,94 @@
+---
+plans:
+  - Pro
+  - Scale
+  - Enterprise
+---
+# Redocly platform user profile menu
+
+{% configOptionRequirements plans=$frontmatter.plans /%}
+
+In the user profile menu you can view your information, adjust notifications you receive, and switch the color mode.
+You can also add, remove or switch between connected Git provider accounts.
+
+To open the user profile menu, click your name at the bottom of Redocly's navigation pane on the left side of the page.
+Your profile settings apply only to the currently selected organization.
+
+## Set email notification preferences
+
+To choose which email notifications you receive from Redocly:
+
+1. Open the user profile menu.
+1. Click the **Notifications** tab.
+1. Click the **Enable notifications** toggle to turn notifications on or off.
+1. (Optional) Enable or disable notification categories to your preferences.
+   Choose between:
+     - Pull requests
+     - Deployments
+     - Remote content
+     - Feedback
+     - User
+1. (Optional) You can further refine your selection by choosing events that trigger notifications.
+
+If you disable all notification categories, the **Enable notifications** toggle automatically turns off.
+
+## Change Redocly's color mode
+
+To change the color mode:
+
+1. Open the user profile menu.
+1. Click the **Appearance** tab.
+1. Toggle between the available options:
+   - **System** to have the platform match your operating system's color mode.
+   - **Light**
+   - **Dark**
+
+## Connect a Git provider account
+
+To connect your Git provider account:
+
+1. Open the user profile menu.
+1. Click the **Connections** tab.
+1. In the row with your Git provider, click the **Connect** button.
+1. Log in to your Git provider and authorize Redocly to access your account.
+
+If the platform cannot use a Git credential that you own, the platform sends you an email with a link to reconnect it.
+You get this email only if [email notifications](#set-email-notification-preferences) are on.
+
+## Switch between your Git provider accounts
+
+If you have multiple accounts with a single Git provider, you can choose which account to use with Redocly.
+
+To switch between Git provider accounts:
+
+1. Log out of your Git provider's account.
+1. Open the user profile menu.
+1. Click the **Connections** tab.
+1. Click the **Switch login method** button.
+1. Log in to your Git provider with a different account.
+
+## Remove your Git provider account connection
+
+To disconnect your Redocly account from a Git provider:
+
+1. Open the user profile menu.
+1. Click the **Connections** tab.
+1. In the row with your Git provider, click **Remove connection** and confirm.
+
+If a connection is used by a project or by remote content, first disconnect your Git provider account from all associated projects or remote folders.
+
+## Log out from Redocly
+
+Log out from Redocly when you finish your work or when you want to switch to another account.
+
+To log out:
+
+1. Open the user profile menu.
+2. In the bottom-left corner, click **Logout**.
+
+Your session ends and you are redirected to the Login screen.
+
+## Resources
+
+- **[Redocly overview](./index.md)** - Understand how the platform and the API docs framework fit together to provide a complete documentation platform solution
+- **[About Redocly platform](./platform.md)** - Explore Redocly's collaborative content management and project workflow capabilities
