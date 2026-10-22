@@ -1,20 +1,20 @@
 ---
 seo:
  title: Use AI to automate documentation reviews in your PR workflow
- description: How to wire AI checklist reviews into every doc pull request alongside Reunite previews and Redocly CLI lint so style, spec, and judgment stay in separate layers.
+ description: How to wire AI checklist reviews into every doc pull request alongside Redocly platform previews and Redocly CLI lint so style, spec, and judgment stay in separate layers.
 ---
 
 # Use AI to automate documentation reviews in your PR workflow
 
 Doc teams rarely lack review intent. They lack a default moment when review happens. Changes slip through because nobody re-reads the changelog, the new tutorial page, and the OpenAPI diff in one sitting before merge. The practical fix is to automate review at the pull request boundary: every doc-related PR gets the same fast checks before a human spends attention.
 
-This article shows how to combine an AI checklist pass on the diff, [Explore Redocly CLI](https://redocly.com/docs/cli/) lint in CI, and human approval in [Reunite](https://redocly.com/reunite) into three layers that do not compete for the same job.
+This article shows how to combine an AI checklist pass on the diff, [Explore Redocly CLI](https://redocly.com/docs/cli/) lint in CI, and human approval in [Redocly platform](https://redocly.com/reunite) into three layers that do not compete for the same job.
 
 ## What to run on every documentation pull request
 
 Scope automation to files the PR actually touches. Typical triggers include changelog entries, new or edited Markdown guides, navigation or sidebar edits, and OpenAPI files when the API surface changes.
 
-Split the work by failure type. Style and clarity checks belong in an AI step that reads prose against a short checklist. Contract checks belong in the [lint command](https://redocly.com/docs/cli/commands/lint) against the spec. Strategic questions about whether a page should exist at all stay with human reviewers in [review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request).
+Split the work by failure type. Style and clarity checks belong in an AI step that reads prose against a short checklist. Contract checks belong in the [lint command](https://redocly.com/docs/cli/commands/lint) against the spec. Strategic questions about whether a page should exist at all stay with human reviewers in [review a pull request in Redocly](https://redocly.com/docs/platform/project/pull-request/review-pull-request).
 
 Keep each automated step under a few minutes on typical PRs. Long-running full-corpus reviews belong on a schedule, not on every push.
 
@@ -26,7 +26,7 @@ The AI lane applies a versioned checklist to added or changed text. It flags vag
 
 The CLI lane runs [built-in rules](https://redocly.com/docs/cli/rules/built-in-rules) and your [guide to configuring a ruleset](https://redocly.com/docs/cli/guides/configure-rules) against OpenAPI and any Markdown rules you encoded under [API standards and governance](https://redocly.com/docs/cli/api-standards). Lint output should fail the check, not merely warn, for rules you treat as merge blockers.
 
-The human lane uses Reunite visual diffs and threaded comments for judgment calls: Is this tutorial in the right place? Does marketing need to sign off? Does the example match behavior QA verified this week?
+The human lane uses the platform visual diffs and threaded comments for judgment calls: Is this tutorial in the right place? Does marketing need to sign off? Does the example match behavior QA verified this week?
 
 None of these lanes replaces the others. AI is fast on prose patterns; lint is deterministic on schema shape; humans own context you did not paste into the prompt.
 
@@ -48,13 +48,13 @@ Avoid open-ended "improve this page" prompts on every commit. They rewrite voice
 
 For OpenAPI-only PRs, a separate prompt can ask for gap and consistency review as described in the same learn article, but keep that job separate from changelog style so failures are easy to route.
 
-## Where Reunite fits in the same workflow
+## Where Platform fits in the same workflow
 
-[Reunite](https://redocly.com/reunite) connects documentation work to Git branches, commits, and pull requests whether you use Redocly-hosted Git or an external provider. Authors [open a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/open-pull-request), invite reviewers, and use visual before-and-after previews on the Review tab so approvers see rendered pages, not only raw Markdown.
+[Platform](https://redocly.com/reunite) connects documentation work to Git branches, commits, and pull requests whether you use Redocly-hosted Git or an external provider. Authors [open a pull request in Redocly](https://redocly.com/docs/platform/project/pull-request/open-pull-request), invite reviewers, and use visual before-and-after previews on the Review tab so approvers see rendered pages, not only raw Markdown.
 
-Automated AI and lint checks should finish before you ask for human review, or at least post their status on the PR so reviewers know what is already clean. The [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) hub links editor, deployment, and PR tasks in one place.
+Automated AI and lint checks should finish before you ask for human review, or at least post their status on the PR so reviewers know what is already clean. The [the platform documentation](https://redocly.com/docs/platform/reunite) hub links editor, deployment, and PR tasks in one place.
 
-Treat Reunite as the conversation surface after machines narrow the diff. Bots surface checklist violations; humans decide what to merge.
+Treat the platform as the conversation surface after machines narrow the diff. Bots surface checklist violations; humans decide what to merge.
 
 ## Run Redocly CLI lint on the same pull request
 
@@ -87,7 +87,7 @@ This approach cannot replace editorial ownership, localization review, or securi
 graph TD
   P[Doc PR opened] --> A[AI checklist on diff]
   P --> L[Redocly CLI lint in CI]
-  A --> H[Human review in Reunite]
+  A --> H[Human review in Redocly]
   L --> H
   H --> M[Merge when checks pass]
 ```
@@ -96,6 +96,6 @@ Each pull request triggers parallel machine lanes, then human approval on a narr
 
 ## Learn more
 
-When you want Git-backed docs, previews, and pull request review in one product surface, start with [Reunite](https://redocly.com/reunite) and the [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) hub for editor and PR workflows.
+When you want Git-backed docs, previews, and pull request review in one product surface, start with [Platform](https://redocly.com/reunite) and the [the platform documentation](https://redocly.com/docs/platform/reunite) hub for editor and PR workflows.
 
 Add [Explore Redocly CLI](https://redocly.com/docs/cli/) with the [lint command](https://redocly.com/docs/cli/commands/lint) and [API standards and governance](https://redocly.com/docs/cli/api-standards) when you want the same spec rules on every PR in CI.

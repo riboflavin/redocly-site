@@ -17,10 +17,10 @@ export const cards = [
     moreItems: '',
     landingPage: '/learn/openapi/learning-openapi',
     items: [
-      { title: 'Get started with the Reunite editor', link: '/docs/realm/get-started/start-reunite-editor' },
-      { title: 'Start with local development', link: '/docs/realm/get-started/start-local-dev' },
-      { title: 'Migrate from legacy', link: '/docs/realm/get-started/migrate-api-reference' },
-      { title: 'Upgrade product version', link: '/docs/realm/get-started/upgrade-realm-version' },
+      { title: 'Get started with the Redocly editor', link: '/docs/platform/get-started/start-reunite-editor' },
+      { title: 'Start with local development', link: '/docs/platform/get-started/start-local-dev' },
+      { title: 'Migrate from legacy', link: '/docs/platform/get-started/migrate-api-reference' },
+      { title: 'Upgrade product version', link: '/docs/platform/get-started/upgrade-realm-version' },
     ],
   },
   {

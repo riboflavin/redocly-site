@@ -53,7 +53,7 @@ You send the request as you, from where you work.
 If you have API functions, the Replay tab is waiting in your editor.
 Open a function file, switch to Replay, and send your first request.
 
-For a step-by-step walkthrough, see [Test API functions](https://redocly.com/docs/realm/reunite/project/test-api-functions) in our docs.
+For a step-by-step walkthrough, see [Test API functions](https://redocly.com/docs/platform/project/test-api-functions) in our docs.
 New to API functions?
-Start with the [Create API functions](https://redocly.com/docs/realm/customization/api-functions/create-api-functions) tutorial.
+Start with the [Create API functions](https://redocly.com/docs/platform/customization/api-functions/create-api-functions) tutorial.
 

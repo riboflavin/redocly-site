@@ -26,7 +26,7 @@ With modern tools, however, it's a smaller transition than it might seem.
 
 Look around for rich editors or plugins for your IDE that fit your platform and chosen markup language.
 Having a good tool setup with a live preview, perhaps autocomplete or a helpful formatting toolbar, or even a WYSIWYG interface can provide a great experience for writers of all kinds.
-Best of all, every team member can choose the tool that suits their workflow whether that's vim, the [Reunite editor](../docs/realm/reunite/project/use-editor.md), an IDE like VSCode, or anything in between.
+Best of all, every team member can choose the tool that suits their workflow whether that's vim, the [Reunite editor](../docs/platform/project/use-editor.md), an IDE like VSCode, or anything in between.
 
 By keeping the content in a markup format, docs-as-code means separating the styling or presentation details from the actual content.
 The content can more easily be re-used, repurposed, restyled, and generally magnified.  You can work on the design or styling without needing to edit the content files.
@@ -46,7 +46,7 @@ Imposing formatting rules on all content can be frustrating at first if the chan
 When you work with very consistently formatted content layout, you gain familiarity with it and it becomes easier and quicker for your brain to parse.
 
 **Lint OpenAPI files** if your technical documentation projects include API reference documentation, then you probably have OpenAPI descriptions alongside your text-based markup content.
-Reunite users have the checks built into the platform, or for users of other platforms you can get the same functionality by adding [Redocly CLI](../docs/cli) to your setup.
+Reunite users have the checks built into Redocly, or for users of other platforms you can get the same functionality by adding [Redocly CLI](../docs/cli) to your setup.
 Take the time to think about the standards your APIs should meet, and customizing the linting setup to suit your own context.
 
 **Spelling and substitutions** can help to add a specialist vocabulary, including case-sensitive product names, to your existing spell-checked setup.

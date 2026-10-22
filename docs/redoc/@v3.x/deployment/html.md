@@ -92,7 +92,7 @@ You can add as many configuration attributes as you need.
 
 ### Theme configuration
 
-Redoc CE uses [CSS variables](https://redocly.com/docs/realm/branding/css-variables) under the hood.
+Redoc CE uses [CSS variables](https://redocly.com/docs/platform/branding/css-variables) under the hood.
 To customize your API documentation's appearance, override these variables in a stylesheet on your page.
 
 Redoc CE sets a `light` or `dark` class on the `<html>` element.
@@ -127,7 +127,7 @@ To use this code, either:
 - Put the CSS code inside a `<style>` tag in the `<head>` of your page.
 - Create a new CSS file and link it on your page: `<link rel="stylesheet" href="redoc-theme.css">`.
 
-The [common CSS variables](https://redocly.com/docs/realm/branding/css-variables/common) and [API docs CSS variables](https://redocly.com/docs/realm/branding/css-variables/api-docs) list the variables you can override.
+The [common CSS variables](https://redocly.com/docs/platform/branding/css-variables/common) and [API docs CSS variables](https://redocly.com/docs/platform/branding/css-variables/api-docs) list the variables you can override.
 
 ## Advanced options
 

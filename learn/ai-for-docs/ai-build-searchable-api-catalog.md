@@ -1,12 +1,12 @@
 ---
 seo:
  title: Use AI to build a searchable API catalog for your team
- description: Enrich API metadata with AI at scale and publish a searchable Reef catalog your developers can browse or query in natural language.
+ description: Enrich API metadata with AI at scale and publish a searchable Redocly catalog your developers can browse or query in natural language.
 ---
 
 # Use AI to build a searchable API catalog for your team
 
-A spreadsheet of service names is not a catalog. Developers need descriptions, owners, tags, and stable links they can search. You can use AI to enrich metadata across many OpenAPI files, then publish the result in Reef so the catalog stays current as specs change. That workflow extends the AI plus validation pattern in [How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs).
+A spreadsheet of service names is not a catalog. Developers need descriptions, owners, tags, and stable links they can search. You can use AI to enrich metadata across many OpenAPI files, then publish the result in Redocly so the catalog stays current as specs change. That workflow extends the AI plus validation pattern in [How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs).
 
 ## Lists versus catalogs
 
@@ -66,14 +66,14 @@ The after block still needs a human to confirm accuracy against the live service
 
 ## Ingest, enrich, and publish
 
-Collect specs with [Scout documentation](https://redocly.com/docs/realm/scout) and [What is Scout?](https://redocly.com/docs/realm/scout/what-is-scout) so enrichment starts from files in git, not from stale exports. Configure how APIs appear in the portal using [API catalog configuration](https://redocly.com/docs/realm/config/catalog-classic). Tune findability with [Search configuration](https://redocly.com/docs/realm/config/search) once metadata lands.
+Collect specs with [Scout documentation](https://redocly.com/docs/platform/scout) and [What is Scout?](https://redocly.com/docs/platform/scout/what-is-scout) so enrichment starts from files in git, not from stale exports. Configure how APIs appear in the portal using [API catalog configuration](https://redocly.com/docs/platform/config/catalog-classic). Tune findability with [Search configuration](https://redocly.com/docs/platform/config/search) once metadata lands.
 
 ```mermaid
 graph LR
   A[OpenAPI in repos] --> B[Scout collect]
   B --> C[AI metadata pass]
   C --> D[Human review]
-  D --> E[Reef catalog publish]
+  D --> E[Redocly catalog publish]
 ```
 
 Re-run enrichment when major paths change, not on every typo fix.
@@ -127,8 +127,8 @@ If your organization also runs API design reviews, feed catalog gaps back into t
 
 ## Summary
 
-Treat catalog metadata as a product: collect specs, enrich with grounded AI, review in git, and publish in Reef with search tuned for how your developers ask questions. Revisit catalog quality when teams complain they cannot find an API, not only when Scout adds new repositories.
+Treat catalog metadata as a product: collect specs, enrich with grounded AI, review in git, and publish in Redocly with search tuned for how your developers ask questions. Revisit catalog quality when teams complain they cannot find an API, not only when Scout adds new repositories.
 
 ## Learn more
 
-[Reef](https://redocly.com/reef) hosts the searchable catalog and Scout collection so enriched metadata stays tied to the repositories your teams already maintain.
+[Redocly](https://redocly.com/realm) hosts the searchable catalog and Scout collection so enriched metadata stays tied to the repositories your teams already maintain.

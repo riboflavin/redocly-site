@@ -112,7 +112,8 @@ const DropdownWrapper = styled.div`
   && {
     position: absolute;
     top: 100%;
-    left: -150px;
+    /* lines the products menu up with the logo */
+    left: -143px;
     margin: 0;
     cursor: default;
     z-index: 2;

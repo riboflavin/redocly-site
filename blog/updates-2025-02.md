@@ -36,7 +36,7 @@ AI search is now generally available for **Enterprise** and **Enterprise Plus** 
 AI search is designed to **help developers and technical teams** find the right answers **faster**, cutting down on time spent searching through documentation.
 
 **Want to customize AI search settings?**
-You can [add your own custom prompt](/docs/realm/config/search).
+You can [add your own custom prompt](/docs/platform/config/search).
 
 Don't want it?
 You can also **turn AI search off** in your `redocly.yaml` configuration:

@@ -1,22 +1,22 @@
 ---
 seo:
  title: Use AI to find duplicate and underused APIs in your codebase
- description: Combine Reef API Scout discovery with structured AI review to spot overlapping endpoints and low-use services before you consolidate.
+ description: Combine Redocly API Scout discovery with structured AI review to spot overlapping endpoints and low-use services before you consolidate.
 ---
 
 # Use AI to find duplicate and underused APIs in your codebase
 
-Large organizations often discover the same capability twice because teams ship in parallel. You can run a discovery audit that starts with inventory from Reef API Scout, then uses a model to group similar endpoints and flag APIs with weak ownership or usage signals. The pairing keeps facts grounded while AI handles pattern matching at scale, which matches the broader lifecycle in [How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs).
+Large organizations often discover the same capability twice because teams ship in parallel. You can run a discovery audit that starts with inventory from Redocly API Scout, then uses a model to group similar endpoints and flag APIs with weak ownership or usage signals. The pairing keeps facts grounded while AI handles pattern matching at scale, which matches the broader lifecycle in [How AI fits into modern API documentation](https://redocly.com/learn/ai-for-docs/ai-modern-api-docs).
 
 ## Why API sprawl shows up late
 
 Microservices, acquisitions, and partner integrations all add routes. Without a catalog, duplicate payment or profile APIs can coexist for years. Underused services still incur security review and on-call load. The pain appears when a new team rebuilds something that already exists, or when compliance asks for a complete API list you cannot produce quickly.
 
-Sprawl is rarely malicious. Two product lines may both need a customer record, so each ships a `/customers` surface with slightly different fields. A partner integration copies an internal spec and never syncs again. Platform teams inherit repos they did not author, so nobody feels safe deleting the older variant. Discovery work pays off when you can show overlap with evidence instead of asking teams to merge on faith alone.
+Sprawl is rarely malicious. Two product lines may both need a customer record, so each ships a `/customers` surface with slightly different fields. A partner integration copies an internal spec and never syncs again. The Redocly teams inherit repos they did not author, so nobody feels safe deleting the older variant. Discovery work pays off when you can show overlap with evidence instead of asking teams to merge on faith alone.
 
 ## What Scout gives you before AI
 
-[What is Scout?](https://redocly.com/docs/realm/scout/what-is-scout) describes how Redocly Scout collects API definitions from repositories so you are not guessing from memory. Deploy and operate collection using the [Scout documentation](https://redocly.com/docs/realm/scout) and review [Scout use cases](https://redocly.com/docs/realm/scout/use-cases) for common estate layouts. Scout answers which APIs exist and where their specs live. It does not by itself decide which duplicates to retire.
+[What is Scout?](https://redocly.com/docs/platform/scout/what-is-scout) describes how Redocly Scout collects API definitions from repositories so you are not guessing from memory. Deploy and operate collection using the [Scout documentation](https://redocly.com/docs/platform/scout) and review [Scout use cases](https://redocly.com/docs/platform/scout/use-cases) for common estate layouts. Scout answers which APIs exist and where their specs live. It does not by itself decide which duplicates to retire.
 
 Treat Scout output as the allowlist for AI review. If a path never appears in inventory, the model should not invent it.
 
@@ -62,13 +62,13 @@ When telemetry is missing, say so in the prompt. The model should flag uncertain
 
 ## Turning findings into a consolidation backlog
 
-Rank clusters by customer impact and operational cost, not by spec similarity alone. For each accepted duplicate, record the canonical API, the deprecation window, and the doc redirect plan. Publish the result in your catalog configuration so search surfaces the winner, as described in [API catalog configuration](https://redocly.com/docs/realm/config/catalog-classic). The [API catalogs for agentic software](https://redocly.com/blog/api-catalogs-agentic-software) article explains why a single searchable layer matters when both humans and agents consume your estate.
+Rank clusters by customer impact and operational cost, not by spec similarity alone. For each accepted duplicate, record the canonical API, the deprecation window, and the doc redirect plan. Publish the result in your catalog configuration so search surfaces the winner, as described in [API catalog configuration](https://redocly.com/docs/platform/config/catalog-classic). The [API catalogs for agentic software](https://redocly.com/blog/api-catalogs-agentic-software) article explains why a single searchable layer matters when both humans and agents consume your estate.
 
 ```mermaid
 graph LR
   A[Scout inventory] --> B[AI cluster review]
   B --> C[Owner decisions]
-  C --> D[Reef catalog update]
+  C --> D[Redocly catalog update]
   D --> E[Deprecate duplicates]
 ```
 
@@ -96,8 +96,8 @@ AI does not see private traffic dashboards unless you paste aggregates, and it c
 
 ## Summary
 
-Use Scout to inventory the estate, use structured AI passes to propose duplicate and underuse clusters, then let owners decide what to merge. Publish the canonical APIs in Reef so the next team finds one front door instead of three.
+Use Scout to inventory the estate, use structured AI passes to propose duplicate and underuse clusters, then let owners decide what to merge. Publish the canonical APIs in Redocly so the next team finds one front door instead of three.
 
 ## Learn more
 
-[Reef](https://redocly.com/reef) brings API Scout discovery and catalog publishing together so duplicate reviews turn into a maintained source of truth rather than a one-off spreadsheet.
+[Redocly](https://redocly.com/realm) brings API Scout discovery and catalog publishing together so duplicate reviews turn into a maintained source of truth rather than a one-off spreadsheet.

@@ -38,9 +38,9 @@ You can also add **interactive elements** — text inputs, toggles, downloads, p
 
 Example walkthroughs:
 - [Explaining an Arazzo file](/learn/arazzo/arazzo-walkthrough.md)
-- [API functions tutorial](/docs/realm/customization/api-functions/create-api-functions.md)
+- [API functions tutorial](/docs/platform/customization/api-functions/create-api-functions.md)
 
-As an experiment, we even tested whether LLMs could generate Code Walkthrough docs by giving them a link to our [code walkthrough docs](/docs/realm/content/markdoc-tags/code-walkthrough/index.md).
+As an experiment, we even tested whether LLMs could generate Code Walkthrough docs by giving them a link to our [code walkthrough docs](/docs/platform/content/markdoc-tags/code-walkthrough/index.md).
 The test was **successful** — opening up new possibilities for automated doc generation!
 
 ---
@@ -57,16 +57,16 @@ Example `llms.txt`:
 # Redocly Documentation Index
 
 ## API Functions
-- [API Functions Reference](/docs/realm/customization/api-functions/api-functions-reference.md)
-- [Creating API Functions](/docs/realm/customization/api-functions/create-api-functions.md)
+- [API Functions Reference](/docs/platform/customization/api-functions/api-functions-reference.md)
+- [Creating API Functions](/docs/platform/customization/api-functions/create-api-functions.md)
 
 ## Configuration
-- [SEO Configuration](/docs/realm/config/seo.md)
+- [SEO Configuration](/docs/platform/config/seo.md)
 ```
 
 In addition, all of your Markdown (and OpenAPI) pages can be linked to in Markdown format by adding a `.md` to the end of the path.
 
-You can configure `llms.txt` generation — see [SEO configuration docs](/docs/realm/config/seo.md#llmstxt-object).
+You can configure `llms.txt` generation — see [SEO configuration docs](/docs/platform/config/seo.md#llmstxt-object).
 
 ---
 ## API functions
@@ -85,7 +85,7 @@ export default async function (
 }
 ```
 
-Read more about [API functions](/docs/realm/customization/api-functions/api-functions-reference.md)
+Read more about [API functions](/docs/platform/customization/api-functions/api-functions-reference.md)
 
 This feature is available to Reef and Realm subscribers
 ---

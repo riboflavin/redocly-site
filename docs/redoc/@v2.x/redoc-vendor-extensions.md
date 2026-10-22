@@ -329,7 +329,7 @@ source: console.log('Hello World');
 ---
 
 - x-badges
-- [[Badge Object](https://redocly.com/docs/realm/author/reference/openapi-extensions/x-badges#badge-object)]
+- [[Badge Object](https://redocly.com/docs/platform/author/reference/openapi-extensions/x-badges#badge-object)]
 - A list of badges associated with the operation
 
 {% /table %}
@@ -507,7 +507,7 @@ Shows in the selectpicker only the items `cat` and `bee`, even though the `Dog` 
 ---
 
 - x-enumDescriptions
-- [[Enum Description Object](https://redocly.com/docs/realm/author/reference/openapi-extensions/x-enum-descriptions#enum-description-object)]
+- [[Enum Description Object](https://redocly.com/docs/platform/author/reference/openapi-extensions/x-enum-descriptions#enum-description-object)]
 - A list of the enum values and descriptions to include in the documentation.
 
 {% /table %}

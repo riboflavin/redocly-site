@@ -14,7 +14,7 @@ New products go beyond documentation and bring next-level API showcase and devel
 
 Users of Workflows are recommended to migrate to Redoc.
 
-For users of the beta version of the Developer Portal, consider Revel with Redoc, or Realm.
+For users of the beta version of the Developer Portal, consider Redocly.
 
 ### How to migrate
 
@@ -23,8 +23,8 @@ We’ve prepared detailed migration guides for our two major products. These gui
 - [Developer Portal (Gatsby Portal) Migration Guide](../../docs-legacy/developer-portal/migrate-from-legacy-portal.md)
 
 We also have two guides to help you get started with our new products:
-- [Start working with Reunite](../../docs/realm/get-started/start-reunite-editor.md)
-- [Start with local development](../../docs/realm/get-started/start-local-dev.md)
+- [Start working with the Redocly platform](../../docs/platform/get-started/start-reunite-editor.md)
+- [Start with local development](../../docs/platform/get-started/start-local-dev.md)
 
 ### Future products
 

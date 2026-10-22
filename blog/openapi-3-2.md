@@ -132,4 +132,4 @@ Useful links:
 
 - [OpenAPI 3.2 specification](https://spec.openapis.org/oas/v3.2.0.html)
 - [Migration guide from 3.1 to 3.2](https://learn.openapis.org/upgrading/v3.1-to-v3.2.html)
-- [Redocly changelog](https://redocly.com/docs/realm/changelog)
+- [Redocly changelog](https://redocly.com/docs/platform/changelog)

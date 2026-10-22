@@ -56,7 +56,7 @@ The catalog must ingest these specifications directly from the source code or CI
 
 When an agent fails to execute a task, the human operator needs to know why. The catalog provides the "blame" layer. By attaching metadata regarding team ownership (`x-owner: checkout-team`) and support channels to every catalog entry, you create a debugging loop.
 
-You can configure [metadata in your catalog](https://redocly.com/docs/realm/config/metadata) to include these routing keys. This allows the agent interaction layer to surface helpful error messages, such as "Tool execution failed on Checkout Service. Contact #checkout-engineering." This reduces the time engineers spend investigating why an agent failed to complete a complex workflow.
+You can configure [metadata in your catalog](https://redocly.com/docs/platform/config/metadata) to include these routing keys. This allows the agent interaction layer to surface helpful error messages, such as "Tool execution failed on Checkout Service. Contact #checkout-engineering." This reduces the time engineers spend investigating why an agent failed to complete a complex workflow.
 
 ### Governance as a discovery filter
 
@@ -78,7 +78,7 @@ The fastest way to destroy trust in an agentic workflow is `404 Not Found`.
 
 If an agent plans a complex five-step workflow based on your catalog definitions, and step three fails because the endpoint URL changed last week, the entire workflow collapses. Humans can adapt to documentation drift by asking colleagues or checking code. Agents cannot.
 
-Such fragility makes manual catalog updates non-viable. The catalog must be an artifact of the build process. Tools like [Scout](https://redocly.com/docs/realm/scout) automate this by discovering APIs within the network or repositories and pushing updates to the catalog in real time.
+Such fragility makes manual catalog updates non-viable. The catalog must be an artifact of the build process. Tools like [Scout](https://redocly.com/docs/platform/scout) automate this by discovering APIs within the network or repositories and pushing updates to the catalog in real time.
 
 Organizations that automate this pipeline see immediate content scaling. For example, Australia Post reduced their portal bounce rate [from 30 percent to less than 2 percent](https://redocly.com/customers/australia-post) while accelerating API publishing speed. For agents, this metric translates directly to task success rate. An up-to-date catalog means the agent finds the right tool on the first attempt rather than retrying or failing.
 
@@ -88,7 +88,7 @@ If your catalog update process relies on a product manager remembering to update
 
 Before an API enters the catalog (and thus becomes available to agents), it should pass quality gates. Inconsistent naming conventions or poor descriptions confuse the context retrieval mechanisms of LLMs.
 
-If one API calls a field `userId` and another calls it `user_id`, the agent has to burn reasoning capacity to translate between them. Enforcing consistency through [scorecards](https://redocly.com/docs/realm/config/scorecard) ensures that the surface area presented to the agent is uniform.
+If one API calls a field `userId` and another calls it `user_id`, the agent has to burn reasoning capacity to translate between them. Enforcing consistency through [scorecards](https://redocly.com/docs/platform/config/scorecard) ensures that the surface area presented to the agent is uniform.
 
 Governance checks should verify:
 
@@ -100,7 +100,7 @@ When the catalog enforces these standards, it effectively "cleans the data" befo
 
 ## Building the substrate
 
-The transition to agentic development requires a foundational shift in how organizations view their API inventory. It is no longer acceptable to have scattered Swagger files and Confluence pages serving as the system of record. A centralized, governed, and automated API catalog provides the necessary structure for AI agents to operate safely. It bridges the gap between raw code and semantic intent to allow agents to discover capabilities without exposing the organization to operational risk. Platform teams using tools like Redocly Reef position their catalogs not just as developer portals but as the source of truth for both human and machine actors. By treating the catalog as a managed product with strict governance and automated ingestion using standards like MCP, you ensure that as your AI ambitions scale, your infrastructure remains stable and your agents remain secure.
+The transition to agentic development requires a foundational shift in how organizations view their API inventory. It is no longer acceptable to have scattered Swagger files and Confluence pages serving as the system of record. A centralized, governed, and automated API catalog provides the necessary structure for AI agents to operate safely. It bridges the gap between raw code and semantic intent to allow agents to discover capabilities without exposing the organization to operational risk. The Redocly teams using tools like Redocly Reef position their catalogs not just as developer portals but as the source of truth for both human and machine actors. By treating the catalog as a managed product with strict governance and automated ingestion using standards like MCP, you ensure that as your AI ambitions scale, your infrastructure remains stable and your agents remain secure.
 
 ## FAQs about API catalogs
 

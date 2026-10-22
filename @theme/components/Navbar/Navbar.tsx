@@ -37,18 +37,18 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
 
   const { navbar } = themeConfig;
 
-  const colorfulPagesList = ['/', '/reunite', '/contact-us', '/reef'];
+  const colorfulPagesList = ['/', '/platform', '/contact-us', '/reef'];
   const defaultPageList = [
     '/',
-    '/reunite',
+    '/platform',
     '/contact-us',
     '/reef',
     '/revel',
     '/pro',
+    '/scale',
     '/enterprise',
-    '/enterprise-plus',
     '/pricing',
-    '/realm',
+    '/product',
     '/redoc',
   ];
 
@@ -59,8 +59,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
   const isDocsOrLearnPage = isDocsPage || isLearnPage;
   const isEditorPage = pathname === '/editor';
   const isPreviewPage = pathname === '/preview';
-  const isCareersJobPage =
-    typeof pathname === 'string' && /^\/careers\/.+/.test(pathname);
+  const isCareersJobPage = typeof pathname === 'string' && /^\/careers\/.+/.test(pathname);
 
   const isDarkModeAllowed = isDocsOrLearnPage || isEditorPage || isPreviewPage || isCareersJobPage;
 
@@ -125,10 +124,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
         </LogoMenuWrapper>
         <RightPanelWrapper>
           <LanguagePicker onChangeLanguage={changeLanguage} onlyIcon alignment="end" />
-          <ColorModeSwitcherWrapper
-            isVisible={isDarkModeAllowed}
-            isMobileOpen={isOpen}
-          >
+          <ColorModeSwitcherWrapper isVisible={isDarkModeAllowed} isMobileOpen={isOpen}>
             <ColorModeSwitcher />
           </ColorModeSwitcherWrapper>
           <MobileMenuButton
@@ -358,7 +354,7 @@ const NavbarContainer = styled.nav<{
 
   @media screen and (min-width: ${breakpoints.medium}) {
     border-bottom: ${({ isTop, isDocs }) =>
-    (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
+      (!isTop || isDocs) && '1px solid var(--color-warm-grey-3)'};
     height: auto;
 
     ${NavbarRow} {

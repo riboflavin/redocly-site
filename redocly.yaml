@@ -1,6 +1,6 @@
 seo:
   title: Redocly
-  description: OpenAPI-generated documentation tool with 24k+ stars on Github - make APIs your company's superpower.
+  description: Turn your OpenAPI description into reference docs, an MCP server, SDKs and tests, kept current on every pull request. Unlimited seats on every plan.
   siteUrl: https://redocly.com
   image: ./images/redocly-card.png
   lang: en-US
@@ -16,9 +16,10 @@ redirects:
 
 ignore:
   - '.github'
+  - '.claude/**'
   - 'learn/arazzo/_filesets/**'
   - '**/code-walkthrough-files/**'
-  - docs/realm/.templates
+  - docs/platform/.templates
   - '.yalc/**'
   - 'apis/**'
 
@@ -26,7 +27,7 @@ markdown:
   partialsFolders:
     - 'docs-legacy/_snippets'
     - 'docs/_partials'
-    - 'docs/realm/_partials'
+    - 'docs/platform/_partials'
 scripts:
   head:
     - src: '@theme/color-mode-hack.js'
@@ -53,10 +54,10 @@ mcp:
     name: Redocly
     ignore:
       - demo/openapi/museum-api.yaml
-      - docs/realm/customization/search-api/openapi.yaml
-      - docs/realm/openapi-files/redocly-museum.yaml
-      - docs/realm/scout/agent-api/openapi.yaml
-      - docs/realm/scout/api/openapi.yaml
+      - docs/platform/customization/search-api/openapi.yaml
+      - docs/platform/openapi-files/redocly-museum.yaml
+      - docs/platform/scout/agent-api/openapi.yaml
+      - docs/platform/scout/api/openapi.yaml
 navigation:
   previousButton:
     hide: true
@@ -66,33 +67,20 @@ navbar:
       menuStyle: drilldown
       items:
         - separator: Products
-        - label: Reunite
-          page: ./pages/reunite/reunite.page.tsx
-          icon: ./images/icons/reunite.svg
-        - label: Revel
-          page: ./pages/revel/revel.page.tsx
-          icon: ./images/icons/revel.svg
-        - label: Reef
-          page: ./pages/reef/reef.page.tsx
-          icon: ./images/icons/reef.svg
-        - label: Realm
-          page: ./pages/realm/realm.page.tsx
-          icon: ./images/icons/realm.svg
-        - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
-          icon: ./images/icons/redoc.svg
+        - label: Platform
+          page: ./pages/platform/platform.page.tsx
+        - label: Framework
+          page: ./pages/product/product.page.tsx
         - label: Respect Monitoring
           page: ./pages/respect/respect.page.tsx
-          icon: ./images/icons/respect.svg
+        - separator: Agents
+        - label: Reviewer agent
+          page: ./pages/reviewer/reviewer.page.tsx
         - separator: Open Source
         - label: Redocly CLI
           page: ./pages/redocly-cli/redocly-cli.page.tsx
         - label: Redoc CE
           page: ./pages/redoc-ce/redoc-ce.page.tsx
-        - separator: Agents
-        - label: Reviewer
-          page: ./pages/reviewer/reviewer.page.tsx
-          icon: ./images/icons/reviewer.svg
 
     - label: Docs
       page: ./docs/index.md
@@ -109,16 +97,10 @@ footer:
   items:
     - group: Products
       items:
-        - label: Redoc
-          page: ./pages/redoc/redoc.page.tsx
-        - label: Revel
-          page: ./pages/revel/revel.page.tsx
-        - label: Reef
-          page: ./pages/reef/reef.page.tsx
-        - label: Realm
-          page: ./pages/realm/realm.page.tsx
-        - label: Reunite
-          page: ./pages/reunite/reunite.page.tsx
+        - label: Redocly
+          page: ./pages/product/product.page.tsx
+        - label: Platform
+          page: ./pages/platform/platform.page.tsx
         - label: Respect Monitoring
           page: ./pages/respect/respect.page.tsx
         - label: Redocly CLI
@@ -131,10 +113,10 @@ footer:
           page: ./pages/pricing/pricing.page.tsx
         - label: Pro
           page: ./pages/pro/pro.page.tsx
+        - label: Scale
+          page: ./pages/scale/scale.page.tsx
         - label: Enterprise
           page: ./pages/enterprise/enterprise.page.tsx
-        - label: Enterprise Plus
-          page: ./pages/enterprise-plus/enterprise-plus.page.tsx
         - label: Customers
           page: ./pages/customers/customers.page.tsx
         - label: About Us
@@ -318,8 +300,8 @@ metadataGlobs:
     redocly_category: Blog
   'learn/**':
     redocly_category: Learn
-  'docs/realm/**':
-    redocly_category: Realm
+  'docs/platform/**':
+    redocly_category: Redocly
   'docs/cli/**':
     redocly_category: Redocly CLI
   'docs/redoc/**':
@@ -338,7 +320,7 @@ search:
 # Custom plugin registration
 plugins:
   - '@redocly/marketing-pages/mcp-tools/realm-plus-plugin.js'
-  - './docs/realm/@theme/plugins/config-properties.js'
+  - './docs/platform/@theme/plugins/config-properties.js'
 
 links:
   - href: https://redocly.com/docs/changelog/feed.xml

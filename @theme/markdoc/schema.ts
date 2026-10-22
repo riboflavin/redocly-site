@@ -9,7 +9,7 @@ import { GroupElementsSchema } from './components/GroupElements/GroupElementsSch
 import {
   tags as betaDocsTags,
   functions as betaDocsFunctions,
-} from '../../docs/realm/@theme/markdoc/schema';
+} from '../../docs/platform/@theme/markdoc/schema';
 
 const docsOverview: Schema = {
   attributes: {

@@ -114,8 +114,8 @@ If a crawler hits a dead end, it stops discovering pages down that branch.
 For users, hitting a 404 while trying to debug an urgent issue is a trust-destroying experience.
 
 Implement a link checker in your CI/CD pipeline.
-Tools like the [Redocly link checker](https://redocly.com/docs/realm/reunite/project/ignore-link-checker) can cause your build to fail or warn you if you attempt to deploy documentation containing internal links that lead nowhere.
-You can also monitor your [redirect configuration](https://redocly.com/docs/realm/config/redirects) to ensure that when you move content, you provide a 301 redirect to the new location.
+Tools like the [Redocly link checker](https://redocly.com/docs/platform/project/ignore-link-checker) can cause your build to fail or warn you if you attempt to deploy documentation containing internal links that lead nowhere.
+You can also monitor your [redirect configuration](https://redocly.com/docs/platform/config/redirects) to ensure that when you move content, you provide a 301 redirect to the new location.
 Proper redirection preserves the SEO value of the old page and passes it to the new one.
 
 ## Improve performance and Core Web Vitals
@@ -181,7 +181,7 @@ Looking for ways to improve your structure? Reviewing how you organize topics ca
 
 SEO for documentation requires technical rigor where you ensure canonicals are correct, sitemaps are clean, and performance is fast.
 Doing this manually for every page or relying on a fragile chain of plugins often leads to errors that compound over time, so the most effective approach is to use a documented platform that enforces these best practices at the build level.
-Redocly approaches documentation SEO by baking these technical requirements into the platform infrastructure with automatic sitemap generation and intelligent canonical tag handling out of the box.
+Redocly approaches documentation SEO by baking these technical requirements into Redocly infrastructure with automatic sitemap generation and intelligent canonical tag handling out of the box.
 The platform allows you to manage meta tags and indexing rules directly through configuration files, allowing your team to focus on writing accurate documentation while the platform ensures search engines can read, index, and rank it correctly.
 
 ## FAQ about SEO best practices

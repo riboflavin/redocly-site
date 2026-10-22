@@ -67,7 +67,7 @@ Build a modern, responsive website for your documentation from plain Markdown fi
 
 [Get started with the Developer portal](./installation.md) in less than 5 minutes with our CI/CD service. You can also host your Developer portal independently.
 
-[Visit the product page](../../pages/realm/realm.page.tsx) to learn how our clients use the Developer portal and how it can benefit your organization.
+[Visit the product page](../../pages/product/product.page.tsx) to learn how our clients use the Developer portal and how it can benefit your organization.
 
 {% docsOverview info=$frontmatter.content /%}
 {% heroImage src=$frontmatter.content.heroImg /%}

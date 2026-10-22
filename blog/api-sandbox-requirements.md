@@ -136,7 +136,7 @@ A great sandbox offers a "Big Red Button" to reset the environment. Ideally, thi
 
 ## Bringing the sandbox to the documentation
 
-The best sandbox is one the developer doesn't have to leave the documentation to use. [Interactive documentation](https://redocly.com/docs/realm/content/api-docs/replay) transforms static reference pages into a live testing console.
+The best sandbox is one the developer doesn't have to leave the documentation to use. [Interactive documentation](https://redocly.com/docs/platform/content/api-docs/replay) transforms static reference pages into a live testing console.
 
 By integrating a "Try it" console directly into your API reference, you reduce the friction of onboarding. Embedding the console allows users to:
 
@@ -145,7 +145,7 @@ By integrating a "Try it" console directly into your API reference, you reduce t
 3. Execute the request against the sandbox environment.
 4. Inspect the real response immediately.
 
-Interactive documentation requires your OpenAPI definition to be the source of truth. You define your [sandbox server URL](https://redocly.com/docs/realm/config/mock-server) in the `servers` array of your OpenAPI file. The documentation engine then exposes this as a selectable environment for the user.
+Interactive documentation requires your OpenAPI definition to be the source of truth. You define your [sandbox server URL](https://redocly.com/docs/platform/config/mock-server) in the `servers` array of your OpenAPI file. The documentation engine then exposes this as a selectable environment for the user.
 
 ## Security considerations for public sandboxes
 
@@ -157,7 +157,7 @@ Even in a test environment, you must enforce:
 * Data scrubbing: Ensure that PII entered into a sandbox is automatically sanitized or deleted after a short retention period (if you are not already using purely synthetic data).
 * Abuse monitoring: Monitor sandbox usage for patterns that resemble DDoS attacks or credential stuffing.
 
-If you are exposing a simple mock rather than a full logic sandbox, you can mitigate some risks by limiting the interactive features. For sensitive operations, you might choose to [hide the interactive elements](https://redocly.com/docs/realm/config/openapi/hide-replay) for specific endpoints while leaving them active for safe, read-only operations.
+If you are exposing a simple mock rather than a full logic sandbox, you can mitigate some risks by limiting the interactive features. For sensitive operations, you might choose to [hide the interactive elements](https://redocly.com/docs/platform/config/openapi/hide-replay) for specific endpoints while leaving them active for safe, read-only operations.
 
 ## An API sandbox is a product
 

@@ -4,36 +4,36 @@ This guide is for users of Redocly's earlier Workflows API Docs product.
 The steps in this guide cover how to migrate from your existing setup to using Redoc.
 
 Redoc is our next-generation API reference documentation tool with code snippets, request/response examples, mock servers, and the Replay API explorer built into the page.
-Publish Redoc projects to the Redocly Reunite platform (this version of Redoc is not licensed for use on other platforms; Enterprise+ customers may contact us to discuss other hosting arrangements).
+Publish Redoc projects to the Redocly platform (this version of Redoc is not licensed for use on other platforms; Enterprise customers may contact us to discuss other hosting arrangements).
 
 ## Create a new project
 
-A [project](/docs/realm/reunite/project/manage-projects) is one website and everything that goes with it.
+A [project](/docs/platform/project/manage-projects) is one website and everything that goes with it.
 The project consists of files and folders; your project comes with a Redocly-hosted repository or you can connect your own Git repository.
 
-1. Sign up or log in to your Reunite account.
+1. Sign up or log in to your Redocly account.
 
-2. Go to your [Reunite dashboard](https://app.cloud.redocly.com) and [create a new project](/docs/realm/reunite/project/manage-projects#create-a-project).
+2. Go to your [the platform dashboard](https://app.cloud.redocly.com) and [create a new project](/docs/platform/project/manage-projects#create-a-project).
 
 Every project is different, so there are multiple ways to add content to your project:
 
 - [Connect an existing Git repository](#connect-an-existing-git-repository) if you already use a repository source.
 - [Upload an API description](#upload-an-api-description) to get started quickly.
 - Use an [API description from an external URL](#add-an-api-from-an-external-url).
-- If you prefer to use CI/CD to "push" content to a project, check the documentation for [pushing content from an external source](/docs/realm/reunite/project/remote-content/push).
+- If you prefer to use CI/CD to "push" content to a project, check the documentation for [pushing content from an external source](/docs/platform/project/remote-content/push).
 
 ### Connect an existing Git repository
 
 If you have your API descriptions stored in a Git repository, this repository becomes the source for your Redoc project.
 
 To make your existing Git repository the source for your Redoc project:
-[connect your Git provider](/docs/realm/reunite/project/connect-git/connect-git-provider) to get the existing content connected to the new project.
+[connect your Git provider](/docs/platform/project/connect-git/connect-git-provider) to get the existing content connected to the new project.
 
-1. Don't worry if the Workflows project content doesn't build successfully when you first connect it to Reunite.
+1. Don't worry if the Workflows project content doesn't build successfully when you first connect it to Redocly.
    The other sections in this guide cover the updates that may apply to your project.
 
 {% admonition type="info" name="Use remote content for multiple repositories"%}
-If you have API descriptions in multiple repositories, the [remote content](/docs/realm/reunite/project/remote-content/remote-content) feature supports connecting another repository (or more than one) as a source for the project.
+If you have API descriptions in multiple repositories, the [remote content](/docs/platform/project/remote-content/remote-content) feature supports connecting another repository (or more than one) as a source for the project.
 {% /admonition %}
 
 ### Upload an API description
@@ -43,18 +43,18 @@ If you were using configuration in your Workflows project, add it to a file name
 
 ### Add an API from an external URL
 
-If your API files are in a separate project than your Redocly setup, add them using the [remote content](/docs/realm/reunite/project/remote-content/remote-content) feature.
+If your API files are in a separate project than your Redocly setup, add them using the [remote content](/docs/platform/project/remote-content/remote-content) feature.
 
 To add content using the remote content feature:
 
-1.  Go to the Reunite editor in your new project.
+1.  Go to the Redocly editor in your new project.
 
 2.  Click the plus sign icon (Add content) and select **New remote**.
 
 3.  Select **Add URL link**, and enter the following required fields:
 
     - the URL of the API description
-    - the file name to use in Reunite
+    - the file name to use in Redocly
     - how often to check for updates
     - where in the project to mount the file, such as `apis/my-api-name.yaml`
 
@@ -75,7 +75,7 @@ Add a `sidebars.yaml` file to the root of your project, and add each API to it a
 ```
 
 You can customize the order and display labels of the APIs, or group in another structure to suit your needs.
-Visit the [sidebars documentation](/docs/realm/navigation/sidebars) for more information and examples.
+Visit the [sidebars documentation](/docs/platform/navigation/sidebars) for more information and examples.
 
 ## Multiple API versions
 
@@ -93,14 +93,14 @@ To create a structure for versioned APIs:
 
 1.  In the project (or preview), use the dropdown to switch between versions; it retains the user's position in the API reference documentation for any entries which exist in both versions.
 
-1.  (Optional) For additional control, [configure a `versions.yaml` file](/docs/realm/content/versions) to specify which versions should be displayed or not, and which is the default version.
+1.  (Optional) For additional control, [configure a `versions.yaml` file](/docs/platform/content/versions) to specify which versions should be displayed or not, and which is the default version.
 
 ## Update existing configuration options
 
 If you had an existing `redocly.yaml`, there may be settings that need updating.
-Feedback about outdated or unknown configuration options is available either [using Redocly CLI on your computer](#check-configuration-locally) or [using Reunite](#check-configuration-with-reunite).
+Feedback about outdated or unknown configuration options is available either [using Redocly CLI on your computer](#check-configuration-locally) or [using the platform](#check-configuration-with-redocly).
 
-### Check configuration with Reunite
+### Check configuration with Redocly
 
 Open the `redocly.yaml` file in the editor.
 The editor will indicate any configuration that isn't supported in the newer products.
@@ -138,13 +138,13 @@ The following table shows how to update some commonly used configuration options
     showExtensions: true
   ```
 
-  Check the [openapi configuration documentation](/docs/realm/config/openapi) for all the options for configuring reference documentation.
+  Check the [openapi configuration documentation](/docs/platform/config/openapi) for all the options for configuring reference documentation.
 
 ---
 
 - `htmlTemplate`
 - Instead of supplying a template, use the configuration options for the navbar, sidebar, and footer sections.
-  The [navigation documentation](/docs/realm/navigation) is a good starting point to find out more about each element.
+  The [navigation documentation](/docs/platform/navigation) is a good starting point to find out more about each element.
 
 ---
 
@@ -179,13 +179,13 @@ The following table shows how to update some commonly used configuration options
 
 - `hideDownloadButton`
 - Now named `hideDownloadButtons` since we support multiple downloads.
-  Visit the [documentation for hiding download buttons](/docs/realm/config/openapi/hide-download-buttons) for more information.
+  Visit the [documentation for hiding download buttons](/docs/platform/config/openapi/hide-download-buttons) for more information.
 
 ---
 
 - `requiredPropsFirst`
 - Renamed to `sortRequiredPropsFirst`.
-  View the [detailed documentation for sortRequiredPropsFirst](/docs/realm/config/openapi/sort-required-props-first) for more information.
+  View the [detailed documentation for sortRequiredPropsFirst](/docs/platform/config/openapi/sort-required-props-first) for more information.
 
   For more sorting options, try the [sorting plugin](https://github.com/Redocly/redocly-cli-cookbook/tree/main/custom-plugins/sorting) from the Redocly CLI cookbook.
   The plugin also includes a `property-sort` rule to check property ordering.
@@ -212,19 +212,19 @@ The following table shows how to update some commonly used configuration options
 
 - `generatedPayloadSamplesMaxDepth`
 - Renamed to `generatedSamplesMaxDepth`.
-  The [documentation for generatedSamplesMaxDepth](/docs/realm/config/openapi/generated-samples-max-depth) includes more information and examples.
+  The [documentation for generatedSamplesMaxDepth](/docs/platform/config/openapi/generated-samples-max-depth) includes more information and examples.
 
 ---
 
 - `jsonSampleExpandLevel`
 - Renamed to `jsonSamplesExpandLevel`.
-  The [documentation for jsonSamplesExpandLevel](/docs/realm/config/openapi/json-samples-expand-level) includes more information and examples.
+  The [documentation for jsonSamplesExpandLevel](/docs/platform/config/openapi/json-samples-expand-level) includes more information and examples.
 
 ---
 
 - `schemaExpansionLevel`
 - Renamed to `schemasExpansionLevel`.
-  The [documentation for schemasExpansionLevel](/docs/realm/config/openapi/schemas-expansion-level) includes more information and examples.
+  The [documentation for schemasExpansionLevel](/docs/platform/config/openapi/schemas-expansion-level) includes more information and examples.
 
 {% /table %}
 
@@ -260,11 +260,11 @@ To apply custom styles to your project:
 
 4.  Edit the `@theme/styles.css` file to reflect your own branding and preferences.
     Using "Inspect" in your browser developer tools shows the CSS class names that you can change.
-    The documentation includes [branding and customization guides](/docs/realm/branding) to help you get started, and a full [CSS variables dictionary](/docs/realm/branding/css-variables) for your reference.
+    The documentation includes [branding and customization guides](/docs/platform/branding) to help you get started, and a full [CSS variables dictionary](/docs/platform/branding/css-variables) for your reference.
 
 ## Local development platform
 
-Using a local development platform requires that your Reunite project exists in your own Git provider.
+Using a local development platform requires that your Redocly project exists in your own Git provider.
 Our tools are based on [NodeJS](https://nodejs.org/en), so you will also need version 22.12.0 or later (alternatively -- v20.19.0 or later) and [npm](https://docs.npmjs.com/cli/v10/commands/npm) installed.
 
 To run your project locally:
@@ -286,6 +286,6 @@ To run your project locally:
 There are many more aspects to Redoc that you might like to explore.
 Here are some suggestions for where to go next:
 
-- View the list of [supported OpenAPI extensions](/docs/realm/content/api-docs/openapi-extensions).
-- Check the [configuration options for OpenAPI documentation](/docs/realm/config/openapi), there are changes and additions in comparison to our older products.
-- Learn how to [set a custom domain](/docs/realm/reunite/project/custom-domain) for your project.
+- View the list of [supported OpenAPI extensions](/docs/platform/content/api-docs/openapi-extensions).
+- Check the [configuration options for OpenAPI documentation](/docs/platform/config/openapi), there are changes and additions in comparison to our older products.
+- Learn how to [set a custom domain](/docs/platform/project/custom-domain) for your project.

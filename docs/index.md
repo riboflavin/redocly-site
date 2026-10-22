@@ -1,6 +1,7 @@
 ---
 seo:
   title: About Redocly documentation
+template: ../@theme/templates/DocsHub
 ---
 
 # Redocly documentation
@@ -13,7 +14,7 @@ Ready to build something amazing?
     title="Get started guide"
     layout="horizontal"
     align="start"
-    to="/docs/realm/get-started/index.md"
+    to="/docs/platform/get-started/index.md"
     icon="./images/rocket-icon.svg"
     iconVariant="filled"
   %}
@@ -23,14 +24,14 @@ Ready to build something amazing?
 
 ## Products
 
-{% cards columns=2 cardMinWidth=300 %}
+{% cards columns=3 cardMinWidth=300 %}
 
   {% card
-    title="Realm"
-    to="realm/index.md"
+    title="Redocly platform"
+    to="platform/index.md"
     icon="./images/home-page/realm-logo.svg"
   %}
-    The synthesis of Redocly's premier tools—Redoc, Revel, and Reef—united into a single, powerful platform.
+    Reference docs, developer portals and API catalogs, written in the Redocly platform or your Git repository.
   {% /card %}
 
   {% card
@@ -54,7 +55,7 @@ Ready to build something amazing?
 
 ## Open source
 
-{% cards columns=2 cardMinWidth=300 %}
+{% cards columns=3 cardMinWidth=300 %}
 
   {% card
     title="Redocly CLI"
@@ -92,7 +93,7 @@ Ready to build something amazing?
 
 ## Learn
 
-{% cards columns=2 cardMinWidth=300 %}
+{% cards columns=3 cardMinWidth=300 %}
 
   {% card
     title="Cafe API example"

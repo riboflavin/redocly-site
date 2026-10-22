@@ -37,7 +37,7 @@ This makes docs more interactive and helps your readers get answers faster.
 
 ## 📊 Analytics in Reunite
 
-Reunite now has [built-in analytics](../docs/realm/reunite/project/analytics.md)!
+Reunite now has [built-in analytics](../docs/platform/project/analytics.md)!
 Teams can track:
 - Page views
 - Searches (including “no results” queries)
@@ -62,8 +62,8 @@ We've shipped a smoother AsyncAPI docs experience, making it easier to document 
 - Syntax highlighting in Reunite editor for `.cjs` and `.mjs` files.
 
 ## 📖 Richer documentation formats
-- Code groups: Use the new [code-group Markdoc tag](../docs/realm/content/markdoc-tags/code-group.md) for side-by-side tabbed language examples or a language dropdown menu.
-- Request/response samples: The new [openapi-response-sample tag](../docs/realm/content/markdoc-tags/openapi-response-sample.md) separates request and response snippets for more granular rendering.
+- Code groups: Use the new [code-group Markdoc tag](../docs/platform/content/markdoc-tags/code-group.md) for side-by-side tabbed language examples or a language dropdown menu.
+- Request/response samples: The new [openapi-response-sample tag](../docs/platform/content/markdoc-tags/openapi-response-sample.md) separates request and response snippets for more granular rendering.
 - Markdoc dropdown updates from the Reunite editor: Quickly insert built-in or custom functions.
 
 ## ⚡ Quality of life enhancements

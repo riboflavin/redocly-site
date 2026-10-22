@@ -24,13 +24,13 @@ Here's what shipped, and where it's heading.
 
 ## Your docs are an MCP server
 
-Projects ship with a built-in [Docs MCP server](https://redocly.com/docs/realm/customization/mcp-server) at `/mcp`.
+Projects ship with a built-in [Docs MCP server](https://redocly.com/docs/platform/customization/mcp-server) at `/mcp`.
 There's nothing to build and nothing to host: point an AI tool at your docs and it can search pages, list APIs, and read endpoint details directly from the source of truth, with your RBAC rules enforced on every call.
 
 In just two months, the server got substantially more capable:
 
 - **The newest MCP protocol.** Docs MCP supports [2026-07-28 protocol version](https://modelcontextprotocol.io/specification/2026-07-28), the largest change since MCP started: a stateless core, header-based routing, cacheable tool lists, and stronger authorization. The newest AI clients and their capabilities work with your docs from day one.
-- **GraphQL support.** The MCP tools for exploring your API catalog now cover GraphQL, not only OpenAPI. Agents can list your [GraphQL APIs](https://redocly.com/docs/realm/content/api-docs/add-graphql-docs), browse types, and read whole schemas.
+- **GraphQL support.** The MCP tools for exploring your API catalog now cover GraphQL, not only OpenAPI. Agents can list your [GraphQL APIs](https://redocly.com/docs/platform/content/api-docs/add-graphql-docs), browse types, and read whole schemas.
 - **Multi-version APIs.** Projects that document several versions expose all of them, so agents answer against the version your user is actually on.
 - **Search that respects locales.** An English question no longer pulls back the same page in every translation.
 
@@ -43,18 +43,18 @@ A capable server is worthless if people give up while connecting to it, so we re
 - Access tokens **refresh automatically**. Sessions used to expire mid-conversation and force a re-login; now they just keep working.
 - Tools carry **standard MCP annotations**, so AI clients know which are safe to call without confirmation.
 
-The whole thing is [configurable in one place](https://redocly.com/docs/realm/config/mcp), and you can put a [connect button](https://redocly.com/docs/realm/content/markdoc-tags/connect-mcp) right on your pages.
+The whole thing is [configurable in one place](https://redocly.com/docs/platform/config/mcp), and you can put a [connect button](https://redocly.com/docs/platform/content/markdoc-tags/connect-mcp) right on your pages.
 
 ## Discoverable by the whole agent ecosystem
 
 The next generation of agents won't wait for a human to paste in a URL. They'll discover services on their own, and a Redocly project now introduces itself:
 
-- An **[MCP server card](https://redocly.com/docs/realm/customization/mcp-server#mcp-server-card)** and an **[A2A agent card](https://redocly.com/docs/realm/customization/agent-skills#agent-card)** describe what your project offers, in the standard formats agents already look for.
-- **[Agent skills](https://redocly.com/docs/realm/customization/agent-skills)** go a step further: drop task-focused skill files into an `@skills` folder, and agents follow the steps you wrote instead of guessing from reference docs.
+- An **[MCP server card](https://redocly.com/docs/platform/customization/mcp-server#mcp-server-card)** and an **[A2A agent card](https://redocly.com/docs/platform/customization/agent-skills#agent-card)** describe what your project offers, in the standard formats agents already look for.
+- **[Agent skills](https://redocly.com/docs/platform/customization/agent-skills)** go a step further: drop task-focused skill files into an `@skills` folder, and agents follow the steps you wrote instead of guessing from reference docs.
 
 ## Content that LLMs actually understand
 
-MCP is one door into your docs; [`llms.txt`](https://redocly.com/docs/realm/config/seo) is the other, and we made what's behind both doors better:
+MCP is one door into your docs; [`llms.txt`](https://redocly.com/docs/platform/config/seo) is the other, and we made what's behind both doors better:
 
 - `llms.txt` output now includes **OpenAPI code samples and response samples**, and correctly renders `oneOf` and discriminator schemas: exactly the parts of an API description agents used to trip over.
 - Custom Markdoc tags can define their **own LLM rendering** with `renderForLlms`, with locale support. If you built a custom component, its content is no longer invisible to AI.
@@ -103,7 +103,7 @@ That's the whole setup.
 
 Useful links:
 
-- [Docs MCP server documentation](https://redocly.com/docs/realm/customization/mcp-server)
-- [Agent skills documentation](https://redocly.com/docs/realm/customization/agent-skills)
+- [Docs MCP server documentation](https://redocly.com/docs/platform/customization/mcp-server)
+- [Agent skills documentation](https://redocly.com/docs/platform/customization/agent-skills)
 - [Reviewer](https://redocly.com/reviewer)
-- [Redocly changelog](https://redocly.com/docs/realm/changelog)
+- [Redocly changelog](https://redocly.com/docs/platform/changelog)

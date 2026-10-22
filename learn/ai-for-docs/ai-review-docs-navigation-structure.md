@@ -1,22 +1,22 @@
 ---
 seo:
  title: Use AI to review your docs navigation structure
- description: How to paste a sitemap or folder tree for AI review, which navigation mistakes models flag for new readers, and how Reunite visual pull request review validates a restructure before publish.
+ description: How to paste a sitemap or folder tree for AI review, which navigation mistakes models flag for new readers, and how the Redocly platform visual pull request review validates a restructure before publish.
 ---
 
 # Use AI to review your docs navigation structure
 
 Readers decide whether your API is approachable before they read a single endpoint description. They scan the sidebar, search for authentication, and bail when errors live three levels deep under a label that sounds unrelated. A large language model cannot replace analytics, but it can read your folder tree or `sidebars.yaml` outline and flag patterns that confuse first-time integrators.
 
-This article shows what to paste into a navigation review, the problems that show up repeatedly, a before-and-after tree you can adapt from [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), and how to validate the restructure in [Reunite](https://redocly.com/reunite) before you merge.
+This article shows what to paste into a navigation review, the problems that show up repeatedly, a before-and-after tree you can adapt from [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), and how to validate the restructure in [Redocly platform](https://redocly.com/reunite) before you merge.
 
 ## What to share with the model
 
-Paste the structure readers actually see, not an internal wiki map. That usually means a folder tree from your docs repo, the ordered list from [Sidebars configuration options](https://redocly.com/docs/realm/navigation/sidebars), or an export of your published sidebar labels.
+Paste the structure readers actually see, not an internal wiki map. That usually means a folder tree from your docs repo, the ordered list from [Sidebars configuration options](https://redocly.com/docs/platform/navigation/sidebars), or an export of your published sidebar labels.
 
 Add a short persona block: who arrives cold this week, what they need to accomplish in the first session, and which pages you consider prerequisites. Without tasks, the model defaults to generic "logical grouping" advice.
 
-Note whether navigation is file-driven or explicit. [Navigation in Realm](https://redocly.com/docs/realm/navigation/navigation) explains that missing `sidebars.yaml` often means order follows the file tree, which may not match how you want newcomers to read.
+Note whether navigation is file-driven or explicit. [Navigation in Redocly](https://redocly.com/docs/platform/navigation/navigation) explains that missing `sidebars.yaml` often means order follows the file tree, which may not match how you want newcomers to read.
 
 ## Prompt template for a navigation review
 
@@ -49,7 +49,7 @@ Error and rate-limit content separated from the operations that trigger those re
 
 Examples orphaned at the root while conceptual guides sit elsewhere make tutorials feel optional when they are the real on-ramp. Webhooks promoted to top level without a prerequisite auth page strand readers who land from search.
 
-Orphan pages with no parent group show up when teams add files faster than they update [Sidebars configuration options](https://redocly.com/docs/realm/navigation/sidebars). Ask the model to list files that appear disconnected from any stated task flow.
+Orphan pages with no parent group show up when teams add files faster than they update [Sidebars configuration options](https://redocly.com/docs/platform/navigation/sidebars). Ask the model to list files that appear disconnected from any stated task flow.
 
 ## Before and after a flat top-level layout
 
@@ -85,9 +85,9 @@ The moves are explainable in reader terms. Authentication and rate limits belong
 
 Your product names differ, but the pattern repeats: pull prerequisites up, push deep reference down, and reduce top-level siblings.
 
-## Validate the restructure in Reunite before publish
+## Validate the restructure in Redocly before publish
 
-AI proposes moves. Humans still need to see rendered navigation with real labels and cross-links. Edit `sidebars.yaml` or move files in the [use the editor](https://redocly.com/docs/realm/reunite/project/use-editor) flow, open a pull request, and ask reviewers to use [review a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/review-pull-request).
+AI proposes moves. Humans still need to see rendered navigation with real labels and cross-links. Edit `sidebars.yaml` or move files in the [use the editor](https://redocly.com/docs/platform/project/use-editor) flow, open a pull request, and ask reviewers to use [review a pull request in Redocly](https://redocly.com/docs/platform/project/pull-request/review-pull-request).
 
 The Review tab opens in Visual view by default, showing rendered pages before and after your changes. That is the right place to confirm a moved auth page still reads well in context and that examples under guides did not break sidebar depth.
 
@@ -117,13 +117,13 @@ This approach cannot replace quantitative path analysis, card-sort studies with 
 ```mermaid
 graph LR
   T[Folder tree or sidebars.yaml] --> A[AI navigation report]
-  A --> E[Edit structure in Reunite]
+  A --> E[Edit structure in Redocly]
   E --> V[Visual PR review]
   V --> M[Merge and deploy]
 ```
 
-The model narrows which moves are worth trying; Reunite visual review proves the sidebar works for humans.
+The model narrows which moves are worth trying; the platform visual review proves the sidebar works for humans.
 
 ## Learn more
 
-When you want Git-backed editing, pull request review, and side-by-side visual diffs on navigation changes, start with [Reunite](https://redocly.com/reunite) and the [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) hub for editor and review workflows.
+When you want Git-backed editing, pull request review, and side-by-side visual diffs on navigation changes, start with [Platform](https://redocly.com/reunite) and the [the platform documentation](https://redocly.com/docs/platform/reunite) hub for editor and review workflows.

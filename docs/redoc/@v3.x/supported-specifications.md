@@ -48,7 +48,7 @@ Redoc CE detects the specification type from the description file you point it a
 ---
 
 - MCP
-- Servers described with the [`x-mcp`](../../realm/content/api-docs/openapi-extensions/x-mcp.md) extension
+- Servers described with the [`x-mcp`](../../platform/content/api-docs/openapi-extensions/x-mcp.md) extension
 - The MCP servers and tools declared at the root of an OpenAPI description, with connect buttons on the overview page.
   MCP is not a separate input: it is documented inside an OpenAPI description.
 
@@ -122,11 +122,11 @@ The standalone options such as `router`, `basePath`, and `disableTelemetry` appl
 The [OpenAPI options](./config.md#openapi-options) apply to OpenAPI descriptions, and the [AsyncAPI options](./config.md#asyncapi-options) and [GraphQL options](./config.md#graphql-options) apply to their specification only.
 [Specification extensions](./redoc-vendor-extensions.md) such as `x-logo` and `x-tagGroups` are read from OpenAPI and AsyncAPI descriptions.
 GraphQL schemas have no extension mechanism.
-The overview metadata comes from the [`info`](../../realm/config/graphql/info.md) option.
+The overview metadata comes from the [`info`](../../platform/config/graphql/info.md) option.
 
 ## Resources
 
 - **[Redoc CE quickstart](./quickstart.md)** - Render a description of any supported specification in one HTML file
 - **[Configure Redoc CE](./config.md)** - Every option, including the AsyncAPI and GraphQL sections
 - **[Redoc CE specification extensions](./redoc-vendor-extensions.md)** - The `x-` fields Redoc CE reads from OpenAPI and AsyncAPI descriptions
-- **[OpenAPI extension `x-mcp`](../../realm/content/api-docs/openapi-extensions/x-mcp.md)** - Document MCP servers and tools inside an OpenAPI description
+- **[OpenAPI extension `x-mcp`](../../platform/content/api-docs/openapi-extensions/x-mcp.md)** - Document MCP servers and tools inside an OpenAPI description

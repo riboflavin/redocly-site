@@ -34,7 +34,7 @@ We're looking for a creative and curious technical content creator with a market
 #### Nice to have
 - Experience working with OpenAPI.
 - Experience with documentation tooling.
-- Familiarity with Redocly products (Reunite, Redoc, Revel, Reef, Realm).
+- Familiarity with Redocly products (Redocly, the platform, Respect, Redocly CLI).
 
 ### 30-60-90 day plan
 

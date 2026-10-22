@@ -73,7 +73,7 @@ confirm the generated steps match the shape Respect expects before you schedule 
 
 ## Using Respect scorecards and reports to revisit priorities
 
-A ranking made once tends to age quickly, since traffic patterns shift, new endpoints ship, and old ones get deprecated. The [reports on scheduled Respect runs](https://redocly.com/docs/realm/reunite/project/respect-monitoring) give a running record of which workflows are passing, which are flaky, and which have gone untouched, and that record is useful raw material to feed back into another round of AI-assisted ranking every quarter or so. Teams that also want to catch [detecting drift between docs and a live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) or start by [finding gaps in documentation coverage](https://redocly.com/learn/ai-for-docs/ai-find-gaps-documentation-coverage) will find this the same underlying discipline at work:
+A ranking made once tends to age quickly, since traffic patterns shift, new endpoints ship, and old ones get deprecated. The [reports on scheduled Respect runs](https://redocly.com/docs/platform/project/respect-monitoring) give a running record of which workflows are passing, which are flaky, and which have gone untouched, and that record is useful raw material to feed back into another round of AI-assisted ranking every quarter or so. Teams that also want to catch [detecting drift between docs and a live API](https://redocly.com/learn/ai-for-docs/ai-detect-drift-docs-live-api) or start by [finding gaps in documentation coverage](https://redocly.com/learn/ai-for-docs/ai-find-gaps-documentation-coverage) will find this the same underlying discipline at work:
 revisit the ranking regularly instead of treating it as a one-time exercise, and let scheduled evidence, rather than intuition, decide what moves up the list.
 
 ## FAQs
@@ -94,7 +94,7 @@ Without visibility into real production traffic or support history, AI tends to 
 For each high-priority workflow, you can [auto-generate an Arazzo description from an OpenAPI description](https://redocly.com/docs/respect/commands/generate-arazzo), review the generated steps against real usage, add success criteria, and schedule the workflow for [scheduled monitoring of critical paths](https://redocly.com/respect). That turns a one-time ranking into coverage that runs automatically.
 
 **How do I keep a monitoring priority list up to date as the API changes?**
-The [reports on scheduled Respect runs](https://redocly.com/docs/realm/reunite/project/respect-monitoring) show which workflows are passing, flaky, or untouched, and that record is useful input for another round of AI-assisted ranking every quarter or so. Revisiting priorities regularly, rather than treating the first ranking as final, keeps monitoring aligned with how the API actually evolves.
+The [reports on scheduled Respect runs](https://redocly.com/docs/platform/project/respect-monitoring) show which workflows are passing, flaky, or untouched, and that record is useful input for another round of AI-assisted ranking every quarter or so. Revisiting priorities regularly, rather than treating the first ranking as final, keeps monitoring aligned with how the API actually evolves.
 
 ## How Redocly can help
 

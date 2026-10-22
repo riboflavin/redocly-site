@@ -28,7 +28,7 @@ export function Footer({ className }: FooterProps): JSX.Element | null {
 
   const { pathname } = useLocation();
 
-  const grey2PagesList = ['/', '/reunite', '/contact-us', '/reef', '/config-rules-builder'];
+  const grey2PagesList = ['/platform', '/contact-us', '/reef', '/config-rules-builder'];
   const grey1PagesList = ['/respect', '/redocly-cli'];
 
   return (
@@ -39,14 +39,17 @@ export function Footer({ className }: FooterProps): JSX.Element | null {
       grey1Background={grey1PagesList.includes(pathname)}
     >
       <ColumnsSection>
-        <FooterColumns columns={items as unknown as ResolvedNavItem[]} copyrightText={copyrightText} />
+        <FooterColumns
+          columns={items as unknown as ResolvedNavItem[]}
+          copyrightText={copyrightText}
+        />
       </ColumnsSection>
       <BottomSection p="20px" textAlign="center">
         <MediaBox maxWidth="660px">
           <StyledBox>
             <StyledText>Built with 💙 ☕️️ and 🌮. This website runs entirely on </StyledText>
             <BottomLink to="/portals/">
-              <StyledText>Realm.</StyledText>
+              <StyledText>Redocly.</StyledText>
             </BottomLink>
           </StyledBox>
         </MediaBox>

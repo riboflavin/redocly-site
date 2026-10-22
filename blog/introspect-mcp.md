@@ -16,8 +16,8 @@ categories:
 If you ship an MCP (Model Context Protocol) server, that server is an API surface of its own: tools with input schemas, prompts with arguments, resources with URIs.
 AI agents discover all of it at runtime, but the humans evaluating your API usually can't, because that surface lives only in the server code.
 
-The [`x-mcp` OpenAPI extension](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md) records the MCP server's capabilities in the same OpenAPI description as the rest of your API.
-You can then render it for humans with [Redocly Realm](../docs/realm/index.md), next to your API reference.
+The [`x-mcp` OpenAPI extension](../docs/platform/content/api-docs/openapi-extensions/x-mcp.md) records the MCP server's capabilities in the same OpenAPI description as the rest of your API.
+You can then render it for humans with [Redocly Realm](../docs/platform/index.md), next to your API reference.
 The new experimental [`introspect-mcp`](../docs/cli/commands/introspect-mcp) command in Redocly CLI fills that extension in for you, by asking the server itself.
 
 ## Ask the server, not the source code
@@ -132,9 +132,9 @@ Add this command to your CI pipeline to fail the build when the published descri
 ## From YAML to rendered docs
 
 Once `x-mcp` is in the description, it's regular OpenAPI: lint it, bundle it, version it in Git.
-And [Redocly Realm](../docs/realm/index.md) renders the extension as MCP documentation right next to your API reference.
+And [Redocly Realm](../docs/platform/index.md) renders the extension as MCP documentation right next to your API reference.
 The tools, prompts, and resources you just introspected become reader-facing docs — no extra authoring step.
 
-To learn more, see the [`introspect-mcp` documentation](../docs/cli/commands/introspect-mcp) and the [`x-mcp` extension reference](../docs/realm/content/api-docs/openapi-extensions/x-mcp.md).
+To learn more, see the [`introspect-mcp` documentation](../docs/cli/commands/introspect-mcp) and the [`x-mcp` extension reference](../docs/platform/content/api-docs/openapi-extensions/x-mcp.md).
 
 Have you tried it against your own MCP server? [Let us know](https://github.com/Redocly/redocly-cli/issues) — the command is new and experimental, and real-world feedback shapes where it goes next.

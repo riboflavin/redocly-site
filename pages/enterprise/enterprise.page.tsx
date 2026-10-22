@@ -2,7 +2,7 @@ import Page from '@redocly/marketing-pages/pages/enterprise/enterprise.page.js';
 
 export const frontmatter = {
   seo: {
-    title: 'Enterprise',
+    title: 'Enterprise plan',
   },
   slug: '/enterprise',
 };

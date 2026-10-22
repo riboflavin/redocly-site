@@ -1,18 +1,22 @@
 import type { ApiFunctionsContext } from '@redocly/config';
 // @ts-ignore
-import changelogData from '../realm/changelogs.yaml';
-import { hasChanges, type ChangelogEntry, processChanges } from '../realm/@theme/_utils/changelog';
+import changelogData from '../platform/changelogs.yaml';
+import { hasChanges, type ChangelogEntry, processChanges } from '../platform/@theme/_utils/changelog';
+import { SHORT_NAMES, toAnchorName } from '../platform/changelog.page';
 import { escapeXml, formatRssDate } from '../../@theme/utils/rss';
 
 type ChangelogData = Record<string, Record<string, ChangelogEntry>>;
 
-const SHORT_NAMES = {
-  '@redocly/realm': 'Realm',
-  '@redocly/reef': 'Reef',
-  '@redocly/revel': 'Revel',
-  '@redocly/redoc': 'Redoc',
-  reunite: 'Reunite',
-};
+const FRAMEWORK_PACKAGE = '@redocly/framework';
+
+/** Packages that `@redocly/framework` replaced. A feed that selects one of them also gets the framework releases. */
+const LEGACY_PACKAGES = ['@redocly/realm', '@redocly/reef', '@redocly/revel', '@redocly/redoc'];
+
+/** The time of the first framework release, or `Infinity` before the framework has one. */
+function getFrameworkStart(changelogs: ChangelogData): number {
+  const timestamps = Object.values(changelogs[FRAMEWORK_PACKAGE] || {}).map((entry) => entry.timestamp);
+  return timestamps.length > 0 ? Math.min(...timestamps) : Infinity;
+}
 
 interface ChangelogWithDeps {
   record: ChangelogEntry;
@@ -59,7 +63,7 @@ function buildRssItem(item: ChangelogWithDeps, baseUrl: string): string {
   const { features, fixes } = processChanges(item.record);
   const packageName = SHORT_NAMES[item.packageName] || item.packageName;
   const title = `${packageName} ${item.version}`;
-  const releaseId = `${packageName}@${item.version}`;
+  const releaseId = `${toAnchorName(packageName)}@${item.version}`;
 
   const releaseUrl = `${baseUrl}#${encodeURIComponent(releaseId)}`;
   const guidUrl = releaseUrl;
@@ -116,11 +120,8 @@ export default async function changelogRssHandler(
     
     // Map short names to package names
     const shortNameToPackage: Record<string, string> = {
-      'Realm': '@redocly/realm',
-      'Reef': '@redocly/reef',
-      'Revel': '@redocly/revel',
-      'Redoc': '@redocly/redoc',
-      'Reunite': 'reunite',
+      ...Object.fromEntries(Object.entries(SHORT_NAMES).map(([pkg, name]) => [name, pkg])),
+      Reunite: 'reunite',
     };
     
     // Convert product short names to package names
@@ -128,8 +129,13 @@ export default async function changelogRssHandler(
     const selectedPackages = productsParam
       ? productsParam.split(',').map(p => shortNameToPackage[p.trim()] || p.trim()).filter(Boolean)
       : Object.keys(changelogs); // Default to all packages if none specified
+    if (selectedPackages.some((pkg) => LEGACY_PACKAGES.includes(pkg))) {
+      selectedPackages.push(FRAMEWORK_PACKAGE);
+    }
+    // From the first framework release on, the framework records replace the legacy package records.
+    const frameworkStart = getFrameworkStart(changelogs);
     
-    const baseUrl = 'https://redocly.com/docs/realm/changelog';
+    const baseUrl = 'https://redocly.com/docs/platform/changelog';
     
     const resolved: ChangelogWithDeps[] = [];
     
@@ -147,6 +153,8 @@ export default async function changelogRssHandler(
         const resolvedRecord = resolveDepsDeep(record, changelogs);
         
         if (!hasChanges(resolvedRecord)) continue;
+
+        if (LEGACY_PACKAGES.includes(packageName) && record.timestamp >= frameworkStart) continue;
         
         // Include next versions if include-rc flag is set
         if (isNextVersionChangelog && !includeRc) {
@@ -174,7 +182,7 @@ export default async function changelogRssHandler(
   <channel>
     <title>Redocly Changelog</title>
     <link>${escapeXml(baseUrl)}</link>
-    <description>Latest changes and updates to Redocly products (Realm, Reef, Revel, Redoc, Reunite)</description>
+    <description>Latest changes and updates to Redocly (the API docs framework and Redocly, with earlier Realm, Reef, Revel, and Redoc releases)</description>
     <language>en-us</language>
     <lastBuildDate>${formatRssDate(Date.now())}</lastBuildDate>
     <atom:link href="${escapeXml(request.url)}" rel="self" type="application/rss+xml"/>

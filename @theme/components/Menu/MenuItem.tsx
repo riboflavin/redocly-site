@@ -36,7 +36,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
   const isNested = type === MenuItemType.Group;
   const hasChevron = isNested && !isDrilldown;
   const isOperation = type === MenuItemType.Operation;
-  const isReuniteInProducts = item.label === 'Reunite' && item.link === '/reunite';
+  const isReuniteInProducts = item.label === 'Platform' && item.link === '/platform';
 
   const handleOnClick = () => {
     telemetry.send?.('sidebar_item_clicked', { label: item.label, type: item.type });
@@ -68,7 +68,7 @@ export function MenuItem(props: React.PropsWithChildren<MenuItemProps>): JSX.Ele
     ) : resolvedIcon.type === 'font-awesome' ? (
       <MenuItemCDNIcon name={resolvedIcon.name} type={resolvedIcon.style} />
     ) : null;
-    
+
   const reuniteLabel = isReuniteInProducts && (
     <MenuItemLabelWrapper
       active={item.active}
@@ -360,8 +360,8 @@ const MenuItemLabelTextWrapperReunite = styled(MenuItemLabelTextWrapper)`
   align-items: center;
 
   section {
-      background-color: var(--bg-color);
-    }
+    background-color: var(--bg-color);
+  }
 `;
 
 const MenuItemSubLabel = styled.div`
@@ -380,7 +380,6 @@ const MenuItemIcon = styled.img`
   flex-shrink: 0;
   overflow: hidden;
 `;
-
 
 const MenuItemCDNIcon = styled(CDNIcon)`
   width: var(--menu-item-icon-size);

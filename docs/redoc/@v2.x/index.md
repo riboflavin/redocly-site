@@ -93,7 +93,7 @@ See the documentation with a command like this:
 redocly build-docs openapi.yaml
 ```
 
-For a complete list of configuration options, visit the [configuration reference](https://redocly.com/docs/realm/config/openapi).
+For a complete list of configuration options, visit the [configuration reference](https://redocly.com/docs/platform/config/openapi).
 
 ## Resources
 

@@ -2,12 +2,12 @@
   icon: arrow-left
   href: /docs
 - separatorLine: true
-- page: docs/realm/changelog.page.tsx
+- page: docs/platform/changelog.page.tsx
   label: Changelog
   icon: list-check
 - separatorLine: true
-- page: docs/realm/index.md
+- page: docs/platform/index.md
   icon: ./images/icons/realm-gray.svg
-- $ref: docs/realm/sidebars.yaml
+- $ref: docs/platform/sidebars.yaml
 - separatorLine: true
-- $ref: docs/realm/config/sidebars.yaml
+- $ref: docs/platform/config/sidebars.yaml

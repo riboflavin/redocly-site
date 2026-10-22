@@ -151,7 +151,7 @@ Consumers using different versions require access to appropriate reference mater
 
 Choose documentation platforms that support intuitive version switching through dropdown menus or clear navigation paths.
 Your API catalog should handle whatever versioning strategy you implement without creating administrative overhead.
-[Redocly's API management platform](https://redocly.com/docs/realm/) provides comprehensive capabilities for [handling complex API documentation scenarios across multiple versions](https://redocly.com/docs/realm/content/versions).
+[Redocly's API management platform](https://redocly.com/docs/platform/) provides comprehensive capabilities for [handling complex API documentation scenarios across multiple versions](https://redocly.com/docs/platform/content/versions).
 
 Redocly makes maintaining versioned APIs straightforward with comprehensive API catalog and documentation generation capabilities.
 The platform supports whatever versioning strategy you decide to implement, providing the flexibility and tooling you need to keep your API documentation organized and accessible across all supported versions.

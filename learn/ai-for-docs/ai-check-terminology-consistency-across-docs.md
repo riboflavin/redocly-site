@@ -1,12 +1,12 @@
 ---
 seo:
  title: Use AI to check terminology consistency across your docs
- description: Audit docs for conflicting terms with AI, encode a canonical glossary in Redocly CLI lint rules, and single-source definitions with Reunite remote content.
+ description: Audit docs for conflicting terms with AI, encode a canonical glossary in Redocly CLI lint rules, and single-source definitions with the Redocly platform remote content.
 ---
 
 # Use AI to check terminology consistency across your docs
 
-The same product becomes an account, a tenant, and an organization in different guides. Readers notice, and linters do not catch prose drift by default. You can run an AI terminology audit, agree on a canonical glossary, encode forbidden variants in Redocly CLI rules, and host shared definitions with Reunite remote content. The review rhythm matches [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), but the checklist here focuses on language rather than API shape.
+The same product becomes an account, a tenant, and an organization in different guides. Readers notice, and linters do not catch prose drift by default. You can run an AI terminology audit, agree on a canonical glossary, encode forbidden variants in Redocly CLI rules, and host shared definitions with the Redocly platform remote content. The review rhythm matches [Use AI to accelerate and improve reviews](https://redocly.com/learn/ai-for-docs/ai-reviews), but the checklist here focuses on language rather than API shape.
 
 ## How the same concept gets three names
 
@@ -71,15 +71,15 @@ graph LR
   A[AI terminology audit] --> B[Glossary in git]
   B --> C[CLI configurable rules]
   C --> D[CI lint on PRs]
-  B --> E[Reunite remote content]
+  B --> E[the platform remote content]
   E --> F[Published docs]
 ```
 
 Remote content keeps definitions synchronized with the glossary file.
 
-## Reunite remote content for single sourcing
+## Platform remote content for single sourcing
 
-When a term appears in fifty pages, editing each file by hand fails. [Remote content](https://redocly.com/docs/realm/reunite/project/remote-content/remote-content) lets Reunite pull shared snippets from a canonical repository. Writers edit the glossary fragment once; pages include it by reference. Onboard authors with [start with the Reunite editor](https://redocly.com/docs/realm/get-started/start-reunite-editor) and point them at [Reunite](https://redocly.com/reunite) for the wider workflow.
+When a term appears in fifty pages, editing each file by hand fails. [Remote content](https://redocly.com/docs/platform/project/remote-content/remote-content) lets the platform pull shared snippets from a canonical repository. Writers edit the glossary fragment once; pages include it by reference. Onboard authors with [start with the Redocly editor](https://redocly.com/docs/platform/get-started/start-reunite-editor) and point them at [Platform](https://redocly.com/reunite) for the wider workflow.
 
 Use remote content for definitions and boilerplate, not for entire guides, so diffs stay readable.
 
@@ -111,7 +111,7 @@ For narrative docs outside OpenAPI, run a lighter periodic AI audit even when CL
 
 ## Summary
 
-Use AI to surface terminology drift, publish a short canonical glossary, enforce agreed bans with Redocly CLI in CI, and single-source definitions through Reunite remote content so the next writer does not reintroduce a third name for the same thing. Treat terminology like API versioning: visible, owned, and reviewed on a schedule.
+Use AI to surface terminology drift, publish a short canonical glossary, enforce agreed bans with Redocly CLI in CI, and single-source definitions through Redocly remote content so the next writer does not reintroduce a third name for the same thing. Treat terminology like API versioning: visible, owned, and reviewed on a schedule.
 
 ## Learn more
 

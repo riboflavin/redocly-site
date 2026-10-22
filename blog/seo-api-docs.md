@@ -162,7 +162,7 @@ Action items:
 
 While search engines may be using usage-related signals they can measure, like time-on-site and bounce rates, we find it much better to use a different mindset when approaching usage.
 We think about it in terms of satisfaction.
-For example, if a person queried Google for “developer portals” and found our [developer portals landing page](../pages/realm/realm.page.tsx), would this page satisfy them? What would make the page better?
+For example, if a person queried Google for “developer portals” and found our [developer portals landing page](../pages/product/product.page.tsx), would this page satisfy them? What would make the page better?
 What’s missing?
 
 We use a similar strategy across our entire organization.

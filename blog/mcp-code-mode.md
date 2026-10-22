@@ -189,7 +189,7 @@ Code mode is enabled for all organizations using Redocly's MCP server.
 Redocly's AI Assistant also uses code mode to answer API questions directly in your docs.
 
 Open `/mcp` on your Redocly project and follow the setup instructions to connect your AI tool.
-You can also explore [Redocly's own MCP server](https://redocly.com/mcp) or read the [connection guide](https://redocly.com/docs/realm/customization/mcp-server).
+You can also explore [Redocly's own MCP server](https://redocly.com/mcp) or read the [connection guide](https://redocly.com/docs/platform/customization/mcp-server).
 
 Then ask something that spans your documentation:
 
@@ -205,7 +205,7 @@ Stay tuned.
 
 Useful links:
 
-- [Redocly MCP server setup guide](https://redocly.com/docs/realm/customization/mcp-server)
+- [Redocly MCP server setup guide](https://redocly.com/docs/platform/customization/mcp-server)
 - [Try Redocly's MCP server](https://redocly.com/mcp)
 - [Code mode: the better way to use MCP, by Cloudflare](https://blog.cloudflare.com/code-mode/)
 - [Code execution with MCP, by Anthropic](https://www.anthropic.com/engineering/code-execution-with-mcp)

@@ -32,7 +32,7 @@ We’ve updated the code highlighter to [Shiki](https://shiki.style/), which unl
 
 These features allow for better clarity and emphasis in your documentation, making complex code easier to follow.
 
-Look at [some of the highlighting examples in our docs](https://redocly.com/docs/realm/author/how-to/configure-code-snippets).
+Look at [some of the highlighting examples in our docs](https://redocly.com/docs/platform/author/how-to/configure-code-snippets).
 
 ---
 

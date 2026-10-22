@@ -8,7 +8,7 @@ seo:
 
 Developers copy the curl block or SDK snippet before they read the prose. When auth headers are missing, optional query params disappear, or the JSON shape no longer matches the schema, integrations fail in silence until someone files a ticket. A large language model can compare pasted examples to your OpenAPI slice and flag pattern gaps fast. You still need deterministic checks so the samples readers copy match what your spec and mock server actually return.
 
-This article covers the failures that show up most often, how to prompt for a structured review, and how [Redoc CE documentation](https://redocly.com/docs/redoc), [generate code samples automatically](https://redocly.com/docs/api-reference-docs/guides/generate-code-samples), the [configure mock server](https://redocly.com/docs/realm/content/api-docs/configure-mock-server) flow, and the [lint command](https://redocly.com/docs/cli/commands/lint) through [Explore Redocly CLI](https://redocly.com/docs/cli/) close the loop after AI suggests fixes.
+This article covers the failures that show up most often, how to prompt for a structured review, and how [Redoc CE documentation](https://redocly.com/docs/redoc), [generate code samples automatically](https://redocly.com/docs/api-reference-docs/guides/generate-code-samples), the [configure mock server](https://redocly.com/docs/platform/content/api-docs/configure-mock-server) flow, and the [lint command](https://redocly.com/docs/cli/commands/lint) through [Explore Redocly CLI](https://redocly.com/docs/cli/) close the loop after AI suggests fixes.
 
 ## Common ways code examples drift from the spec
 
@@ -82,7 +82,7 @@ AI can produce the gap table that motivates this edit. Your reviewers still appr
 
 [Generate code samples automatically](https://redocly.com/docs/api-reference-docs/guides/generate-code-samples) creates request tabs from the same OpenAPI fields your lint rules guard. Configure languages in your API reference docs settings or `redocly.yaml` so curl, JavaScript, or Python tabs stay in sync when parameters change. Remember that auto-generated tabs are not available in Redoc CE alone; CE still renders samples you embed with [x-codeSamples extension](https://redocly.com/docs/api-reference-docs/specification-extensions/x-code-samples).
 
-The [configure mock server](https://redocly.com/docs/realm/content/api-docs/configure-mock-server) option serves example responses without a live backend. Use `strictExamples` when you want responses to match documented JSON exactly, or relax it when you want request values echoed for interactive demos. Send the same request through [Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay) after you change an example to see whether the mock returns the status and body your text promises.
+The [configure mock server](https://redocly.com/docs/platform/content/api-docs/configure-mock-server) option serves example responses without a live backend. Use `strictExamples` when you want responses to match documented JSON exactly, or relax it when you want request values echoed for interactive demos. Send the same request through [Replay API explorer](https://redocly.com/docs/end-user/test-apis-replay) after you change an example to see whether the mock returns the status and body your text promises.
 
 Treat generated curl and mock responses as the baseline. Ask AI to diff hand-written tutorials against that baseline instead of against memory.
 

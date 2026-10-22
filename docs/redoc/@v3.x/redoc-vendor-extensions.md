@@ -24,29 +24,29 @@ To display Redocly-only fields, list them explicitly: `showExtensions: ['x-seo',
 
 ---
 
-- [x-additionalPropertiesName](../../realm/content/api-docs/openapi-extensions/x-additional-properties-name.md)
+- [x-additionalPropertiesName](../../platform/content/api-docs/openapi-extensions/x-additional-properties-name.md)
 - Display a field name for an `additionalProperties` description.
 
 ---
 
-- [x-badges](../../realm/content/api-docs/openapi-extensions/x-badges.md)
+- [x-badges](../../platform/content/api-docs/openapi-extensions/x-badges.md)
 - Add visible badges to API operations.
 
 ---
 
-- [x-codeSamples](../../realm/content/api-docs/openapi-extensions/x-code-samples.md)
+- [x-codeSamples](../../platform/content/api-docs/openapi-extensions/x-code-samples.md)
 - Provide the code samples to display for an operation.
   Redoc CE displays these samples and the payload sample, and does not generate samples for other languages.
   A sample appears only when its `label`, or its `lang` when it has no label, is in the [`codeSamples`](./config.md#other-options) language list.
 
 ---
 
-- [x-displayName](../../realm/content/api-docs/openapi-extensions/x-display-name.md)
+- [x-displayName](../../platform/content/api-docs/openapi-extensions/x-display-name.md)
 - Use a human-friendly display name for a tag.
 
 ---
 
-- [x-enumDescriptions](../../realm/content/api-docs/openapi-extensions/x-enum-descriptions.md)
+- [x-enumDescriptions](../../platform/content/api-docs/openapi-extensions/x-enum-descriptions.md)
 - Add readable labels for enum values.
 
 ---
@@ -62,32 +62,32 @@ To display Redocly-only fields, list them explicitly: `showExtensions: ['x-seo',
 
 ---
 
-- [x-mcp](../../realm/content/api-docs/openapi-extensions/x-mcp.md)
+- [x-mcp](../../platform/content/api-docs/openapi-extensions/x-mcp.md)
 - Document MCP servers and tools, and display the connect buttons on the overview page.
 
 ---
 
-- [x-summary](../../realm/content/api-docs/openapi-extensions/x-summary.md)
+- [x-summary](../../platform/content/api-docs/openapi-extensions/x-summary.md)
 - Add a short summary of a response.
 
 ---
 
-- [x-tagGroups](../../realm/content/api-docs/openapi-extensions/x-tag-groups.md)
+- [x-tagGroups](../../platform/content/api-docs/openapi-extensions/x-tag-groups.md)
 - Group tags in the sidebar.
 
 ---
 
-- [x-tags](../../realm/content/api-docs/openapi-extensions/x-tags.md)
+- [x-tags](../../platform/content/api-docs/openapi-extensions/x-tags.md)
 - Add individual schemas to navigation sections alongside operations.
 
 ---
 
-- [x-traitTag](../../realm/content/api-docs/openapi-extensions/x-trait-tag.md)
+- [x-traitTag](../../platform/content/api-docs/openapi-extensions/x-trait-tag.md)
 - Mark tags that label operations instead of grouping them.
 
 ---
 
-- [x-webhooks](../../realm/content/api-docs/openapi-extensions/x-webhooks.md)
+- [x-webhooks](../../platform/content/api-docs/openapi-extensions/x-webhooks.md)
 - Add webhooks to OpenAPI 3.0 and older descriptions.
 
 {% /table %}
@@ -96,9 +96,9 @@ To display Redocly-only fields, list them explicitly: `showExtensions: ['x-seo',
 
 Redoc CE converts Swagger 2.0 descriptions to OpenAPI 3 before rendering, and reads the following extensions on the way:
 
-- [x-examples](../../realm/content/api-docs/openapi-extensions/x-examples.md): add examples to a request, like the OpenAPI 3 `example` and `examples` keywords.
-- [x-nullable](../../realm/content/api-docs/openapi-extensions/x-nullable.md): mark a schema as nullable.
-- [x-servers](../../realm/content/api-docs/openapi-extensions/x-servers.md): add one or more target hosts for the API.
+- [x-examples](../../platform/content/api-docs/openapi-extensions/x-examples.md): add examples to a request, like the OpenAPI 3 `example` and `examples` keywords.
+- [x-nullable](../../platform/content/api-docs/openapi-extensions/x-nullable.md): mark a schema as nullable.
+- [x-servers](../../platform/content/api-docs/openapi-extensions/x-servers.md): add one or more target hosts for the API.
 
 ## AsyncAPI extensions
 
@@ -109,17 +109,17 @@ Redoc CE converts Swagger 2.0 descriptions to OpenAPI 3 before rendering, and re
 
 ---
 
-- [x-additionalPropertiesName](../../realm/content/api-docs/asyncapi-extensions/x-additional-properties-name.md)
+- [x-additionalPropertiesName](../../platform/content/api-docs/asyncapi-extensions/x-additional-properties-name.md)
 - Display a field name for an `additionalProperties` description.
 
 ---
 
-- [x-badges](../../realm/content/api-docs/asyncapi-extensions/x-badges.md)
+- [x-badges](../../platform/content/api-docs/asyncapi-extensions/x-badges.md)
 - Add visible badges to operations.
 
 ---
 
-- [x-enumDescriptions](../../realm/content/api-docs/asyncapi-extensions/x-enum-descriptions.md)
+- [x-enumDescriptions](../../platform/content/api-docs/asyncapi-extensions/x-enum-descriptions.md)
 - Add readable labels for enum values.
 
 ---
@@ -129,7 +129,7 @@ Redoc CE converts Swagger 2.0 descriptions to OpenAPI 3 before rendering, and re
 
 ---
 
-- [x-tagGroups](../../realm/content/api-docs/asyncapi-extensions/x-tag-groups.md)
+- [x-tagGroups](../../platform/content/api-docs/asyncapi-extensions/x-tag-groups.md)
 - Group tags in the sidebar.
 
 {% /table %}
@@ -147,7 +147,7 @@ You can remove the comment from `info.description`.
 
 ## Resources
 
-- **[OpenAPI extensions](../../realm/content/api-docs/openapi-extensions/index.md)** - Detailed reference for every extension, including examples
-- **[AsyncAPI extensions](../../realm/content/api-docs/asyncapi-extensions/index.md)** - Detailed reference for the AsyncAPI extensions
+- **[OpenAPI extensions](../../platform/content/api-docs/openapi-extensions/index.md)** - Detailed reference for every extension, including examples
+- **[AsyncAPI extensions](../../platform/content/api-docs/asyncapi-extensions/index.md)** - Detailed reference for the AsyncAPI extensions
 - **[Configure Redoc CE](./config.md)** - Display custom extensions with `showExtensions`, and see every other option
 - **[Migration from Redoc CE 2.x to 3.x](./config-migration.md)** - Other changes between the versions

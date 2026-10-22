@@ -5,10 +5,10 @@
 #   separatorLine: true
 # - separator: Products
 
-# - group: Realm
-#   page: docs/realm/index.md
+# - group: Redocly
+#   page: docs/platform/index.md
 #   items:
-#     - $ref: docs/realm/sidebars.yaml
+#     - $ref: docs/platform/sidebars.yaml
 # - separator: Open source
 # - $ref: docs/cli/sidebars.yaml
 

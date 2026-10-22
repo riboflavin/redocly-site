@@ -104,7 +104,7 @@ To be clear about [MCP](https://modelcontextprotocol.io/): Redoc CE documents an
 {% admonition type="info" name="Redocly projects can serve a live MCP server" %}
 Redoc CE renders the `x-mcp` section of your specification.
 Serving an MCP server that agents can call is a different job, and Redocly projects do it from your documentation.
-[Read the MCP server documentation](https://redocly.com/docs/realm/customization/mcp-server).
+[Read the MCP server documentation](https://redocly.com/docs/platform/customization/mcp-server).
 {% /admonition %}
 
 Supporting other formats like OpenRPC or gRPC later means writing a new adapter, not another rewrite.
@@ -216,7 +216,7 @@ The four self-hosted options run the same engine with the same options, each exp
  {% /tab %}
  {% tab label="Redocly (cloud-hosted)" %}
  Don't run it at all.
- Redocly's cloud-hosted service runs the same engine, with the platform features Redoc CE doesn't cover: versioning, access control, mock servers, and the Try It console.
+ Redocly's cloud-hosted service runs the same engine, with Redocly features Redoc CE doesn't cover: versioning, access control, mock servers, and the Try It console.
 
  [See what Redocly adds](https://redocly.com/redoc).
 

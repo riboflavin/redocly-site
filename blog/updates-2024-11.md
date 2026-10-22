@@ -42,7 +42,7 @@ While most folks don't develop new XML APIs, they may have existing ones that th
 
 Enterprise users can now attach RBAC roles to API keys, providing more granular control over who can push content to specific folders.
 
-People use our API keys for our [CICD remote content integration](../docs/realm/reunite/project/remote-content/index.md).
+People use our API keys for our [CICD remote content integration](../docs/platform/project/remote-content/index.md).
 
 ![2024-11-api-keys.png](./images/2024-11-api-keys.png)
 

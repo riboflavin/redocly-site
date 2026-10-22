@@ -90,41 +90,41 @@ Redoc CE 3.x also supports the following configuration options:
 
 ### OpenAPI options
 
-- [downloadUrls](../../realm/config/openapi/download-urls.md)
-- [events](../../realm/config/openapi/events.md)
-- [generatedSamplesMaxDepth](../../realm/config/openapi/generated-samples-max-depth.md)
-- [hideDownloadButtons](../../realm/config/openapi/hide-download-buttons.md)
-- [hidePropertiesPrefix](../../realm/config/openapi/hide-properties-prefix.md)
-- [hideSchemaTitles](../../realm/config/openapi/hide-schema-titles.md)
-- [jsonSamplesExpandLevel](../../realm/config/openapi/json-samples-expand-level.md)
-- [layout](../../realm/config/openapi/layout.md)
-- [maxDisplayedEnumValues](../../realm/config/openapi/max-displayed-enum-values.md)
-- [onlyRequiredInSamples](../../realm/config/openapi/only-required-in-samples.md)
-- [sanitize](../../realm/config/openapi/sanitize.md)
-- [schemaDefinitionsTagName](../../realm/config/openapi/schema-definitions-tag-name.md)
-- [schemasExpansionLevel](../../realm/config/openapi/schemas-expansion-level.md)
-- [showExtensions](../../realm/config/openapi/show-extensions.md)
-- [sortRequiredPropsFirst](../../realm/config/openapi/sort-required-props-first.md)
+- [downloadUrls](../../platform/config/openapi/download-urls.md)
+- [events](../../platform/config/openapi/events.md)
+- [generatedSamplesMaxDepth](../../platform/config/openapi/generated-samples-max-depth.md)
+- [hideDownloadButtons](../../platform/config/openapi/hide-download-buttons.md)
+- [hidePropertiesPrefix](../../platform/config/openapi/hide-properties-prefix.md)
+- [hideSchemaTitles](../../platform/config/openapi/hide-schema-titles.md)
+- [jsonSamplesExpandLevel](../../platform/config/openapi/json-samples-expand-level.md)
+- [layout](../../platform/config/openapi/layout.md)
+- [maxDisplayedEnumValues](../../platform/config/openapi/max-displayed-enum-values.md)
+- [onlyRequiredInSamples](../../platform/config/openapi/only-required-in-samples.md)
+- [sanitize](../../platform/config/openapi/sanitize.md)
+- [schemaDefinitionsTagName](../../platform/config/openapi/schema-definitions-tag-name.md)
+- [schemasExpansionLevel](../../platform/config/openapi/schemas-expansion-level.md)
+- [showExtensions](../../platform/config/openapi/show-extensions.md)
+- [sortRequiredPropsFirst](../../platform/config/openapi/sort-required-props-first.md)
 
 ### AsyncAPI options
 
 In `redocly.yaml`, these options go under the `asyncapi` key.
 
-- [downloadUrls](../../realm/config/asyncapi/download-urls.md)
-- [jsonSamplesDepth](../../realm/config/asyncapi/json-samples-depth.md)
-- [layout](../../realm/config/asyncapi/layout.md)
+- [downloadUrls](../../platform/config/asyncapi/download-urls.md)
+- [jsonSamplesDepth](../../platform/config/asyncapi/json-samples-depth.md)
+- [layout](../../platform/config/asyncapi/layout.md)
 
 ### GraphQL options
 
 In `redocly.yaml`, these options go under the `graphql` key.
 
-- [fieldExpandLevel](../../realm/config/graphql/field-expand-level.md)
-- [info](../../realm/config/graphql/info.md)
-- [jsonSamplesDepth](../../realm/config/graphql/json-samples-depth.md)
-- [menu](../../realm/config/graphql/menu.md)
-- [samplesMaxInlineArgs](../../realm/config/graphql/samples-max-inline-args.md)
-- [showBuiltInDirectives](../../realm/config/graphql/show-built-in-directives.md)
-- [showBuiltInScalars](../../realm/config/graphql/show-built-in-scalars.md)
+- [fieldExpandLevel](../../platform/config/graphql/field-expand-level.md)
+- [info](../../platform/config/graphql/info.md)
+- [jsonSamplesDepth](../../platform/config/graphql/json-samples-depth.md)
+- [menu](../../platform/config/graphql/menu.md)
+- [samplesMaxInlineArgs](../../platform/config/graphql/samples-max-inline-args.md)
+- [showBuiltInDirectives](../../platform/config/graphql/show-built-in-directives.md)
+- [showBuiltInScalars](../../platform/config/graphql/show-built-in-scalars.md)
 
 The `layout` and `downloadUrls` options work for GraphQL as for OpenAPI.
 

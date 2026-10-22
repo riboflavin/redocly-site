@@ -1,14 +1,14 @@
 ---
 seo:
  title: Use AI to enforce tone and style consistency across docs
- description: How tone drifts across authors, why a one-page checklist beats a style manual for LLM reviews, and how Reunite pull requests plus Redocly CLI rules keep prose aligned before merge.
+ description: How tone drifts across authors, why a one-page checklist beats a style manual for LLM reviews, and how the Redocly platform pull requests plus Redocly CLI rules keep prose aligned before merge.
 ---
 
 # Use AI to enforce tone and style consistency across docs
 
 Documentation sets rarely fail because nobody cares about tone. They fail because ten caring people each wrote a page under pressure and nobody had time to re-read the whole corpus before release. A large language model can scan many files for the same handful of rules in minutes.
 
-It will still miss strategy and brand nuance if you hand it a fifty-page style guide. The practical pairing is a short checklist in the prompt, a Git pull request in [Reunite](https://redocly.com/reunite) so every change gets a diff and a preview, and [Explore Redocly CLI](https://redocly.com/docs/cli/) rules for anything you can state as a repeatable pattern.
+It will still miss strategy and brand nuance if you hand it a fifty-page style guide. The practical pairing is a short checklist in the prompt, a Git pull request in [Redocly platform](https://redocly.com/reunite) so every change gets a diff and a preview, and [Explore Redocly CLI](https://redocly.com/docs/cli/) rules for anything you can state as a repeatable pattern.
 
 This article follows the catalog scope: why drift happens, how to brief AI with a condensed checklist, a concrete internal changelog workflow you can read on our learn site, and how to wire reviews into PRs.
 
@@ -32,9 +32,9 @@ The same learn article documents how Redocly treats changelog PRs. The flow stay
 
 You can reuse that shape without copying our exact checklist. What matters is that the model receives the diff, the checklist, and permission to quote lines directly so reviewers see evidence, not vibes.
 
-## How Reunite turns reviews into a default step in Git
+## How Platform turns reviews into a default step in Git
 
-[Reunite](https://redocly.com/reunite) is built around Git-backed projects, an editor, and the social mechanics of review. The docs hub under [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) links to tasks such as [Get started with the Reunite editor](https://redocly.com/docs/realm/get-started/start-reunite-editor) and [Open a pull request in Reunite](https://redocly.com/docs/realm/reunite/project/pull-request/open-pull-request).
+[Platform](https://redocly.com/reunite) is built around Git-backed projects, an editor, and the social mechanics of review. The docs hub under [the platform documentation](https://redocly.com/docs/platform/reunite) links to tasks such as [Get started with the Redocly editor](https://redocly.com/docs/platform/get-started/start-reunite-editor) and [Open a pull request in Redocly](https://redocly.com/docs/platform/project/pull-request/open-pull-request).
 
 Those pages are where previews and threaded comments belong before merge.
 
@@ -68,7 +68,7 @@ This approach cannot replace editorial ownership of narrative voice, localizatio
 ```mermaid
 graph LR
   C[Checklist in repo] --> A[AI review on PR]
-  A --> R[Human reviewer in Reunite]
+  A --> R[Human reviewer in Redocly]
   R --> M[Merge to main]
   M --> L[Redocly CLI lint in CI]
 
@@ -77,10 +77,10 @@ graph LR
   style L fill:#e8f5e9
 ```
 
-Checklists steer the model, Reunite carries the conversation on a real diff, and CLI lint keeps mechanical rules from regressing after merge.
+Checklists steer the model, the platform carries the conversation on a real diff, and CLI lint keeps mechanical rules from regressing after merge.
 
 ## Learn more
 
-When you want Git-backed writing, previews, and pull requests in one place, start with [Reunite](https://redocly.com/reunite) and the linked [Reunite documentation](https://redocly.com/docs/realm/reunite/reunite) for editor and PR tasks.
+When you want Git-backed writing, previews, and pull requests in one place, start with [Platform](https://redocly.com/reunite) and the linked [the platform documentation](https://redocly.com/docs/platform/reunite) for editor and PR tasks.
 
 When you are ready to encode the rules that should never depend on model mood, add [Explore Redocly CLI](https://redocly.com/docs/cli/) with [API standards and governance](https://redocly.com/docs/cli/api-standards) and [configurable rules](https://redocly.com/docs/cli/rules/configurable-rules) so the same checks run locally and in CI.

@@ -14,17 +14,17 @@ jobs:
           config: .markdownlint.yaml
           globs: |
             docs/**/*.md
-            !docs/realm/_partials/**
+            !docs/platform/_partials/**
             !docs-legacy/developer-portal/**
-            !docs/realm/spot/**
-            !docs/realm/spot-exp/**
-            !docs/realm/scout/**
-            !docs/realm/blue-harvest/**
-            !docs/realm/node_modules/**
-            !docs/realm/reference/format-image-tag.md
-            !docs/realm/extend/**
-            !docs/realm/portal-changelog.md
-            !docs/realm/.templates/*
-            !docs/realm/customization/add-color-mode.md
-            !docs/realm/customization/eject-components/eject-components-tutorial/index.md
-            !docs/realm/customization/mcp-server/index.md
+            !docs/platform/spot/**
+            !docs/platform/spot-exp/**
+            !docs/platform/scout/**
+            !docs/platform/blue-harvest/**
+            !docs/platform/node_modules/**
+            !docs/platform/reference/format-image-tag.md
+            !docs/platform/extend/**
+            !docs/platform/portal-changelog.md
+            !docs/platform/.templates/*
+            !docs/platform/customization/add-color-mode.md
+            !docs/platform/customization/eject-components/eject-components-tutorial/index.md
+            !docs/platform/customization/mcp-server/index.md

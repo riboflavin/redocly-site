@@ -44,12 +44,12 @@ npm start
 
 ## Remote content
 
-The `/docs/cli`, `/docs/realm`, and `/docs/redoc` content are sourced from other repositories using the [remote content feature](https://redocly.com/docs/realm/setup/concepts/remote-content).
+The `/docs/cli`, `/docs/platform`, and `/docs/redoc` content are sourced from other repositories using the [remote content feature](https://redocly.com/docs/platform/project/remote-content/remote-content).
 
 ```treeview
 docs
 ├── cli
-├── realm
+├── framework
 ├── redoc
 ```
 

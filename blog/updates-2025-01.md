@@ -39,7 +39,7 @@ No more endless scrolling—just fast, precise access.
 
 ## Programmatically configure API request information
 
-Save time by dynamically configuring [API request information](https://redocly.com/docs/realm/extend/how-to/configure-request-values).
+Save time by dynamically configuring [API request information](https://redocly.com/docs/platform/extend/how-to/configure-request-values).
 This feature streamlines API request workflows for more efficient testing and integration.
 
 
