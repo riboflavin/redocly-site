@@ -60680,13 +60680,6 @@ reunite:
       patch:
         - Fixed an issue that prevented pull requests from opening or reopening after a Git provider webhook updated remote content.
     dependencies: {}
-  v2026-10-22.5:
-    timestamp: 1792680114000
-    changes:
-      minor: []
-      patch:
-        - Fixed Reunite failing to clone repositories from a self-managed GitLab instance when its URL uses `http://`.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
