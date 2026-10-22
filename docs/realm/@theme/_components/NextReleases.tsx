@@ -1,11 +1,10 @@
-// @ts-ignore eslint-disable-next-line
 import * as React from 'react';
 import styled from 'styled-components';
 
 import { Button } from '@redocly/theme/components/Button/Button';
 import { ChevronIcon } from '../_icons/Chevron';
 import { ChangelogSection, matchesSearch } from './ChangelogSection';
-import { SHORT_NAMES, type ShortNameValues } from '../../changelog.page';
+import { SHORT_NAMES } from '../../changelog.page';
 import { HighlightContext } from './Highlight';
 
 type NextChangelogItem = {
@@ -22,7 +21,7 @@ type NextChangelogItem = {
 
 type NextReleasesProps = {
   nextChangelogs: Record<string, NextChangelogItem[]>;
-  packages: ShortNameValues[];
+  packages: string[];
 };
 
 export const NextReleases: React.FC<NextReleasesProps> = ({
@@ -38,13 +37,10 @@ export const NextReleases: React.FC<NextReleasesProps> = ({
       .filter(([packageName]) => packages.includes(SHORT_NAMES[packageName] || packageName))
       .flatMap(
         ([packageName, items]) =>
-          ((items as NextChangelogItem[]) || [])
+          (items || [])
             .filter((item) => matchesSearch(searchTerm, { packageName, isNext: true, ...item }))
             .slice(0, itemsToShow)
-            .map((item) => ({
-              packageName,
-              ...item,
-            })) || [],
+            .map((item) => Object.assign({ packageName }, item)) || [],
       )
       .sort((a, b) => {
         const versionA = parseInt(a.version.split('next.')[1] || a.version.split('next-')[1]);

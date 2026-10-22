@@ -1,8 +1,8 @@
-// @ts-ignore eslint-disable-next-line
 import * as React from 'react';
 import styled from 'styled-components';
 import { Button } from '@redocly/theme/components/Button/Button';
 import { CDNIcon } from '@redocly/theme/icons/CDNIcon/CDNIcon';
+import { AiStarsGradientIcon } from '@redocly/theme/icons/AiStarsGradientIcon/AiStarsGradientIcon';
 import { RealmIcon } from '../_icons/Realm';
 import { ReefIcon } from '../_icons/Reef';
 import { RevelIcon } from '../_icons/Revel';
@@ -11,35 +11,50 @@ import { ReuniteIcon } from '../_icons/Reunite';
 import { ReplayIcon } from '../_icons/Replay';
 
 const SHORT_NAMES = {
+  '@redocly/framework': 'Framework',
   '@redocly/realm': 'Realm',
   '@redocly/reef': 'Reef',
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
   '@redocly/replay': 'Replay',
-  reunite: 'Reunite',
+  reunite: 'Platform',
+  '@redocly/ai-assistant': 'AI assistant web component',
 } as const;
 
-type ShortNameValues = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
+export type RssProductLabel = (typeof SHORT_NAMES)[keyof typeof SHORT_NAMES];
+type ShortNameValues = RssProductLabel;
 
 const PRODUCTS = [
+  { key: '@redocly/framework', label: SHORT_NAMES['@redocly/framework'], Icon: RealmIcon },
   { key: '@redocly/realm', label: SHORT_NAMES['@redocly/realm'], Icon: RealmIcon },
   { key: '@redocly/reef', label: SHORT_NAMES['@redocly/reef'], Icon: ReefIcon },
   { key: '@redocly/revel', label: SHORT_NAMES['@redocly/revel'], Icon: RevelIcon },
   { key: '@redocly/redoc', label: SHORT_NAMES['@redocly/redoc'], Icon: RedocIcon },
   { key: 'reunite', label: SHORT_NAMES.reunite, Icon: ReuniteIcon },
+  {
+    key: '@redocly/ai-assistant',
+    label: SHORT_NAMES['@redocly/ai-assistant'],
+    Icon: AiStarsGradientIcon,
+  },
   { key: '@redocly/replay', label: SHORT_NAMES['@redocly/replay'], Icon: ReplayIcon },
 ] as const;
+
+type ProductOption = (typeof PRODUCTS)[number];
 
 interface RssSubscriptionProps {
   className?: string;
   initialSelectedProducts?: readonly string[];
+  /** The products the RSS dialog offers; all products when omitted. */
+  productLabels?: readonly RssProductLabel[];
 }
 
-const isValidProductLabel = (label: string): label is ShortNameValues =>
-  PRODUCTS.some((product) => product.label === label);
-
-const sanitizeSelectedProducts = (products?: readonly string[]): ShortNameValues[] => {
-  const allProductLabels = PRODUCTS.map((product) => product.label);
+const sanitizeSelectedProducts = (
+  options: readonly ProductOption[],
+  products?: readonly string[],
+): ShortNameValues[] => {
+  const allProductLabels = options.map((product) => product.label);
+  const isValidProductLabel = (label: string): label is ShortNameValues =>
+    options.some((product) => product.label === label);
 
   if (!products?.length) {
     return allProductLabels;
@@ -53,19 +68,30 @@ const sanitizeSelectedProducts = (products?: readonly string[]): ShortNameValues
   return Array.from(new Set(filtered));
 };
 
-export function RssSubscription({ className, initialSelectedProducts }: RssSubscriptionProps) {
+export function RssSubscription({
+  className,
+  initialSelectedProducts,
+  productLabels,
+}: RssSubscriptionProps) {
+  const productOptions = React.useMemo(
+    () =>
+      productLabels
+        ? PRODUCTS.filter((product) => productLabels.includes(product.label))
+        : PRODUCTS,
+    [productLabels],
+  );
   const [isRssModalOpen, setIsRssModalOpen] = React.useState(false);
   const [selectedProducts, setSelectedProducts] = React.useState<ShortNameValues[]>(() =>
-    sanitizeSelectedProducts(initialSelectedProducts),
+    sanitizeSelectedProducts(productOptions, initialSelectedProducts),
   );
   const [includeRc, setIncludeRc] = React.useState(false);
   const urlDisplayRef = React.useRef<HTMLAnchorElement>(null);
 
   React.useEffect(() => {
     if (!isRssModalOpen) {
-      setSelectedProducts(sanitizeSelectedProducts(initialSelectedProducts));
+      setSelectedProducts(sanitizeSelectedProducts(productOptions, initialSelectedProducts));
     }
-  }, [initialSelectedProducts, isRssModalOpen]);
+  }, [initialSelectedProducts, isRssModalOpen, productOptions]);
 
   const rssFeedUrl = React.useMemo(() => {
     const rssUrl = 'https://redocly.com/docs/changelog/feed.xml';
@@ -73,7 +99,11 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
 
     // Add products as a single comma-separated array parameter
     if (selectedProducts.length > 0) {
-      url.searchParams.set('products', selectedProducts.join(','));
+      // The AI assistant has no feed name, so the feed gets its package name.
+      const feedValues = selectedProducts.map((label) =>
+        label === SHORT_NAMES['@redocly/ai-assistant'] ? '@redocly/ai-assistant' : label,
+      );
+      url.searchParams.set('products', feedValues.join(','));
     }
 
     // Add include-rc flag if enabled
@@ -126,6 +156,7 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
       </RssButton>
       {isRssModalOpen && (
         <RssModal
+          products={productOptions}
           selectedProducts={selectedProducts}
           includeRc={includeRc}
           rssFeedUrl={rssFeedUrl}
@@ -142,6 +173,7 @@ export function RssSubscription({ className, initialSelectedProducts }: RssSubsc
 }
 
 interface RssModalProps {
+  products: readonly ProductOption[];
   selectedProducts: ShortNameValues[];
   includeRc: boolean;
   rssFeedUrl: string;
@@ -154,6 +186,7 @@ interface RssModalProps {
 }
 
 function RssModal({
+  products,
   selectedProducts,
   includeRc,
   rssFeedUrl,
@@ -220,7 +253,7 @@ function RssModal({
           <Section>
             <SectionTitle>Select products to follow:</SectionTitle>
             <ProductGrid role="group" aria-label="Select products to include in RSS feed">
-              {PRODUCTS.map(({ label, Icon }) => {
+              {products.map(({ label, Icon }) => {
                 const isActive = selectedProducts.includes(label);
                 return (
                   <ProductButton

@@ -15,6 +15,7 @@ import { ReplayIcon } from '../_icons/Replay';
 import { processChanges, type ChangelogEntry } from '../_utils/changelog';
 
 const PRODUCT_ICONS = {
+  '@redocly/framework': RealmIcon,
   '@redocly/realm': RealmIcon,
   '@redocly/reef': ReefIcon,
   '@redocly/revel': RevelIcon,
@@ -31,6 +32,8 @@ type ChangelogSectionProps = {
     version: string;
   }>;
   packages: string[];
+  /** Product labels by package name; `SHORT_NAMES` when omitted. */
+  shortNames?: Record<string, string>;
   itemsToRender?: number;
   isNextRelease?: boolean;
   isLatestRelease?: boolean;
@@ -73,6 +76,7 @@ export const matchesSearch = (
 export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
   items,
   packages,
+  shortNames = SHORT_NAMES,
   itemsToRender = Infinity,
   isNextRelease = false,
   isLatestRelease = false,
@@ -83,7 +87,7 @@ export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
 
   const filteredItems = React.useMemo(() => {
     const filtered = items
-      .filter(({ packageName }) => packages.includes(SHORT_NAMES[packageName] || packageName))
+      .filter(({ packageName }) => packages.includes(shortNames[packageName] || packageName))
       .filter((item) =>
         matchesSearch(searchTerm, {
           ...item,
@@ -100,6 +104,7 @@ export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
         isPreviousRelease={isPreviousRelease}
       >
         <RecordTitle
+          shortNames={shortNames}
           packageName={item.packageName}
           version={item.version}
           isLatest={isLatestRelease}
@@ -112,19 +117,20 @@ export const ChangelogSection: React.FC<ChangelogSectionProps> = ({
         <ChangelogContent record={item.record} />
       </Record>
     ));
-  }, [items, packages, searchTerm, itemsToRender]);
+  }, [items, packages, shortNames, searchTerm, itemsToRender]);
 
   return children ? children(filteredItems) : <>{filteredItems}</>;
 };
 
 const RecordTitle = ({
+  shortNames,
   packageName,
   version,
   isLatest = false,
   isNext = false,
   timestamp = null,
 }) => {
-  const id = toAnchorName(SHORT_NAMES[packageName]) + '@' + version;
+  const id = toAnchorName(shortNames[packageName]) + '@' + version;
 
   return (
     <StyledHeading level={2} id={id}>
@@ -133,7 +139,7 @@ const RecordTitle = ({
           <ProductTag>
             {React.createElement(PRODUCT_ICONS[packageName])}
             <span>
-              <Highlight>{SHORT_NAMES[packageName]}</Highlight>
+              <Highlight>{shortNames[packageName]}</Highlight>
             </span>
           </ProductTag>
           <VersionTag>

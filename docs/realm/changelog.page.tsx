@@ -4,11 +4,7 @@ import styled from 'styled-components';
 import { DocumentationLayout } from '@redocly/theme/layouts/DocumentationLayout';
 import { Markdown } from '@redocly/theme/components/Markdown/Markdown';
 import { Heading } from '@redocly/theme/markdoc/components/Heading/Heading';
-import { Dropdown } from '@redocly/theme/components/Dropdown/Dropdown';
-import { DropdownMenu } from '@redocly/theme/components/Dropdown/DropdownMenu';
-import { DropdownMenuItem } from '@redocly/theme/components/Dropdown/DropdownMenuItem';
 import { SearchInput } from '@redocly/theme/components/Search/SearchInput';
-import { CheckboxIcon } from '@redocly/theme/icons/CheckboxIcon/CheckboxIcon';
 import { Button } from '@redocly/theme/components/Button/Button';
 
 import { HighlightContext } from './@theme/_components/Highlight';
@@ -17,7 +13,6 @@ import {
   SectionHeader,
   matchesSearch,
 } from './@theme/_components/ChangelogSection';
-import { NextReleases } from './@theme/_components/NextReleases';
 import { hasChanges, type ChangelogEntry } from './@theme/_utils/changelog';
 import { RssSubscription } from './@theme/_components/RssSubscription';
 
@@ -30,11 +25,12 @@ export enum CHANGE_TYPE {
 }
 
 export const SHORT_NAMES = {
+  '@redocly/framework': 'Framework',
   '@redocly/realm': 'Realm',
   '@redocly/reef': 'Reef',
   '@redocly/revel': 'Revel',
   '@redocly/redoc': 'Redoc',
-  reunite: 'Reunite',
+  reunite: 'Platform',
   '@redocly/ai-assistant': 'AI assistant web component',
   // TODO: uncomment before first replay release
   // replay: 'Replay',
@@ -47,24 +43,33 @@ export function toAnchorName(shortName: string): string {
   return shortName.replaceAll(' ', '-');
 }
 
-const DEFAULT_FILTERS = ['Realm', 'Reunite'];
-const DEFAULT_ITEMS_TO_RENDER = 20;
+const PRODUCTS: ShortNameValues[] = ['Framework', 'Platform', 'AI assistant web component'];
+/** Releases of these products are on the archived changelog page. */
+const ARCHIVED_PRODUCTS: ShortNameValues[] = ['Realm', 'Reef', 'Revel', 'Redoc'];
 
-interface NextChangelogItem {
-  record: ChangelogEntry;
-  version: string;
+/**
+ * The time from which the releases of a package are on this page.
+ * Earlier releases, and every release of a package that is not listed here, are on the archived page.
+ */
+const FIRST_LISTED_RELEASE: Record<string, number> = {
+  '@redocly/framework': 0,
+  reunite: Date.UTC(2026, 9, 22),
+  '@redocly/ai-assistant': Date.UTC(2026, 9, 21),
+};
+
+export function isListedRelease(packageName: string, record: ChangelogEntry): boolean {
+  const start = FIRST_LISTED_RELEASE[packageName];
+  return start !== undefined && record.timestamp >= start;
 }
 
-interface ChangelogWithDeps {
+const DEFAULT_ITEMS_TO_RENDER = 20;
+
+type Changelogs = Record<string, Record<string, ChangelogEntry>>;
+
+interface Release {
   record: ChangelogEntry;
   packageName: string;
   version: string;
-}
-
-interface ProcessedChangelogs {
-  changelogsWithResolvedDeps: ChangelogWithDeps[];
-  nextChangelogs: Record<string, NextChangelogItem[]>;
-  latestReleases: ChangelogWithDeps[];
 }
 
 export const frontmatter = {
@@ -74,244 +79,79 @@ export const frontmatter = {
 };
 
 export default function Changelog() {
-  const changelogs = changelogData as Record<string, Record<string, ChangelogEntry>>;
+  const changelogs = changelogData as Changelogs;
 
-  // Process changelogs and next changelogs
-  const { changelogsWithResolvedDeps, nextChangelogs, latestReleases }: ProcessedChangelogs =
-    React.useMemo<ProcessedChangelogs>(() => {
-      const resolved: ChangelogWithDeps[] = [];
-      const latest: ChangelogWithDeps[] = [];
+  const { latestReleases, previousReleases } = React.useMemo(() => {
+    const latest: Release[] = [];
+    const previous: Release[] = [];
+    for (const packageName of Object.keys(changelogs)) {
+      if (!PRODUCTS.includes(SHORT_NAMES[packageName])) continue;
+      const [first, ...rest] = listReleases(changelogs, packageName);
+      if (first) latest.push(first);
+      previous.push(...rest);
+    }
+    const byDate = (a: Release, b: Release) => b.record.timestamp - a.record.timestamp;
+    return { latestReleases: latest.sort(byDate), previousReleases: previous.sort(byDate) };
+  }, [changelogs]);
 
-      const nextChangelogs: Record<string, NextChangelogItem[]> = {
-        '@redocly/realm': [],
-        '@redocly/reef': [],
-        '@redocly/revel': [],
-        '@redocly/redoc': [],
-      };
-
-      for (const packageName of Object.keys(changelogs)) {
-        const records = Object.entries(changelogs[packageName]);
-        const sortedRecords = records.sort((a, b) => b[1].timestamp - a[1].timestamp);
-
-        let latestRelease: string | null = null;
-
-        for (const [version, record] of sortedRecords) {
-          const isNextVersionChangelog = isNextVersion(version);
-          const resolvedRecord = resolveDepsDeep(record);
-
-          if (!hasChanges(resolvedRecord)) continue; // Skip if resolved record has no changes
-
-          if (!isNextVersionChangelog) {
-            if (!latestRelease) {
-              latestRelease = version;
-              latest.push({
-                record: resolvedRecord,
-                packageName,
-                version,
-              });
-            }
-          } else {
-            // Skip next versions that are less than or equal to latest stable release
-            if (latestRelease && compareVersions(version, latestRelease) <= 0) {
-              continue;
-            }
-            nextChangelogs[packageName]?.push({
-              record: resolvedRecord,
-              version,
-            });
-          }
-
-          if (!isNextVersionChangelog) {
-            resolved.push({
-              record: resolvedRecord,
-              packageName,
-              version,
-            });
-          }
-        }
-      }
-
-      /**
-       * Processes next release changelogs by:
-       * 1. Sorting items by their next version number
-       * 2. For each item, accumulates all changes from previous next versions
-       * 3. Combines current item changes with all previous changes to show full changelog
-       *
-       * Example:
-       * next.1: [Change A]
-       * next.2: [Change B]
-       * next.3: [Change C]
-       *
-       * Will display as:
-       * next.1: [Change A]
-       * next.2: [Change B, Change A]
-       * next.3: [Change C, Change B, Change A]
-       */
-      const accumulateNextVersionChanges = (items: NextChangelogItem[]): NextChangelogItem[] => {
-        const sortedItems = [...items].sort(
-          (a, b) => parseInt(a.version.split('next.')[1]) - parseInt(b.version.split('next.')[1]),
-        );
-
-        return items.map((item) => {
-          const itemIndex = sortedItems.findIndex((i) => i.version === item.version);
-          const allChanges = [item, ...sortedItems.slice(0, itemIndex).reverse()];
-
-          return {
-            ...item,
-            record: {
-              ...item.record,
-              changes: {
-                minor: Array.from(new Set(allChanges.flatMap((i) => i.record.changes.minor))),
-                patch: Array.from(new Set(allChanges.flatMap((i) => i.record.changes.patch))),
-              },
-            },
-          };
-        });
-      };
-
-      return {
-        changelogsWithResolvedDeps: resolved,
-        nextChangelogs: Object.fromEntries(
-          Object.entries(nextChangelogs).map(([pkg, items]) => [
-            pkg,
-            accumulateNextVersionChanges(items),
-          ]),
-        ),
-        latestReleases: latest,
-      };
-    }, [changelogs]);
-
-  // Filter out latest releases from previous releases list
-  const previousReleases = React.useMemo(() => {
-    return changelogsWithResolvedDeps
-      .filter(
-        (item) =>
-          !latestReleases.some(
-            (latest) => latest.packageName === item.packageName && latest.version === item.version,
-          ),
-      )
-      .sort((a, b) => b.record.timestamp - a.record.timestamp);
-  }, [changelogsWithResolvedDeps, latestReleases]);
-
-  const [packages, setPackages] = React.useState<ShortNameValues[]>(DEFAULT_FILTERS);
+  const [product, setProduct] = React.useState<ShortNameValues | null>(null);
   const [searchTerm, setSearchTerm] = React.useState('');
-
   const [itemsToRender, setItemsToRender] = React.useState(DEFAULT_ITEMS_TO_RENDER);
+  const packages = product ? [product] : PRODUCTS;
+
+  const previousCount = React.useMemo(
+    () =>
+      previousReleases.filter(
+        (item) =>
+          packages.includes(SHORT_NAMES[item.packageName]) && matchesSearch(searchTerm, item),
+      ).length,
+    [previousReleases, packages, searchTerm],
+  );
 
   const hasHandledHashRef = React.useRef(false);
-  const hasDeferredInitialHashCheckRef = React.useRef(false);
 
-  const scrollToHashTarget = (targetId: string): boolean => {
-    const element = document.getElementById(targetId);
-    if (!element) return false;
+  React.useEffect(() => {
+    if (hasHandledHashRef.current || typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash.startsWith('#')) return;
 
-    const rect = element.getBoundingClientRect();
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const [productPart, version] = decodeHash(hash).split('@');
+    const platformPart =
+      productPart === 'Reunite' || productPart === 'Studio' ? 'Platform' : productPart;
+    const isTarget = (release: Release) =>
+      toAnchorName(SHORT_NAMES[release.packageName]) === platformPart &&
+      release.version === version;
 
-    const isComfortablyPositioned = rect.top >= 0 && rect.top <= viewportHeight * 0.25;
-
-    if (!isComfortablyPositioned) {
-      element.scrollIntoView({ block: 'start' });
+    const previousIndex = previousReleases.findIndex(isTarget);
+    if (latestReleases.some(isTarget) || previousIndex >= 0) {
+      if (previousIndex >= itemsToRender) {
+        setItemsToRender(previousIndex + 1);
+        return;
+      }
+      hasHandledHashRef.current = true;
+      const targetId = `${platformPart}@${version}`;
+      if (`#${targetId}` !== hash) {
+        window.history.replaceState(null, '', `#${targetId}`);
+      }
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ block: 'start' });
+      });
+      return;
     }
 
     hasHandledHashRef.current = true;
-    return true;
-  };
-
-  const filteredChangelogs = React.useMemo(() => {
-    return changelogsWithResolvedDeps.filter(({ packageName, version, record }) => {
-      if (!packages.includes(SHORT_NAMES[packageName] || packageName)) {
-        return false;
-      }
-      return matchesSearch(searchTerm, {
-        packageName,
-        version,
-        record,
-        isNext: isNextVersion(version),
-      });
-    });
-  }, [packages, changelogsWithResolvedDeps, searchTerm]);
-
-  React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const hash = window.location.hash;
-    if (!hash || !hash.startsWith('#')) return;
-
-    const [productPart] = hash.slice(1).split('@');
-    if (!productPart) return;
-
-    const shortName = (Object.values(SHORT_NAMES) as ShortNameValues[]).find(
-      (name) => toAnchorName(name) === productPart,
-    );
-    if (!shortName) return;
-
-    setPackages([shortName]);
-  }, []);
-
-  React.useEffect(() => {
-    if (hasHandledHashRef.current) return;
-    if (typeof window === 'undefined') return;
-
-    const hash = window.location.hash;
-    if (!hash) {
-      hasHandledHashRef.current = true;
+    if (
+      !ARCHIVED_PRODUCTS.map(toAnchorName).includes(productPart) &&
+      !PRODUCTS.map(toAnchorName).includes(platformPart)
+    ) {
       return;
     }
 
-    const targetId = hash.slice(1);
-    const hasScrolled = scrollToHashTarget(targetId);
-    if (hasScrolled) return;
-
-    if (!hasDeferredInitialHashCheckRef.current) {
-      hasDeferredInitialHashCheckRef.current = true;
-      window.requestAnimationFrame(() => {
-        scrollToHashTarget(targetId);
-      });
-      return;
-    }
-
-    if (filteredChangelogs.length > itemsToRender) {
-      setItemsToRender((prev) => prev + DEFAULT_ITEMS_TO_RENDER);
-    } else {
-      hasHandledHashRef.current = true;
-    }
-  }, [filteredChangelogs, itemsToRender]);
-
-  function resolveDepsDeep(entry: ChangelogEntry, seen: string[] = []): ChangelogEntry {
-    const resolved = { ...entry };
-    resolved.changes = { ...entry.changes };
-
-    if (Object.keys(entry?.dependencies || []).length > 0) {
-      for (const [depPackage, depVersion] of Object.entries(entry.dependencies)) {
-        if (seen.includes(depPackage)) {
-          continue;
-        }
-
-        const normPackage = depPackage === '@redocly/portal' ? '@redocly/realm' : depPackage;
-        const depEntry = changelogs[normPackage]?.[depVersion];
-
-        // If timestamp is different, it means the dependency was updated in a previous release, so no need to include it again
-        if (!depEntry || depEntry.timestamp !== entry.timestamp) continue;
-
-        const resolvedDep = resolveDepsDeep(depEntry, [...seen, depPackage]);
-
-        resolved.changes.minor = resolved.changes.minor.concat(resolvedDep.changes.minor);
-        resolved.changes.patch = resolved.changes.patch.concat(resolvedDep.changes.patch);
-      }
-    }
-    resolved.changes.minor = Array.from(new Set(resolved.changes.minor));
-    resolved.changes.patch = Array.from(new Set(resolved.changes.patch));
-    return resolved;
-  }
-
-  function isNextVersion(version: string) {
-    return version.includes('-next');
-  }
-
-  function compareVersions(nextVersion: string, stableVersion: string): number {
-    const nextBase = nextVersion.split('-next')[0];
-    return nextBase.localeCompare(stableVersion, undefined, { numeric: true });
-  }
+    // The archive keeps the historical name of the platform.
+    const archiveHash = `#${platformPart === 'Platform' ? 'Reunite' : productPart}@${version}`;
+    const archivePath = window.location.pathname.replace(/\/changelog\/?$/, '/changelog-realm');
+    window.location.replace(`${archivePath}${archiveHash}`);
+  }, [latestReleases, previousReleases, itemsToRender]);
 
   return (
     <HighlightContext.Provider value={[searchTerm]}>
@@ -322,36 +162,25 @@ export default function Changelog() {
               <CustomHeading level={1} id="changelog">
                 Changelog
               </CustomHeading>
-              <RssSubscription initialSelectedProducts={packages} />
+              <RssSubscription initialSelectedProducts={PRODUCTS} productLabels={PRODUCTS} />
             </HeaderSection>
             <ControlsWrap>
-              <Dropdown
-                closeOnClick={false}
-                withArrow
-                trigger={<Button variant="outlined">Filter Products</Button>}
-              >
-                <DropdownMenu>
-                  {Object.values(SHORT_NAMES).map((shortName) => (
-                    <DropdownMenuItem
-                      content={shortName}
-                      key={shortName}
-                      prefix={<CheckboxIcon checked={packages.includes(shortName)} />}
-                      onAction={() => {
-                        setItemsToRender(DEFAULT_ITEMS_TO_RENDER);
-                        setPackages((prev) => {
-                          if (prev.includes(shortName)) {
-                            if (prev.length === 1) {
-                              return prev;
-                            }
-                            return prev.filter((item) => item !== shortName);
-                          }
-                          return [...prev, shortName];
-                        });
-                      }}
-                    />
-                  ))}
-                </DropdownMenu>
-              </Dropdown>
+              <ProductFilter role="group" aria-label="Filter releases by product">
+                {[null, ...PRODUCTS].map((option) => (
+                  <Button
+                    key={option ?? 'all'}
+                    size="small"
+                    variant={option === product ? 'primary' : 'outlined'}
+                    aria-pressed={option === product}
+                    onClick={() => {
+                      setProduct(option);
+                      setItemsToRender(DEFAULT_ITEMS_TO_RENDER);
+                    }}
+                  >
+                    {option ?? 'All'}
+                  </Button>
+                ))}
+              </ProductFilter>
               <SearchInput
                 placeholder="Search changelog"
                 value={searchTerm}
@@ -363,53 +192,113 @@ export default function Changelog() {
               />
             </ControlsWrap>
 
-            <NextReleases
-              nextChangelogs={nextChangelogs}
-              packages={packages as ShortNameValues[]}
-            />
+            <ChangelogSection items={latestReleases} packages={packages} isLatestRelease={true}>
+              {(filteredItems) =>
+                filteredItems.length > 0 && (
+                  <LatestReleaseSection>
+                    <SectionHeader>Latest releases</SectionHeader>
+                    {filteredItems}
+                  </LatestReleaseSection>
+                )
+              }
+            </ChangelogSection>
 
-            {latestReleases.length > 0 && (
-              <ChangelogSection items={latestReleases} packages={packages} isLatestRelease={true}>
-                {(filteredItems) =>
-                  filteredItems.length > 0 && (
-                    <LatestReleaseSection>
-                      <SectionHeader>Latest release</SectionHeader>
-                      {filteredItems}
-                    </LatestReleaseSection>
-                  )
-                }
-              </ChangelogSection>
-            )}
+            <ChangelogSection
+              items={previousReleases}
+              packages={packages}
+              itemsToRender={itemsToRender}
+              isPreviousRelease={true}
+            >
+              {(filteredItems) =>
+                filteredItems.length > 0 && (
+                  <PreviousReleasesSection>
+                    <SectionHeader>Previous releases</SectionHeader>
+                    {filteredItems}
+                  </PreviousReleasesSection>
+                )
+              }
+            </ChangelogSection>
 
-            {previousReleases.length > 0 && (
-              <ChangelogSection
-                items={previousReleases}
-                packages={packages}
-                itemsToRender={itemsToRender}
-                isPreviousRelease={true}
-              >
-                {(filteredItems) =>
-                  filteredItems.length > 0 && (
-                    <PreviousReleasesSection>
-                      <SectionHeader>Previous releases</SectionHeader>
-                      {filteredItems}
-                    </PreviousReleasesSection>
-                  )
-                }
-              </ChangelogSection>
-            )}
-
-            {filteredChangelogs.length > itemsToRender && (
+            {previousCount > itemsToRender && (
               <ShowMoreSection>
-                <Button onClick={() => setItemsToRender((prev) => prev + 20)}>Load more</Button>
+                <Button onClick={() => setItemsToRender((prev) => prev + DEFAULT_ITEMS_TO_RENDER)}>
+                  Load more
+                </Button>
               </ShowMoreSection>
             )}
+
+            <ArchiveNote>
+              Looking for earlier releases? See the{' '}
+              <a href="./changelog-realm">
+                archived changelog of Reunite, Realm, Redoc, Revel, and Reef
+              </a>
+              .
+            </ArchiveNote>
           </Markdown>
         </DocumentationLayout>
       </Wrapper>
     </HighlightContext.Provider>
   );
 }
+
+/** The hash without `#`; feed links percent-encode the `@`. */
+function decodeHash(hash: string): string {
+  try {
+    return decodeURIComponent(hash.slice(1));
+  } catch {
+    return hash.slice(1);
+  }
+}
+
+/** The stable releases of the package that are on this page and have changes, newest first, with the changes of the dependencies released together with each. */
+function listReleases(changelogs: Changelogs, packageName: string): Release[] {
+  const releases: Release[] = [];
+  for (const [version, record] of Object.entries(changelogs[packageName])) {
+    if (version.includes('-next') || !isListedRelease(packageName, record)) continue;
+    const resolvedRecord = resolveDepsDeep(changelogs, record);
+    if (hasChanges(resolvedRecord)) {
+      releases.push({ record: resolvedRecord, packageName, version });
+    }
+  }
+  return releases.sort((a, b) => b.record.timestamp - a.record.timestamp);
+}
+
+function resolveDepsDeep(
+  changelogs: Changelogs,
+  entry: ChangelogEntry,
+  seen: string[] = [],
+): ChangelogEntry {
+  const resolved = { ...entry };
+  resolved.changes = { ...entry.changes };
+
+  if (Object.keys(entry?.dependencies || []).length > 0) {
+    for (const [depPackage, depVersion] of Object.entries(entry.dependencies)) {
+      if (seen.includes(depPackage)) {
+        continue;
+      }
+
+      const normPackage = depPackage === '@redocly/portal' ? '@redocly/realm' : depPackage;
+      const depEntry = changelogs[normPackage]?.[depVersion];
+
+      // If timestamp is different, it means the dependency was updated in a previous release, so no need to include it again
+      if (!depEntry || depEntry.timestamp !== entry.timestamp) continue;
+
+      const resolvedDep = resolveDepsDeep(changelogs, depEntry, [...seen, depPackage]);
+
+      resolved.changes.minor = resolved.changes.minor.concat(resolvedDep.changes.minor);
+      resolved.changes.patch = resolved.changes.patch.concat(resolvedDep.changes.patch);
+    }
+  }
+  resolved.changes.minor = Array.from(new Set(resolved.changes.minor));
+  resolved.changes.patch = Array.from(new Set(resolved.changes.patch));
+  return resolved;
+}
+
+const ProductFilter = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
 
 const Wrapper = styled.div`
   [data-component-name='Breadcrumbs/Breadcrumb'] {
@@ -420,16 +309,6 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 24px;
-  }
-
-  [data-component-name='Dropdown/Dropdown'] {
-    button + div {
-      min-width: 100%;
-    }
-    ul {
-      width: 100%;
-      padding: var(--dropdown-menu-padding);
-    }
   }
 
   .tag-product-realm,
@@ -502,6 +381,11 @@ const ControlsWrap = styled.div`
   }
 `;
 
+const ArchiveNote = styled.p`
+  margin-top: 24px;
+  color: var(--text-color-secondary);
+`;
+
 const ShowMoreSection = styled.div`
   display: flex;
   justify-content: center;
@@ -520,9 +404,7 @@ const LatestReleaseSection = styled.div`
 `;
 
 const PreviousReleasesSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin-top: 24px;
 `;
 
 const HeaderSection = styled.div`

@@ -1,3 +1,153 @@
+'@redocly/framework':
+  0.139.0:
+    timestamp: 1792664891000
+    changes:
+      minor:
+        - Added CSV rendering for request and response examples with a CSV media type.
+        - Added support for the `encoding` object of `multipart/form-data` bodies in OpenAPI code samples and **Try It**.
+        - >-
+          Added the **Copy MCP server URL** page action and reordered the default MCP page actions to **Connect to Claude**, **Connect to VS Code**,
+          then **Connect to Cursor**.
+        - Added the ejectable `layouts/CustomContexts.tsx` component that allows to wrap every page of a project in custom React context providers.
+        - Added Grok setup instructions to the MCP server page.
+        - Added an **Open in Grok** page action, enabled by default.
+        - Added the `showMissingTranslationNotice` locale option that displays a notice on pages that have no translation.
+        - |-
+          Added the `@redocly/framework` package: the API docs framework with every feature of `@redocly/realm`, published under the new name.
+          It runs on the Pro, Scale, and Enterprise plans; organizations on earlier plans keep their product package.
+        - >-
+          Added the **deprecated** badges to the **Try it** console to mark deprecated operations and security schemes and to match the badges on the
+          API reference page.
+        - >-
+          Added a tooltip to the **No schema** status of GraphQL requests in Replay and the **Try it** console that explains why the schema did not
+          load.
+
+          For example, the server is unreachable, requires authentication, or has introspection disabled.
+
+          The **Failed to load schema** notification displays the same reason.
+        - >-
+          Added a schema status (**No schema**, **Loading schema...**, **Schema loaded**) to the **Query** editor header of GraphQL requests in Replay
+          and the **Try it** console.
+
+          Schema notifications appear only after **Fetch schema** or **Load schema file**.
+        - |-
+          Added a resize handle between the name and value columns of the parameter tables in the **Try it** console.
+          Readers can widen either column to read long parameter names or values.
+        - Added a `visibility` Markdoc tag that targets content at humans or at AI agents.
+      patch:
+        - Improved access control to better protect customer resources.
+        - Fixed the additional properties label in API docs, which looked like a required property named "name".
+        - >-
+          Fixed an issue where **Copy for LLM**, **Open in Claude**, and **Open in ChatGPT** included default credentials and server values stored in
+          the API description.
+        - >-
+          Fixed an issue in API docs where the title and close button of the security, AsyncAPI server, and GraphQL required scopes dialogs scrolled
+          out of view, and the dialogs did not fit in short browser windows.
+        - Fixed an issue in API docs dialogs where the `Tab` key moved focus out of the dialog or skipped links that appeared after the dialog opened.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples and schemas for a `discriminator` displayed placeholder values or fields
+          from other options instead of the selected option.
+        - >-
+          Fixed an issue where GraphQL docs showed argument names in the operation overview list with a capital first letter instead of the case
+          defined in the schema.
+        - Fixed the **Expand all** and **Collapse all** buttons on GraphQL pages so they respect fields expanded or collapsed manually.
+        - Fixed performance issues with the **Expand all** and **Collapse all** controls on GraphQL pages with many fields.
+        - Improved page load times on pages that don't use GraphQL.
+        - >-
+          Fixed an issue in OpenAPI docs where the samples panel displayed a variant dropdown that had no effect on schemas with an `example` and a
+          nested `oneOf` or `anyOf`.
+        - >-
+          Fixed an issue where Markdoc tags in API descriptions ignored their `renderForLlms` output in the Markdown for LLMs and AI search of API
+          docs pages, and appeared as raw tag source instead.
+        - Fixed an issue in API docs where links to sections of the API description didn't scroll to the section on projects with a path prefix.
+        - >-
+          Fixed an issue where API docs and the `json-example` Markdoc tag ignored keywords next to a schema `$ref`, such as `example` or `examples`,
+          in samples for OpenAPI 3.1 and later.
+
+          API docs display the first value of a schema `examples` list as the field example.
+        - Fixed an issue where the `sanitize` option was not applied to parameter and schema property descriptions in API docs.
+        - Fixed an issue in API docs where the example selected in the request samples and in **Try it** got out of sync.
+        - Fixed an issue where webhooks in API docs displayed a server switcher with URLs that combined an API server with the webhook name.
+        - Fixed an issue in AsyncAPI docs where the **Payload** panel displayed examples from all channel messages on initial page load.
+        - Fixed an issue where developer onboarding routes didn't respect path prefix.
+        - >-
+          Fixed an issue where the `sentiment`, `rating`, `mood`, and `scale` feedback forms didn't display the **Submit** button for anonymous users
+          when `comment.hide` was set to `true` and no reasons were configured.
+        - Fixed an issue where hovering anywhere in a numbered-list item replaced its number or icon with a link icon.
+        - Fixed an issue where custom Markdoc tags in GraphQL descriptions ignored their `renderForLlms` output in AI search and `llms.txt`.
+        - Fixed an issue in GraphQL docs where Markdown and HTML in descriptions displayed as raw text in the field and argument lists.
+        - >-
+          Fixed an issue where Markdown images (`![]()`) with a relative path were broken on localized pages when the locale folder did not contain
+          the image.
+
+          Markdown images fall back to the the default-locale file, like other localized content.
+
+          Images in the locale folder still take priority.
+        - Updated `@redocly/openapi-core` to version `2.63.0`.
+        - >-
+          Fixed an issue in OpenAPI docs where `llms.txt` showed the API `description` from the `metadata` configuration two times: as the API
+          description and again in the metadata list.
+        - >-
+          Fixed an issue in API docs where the `.md` routes and `llms.txt` left out Markdoc tags that resolved data at build time, such as
+          `json-schema` and the OpenAPI sample tags, from the API description and operation descriptions.
+        - Fixed an issue where page content jumped to the side while long pages were loading.
+        - Fixed an issue where the sign-in to the authenticated Docs MCP server failed with `Invalid MCP callback` or `invalid_grant`.
+        - Improved how quickly the mobile navigation menu button responds to taps on slower phones.
+        - Updated `@redocly/openapi-core` to version `2.66.0`.
+        - >-
+          Reduced the page actions button to 24px in Markdown pages and API docs, and moved it below the title on mobile devices, so long titles use
+          the full width of the screen.
+        - >-
+          Fixed an issue in Markdown pages and API docs where the Copy button label in page actions was highlighted when users selected the page
+          title.
+        - Updated `@redocly/openapi-core` to version `2.64.0`.
+        - Improved page load by not loading the API reference code on pages that do not show API docs.
+        - Fixed an issue where the mock server rejected valid query parameter, cookie, and form body values that contained URL-encoded characters.
+        - Fixed an issue where screen readers announced the close button without a name in **Try it** console.
+        - Fixed an issue in **Try it** console where pressing <kbd>Space</kbd> on the focused close button did not close the console.
+        - >-
+          Fixed an issue where Replay's **Close all tabs** action closed open requests and discarded user-entered values without prompting for
+          confirmation.
+        - >-
+          Improved the readability of JSON in the **Try it** console: keys, string values, numbers, and `true`, `false`, and `null` values have
+          distinct colors.
+        - >-
+          Fixed an issue in the **Try it** console where the **OpenId Connect URL** field stayed empty for `openIdConnect` security schemes instead of
+          displaying the URL from the API description.
+
+
+          Fixed a misleading message in the **Try it** console for `mutualTLS` security schemes that suggested adding an `Authorization` header.
+          Attaching client certificates is not supported: request are sent without them.
+        - >-
+          Fixed an issue where the `replay-openapi` embed started loading about two seconds after the page and moved the content below it when it
+          appeared.
+        - Fixed an issue in the **Try it** console where request body validation reported required `readOnly` properties as missing.
+        - >-
+          Fixed an issue where Reunite project analytics displayed the number of result categories instead of the number of results for each search
+          query.
+        - >-
+          Fixed an issue where a wildcard redirect to a file in the `static` folder returned a 404 error when the file name contained uppercase
+          characters.
+        - Fixed OIDC sign-in failures after an identity provider rotated its signing key.
+        - >-
+          Fixed an issue where the sidebar highlight and the page URL stayed on the previous section when users scrolled a long distance in one step
+          on Markdown pages and in API reference docs.
+        - |-
+          Fixed an issue in the **Try it** console where switching to an operation without its own security lost the document-level security.
+          As a result, requests were sent without credentials.
+        - >-
+          Fixed an issue in the **Try it** console in OpenAPI docs where the first request left out parameters with an empty example value (`''`,
+          `[]`, or `null`) and query parameters with `allowEmptyValue: true`.
+        - |-
+          Fixed an issue in the **Try it** console that caused `QUERY` and custom HTTP methods to reach the server as `POST`.
+          The console displays an error for `TRACE`, `CONNECT`, and `TRACK` requests, which browsers block.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where a search for an operation by its path returned no results.
+        - Fixed security vulnerability `CVE-2026-93687` by removing the `braces` dependency.
+    dependencies:
+      '@redocly/api-docs': 0.4.0
+      '@redocly/theme': 0.71.0
+      '@redocly/realm-asyncapi-sdk': 0.17.0
+      '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
   0.139.0:
     timestamp: 1792664891000
