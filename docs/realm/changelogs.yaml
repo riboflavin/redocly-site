@@ -60515,6 +60515,13 @@ reunite:
           Fixed an issue where the billing page showed a placeholder plan after an organization was created until Rebilly confirmed the trial. Reunite
           stores the trial order when it is created.
     dependencies: {}
+  v2026-10-22.2:
+    timestamp: 1792673549000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue that prevented pull requests from opening or reopening after a Git provider webhook updated remote content.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
