@@ -1,4 +1,13 @@
 '@redocly/framework':
+  0.140.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the **Try it** console opens in API docs, especially for operations with many request fields.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/api-docs': 0.5.0-next.1
   0.140.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -157,6 +166,15 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the **Try it** console opens in API docs, especially for operations with many request fields.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/api-docs': 0.5.0-next.1
   0.140.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -8569,6 +8587,14 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/api-docs': 0.5.0-next.1
   0.140.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -15511,6 +15537,14 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/api-docs': 0.5.0-next.1
   0.140.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -22471,6 +22505,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the **Try it** console opens in API docs, especially for operations with many request fields.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/api-docs': 0.5.0-next.1
   0.140.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -29896,6 +29939,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.0:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the **Try it** console opens in API docs, especially for operations with many request fields.
+    dependencies: {}
   0.71.0:
     timestamp: 1792664891000
     changes:
@@ -34360,6 +34410,14 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/replay': 0.31.0-next.1
   0.5.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -36372,6 +36430,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
+      '@redocly/realm': 0.140.0-next.1
+      '@redocly/redoc': 0.140.0-next.1
+      '@redocly/redoc-revel': 0.140.0-next.1
+      '@redocly/redoc-reef': 0.140.0-next.1
   1.23.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -45809,6 +45878,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.1:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
   0.31.0-next.0:
     timestamp: 1792675833000
     changes:
@@ -48693,6 +48769,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.0:
+    timestamp: 1792678775000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.0
   0.22.0:
     timestamp: 1792664891000
     changes:
@@ -60589,6 +60672,20 @@ reunite:
         - >-
           Fixed an issue where the billing page showed a placeholder plan after an organization was created until Rebilly confirmed the trial. Reunite
           stores the trial order when it is created.
+    dependencies: {}
+  v2026-10-22.3:
+    timestamp: 1792678050000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue that prevented pull requests from opening or reopening after a Git provider webhook updated remote content.
+    dependencies: {}
+  v2026-10-22.5:
+    timestamp: 1792680114000
+    changes:
+      minor: []
+      patch:
+        - Fixed Reunite failing to clone repositories from a self-managed GitLab instance when its URL uses `http://`.
     dependencies: {}
 replay:
   0.0.2:
