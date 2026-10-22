@@ -63,7 +63,6 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="markdown.md" /%}
 
-  {% configProperty file="remove-attribution.md" /%}
 
   {% configProperty file="user-menu.md" /%}
 {% /configSection %}
