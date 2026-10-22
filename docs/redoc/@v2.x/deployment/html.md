@@ -31,7 +31,7 @@ To render API documentation in an HTML page:
       </head>
       <body>
         <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
-        <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+        <script src="https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js"> </script>
       </body>
     </html>
     ```
@@ -117,7 +117,7 @@ This example also sets the configuration for `expandResponses` so all 200 and 40
   <head />
   <body>
     <H1>Redoc CE in action</H1>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script src="https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js"> </script>
     <div id="redoc-container"></div>
 
     <script>
@@ -144,7 +144,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     - In the `<script>` tag, add an `src` attribute with the URL to the Redoc CE script.
 
     ```html
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script src="https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js"> </script>
     ```
 
   {% /tab %}
@@ -156,7 +156,7 @@ Self-hosting may be useful when you need to host in a closed environment or have
     1. Install `redoc` using `npm` or `yarn`.
 
         ```sh
-        npm install redoc
+        npm install redoc@2
         ```
 
     1. Reference the Redoc CE script with a node modules link.

@@ -43,7 +43,7 @@ Create an HTML page, or edit an existing one, and add the following:
 
 ```html
     <redoc spec-url="http://petstore.swagger.io/v2/swagger.json"></redoc>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script src="https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js"> </script>
 ```
 
 Open the HTML file in your browser, and your API documentation is shown on the page.

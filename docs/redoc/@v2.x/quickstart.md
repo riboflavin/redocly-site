@@ -39,7 +39,7 @@ Replace the `spec-url` attribute with the URL or local file address to your desc
     <!--
     Link to Redoc CE JavaScript on CDN for rendering standalone element
     -->
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+    <script src="https://cdn.redoc.ly/redoc/v2.x/bundles/redoc.standalone.js"></script>
   </body>
 </html>
 ```

@@ -16,13 +16,13 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
 1. Pull the image with the following command:
 
     ```bash
-    docker pull redocly/redoc
+    docker pull redocly/redoc:v2.5.3
     ```
 
 1. Run the image:
 
     ```bash
-    docker run -p 8080:80 redocly/redoc
+    docker run -p 8080:80 redocly/redoc:v2.5.3
     ```
 
 The preview starts on port 8080, based on the port used in the command.
@@ -41,7 +41,7 @@ To change the description URL:
 For example:
 
 ```bash
-docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/redoc
+docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/redoc:v2.5.3
 ```
 
 ## Create a Dockerfile
