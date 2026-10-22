@@ -182,7 +182,7 @@ export default async function changelogRssHandler(
   <channel>
     <title>Redocly Changelog</title>
     <link>${escapeXml(baseUrl)}</link>
-    <description>Latest changes and updates to Redocly (the API docs framework and Redocly, with earlier Realm, Reef, Revel, and Redoc releases)</description>
+    <description>Latest changes and updates to Redocly (the API docs framework, the Redocly platform, and the AI assistant, with earlier Realm, Reef, Revel, and Redoc releases)</description>
     <language>en-us</language>
     <lastBuildDate>${formatRssDate(Date.now())}</lastBuildDate>
     <atom:link href="${escapeXml(request.url)}" rel="self" type="application/rss+xml"/>
