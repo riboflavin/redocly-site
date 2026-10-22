@@ -28,7 +28,7 @@ To authenticate using **Redocly platform** API, use the `--next` option.
 redocly login --next
 ```
 
-Note that logging in with **Platform** API does not allow you to use the `push` command.
+Note that logging in with the **Redocly platform** API does not allow you to use the `push` command.
 
 ## Options
 
@@ -39,7 +39,7 @@ Note that logging in with **Platform** API does not allow you to use the `push` 
 | --residency, --region, -r | string  | Specify the application's residency. Supported values: `us`, `eu`, or a full URL. The `eu` region is limited to enterprise customers. Default value is `us`. |
 | --verbose                 | boolean | Display additional output.                                                                                                                                   |
 | --version                 | boolean | Show version number.                                                                                                                                         |
-| --next                    | boolean | Authenticate through the Redocly API.                                                                                                                            |
+| --next                    | boolean | Authenticate through the Redocly API.                                                                                                                        |
 
 ## Examples
 
