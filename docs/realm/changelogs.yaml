@@ -1,4 +1,25 @@
 '@redocly/realm':
+  0.139.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor:
+        - >-
+          Added a tooltip to the **No schema** status of GraphQL requests in Replay and the **Try it** console that explains why the schema did not
+          load.
+
+          For example, the server is unreachable, requires authentication, or has introspection disabled.
+
+          The **Failed to load schema** notification displays the same reason.
+      patch:
+        - >-
+          Fixed an issue where API docs and the `json-example` Markdoc tag ignored keywords next to a schema `$ref`, such as `example` or `examples`,
+          in samples for OpenAPI 3.1 and later.
+
+          API docs display the first value of a schema `examples` list as the field example.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.12
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.2
+      '@redocly/theme': 0.71.0-next.7
   0.139.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -8229,6 +8250,15 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.139.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.12
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.2
+      '@redocly/theme': 0.71.0-next.7
   0.139.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -15109,6 +15139,15 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.139.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.12
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.2
+      '@redocly/theme': 0.71.0-next.7
   0.139.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -21998,6 +22037,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.139.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor:
+        - >-
+          Added a tooltip to the **No schema** status of GraphQL requests in Replay and the **Try it** console that explains why the schema did not
+          load.
+
+          For example, the server is unreachable, requires authentication, or has introspection disabled.
+
+          The **Failed to load schema** notification displays the same reason.
+      patch:
+        - >-
+          Fixed an issue where API docs and the `json-example` Markdoc tag ignored keywords next to a schema `$ref`, such as `example` or `examples`,
+          in samples for OpenAPI 3.1 and later.
+
+          API docs display the first value of a schema `examples` list as the field example.
+    dependencies:
+      '@redocly/api-docs': 0.4.0-next.12
+      '@redocly/realm-asyncapi-sdk': 0.17.0-next.2
+      '@redocly/theme': 0.71.0-next.7
   0.139.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -33684,6 +33744,19 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.4.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where API docs and the `json-example` Markdoc tag ignored keywords next to a schema `$ref`, such as `example` or `examples`,
+          in samples for OpenAPI 3.1 and later.
+
+          API docs display the first value of a schema `examples` list as the field example.
+    dependencies:
+      '@redocly/replay': 0.30.0-next.9
+      '@redocly/theme': 0.71.0-next.7
   0.4.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -35592,6 +35665,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.22.0-next.12:
+    timestamp: 1792652557000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.0-next.12
+      '@redocly/redoc': 0.139.0-next.12
+      '@redocly/redoc-revel': 0.139.0-next.12
+      '@redocly/redoc-reef': 0.139.0-next.12
+      '@redocly/theme': 0.71.0-next.7
   1.22.0-next.11:
     timestamp: 1792583611000
     changes:
@@ -44990,6 +45074,20 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.30.0-next.9:
+    timestamp: 1792652557000
+    changes:
+      minor:
+        - >-
+          Added a tooltip to the **No schema** status of GraphQL requests in Replay and the **Try it** console that explains why the schema did not
+          load.
+
+          For example, the server is unreachable, requires authentication, or has introspection disabled.
+
+          The **Failed to load schema** notification displays the same reason.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.71.0-next.7
   0.30.0-next.8:
     timestamp: 1792583611000
     changes:
@@ -59677,6 +59775,15 @@ reunite:
           Saving the default project role no longer fails when SSO is required and the identity provider was removed.
         - Improved scrollbars in Reunite so they stay hidden until a sidebar, panel, table, or modal is scrolled, which reduces visual noise.
         - Fixed duplicate success and error notifications when saving organization settings in Reunite.
+    dependencies: {}
+  v2026-10-22.1:
+    timestamp: 1792654743000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the billing page showed a placeholder plan after an organization was created until Rebilly confirmed the trial. Reunite
+          stores the trial order when it is created.
     dependencies: {}
 replay:
   0.0.2:
