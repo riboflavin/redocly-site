@@ -10,7 +10,7 @@ disableLastModified: true
 
 
 # Cookie Notice
-**Last updated: August 9, 2026**
+**Last updated: October 21, 2026**
 
 This Cookie Notice explains how Redocly Inc. and its group companies ("Redocly", "we", "us", and "ours") use cookies and similar technologies to recognize you when you visit, interact with or use any of our websites (such as redocly.com), online advertisements, or marketing communications (collectively for the purposes of this Notice, the "Websites"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
 
@@ -39,7 +39,7 @@ The specific types of first and third party cookies served through our Websites 
 ---
 
 - **Essential website cookies:** These cookies are strictly necessary to provide you with services available through our Websites and to use some of its features, such as access to secure areas.
-- **Redocly**
+- **Redocly** - `redocly_consent` cookie (365 days). It stores your cookie choices, so that we do not ask you again on each visit.
 - Because these cookies are strictly necessary to deliver the Websites to you, you cannot refuse them.
 
   You can block or delete them by changing your browser settings however, as described below under the heading "How can I control cookies?".
@@ -53,7 +53,7 @@ The specific types of first and third party cookies served through our Websites 
 ---
 
 - **Analytics and customization cookies:** These cookies collect information that is used either in aggregate form to help us understand how our Websites are being used or how effective our marketing campaigns are, or to help us customize our Websites for you.
-- - **Redocly**
+- - **Redocly** - `rls` cookie (180 days). It contains a random visitor ID that identifies your browser across visits. We use it to measure which pages and campaigns lead to sign-ups, and to run A/B tests of our Websites. Where we ask for your consent before we set analytics cookies, we set this cookie only after you accept them. Elsewhere, we set it unless you turn analytics cookies off. If you refuse or turn off analytics cookies, we delete this cookie. Each visit renews the 180 days.
   - **Google Analytics**
   - **Microsoft Clarity** - this is a tool that we use to provide a better user experience for you and collect data used to diagnose user issues. It records and captures user sessions to help us understand how visitors interact with our website.
   - **HubSpot** - used for marketing analytics and customer relationship management.
@@ -86,12 +86,6 @@ The specific types of first and third party cookies served through our Websites 
   Alternatively, please click on the relevant opt-out link below:
 
   **LinkedIn:** [https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out](https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out)
-
----
-
-- **Marketing tracking cookies:** These cookies help us track the source of leads and understand how users found our website.
-- **Redocly** - rls cookie (180 days)
-- To refuse these cookies, please follow the instructions below under the heading "How can I control cookies?"
 
 {% /table %}
 
@@ -186,7 +180,7 @@ Our third party service providers may also use cookies or similar technologies t
 
 ## How can I control cookies?
 
-You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by clicking on the appropriate opt-out links provided in the cookie table above.
+You have the right to decide whether to accept or reject cookies. To change your choices at any time, use the **Cookie preferences** link in the footer of any page on our Websites. You can also use the opt-out links in the cookie table above.
 
 **Browser Controls**: You can set or amend your web browser controls to accept or refuse cookies.
 If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted.

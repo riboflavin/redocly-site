@@ -33,6 +33,11 @@ scripts:
 analytics:
   gtm:
     trackingId: GTM-KVV53WR
+consent:
+  mode: auto
+  privacyPolicyUrl: /privacy-notice
+  # The custom footer (@theme/components/Footer) places the Cookie preferences link itself.
+  settingsLink: none
 logo:
   image: ./images/redocly-white-logo.svg
   link: /
@@ -233,7 +238,8 @@ responseHeaders:
           'sha256-+t5Z3fJi7uJxARWEzFEVaSRgtaAn0r97XkxpJNbQiK0='
           'sha256-gOx3nRh8znDQR7T1VkI+fFXDgsNzf5enQqdi7NP11Vk='
           'sha256-zytJQbY9Qb7BSt1XrdvDrm7lXcfLKCQHqVdo21OBqU8='
-          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ=';
+          'sha256-rrBDGZAK022PSEwvDpgLejcqwXGrVQwykrTva3+lQsQ='
+          'sha256-YWZ9bP8Az6Rf9+w6ueMKobTgEExU0WugF5aGyf9knw8=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 
@@ -297,7 +303,8 @@ responseHeaders:
           'sha256-vHWNkFcRXsOiOWmmubySLtLeZ3xAubNJpC7UdmQgSQU='
           'sha256-Ed6Lei7deBSXT1iYYw0V36YZXaA4v7OsRknNjmNl/9c='
           'sha256-5J0uFsfOnnQLaj24Qu33NmcMDn4J4ywSeieIv0EPIio='
-          'sha256-P3XIMSGSi3zPc6kIiTsNuKLXsoqeVZT7FTlgL05yzqQ=';
+          'sha256-P3XIMSGSi3zPc6kIiTsNuKLXsoqeVZT7FTlgL05yzqQ='
+          'sha256-YWZ9bP8Az6Rf9+w6ueMKobTgEExU0WugF5aGyf9knw8=';
         object-src 'none'; 
         base-uri 'self'; 
         connect-src 'self' https://cdn.jsdelivr.net;

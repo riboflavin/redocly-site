@@ -12,6 +12,7 @@ import { Image } from '@redocly/theme/components/Image/Image';
 import { ResponsiveImg } from '@redocly/marketing-pages/components/ImageComponents/ResponsiveImg.js';
 import { Box } from '@redocly/marketing-pages/ui/Box.js';
 
+import { CookiePreferencesButton } from './CookiePreferencesButton';
 import { FooterCopyright } from './FooterCopyright';
 
 type FooterColumnProps = {
@@ -33,6 +34,7 @@ export function FooterColumn({
   const { items = [] } = column;
 
   const iconsOnly = items.every((item) => item.label === item.link && (item.icon || item.srcSet));
+  const hasPrivacyNotice = items.some((item) => item.link?.replace(/\/$/, '').endsWith('/privacy-notice'));
 
   const label = translate(column.labelTranslationKey, column.label);
   const labelOrLink =
@@ -93,6 +95,7 @@ export function FooterColumn({
             </FooterLink>
           );
         })}
+        {hasPrivacyNotice && <CookiePreferencesButton />}
         {subscribeSection && (
           <FooterSection>
             <FooterCopyright copyrightText={copyrightText || ''} />
