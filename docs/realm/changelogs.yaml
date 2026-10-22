@@ -1,6 +1,6 @@
 '@redocly/realm':
   0.139.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - Added CSV rendering for request and response examples with a CSV media type.
@@ -8400,7 +8400,7 @@
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
   0.139.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - >-
@@ -15334,7 +15334,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
   0.139.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - >-
@@ -22286,7 +22286,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
   0.139.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - Added CSV rendering for request and response examples with a CSV media type.
@@ -29699,7 +29699,7 @@
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
   0.71.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - >-
@@ -34163,7 +34163,7 @@
     dependencies: {}
 '@redocly/api-docs':
   0.4.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - Added CSV rendering for request and response examples with a CSV media type.
@@ -35001,7 +35001,7 @@
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
   0.13.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor: []
       patch:
@@ -36167,7 +36167,7 @@
     dependencies: {}
 '@redocly/portal-plugin-async-api':
   1.22.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor: []
       patch: []
@@ -42342,7 +42342,7 @@
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
   0.24.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor: []
       patch: []
@@ -45594,7 +45594,7 @@
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
   0.30.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor:
         - Added support for the `encoding` object of `multipart/form-data` bodies in OpenAPI code samples and **Try It**.
@@ -48469,7 +48469,7 @@
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
   0.22.0:
-    timestamp: 1792659515000
+    timestamp: 1792664891000
     changes:
       minor: []
       patch: []
