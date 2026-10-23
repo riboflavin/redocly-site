@@ -157,7 +157,7 @@ It also introduces two new flags:
 
 - `--inlineBundle` embeds the JavaScript bundle directly into the output HTML so your docs work completely offline.
 - `--openapi`, `--asyncapi`, and `--graphql` let you pass configuration options for each specification type from the command line.
-  `--theme.openapi` is deprecated in favor of `--openapi`.
+  `--theme.openapi` and `--disableGoogleFont` are removed: build-docs stops with an error that points to `--openapi`.
 
 In `redocly.yaml`, options live under a top-level key matching the specification format, so a single config file can handle all three:
 
@@ -172,7 +172,7 @@ graphql:
 ```
 
 If you use a custom `--template` file that still loads the Redoc 2 `<script>` tag or calls the global `Redoc` object, update it to use `<script type="module">` and import `init` as shown in the preceding snippet.
-The `theme.openapi` block in `redocly.yaml` is also deprecated.
+The `theme.openapi` block in `redocly.yaml` is removed.
 Custom styling happens through [CSS variables](https://redocly.com/docs/redoc/deployment/html#theme-configuration), which you can include via a custom HTML template.
 
 {% admonition type="info" name="Keep the Redoc 2 output" %}
