@@ -16,6 +16,23 @@
         - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where a project built with `@redocly/framework` on the Redocly platform rendered the error `useLocation() may be used only in
+          the context of a <Router> component` instead of its pages.
+    dependencies: {}
+  0.139.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
+    dependencies:
+      '@redocly/api-docs': 0.4.1
   0.139.0:
     timestamp: 1792664891000
     changes:
@@ -187,6 +204,20 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
+  0.139.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
+    dependencies:
+      '@redocly/api-docs': 0.4.1
   0.139.0:
     timestamp: 1792664891000
     changes:
@@ -2999,28 +3030,6 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.9.0-next.2
       '@redocly/theme': 0.63.0-next.3
-  0.130.4:
-    timestamp: 1771595112000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.2
-      '@redocly/asyncapi-docs': 1.7.2
-      '@redocly/openapi-docs': 3.18.2
-      '@redocly/theme': 0.62.1
-      '@redocly/graphql-docs': 1.7.1
-  0.130.3:
-    timestamp: 1771571447000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where AI search events were not tracked for project analytics.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.1
-      '@redocly/asyncapi-docs': 1.7.1
-      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -3073,15 +3082,6 @@
       '@redocly/asyncapi-docs': 1.8.0-next.2
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
-  0.130.2:
-    timestamp: 1770997425000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.8.1
-      '@redocly/theme': 0.62.0
   0.131.0-next.3:
     timestamp: 1770987342000
     changes:
@@ -3113,13 +3113,6 @@
         - Fixed an issue where the execution environment wasn't recognized correctly causing build failures.
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
-  0.130.1:
-    timestamp: 1770828808000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
-    dependencies: {}
   0.131.0-next.0:
     timestamp: 1770820324000
     changes:
@@ -3139,6 +3132,44 @@
       '@redocly/asyncapi-docs': 1.8.0-next.0
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
+  0.130.4:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.2
+      '@redocly/asyncapi-docs': 1.7.2
+      '@redocly/openapi-docs': 3.18.2
+      '@redocly/theme': 0.62.1
+      '@redocly/graphql-docs': 1.7.1
+  0.130.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
+  0.130.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.8.1
+      '@redocly/theme': 0.62.0
+  0.130.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
+    dependencies: {}
   0.130.0:
     timestamp: 1770734421000
     changes:
@@ -3330,13 +3361,6 @@
       '@redocly/asyncapi-docs': 1.7.0-next.2
       '@redocly/portal-plugin-mock-server': 0.15.0-next.2
       '@redocly/graphql-docs': 1.7.0-next.0
-  0.129.2:
-    timestamp: 1768573727000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
-    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -3377,6 +3401,13 @@
       '@redocly/graphql-docs': 1.7.0-next.0
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
+  0.129.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.129.1:
     timestamp: 1768295056000
     changes:
@@ -3485,19 +3516,6 @@
       '@redocly/asyncapi-docs': 1.6.0-next.3
       '@redocly/portal-plugin-mock-server': 0.14.0-next.3
       '@redocly/graphql-docs': 1.6.0-next.0
-  0.128.1:
-    timestamp: 1766407875000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where scorecard custom targets did not match.
-        - Fixed an issue where the product picker was not properly aligned in the navbar.
-    dependencies:
-      '@redocly/theme': 0.60.1
-      '@redocly/asyncapi-docs': 1.5.1
-      '@redocly/graphql-docs': 1.5.0
-      '@redocly/openapi-docs': 3.16.1
-      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -3547,6 +3565,19 @@
       '@redocly/asyncapi-docs': 1.6.0-next.0
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
+  0.128.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+        - Fixed an issue where the product picker was not properly aligned in the navbar.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -3956,13 +3987,6 @@
       '@redocly/asyncapi-docs': 1.4.0-next.4
       '@redocly/portal-plugin-mock-server': 0.12.0-next.4
       '@redocly/graphql-docs': 1.4.0-next.0
-  0.126.2:
-    timestamp: 1760605582000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
-    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -4005,19 +4029,6 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
-  0.126.1:
-    timestamp: 1760015971000
-    changes:
-      minor: []
-      patch:
-        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.1
-      '@redocly/theme': 0.58.1
-      '@redocly/openapi-docs': 3.14.1
-      '@redocly/asyncapi-docs': 1.3.1
-      '@redocly/graphql-docs': 1.3.0
-      '@redocly/portal-plugin-mock-server': 0.11.1
   0.127.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -4037,6 +4048,26 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
+  0.126.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.126.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
   0.126.0:
     timestamp: 1759929177000
     changes:
@@ -4251,13 +4282,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.7
       '@redocly/portal-plugin-mock-server': 0.11.0-next.7
       '@redocly/graphql-docs': 1.3.0-next.0
-  0.125.3:
-    timestamp: 1758555804000
-    changes:
-      minor: []
-      patch:
-        - Fixed project analytics collection.
-    dependencies: {}
   0.126.0-next.10:
     timestamp: 1758531461000
     changes:
@@ -4309,19 +4333,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.4
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
-  0.125.2:
-    timestamp: 1757940167000
-    changes:
-      minor: []
-      patch:
-        - Improved JavaScript compilation time on Windows.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.0
-      '@redocly/theme': 0.57.1
-      '@redocly/asyncapi-docs': 1.2.1
-      '@redocly/graphql-docs': 1.2.0
-      '@redocly/openapi-docs': 3.13.1
-      '@redocly/portal-plugin-mock-server': 0.10.1
   0.126.0-next.6:
     timestamp: 1757665327000
     changes:
@@ -4358,13 +4369,6 @@
       '@redocly/openapi-docs': 3.14.0-next.1
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
   0.126.0-next.3:
     timestamp: 1757426798000
     changes:
@@ -4404,6 +4408,33 @@
       '@redocly/asyncapi-docs': 1.3.0-next.0
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
+  0.125.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed project analytics collection.
+    dependencies: {}
+  0.125.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Improved JavaScript compilation time on Windows.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/theme': 0.57.1
+      '@redocly/asyncapi-docs': 1.2.1
+      '@redocly/graphql-docs': 1.2.0
+      '@redocly/openapi-docs': 3.13.1
+      '@redocly/portal-plugin-mock-server': 0.10.1
+  0.125.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdoc tags did not render in preview mode.
+    dependencies: {}
   0.125.0:
     timestamp: 1757073576000
     changes:
@@ -4551,43 +4582,6 @@
       '@redocly/graphql-docs': 1.2.0-next.0
       '@redocly/openapi-docs': 3.13.0-next.3
       '@redocly/portal-plugin-mock-server': 0.10.0-next.3
-  0.124.3:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue causing crashed during a build.
-    dependencies:
-      '@redocly/theme': 0.56.3
-      '@redocly/asyncapi-docs': 1.1.3
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.3
-      '@redocly/portal-plugin-mock-server': 0.9.3
-  0.124.2:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed invalid dependency version causing dependency install to fail.
-    dependencies:
-      '@redocly/theme': 0.56.2
-      '@redocly/asyncapi-docs': 1.1.2
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.2
-      '@redocly/portal-plugin-mock-server': 0.9.2
-  0.124.1:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed broken feedback submission.
-        - Fixed an issue where LLM page actions appeared on pages excluded from search.
-    dependencies:
-      '@redocly/theme': 0.56.1
-      '@redocly/asyncapi-docs': 1.1.1
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.1
-      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -4631,6 +4625,43 @@
       '@redocly/portal-legacy-ui': 0.8.0-next.0
       '@redocly/asyncapi-docs': 1.2.0-next.0
       '@redocly/graphql-docs': 1.2.0-next.0
+  0.124.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed an issue where LLM page actions appeared on pages excluded from search.
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.124.0:
     timestamp: 1754636055000
     changes:
@@ -4874,13 +4905,6 @@
       '@redocly/asyncapi-docs': 0.5.0-next.12
       '@redocly/portal-plugin-mock-server': 0.9.0-next.12
       '@redocly/graphql-docs': 0.13.0-next.1
-  0.123.1:
-    timestamp: 1753087153000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
-    dependencies: {}
   0.124.0-next.17:
     timestamp: 1752831787000
     changes:
@@ -5066,6 +5090,13 @@
       '@redocly/asyncapi-docs': 0.5.0-next.0
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
+  0.123.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
   0.123.0:
     timestamp: 1751536139000
     changes:
@@ -5142,18 +5173,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.9
       '@redocly/portal-plugin-mock-server': 0.8.0-next.9
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
   0.123.0-next.9:
     timestamp: 1750683741000
     changes:
@@ -5178,20 +5197,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.7
       '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -5287,19 +5292,6 @@
       '@redocly/asyncapi-docs': 0.4.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
-  0.122.1:
-    timestamp: 1749653836000
-    changes:
-      minor: []
-      patch:
-        - Fixed performance issue in the `Tabs` component.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
-    dependencies:
-      '@redocly/theme': 0.54.1
-      '@redocly/asyncapi-docs': 0.3.1
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.1
-      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -5316,6 +5308,45 @@
       '@redocly/openapi-docs': 3.11.0-next.0
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
+  0.122.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
+    dependencies:
+      '@redocly/theme': 0.54.3
+      '@redocly/asyncapi-docs': 0.3.3
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.3
+      '@redocly/portal-plugin-mock-server': 0.7.3
+  0.122.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
+          mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
+  0.122.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.122.0:
     timestamp: 1749548911000
     changes:
@@ -5569,15 +5600,6 @@
       '@redocly/asyncapi-docs': 0.3.0-next.2
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/portal-plugin-mock-server': 0.7.0-next.2
-  0.121.1:
-    timestamp: 1746541491000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.6.1
-      '@redocly/openapi-docs': 3.9.1
-      '@redocly/asyncapi-docs': 0.2.1
   0.122.0-next.1:
     timestamp: 1746537907000
     changes:
@@ -5605,6 +5627,15 @@
       '@redocly/asyncapi-docs': 0.3.0-next.0
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/openapi-docs': 3.10.0-next.0
+  0.121.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.6.1
+      '@redocly/openapi-docs': 3.9.1
+      '@redocly/asyncapi-docs': 0.2.1
   0.121.0:
     timestamp: 1746436298000
     changes:
@@ -5738,13 +5769,6 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.1
       '@redocly/portal-plugin-mock-server': 0.6.0-next.1
-  0.120.2:
-    timestamp: 1744093845000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where using links to an OpenAPI file generated by the `output` configuration property caused errors which failed the build.
-    dependencies: {}
   0.121.0-next.0:
     timestamp: 1744015771000
     changes:
@@ -5759,6 +5783,13 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.0
       '@redocly/theme': 0.53.0-next.0
+  0.120.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where using links to an OpenAPI file generated by the `output` configuration property caused errors which failed the build.
+    dependencies: {}
   0.120.1:
     timestamp: 1743588827000
     changes:
@@ -5846,15 +5877,6 @@
       '@redocly/openapi-docs': 3.8.0-next.3
       '@redocly/theme': 0.52.0-next.3
       '@redocly/graphql-docs': 0.9.0-next.0
-  0.119.1:
-    timestamp: 1742483247000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
-          patch.
-    dependencies: {}
   0.120.0-next.3:
     timestamp: 1742302360000
     changes:
@@ -5904,6 +5926,15 @@
       '@redocly/portal-legacy-ui': 0.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.5.0-next.0
       '@redocly/theme': 0.52.0-next.0
+  0.119.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
+          patch.
+    dependencies: {}
   0.119.0:
     timestamp: 1741169494000
     changes:
@@ -8603,6 +8634,19 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
+  0.139.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.1
   0.139.0:
     timestamp: 1792664891000
     changes:
@@ -10815,28 +10859,6 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.9.0-next.2
       '@redocly/theme': 0.63.0-next.3
-  0.130.4:
-    timestamp: 1771595112000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.2
-      '@redocly/asyncapi-docs': 1.7.2
-      '@redocly/openapi-docs': 3.18.2
-      '@redocly/theme': 0.62.1
-      '@redocly/graphql-docs': 1.7.1
-  0.130.3:
-    timestamp: 1771571447000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where AI search events were not tracked for project analytics.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.1
-      '@redocly/asyncapi-docs': 1.7.1
-      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -10884,15 +10906,6 @@
       '@redocly/asyncapi-docs': 1.8.0-next.2
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
-  0.130.2:
-    timestamp: 1770997425000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.8.1
-      '@redocly/theme': 0.62.0
   0.131.0-next.3:
     timestamp: 1770987342000
     changes:
@@ -10924,13 +10937,6 @@
         - Fixed an issue where the execution environment wasn't recognized correctly causing build failures.
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
-  0.130.1:
-    timestamp: 1770828808000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
-    dependencies: {}
   0.131.0-next.0:
     timestamp: 1770820324000
     changes:
@@ -10950,6 +10956,44 @@
       '@redocly/asyncapi-docs': 1.8.0-next.0
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
+  0.130.4:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.2
+      '@redocly/asyncapi-docs': 1.7.2
+      '@redocly/openapi-docs': 3.18.2
+      '@redocly/theme': 0.62.1
+      '@redocly/graphql-docs': 1.7.1
+  0.130.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
+  0.130.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.8.1
+      '@redocly/theme': 0.62.0
+  0.130.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
+    dependencies: {}
   0.130.0:
     timestamp: 1770734421000
     changes:
@@ -11121,13 +11165,6 @@
       '@redocly/asyncapi-docs': 1.7.0-next.2
       '@redocly/portal-plugin-mock-server': 0.15.0-next.2
       '@redocly/graphql-docs': 1.7.0-next.0
-  0.129.2:
-    timestamp: 1768573727000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
-    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -11164,6 +11201,13 @@
       '@redocly/graphql-docs': 1.7.0-next.0
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
+  0.129.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.129.1:
     timestamp: 1768295056000
     changes:
@@ -11257,18 +11301,6 @@
       '@redocly/asyncapi-docs': 1.6.0-next.3
       '@redocly/portal-plugin-mock-server': 0.14.0-next.3
       '@redocly/graphql-docs': 1.6.0-next.0
-  0.128.1:
-    timestamp: 1766407875000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where scorecard custom targets did not match.
-    dependencies:
-      '@redocly/theme': 0.60.1
-      '@redocly/asyncapi-docs': 1.5.1
-      '@redocly/graphql-docs': 1.5.0
-      '@redocly/openapi-docs': 3.16.1
-      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -11313,6 +11345,18 @@
       '@redocly/asyncapi-docs': 1.6.0-next.0
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
+  0.128.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where scorecard custom targets did not match.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -11697,13 +11741,6 @@
       '@redocly/asyncapi-docs': 1.4.0-next.4
       '@redocly/portal-plugin-mock-server': 0.12.0-next.4
       '@redocly/graphql-docs': 1.4.0-next.0
-  0.126.2:
-    timestamp: 1760605582000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
-    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -11746,19 +11783,6 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
-  0.126.1:
-    timestamp: 1760015971000
-    changes:
-      minor: []
-      patch:
-        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.1
-      '@redocly/theme': 0.58.1
-      '@redocly/openapi-docs': 3.14.1
-      '@redocly/asyncapi-docs': 1.3.1
-      '@redocly/graphql-docs': 1.3.0
-      '@redocly/portal-plugin-mock-server': 0.11.1
   0.127.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -11777,6 +11801,26 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
+  0.126.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.126.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
   0.126.0:
     timestamp: 1759929177000
     changes:
@@ -11957,13 +12001,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.7
       '@redocly/portal-plugin-mock-server': 0.11.0-next.7
       '@redocly/graphql-docs': 1.3.0-next.0
-  0.125.3:
-    timestamp: 1758555804000
-    changes:
-      minor: []
-      patch:
-        - Fixed project analytics collection.
-    dependencies: {}
   0.126.0-next.10:
     timestamp: 1758531461000
     changes:
@@ -12013,19 +12050,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.4
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
-  0.125.2:
-    timestamp: 1757940167000
-    changes:
-      minor: []
-      patch:
-        - Improved JavaScript compilation time on Windows.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.0
-      '@redocly/theme': 0.57.1
-      '@redocly/asyncapi-docs': 1.2.1
-      '@redocly/graphql-docs': 1.2.0
-      '@redocly/openapi-docs': 3.13.1
-      '@redocly/portal-plugin-mock-server': 0.10.1
   0.126.0-next.6:
     timestamp: 1757665327000
     changes:
@@ -12061,13 +12085,6 @@
       '@redocly/openapi-docs': 3.14.0-next.1
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
   0.126.0-next.3:
     timestamp: 1757426798000
     changes:
@@ -12107,6 +12124,33 @@
       '@redocly/asyncapi-docs': 1.3.0-next.0
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
+  0.125.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed project analytics collection.
+    dependencies: {}
+  0.125.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Improved JavaScript compilation time on Windows.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/theme': 0.57.1
+      '@redocly/asyncapi-docs': 1.2.1
+      '@redocly/graphql-docs': 1.2.0
+      '@redocly/openapi-docs': 3.13.1
+      '@redocly/portal-plugin-mock-server': 0.10.1
+  0.125.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdoc tags did not render in preview mode.
+    dependencies: {}
   0.125.0:
     timestamp: 1757073576000
     changes:
@@ -12232,43 +12276,6 @@
       '@redocly/graphql-docs': 1.2.0-next.0
       '@redocly/openapi-docs': 3.13.0-next.3
       '@redocly/portal-plugin-mock-server': 0.10.0-next.3
-  0.124.3:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue causing crashed during a build.
-    dependencies:
-      '@redocly/theme': 0.56.3
-      '@redocly/asyncapi-docs': 1.1.3
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.3
-      '@redocly/portal-plugin-mock-server': 0.9.3
-  0.124.2:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed invalid dependency version causing dependency install to fail.
-    dependencies:
-      '@redocly/theme': 0.56.2
-      '@redocly/asyncapi-docs': 1.1.2
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.2
-      '@redocly/portal-plugin-mock-server': 0.9.2
-  0.124.1:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed broken feedback submission.
-        - Fixed an issue where LLM page actions appeared on pages excluded from search.
-    dependencies:
-      '@redocly/theme': 0.56.1
-      '@redocly/asyncapi-docs': 1.1.1
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.1
-      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -12312,6 +12319,43 @@
       '@redocly/portal-legacy-ui': 0.8.0-next.0
       '@redocly/asyncapi-docs': 1.2.0-next.0
       '@redocly/graphql-docs': 1.2.0-next.0
+  0.124.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed an issue where LLM page actions appeared on pages excluded from search.
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.124.0:
     timestamp: 1754636055000
     changes:
@@ -12529,13 +12573,6 @@
       '@redocly/asyncapi-docs': 0.5.0-next.12
       '@redocly/portal-plugin-mock-server': 0.9.0-next.12
       '@redocly/graphql-docs': 0.13.0-next.1
-  0.123.1:
-    timestamp: 1753087153000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
-    dependencies: {}
   0.124.0-next.17:
     timestamp: 1752831787000
     changes:
@@ -12713,6 +12750,13 @@
       '@redocly/asyncapi-docs': 0.5.0-next.0
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
+  0.123.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
   0.123.0:
     timestamp: 1751536139000
     changes:
@@ -12785,18 +12829,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.9
       '@redocly/portal-plugin-mock-server': 0.8.0-next.9
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
   0.123.0-next.9:
     timestamp: 1750683741000
     changes:
@@ -12821,20 +12853,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.7
       '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -12928,19 +12946,6 @@
       '@redocly/asyncapi-docs': 0.4.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
-  0.122.1:
-    timestamp: 1749653836000
-    changes:
-      minor: []
-      patch:
-        - Fixed performance issue in the `Tabs` component.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
-    dependencies:
-      '@redocly/theme': 0.54.1
-      '@redocly/asyncapi-docs': 0.3.1
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.1
-      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -12957,6 +12962,45 @@
       '@redocly/openapi-docs': 3.11.0-next.0
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
+  0.122.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
+    dependencies:
+      '@redocly/theme': 0.54.3
+      '@redocly/asyncapi-docs': 0.3.3
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.3
+      '@redocly/portal-plugin-mock-server': 0.7.3
+  0.122.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
+          mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
+  0.122.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.122.0:
     timestamp: 1749548911000
     changes:
@@ -13171,15 +13215,6 @@
       '@redocly/asyncapi-docs': 0.3.0-next.2
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/portal-plugin-mock-server': 0.7.0-next.2
-  0.121.1:
-    timestamp: 1746541491000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.6.1
-      '@redocly/openapi-docs': 3.9.1
-      '@redocly/asyncapi-docs': 0.2.1
   0.122.0-next.1:
     timestamp: 1746537907000
     changes:
@@ -13207,6 +13242,15 @@
       '@redocly/asyncapi-docs': 0.3.0-next.0
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/openapi-docs': 3.10.0-next.0
+  0.121.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.6.1
+      '@redocly/openapi-docs': 3.9.1
+      '@redocly/asyncapi-docs': 0.2.1
   0.121.0:
     timestamp: 1746436298000
     changes:
@@ -13327,12 +13371,6 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.1
       '@redocly/portal-plugin-mock-server': 0.6.0-next.1
-  0.120.2:
-    timestamp: 1744093845000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
   0.121.0-next.0:
     timestamp: 1744015771000
     changes:
@@ -13346,6 +13384,12 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.0
       '@redocly/theme': 0.53.0-next.0
+  0.120.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.120.1:
     timestamp: 1743588827000
     changes:
@@ -13428,15 +13472,6 @@
       '@redocly/openapi-docs': 3.8.0-next.3
       '@redocly/theme': 0.52.0-next.3
       '@redocly/graphql-docs': 0.9.0-next.0
-  0.119.1:
-    timestamp: 1742483247000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
-          patch.
-    dependencies: {}
   0.120.0-next.3:
     timestamp: 1742302360000
     changes:
@@ -13482,6 +13517,15 @@
       '@redocly/portal-legacy-ui': 0.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.5.0-next.0
       '@redocly/theme': 0.52.0-next.0
+  0.119.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
+          patch.
+    dependencies: {}
   0.119.0:
     timestamp: 1741169494000
     changes:
@@ -15553,6 +15597,19 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
+  0.139.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/api-docs': 0.4.1
   0.139.0:
     timestamp: 1792664891000
     changes:
@@ -17793,28 +17850,6 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.9.0-next.2
       '@redocly/theme': 0.63.0-next.3
-  0.130.4:
-    timestamp: 1771595112000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.2
-      '@redocly/asyncapi-docs': 1.7.2
-      '@redocly/openapi-docs': 3.18.2
-      '@redocly/theme': 0.62.1
-      '@redocly/graphql-docs': 1.7.1
-  0.130.3:
-    timestamp: 1771571447000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where AI search events were not tracked for project analytics.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.1
-      '@redocly/asyncapi-docs': 1.7.1
-      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -17859,15 +17894,6 @@
       '@redocly/asyncapi-docs': 1.8.0-next.2
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
-  0.130.2:
-    timestamp: 1770997425000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.8.1
-      '@redocly/theme': 0.62.0
   0.131.0-next.3:
     timestamp: 1770987342000
     changes:
@@ -17899,13 +17925,6 @@
         - Fixed an issue where the execution environment wasn't recognized correctly causing build failures.
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
-  0.130.1:
-    timestamp: 1770828808000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
-    dependencies: {}
   0.131.0-next.0:
     timestamp: 1770820324000
     changes:
@@ -17925,6 +17944,44 @@
       '@redocly/asyncapi-docs': 1.8.0-next.0
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
+  0.130.4:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.2
+      '@redocly/asyncapi-docs': 1.7.2
+      '@redocly/openapi-docs': 3.18.2
+      '@redocly/theme': 0.62.1
+      '@redocly/graphql-docs': 1.7.1
+  0.130.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
+  0.130.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.8.1
+      '@redocly/theme': 0.62.0
+  0.130.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
+    dependencies: {}
   0.130.0:
     timestamp: 1770734421000
     changes:
@@ -18098,13 +18155,6 @@
       '@redocly/asyncapi-docs': 1.7.0-next.2
       '@redocly/portal-plugin-mock-server': 0.15.0-next.2
       '@redocly/graphql-docs': 1.7.0-next.0
-  0.129.2:
-    timestamp: 1768573727000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
-    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -18141,6 +18191,13 @@
       '@redocly/graphql-docs': 1.7.0-next.0
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
+  0.129.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.129.1:
     timestamp: 1768295056000
     changes:
@@ -18233,18 +18290,6 @@
       '@redocly/asyncapi-docs': 1.6.0-next.3
       '@redocly/portal-plugin-mock-server': 0.14.0-next.3
       '@redocly/graphql-docs': 1.6.0-next.0
-  0.128.1:
-    timestamp: 1766407875000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the product picker was not properly aligned in the navbar.
-    dependencies:
-      '@redocly/theme': 0.60.1
-      '@redocly/asyncapi-docs': 1.5.1
-      '@redocly/graphql-docs': 1.5.0
-      '@redocly/openapi-docs': 3.16.1
-      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -18292,6 +18337,18 @@
       '@redocly/asyncapi-docs': 1.6.0-next.0
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
+  0.128.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the product picker was not properly aligned in the navbar.
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -18670,13 +18727,6 @@
       '@redocly/asyncapi-docs': 1.4.0-next.4
       '@redocly/portal-plugin-mock-server': 0.12.0-next.4
       '@redocly/graphql-docs': 1.4.0-next.0
-  0.126.2:
-    timestamp: 1760605582000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
-    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -18718,19 +18768,6 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
-  0.126.1:
-    timestamp: 1760015971000
-    changes:
-      minor: []
-      patch:
-        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.1
-      '@redocly/theme': 0.58.1
-      '@redocly/openapi-docs': 3.14.1
-      '@redocly/asyncapi-docs': 1.3.1
-      '@redocly/graphql-docs': 1.3.0
-      '@redocly/portal-plugin-mock-server': 0.11.1
   0.127.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -18749,6 +18786,26 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
+  0.126.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.126.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
   0.126.0:
     timestamp: 1759929177000
     changes:
@@ -18927,13 +18984,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.7
       '@redocly/portal-plugin-mock-server': 0.11.0-next.7
       '@redocly/graphql-docs': 1.3.0-next.0
-  0.125.3:
-    timestamp: 1758555804000
-    changes:
-      minor: []
-      patch:
-        - Fixed project analytics collection.
-    dependencies: {}
   0.126.0-next.10:
     timestamp: 1758531461000
     changes:
@@ -18982,19 +19032,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.4
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
-  0.125.2:
-    timestamp: 1757940167000
-    changes:
-      minor: []
-      patch:
-        - Improved JavaScript compilation time on Windows.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.0
-      '@redocly/theme': 0.57.1
-      '@redocly/asyncapi-docs': 1.2.1
-      '@redocly/graphql-docs': 1.2.0
-      '@redocly/openapi-docs': 3.13.1
-      '@redocly/portal-plugin-mock-server': 0.10.1
   0.126.0-next.6:
     timestamp: 1757665327000
     changes:
@@ -19030,13 +19067,6 @@
       '@redocly/openapi-docs': 3.14.0-next.1
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
   0.126.0-next.3:
     timestamp: 1757426798000
     changes:
@@ -19076,6 +19106,33 @@
       '@redocly/asyncapi-docs': 1.3.0-next.0
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
+  0.125.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed project analytics collection.
+    dependencies: {}
+  0.125.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Improved JavaScript compilation time on Windows.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/theme': 0.57.1
+      '@redocly/asyncapi-docs': 1.2.1
+      '@redocly/graphql-docs': 1.2.0
+      '@redocly/openapi-docs': 3.13.1
+      '@redocly/portal-plugin-mock-server': 0.10.1
+  0.125.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdoc tags did not render in preview mode.
+    dependencies: {}
   0.125.0:
     timestamp: 1757073576000
     changes:
@@ -19207,43 +19264,6 @@
       '@redocly/graphql-docs': 1.2.0-next.0
       '@redocly/openapi-docs': 3.13.0-next.3
       '@redocly/portal-plugin-mock-server': 0.10.0-next.3
-  0.124.3:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue causing crashed during a build.
-    dependencies:
-      '@redocly/theme': 0.56.3
-      '@redocly/asyncapi-docs': 1.1.3
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.3
-      '@redocly/portal-plugin-mock-server': 0.9.3
-  0.124.2:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed invalid dependency version causing dependency install to fail.
-    dependencies:
-      '@redocly/theme': 0.56.2
-      '@redocly/asyncapi-docs': 1.1.2
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.2
-      '@redocly/portal-plugin-mock-server': 0.9.2
-  0.124.1:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed broken feedback submission.
-        - Fixed an issue where LLM page actions appeared on pages excluded from search.
-    dependencies:
-      '@redocly/theme': 0.56.1
-      '@redocly/asyncapi-docs': 1.1.1
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.1
-      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -19287,6 +19307,43 @@
       '@redocly/portal-legacy-ui': 0.8.0-next.0
       '@redocly/asyncapi-docs': 1.2.0-next.0
       '@redocly/graphql-docs': 1.2.0-next.0
+  0.124.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed an issue where LLM page actions appeared on pages excluded from search.
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.124.0:
     timestamp: 1754636055000
     changes:
@@ -19500,13 +19557,6 @@
       '@redocly/asyncapi-docs': 0.5.0-next.12
       '@redocly/portal-plugin-mock-server': 0.9.0-next.12
       '@redocly/graphql-docs': 0.13.0-next.1
-  0.123.1:
-    timestamp: 1753087153000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
-    dependencies: {}
   0.124.0-next.17:
     timestamp: 1752831787000
     changes:
@@ -19684,6 +19734,13 @@
       '@redocly/asyncapi-docs': 0.5.0-next.0
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
+  0.123.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
   0.123.0:
     timestamp: 1751536139000
     changes:
@@ -19751,18 +19808,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.9
       '@redocly/portal-plugin-mock-server': 0.8.0-next.9
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
   0.123.0-next.9:
     timestamp: 1750683741000
     changes:
@@ -19787,20 +19832,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.7
       '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -19894,19 +19925,6 @@
       '@redocly/asyncapi-docs': 0.4.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
-  0.122.1:
-    timestamp: 1749653836000
-    changes:
-      minor: []
-      patch:
-        - Fixed performance issue in the `Tabs` component.
-        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
-    dependencies:
-      '@redocly/theme': 0.54.1
-      '@redocly/asyncapi-docs': 0.3.1
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.1
-      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -19923,6 +19941,45 @@
       '@redocly/openapi-docs': 3.11.0-next.0
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
+  0.122.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
+    dependencies:
+      '@redocly/theme': 0.54.3
+      '@redocly/asyncapi-docs': 0.3.3
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.3
+      '@redocly/portal-plugin-mock-server': 0.7.3
+  0.122.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
+          mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
+  0.122.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+        - Fixed false positive errors for unclosed quotes in `markdoc` attributes.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.122.0:
     timestamp: 1749548911000
     changes:
@@ -20128,15 +20185,6 @@
       '@redocly/asyncapi-docs': 0.3.0-next.2
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/portal-plugin-mock-server': 0.7.0-next.2
-  0.121.1:
-    timestamp: 1746541491000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.6.1
-      '@redocly/openapi-docs': 3.9.1
-      '@redocly/asyncapi-docs': 0.2.1
   0.122.0-next.1:
     timestamp: 1746537907000
     changes:
@@ -20164,6 +20212,15 @@
       '@redocly/asyncapi-docs': 0.3.0-next.0
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/openapi-docs': 3.10.0-next.0
+  0.121.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.6.1
+      '@redocly/openapi-docs': 3.9.1
+      '@redocly/asyncapi-docs': 0.2.1
   0.121.0:
     timestamp: 1746436298000
     changes:
@@ -20290,12 +20347,6 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.1
       '@redocly/portal-plugin-mock-server': 0.6.0-next.1
-  0.120.2:
-    timestamp: 1744093845000
-    changes:
-      minor: []
-      patch: []
-    dependencies: {}
   0.121.0-next.0:
     timestamp: 1744015771000
     changes:
@@ -20309,6 +20360,12 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.0
       '@redocly/theme': 0.53.0-next.0
+  0.120.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
   0.120.1:
     timestamp: 1743588827000
     changes:
@@ -20390,15 +20447,6 @@
       '@redocly/openapi-docs': 3.8.0-next.3
       '@redocly/theme': 0.52.0-next.3
       '@redocly/graphql-docs': 0.9.0-next.0
-  0.119.1:
-    timestamp: 1742483247000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
-          patch.
-    dependencies: {}
   0.120.0-next.3:
     timestamp: 1742302360000
     changes:
@@ -20444,6 +20492,15 @@
       '@redocly/portal-legacy-ui': 0.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.5.0-next.0
       '@redocly/theme': 0.52.0-next.0
+  0.119.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
+          patch.
+    dependencies: {}
   0.119.0:
     timestamp: 1741169494000
     changes:
@@ -22526,6 +22583,20 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies: {}
+  0.139.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
+    dependencies:
+      '@redocly/api-docs': 0.4.1
   0.139.0:
     timestamp: 1792664891000
     changes:
@@ -25173,28 +25244,6 @@
     dependencies:
       '@redocly/realm-asyncapi-sdk': 0.9.0-next.2
       '@redocly/theme': 0.63.0-next.3
-  0.130.4:
-    timestamp: 1771595112000
-    changes:
-      minor: []
-      patch:
-        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.2
-      '@redocly/asyncapi-docs': 1.7.2
-      '@redocly/openapi-docs': 3.18.2
-      '@redocly/theme': 0.62.1
-      '@redocly/graphql-docs': 1.7.1
-  0.130.3:
-    timestamp: 1771571447000
-    changes:
-      minor: []
-      patch:
-        - Fixed a bug where AI search events were not tracked for project analytics.
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.15.1
-      '@redocly/asyncapi-docs': 1.7.1
-      '@redocly/openapi-docs': 3.18.1
   0.131.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -25244,15 +25293,6 @@
       '@redocly/asyncapi-docs': 1.8.0-next.2
       '@redocly/graphql-docs': 1.8.0-next.2
       '@redocly/portal-plugin-mock-server': 0.16.0-next.2
-  0.130.2:
-    timestamp: 1770997425000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.8.1
-      '@redocly/theme': 0.62.0
   0.131.0-next.3:
     timestamp: 1770987342000
     changes:
@@ -25284,13 +25324,6 @@
         - Fixed an issue where the execution environment wasn't recognized correctly causing build failures.
         - Fixed an issue where the login button was not displayed when a default identity provider was configured.
     dependencies: {}
-  0.130.1:
-    timestamp: 1770828808000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
-    dependencies: {}
   0.131.0-next.0:
     timestamp: 1770820324000
     changes:
@@ -25310,6 +25343,44 @@
       '@redocly/asyncapi-docs': 1.8.0-next.0
       '@redocly/graphql-docs': 1.8.0-next.0
       '@redocly/openapi-docs': 3.19.0-next.0
+  0.130.4:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed security vulnerability CVE-2026-25128 in fast-xml-parser by upgrading openapi-sampler to version 1.7.0.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.2
+      '@redocly/asyncapi-docs': 1.7.2
+      '@redocly/openapi-docs': 3.18.2
+      '@redocly/theme': 0.62.1
+      '@redocly/graphql-docs': 1.7.1
+  0.130.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed a bug where AI search events were not tracked for project analytics.
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.15.1
+      '@redocly/asyncapi-docs': 1.7.1
+      '@redocly/openapi-docs': 3.18.1
+  0.130.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Project Analytics would not display any data for specific versions of Realm.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.8.1
+      '@redocly/theme': 0.62.0
+  0.130.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the login button was not displayed when a default identity provider was configured.
+    dependencies: {}
   0.130.0:
     timestamp: 1770734421000
     changes:
@@ -25490,13 +25561,6 @@
       '@redocly/asyncapi-docs': 1.7.0-next.2
       '@redocly/portal-plugin-mock-server': 0.15.0-next.2
       '@redocly/graphql-docs': 1.7.0-next.0
-  0.129.2:
-    timestamp: 1768573727000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
-    dependencies: {}
   0.130.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -25536,6 +25600,13 @@
       '@redocly/graphql-docs': 1.7.0-next.0
       '@redocly/openapi-docs': 3.18.0-next.0
       '@redocly/theme': 0.62.0-next.0
+  0.129.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where project processing could halt indefinitely due to incorrect cache handling.
+    dependencies: {}
   0.129.1:
     timestamp: 1768295056000
     changes:
@@ -25637,17 +25708,6 @@
       '@redocly/asyncapi-docs': 1.6.0-next.3
       '@redocly/portal-plugin-mock-server': 0.14.0-next.3
       '@redocly/graphql-docs': 1.6.0-next.0
-  0.128.1:
-    timestamp: 1766407875000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.60.1
-      '@redocly/asyncapi-docs': 1.5.1
-      '@redocly/graphql-docs': 1.5.0
-      '@redocly/openapi-docs': 3.16.1
-      '@redocly/portal-plugin-mock-server': 0.13.1
   0.129.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -25690,6 +25750,17 @@
       '@redocly/asyncapi-docs': 1.6.0-next.0
       '@redocly/graphql-docs': 1.6.0-next.0
       '@redocly/theme': 0.61.0-next.0
+  0.128.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.60.1
+      '@redocly/asyncapi-docs': 1.5.1
+      '@redocly/graphql-docs': 1.5.0
+      '@redocly/openapi-docs': 3.16.1
+      '@redocly/portal-plugin-mock-server': 0.13.1
   0.128.0:
     timestamp: 1765280601000
     changes:
@@ -26083,13 +26154,6 @@
       '@redocly/asyncapi-docs': 1.4.0-next.4
       '@redocly/portal-plugin-mock-server': 0.12.0-next.4
       '@redocly/graphql-docs': 1.4.0-next.0
-  0.126.2:
-    timestamp: 1760605582000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
-    dependencies: {}
   0.127.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -26131,19 +26195,6 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.1
       '@redocly/portal-plugin-mock-server': 0.12.0-next.1
-  0.126.1:
-    timestamp: 1760015971000
-    changes:
-      minor: []
-      patch:
-        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.1
-      '@redocly/theme': 0.58.1
-      '@redocly/openapi-docs': 3.14.1
-      '@redocly/asyncapi-docs': 1.3.1
-      '@redocly/graphql-docs': 1.3.0
-      '@redocly/portal-plugin-mock-server': 0.11.1
   0.127.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -26161,6 +26212,26 @@
       '@redocly/graphql-docs': 1.4.0-next.0
       '@redocly/openapi-docs': 3.15.0-next.0
       '@redocly/theme': 0.59.0-next.0
+  0.126.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where successive sidebar items were not activated when users were scrolling API document pages.
+    dependencies: {}
+  0.126.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Renamed the `get-full-definition` MCP tool to `get-full-spec-document`.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.1
+      '@redocly/theme': 0.58.1
+      '@redocly/openapi-docs': 3.14.1
+      '@redocly/asyncapi-docs': 1.3.1
+      '@redocly/graphql-docs': 1.3.0
+      '@redocly/portal-plugin-mock-server': 0.11.1
   0.126.0:
     timestamp: 1759929177000
     changes:
@@ -26362,13 +26433,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.7
       '@redocly/portal-plugin-mock-server': 0.11.0-next.7
       '@redocly/graphql-docs': 1.3.0-next.0
-  0.125.3:
-    timestamp: 1758555804000
-    changes:
-      minor: []
-      patch:
-        - Fixed project analytics collection.
-    dependencies: {}
   0.126.0-next.10:
     timestamp: 1758531461000
     changes:
@@ -26417,19 +26481,6 @@
       '@redocly/asyncapi-docs': 1.3.0-next.4
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.11.0-next.4
-  0.125.2:
-    timestamp: 1757940167000
-    changes:
-      minor: []
-      patch:
-        - Improved JavaScript compilation time on Windows.
-    dependencies:
-      '@redocly/realm-asyncapi-sdk': 0.4.0
-      '@redocly/theme': 0.57.1
-      '@redocly/asyncapi-docs': 1.2.1
-      '@redocly/graphql-docs': 1.2.0
-      '@redocly/openapi-docs': 3.13.1
-      '@redocly/portal-plugin-mock-server': 0.10.1
   0.126.0-next.6:
     timestamp: 1757665327000
     changes:
@@ -26465,13 +26516,6 @@
       '@redocly/openapi-docs': 3.14.0-next.1
       '@redocly/asyncapi-docs': 1.3.0-next.1
       '@redocly/portal-plugin-mock-server': 0.11.0-next.1
-  0.125.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where Markdoc tags did not render in preview mode.
-    dependencies: {}
   0.126.0-next.3:
     timestamp: 1757426798000
     changes:
@@ -26510,6 +26554,33 @@
       '@redocly/asyncapi-docs': 1.3.0-next.0
       '@redocly/graphql-docs': 1.3.0-next.0
       '@redocly/openapi-docs': 3.14.0-next.0
+  0.125.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed project analytics collection.
+    dependencies: {}
+  0.125.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Improved JavaScript compilation time on Windows.
+    dependencies:
+      '@redocly/realm-asyncapi-sdk': 0.4.0
+      '@redocly/theme': 0.57.1
+      '@redocly/asyncapi-docs': 1.2.1
+      '@redocly/graphql-docs': 1.2.0
+      '@redocly/openapi-docs': 3.13.1
+      '@redocly/portal-plugin-mock-server': 0.10.1
+  0.125.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where Markdoc tags did not render in preview mode.
+    dependencies: {}
   0.125.0:
     timestamp: 1757073576000
     changes:
@@ -26642,43 +26713,6 @@
       '@redocly/graphql-docs': 1.2.0-next.0
       '@redocly/openapi-docs': 3.13.0-next.3
       '@redocly/portal-plugin-mock-server': 0.10.0-next.3
-  0.124.3:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue causing crashed during a build.
-    dependencies:
-      '@redocly/theme': 0.56.3
-      '@redocly/asyncapi-docs': 1.1.3
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.3
-      '@redocly/portal-plugin-mock-server': 0.9.3
-  0.124.2:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed invalid dependency version causing dependency install to fail.
-    dependencies:
-      '@redocly/theme': 0.56.2
-      '@redocly/asyncapi-docs': 1.1.2
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.2
-      '@redocly/portal-plugin-mock-server': 0.9.2
-  0.124.1:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch:
-        - Fixed broken feedback submission.
-        - Fixed an issue where LLM page actions appeared on pages excluded from search.
-    dependencies:
-      '@redocly/theme': 0.56.1
-      '@redocly/asyncapi-docs': 1.1.1
-      '@redocly/graphql-docs': 1.1.0
-      '@redocly/openapi-docs': 3.12.1
-      '@redocly/portal-plugin-mock-server': 0.9.1
   0.125.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -26721,6 +26755,43 @@
       '@redocly/portal-legacy-ui': 0.8.0-next.0
       '@redocly/asyncapi-docs': 1.2.0-next.0
       '@redocly/graphql-docs': 1.2.0-next.0
+  0.124.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue causing crashed during a build.
+    dependencies:
+      '@redocly/theme': 0.56.3
+      '@redocly/asyncapi-docs': 1.1.3
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.3
+      '@redocly/portal-plugin-mock-server': 0.9.3
+  0.124.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed invalid dependency version causing dependency install to fail.
+    dependencies:
+      '@redocly/theme': 0.56.2
+      '@redocly/asyncapi-docs': 1.1.2
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.2
+      '@redocly/portal-plugin-mock-server': 0.9.2
+  0.124.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed broken feedback submission.
+        - Fixed an issue where LLM page actions appeared on pages excluded from search.
+    dependencies:
+      '@redocly/theme': 0.56.1
+      '@redocly/asyncapi-docs': 1.1.1
+      '@redocly/graphql-docs': 1.1.0
+      '@redocly/openapi-docs': 3.12.1
+      '@redocly/portal-plugin-mock-server': 0.9.1
   0.124.0:
     timestamp: 1754636055000
     changes:
@@ -26954,13 +27025,6 @@
       '@redocly/asyncapi-docs': 0.5.0-next.12
       '@redocly/portal-plugin-mock-server': 0.9.0-next.12
       '@redocly/graphql-docs': 0.13.0-next.1
-  0.123.1:
-    timestamp: 1753087153000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
-    dependencies: {}
   0.124.0-next.17:
     timestamp: 1752831787000
     changes:
@@ -27142,6 +27206,13 @@
       '@redocly/asyncapi-docs': 0.5.0-next.0
       '@redocly/graphql-docs': 0.13.0-next.0
       '@redocly/theme': 0.56.0-next.0
+  0.123.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where an RBAC match pattern starting with `**` did not override the global match pattern `**`.
+    dependencies: {}
   0.123.0:
     timestamp: 1751536139000
     changes:
@@ -27201,18 +27272,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.9
       '@redocly/portal-plugin-mock-server': 0.8.0-next.9
-  0.122.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/asyncapi-docs': 0.3.3
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.3
-      '@redocly/portal-plugin-mock-server': 0.7.3
   0.123.0-next.9:
     timestamp: 1750683741000
     changes:
@@ -27235,20 +27294,6 @@
       '@redocly/graphql-docs': 0.12.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.7
       '@redocly/portal-plugin-mock-server': 0.8.0-next.7
-  0.122.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
-          mobile devices.
-    dependencies:
-      '@redocly/theme': 0.54.2
-      '@redocly/asyncapi-docs': 0.3.2
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.2
-      '@redocly/portal-plugin-mock-server': 0.7.2
   0.123.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -27338,18 +27383,6 @@
       '@redocly/asyncapi-docs': 0.4.0-next.1
       '@redocly/openapi-docs': 3.11.0-next.1
       '@redocly/portal-plugin-mock-server': 0.8.0-next.1
-  0.122.1:
-    timestamp: 1749653836000
-    changes:
-      minor: []
-      patch:
-        - Fixed performance issue in the `Tabs` component.
-    dependencies:
-      '@redocly/theme': 0.54.1
-      '@redocly/asyncapi-docs': 0.3.1
-      '@redocly/graphql-docs': 0.11.0
-      '@redocly/openapi-docs': 3.10.1
-      '@redocly/portal-plugin-mock-server': 0.7.1
   0.123.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -27365,6 +27398,44 @@
       '@redocly/openapi-docs': 3.11.0-next.0
       '@redocly/theme': 0.55.0-next.0
       '@redocly/realm-asyncapi-sdk': 0.1.0-next.0
+  0.122.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Markdoc `tabs` tag incorrectly set the active state for the selected tab.
+    dependencies:
+      '@redocly/theme': 0.54.3
+      '@redocly/asyncapi-docs': 0.3.3
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.3
+      '@redocly/portal-plugin-mock-server': 0.7.3
+  0.122.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the tabs drop-down disappeared immediately after touch was released, preventing users from switching between tabs on
+          mobile devices.
+    dependencies:
+      '@redocly/theme': 0.54.2
+      '@redocly/asyncapi-docs': 0.3.2
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.2
+      '@redocly/portal-plugin-mock-server': 0.7.2
+  0.122.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed performance issue in the `Tabs` component.
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/asyncapi-docs': 0.3.1
+      '@redocly/graphql-docs': 0.11.0
+      '@redocly/openapi-docs': 3.10.1
+      '@redocly/portal-plugin-mock-server': 0.7.1
   0.122.0:
     timestamp: 1749548911000
     changes:
@@ -27586,15 +27657,6 @@
       '@redocly/asyncapi-docs': 0.3.0-next.2
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/portal-plugin-mock-server': 0.7.0-next.2
-  0.121.1:
-    timestamp: 1746541491000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/portal-plugin-mock-server': 0.6.1
-      '@redocly/openapi-docs': 3.9.1
-      '@redocly/asyncapi-docs': 0.2.1
   0.122.0-next.1:
     timestamp: 1746537907000
     changes:
@@ -27622,6 +27684,15 @@
       '@redocly/asyncapi-docs': 0.3.0-next.0
       '@redocly/graphql-docs': 0.11.0-next.0
       '@redocly/openapi-docs': 3.10.0-next.0
+  0.121.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/portal-plugin-mock-server': 0.6.1
+      '@redocly/openapi-docs': 3.9.1
+      '@redocly/asyncapi-docs': 0.2.1
   0.121.0:
     timestamp: 1746436298000
     changes:
@@ -27735,13 +27806,6 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.1
       '@redocly/portal-plugin-mock-server': 0.6.0-next.1
-  0.120.2:
-    timestamp: 1744093845000
-    changes:
-      minor: []
-      patch:
-        - Fixed an issue where using links to an OpenAPI file generated by the `output` configuration property caused errors which failed the build.
-    dependencies: {}
   0.121.0-next.0:
     timestamp: 1744015771000
     changes:
@@ -27755,6 +27819,13 @@
       '@redocly/graphql-docs': 0.10.0-next.0
       '@redocly/openapi-docs': 3.9.0-next.0
       '@redocly/theme': 0.53.0-next.0
+  0.120.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where using links to an OpenAPI file generated by the `output` configuration property caused errors which failed the build.
+    dependencies: {}
   0.120.1:
     timestamp: 1743588827000
     changes:
@@ -27837,15 +27908,6 @@
       '@redocly/openapi-docs': 3.8.0-next.3
       '@redocly/theme': 0.52.0-next.3
       '@redocly/graphql-docs': 0.9.0-next.0
-  0.119.1:
-    timestamp: 1742483247000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
-          patch.
-    dependencies: {}
   0.120.0-next.3:
     timestamp: 1742302360000
     changes:
@@ -27893,6 +27955,15 @@
       '@redocly/portal-legacy-ui': 0.3.0-next.0
       '@redocly/portal-plugin-mock-server': 0.5.0-next.0
       '@redocly/theme': 0.52.0-next.0
+  0.119.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch:
+        - >-
+          Resolved vulnerabilities `CVE-2025-29774` and `CVE-2025-29775` by updating the `xml-crypto` library to a version `6.0.1` with a security
+          patch.
+    dependencies: {}
   0.119.0:
     timestamp: 1741169494000
     changes:
@@ -36451,6 +36522,26 @@
       '@redocly/redoc': 0.140.0-next.0
       '@redocly/redoc-reef': 0.140.0-next.0
       '@redocly/redoc-revel': 0.140.0-next.0
+  1.22.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc': 0.139.2
+      '@redocly/realm': 0.139.2
+      '@redocly/redoc-revel': 0.139.2
+      '@redocly/redoc-reef': 0.139.2
+  1.22.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.1
+      '@redocly/redoc': 0.139.1
+      '@redocly/redoc-reef': 0.139.1
+      '@redocly/redoc-revel': 0.139.1
   1.22.0:
     timestamp: 1792664891000
     changes:
@@ -37850,27 +37941,6 @@
       '@redocly/redoc-reef': 0.131.0-next.7
       '@redocly/redoc-revel': 0.131.0-next.7
       '@redocly/theme': 0.63.0-next.3
-  1.13.4:
-    timestamp: 1771595112000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.130.4
-      '@redocly/redoc-reef': 0.130.4
-      '@redocly/realm': 0.130.4
-      '@redocly/redoc': 0.130.4
-      '@redocly/theme': 0.62.1
-  1.13.3:
-    timestamp: 1771571447000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.130.3
-      '@redocly/redoc-reef': 0.130.3
-      '@redocly/realm': 0.130.3
-      '@redocly/redoc': 0.130.3
   1.14.0-next.6:
     timestamp: 1771509130000
     changes:
@@ -37903,17 +37973,6 @@
       '@redocly/redoc-reef': 0.131.0-next.4
       '@redocly/redoc-revel': 0.131.0-next.4
       '@redocly/theme': 0.63.0-next.2
-  1.13.2:
-    timestamp: 1770997425000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.130.2
-      '@redocly/redoc': 0.130.2
-      '@redocly/redoc-revel': 0.130.2
-      '@redocly/redoc-reef': 0.130.2
-      '@redocly/theme': 0.62.0
   1.14.0-next.3:
     timestamp: 1770987342000
     changes:
@@ -37945,16 +38004,6 @@
       '@redocly/redoc': 0.131.0-next.1
       '@redocly/redoc-reef': 0.131.0-next.1
       '@redocly/redoc-revel': 0.131.0-next.1
-  1.13.1:
-    timestamp: 1770828808000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.130.1
-      '@redocly/redoc': 0.130.1
-      '@redocly/redoc-reef': 0.130.1
-      '@redocly/redoc-revel': 0.130.1
   1.14.0-next.0:
     timestamp: 1770820324000
     changes:
@@ -37967,6 +38016,48 @@
       '@redocly/redoc': 0.131.0-next.0
       '@redocly/redoc-reef': 0.131.0-next.0
       '@redocly/redoc-revel': 0.131.0-next.0
+  1.13.4:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.130.4
+      '@redocly/redoc-reef': 0.130.4
+      '@redocly/realm': 0.130.4
+      '@redocly/redoc': 0.130.4
+      '@redocly/theme': 0.62.1
+  1.13.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.130.3
+      '@redocly/redoc-reef': 0.130.3
+      '@redocly/realm': 0.130.3
+      '@redocly/redoc': 0.130.3
+  1.13.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.2
+      '@redocly/redoc': 0.130.2
+      '@redocly/redoc-revel': 0.130.2
+      '@redocly/redoc-reef': 0.130.2
+      '@redocly/theme': 0.62.0
+  1.13.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.130.1
+      '@redocly/redoc': 0.130.1
+      '@redocly/redoc-reef': 0.130.1
+      '@redocly/redoc-revel': 0.130.1
   1.13.0:
     timestamp: 1770734421000
     changes:
@@ -38086,16 +38177,6 @@
       '@redocly/redoc': 0.130.0-next.3
       '@redocly/redoc-reef': 0.130.0-next.3
       '@redocly/redoc-revel': 0.130.0-next.3
-  1.12.2:
-    timestamp: 1768573727000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.129.2
-      '@redocly/redoc': 0.129.2
-      '@redocly/redoc-reef': 0.129.2
-      '@redocly/redoc-revel': 0.129.2
   1.13.0-next.2:
     timestamp: 1768558364000
     changes:
@@ -38129,6 +38210,16 @@
       '@redocly/redoc-reef': 0.130.0-next.0
       '@redocly/redoc-revel': 0.130.0-next.0
       '@redocly/theme': 0.62.0-next.0
+  1.12.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.129.2
+      '@redocly/redoc': 0.129.2
+      '@redocly/redoc-reef': 0.129.2
+      '@redocly/redoc-revel': 0.129.2
   1.12.1:
     timestamp: 1768295056000
     changes:
@@ -38192,17 +38283,6 @@
       '@redocly/redoc-reef': 0.129.0-next.3
       '@redocly/redoc-revel': 0.129.0-next.3
       '@redocly/theme': 0.61.0-next.3
-  1.11.1:
-    timestamp: 1766407875000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.128.1
-      '@redocly/redoc-reef': 0.128.1
-      '@redocly/redoc-revel': 0.128.1
-      '@redocly/theme': 0.60.1
-      '@redocly/redoc': 0.128.1
   1.12.0-next.2:
     timestamp: 1766165676000
     changes:
@@ -38237,6 +38317,17 @@
       '@redocly/redoc-reef': 0.129.0-next.0
       '@redocly/redoc-revel': 0.129.0-next.0
       '@redocly/theme': 0.61.0-next.0
+  1.11.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.128.1
+      '@redocly/redoc-reef': 0.128.1
+      '@redocly/redoc-revel': 0.128.1
+      '@redocly/theme': 0.60.1
+      '@redocly/redoc': 0.128.1
   1.11.0:
     timestamp: 1765280601000
     changes:
@@ -38530,16 +38621,6 @@
       '@redocly/redoc-reef': 0.127.0-next.4
       '@redocly/redoc-revel': 0.127.0-next.4
       '@redocly/theme': 0.59.0-next.3
-  1.9.2:
-    timestamp: 1760605582000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.126.2
-      '@redocly/redoc': 0.126.2
-      '@redocly/redoc-reef': 0.126.2
-      '@redocly/redoc-revel': 0.126.2
   1.10.0-next.3:
     timestamp: 1760539800000
     changes:
@@ -38572,17 +38653,6 @@
       '@redocly/redoc': 0.127.0-next.1
       '@redocly/redoc-reef': 0.127.0-next.1
       '@redocly/redoc-revel': 0.127.0-next.1
-  1.9.1:
-    timestamp: 1760015971000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.58.1
-      '@redocly/realm': 0.126.1
-      '@redocly/redoc': 0.126.1
-      '@redocly/redoc-reef': 0.126.1
-      '@redocly/redoc-revel': 0.126.1
   1.10.0-next.0:
     timestamp: 1759997817000
     changes:
@@ -38595,6 +38665,27 @@
       '@redocly/realm': 0.127.0-next.0
       '@redocly/redoc': 0.127.0-next.0
       '@redocly/theme': 0.59.0-next.0
+  1.9.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.126.2
+      '@redocly/redoc': 0.126.2
+      '@redocly/redoc-reef': 0.126.2
+      '@redocly/redoc-revel': 0.126.2
+  1.9.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.58.1
+      '@redocly/realm': 0.126.1
+      '@redocly/redoc': 0.126.1
+      '@redocly/redoc-reef': 0.126.1
+      '@redocly/redoc-revel': 0.126.1
   1.9.0:
     timestamp: 1759929177000
     changes:
@@ -38743,16 +38834,6 @@
       '@redocly/redoc': 0.126.0-next.11
       '@redocly/redoc-reef': 0.126.0-next.11
       '@redocly/redoc-revel': 0.126.0-next.11
-  1.8.3:
-    timestamp: 1758555804000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.125.3
-      '@redocly/redoc-reef': 0.125.3
-      '@redocly/realm': 0.125.3
-      '@redocly/redoc': 0.125.3
   1.9.0-next.10:
     timestamp: 1758531461000
     changes:
@@ -38795,17 +38876,6 @@
       '@redocly/redoc': 0.126.0-next.7
       '@redocly/redoc-reef': 0.126.0-next.7
       '@redocly/redoc-revel': 0.126.0-next.7
-  1.8.2:
-    timestamp: 1757940167000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.125.2
-      '@redocly/redoc': 0.125.2
-      '@redocly/redoc-reef': 0.125.2
-      '@redocly/redoc-revel': 0.125.2
-      '@redocly/theme': 0.57.1
   1.9.0-next.6:
     timestamp: 1757665327000
     changes:
@@ -38838,16 +38908,6 @@
       '@redocly/redoc': 0.126.0-next.4
       '@redocly/redoc-reef': 0.126.0-next.4
       '@redocly/redoc-revel': 0.126.0-next.4
-  1.8.1:
-    timestamp: 1757502263000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.125.1
-      '@redocly/redoc': 0.125.1
-      '@redocly/redoc-reef': 0.125.1
-      '@redocly/redoc-revel': 0.125.1
   1.9.0-next.3:
     timestamp: 1757426798000
     changes:
@@ -38890,6 +38950,37 @@
       '@redocly/redoc': 0.126.0-next.0
       '@redocly/redoc-reef': 0.126.0-next.0
       '@redocly/redoc-revel': 0.126.0-next.0
+  1.8.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.125.3
+      '@redocly/redoc-reef': 0.125.3
+      '@redocly/realm': 0.125.3
+      '@redocly/redoc': 0.125.3
+  1.8.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.125.2
+      '@redocly/redoc': 0.125.2
+      '@redocly/redoc-reef': 0.125.2
+      '@redocly/redoc-revel': 0.125.2
+      '@redocly/theme': 0.57.1
+  1.8.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.125.1
+      '@redocly/redoc': 0.125.1
+      '@redocly/redoc-reef': 0.125.1
+      '@redocly/redoc-revel': 0.125.1
   1.8.0:
     timestamp: 1757073576000
     changes:
@@ -38986,39 +39077,6 @@
       '@redocly/redoc': 0.125.0-next.3
       '@redocly/redoc-reef': 0.125.0-next.3
       '@redocly/redoc-revel': 0.125.0-next.3
-  1.7.3:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.124.3
-      '@redocly/redoc-reef': 0.124.3
-      '@redocly/realm': 0.124.3
-      '@redocly/redoc': 0.124.3
-      '@redocly/theme': 0.56.3
-  1.7.2:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.124.2
-      '@redocly/redoc-reef': 0.124.2
-      '@redocly/realm': 0.124.2
-      '@redocly/redoc': 0.124.2
-      '@redocly/theme': 0.56.2
-  1.7.1:
-    timestamp: 1755013464000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.124.1
-      '@redocly/redoc': 0.124.1
-      '@redocly/redoc-reef': 0.124.1
-      '@redocly/redoc-revel': 0.124.1
-      '@redocly/theme': 0.56.1
   1.8.0-next.2:
     timestamp: 1754995802000
     changes:
@@ -39052,6 +39110,39 @@
       '@redocly/redoc-reef': 0.125.0-next.0
       '@redocly/redoc-revel': 0.125.0-next.0
       '@redocly/theme': 0.57.0-next.0
+  1.7.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.124.3
+      '@redocly/redoc-reef': 0.124.3
+      '@redocly/realm': 0.124.3
+      '@redocly/redoc': 0.124.3
+      '@redocly/theme': 0.56.3
+  1.7.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.124.2
+      '@redocly/redoc-reef': 0.124.2
+      '@redocly/realm': 0.124.2
+      '@redocly/redoc': 0.124.2
+      '@redocly/theme': 0.56.2
+  1.7.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.124.1
+      '@redocly/redoc': 0.124.1
+      '@redocly/redoc-reef': 0.124.1
+      '@redocly/redoc-revel': 0.124.1
+      '@redocly/theme': 0.56.1
   1.7.0:
     timestamp: 1754636055000
     changes:
@@ -39223,16 +39314,6 @@
       '@redocly/realm': 0.124.0-next.18
       '@redocly/redoc': 0.124.0-next.18
       '@redocly/theme': 0.56.0-next.5
-  1.6.1:
-    timestamp: 1753087153000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.123.1
-      '@redocly/redoc': 0.123.1
-      '@redocly/redoc-reef': 0.123.1
-      '@redocly/redoc-revel': 0.123.1
   1.7.0-next.17:
     timestamp: 1752831787000
     changes:
@@ -39420,6 +39501,16 @@
       '@redocly/redoc-reef': 0.124.0-next.0
       '@redocly/redoc-revel': 0.124.0-next.0
       '@redocly/theme': 0.56.0-next.0
+  1.6.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.123.1
+      '@redocly/redoc': 0.123.1
+      '@redocly/redoc-reef': 0.123.1
+      '@redocly/redoc-revel': 0.123.1
   1.6.0:
     timestamp: 1751536139000
     changes:
@@ -39453,17 +39544,6 @@
       '@redocly/redoc-revel': 0.123.0-next.10
       '@redocly/theme': 0.55.0-next.8
       '@redocly/redoc': 0.123.0-next.10
-  1.5.3:
-    timestamp: 1750757267000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.3
-      '@redocly/realm': 0.122.3
-      '@redocly/redoc': 0.122.3
-      '@redocly/redoc-reef': 0.122.3
-      '@redocly/redoc-revel': 0.122.3
   1.6.0-next.9:
     timestamp: 1750683741000
     changes:
@@ -39485,17 +39565,6 @@
       '@redocly/redoc-revel': 0.123.0-next.8
       '@redocly/redoc': 0.123.0-next.8
       '@redocly/theme': 0.55.0-next.7
-  1.5.2:
-    timestamp: 1750411910000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.122.2
-      '@redocly/redoc': 0.122.2
-      '@redocly/redoc-reef': 0.122.2
-      '@redocly/redoc-revel': 0.122.2
-      '@redocly/theme': 0.54.2
   1.6.0-next.7:
     timestamp: 1750340065000
     changes:
@@ -39572,17 +39641,6 @@
       '@redocly/redoc-revel': 0.123.0-next.1
       '@redocly/theme': 0.55.0-next.1
       '@redocly/redoc': 0.123.0-next.1
-  1.5.1:
-    timestamp: 1749653836000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/theme': 0.54.1
-      '@redocly/realm': 0.122.1
-      '@redocly/redoc': 0.122.1
-      '@redocly/redoc-reef': 0.122.1
-      '@redocly/redoc-revel': 0.122.1
   1.6.0-next.0:
     timestamp: 1749636110000
     changes:
@@ -39595,6 +39653,39 @@
       '@redocly/realm': 0.123.0-next.0
       '@redocly/redoc': 0.123.0-next.0
       '@redocly/theme': 0.55.0-next.0
+  1.5.3:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.3
+      '@redocly/realm': 0.122.3
+      '@redocly/redoc': 0.122.3
+      '@redocly/redoc-reef': 0.122.3
+      '@redocly/redoc-revel': 0.122.3
+  1.5.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.122.2
+      '@redocly/redoc': 0.122.2
+      '@redocly/redoc-reef': 0.122.2
+      '@redocly/redoc-revel': 0.122.2
+      '@redocly/theme': 0.54.2
+  1.5.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.54.1
+      '@redocly/realm': 0.122.1
+      '@redocly/redoc': 0.122.1
+      '@redocly/redoc-reef': 0.122.1
+      '@redocly/redoc-revel': 0.122.1
   1.5.0:
     timestamp: 1749548911000
     changes:
@@ -39745,16 +39836,6 @@
       '@redocly/redoc': 0.122.0-next.2
       '@redocly/redoc-reef': 0.122.0-next.2
       '@redocly/redoc-revel': 0.122.0-next.2
-  1.4.1:
-    timestamp: 1746541491000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.121.1
-      '@redocly/redoc': 0.121.1
-      '@redocly/redoc-reef': 0.121.1
-      '@redocly/redoc-revel': 0.121.1
   1.5.0-next.1:
     timestamp: 1746537907000
     changes:
@@ -39778,6 +39859,16 @@
       '@redocly/redoc-reef': 0.122.0-next.0
       '@redocly/realm': 0.122.0-next.0
       '@redocly/redoc': 0.122.0-next.0
+  1.4.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.121.1
+      '@redocly/redoc': 0.121.1
+      '@redocly/redoc-reef': 0.121.1
+      '@redocly/redoc-revel': 0.121.1
   1.4.0:
     timestamp: 1746436298000
     changes:
@@ -39853,16 +39944,6 @@
       '@redocly/redoc-revel': 0.121.0-next.1
       '@redocly/redoc': 0.121.0-next.1
       '@redocly/redoc-reef': 0.121.0-next.1
-  1.3.2:
-    timestamp: 1744093845000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/realm': 0.120.2
-      '@redocly/redoc': 0.120.2
-      '@redocly/redoc-reef': 0.120.2
-      '@redocly/redoc-revel': 0.120.2
   1.4.0-next.0:
     timestamp: 1744015771000
     changes:
@@ -39875,6 +39956,16 @@
       '@redocly/redoc-revel': 0.121.0-next.0
       '@redocly/redoc': 0.121.0-next.0
       '@redocly/theme': 0.53.0-next.0
+  1.3.2:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.120.2
+      '@redocly/redoc': 0.120.2
+      '@redocly/redoc-reef': 0.120.2
+      '@redocly/redoc-revel': 0.120.2
   1.3.1:
     timestamp: 1743588827000
     changes:
@@ -39939,16 +40030,6 @@
       '@redocly/realm': 0.120.0-next.4
       '@redocly/redoc': 0.120.0-next.4
       '@redocly/theme': 0.52.0-next.3
-  1.2.1:
-    timestamp: 1742483247000
-    changes:
-      minor: []
-      patch: []
-    dependencies:
-      '@redocly/redoc-revel': 0.119.1
-      '@redocly/redoc-reef': 0.119.1
-      '@redocly/realm': 0.119.1
-      '@redocly/redoc': 0.119.1
   1.3.0-next.3:
     timestamp: 1742302360000
     changes:
@@ -39993,6 +40074,16 @@
       '@redocly/redoc-reef': 0.120.0-next.0
       '@redocly/redoc-revel': 0.120.0-next.0
       '@redocly/theme': 0.52.0-next.0
+  1.2.1:
+    timestamp: 1792712590507
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/redoc-revel': 0.119.1
+      '@redocly/redoc-reef': 0.119.1
+      '@redocly/realm': 0.119.1
+      '@redocly/redoc': 0.119.1
   1.2.0:
     timestamp: 1741169494000
     changes:
