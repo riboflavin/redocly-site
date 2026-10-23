@@ -1,4 +1,14 @@
 '@redocly/framework':
+  0.140.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where a project built with `@redocly/framework` on the Redocly platform rendered the error `useLocation() may be used only in
+          the context of a <Router> component` instead of its pages.
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.140.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -183,6 +193,13 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.140.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -8618,6 +8635,13 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.140.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -15581,6 +15605,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.140.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -22562,6 +22593,13 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.140.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -36501,6 +36539,16 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.2:
+    timestamp: 1792748954000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.140.0-next.2
+      '@redocly/redoc': 0.140.0-next.2
+      '@redocly/redoc-reef': 0.140.0-next.2
+      '@redocly/redoc-revel': 0.140.0-next.2
   1.23.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -60786,6 +60834,22 @@ reunite:
         - >-
           Fixed an issue that caused projects on the Pro, Scale, and Enterprise plans to display `useLocation() may be used only in the context of a
           <Router> component` in production builds and the editor preview.
+    dependencies: {}
+  v2026-10-23.3:
+    timestamp: 1792748527000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Reunite where an existing organization member who accepted an invite got the role from the invite, for example, an owner
+          became a member.
+
+          Reunite displays an "Already a member" error when you invite a member of the organization.
+        - Fixed duplicate builds in Reunite after a subscription was reactivated and one of the organization's projects failed to redeploy.
+        - >-
+          Fixed Respect Monitoring notification settings: saving email settings works when no notifications or events are selected, organization
+          members can see a workflow’s Slack channel and events, and number fields display saved values and stay in sync with their sliders.
+        - Fixed an issue where Reunite displayed a deleted project instead of a new project with the same slug.
     dependencies: {}
 replay:
   0.0.2:
