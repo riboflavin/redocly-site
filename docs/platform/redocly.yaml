@@ -36,6 +36,9 @@ search:
     - cmd+k
     - /
 
+plugins:
+  - ./@theme/plugins/config-properties.js
+
 apis:
   redocly-museum:
     root: './openapi-files/redocly-museum.yaml'

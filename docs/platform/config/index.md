@@ -134,7 +134,7 @@ This guide provides a comprehensive overview of available configuration options 
 
   {% configProperty file="feedback.md" /%}
 
-  {% configProperty file="platform.md" /%}
+  {% configProperty file="reunite.md" /%}
 {% /configSection %}
 
 ## Example configuration

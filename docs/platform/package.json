@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.1.0",
   "description": "Redocly portal template repository",
+  "type": "module",
   "scripts": {
     "start": "npm run start:docs",
     "start:docs": "realm develop -p 3000"
   },
   "dependencies": {
-    "@redocly/realm": "next",
+    "@redocly/realm-plus": "0.1.21",
     "styled-components": "^6.4.2",
     "@markdoc/markdoc": "0.5.1",
     "highlight-words-core": "1.2.2",
