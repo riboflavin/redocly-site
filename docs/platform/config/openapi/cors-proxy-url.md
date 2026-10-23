@@ -35,20 +35,7 @@ The `corsProxyUrl` option controls which proxy Replay uses for cross-origin requ
 
 ## Request flow and network requirements
 
-When Replay uses a Redocly-hosted CORS proxy, requests are handled in this order:
-
-1. Replay sends the request from the browser to your Redocly project build-in CORS proxy endpoint (`/_api/cors/`) or to the hosted CORS proxy endpoint (`https://cors.redocly.com/`).
-1. The proxy sends the request to your target API and returns the response back to Replay.
-
-The same outbound IP addresses are used by both the built-in proxy endpoint and the hosted proxy:
-
-```sh
-3.211.34.228
-44.206.14.241
-54.156.60.142
-```
-
-If your API is accessible only through a private network or VPN, configure `corsProxyUrl` to point to a proxy that runs inside your own network.
+{% partial file="../../_partials/config/_cors-proxy-network.md" /%}
 
 ## Examples
 

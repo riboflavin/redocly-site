@@ -77,6 +77,28 @@ Requires a GraphQL schema.
 - Excludes a GraphQL schema from search results and `llms.txt` when set to `true`.
   Default: `false`.
 
+---
+
+- [servers](./servers.md)
+- [[Server object](./servers.md#server-object)]
+- Early access.
+  GraphQL endpoints for Replay (Try it).
+
+---
+
+- [hideReplay](./hide-replay.md)
+- boolean
+- Early access.
+  Hides the Replay (Try it) functionality.
+
+---
+
+- [corsProxyUrl](./cors-proxy-url.md)
+- string
+- Early access.
+  Overrides the CORS proxy URL used by Replay.
+  Default: `/_api/cors/` (built-in CORS proxy URL).
+
 {% /table %}
 
 ## Examples
