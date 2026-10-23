@@ -550,6 +550,114 @@ This page contains the list of all predefined translation keys used in default U
 
 ---
 
+- search.ai.toolCall.searchDocumentation.inProgress
+- Status shown while the AI assistant searches the documentation
+- Searching documentation...
+
+---
+
+- search.ai.toolCall.searchDocumentation.completed
+- Status shown after the AI assistant searched the documentation
+- Searched the documentation
+
+---
+
+- search.ai.toolCall.listApis.inProgress
+- Status shown while the AI assistant lists the available APIs
+- Browsing APIs...
+
+---
+
+- search.ai.toolCall.listApis.completed
+- Status shown after the AI assistant listed the available APIs
+- Browsed APIs
+
+---
+
+- search.ai.toolCall.getEndpoints.inProgress
+- Status shown while the AI assistant lists the endpoints of an API
+- Browsing endpoints for API...
+
+---
+
+- search.ai.toolCall.getEndpoints.completed
+- Status shown after the AI assistant listed the endpoints of an API
+- Browsed endpoints for API
+
+---
+
+- search.ai.toolCall.getEndpointInfo.inProgress
+- Status shown while the AI assistant reads the details of an endpoint
+- Reading endpoint details...
+
+---
+
+- search.ai.toolCall.getEndpointInfo.completed
+- Status shown after the AI assistant read the details of an endpoint
+- Read endpoint details
+
+---
+
+- search.ai.toolCall.getSecuritySchemes.inProgress
+- Status shown while the AI assistant lists the security schemes of an API
+- Browsing security schemes for API...
+
+---
+
+- search.ai.toolCall.getSecuritySchemes.completed
+- Status shown after the AI assistant listed the security schemes of an API
+- Browsed security schemes for API
+
+---
+
+- search.ai.toolCall.getFullApiDescription.inProgress
+- Status shown while the AI assistant reads a full API description
+- Reading API description...
+
+---
+
+- search.ai.toolCall.getFullApiDescription.completed
+- Status shown after the AI assistant read a full API description
+- Read API description
+
+---
+
+- search.ai.toolCall.execute.inProgress
+- Status shown while the AI assistant runs code
+- Running code...
+
+---
+
+- search.ai.toolCall.execute.completed
+- Status shown after the AI assistant ran code
+- Ran code
+
+---
+
+- search.ai.toolCall.discoverTools.inProgress
+- Status shown while the AI assistant discovers the tools it can use
+- Discovering available tools...
+
+---
+
+- search.ai.toolCall.discoverTools.completed
+- Status shown after the AI assistant discovered the tools it can use
+- Discovered available tools
+
+---
+
+- search.ai.toolCall.contactSupport.inProgress
+- Status shown while the AI assistant opens the contact support option
+- Opening the contact support option...
+
+---
+
+- search.ai.toolCall.contactSupport.completed
+- Status shown after the AI assistant offered to contact support
+- Offered to contact support
+
+---
+
 - aiAssistant.trigger
 - Button text to trigger the AI assistant
 - Ask AI
