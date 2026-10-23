@@ -60685,9 +60685,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - >-
-          Fixed an issue that caused projects on the Pro, Scale, and Enterprise plans to display `useLocation() may be used only in the context of a
-          <Router> component` in production builds and the editor preview.
         - Fixed Reunite failing to clone repositories from a self-managed GitLab instance when its URL uses `http://`.
     dependencies: {}
 replay:
