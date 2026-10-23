@@ -60680,6 +60680,16 @@ reunite:
       patch:
         - Fixed an issue that prevented pull requests from opening or reopening after a Git provider webhook updated remote content.
     dependencies: {}
+  v2026-10-23.1:
+    timestamp: 1792714093000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue that caused projects on the Pro, Scale, and Enterprise plans to display `useLocation() may be used only in the context of a
+          <Router> component` in production builds and the editor preview.
+        - Fixed Reunite failing to clone repositories from a self-managed GitLab instance when its URL uses `http://`.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
