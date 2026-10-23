@@ -76,27 +76,21 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
 
   const menu = themeConfig.navbar?.items;
 
-  const [isVisible, setIsVisible] = React.useState(true);
-  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
-
-  const handleScroll = (prevScrollPos) => {
-    const currentScrollPos = window.pageYOffset;
-    const isVisible = prevScrollPos > currentScrollPos || currentScrollPos <= 20;
-    setIsVisible(isVisible);
-    setPrevScrollPos(currentScrollPos);
-  };
+  const [isTop, setIsTop] = React.useState(true);
 
   React.useEffect(() => {
-    handleScroll(window.pageYOffset + 1);
-  }, []);
-
-  React.useEffect(() => {
-    window.addEventListener('scroll', () => handleScroll(prevScrollPos));
+    const updateIsTop = () => setIsTop(window.scrollY === 0);
+    updateIsTop();
+    window.addEventListener('scroll', updateIsTop, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', () => handleScroll(prevScrollPos));
+      window.removeEventListener('scroll', updateIsTop);
     };
-  }, [prevScrollPos]);
+  }, []);
+
+  // Render the menu in a transition so the button responds before the menu renders.
+  const [isToggling, startToggle] = React.useTransition();
+  const showClose = isToggling ? !isOpen : isOpen;
 
   if (navbar?.hide) {
     return null;
@@ -106,8 +100,7 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
     <NavbarContainer
       data-component-name="Navbar/Navbar"
       className={className}
-      isVisible={isVisible}
-      isTop={prevScrollPos === 0}
+      isTop={isTop}
       isColorful={colorfulPagesList.includes(pathname)}
       isDefault={defaultPageList.includes(pathname)}
       isDocs={isDocsOrLearnPage || isEditorPage}
@@ -130,8 +123,9 @@ export function Navbar({ className }: NavbarProps): JSX.Element | null {
           <MobileMenuButton
             variant="text"
             data-cy="mobile-menu-button"
-            onClick={isOpen ? closeMobileMenu : openMobileMenu}
-            icon={isOpen ? <CloseIcon /> : <MenuIcon />}
+            onClick={() => startToggle(showClose ? closeMobileMenu : openMobileMenu)}
+            icon={showClose ? <CloseIcon /> : <MenuIcon />}
+            aria-label={showClose ? 'Close menu' : 'Open menu'}
           />
           {isDocsOrLearnPage && (
             <DesktopWrapper>
@@ -291,7 +285,6 @@ export const NavbarRow = styled.div`
 
 const NavbarContainer = styled.nav<{
   isDefault: boolean;
-  isVisible: boolean;
   isTop: boolean;
   isColorful: boolean;
   isDocs: boolean;
@@ -307,10 +300,7 @@ const NavbarContainer = styled.nav<{
   ${({ isDocs }) =>
     !isDocs &&
     css`
-      transform: ${(isVisible) =>
-        isVisible
-          ? 'translateY(0)'
-          : 'translateY(calc((var(--navbar-height) + var(--banner-height)) * -1))'};
+      transform: translateY(0);
     `};
   border-bottom: 1px solid transparent;
   width: 100vw;
