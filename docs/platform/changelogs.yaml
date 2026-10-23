@@ -38,7 +38,7 @@
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
   0.139.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch:
@@ -257,7 +257,7 @@
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
   0.139.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch:
@@ -8718,7 +8718,7 @@
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
   0.139.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch:
@@ -15712,7 +15712,7 @@
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
   0.139.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch:
@@ -22729,7 +22729,7 @@
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
   0.139.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch:
@@ -36695,7 +36695,7 @@
       '@redocly/redoc-reef': 0.140.0-next.0
       '@redocly/redoc-revel': 0.140.0-next.0
   1.22.3:
-    timestamp: 1792762745762
+    timestamp: 1792763482000
     changes:
       minor: []
       patch: []
@@ -60984,6 +60984,23 @@ reunite:
           Fixed Respect Monitoring notification settings: saving email settings works when no notifications or events are selected, organization
           members can see a workflow’s Slack channel and events, and number fields display saved values and stay in sync with their sliders.
         - Fixed an issue where Reunite displayed a deleted project instead of a new project with the same slug.
+    dependencies: {}
+  v2026-10-23.5:
+    timestamp: 1792763080000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Extended how long users stay signed in to projects hosted in Reunite from 8 hours to 30 days without activity, the same as `redocly login`
+          in Redocly CLI.
+
+          Reunite sign-in sessions still expire after 8 hours of inactivity.
+        - |-
+          Improved the security of Visual review for login-protected projects.
+          Reunite signs users in to the site with a single-use code instead of passing the session token in the page address.
+          Projects built with an older Realm version keep the previous sign-in.
+        - Fixed the feedback status in Reunite showing the newly selected status after the change failed to save; the previous status is shown again.
+        - Fixed the trial message on the organization creation page in Reunite. It names the 30-day Pro trial instead of the Enterprise trial.
     dependencies: {}
 replay:
   0.0.2:
