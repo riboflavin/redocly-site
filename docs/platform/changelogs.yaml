@@ -60778,6 +60778,15 @@ reunite:
       patch:
         - Fixed Reunite failing to clone repositories from a self-managed GitLab instance when its URL uses `http://`.
     dependencies: {}
+  v2026-10-23.2:
+    timestamp: 1792745293000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue that caused projects on the Pro, Scale, and Enterprise plans to display `useLocation() may be used only in the context of a
+          <Router> component` in production builds and the editor preview.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
