@@ -60924,6 +60924,22 @@ reunite:
           Fixed an issue that caused projects on the Pro, Scale, and Enterprise plans to display `useLocation() may be used only in the context of a
           <Router> component` in production builds and the editor preview.
     dependencies: {}
+  v2026-10-23.4:
+    timestamp: 1792760239000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in Reunite where an existing organization member who accepted an invite got the role from the invite, for example, an owner
+          became a member.
+
+          Reunite displays an "Already a member" error when you invite a member of the organization.
+        - Fixed duplicate builds in Reunite after a subscription was reactivated and one of the organization's projects failed to redeploy.
+        - >-
+          Fixed Respect Monitoring notification settings: saving email settings works when no notifications or events are selected, organization
+          members can see a workflow’s Slack channel and events, and number fields display saved values and stay in sync with their sliders.
+        - Fixed an issue where Reunite displayed a deleted project instead of a new project with the same slug.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
