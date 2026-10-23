@@ -46,7 +46,8 @@ To render API documentation in an HTML page:
 
 To test the HTML file, open it in your browser.
 The page works directly from disk when the script comes from the CDN and the description from a URL.
-A description file on your disk does not load from a `file://` page, so serve the folder with a static file server, for example `npx http-server` or `python3 -m http.server`, or reference the file by URL.
+A description file on your disk does not load from a `file://` page.
+Serve the folder with a static file server, for example `npx http-server` or `python3 -m http.server`, or reference the file by URL.
 
 When the description cannot be loaded or parsed, Redoc CE shows a **Failed to load API description** message in the element.
 The message includes the underlying error.
@@ -95,28 +96,25 @@ You can add as many configuration attributes as you need.
 Redoc CE uses [CSS variables](https://redocly.com/docs/platform/branding/css-variables) under the hood.
 To customize your API documentation's appearance, override these variables in a stylesheet on your page.
 
-Redoc CE sets a `light` or `dark` class on the `<html>` element.
-It follows the reader's system preference at first, and the choice they make with the color mode switcher at the bottom of the sidebar afterwards.
-Scope every override to a color mode: `:root.light` for light, `:root.dark` for dark, and `:root.light, :root.dark` for values shared by both.
-A plain `:root` rule has no effect, because Redoc CE adds its own `:root` styles when it starts and they override yours.
+Use `:root` for values shared by both color modes, `:root:has(.redoc.light)` for light, and `:root:has(.redoc.dark)` for dark.
+Overrides scoped to `:root.light` or `:root.dark` apply only when your page sets that class on `<html>` itself.
 
 The following example sets the sidebar width for both color modes, and the accent color and the sidebar background for each one:
 
 ```css
 /* Shared by both color modes */
-:root.light,
-:root.dark {
+:root {
   --sidebar-width: 280px;
 }
 
 /* Light mode */
-:root.light {
+:root:has(.redoc.light) {
   --color-primary-base: #2563eb;
   --sidebar-bg-color: #eef2ff;
 }
 
 /* Dark mode */
-:root.dark {
+:root:has(.redoc.dark) {
   --color-primary-base: #60a5fa;
   --sidebar-bg-color: #1e293b;
 }
@@ -128,6 +126,38 @@ To use this code, either:
 - Create a new CSS file and link it on your page: `<link rel="stylesheet" href="redoc-theme.css">`.
 
 The [common CSS variables](https://redocly.com/docs/platform/branding/css-variables/common) and [API docs CSS variables](https://redocly.com/docs/platform/branding/css-variables/api-docs) list the variables you can override.
+
+### Match the color mode of your page
+
+Your app and Redoc CE can display the same color mode.
+Redoc CE reads the color mode from the `<html>` element of your page and follows it when it changes.
+If your page sets a color mode on `<html>`, the Redoc CE color mode switcher updates it too.
+This way your page and Redoc CE switch together.
+
+#### Values that Redoc CE reads
+
+- a `light` or `dark` class
+- a `data-theme` attribute with the value `light` or `dark`
+- a `data-bs-theme` attribute with the value `light` or `dark`
+
+Redoc CE ignores other values, such as a daisyUI theme name.
+If the values disagree, Redoc CE uses the dark mode.
+
+If `<html>` has none of these values, Redoc CE uses the color mode that the reader last picked in Redoc CE, or the system setting.
+
+#### If your app has a theme switcher
+
+When the page loads, Redoc CE cannot tell the light mode from a page with no color mode.
+For example, a page in light mode on a computer set to dark mode can display dark API docs.
+To prevent the theme mismatch, make sure that `<html>` always has a value:
+
+- For the light mode, set `light`.
+  Removing `dark` is not enough.
+- For the dark mode, set `dark`.
+- For a system option, set `light` or `dark` to match the system setting.
+
+Some switchers keep the mode in their own state, for example the daisyUI theme controller.
+In this case, also set `data-theme` on `<html>`, to make Redoc CE follow your switcher.
 
 ## Advanced options
 
