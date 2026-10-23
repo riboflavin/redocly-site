@@ -111,6 +111,8 @@ Users can connect their preferred AI tools that support MCP (for example, Cursor
   {% /numbered-item %}
   {% numbered-item %}
   Copy your MCP server URL and add it to your tool.
+  Users can also copy it with the **Copy MCP server URL** page action (`copy-mcp-url`), which is on by default.
+  If you set [`navigation.actions.items`](../../config/navigation.md), include `copy-mcp-url` in the list.
   {% /numbered-item %}
 {% /numbered-list %}
 
@@ -314,6 +316,53 @@ In the Codex CLI, ask the AI agent to perform an instruction that uses an MCP to
 #### Test the ChatGPT connection
 
 In a ChatGPT chat, ask a question that uses an MCP tool.
+
+  {% /tab %}
+
+  {% tab label="Grok Build" %}
+
+### Connect Grok Build to the MCP server
+
+{% numbered-list %}
+  {% numbered-item %}
+  Run: `grok mcp add --transport http ${MCP_SERVER_NAME} ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
+  {% /numbered-item %}
+  {% numbered-item %}
+  If the MCP server requires authentication, complete the sign‑in flow.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+#### Test the Grok Build connection
+
+In Grok Build, ask the AI agent to perform an instruction that uses an MCP tool.
+
+  {% /tab %}
+
+  {% tab label="Grok app" %}
+
+### Connect the Grok app to the MCP server
+
+The MCP server must be reachable on the public Internet.
+To open the Grok connectors page, visit the MCP server URL in a browser and select **Open Grok connectors**.
+
+{% numbered-list %}
+  {% numbered-item %}
+  On grok.com, open **Connectors**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select **New Connector** → **Custom**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Paste the MCP server URL, for example `https://example.com/mcp`.
+  {% /numbered-item %}
+  {% numbered-item %}
+  If the MCP server requires authentication, complete the sign‑in flow.
+  {% /numbered-item %}
+{% /numbered-list %}
+
+#### Test the Grok app connection
+
+In a Grok chat, ask a question that uses an MCP tool.
 
   {% /tab %}
 {% /tabs %}

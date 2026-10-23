@@ -119,13 +119,16 @@ Control the **Previous** and **Next** navigation buttons on project pages.
     Supported only on public pages.
   - `claude`: ask Claude about this page.
     Supported only on public pages.
-  - `docs-mcp-cursor`: connect to MCP server via Cursor.
-  - `docs-mcp-vscode`: connect to MCP server via VS Code.
+  - `grok`: ask Grok about this page.
+    Supported only on public pages.
   - `docs-mcp-claude`: connect to MCP server via Claude.
     Opens claude.ai with the server name and URL filled in.
+  - `docs-mcp-vscode`: connect to MCP server via VS Code.
+  - `docs-mcp-cursor`: connect to MCP server via Cursor.
+  - `copy-mcp-url`: copy the MCP server URL to the clipboard.
 
   The first item in the list is the default action.
-  Default: `copy`, `view`, `chatgpt`, `claude`, `docs-mcp-cursor`, `docs-mcp-vscode`, `docs-mcp-claude` in this order.
+  Default: `copy`, `view`, `chatgpt`, `claude`, `grok`, `docs-mcp-claude`, `docs-mcp-vscode`, `docs-mcp-cursor`, `copy-mcp-url` in this order.
 
 ---
 
@@ -196,7 +199,7 @@ navigation:
 
 ### Customize page actions
 
-The following example includes only the `copy` and `view` actions, which hides the AI-related (ChatGPT, Claude) and MCP actions.
+The following example includes only the `copy` and `view` actions, which hides the AI-related (ChatGPT, Claude, Grok) and MCP actions.
 
 ```yaml
 navigation:
