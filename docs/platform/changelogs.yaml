@@ -37,6 +37,13 @@
         - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.139.2:
     timestamp: 1792739026000
     changes:
@@ -249,6 +256,13 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.139.2:
     timestamp: 1792739026000
     changes:
@@ -8703,6 +8717,13 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.139.2:
     timestamp: 1792739026000
     changes:
@@ -15690,6 +15711,13 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.139.2:
     timestamp: 1792739026000
     changes:
@@ -22700,6 +22728,13 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where search with the Typesense engine failed or took several seconds on projects with large API operations.
+    dependencies: {}
   0.139.2:
     timestamp: 1792739026000
     changes:
@@ -36659,6 +36694,16 @@
       '@redocly/redoc': 0.140.0-next.0
       '@redocly/redoc-reef': 0.140.0-next.0
       '@redocly/redoc-revel': 0.140.0-next.0
+  1.22.3:
+    timestamp: 1792762745762
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.3
+      '@redocly/redoc': 0.139.3
+      '@redocly/redoc-reef': 0.139.3
+      '@redocly/redoc-revel': 0.139.3
   1.22.2:
     timestamp: 1792739026000
     changes:
