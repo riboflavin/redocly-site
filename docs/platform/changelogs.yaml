@@ -1,4 +1,14 @@
 '@redocly/framework':
+  0.140.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - Fixed the AI assistant status lines, such as "Searching documentation..." and "Ran code", that stayed in English on localized sites.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/api-docs': 0.5.0-next.2
   0.140.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -211,6 +221,19 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - |-
+          Improved page load performance so that pages respond to clicks and taps sooner.
+          The search dialog loads in the background after the page loads, and the code snippet report form loads the first time a user opens it.
+        - Fixed the AI assistant status lines, such as "Searching documentation..." and "Ran code", that stayed in English on localized sites.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/api-docs': 0.5.0-next.2
   0.140.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -8677,6 +8700,18 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - |-
+          Improved page load performance so that pages respond to clicks and taps sooner.
+          The search dialog loads in the background after the page loads, and the code snippet report form loads the first time a user opens it.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/api-docs': 0.5.0-next.2
   0.140.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -15671,6 +15706,19 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - |-
+          Improved page load performance so that pages respond to clicks and taps sooner.
+          The search dialog loads in the background after the page loads, and the code snippet report form loads the first time a user opens it.
+        - Fixed the AI assistant status lines, such as "Searching documentation..." and "Ran code", that stayed in English on localized sites.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/api-docs': 0.5.0-next.2
   0.140.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -22683,6 +22731,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - |-
+          Improved page load performance so that pages respond to clicks and taps sooner.
+          The search dialog loads in the background after the page loads, and the code snippet report form loads the first time a user opens it.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/api-docs': 0.5.0-next.2
   0.140.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -30162,6 +30222,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.1:
+    timestamp: 1792803953000
+    changes:
+      minor:
+        - Added experimental support for A/B experiments.
+      patch:
+        - Improved how fast the mobile menu, search, and other dialogs open on touch devices.
+        - |-
+          Improved page load performance so that pages respond to clicks and taps sooner.
+          The search dialog loads in the background after the page loads, and the code snippet report form loads the first time a user opens it.
+        - Fixed the AI assistant status lines, such as "Searching documentation..." and "Ran code", that stayed in English on localized sites.
+    dependencies: {}
   0.72.0-next.0:
     timestamp: 1792678775000
     changes:
@@ -34633,6 +34705,14 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.2:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/replay': 0.31.0-next.2
   0.5.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -36653,6 +36733,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.4:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
+      '@redocly/realm': 0.140.0-next.4
+      '@redocly/redoc': 0.140.0-next.4
+      '@redocly/redoc-revel': 0.140.0-next.4
+      '@redocly/redoc-reef': 0.140.0-next.4
   1.23.0-next.3:
     timestamp: 1792755582000
     changes:
@@ -46151,6 +46242,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.2:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
   0.31.0-next.1:
     timestamp: 1792678775000
     changes:
@@ -49042,6 +49140,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.1:
+    timestamp: 1792803953000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.1
   0.23.0-next.0:
     timestamp: 1792678775000
     changes:
