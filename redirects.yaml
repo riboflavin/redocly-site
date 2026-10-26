@@ -248,6 +248,14 @@
   to: '/docs/platform/*'
 '/docs/platform/dashboard/*':
   to: '/docs/platform/*'
+'/docs/platform/faq/ai-search-privacy':
+  to: '/docs/platform/faq/ai-governance'
+'/docs/platform/customization/mcp-server/openapi':
+  to: '/docs/platform/customization/mcp-server'
+'/docs/platform/customization/mcp-server/openapi/*':
+  to: '/docs/platform/customization/mcp-server'
+'/docs/platform/customization/mcp-server/redocly-mcp':
+  to: '/docs/platform/ai-ready/use-redocly-with-ai-clients'
 '/docs/teams/*':
   to: '/docs-legacy/teams/*'
 '/docs/workflows/*':
