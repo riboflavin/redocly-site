@@ -11,6 +11,20 @@ plans:
 This topic explains how to incorporate external React component libraries from npm into your project.
 You'll learn how to install and import UI components from popular React libraries.
 
+## Packages included on Pro
+
+On Pro, a build installs only the packages in the following list.
+If `package.json` declares any other package in `dependencies`, `optionalDependencies` or `peerDependencies`, the build fails with an error that names each package.
+`devDependencies` are not installed and are not checked.
+Scale and Enterprise install any package from the public npm registry.
+
+- `@redocly/*` packages
+- The runtime Realm provides: `react`, `react-dom`, `react-is`, `react-router`, `react-router-dom`, `styled-components`, `@markdoc/markdoc`, `js-yaml`, `graphql`, `zod`, `hono`, `buffer`, `i18next`, `nanoid`, `picomatch`, `prismjs`, `react-countup`
+- Common libraries: `styled-system`, `polished`, `clsx`, `react-icons`, `lucide-react`, `framer-motion`, `react-helmet`, `react-select`, `react-markdown`, `remark-gfm`, `unist-util-visit`, `marked`, `highlight-words-core`, `axios`, `lodash`, `lodash-es`, `lodash.throttle`
+
+Each package must come from the npm registry with a version range.
+Git, URL and file sources are not accepted, and `overrides` or `resolutions` entries follow the same list.
+
 ## Install the library
 
 ### Install the library locally
@@ -40,6 +54,8 @@ Follow the steps in [Run a specific product version in Redocly](../get-started/u
 to create a `package.json` file if you don't have one already.
 
 ## Configure private registries
+
+{% configOptionRequirements plans=["Enterprise"] /%}
 
 You might need to install libraries from private npm registries (such as Artifactory, AWS CodeArtifact, or GitHub Packages).
 Configure registry access using either `.npmrc` or `bunfig.toml` files.
