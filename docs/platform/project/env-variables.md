@@ -191,7 +191,9 @@ You can manage environment variables through the **Settings** page in your proje
 
 ## Restrictions
 
-When defining custom names, avoid commonly reserved environment variables, such as `HOME` and `PATH`, and those related to the Node environment such as `NODE_ENV`.
+Reunite rejects variable names that control the build and hosting processes themselves: `PATH`, `HOME`, `DATA_DIR`, `NODE_OPTIONS`, `NODE_PATH`, `NODE_USE_ENV_PROXY`, `NODE_TLS_REJECT_UNAUTHORIZED`, names ending in `_PROXY`, and names starting with `LD_`, `BUN_`, `CHILD_PROCESS_`, or `INTERNAL_`.
+A variable saved earlier under one of these names is ignored by builds and by the hosted project.
+Avoid other commonly reserved environment variables, such as `NODE_ENV`.
 
 The `PUBLIC_` prefix is shared with the client side, and should not be used for any secrets.
 
