@@ -113,7 +113,7 @@ const FooterSection = styled.div`
   font-weight: 400;
   line-height: 24px;
   color: var(--typography-text-color);
-  font-family: Inter;
+  font-family: var(--font-inter);
 `;
 
 const FooterColumnTitle = styled.p`
@@ -123,7 +123,7 @@ const FooterColumnTitle = styled.p`
   margin-bottom: var(--mobile-footer-title-margin-bottom);
   color: var(--text-color-primary);
 
-  font-family: Red Hat Display;
+  font-family: var(--font-red-hat-display);
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
@@ -193,7 +193,7 @@ export const FooterLinkIcon = styled.div`
 const FooterLink = styled(Link)<{ $iconsOnly: boolean }>`
   color: var(--text-color-secondary);
   text-decoration: none;
-  font-family: Inter;
+  font-family: var(--font-inter);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

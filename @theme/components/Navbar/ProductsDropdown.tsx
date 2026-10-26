@@ -141,7 +141,7 @@ const Panel = styled.div`
   box-shadow:
     0 8px 24px 8px rgba(0, 0, 0, 0.04),
     0 4px 12px 0 rgba(0, 0, 0, 0.08);
-  font-family: Inter, var(--font-family-base);
+  font-family: var(--font-inter);
   white-space: normal;
   text-align: left;
 
@@ -232,7 +232,7 @@ const HeadName = styled.span`
   align-items: center;
   gap: 8px;
   color: var(--text-color-primary);
-  font-family: 'Red Hat Display', var(--font-family-base);
+  font-family: var(--font-red-hat-display);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -378,7 +378,7 @@ const CardName = styled.span`
   align-items: center;
   gap: 8px;
   color: var(--text-color-primary);
-  font-family: 'Red Hat Display', var(--font-family-base);
+  font-family: var(--font-red-hat-display);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -392,7 +392,7 @@ const Version = styled.span`
   border-radius: 999px;
   background: var(--color-warm-grey-2);
   color: var(--text-color-secondary);
-  font-family: 'DM Mono', var(--code-font-family);
+  font-family: var(--font-dm-mono);
   font-size: 11px;
   font-weight: 500;
 `;
@@ -402,7 +402,7 @@ const Stars = styled.span`
   align-items: center;
   gap: 4px;
   color: var(--text-color-secondary);
-  font-family: Inter, var(--font-family-base);
+  font-family: var(--font-inter);
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -450,7 +450,7 @@ const Command = styled(Link)`
   border: 1px solid var(--products-menu-border-color);
   border-radius: 6px;
   background: var(--products-menu-bg);
-  font-family: 'DM Mono', var(--code-font-family);
+  font-family: var(--font-dm-mono);
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;

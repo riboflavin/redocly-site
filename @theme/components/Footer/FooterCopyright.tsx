@@ -33,7 +33,7 @@ const FooterCopyrightWrapper = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Inter;
+  font-family: var(--font-inter);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

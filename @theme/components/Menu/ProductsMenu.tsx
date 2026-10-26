@@ -129,7 +129,7 @@ const GithubStars = ({ link }: { link: string }) => {
 const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: Inter, var(--font-family-base);
+  font-family: var(--font-inter);
 
   a {
     text-decoration: none;
@@ -264,7 +264,7 @@ const Command = styled(Link)`
   border-radius: 6px;
   background: var(--products-menu-command-bg);
   color: var(--text-color-primary);
-  font-family: 'DM Mono', var(--code-font-family);
+  font-family: var(--font-dm-mono);
   font-size: 12px;
   line-height: 1;
 `;

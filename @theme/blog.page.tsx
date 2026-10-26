@@ -229,7 +229,7 @@ function CategoryPage({ category, subcategory }: { category: string; subcategory
 }
 
 const StyledH2 = styled(H2)`
-  font-family: 'Red Hat Display';
+  font-family: var(--font-red-hat-display);
   font-weight: 700;
   font-size: 54px;
   line-height: 64px;

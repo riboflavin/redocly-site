@@ -109,7 +109,7 @@ const StyledText = styled.span`
   display: flex;
   align-items: center;
   color: var(--color-normal);
-  font-family: Inter;
+  font-family: var(--font-inter);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

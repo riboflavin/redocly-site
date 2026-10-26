@@ -38,7 +38,7 @@ const FooterButton = styled.button`
   cursor: pointer;
   text-align: left;
   color: var(--text-color-secondary);
-  font-family: Inter;
+  font-family: var(--font-inter);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

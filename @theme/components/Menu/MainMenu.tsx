@@ -131,7 +131,7 @@ const MenuWrapper = styled.ul`
 
         color: var(--text-color-primary);
 
-        font-family: 'Red Hat Display';
+        font-family: var(--font-red-hat-display);
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;

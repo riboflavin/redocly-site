@@ -16,7 +16,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@redocly/config-rules-builder": "^0.1.0",
-    "@redocly/marketing-pages": "^0.11.0",
+    "@redocly/marketing-pages": "^0.11.1",
     "@redocly/realm-plus": "^0.1.23",
     "@redocly/theme": "0.71.0",
     "buffer": "^6.0.3",
