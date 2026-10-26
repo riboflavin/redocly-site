@@ -25,6 +25,19 @@ The following example embeds a Redocly logo from an SVG file:
 Before the SVG renders on the document, it's optimized using [SVGO](https://github.com/svg/svgo).
 The `id` attribute is also prefixed with the relative file path to avoid conflicts.
 
+### Add alternative text
+
+Use the `alt` attribute to describe what the SVG shows.
+Screen readers announce the description as the name of the image, the same way they announce the `alt` text of a regular image.
+
+{% markdoc-example %}
+  ``` {% process=false %}
+  {% inline-svg file="./images/redocly-logo.svg" alt="Redocly logo" /%}
+  ```
+{% /markdoc-example %}
+
+Omit the `alt` attribute for decorative SVGs that don't add information to the page.
+
 ### Style the SVG
 
 SVGs can be styled using CSS rules added to your project, but you need a way to reference the SVG.
@@ -53,7 +66,15 @@ The second approach provides more flexibility to writers using the Markdoc tag.
 
 - file
 - string
-- Absolute or relative path to the SVG file.
+- **REQUIRED.**
+  Absolute or relative path to the SVG file.
+
+---
+
+- alt
+- string
+- Descriptive text that provides context for the image to help with accessibility.
+  It helps people with visual impairments or who use assistive technologies to understand the content of the SVG.
 
 {% /table %}
 
@@ -70,6 +91,18 @@ The following example adds an inline SVG to your document:
 {% /markdoc-example %}
 
 {% inline-svg file="./images/ramen-icon.svg" /%}
+
+### Add alternative text to SVG
+
+The following example describes the icon for people who use assistive technologies:
+
+{% markdoc-example %}
+  ``` {% process=false %}
+  {% inline-svg file="./images/ramen-icon.svg" alt="Bowl of ramen" /%}
+  ```
+{% /markdoc-example %}
+
+{% inline-svg file="./images/ramen-icon.svg" alt="Bowl of ramen" /%}
 
 ### Apply styling to SVG
 
@@ -103,6 +136,8 @@ The example below adds that class to the inline SVG:
 
 You can improve page performance by using a single SVG file and applying styling changes using CSS.
 That way you don't have to load separate files.
+
+Add `alt` text to SVGs that convey information, such as logos or diagrams, and omit it for decorative icons.
 
 ## Resources
 
