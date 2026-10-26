@@ -1,4 +1,26 @@
 '@redocly/framework':
+  0.140.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue in API docs where content shifted on load when users opened a direct link to an operation or a tag.
+        - Fixed an issue where the mock server returned values from earlier requests in later responses.
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.3
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.0
   0.140.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -221,6 +243,29 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue in API docs where content shifted on load when users opened a direct link to an operation or a tag.
+        - Fixed an issue where the mock server returned values from earlier requests in later responses.
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where the **History** tab listed requests by path instead of operation name.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.3
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.0
   0.140.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -8700,6 +8745,26 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.3
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.0
   0.140.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -15706,6 +15771,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.3
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.0
   0.140.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -22731,6 +22816,29 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue in API docs where content shifted on load when users opened a direct link to an operation or a tag.
+        - Fixed an issue where the mock server returned values from earlier requests in later responses.
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where the **History** tab listed requests by path instead of operation name.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.3
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.0
   0.140.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -30222,6 +30330,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.2:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - >-
+          Added support for GitHub alert syntax in Markdown pages: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and `> [!CAUTION]`
+          render as admonitions.
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+        - Added the `useVisitor` theme hook to provide Realm with visitor IDs and A/B experiment variants.
+        - Added the `alt` attribute to the `inline-svg` Markdoc tag, which gives the SVG an accessible name for people who use assistive technologies.
+      patch:
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+    dependencies: {}
   0.72.0-next.1:
     timestamp: 1792803953000
     changes:
@@ -34705,6 +34828,22 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.3:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+      patch:
+        - Fixed an issue in API docs where content shifted on load when users opened a direct link to an operation or a tag.
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - >-
+          Fixed raw HTML in Markdown pages and API descriptions: boolean attributes such as `<details open>` take effect, and `style` values that
+          contain semicolons, such as data URLs, are kept.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.2
+      '@redocly/replay': 0.31.0-next.3
   0.5.0-next.2:
     timestamp: 1792803953000
     changes:
@@ -35567,6 +35706,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.14.0-next.0:
+    timestamp: 1793023631000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the mock server returned values from earlier requests in later responses.
+    dependencies: {}
   0.13.0:
     timestamp: 1792664891000
     changes:
@@ -36733,6 +36879,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.5:
+    timestamp: 1793023631000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.140.0-next.5
+      '@redocly/redoc': 0.140.0-next.5
+      '@redocly/redoc-reef': 0.140.0-next.5
+      '@redocly/redoc-revel': 0.140.0-next.5
+      '@redocly/theme': 0.72.0-next.2
   1.23.0-next.4:
     timestamp: 1792803953000
     changes:
@@ -42990,6 +43147,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.25.0-next.0:
+    timestamp: 1793023631000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.14.0-next.0
   0.24.0:
     timestamp: 1792664891000
     changes:
@@ -46242,6 +46406,15 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.3:
+    timestamp: 1793023631000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where API docs displayed error on pages translated with the browser translation feature.
+        - Fixed an issue in the **Try it** console in OpenAPI docs where the **History** tab listed requests by path instead of operation name.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.2
   0.31.0-next.2:
     timestamp: 1792803953000
     changes:
@@ -49140,6 +49313,16 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.2:
+    timestamp: 1793023631000
+    changes:
+      minor:
+        - |-
+          Switched Markdoc to `@redocly/markdoc`, Redocly's fork of Markdoc.
+          Custom tags that import from `@markdoc/markdoc` keep working.
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.2
   0.23.0-next.1:
     timestamp: 1792803953000
     changes:
