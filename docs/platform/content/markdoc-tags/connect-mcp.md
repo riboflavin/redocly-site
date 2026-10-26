@@ -15,6 +15,7 @@ The menu has options to connect via Cursor, VS Code, or Claude, copy the Claude 
 {% admonition type="info" name="Before you begin"%}
 The Connect MCP button requires a properly configured MCP server to function.
 See the [MCP configuration documentation](../../config/mcp.md) for setup instructions.
+Without an active MCP server, the button doesn't appear.
 {% /admonition %}
 
 ## Syntax and usage
