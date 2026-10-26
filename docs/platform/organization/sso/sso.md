@@ -49,11 +49,27 @@ In that case, users can log in using IdPs you have added in Redocly, with the fo
 
 ## Verified domains
 
-{% partial file="../../_partials/verified-domains.md" /%}
+Verified domains connect users to an organization by email domain.
+These domains apply only to corporate identity providers, and only when logging in to the Redocly platform, not to projects.
+Add a verified domain on the **SSO and login** page in Redocly.
+
+Users with a verified domain email are directed to corporate identity providers.
+They can still use Redocly credentials or social logins, unless you also require SSO authentication.
+Requiring SSO restricts them to corporate identity providers only.
 
 ## Team mapping
 
-{% partial file="../../_partials/team-mapping.md" /%}
+Team mapping is an option when you add Corporate or Guest IdPs.
+It labels your IdP groups in the Redocly platform.
+The option is called "team claim mapping" for OpenID Connect, and "team attribute mapping" for SAML 2.
+
+You can also use team mapping to assign IdP groups to [project RBAC teams](../../config/access/rbac.md#team-to-role-map) or [organization roles](../../access/roles.md#reserved-organization-role-names) other than the defaults.
+
+When users log in with an IdP, their groups become synced teams in Redocly.
+Both the group name and the mapped team name become teams.
+A group mapped to an organization role sets that role and never becomes a team.
+A sign-in that carries no group claim removes the person from the synced teams of that IdP but keeps them in the IdP's default team.
+Teams managed in Redocly do not change.
 
 ## Disable SSO
 
