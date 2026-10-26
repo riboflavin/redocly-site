@@ -206,7 +206,7 @@ Truncate the prompt to one line until the reader expands it:
 {% markdoc-example renderDemo=true %}
 ```markdoc
 {% prompt title="Open the MCP server to anonymous readers" singleLine=true %}
-In redocly.yaml of this project, set mcp.docs.publicEndpoint to true so AI tools of anonymous readers can reach the Docs MCP server at /mcp-public without a login.
+In redocly.yaml of this project, set mcp.docs.publicEndpoint to true so AI clients of anonymous readers can reach the MCP server at /mcp-public without a sign-in.
 Read https://redocly.com/docs/platform/config/mcp first and tell me what the endpoint exposes.
 {% /prompt %}
 ```

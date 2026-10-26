@@ -3,7 +3,7 @@ plans:
   - Pro
   - Scale
   - Enterprise
-description: Make your content accessible to AI tools.
+description: Configure the MCP server of your project.
 ---
 
 # `mcp`
@@ -27,15 +27,14 @@ To turn off the MCP server, set `hide` to `true`.
 
 - hide
 - boolean
-- Hide the MCP server globally.
-  When set to `true`, all MCP functionality is disabled.
+- Turn off the MCP server.
   Default: `false`.
 
 ---
 
 - docs
 - [Docs object](#docs-object)
-- Docs MCP configuration options.
+- Configure the name, the content, and the public endpoint of the MCP server.
 
 {% /table %}
 
@@ -51,14 +50,14 @@ To turn off the MCP server, set `hide` to `true`.
 
 - hide
 - boolean
-- Hide the Docs MCP server.
+- Turn off the MCP server, the same as `mcp.hide`.
   Default: `false`.
 
 ---
 
 - name
 - string
-- Set the name displayed to MCP clients during the initial connection.
+- Set the name that the server shows to AI clients when they connect.
   Default: `"Docs MCP server"`.
 
 ---
@@ -72,103 +71,53 @@ To turn off the MCP server, set `hide` to `true`.
 
 - publicEndpoint
 - boolean
-- Serve an additional MCP endpoint at `/mcp-public` that requires no authentication.
-  The endpoint ignores any provided credentials and exposes only content available to the `anonymous` team.
-  It never grants access to protected content.
-  Useful when RBAC restricts some content but public content must stay reachable for AI tools without a login.
-  Before you enable it, review which content your RBAC rules grant to the `anonymous` team: that content becomes reachable without a login.
-  When the project has no protected content, `/mcp` already serves anonymous users and the `/mcp-public` endpoint is not registered.
-  The [`rbac.features.mcp`](./access/rbac.md#features-configuration) configuration also applies to this endpoint: it must grant access to the `anonymous` team, or the `/mcp-public` endpoint is not registered.
-  With [`requiresLogin`](./access/requires-login.md) and no `rbac` rules, no content is public, so the `/mcp-public` endpoint is not registered.
+- Serve public content to anonymous users at `/mcp-public` when `/mcp` requires authentication.
+  For the conditions and the warning, see [Serve public content without a sign-in](../customization/mcp-server/access.md#serve-public-content-without-a-sign-in).
   Default: `false`.
 
 {% /table %}
 
-## Access control
-
-Role-based access control (RBAC) that protects content in your project also protects that content over the Docs MCP server.
-The Docs MCP server enforces access with the same RBAC engine as the portal.
-Each authenticated client receives only the API descriptions, schemas, skills, and search results that its teams are permitted to access.
-That is the same content the client could see in the portal.
-
-When RBAC restricts anonymous access, the `/mcp` endpoint requires authentication and returns `401` to unauthenticated clients.
-To restrict the server itself rather than individual content, set a team-based role for the `mcp` feature.
-The steps are described in [Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server).
-
-{% admonition type="info" %}
-The `hide` and `ignore` options remove content from the build for all clients.
-They are build-time removal, not access control.
-Use RBAC to control who can access content.
-{% /admonition %}
-
 ## Examples
 
-### Basic configuration
+### Rename the server
 
-```yaml
-# Global settings
-mcp:
-  hide: false
-  # Docs MCP settings
-  docs:
-    hide: false
-    name: My Custom Docs MCP Server
-```
+The following example sets the name that AI clients show for the server:
 
-### Public endpoint for anonymous users
-
-Serve public content to unauthenticated MCP clients on a project with restricted content:
-
-```yaml
+```yaml {% title="redocly.yaml" %}
 mcp:
   docs:
-    publicEndpoint: true
+    name: Redocly Cafe
 ```
-
-{% admonition type="warning" %}
-Everything your RBAC rules grant to the `anonymous` team becomes reachable over `/mcp-public` without a login.
-Review these rules before you enable the endpoint.
-{% /admonition %}
-
-Authenticated users keep connecting to `/mcp`.
-Anonymous users and unauthenticated integrations connect to `/mcp-public` and receive only the content that is available to the `anonymous` team.
-A browser visit to `/mcp-public` displays the setup page with connection snippets for the public endpoint.
-The two setup pages link to each other.
-The `401` response from the restricted `/mcp` endpoint mentions the public URL.
 
 ### Ignore specific patterns
 
-Ignore files and file path patterns in the MCP server:
+The following example removes the files in the `openapi-files` folder and the test endpoint files from the MCP server:
 
-```yaml
-# Global settings
+```yaml {% title="redocly.yaml" %}
 mcp:
-  hide: false
   docs:
-    hide: false
-    # Ignored patterns
     ignore:
       - openapi-files/**
       - '**/test-endpoints*'
 ```
 
-## Default configuration
+### Default values
 
-```yaml
+The following example shows the default value of each option:
+
+```yaml {% title="redocly.yaml" %}
 mcp:
   hide: false
   docs:
     hide: false
     name: Docs MCP server
     publicEndpoint: false
+    ignore: []
 ```
 
 ## Resources
 
-- **[Model Context Protocol server](../customization/mcp-server/index.md)** - Configure MCP servers and integrate with third-party services
-- **[Agent skills](../customization/agent-skills/index.md)** - Publish `SKILL.md` instructions that the MCP server exposes as resources
-- **[Custom MCP tools](../customization/mcp-server/custom-tools.md)** - Add your own tools to the MCP server with files in an `@mcp` folder
-- **[Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server)** - Limit the `/mcp` endpoint to specific teams and review the responses clients receive when access is denied
-- **[Role-based access control](./access/rbac.md#features-configuration)** - Configure team-based permissions that also govern which content clients can access over the Docs MCP server
-- **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
-- **[Connect MCP tag](../content/markdoc-tags/connect-mcp.md)** - Add `Connect MCP` button anywhere in your documentation
+- **[MCP server](../customization/mcp-server/index.md)** - Learn what the MCP server of your project serves to AI clients
+- **[Control access to the MCP server](../customization/mcp-server/access.md)** - Restrict the server to teams and serve public content without a sign-in
+- **[Custom tools](../customization/mcp-server/custom-tools.md)** - Add your own functions to the server with code that you write
+- **[Connect MCP tag](../content/markdoc-tags/connect-mcp.md)** - Add a button that connects an AI client to the server from any page

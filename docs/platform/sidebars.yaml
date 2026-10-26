@@ -349,12 +349,17 @@
           label: Support escalation
         - page: ai-assistant-web-component/reference.md
           label: Reference
-    - page: customization/mcp-server/index.md
-      label: MCP servers
+    - group: MCP server
+      page: customization/mcp-server/index.md
+      items:
+        - page: customization/mcp-server/connect.md
+          label: Connect an AI client
+        - page: customization/mcp-server/access.md
+          label: Control access
+        - page: customization/mcp-server/custom-tools.md
+          label: Custom tools
     - page: customization/mcp-server/redocly-mcp.md
       label: Redocly MCP server
-    - page: customization/mcp-server/custom-tools.md
-      label: Custom MCP tools
     - page: customization/agent-skills/index.md
       label: Agent skills
     - page: customization/webmcp/index.md

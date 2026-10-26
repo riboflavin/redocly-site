@@ -176,7 +176,8 @@ Add `https://redocly.com/mcp` to your client as a remote server over the Streama
 The server doesn't require headers or credentials.
 Each client uses its own configuration keys, so follow your client's instructions for remote servers.
 
-To get one MCP tool for each documentation function, use `https://redocly.com/mcp?mode=tools`.
+If your client needs one MCP tool for each function instead of a script, use `https://redocly.com/mcp?mode=tools`.
+For the functions, see [What the server provides](#what-the-server-provides).
 
 ### Verify the connection
 
@@ -211,9 +212,9 @@ For example: "Check the Redocly MCP server before you answer."
 
 ## What the server provides
 
-The server runs in code mode.
-By default, it does not expose one MCP tool for each documentation function.
-It exposes three tools:
+The server gives the AI client a set of documentation functions, such as search and endpoint lookup.
+The AI client calls these functions from a short script instead of through one MCP tool for each function.
+The server exposes three tools:
 
 {% table %}
 

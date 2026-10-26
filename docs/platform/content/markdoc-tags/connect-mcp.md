@@ -8,12 +8,12 @@ plans:
 
 {% configOptionRequirements plans=$frontmatter.plans /%}
 
-The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various MCP clients.
+The `connect-mcp` tag renders a button that allows users to connect to the MCP (Model Context Protocol) server through various AI clients.
 When clicked or hovered, it displays a dropdown menu.
 The menu has options to connect via Cursor, VS Code, or Claude, copy the Claude Code or Codex CLI command, or copy the MCP configuration.
 
 {% admonition type="info" name="Before you begin"%}
-The Connect MCP button requires a properly configured Docs MCP server to function.
+The Connect MCP button requires a properly configured MCP server to function.
 See the [MCP configuration documentation](../../config/mcp.md) for setup instructions.
 {% /admonition %}
 
@@ -177,6 +177,6 @@ If your users primarily use Cursor, consider showing only that option to reduce 
 ## Resources
 
 - **[MCP configuration](../../config/mcp.md)** - Configure the MCP server and Connect MCP button visibility
-- **[Model Context Protocol server](../../customization/mcp-server/index.md)** - Learn about MCP servers and integration with AI tools
+- **[Connect an AI client to your MCP server](../../customization/mcp-server/connect.md)** - Add the server to Claude Code, Cursor, Claude, VS Code, Codex, ChatGPT, or another AI client
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

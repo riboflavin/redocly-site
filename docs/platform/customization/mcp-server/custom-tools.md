@@ -11,7 +11,7 @@ Add your own tools to the project's [MCP server](./index.md).
 Create an `@mcp` folder in your project, and add one `.ts` or `.js` file for each tool.
 The AI client calls your tool from a script that it runs with the `execute` tool of the MCP server.
 The file name is the tool name, and the script calls the tool as a camelCase function: `@mcp/get-weather.ts` becomes `tools.getWeather`.
-A client that uses [tools mode](./index.md) gets your tool as its own MCP tool.
+A client that uses [tools mode](./index.md#tools-mode) gets your tool as its own MCP tool.
 
 ## Create a tool
 
@@ -133,7 +133,7 @@ The `execute` function receives three arguments:
 
 - args
 - object
-- Input arguments from the MCP client, validated against `inputSchema`.
+- Input arguments from the AI client, validated against `inputSchema`.
 
 ---
 
@@ -318,5 +318,6 @@ In local development, the server reports the error and skips the tool.
 
 ## Resources
 
-- **[Model Context Protocol server](./index.md)** - Overview of the built-in MCP server and how to connect AI tools to it
-- **[MCP configuration reference](../../config/mcp.md)** - Enable, disable, and configure the MCP server for your project
+- **[MCP server](./index.md)** - Learn what the MCP server of your project serves to AI clients
+- **[Control access to the MCP server](./access.md)** - Restrict the server to teams and serve public content without a sign-in
+- **[`mcp` configuration](../../config/mcp.md)** - Turn the server off, rename it, and remove content from it

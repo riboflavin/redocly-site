@@ -107,12 +107,6 @@ apis:
         assertions:
           notPattern: /(?<![./])Redocly/i
         severity: off
-  mcp-server:
-    root: ./customization/mcp-server/openapi.yaml
-    rules:
-      no-unused-components: off
-      rule/pagination-page-ref: off
-      rule/pagination-required-properties: off
   scout-agent:
     root: ./scout/agent-api/openapi.yaml
     rules:
@@ -346,5 +340,9 @@ responseHeaders:
 redirects:
   '/faq/ai-search-privacy/':
     to: '/faq/ai-governance/'
+  '/customization/mcp-server/openapi/':
+    to: '/customization/mcp-server/'
+  '/customization/mcp-server/openapi/*':
+    to: '/customization/mcp-server/'
 
 telemetry: off

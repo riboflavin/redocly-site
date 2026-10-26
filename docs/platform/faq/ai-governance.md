@@ -165,7 +165,7 @@ Use these controls to keep content out of the index:
 - **Exclude a page** - Set [`excludeFromSearch: true`](../config/front-matter-config.md#front-matter-only-options) in the page front matter.
   The page also leaves keyword search, `llms.txt`, and the sitemap.
 - **Exclude an API description** - Set [`excludeFromSearch: true`](../config/openapi/index.md#exclude-an-api-from-search) for the API in `redocly.yaml`.
-- **Stop indexing for the project** - Set [`aiAssistant.hide: true`](../config/ai-assistant.md) and turn off the Docs MCP server with [`mcp.hide: true`](../config/mcp.md) or `mcp.docs.hide: true`.
+- **Stop indexing for the project** - Set [`aiAssistant.hide: true`](../config/ai-assistant.md) and turn off the MCP server with [`mcp.hide: true`](../config/mcp.md) or `mcp.docs.hide: true`.
   Redocly indexes content while either feature is on.
 
 These options do not keep content out of the index:
@@ -282,6 +282,20 @@ For each conversation, you can see:
 
 You can filter conversations, search the question text, and export the data to CSV.
 
+### What does Redocly log for MCP tool calls?
+
+For each tool call, telemetry records the tool name, the mode, the duration, the response size, and the name and version of the AI client.
+When a call fails, telemetry also records the error message and the stack trace.
+Telemetry does not record prompt text, scripts, or results.
+
+The server also keeps a security audit log of each tool call.
+The audit log records the tool arguments and the script, with secrets removed.
+The server truncates each of these fields to 4,096 characters.
+The audit log never contains the result itself.
+For a tool other than `execute`, the audit log stores a digest of the result instead.
+
+For the limits and the analytics, see [Limits and what Redocly logs](../customization/mcp-server/index.md#limits-and-what-redocly-logs).
+
 ### Does Redocly monitor token usage and costs?
 
 Yes.
@@ -303,7 +317,8 @@ The feedback appears in your analytics next to the conversation.
   The quota resets each month.
   Above the quota, users receive regular search results instead of AI answers.
 - **AI assistant input** - The question size is capped.
-- **MCP server** - Requests are rate limited for each client IP address.
+- **MCP server** - The server limits the requests from one client IP address.
+  See [Limits and what Redocly logs](../customization/mcp-server/index.md#limits-and-what-redocly-logs).
 - **Redocly Agent and Scaffold with AI** - Each run has a cost budget, and each organization has caps on active and total runs.
 
 These limits can change.
@@ -339,7 +354,7 @@ Clients sign in with OAuth, or send a bearer token.
 The server validates each token on each request against the identity provider that issued it.
 Each client only receives the content that its teams can access.
 
-To restrict the server itself, see [Restrict access to the MCP server](../customization/mcp-server/index.md#restrict-access-to-the-mcp-server).
+To restrict the server itself, see [Restrict access to the MCP server](../customization/mcp-server/access.md#restrict-the-server-to-teams).
 
 ### Does the MCP server pass tokens through to backend APIs?
 
@@ -521,7 +536,8 @@ Short answers to frequent AI governance questionnaire items:
 
 - **[`aiAssistant` configuration](../config/ai-assistant.md)** - Configure, customize, or hide the AI assistant in your project
 - **[`mcp` configuration](../config/mcp.md)** - Configure or disable the MCP server for your project
-- **[Model Context Protocol server](../customization/mcp-server/index.md)** - Connect AI tools to the MCP server and restrict access to it
+- **[MCP server](../customization/mcp-server/index.md)** - Learn what the MCP server of your project serves to AI clients
+- **[Control access to the MCP server](../customization/mcp-server/access.md)** - Restrict the MCP server to teams and serve public content without a sign-in
 - **[Analytics](../project/analytics.md)** - Review AI assistant conversations, feedback, and usage data
 - **[Compliance reports](../organization/access-compliance-reports.md)** - Download the SOC 2 Type 2 report, penetration test report, CAIQ answers, and ISO/IEC 27001:2022 certificate
 - **[Security vulnerability fixes](./security-fixes.md)** - How Redocly detects and releases security fixes

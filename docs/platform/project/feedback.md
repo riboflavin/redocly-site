@@ -23,6 +23,8 @@ The **Page feedback** tab contains a table with the data collected from the feed
 - **Date**: The day the feedback form was submitted relative to the current date.
 - **Status**: The status of the feedback, either: **New**, **In Review**, **Resolved**, **Archived** or **Spam**.
 
+Reports from the `submit-feedback` tool of the [MCP server](../customization/mcp-server/index.md#the-feedback-tool) appear in this table.
+
 ### View detailed feedback for pages
 
 - Select an item in the table, to view detailed feedback information, including the following additional data:
