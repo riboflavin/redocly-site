@@ -232,12 +232,12 @@ When the MCP server requires login, the MCP extension declares its authenticatio
 
 ### Skills as MCP resources
 
-When skills are published, Redocly also registers them as resources on the [Docs MCP server](../mcp-server/index.md).
+When skills are published, Redocly also registers them as resources on the [MCP server](../mcp-server/index.md).
 An agent connected over MCP can read each skill as a `text/markdown` resource without fetching the skills index separately.
 
 ## Resources
 
 - **[`skills` configuration](../../config/skills.md)** - Hide skills or exclude files from discovery
-- **[`mcp` configuration](../../config/mcp.md)** - Enable and configure the Docs MCP server
+- **[`mcp` configuration](../../config/mcp.md)** - Enable and configure the MCP server
 - **[Model Context Protocol server](../mcp-server/index.md)** - Connect an AI tool to the MCP server that exposes your skills as resources
 - **[Role-based access control](../../access/rbac.md)** - Control which teams and users can access each skill

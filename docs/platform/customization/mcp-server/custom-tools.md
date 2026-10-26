@@ -9,8 +9,9 @@ plans:
 
 Add your own tools to the project's [MCP server](./index.md).
 Create an `@mcp` folder in your project, and add one `.ts` or `.js` file for each tool.
-The AI model calls your tools from a script that it runs with the `execute` tool of the MCP server.
+The AI client calls your tool from a script that it runs with the `execute` tool of the MCP server.
 The file name is the tool name, and the script calls the tool as a camelCase function: `@mcp/get-weather.ts` becomes `tools.getWeather`.
+A client that uses [tools mode](./index.md) gets your tool as its own MCP tool.
 
 ## Create a tool
 
@@ -202,7 +203,8 @@ The most useful `context` properties:
 
 ### Tool result
 
-The value that your `execute` function returns is the result of the tool call in the AI model's script.
+The value that your `execute` function returns is the result of the tool call.
+The script receives the result, or, in tools mode, the result is the MCP tool result.
 Return a JSON-serializable value, such as an object, an array, or a string.
 
 To report a failure, throw an `Error` from `execute`.
@@ -229,7 +231,7 @@ If you enable [`mcp.docs.publicEndpoint`](../../config/mcp.md), anonymous client
 
 To limit a tool to specific users or teams, add an `isAvailable` function.
 
-When `isAvailable` returns `false`, the server removes the tool from `describe-tools` and from the script.
+When `isAvailable` returns `false`, the server removes the tool from `describe-tools`, from the script, and from the tool list in tools mode.
 `isAvailable` does not get the tool arguments, so do checks that depend on the arguments in `execute`.
 
 The following tool finds API error codes in a data file of the project.

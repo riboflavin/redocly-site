@@ -41,7 +41,8 @@ AI Search is now named the **AI assistant**.
 ---
 
 - MCP server
-- Gives AI tools read-only access to your documentation and API descriptions.
+- Gives AI clients access to your documentation and API descriptions.
+  By default, the built-in MCP tools only read data, except `submit-feedback`, which adds a report to the Feedback page in the Redocly platform.
   An early access capability also lets them call the APIs you document, using credentials the user supplies.
 - All plans.
   API calls are early access, off by default, and enabled for each organization by Redocly.
@@ -181,7 +182,7 @@ Contact Redocly to delete it.
 
 The features process the content you publish and the questions users type.
 Conversations from signed-in users record the user's email address in your analytics.
-Conversations from users who are not signed in are recorded as "Anonymous".
+Conversations from users who are not signed in are recorded as **Anonymous**.
 
 For Redocly Agent and Scaffold with AI, a redaction step runs on prompts before they reach the model provider.
 It removes email addresses, IP addresses, bearer tokens, and API-key-like strings.
@@ -274,7 +275,7 @@ For each conversation, you can see:
 
 - the question and the full answer
 - the source pages the assistant used
-- the user's email address, or "Anonymous" for users who are not signed in
+- the user's email address, or **Anonymous** for users who are not signed in
 - the date and time
 - user feedback (like or dislike, with an optional reason)
 - whether the assistant found an answer
@@ -311,10 +312,12 @@ These limits can change.
 
 ### What can the MCP server do?
 
-By default, the MCP server is read-only.
+The MCP server reads your documentation and API descriptions.
 Its tools list APIs, return endpoint details and security schemes, and search documentation.
-It does not call your backend APIs.
-It cannot change your content.
+By default, it does not call your backend APIs.
+One tool, `submit-feedback`, writes: it adds a report about a page to the Feedback page in the Redocly platform.
+No built-in tool changes your content or your project.
+[Custom tools](../customization/mcp-server/custom-tools.md) run code that you write.
 
 Redocly can enable an early access capability that adds API calls.
 API calls are not a separate server.
@@ -375,6 +378,7 @@ Their design separates portal tokens from API credentials:
 - Restrict access to specific teams with `rbac.features.mcp`.
 - Use content RBAC to control which APIs and pages each team can read.
 - Exclude files from the MCP server with `mcp.docs.ignore`.
+- Remove the feedback tool and the page feedback form with `feedback.hide`.
 - Keep API calls off, which is the default.
   When they are on, content RBAC controls which APIs and operations each team can call.
 - Narrow API calls with `mcp.apiCalls` in `redocly.yaml`: turn them off, limit the HTTP methods, or exclude API files and operations.
@@ -431,7 +435,7 @@ You own your content and your optional project prompt (the [`aiAssistant.prompt`
 ### How are wrong or unsafe answers handled?
 
 The assistant cites its sources, so users can verify answers.
-When it cannot find an answer, it says so, and analytics mark the conversation as "Not found".
+When it cannot find an answer, it says so, and analytics mark the conversation as **Not found**.
 Users flag bad answers with the feedback buttons.
 The conversation log lets you audit every question and answer.
 

@@ -10,8 +10,10 @@ description: Make your content accessible to AI tools.
 
 {% configOptionRequirements plans=$frontmatter.plans /%}
 
-Redocly automatically generates Model Context Protocol (MCP) servers from your documentation and OpenAPI descriptions.
-MCP servers make your content accessible to AI tools in the MCP ecosystem (such as ChatGPT, Claude, Cursor, Goose).
+Use the `mcp` option to configure the Model Context Protocol (MCP) server of your project.
+The MCP server gives AI clients such as Claude, ChatGPT, Cursor, and VS Code access to your documentation and API descriptions.
+The MCP server is on by default on plans that include it.
+To turn off the MCP server, set `hide` to `true`.
 
 ## Options
 
@@ -34,8 +36,6 @@ MCP servers make your content accessible to AI tools in the MCP ecosystem (such 
 - docs
 - [Docs object](#docs-object)
 - Docs MCP configuration options.
-
----
 
 {% /table %}
 
@@ -97,7 +97,8 @@ The steps are described in [Restrict access to the MCP server](../customization/
 
 {% admonition type="info" %}
 The `hide` and `ignore` options remove content from the build for all clients.
-They are build-time removal, not access control — use RBAC to control who can access content.
+They are build-time removal, not access control.
+Use RBAC to control who can access content.
 {% /admonition %}
 
 ## Examples

@@ -121,10 +121,10 @@ Control the **Previous** and **Next** navigation buttons on project pages.
     Supported only on public pages.
   - `grok`: ask Grok about this page.
     Supported only on public pages.
-  - `docs-mcp-claude`: connect to MCP server via Claude.
+  - `docs-mcp-claude`: connect to the MCP server with Claude.
     Opens claude.ai with the server name and URL filled in.
-  - `docs-mcp-vscode`: connect to MCP server via VS Code.
-  - `docs-mcp-cursor`: connect to MCP server via Cursor.
+  - `docs-mcp-vscode`: connect to the MCP server with VS Code.
+  - `docs-mcp-cursor`: connect to the MCP server with Cursor.
   - `copy-mcp-url`: copy the MCP server URL to the clipboard.
 
   The first item in the list is the default action.

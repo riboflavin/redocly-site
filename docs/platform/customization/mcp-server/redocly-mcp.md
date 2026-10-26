@@ -115,36 +115,30 @@ To add the server manually:
 
   {% tab label="VS Code" %}
 
-To add the server manually:
-
 {% numbered-list %}
   {% numbered-item %}
-  Open the `.mcp.json` file in the root of your workspace.
-  Create the file if it doesn't exist.
+  Open the Command Palette.
+  - macOS: `Command + Shift + P`
+  - Windows/Linux: `Ctrl + Shift + P`
   {% /numbered-item %}
   {% numbered-item %}
-  Add the server:
-
-  ```json {% title=".mcp.json" %}
-  {
-    "mcpServers": {
-      "redocly": {
-        "type": "http",
-        "url": "https://redocly.com/mcp"
-      }
-    }
-  }
-  ```
-
+  Run **MCP: Add Server**.
   {% /numbered-item %}
   {% numbered-item %}
-  Save the file.
+  Select **HTTP**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Enter `https://redocly.com/mcp` as the URL.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Enter `redocly` as the server ID.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select **Global**, then **Copilot Global**, to make the server available in all your workspaces.
   {% /numbered-item %}
 {% /numbered-list %}
 
-Alternatively, run **MCP: Add Server** from the Command Palette and follow the prompts.
-
-In the chat, select **Agent** in the agent picker, then select **Configure Tools** to check that the Redocly tools are on.
+Run **Chat: Open Customizations** and select **Tools** to check that the Redocly tools are on.
 
   {% /tab %}
 
@@ -162,7 +156,7 @@ Run `codex mcp list` to check that the server is in the list.
 
   {% tab label="ChatGPT" %}
 
-ChatGPT on the web connects remote MCP servers in developer mode.
+ChatGPT on the web connects remote MCP servers.
 The steps and the plans that allow it change often, so follow [OpenAI's guide to custom MCP servers](https://developers.openai.com/api/docs/guides/custom-mcp-server).
 Use these values:
 
@@ -182,8 +176,7 @@ Add `https://redocly.com/mcp` to your client as a remote server over the Streama
 The server doesn't require headers or credentials.
 Each client uses its own configuration keys, so follow your client's instructions for remote servers.
 
-Some clients work better with one tool for each documentation function.
-For these clients, use `https://redocly.com/mcp?mode=tools`.
+To get one MCP tool for each documentation function, use `https://redocly.com/mcp?mode=tools`.
 
 ### Verify the connection
 
@@ -219,7 +212,7 @@ For example: "Check the Redocly MCP server before you answer."
 ## What the server provides
 
 The server runs in code mode.
-It does not expose one MCP tool for each documentation function.
+By default, it does not expose one MCP tool for each documentation function.
 It exposes three tools:
 
 {% table %}
@@ -274,6 +267,8 @@ The documentation functions are the following:
 - Finds the lines in the pages that contain the text that you give.
 
 {% /table %}
+
+The server also has functions that list and read the API descriptions that redocly.com publishes, for example the Reunite API.
 
 The server also publishes Redocly's [agent skills](../agent-skills/index.md) as MCP resources, for example for Redocly CLI commands and lint rules.
 A client that supports resources can load a skill when a task needs it.
@@ -341,8 +336,8 @@ Agents that support discovery can read the [server card](https://redocly.com/.we
 ---
 
 - VS Code
-- In the **Extensions** view, right-click **redocly** in the **MCP Servers - Installed** section and select **Uninstall**.
-  Or delete the `redocly` entry from `.mcp.json`.
+- In the **Extensions** view, uninstall **redocly** from the **MCP Servers - Installed** section.
+  Or delete the `redocly` entry from `~/.copilot/mcp-config.json`.
 
 ---
 

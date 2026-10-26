@@ -231,4 +231,4 @@ The tool reads the page and uses the correct syntax.
 - **[Numbered list tag](./numbered-list.md)** - Render step-by-step procedures as a numbered rail of items
 - **[Accordion tag](./accordion.md)** - Hide optional content in collapsible sections
 - **[Agent skills](../../customization/agent-skills/index.md)** - Package task instructions that agents load on demand
-- **[MCP configuration](../../config/mcp.md)** - Configure the Docs MCP server, including the public endpoint
+- **[MCP configuration](../../config/mcp.md)** - Configure the MCP server, including the public endpoint

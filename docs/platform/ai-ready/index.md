@@ -24,7 +24,7 @@ For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 - **[llms.txt configuration](../config/seo.md#llmstxt-object)** - Set the file's title, description, and sections, or turn it off
 - **[Model Context Protocol server](../customization/mcp-server/index.md)** - Serve your documentation and APIs over the Model Context Protocol
 - **[Redocly MCP server](../customization/mcp-server/redocly-mcp.md)** - Connect your AI tools to Redocly's own documentation server and try it before you enable yours
-- **[x-mcp extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Control how API operations appear to MCP clients
+- **[x-mcp extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Choose which API operations the MCP server exposes to AI clients
 - **[Page actions](../config/navigation.md#pageaction-object)** - Copy or view any page as Markdown, ask ChatGPT or Claude about it, or connect an editor to your MCP server
 - **[WebMCP tools](../customization/webmcp/index.md)** - Publish tools to the AI agent in the reader's own browser, so it can search, read, and open your pages
 

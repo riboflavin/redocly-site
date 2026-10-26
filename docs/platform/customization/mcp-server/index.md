@@ -14,9 +14,9 @@ Redocly provides built-in MCP server capabilities that expose your API Docs to A
 
 ## Benefits
 
-- **Real-time API guidance** — users receive accurate, contextual help about API endpoints and operations.
-- **Secure API access** — AI assistants can make authenticated requests to act on behalf of a user.
-- **Dynamic documentation** — AI assistants can extract and explain API reference content based on user needs.
+- **Real-time API guidance**: users receive accurate, contextual help about API endpoints and operations.
+- **Secure API access**: AI assistants can make authenticated requests to act on behalf of a user.
+- **Dynamic documentation**: AI assistants can extract and explain API reference content based on user needs.
 
 ## Docs MCP server
 
@@ -119,33 +119,73 @@ Users can connect their preferred AI tools that support MCP (for example, Cursor
 After connecting, the tool can access your OpenAPI documentation.
 
 {% tabs %}
-  {% tab label="Cursor" %}
 
-#### Connect Cursor to the MCP server
+  {% tab label="Claude" %}
+
+To add the server in one step, select **Connect to Claude** in the page actions menu.
+The setup page that opens when you visit the MCP server URL in a browser also has this button.
+Claude opens the **Add custom connector** dialog on claude.ai with the server name and URL filled in.
+Review the values and select **Add**.
+
+To add the connector manually:
 
 {% numbered-list %}
   {% numbered-item %}
-  In Cursor, open the command palette.
-  - macOS: `Command + Shift + P`
-  - Windows/Linux: `Ctrl + Shift + P`
+  Open **Customize > Connectors**, select **Add**, then select **Add custom connector**.
   {% /numbered-item %}
   {% numbered-item %}
-  Type "Open MCP settings" in the command palette.
+  Enter a name and the MCP server URL, for example `https://example.com/mcp`, then select **Continue**.
   {% /numbered-item %}
   {% numbered-item %}
-  Select "Add custom MCP".
+  Review the detected authentication settings and select **Continue**.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Under **Authentication**, select **No sign in** if the MCP server is public.
+  Otherwise, select a sign-in option.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select **Add**.
   {% /numbered-item %}
 {% /numbered-list %}
 
-Cursor opens the `mcp.json` file.
+On a Team or Enterprise plan, an Owner opens **Organization settings > Connectors**, selects **Add**, then **Custom > Web**, and follows the same steps.
+Members then open **Customize > Connectors** and select **Connect** next to the connector.
 
-#### Configure the MCP server
+You can use the connector in Claude on the web and in the desktop app.
+
+To test the connection, ask a question that uses an MCP tool in a Claude chat.
+
+  {% /tab %}
+
+  {% tab label="Claude Code" %}
+
+In your terminal, run:
+
+```shell
+claude mcp add --transport http --scope user example-mcp https://example.com/mcp
+```
+
+The `--scope user` option makes the server available in all your projects.
+Without it, Claude Code adds the server to the current project only, for you only.
+
+In a Claude Code session, type `/mcp` to see the server and its tools.
+If the MCP server requires authentication, select the server in the `/mcp` list and complete the sign-in flow.
+
+To test the connection, ask Claude Code to perform a task that uses an MCP tool.
+
+  {% /tab %}
+
+  {% tab label="Cursor" %}
 
 {% numbered-list %}
   {% numbered-item %}
-  In `mcp.json`, add your server configuration:
+  Open `~/.cursor/mcp.json` for all projects, or `.cursor/mcp.json` for one project.
+  Create the file if it doesn't exist.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Add the server:
 
-  ```json
+  ```json {% title="mcp.json" %}
   {
     "mcpServers": {
       "example-mcp": {
@@ -155,9 +195,9 @@ Cursor opens the `mcp.json` file.
   }
   ```
 
-  Optionally, you can also pass additional headers that will be sent with each request:
+  To send extra headers with each request, add a `headers` object:
 
-  ```json
+  ```json {% title="mcp.json" %}
   {
     "mcpServers": {
       "example-mcp": {
@@ -169,202 +209,119 @@ Cursor opens the `mcp.json` file.
     }
   }
   ```
+
   {% /numbered-item %}
   {% numbered-item %}
-  Save the `mcp.json` file.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Return to MCP settings and confirm the connection.
-  If authentication is required, select **Needs login** and complete the sign‑in flow.
-  After connecting, Cursor displays the list of available tools.
+  Save the file.
+  Cursor shows the server and its tools on the **Customize** page.
   {% /numbered-item %}
 {% /numbered-list %}
 
-#### Test the Cursor connection
+Cursor supports OAuth for MCP servers that require authentication.
 
-In Cursor chat (Agent mode), ask a question that triggers an MCP tool.
-
-  {% /tab %}
-
-  {% tab label="Claude Code" %}
-
-### Connect Claude Code to the MCP server
-
-{% numbered-list %}
-  {% numbered-item %}
-  Run: `claude mcp add --transport http ${MCP_SERVER_NAME} ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-  {% /numbered-item %}
-  {% numbered-item %}
-  In the Claude Code CLI, type `/mcp` and complete authentication if prompted.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Claude Code lists the available tools with descriptions and parameters.
-  {% /numbered-item %}
-{% /numbered-list %}
-
-#### Test the Claude Code connection
-
-In the Claude Code CLI, ask the AI agent to perform an instruction that uses an MCP tool.
+To test the connection, ask a question that uses an MCP tool in a Cursor chat in Agent mode.
 
   {% /tab %}
 
-  {% tab label="Claude app" %}
-
-### Connect the Claude app to the MCP server
-
-To add the server in one step, select **Connect to Claude** in the page actions menu, or on the setup page that opens when you visit the MCP server URL in a browser.
-Claude opens the **Add custom connector** dialog on claude.ai with the server name and URL filled in.
-Click **Add**.
-Claude adds the connector to your account and syncs it between Claude on the web and Claude Desktop.
-
-To add the server manually:
+  {% tab label="VS Code" %}
 
 {% numbered-list %}
   {% numbered-item %}
-  In the Claude app, open **Customize** → **Connectors** and select **Add custom connector**.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Paste the MCP server URL, for example `https://example.com/mcp`.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Click **Add**.
-  {% /numbered-item %}
-{% /numbered-list %}
-
-If the MCP server requires authentication, Claude prompts you to sign in when you connect.
-
-#### Test the Claude app connection
-
-In a Claude chat, ask a question that uses an MCP tool.
-
-  {% /tab %}
-
-   {% tab label="VS Code" %}
-
-### Connect VS Code to the MCP server
-
-{% numbered-list %}
-  {% numbered-item %}
-  In VS Code, open the command palette.
+  Open the Command Palette.
   - macOS: `Command + Shift + P`
   - Windows/Linux: `Ctrl + Shift + P`
   {% /numbered-item %}
   {% numbered-item %}
-  Type "MCP: Add Server" in the command palette.
+  Run **MCP: Add Server**.
   {% /numbered-item %}
   {% numbered-item %}
-  Select "HTTP" to connect to a remote MCP server.
+  Select **HTTP**.
   {% /numbered-item %}
   {% numbered-item %}
-  Enter the MCP server URL (for example, `https://example.com/mcp`).
+  Enter the MCP server URL, for example `https://example.com/mcp`.
   {% /numbered-item %}
   {% numbered-item %}
-  Enter a name for the connection.
+  Enter a server ID, for example `example-mcp`.
+  {% /numbered-item %}
+  {% numbered-item %}
+  Select **Global**, then **Copilot Global**, to make the server available in all your workspaces.
   {% /numbered-item %}
 {% /numbered-list %}
 
-If the MCP server requires authentication, VS Code prompts you to open a sign‑in page.
-Complete the sign‑in flow with your credentials.
+If the MCP server requires authentication, VS Code prompts you to sign in.
 
-#### Test the VS Code connection
-
-Open Chat with AI in Agent mode and select the Tools icon.
-Confirm that your MCP connection appears with a list of available tools.
-
-Ask the AI to perform a query that uses an MCP tool.
+Run **Chat: Open Customizations** and select **Tools** to check that the tools of the server are on.
 
   {% /tab %}
 
-  {% tab label="Codex CLI" %}
+  {% tab label="Codex" %}
 
-### Connect Codex CLI to the MCP server
+In your terminal, run:
 
-{% numbered-list %}
-  {% numbered-item %}
-  Run: `codex mcp add ${MCP_SERVER_NAME} --url ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-  {% /numbered-item %}
-  {% numbered-item %}
-  If the MCP server requires authentication, run `codex mcp login ${MCP_SERVER_NAME}` and complete the sign‑in flow.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Run `codex mcp list` and confirm the server appears.
-  {% /numbered-item %}
-{% /numbered-list %}
+```shell
+codex mcp add example-mcp --url https://example.com/mcp
+```
 
-#### Test the Codex CLI connection
+If the MCP server requires authentication, run `codex mcp login example-mcp` and complete the sign-in flow.
 
-In the Codex CLI, ask the AI agent to perform an instruction that uses an MCP tool.
+Run `codex mcp list` to check that the server is in the list.
+
+To test the connection, ask Codex to perform a task that uses an MCP tool.
 
   {% /tab %}
 
-  {% tab label="ChatGPT desktop app" %}
+  {% tab label="ChatGPT" %}
 
-### Connect the ChatGPT desktop app to the MCP server
+ChatGPT on the web connects remote MCP servers.
+The steps and the plans that allow it change often, so follow [OpenAI's guide to custom MCP servers](https://developers.openai.com/api/docs/guides/custom-mcp-server).
+Use these values:
 
-{% numbered-list %}
-  {% numbered-item %}
-  In the ChatGPT desktop app, go to **Settings → Plugins → MCPs**.
-  {% /numbered-item %}
-  {% numbered-item %}
-  Add a server with the "Streamable HTTP" type and your MCP server URL (for example, `https://example.com/mcp`).
-  {% /numbered-item %}
-  {% numbered-item %}
-  Restart the app.
-  {% /numbered-item %}
-{% /numbered-list %}
+- **Name**: a name for the server
+- **Server URL**: `https://example.com/mcp`
+- **Authentication**: OAuth if the MCP server requires authentication, otherwise no authentication
 
-#### Test the ChatGPT connection
-
-In a ChatGPT chat, ask a question that uses an MCP tool.
+In a chat, type `@` and select your installed plugin.
 
   {% /tab %}
 
   {% tab label="Grok Build" %}
 
-### Connect Grok Build to the MCP server
+In your terminal, run:
 
-{% numbered-list %}
-  {% numbered-item %}
-  Run: `grok mcp add --transport http ${MCP_SERVER_NAME} ${URL}` where `${MCP_SERVER_NAME}` is your desired server name and `${URL}` is the MCP server URL.
-  {% /numbered-item %}
-  {% numbered-item %}
-  If the MCP server requires authentication, complete the sign‑in flow.
-  {% /numbered-item %}
-{% /numbered-list %}
+```shell
+grok mcp add --transport http example-mcp https://example.com/mcp
+```
 
-#### Test the Grok Build connection
+If the MCP server requires authentication, complete the sign-in flow.
 
-In Grok Build, ask the AI agent to perform an instruction that uses an MCP tool.
+To test the connection, ask Grok Build to perform a task that uses an MCP tool.
 
   {% /tab %}
 
   {% tab label="Grok app" %}
 
-### Connect the Grok app to the MCP server
-
-The MCP server must be reachable on the public Internet.
-To open the Grok connectors page, visit the MCP server URL in a browser and select **Open Grok connectors**.
+The MCP server must be reachable on the public internet.
 
 {% numbered-list %}
   {% numbered-item %}
   On grok.com, open **Connectors**.
+  To open this page from your project, open the MCP server URL in a browser and select **Open Grok connectors**.
   {% /numbered-item %}
   {% numbered-item %}
-  Select **New Connector** → **Custom**.
+  Select **New Connector**, then **Custom**.
   {% /numbered-item %}
   {% numbered-item %}
   Paste the MCP server URL, for example `https://example.com/mcp`.
   {% /numbered-item %}
   {% numbered-item %}
-  If the MCP server requires authentication, complete the sign‑in flow.
+  If the MCP server requires authentication, complete the sign-in flow.
   {% /numbered-item %}
 {% /numbered-list %}
 
-#### Test the Grok app connection
-
-In a Grok chat, ask a question that uses an MCP tool.
+To test the connection, ask a question that uses an MCP tool in a Grok chat.
 
   {% /tab %}
+
 {% /tabs %}
 
 ## Public endpoint for anonymous users

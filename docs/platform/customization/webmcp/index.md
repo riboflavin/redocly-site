@@ -126,7 +126,7 @@ A browser without WebMCP shows your documentation normally and registers no tool
 
 ## Resources
 
-- **[Model Context Protocol server](../mcp-server/index.md)** - Serve your documentation to agents that connect from outside the browser
+- **[MCP server](../mcp-server/index.md)** - Serve your documentation to AI clients that connect from outside the browser
 - **[Agent skills](../agent-skills/index.md)** - Describe tasks that an agent can complete against your product
 - **[Make docs AI ready](../../ai-ready/index.md)** - Every way to serve your documentation to AI tools
 - **[`feedback`](../../config/feedback.md)** - Configure the feedback form and the feedback tool

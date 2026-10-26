@@ -3,11 +3,13 @@
 {% partial file="../../../_partials/experimental.md" /%}
 
 Use `x-mcp` to document MCP (Model Context Protocol) servers for consumers.
+You can also use `x-mcp` to choose which paths and operations the MCP server lists for AI clients.
 
 ## Location
 
 The `x-mcp` extension can be added to Root Object.
 The root is the outer most level of the OpenAPI description.
+Add `x-mcp` to a Path Item Object or an Operation Object and set `x-mcp.docs.hide` to `true` to hide that path or operation from your project's [MCP server](../../../customization/mcp-server/index.md).
 
 ## Options
 
@@ -22,6 +24,12 @@ The root is the outer most level of the OpenAPI description.
 - x-mcp
 - [MCP object](#mcp-object)
 - MCP server description and configuration.
+
+---
+
+- x-mcp.docs
+- [Docs object](#docs-object)
+- In a Path Item Object or an Operation Object: MCP server settings for the path or the operation.
 
 {% /table %}
 
@@ -260,6 +268,24 @@ The root is the outer most level of the OpenAPI description.
 
 {% /table %}
 
+### Docs object
+
+{% table %}
+
+- Option
+- Type
+- Description
+
+---
+
+- hide
+- boolean
+- Hides the path or the operation from the MCP server, so AI clients do not get it.
+  To control who can see an operation, use [RBAC](../../../access/rbac.md).
+  Default: `false`.
+
+{% /table %}
+
 ## Examples
 
 ### `x-mcp` example
@@ -363,6 +389,37 @@ The data is presented similar to the following screenshot:
   withLightbox=true
   framed=true
 /%}
+
+### Hide an operation from the MCP server
+
+The following example hides the `DELETE /clients/{clientId}` operation from the MCP server.
+AI clients still get the `GET` operation.
+
+```yaml {% title="openapi.yaml" %}
+paths:
+  /clients/{clientId}:
+    parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get a client
+      operationId: getClient
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      summary: Delete a client
+      operationId: deleteClient
+      responses:
+        '204':
+          description: Deleted
+      x-mcp:
+        docs:
+          hide: true
+```
 
 ## Resources
 

@@ -362,6 +362,8 @@
     - page: config/navigation.md#pageaction-object
       label: Page actions
       disconnect: true
+    - page: faq/ai-governance.md
+      label: AI governance FAQ
 
 - group: Control site access
   icon: lock

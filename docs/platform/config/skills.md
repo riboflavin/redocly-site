@@ -72,5 +72,5 @@ skills:
 ## Resources
 
 - **[Agent skills](../customization/agent-skills/index.md)** - Author `SKILL.md` files and understand the discovery endpoints that publish them
-- **[`mcp` configuration](./mcp.md)** - Configure the Docs MCP server that exposes skills as resources
+- **[`mcp` configuration](./mcp.md)** - Configure the MCP server that exposes skills as resources
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
