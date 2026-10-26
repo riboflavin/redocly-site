@@ -344,5 +344,7 @@ redirects:
     to: '/customization/mcp-server/'
   '/customization/mcp-server/openapi/*':
     to: '/customization/mcp-server/'
+  '/customization/mcp-server/redocly-mcp/':
+    to: '/ai-ready/use-redocly-with-ai-clients/'
 
 telemetry: off

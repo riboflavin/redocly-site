@@ -358,8 +358,6 @@
           label: Control access
         - page: customization/mcp-server/custom-tools.md
           label: Custom tools
-    - page: customization/mcp-server/redocly-mcp.md
-      label: Redocly MCP server
     - page: customization/agent-skills/index.md
       label: Agent skills
     - page: customization/webmcp/index.md
@@ -367,6 +365,8 @@
     - page: config/navigation.md#pageaction-object
       label: Page actions
       disconnect: true
+    - page: ai-ready/use-redocly-with-ai-clients.md
+      label: Use Redocly with your AI client
     - page: faq/ai-governance.md
       label: AI governance FAQ
 

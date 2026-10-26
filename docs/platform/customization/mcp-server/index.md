@@ -195,3 +195,4 @@ For the details of these records, see [What does Redocly log for MCP tool calls?
 - **[Control access to the MCP server](./access.md)** - Restrict the server to teams and serve public content without a sign-in
 - **[Custom tools](./custom-tools.md)** - Add your own functions to the server with code that you write
 - **[`mcp` configuration](../../config/mcp.md)** - Turn the server off, rename it, and remove content from it
+- **[Use Redocly with your AI client](../../ai-ready/use-redocly-with-ai-clients.md)** - Install the Redocly skills and documentation in Claude, Claude Code, ChatGPT, Codex, Cursor, or VS Code

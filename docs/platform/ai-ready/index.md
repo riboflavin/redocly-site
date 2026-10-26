@@ -32,6 +32,10 @@ For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 - **[MCP server analytics](../project/analytics.md#mcp-server)** - See which AI clients call your MCP server and which tools they use
 - **[AI governance FAQ](../faq/ai-governance.md#mcp-server-security)** - Find answers to the security and compliance questions about the MCP server
 
+## Redocly in your AI client
+
+- **[Use Redocly with your AI client](./use-redocly-with-ai-clients.md)** - Install the Redocly skills and documentation in Claude, Claude Code, ChatGPT, Codex, Cursor, or VS Code
+
 ## Resources
 
 - **[AI governance and security FAQ](../faq/ai-governance.md)** - Answers for security and compliance reviews of Redocly AI features
