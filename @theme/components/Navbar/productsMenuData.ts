@@ -19,6 +19,7 @@ export const PRODUCT_META: Record<string, ProductMeta> = {
   '/redoc-ce': { description: 'Turn an API description into reference docs.', tag: '3.0' },
   '/respect': { description: 'Checks live APIs on a schedule' },
   '/reviewer': { description: 'Comments on every docs PR', tag: 'New', ai: true },
+  '/writer': { description: 'Turns user signals into docs PRs', tag: 'New', ai: true },
 };
 
 export const PLATFORM_LINK = '/platform';
