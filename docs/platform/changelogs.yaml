@@ -61297,6 +61297,15 @@ reunite:
         - Fixed the feedback status in Reunite showing the newly selected status after the change failed to save; the previous status is shown again.
         - Fixed the trial message on the organization creation page in Reunite. It names the 30-day Pro trial instead of the Enterprise trial.
     dependencies: {}
+  v2026-10-26.2:
+    timestamp: 1793024471000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed project pagination in Reunite for members with restricted access, which could return incomplete or empty pages despite more accessible
+          projects being available.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
