@@ -1,0 +1,13 @@
+{
+  "name": "marketing-pages-legacy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pins the pre-launch @redocly/marketing-pages pages (old pricing) next to the current package",
+  "type": "module",
+  "exports": {
+    "./*": "./*"
+  },
+  "dependencies": {
+    "@redocly/marketing-pages": "0.8.2"
+  }
+}
