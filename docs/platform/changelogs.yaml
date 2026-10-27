@@ -61543,18 +61543,6 @@ reunite:
           build saves the project's `redocly.yaml` to Reunite as a classic build does, so the project access rules, the AI assistant and MCP `hide`
           options, and the publish rules in Reunite match the live site.
     dependencies: {}
-  v2026-10-27.2:
-    timestamp: 1793104352000
-    changes:
-      minor:
-        - >-
-          Added Git credential token rotation for GitLab, Azure DevOps, and Bitbucket. Organization owners can share a token with their organization
-          when connecting a Git provider in Reunite, enabling API keys to rotate it.
-      patch:
-        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.71.1`.
-        - Updated `@redocly/openapi-core` to version `2.71.1`.
-        - Fixed editing an API key or an OAuth2 client in Reunite, which cleared its allowed IP addresses when the IP address field was not shown.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
