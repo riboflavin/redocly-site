@@ -33984,6 +33984,13 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.68.0:
+    timestamp: 1793101829000
+    changes:
+      minor:
+        - Added the `mcp.name`, `mcp.ignore`, and `mcp.publicEndpoint` options and deprecated the `mcp.docs` object.
+      patch: []
+    dependencies: {}
   0.67.0:
     timestamp: 1792496643000
     changes:
