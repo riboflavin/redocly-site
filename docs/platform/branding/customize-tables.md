@@ -29,28 +29,30 @@ Markdown and Markdoc tables convert to HTML when displayed.
 Understanding HTML table structure helps you write more precise CSS selectors for targeted styling.
 
 <details>
+
   <summary>See HTML table syntax</summary>
 
   ```html {% title="Example HTML table" %}
-    <table>
-      <thead>
-        <tr>
-          <th>Heading 1</th>
-          <th>Heading 1</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Cell 1</td>
-          <td>Cell 2</td>
-        </tr>
-        <tr>
-          <td>Cell 4</td>
-          <td>Cell 5</td>
-        </tr>
-      </tbody>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Heading 1</th>
+        <th>Heading 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+      <tr>
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+      </tr>
+    </tbody>
+  </table>
   ```
+
 </details>
 
 ## Add global table styles
@@ -66,22 +68,22 @@ Apply consistent styling across all tables by:
 
 This example adds global table styles with color mode variants:
 
-    ```{% title="@theme/styles.css" %}
-    :root {
-      --md-table-cell-padding: 8px;
-      --md-table-cell-vertical-align: middle;
-      --md-table-border-color: black;
-      --md-table-header-bg-color: #EDEDF2;
+```css {% title="@theme/styles.css" %}
+:root {
+  --md-table-cell-padding: 8px;
+  --md-table-cell-vertical-align: middle;
+  --md-table-border-color: black;
+  --md-table-header-bg-color: #EDEDF2;
 
-      & table {
-        border-collapse: collapse;
-      }
-    }
-    :root.dark {
-      --md-table-border-color: white;
-      --md-table-header-bg-color: #3B3D44;
-    }
-    ```
+  & table {
+    border-collapse: collapse;
+  }
+}
+:root.dark {
+  --md-table-border-color: white;
+  --md-table-header-bg-color: #3B3D44;
+}
+```
 
 ## Style Markdown tables
 
@@ -93,30 +95,44 @@ Tables with matching headers will share styling.
 Each header value automatically becomes a `data-label` attribute on `th` tags when rendered.
 Use this attribute to style specific columns or tables.
 
-This example sets the width and background color of the "Favorite veggie" column:
+This example sets the width of the "Favorite vegetable" column and the background color of its header cell:
 
 ```css {% title="@theme/styles.css" %}
 :root th[data-label="Favorite vegetable"] {
   width: 80%;
   background-color: lightyellow;
 }
+
+:root.dark th[data-label="Favorite vegetable"] {
+  background-color: #5C5300;
+}
 ```
 
 {% table %}
+
 - Person
 - Favorite vegetable
+
 ---
+
 - Taylor
-- Brussel sprouts
+- Brussels sprouts
+
 ---
+
 - Annabelle
 - Asparagus
+
 ---
+
 - Oliver
 - Bell peppers
+
 ---
+
 - Daisy
 - Carrots
+
 {% /table %}
 
 ### Combine CSS selectors
@@ -139,25 +155,36 @@ Create more advanced styles by combining `data-label` with other CSS selectors:
 
   & tr:nth-child(even) {
     background-color: mediumpurple;
+    --md-table-cell-text-color: black;
   }
 }
 ```
 
 {% table %}
+
 - Person
 - Favorite animal
+
 ---
+
 - Oliver
 - Penguins
+
 ---
+
 - Daisy
 - Rabbits
+
 ---
+
 - Taylor
 - Snow leopard
+
 ---
+
 - Annabelle
 - Ostrich
+
 {% /table %}
 
 ## Style Markdoc tables
@@ -167,137 +194,110 @@ Attributes provide quick layout control while classes offer complete styling fle
 
 ### Use built-in attributes
 
-Shape your table layout with built-in attributes - no CSS required:
-- `width` - Controls column width
-- `align` - Sets horizontal text alignment
-- `valign` - Sets vertical text alignment (`top`, `middle`, or `bottom`)
-- `colspan` - Spans cells across columns
+Shape your table layout with these built-in attributes - no CSS required:
 
-Example of a table customized with attributes:
+- `width` - controls column width
+- `align` - sets horizontal text alignment
+- `valign` - sets vertical text alignment (`top`, `middle`, or `bottom`)
+- `colspan` - spans cells across columns
+- `rowspan` - spans cells across rows
 
-{% markdoc-example %}
-  ```none {% process=false %}
+**Example table customized with attributes:**
+
+{% markdoc-example renderDemo=true codeLabel="Syntax" resultLabel="Rendered table" %}
+
+  ```markdoc
   {% table %}
-    - Person
-    - Favorite food {% width="80%" %}
+
+  - Person
+  - Favorite food {% width="80%" %}
+
   ---
-    - Pizza {% colspan=2 align="center" %}
+
+  - Pizza {% colspan=2 align="center" %}
+
   ---
-    - Annabelle
-    - Bacon
+
+  - Annabelle
+  - Bacon
+
   ---
-    - Oliver
-    - Popsicle
+
+  - Oliver
+  - Popsicle
+
   ---
-    - Daisy {% align="right" valign="middle" %}
-    - - Dog treats
-      - Belly rubs
+
+  - Daisy {% align="right" valign="middle" %}
+  - - Dog treats
+    - Belly rubs
+
   {% /table %}
   ```
+
 {% /markdoc-example %}
-
-{% table %}
-
-- Person
-- Favorite food {% width="80%" %}
-
----
-
-- Pizza {% colspan=2 align="center" %}
-
----
-
-- Annabelle
-- Bacon
-
----
-
-- Oliver
-- Popsicle
-
----
-
-- Daisy {% align="right" valign="middle" %}
-- - Dog treats
-  - Belly rubs
-
-{% /table %}
 
 ### Create custom classes
 
 For advanced styling, create CSS classes and add them to your Markdoc table tag:
 
 ```css {% title="@theme/styles.css" %}
-:root .striped-table-rows {
+:root .example-striped-table-rows {
   --md-table-border-color: black;
-  --md-table-header-bg-color: royalblue;
+  --md-table-header-bg-color: cornflowerblue;
 
   & tr:nth-child(even) {
     background-color: lightskyblue;
   }
 }
 
-:root.dark .striped-table-rows {
+:root.dark .example-striped-table-rows {
   --md-table-border-color: white;
   --md-table-header-bg-color: darkgreen;
 
   & tr:nth-child(even) {
     background-color: mediumseagreen;
+    --md-table-cell-text-color: black;
   }
 }
 ```
 
-{% markdoc-example %}
-  ```markdown {% process=false %}
-  {% table .striped-table-rows .md %}
-    - Person
-    - Favorite activity
+Add the class to the `table` tag together with the `.md` class.
+A custom class replaces the default `.md` class.
+Without `.md`, the table loses the default theme styling.
+
+{% markdoc-example renderDemo=true codeLabel="Syntax" resultLabel="Rendered table" %}
+
+  ```markdoc
+  {% table .example-striped-table-rows .md %}
+
+  - Person
+  - Favorite activity
+
   ---
-    - Taylor
-    - Snowboarding
+
+  - Taylor
+  - Snowboarding
+
   ---
-    - Annabelle
-    - Roblox
+
+  - Annabelle
+  - Roblox
+
   ---
-    - Oliver
-    - Swings
+
+  - Oliver
+  - Swings
+
   ---
-    - Daisy
-    - Dog park
+
+  - Daisy
+  - Dog park
+
   {% /table %}
   ```
+
 {% /markdoc-example %}
-
-{% admonition type="warning" name="Warn" %}
-  Include the `.md` class on the tag to inherit default theme styling.
-{% /admonition %}
-
-
-{% table .striped-table-rows .md %}
-
-- Person
-- Favorite activity
----
-
-- Taylor
-- Snowboarding
-
----
-
-- Annabelle
-- Roblox
-
----
-
-- Oliver
-- Swings
-
----
-
-- Daisy
-- Dog park
-
-{% /table %}
 
 ### Style specific rows
 
@@ -329,60 +329,50 @@ Add a CSS class directly to a row in your Markdoc table, then target that class 
 
 Here's how to apply these classes to specific rows:
 
-{% markdoc-example %}
-  ```markdown {% process=false %}
+{% markdoc-example renderDemo=true codeLabel="Syntax" resultLabel="Rendered table" %}
+
+  ```markdoc
   {% table .md %}
-    - Task
-    - Clicks required
-    - Notes
+
+  - Task
+  - Clicks required
+  - Notes
+
   ---
-    - Change your logo {% .highclick %}
-    - 10
-    - Only found details on Getting started page
+
+  - Change your logo {% .highclick %}
+  - 10
+  - Only found details on Getting started page
+
   ---
-    - Change the color of a heading
-    - 2
-    -
+
+  - Change the color of a heading
+  - 2
+  -
+
   ---
-    - Revert changes {% .medclick %}
-    - 8
-    - Could be highlighted more in the sidebar
+
+  - Revert changes {% .medclick %}
+  - 8
+  - Could be highlighted more in the sidebar
+
   ---
-    - Add admonition
-    - 3
-    -
+
+  - Add admonition
+  - 3
+  -
+
   {% /table %}
   ```
-{% /markdoc-example %}
 
-{% table .md %}
-- Task
-- Clicks required
-- Notes
----
-- Change your logo {% .highclick %}
-- 10
-- Only found details on Getting started page
----
-- Change the color of a heading
-- 2
--
----
-- Revert changes {% .medclick %}
-- 8
-- Could be highlighted more in the sidebar
----
-- Add admonition
-- 3
--
-{% /table %}
+{% /markdoc-example %}
 
 This example shows how to highlight high-click tasks in yellow and medium-click tasks in light yellow, with appropriate dark mode alternatives.
 
 ## Resources
 
-- **[Customize styles](./customize-styles.md)** - Learn to customize your project's appearance using CSS variables and custom stylesheets for comprehensive styling control
+- **[Customize styles](./customize-styles.md)** - Customize your project's appearance using CSS variables and custom stylesheets for comprehensive styling control
 - **[Customize color modes](./customize-color-modes.md)** - Apply different table styling for light and dark modes with mode-specific color schemes and CSS rules
-- **[Style your site](./index.md)** - Explore all available branding and customization approaches from basic configuration to advanced component styling
-- **[Color mode](./color-mode.md)** - Understand how the color mode feature works and its CSS variable-based implementation for table styling
+- **[Style your site](./index.md)** - Available branding and customization approaches from basic configuration to advanced component styling
+- **[Color mode](./color-mode.md)** - Color mode feature and its CSS variable-based implementation for table styling
 - **[CSS variables](./css-variables/index.md)** - Complete dictionary of table-specific CSS variables and global styling variables for advanced customization

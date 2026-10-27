@@ -11,6 +11,10 @@
   background-color: lightyellow;
 }
 
+:root.dark th[data-label='Favorite vegetable'] {
+  background-color: #5c5300;
+}
+
 :root table:has(th[data-label='Favorite animal']) {
   --md-table-border-color: black;
   --md-table-header-bg-color: gold;
@@ -26,6 +30,7 @@
 
   & tr:nth-child(even) {
     background-color: mediumpurple;
+    --md-table-cell-text-color: black;
   }
 }
 
@@ -35,7 +40,7 @@
 
 :root .example-striped-table-rows {
   --md-table-border-color: black;
-  --md-table-header-bg-color: royalblue;
+  --md-table-header-bg-color: cornflowerblue;
 
   & tr:nth-child(even) {
     background-color: lightskyblue;
@@ -48,6 +53,7 @@
 
   & tr:nth-child(even) {
     background-color: mediumseagreen;
+    --md-table-cell-text-color: black;
   }
 }
 
