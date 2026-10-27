@@ -101,10 +101,10 @@ The steps and the plans that allow it change often, so follow [OpenAI's guide to
   {% /numbered-item %}
   {% numbered-item %}
   Enter these values:
-  - **Name**: `Redocly`
-  - **Server URL**: `https://redocly.com/mcp?mode=tools`
-  - **Authentication**: no authentication
-  {% /numbered-item %}
+- **Name**: `Redocly`
+- **Server URL**: `https://redocly.com/mcp?mode=tools`
+- **Authentication**: no authentication
+{% /numbered-item %}
   {% numbered-item %}
   Review the risk warning and select **I understand and want to continue**.
   {% /numbered-item %}
@@ -205,9 +205,9 @@ To add the server manually:
 {% numbered-list %}
   {% numbered-item %}
   Open the Command Palette.
-  - macOS: `Command + Shift + P`
-  - Windows/Linux: `Ctrl + Shift + P`
-  {% /numbered-item %}
+- macOS: `Command + Shift + P`
+- Windows/Linux: `Ctrl + Shift + P`
+{% /numbered-item %}
   {% numbered-item %}
   Run **MCP: Add Server**.
   {% /numbered-item %}

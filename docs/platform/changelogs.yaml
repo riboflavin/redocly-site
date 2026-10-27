@@ -61306,6 +61306,16 @@ reunite:
           Fixed project pagination in Reunite for members with restricted access, which could return incomplete or empty pages despite more accessible
           projects being available.
     dependencies: {}
+  v2026-10-27.1:
+    timestamp: 1793093743000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed Reunite applying no project config, or the config of an old classic build, to projects built with Realm Plus. A Realm Plus production
+          build saves the project's `redocly.yaml` to Reunite as a classic build does, so the project access rules, the AI assistant and MCP `hide`
+          options, and the publish rules in Reunite match the live site.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000

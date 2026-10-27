@@ -141,9 +141,9 @@ To test the connection, ask a question that uses an MCP tool in a Claude chat.
 {% numbered-list %}
   {% numbered-item %}
   Open the Command Palette.
-  - macOS: `Command + Shift + P`
-  - Windows/Linux: `Ctrl + Shift + P`
-  {% /numbered-item %}
+- macOS: `Command + Shift + P`
+- Windows/Linux: `Ctrl + Shift + P`
+{% /numbered-item %}
   {% numbered-item %}
   Run **MCP: Add Server**.
   {% /numbered-item %}
