@@ -99,6 +99,19 @@ Use the **Quick select** buttons above each list to set permissions in bulk:
 
 ---
 
+- `org.auditLogs.read`
+- Read
+- Export organization audit logs.
+
+---
+
+- `org.credentials.update`
+- Write
+- Rotate the access tokens of shared Git credentials in the organization.
+  Available for API keys only.
+
+---
+
 - `org.organizations.read`
 - Read
 - View organization details and settings.

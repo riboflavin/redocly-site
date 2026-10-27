@@ -216,10 +216,16 @@ servers:
 tags:
   - name: Audit log exports
     description: Export organization audit logs for compliance, analysis, or archival.
+  - name: Credentials
+    description: Operations related to credentials.
   - name: Feedback
     description: Operations related to feedback.
+  - name: Project sources
+    description: Operations related to project sources.
   - name: Pushes
     description: Operations related to pushes.
+  - name: Remotes
+    description: Operations related to remotes.
 paths:
   /orgs/{orgId}/audit-log-export-jobs:
     post:
@@ -430,6 +436,70 @@ paths:
               example: |
                 id,object,type,time,subject,actor,clientIp,projectId,projectSlug
                 evt_2fxb8r4kq7m3ndp9z6ja501,event,com.redocly.pullRequest.created,2026-03-31T15:27:30.815Z,pr_7wnk3jm9xp2d4rv8qh5a01,"{""id"":""usr_01h2r5f6qy8kr42p8yfw52spq6"",""object"":""user"",""uri"":""https://app.cloud.redocly.com/api/users/usr_01h2r5f6qy8kr42p8yfw52spq6""}",198.51.100.42,prj_01hh1t9sa6gwfv5naz04gr7ehm,my-project
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /orgs/{orgId}/credential-rotations:
+    post:
+      tags:
+        - Credentials
+      security:
+        - ApiKey: []
+      summary: Create a credential rotation
+      description: |-
+        Replaces the access token of a shared GitLab, Azure DevOps, or Bitbucket token credential.
+        Reunite validates the new token with the Git provider before saving it.
+        Rotating any other credential type returns `400`.
+
+        To find the `credentialId`, list the sources or remotes of the project that uses the credential.
+
+        Only shared credentials can be rotated with an API key. Personal credentials return `404`.
+        Use an API key with granular permissions that include `org.credentials.update`, or a legacy full access key.
+        API keys with RBAC permissions return `403`.
+
+        After saving the token, Reunite sets up webhooks again for the repositories that use the credential.
+        Repositories where the webhook setup fails are listed in `warnings`.
+
+        Requires `org.credentials.update` permission.
+      x-rateLimit:
+        events: 60
+        window: 1m
+      operationId: createCredentialRotation
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - name: x-redocly-client
+          in: header
+          required: false
+          description: |
+            Identifies the calling client as `<name>/<version>`, for example `reunite-ui/0.92.1`.
+            Used for API consumer observability.
+            Requests without it are attributed as `unknown`.
+          schema:
+            type: string
+            pattern: ^[a-z0-9-]{1,64}/[\w.+-]{1,32}$
+          example: reunite-ui/0.92.1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCredentialRotationRequest'
+      responses:
+        '200':
+          description: Credential access token replaced.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CredentialPatchResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
         '401':
           $ref: '#/components/responses/UnauthorizedError'
         '403':
@@ -823,6 +893,111 @@ paths:
           $ref: '#/components/responses/TooManyRequestsError'
         '500':
           $ref: '#/components/responses/InternalServerError'
+  /orgs/{orgId}/projects/{projectId}/sources:
+    get:
+      tags:
+        - Project sources
+      security:
+        - ApiKey: []
+      summary: List all project sources
+      description: |-
+        Lists the source of the project.
+        A project has exactly one source, so the list always holds one item.
+        The pagination parameters are accepted for consistency with other list operations.
+        A source in an external Git repository includes the `credentialId` of the credential that Reunite uses to access the repository.
+        Use it to rotate the access token of the credential.
+
+        Requires `org.project.read` permission.
+      x-rateLimit:
+        events: 300
+        window: 1m
+      operationId: listProjectSources
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Limit'
+        - name: x-redocly-client
+          in: header
+          required: false
+          description: |
+            Identifies the calling client as `<name>/<version>`, for example `reunite-ui/0.92.1`.
+            Used for API consumer observability.
+            Requests without it are attributed as `unknown`.
+          schema:
+            type: string
+            pattern: ^[a-z0-9-]{1,64}/[\w.+-]{1,32}$
+          example: reunite-ui/0.92.1
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSourceList'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /orgs/{orgId}/projects/{projectId}/sources/{sourceId}:
+    get:
+      tags:
+        - Project sources
+      security:
+        - ApiKey: []
+      summary: Retrieve a project source
+      description: |-
+        Retrieves the source of the project.
+        A source in an external Git repository includes the `credentialId` of the credential that Reunite uses to access the repository.
+
+        Requires `org.project.read` permission.
+      x-rateLimit:
+        events: 300
+        window: 1m
+      operationId: getProjectSourceById
+      parameters:
+        - $ref: '#/components/parameters/OrgId'
+        - $ref: '#/components/parameters/ProjectId'
+        - $ref: '#/components/parameters/SourceId'
+        - name: x-redocly-client
+          in: header
+          required: false
+          description: |
+            Identifies the calling client as `<name>/<version>`, for example `reunite-ui/0.92.1`.
+            Used for API consumer observability.
+            Requests without it are attributed as `unknown`.
+          schema:
+            type: string
+            pattern: ^[a-z0-9-]{1,64}/[\w.+-]{1,32}$
+          example: reunite-ui/0.92.1
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSource'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
   /orgs/{orgId}/projects/{projectId}/pushes:
     post:
       operationId: push
@@ -1010,6 +1185,143 @@ paths:
           $ref: '#/components/responses/TooManyRequestsError'
         '500':
           $ref: '#/components/responses/InternalServerError'
+  /orgs/{orgId}/projects/{projectId}/remotes:
+    parameters:
+      - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/ProjectId'
+    get:
+      operationId: listRemotes
+      summary: List all remotes
+      x-rateLimit:
+        events: 300
+        window: 1m
+      security:
+        - ApiKey: []
+      description: |-
+        {% configOptionRequirements plans=["Scale", "Enterprise"] /%}
+
+        Lists the remote content of the project.
+        A Git remote includes the `credentialId` of the credential that Reunite uses to access its repository.
+        Use it to rotate the access token of the credential.
+
+        Requires `project.remotes.read` permission.
+      tags:
+        - Remotes
+      parameters:
+        - $ref: '#/components/parameters/After'
+        - $ref: '#/components/parameters/Before'
+        - $ref: '#/components/parameters/Sort'
+          description: |-
+            Remote list can be sorted by `id` and `createdAt`.
+
+            To sort in descending order, prefix the field with `-`, for example `-createdAt`.
+            To sort in ascending order, use the field name, for example `createdAt`.
+
+            By default, remote list is sorted by `id` in descending order, which corresponds to the newest remotes first.
+        - $ref: '#/components/parameters/Filter'
+          description: |-
+            Filter remotes by:
+              - `id`
+              - `mountBranchName`
+              - `type`, one of `GIT`, `URL`, or `CICD`
+
+            This field requires a special format.
+
+            For more information, see [Filter results](#section/filter-results).
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Search'
+          description: |-
+            Search remotes by query string.
+
+            Remotes are searched by:
+              - `id`
+              - `mountPath`
+              - `mountBranchName`
+        - name: x-redocly-client
+          in: header
+          required: false
+          description: |
+            Identifies the calling client as `<name>/<version>`, for example `reunite-ui/0.92.1`.
+            Used for API consumer observability.
+            Requests without it are attributed as `unknown`.
+          schema:
+            type: string
+            pattern: ^[a-z0-9-]{1,64}/[\w.+-]{1,32}$
+          example: reunite-ui/0.92.1
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RemoteList'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '402':
+          $ref: '#/components/responses/PaymentRequiredError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /orgs/{orgId}/projects/{projectId}/remotes/{remoteId}:
+    parameters:
+      - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/RemoteId'
+    get:
+      security:
+        - ApiKey: []
+      operationId: getRemote
+      summary: Retrieve a remote
+      x-rateLimit:
+        events: 2000
+        window: 1m
+      description: |-
+        {% configOptionRequirements plans=["Scale", "Enterprise"] /%}
+
+        Retrieves a remote of the project.
+        A Git remote includes the `credentialId` of the credential that Reunite uses to access its repository.
+
+        Requires `project.remotes.read` permission.
+      tags:
+        - Remotes
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Remote'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '402':
+          $ref: '#/components/responses/PaymentRequiredError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      parameters:
+        - name: x-redocly-client
+          in: header
+          required: false
+          description: |
+            Identifies the calling client as `<name>/<version>`, for example `reunite-ui/0.92.1`.
+            Used for API consumer observability.
+            Requests without it are attributed as `unknown`.
+          schema:
+            type: string
+            pattern: ^[a-z0-9-]{1,64}/[\w.+-]{1,32}$
+          example: reunite-ui/0.92.1
 components:
   schemas:
     Problem:
@@ -1293,6 +1605,326 @@ components:
                 - uri
               additionalProperties: false
       additionalProperties: false
+    CredentialType:
+      type: string
+      format: enum
+      description: Credential type.
+      enum:
+        - GITHUB_USER
+        - GITLAB_USER
+        - BITBUCKET_USER
+        - AZURE_USER
+        - URL
+        - GITHUB_CLOUD_APP_INSTALLATION
+        - GITHUB_SERVER_APP_INSTALLATION
+        - GITHUB_SERVER_APP
+        - GITLAB_SELF_MANAGED_APP
+        - GITHUB_CLOUD_INTERNAL_APP_INSTALLATION
+        - MCP_HEADERS
+        - MCP_BEARER
+        - MCP_API_KEY
+    AuthType:
+      type: string
+      format: enum
+      description: Credential auth type.
+      enum:
+        - BASIC
+        - PERSONAL_ACCESS_TOKEN
+        - PERSONAL_ACCESS_TOKEN_FOR_ORGANIZATION
+        - PROJECT_ACCESS_TOKEN
+        - INSTALLATION_ACCESS_TOKEN
+        - OAUTH2
+        - BEARER
+        - API_KEY
+    GitHubInstallationPublicCredential:
+      title: GitHubInstallationPublicCredential
+      type: object
+      properties:
+        installationId:
+          type: number
+        namespaceId:
+          type: string
+        repositoryId:
+          type: string
+      required:
+        - namespaceId
+        - repositoryId
+    GitHubEEServerAppPublicCredential:
+      title: GitHubEEServerAppPublicCredential
+      type: object
+      properties:
+        appId:
+          type: string
+        clientId:
+          type: string
+        url:
+          type: string
+        apiUrl:
+          type: string
+        appName:
+          type: string
+      required:
+        - appId
+        - clientId
+        - url
+    GitLabSelfManagedAppPublicCredential:
+      title: GitLabSelfManagedAppPublicCredential
+      type: object
+      properties:
+        appId:
+          type: string
+        url:
+          type: string
+      required:
+        - appId
+        - url
+    AzureDevOpsUserPATPublicCredential:
+      title: AzureDevOpsUserPATPublicCredential
+      type: object
+      properties:
+        organizationName:
+          type: string
+      required:
+        - organizationName
+    BitbucketCloudUserProjectTokenPublicCredential:
+      title: BitbucketCloudUserProjectTokenPublicCredential
+      type: object
+      properties:
+        workspace:
+          type: string
+          description: 'This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: {workspace UUID}.'
+      required:
+        - workspace
+    McpPublicCredential:
+      title: McpPublicCredential
+      type: object
+      description: 'Non-secret part of the credential of an agent MCP server: the header that carries the API key, and the names of the secret headers besides the authentication header. Values live in the secret store.'
+      properties:
+        header:
+          description: Request header that carries the API key; absent for a bearer token.
+          type: string
+          example: X-Api-Key
+        secretHeaderNames:
+          description: Names of the secret headers besides the authentication header.
+          type: array
+          items:
+            type: string
+          example:
+            - X-Tenant
+      required:
+        - secretHeaderNames
+    CredentialSchemaBase:
+      title: CredentialsSchemaBase
+      type: object
+      properties:
+        id:
+          description: Credential ID. Unique identifier prefixed with `cred_`.
+          type: string
+          pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: cred_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          enum:
+            - credential
+          readOnly: true
+        uri:
+          description: Canonical URI for the credential resource.
+          type: string
+          format: uri
+          readOnly: true
+          example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/credentials/cred_01h1s5z6vf2mm1mz3hevnn9va7
+        type:
+          $ref: '#/components/schemas/CredentialType'
+        authType:
+          $ref: '#/components/schemas/AuthType'
+        name:
+          type: string
+        description:
+          type: string
+        publicData:
+          type: object
+          description: Credential public data.
+          oneOf:
+            - $ref: '#/components/schemas/GitHubInstallationPublicCredential'
+            - $ref: '#/components/schemas/GitHubEEServerAppPublicCredential'
+            - $ref: '#/components/schemas/GitLabSelfManagedAppPublicCredential'
+            - $ref: '#/components/schemas/AzureDevOpsUserPATPublicCredential'
+            - $ref: '#/components/schemas/BitbucketCloudUserProjectTokenPublicCredential'
+            - $ref: '#/components/schemas/McpPublicCredential'
+        oAuth2Data:
+          type: object
+          description: Credential OAuth2 data.
+          readOnly: true
+          properties:
+            id:
+              oneOf:
+                - type: string
+                - type: number
+              description: OAuth2 ID. Unique identifier of OAuth2 account.
+              example: 4acc1f09-1751-6f79-b156-b6877ee205a2
+            userName:
+              type: string
+              description: OAuth2 user name.
+              example: john-doe
+            displayName:
+              type: string
+              description: OAuth2 display name.
+              example: John Doe
+            email:
+              type: string
+              description: OAuth2 email.
+              example: john-doe@mail.com
+            avatarUrl:
+              type: string
+              description: OAuth2 avatar URL.
+              example: https://avatars.githubusercontent.com/u/1?v=4
+          required:
+            - id
+            - userName
+            - displayName
+        userId:
+          description: User ID this credentials belongs to. Unique identifier prefixed with `usr_`.
+          type: string
+          pattern: ^usr_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        isShared:
+          type: boolean
+          default: false
+        isBroken:
+          type: boolean
+          default: false
+          readOnly: true
+        parentId:
+          type: string
+          pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          description: Credential parent ID. Unique identifier prefixed with `cred_`.
+          example: cred_01h4e71x94vd68a1farnbfapzg
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - id
+        - object
+        - uri
+        - type
+        - createdAt
+        - updatedAt
+    AccessTokenCredential:
+      title: AccessTokenCredential
+      type: object
+      writeOnly: true
+      properties:
+        accessToken:
+          type: string
+      required:
+        - accessToken
+    OAuth2CodeCredential:
+      title: OAuth2CodeCredential
+      type: object
+      writeOnly: true
+      properties:
+        code:
+          description: OAuth code to be used to get access/refresh tokens.
+          type: string
+          example: Yzk5ZDczMzRlNDEwY
+      required:
+        - code
+    GithubAppCodeCredential:
+      title: GithubAppCodeCredential
+      type: object
+      writeOnly: true
+      properties:
+        code:
+          description: GithubApp code to be used to get exchange code on App secrets.
+          type: string
+          example: Yzk5ZDczMzRlNDEwY
+        url:
+          description: GithubApp url to be used to get exchange code on App secrets.
+          type: string
+          example: https://github.app.com
+      required:
+        - code
+        - url
+    GitLabSelfManagedAppSecretCredential:
+      title: GitLabSelfManagedAppSecretCredential
+      type: object
+      writeOnly: true
+      properties:
+        appSecret:
+          type: string
+        webhookSecret:
+          type: string
+      required:
+        - appSecret
+    GitHubEEServerAppSecretCredential:
+      title: GitHubEEServerAppSecretCredential
+      type: object
+      writeOnly: true
+      properties:
+        clientSecret:
+          type: string
+        privateKey:
+          type: string
+        webhookSecret:
+          type: string
+    CredentialSchema:
+      title: Credential
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CredentialSchemaBase'
+        - type: object
+          properties:
+            secretData:
+              type: object
+              description: Credential secret data.
+              writeOnly: true
+              oneOf:
+                - $ref: '#/components/schemas/AccessTokenCredential'
+                - $ref: '#/components/schemas/OAuth2CodeCredential'
+                - $ref: '#/components/schemas/GithubAppCodeCredential'
+                - $ref: '#/components/schemas/GitLabSelfManagedAppSecretCredential'
+                - $ref: '#/components/schemas/GitHubEEServerAppSecretCredential'
+    CredentialPatchResponse:
+      title: CredentialPatchResponse
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/CredentialSchema'
+        - type: object
+          properties:
+            warnings:
+              type: array
+              description: |
+                Problems that do not block the update.
+                For example, Reunite cannot set up a webhook for a repository that uses this credential.
+              readOnly: true
+              items:
+                type: string
+                example: 'Failed to set up webhook for repository "fe5d7747-af71-449a-951b-f781f54603af": Azure DevOps token does not have sufficient permissions. Please check token scopes.'
+          required:
+            - warnings
+    CreateCredentialRotationRequest:
+      title: CreateCredentialRotationRequest
+      type: object
+      properties:
+        credentialId:
+          description: ID of the credential whose access token is replaced. Unique identifier prefixed with `cred_`.
+          type: string
+          pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: cred_01h1s5z6vf2mm1mz3hevnn9va7
+        secretData:
+          description: New access token for the credential.
+          $ref: '#/components/schemas/AccessTokenCredential'
+      required:
+        - credentialId
+        - secretData
     Feedback:
       type: object
       title: Feedback
@@ -1535,6 +2167,503 @@ components:
           description: Internal comment for the feedback.
           example: This feedback is related to the issue 235.
           writeOnly: true
+    GitProviderType:
+      type: string
+      format: enum
+      description: Git provider type.
+      enum:
+        - GITHUB_CLOUD
+        - GITHUB_SERVER
+        - GITLAB_CLOUD
+        - GITLAB_SELF_MANAGED
+        - BITBUCKET_CLOUD
+        - BITBUCKET_DATACENTER
+        - AZURE_DEVOPS_SERVICES
+        - AZURE_DEVOPS_SERVER
+    GitProvider:
+      type: object
+      description: Git provider configuration.
+      properties:
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/GitProviderType'
+        name:
+          type: string
+          example: Redocly GitLab
+        publicConfig:
+          type: object
+          properties:
+            url:
+              type: string
+              example: https://gitlab.redocly.dev
+            clientId:
+              type: string
+              example: 05489443ec38b38f2327cdde9d5f51f284ae1d726130b300ecda0a259010c759
+            appName:
+              type: string
+              example: redocly
+        isCustom:
+          type: boolean
+          description: Indicates whether this provider is a custom provider added to the organization.
+      required:
+        - id
+        - type
+        - name
+        - isCustom
+    ProjectSource:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01hc2rvwxf7jyj1er504khx8e7
+          description: Project source ID. Unique identifier prefixed with `rem_`.
+          readOnly: true
+        uri:
+          description: Canonical URI for the project source resource.
+          type: string
+          format: uri
+          readOnly: true
+          example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/sources/rem_01hc2rvwxf7jyj1er504khx8e7
+        branchName:
+          description: Main branch of the project.
+          type: string
+          example: main
+        contentPath:
+          description: Path to the project content in the repository.
+          type: string
+          example: /
+        repoName:
+          description: Name of the repository. Present when Reunite can access the repository.
+          type: string
+          example: Repo Name
+        repoUrl:
+          description: URL of the repository. Present when Reunite can access the repository.
+          type: string
+          example: https://github.com/example/example
+        isInternal:
+          description: Whether the project content is stored in the Reunite-hosted repository instead of an external Git repository. Internal sources have no Git provider fields and no credential.
+          type: boolean
+          example: true
+        isMonorepo:
+          description: Whether the project content is in a folder of the repository rather than at its root.
+          type: boolean
+          example: true
+        providerType:
+          $ref: '#/components/schemas/GitProviderType'
+        providerConfig:
+          $ref: '#/components/schemas/GitProvider'
+          description: Git provider of the repository.
+        canAccessRepo:
+          type: boolean
+          example: true
+          description: Whether Reunite can access the repository with the source credential. `false` usually means that the access token is expired or revoked.
+        credentialId:
+          type: string
+          pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: cred_01hc2rvwxf7jyj1er504khx8e7
+          description: |-
+            ID of the credential Reunite uses to access the repository.
+            Use it to rotate the access token of the credential.
+            Absent for internal sources.
+        sourceId:
+          type: string
+          example: rem_01hc2rvwxf7jyj1er504khx8e7
+          description: Use `id` instead.
+          deprecated: true
+        namespaceId:
+          type:
+            - string
+            - 'null'
+          description: Git provider namespace of the repository, such as a GitHub organization or an Azure DevOps project.
+          example: azure-test-org
+        repositoryId:
+          type: string
+          description: Git provider identifier of the repository.
+          example: redocly-testing
+        branchDeployStrategy:
+          type: string
+          description: Which branches other than the main branch start builds.
+          enum:
+            - NONE
+            - SELECTED
+            - ALL
+        selectedDeployBranches:
+          type: array
+          description: Branches that start a build when they're updated or a pull request targets them.
+          items:
+            type: string
+        prDeploysEnabled:
+          type: boolean
+          description: |-
+            Whether pull requests start builds when they target the main branch or, with the `SELECTED` strategy, a branch in `selectedDeployBranches`.
+            Has no effect with the `ALL` strategy, which builds every branch.
+        forksPrDeploysEnabled:
+          type: boolean
+          description: Whether build starts for PRs from forks.
+        visualReviewCheckDisabled:
+          type: boolean
+          default: false
+          description: Whether the Visual review check is disabled. A disabled check is reported as skipped instead of pending.
+        createdAt:
+          description: Time when Reunite created the project source.
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAt:
+          description: Time of the last change to the project source.
+          type: string
+          format: date-time
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          enum:
+            - projectSource
+          readOnly: true
+      required:
+        - id
+        - uri
+        - branchName
+        - contentPath
+        - isInternal
+        - isMonorepo
+        - branchDeployStrategy
+        - selectedDeployBranches
+        - prDeploysEnabled
+        - forksPrDeploysEnabled
+        - visualReviewCheckDisabled
+        - createdAt
+        - updatedAt
+        - object
+    ProjectSourceList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+        page:
+          $ref: '#/components/schemas/Page'
+        data:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/ProjectSource'
+      required:
+        - object
+        - page
+        - data
+    MountPath:
+      type: string
+      description: Path to the folder in the local repository where remote content is mounted. Paths outside of the project's `contentPath` are not allowed.
+      example: apis/test/@v1
+    AutoSync:
+      type: boolean
+      default: true
+      description: Whether Reunite syncs changes from the remote automatically.
+    AutoSyncDisabledAt:
+      type:
+        - string
+        - 'null'
+      format: date-time
+      readOnly: true
+      description: |-
+        Time when Reunite turned off auto-sync after repeated failed updates.
+        `null` when auto-sync is on or a user turned it off.
+      example: '2021-08-25T10:00:00.000Z'
+    AutoMerge:
+      type: boolean
+      default: false
+      description: Auto merge changes from remote.
+    MountBranchName:
+      type: string
+      description: Name of the branch to mount.
+      example: main
+    GenericRemoteError:
+      oneOf:
+        - type: 'null'
+        - type: object
+          properties:
+            autoMerge:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Error message describing the auto merge failure.
+                timestamp:
+                  type: string
+                  format: date-time
+                  description: Timestamp of the error.
+                buildId:
+                  type: string
+                  description: ID of the build that triggered the auto merge.
+              required:
+                - message
+                - timestamp
+          required:
+            - autoMerge
+      readOnly: true
+    LastSyncedAt:
+      type:
+        - string
+        - 'null'
+      format: date-time
+      description: |-
+        Last time remote processed the default branch update.
+        `null` when the remote has never been synced.
+        For URL remotes it is updated on interval specified for the remote.
+      example: '2021-08-25T10:00:00.000Z'
+    SyncAttempts:
+      type: integer
+      description: Number of failed attempts to sync the remote. If this value exceeds **6**, automatic synchronization is disabled.
+      example: 1
+    UrlRemote:
+      type: object
+      required:
+        - id
+        - type
+        - mountPath
+        - mountBranchName
+        - createdAt
+        - updatedAt
+        - editedAt
+        - createdById
+        - editedById
+        - contentType
+        - url
+        - fileName
+        - object
+        - uri
+      properties:
+        id:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        type:
+          type: string
+          const: URL
+        mountPath:
+          $ref: '#/components/schemas/MountPath'
+        autoSync:
+          $ref: '#/components/schemas/AutoSync'
+        autoSyncDisabledAt:
+          $ref: '#/components/schemas/AutoSyncDisabledAt'
+        autoMerge:
+          $ref: '#/components/schemas/AutoMerge'
+        createdAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        updatedAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        editedAt:
+          description: Date and time of upserting Remote by user.
+          type:
+            - string
+            - 'null'
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        createdById:
+          description: User ID who created Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        editedById:
+          description: User who recently upserted Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        lastSyncedAt:
+          $ref: '#/components/schemas/LastSyncedAt'
+        attempts:
+          $ref: '#/components/schemas/SyncAttempts'
+        providerType:
+          type: 'null'
+          readOnly: true
+        namespaceId:
+          type: 'null'
+          readOnly: true
+        repositoryId:
+          type: 'null'
+          readOnly: true
+        mountBranchName:
+          $ref: '#/components/schemas/MountBranchName'
+        contentPath:
+          type: 'null'
+          readOnly: true
+        credentialId:
+          type: 'null'
+          readOnly: true
+        branchName:
+          type: 'null'
+          readOnly: true
+        contentType:
+          type: string
+          enum:
+            - FOLDER
+            - FILE
+        url:
+          description: URL to the remote content.
+          type: string
+          example: https://raw.githubusercontent.com/Redocly/museum-openapi-example/main/openapi.yaml
+        interval:
+          type: number
+          description: Interval in seconds to sync URL remote content.
+          minimum: 900
+          default: 1800
+          example: 900
+        fileName:
+          type: string
+          description: File name of the remote content.
+          example: openapi.yaml
+        object:
+          description: Entity name.
+          type: string
+          enum:
+            - remote
+          readOnly: true
+        lastFinishedUrlUpdateId:
+          type:
+            - string
+            - 'null'
+          description: ID of the last finished URL update.
+          example: grupd_01jw8fczg4n4fcwkkg0nac3ddh
+          readOnly: true
+        errors:
+          $ref: '#/components/schemas/GenericRemoteError'
+        uri:
+          type: string
+          format: uri
+          description: Canonical URI for the URL remote resource.
+          readOnly: true
+          example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/remotes/rem_01h1s5z6vf2mm1mz3hevnn9va7
+    CicdRemote:
+      type: object
+      required:
+        - id
+        - type
+        - mountPath
+        - mountBranchName
+        - createdAt
+        - updatedAt
+        - editedAt
+        - createdById
+        - editedById
+        - object
+        - uri
+      properties:
+        id:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        type:
+          type: string
+          const: CICD
+        mountPath:
+          $ref: '#/components/schemas/MountPath'
+        autoSync:
+          $ref: '#/components/schemas/AutoSync'
+        autoMerge:
+          $ref: '#/components/schemas/AutoMerge'
+        createdAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        updatedAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        editedAt:
+          description: Date and time of upserting Remote by user.
+          type:
+            - string
+            - 'null'
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        createdById:
+          description: User ID who created Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        editedById:
+          description: User who recently upserted Remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        lastSyncedAt:
+          $ref: '#/components/schemas/LastSyncedAt'
+        providerType:
+          type: 'null'
+          readOnly: true
+        namespaceId:
+          type: 'null'
+          readOnly: true
+        repositoryId:
+          type: 'null'
+          readOnly: true
+        mountBranchName:
+          $ref: '#/components/schemas/MountBranchName'
+        contentPath:
+          type: 'null'
+          readOnly: true
+        credentialId:
+          type: 'null'
+          readOnly: true
+        branchName:
+          type: 'null'
+          readOnly: true
+        contentType:
+          type: 'null'
+          readOnly: true
+        url:
+          type: 'null'
+          readOnly: true
+        interval:
+          type: 'null'
+          readOnly: true
+        errors:
+          $ref: '#/components/schemas/GenericRemoteError'
+        object:
+          description: Entity name.
+          type: string
+          enum:
+            - remote
+          readOnly: true
+        uri:
+          type: string
+          format: uri
+          description: Canonical URI for the CICD remote resource.
+          readOnly: true
+          example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/remotes/rem_01h1s5z6vf2mm1mz3hevnn9va7
     PushProjectBuildStatus:
       type: object
       required:
@@ -1822,6 +2951,171 @@ components:
         - object
         - page
         - data
+    GitRemote:
+      type: object
+      required:
+        - id
+        - type
+        - mountPath
+        - mountBranchName
+        - createdAt
+        - updatedAt
+        - editedAt
+        - createdById
+        - editedById
+        - repositoryId
+        - branchName
+        - contentPath
+        - contentType
+        - providerType
+        - credentialId
+        - uri
+        - object
+      properties:
+        id:
+          description: Remote ID. Unique identifier prefixed with `rem_`.
+          type: string
+          pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: rem_01h1s5z6vf2mm1mz3hevnn9va7
+          readOnly: true
+        type:
+          type: string
+          const: GIT
+        mountPath:
+          $ref: '#/components/schemas/MountPath'
+        autoSync:
+          $ref: '#/components/schemas/AutoSync'
+        autoSyncDisabledAt:
+          $ref: '#/components/schemas/AutoSyncDisabledAt'
+        autoMerge:
+          $ref: '#/components/schemas/AutoMerge'
+        createdAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        updatedAt:
+          type: string
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        editedAt:
+          description: Time when a user last created or updated the remote.
+          type:
+            - string
+            - 'null'
+          readOnly: true
+          examples:
+            - '2023-06-07T00:00:00Z'
+          format: date-time
+        createdById:
+          description: ID of the user who created the remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        editedById:
+          description: ID of the user who last created or updated the remote.
+          type:
+            - string
+            - 'null'
+          example: usr_01hh1t9sa6gwfv5naz04gr7ehm
+          readOnly: true
+        lastSyncedAt:
+          $ref: '#/components/schemas/LastSyncedAt'
+        attempts:
+          $ref: '#/components/schemas/SyncAttempts'
+        providerType:
+          $ref: '#/components/schemas/GitProviderType'
+        namespaceId:
+          description: Git provider namespace of the repository, such as a GitHub organization or an Azure DevOps project.
+          type:
+            - string
+            - 'null'
+        repositoryId:
+          description: Git provider identifier of the repository.
+          type: string
+        mountBranchName:
+          $ref: '#/components/schemas/MountBranchName'
+        contentPath:
+          description: Path to the connected folder in the remote repository.
+          type: string
+        credentialId:
+          type: string
+          pattern: ^cred_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+          example: cred_01hc2rvwxf7jyj1er504khx8e7
+          description: |-
+            ID of the credential Reunite uses to access the repository.
+            Use it to rotate the access token of the credential.
+        branchName:
+          description: Branch name in the remote repository.
+          type: string
+          example: dev
+        contentType:
+          type: string
+          enum:
+            - FOLDER
+            - FILE
+          example: FILE
+        url:
+          type: 'null'
+          readOnly: true
+        interval:
+          type: 'null'
+          readOnly: true
+        object:
+          description: Entity name.
+          type: string
+          enum:
+            - remote
+          readOnly: true
+        uri:
+          description: Canonical URI for the remote resource.
+          type: string
+          format: uri
+          readOnly: true
+          example: https://app.cloud.redocly.com/api/orgs/org_01hh1t9sa6gwfv5naz04gr7ehm/projects/prj_01hh1t9sa6gwfv5naz04gr7ehm/remotes/rem_01h1s5z6vf2mm1mz3hevnn9va7
+        lastFinishedGitUpdateId:
+          type:
+            - string
+            - 'null'
+          description: ID of the last finished Git update.
+          readOnly: true
+          example: grupd_01jw8fczg4n4fcwkkg0nac3ddh
+        errors:
+          $ref: '#/components/schemas/GenericRemoteError'
+    Remote:
+      oneOf:
+        - $ref: '#/components/schemas/GitRemote'
+        - $ref: '#/components/schemas/UrlRemote'
+        - $ref: '#/components/schemas/CicdRemote'
+      discriminator:
+        propertyName: type
+        mapping:
+          GIT: '#/components/schemas/GitRemote'
+          URL: '#/components/schemas/UrlRemote'
+          CICD: '#/components/schemas/CicdRemote'
+    RemoteList:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+        page:
+          $ref: '#/components/schemas/Page'
+        data:
+          type: array
+          minItems: 0
+          items:
+            $ref: '#/components/schemas/Remote'
+      required:
+        - object
+        - page
+        - data
   securitySchemes:
     ApiKey:
       type: http
@@ -1875,6 +3169,12 @@ components:
             type: integer
             minimum: 1
           example: 30
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    PaymentRequiredError:
+      description: Payment Required.
       content:
         application/problem+json:
           schema:
@@ -1985,6 +3285,16 @@ components:
         pattern: ^fb_[0-9abcdefghjkmnpqrstvwxyz]{26}$
         description: Unique identifier prefixed with `fb_`.
       example: fb_01h1s5z6vf2mm1mz3hevnn9va7
+    SourceId:
+      name: sourceId
+      description: Project source ID.
+      required: true
+      in: path
+      schema:
+        type: string
+        pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+        description: Unique identifier prefixed with `rem_`.
+      example: rem_01h1s5z6vf2mm1mz3hevnn9va7
     PushId:
       name: pushId
       description: Push ID.
@@ -1995,3 +3305,13 @@ components:
         pattern: ^push_[0-9abcdefghjkmnpqrstvwxyz]{26}$
         description: Unique identifier prefixed with `push_`.
       example: push_01hhh91dhc2kg9naf476y7qmas
+    RemoteId:
+      name: remoteId
+      description: Remote ID.
+      required: true
+      in: path
+      schema:
+        type: string
+        pattern: ^rem_[0-9abcdefghjkmnpqrstvwxyz]{26}$
+        description: Unique identifier prefixed with `rem_`.
+      example: rem_01h1s5z6vf2mm1mz3hevnn9va7
