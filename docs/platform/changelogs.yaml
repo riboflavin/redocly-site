@@ -1,4 +1,38 @@
 '@redocly/framework':
+  0.140.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Deprecated the `mcp.docs` config object and moved its options to `mcp`.
+      patch:
+        - >-
+          Fixed an issue where C# request samples in OpenAPI docs sent number, boolean, and `null` values from the request body example as strings.
+
+          C# request samples also compile when the example contains strings with quotes, backslashes, or line breaks, or empty, nested, or mixed-type
+          arrays.
+        - Improved server-side rendering performance for OpenAPI reference pages with heavily reused schemas.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples were empty when a discriminator option's property referenced part of
+          another schema.
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+        - >-
+          Fixed an issue in the **Try it** console where the edited request body was replaced with the documented example when the content type
+          changed.
+
+          For example, when users switched from JSON to XML and back.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.4
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.1
   0.140.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -243,6 +277,40 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Deprecated the `mcp.docs` config object and moved its options to `mcp`.
+      patch:
+        - >-
+          Fixed an issue where C# request samples in OpenAPI docs sent number, boolean, and `null` values from the request body example as strings.
+
+          C# request samples also compile when the example contains strings with quotes, backslashes, or line breaks, or empty, nested, or mixed-type
+          arrays.
+        - Improved server-side rendering performance for OpenAPI reference pages with heavily reused schemas.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples were empty when a discriminator option's property referenced part of
+          another schema.
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+        - >-
+          Fixed an issue in the **Try it** console where the edited request body was replaced with the documented example when the content type
+          changed.
+
+          For example, when users switched from JSON to XML and back.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.4
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.1
   0.140.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -8745,6 +8813,26 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Deprecated the `mcp.docs` config object and moved its options to `mcp`.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.4
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.1
   0.140.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -15771,6 +15859,26 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Deprecated the `mcp.docs` config object and moved its options to `mcp`.
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.4
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.1
   0.140.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -22816,6 +22924,40 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Deprecated the `mcp.docs` config object and moved its options to `mcp`.
+      patch:
+        - >-
+          Fixed an issue where C# request samples in OpenAPI docs sent number, boolean, and `null` values from the request body example as strings.
+
+          C# request samples also compile when the example contains strings with quotes, backslashes, or line breaks, or empty, nested, or mixed-type
+          arrays.
+        - Improved server-side rendering performance for OpenAPI reference pages with heavily reused schemas.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples were empty when a discriminator option's property referenced part of
+          another schema.
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+        - >-
+          Fixed an issue in the **Try it** console where the edited request body was replaced with the documented example when the content type
+          changed.
+
+          For example, when users switched from JSON to XML and back.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.4
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/portal-plugin-mock-server': 0.25.0-next.1
   0.140.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -30330,6 +30472,18 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.3:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the Docs MCP setup snippets gave every site without `mcp.docs.name` the same server name, which caused a name conflict
+          in the MCP client when users connected more than one site.
+
+          If `mcp.docs.name` is not set, the server name is based on the site's domain.
+        - Fixed the `connect-mcp` tag so it no longer displays a connect button on sites that don't serve an MCP server.
+    dependencies: {}
   0.72.0-next.2:
     timestamp: 1793023631000
     changes:
@@ -34835,6 +34989,27 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.4:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where C# request samples in OpenAPI docs sent number, boolean, and `null` values from the request body example as strings.
+
+          C# request samples also compile when the example contains strings with quotes, backslashes, or line breaks, or empty, nested, or mixed-type
+          arrays.
+        - Improved server-side rendering performance for OpenAPI reference pages with heavily reused schemas.
+        - >-
+          Fixed an issue in OpenAPI docs where request and response samples were empty when a discriminator option's property referenced part of
+          another schema.
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+        - >-
+          Fixed security vulnerabilities `GHSA-cg2g-xh64-v4q7`, `GHSA-mrv2-3pqr-j5jr` and `GHSA-c6gr-qvv4-5v3f` by upgrading `dompurify` to version
+          `3.4.17`.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.3
+      '@redocly/replay': 0.31.0-next.4
   0.5.0-next.3:
     timestamp: 1793023631000
     changes:
@@ -35713,6 +35888,13 @@
       '@redocly/replay': 0.27.0-next.6
       '@redocly/theme': 0.68.0-next.5
 '@redocly/mock-server':
+  0.14.0-next.1:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch:
+        - Updated `@redocly/openapi-core` to version `2.71.1`.
+    dependencies: {}
   0.14.0-next.0:
     timestamp: 1793023631000
     changes:
@@ -36886,6 +37068,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.6:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.140.0-next.6
+      '@redocly/redoc': 0.140.0-next.6
+      '@redocly/redoc-reef': 0.140.0-next.6
+      '@redocly/redoc-revel': 0.140.0-next.6
+      '@redocly/theme': 0.72.0-next.3
   1.23.0-next.5:
     timestamp: 1793023631000
     changes:
@@ -43154,6 +43347,13 @@
     dependencies:
       '@redocly/portal': 0.26.0
 '@redocly/portal-plugin-mock-server':
+  0.25.0-next.1:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/mock-server': 0.14.0-next.1
   0.25.0-next.0:
     timestamp: 1793023631000
     changes:
@@ -46413,6 +46613,19 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.4:
+    timestamp: 1793103595000
+    changes:
+      minor:
+        - Changed `@redocly/replay` to ship only an ES module build. Consumers using `require()` must switch to ES module imports.
+      patch:
+        - >-
+          Fixed an issue in the **Try it** console where the edited request body was replaced with the documented example when the content type
+          changed.
+
+          For example, when users switched from JSON to XML and back.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.3
   0.31.0-next.3:
     timestamp: 1793023631000
     changes:
@@ -49320,6 +49533,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.3:
+    timestamp: 1793103595000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.3
   0.23.0-next.2:
     timestamp: 1793023631000
     changes:
