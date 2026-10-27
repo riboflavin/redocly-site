@@ -121,6 +121,9 @@ rbac:
       TeamB: read  # TeamB has an access to the /api/communities/1 endpoint
 ```
 
+A rule with `anonymous: read` opens the function to callers without a session, for example a webhook receiver that checks a signature itself.
+Write the rule with the file path, as in the preceding example, so that it applies to the function and not to a page with the same URL.
+
 ## Access environment variables
 
 To access environment variables, use the `process.env.VAR_NAME` syntax.
