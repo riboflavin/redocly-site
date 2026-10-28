@@ -76,6 +76,21 @@ Multi-line comment or commented-out content
 -->
 ```
 
+### Embedded media and iframes
+
+To embed external media such as videos from YouTube, Loom, or other video hosting services, use standard HTML `<iframe>` tags:
+
+```markdown
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Video player"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+```
+
 ## Redocly enhancements
 
 Redocly extends standard Markdown with additional capabilities:
