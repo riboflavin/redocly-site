@@ -10,7 +10,7 @@ disableLastModified: true
 
 
 # Cookie Notice
-**Last updated: October 21, 2026**
+**Last updated: October 28, 2026**
 
 This Cookie Notice explains how Redocly Inc. and its group companies ("Redocly", "we", "us", and "ours") use cookies and similar technologies to recognize you when you visit, interact with or use any of our websites (such as redocly.com), online advertisements, or marketing communications (collectively for the purposes of this Notice, the "Websites"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
 
@@ -54,6 +54,7 @@ The specific types of first and third party cookies served through our Websites 
 
 - **Analytics and customization cookies:** These cookies collect information that is used either in aggregate form to help us understand how our Websites are being used or how effective our marketing campaigns are, or to help us customize our Websites for you.
 - - **Redocly** - `rls` cookie (180 days). It contains a random visitor ID that identifies your browser across visits. We use it to measure which pages and campaigns lead to sign-ups, and to run A/B tests of our Websites. Where we ask for your consent before we set analytics cookies, we set this cookie only after you accept them. Elsewhere, we set it unless you turn analytics cookies off. If you refuse or turn off analytics cookies, we delete this cookie. Each visit renews the 180 days.
+  - **Redocly** - local storage for A/B tests. When we test different versions of a page, we store in your browser's local storage which version you see, the visitor ID that this choice belongs to, and the test settings. We store them only when we can set analytics cookies, under the same rules as the `rls` cookie. If you refuse or turn off analytics cookies, we clear the stored versions and delete the visitor ID. The test settings stay until you clear your browser storage.
   - **Google Analytics**
   - **Microsoft Clarity** - this is a tool that we use to provide a better user experience for you and collect data used to diagnose user issues. It records and captures user sessions to help us understand how visitors interact with our website.
   - **HubSpot** - used for marketing analytics and customer relationship management.
