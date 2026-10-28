@@ -61606,6 +61606,13 @@ reunite:
           Fixed an issue in Reunite where clicking some links, such as the project build link on the organization overview, opened the page in two new
           tabs.
     dependencies: {}
+  v2026-10-28.5:
+    timestamp: 1793209739000
+    changes:
+      minor:
+        - Combined identity-provider-synced and manually managed teams in Reunite’s Teams list, with each team’s source identified.
+      patch: []
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
