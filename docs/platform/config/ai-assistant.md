@@ -31,9 +31,13 @@ The AI assistant indexes and searches across all content in your project:
 - **API descriptions** - OpenAPI, GraphQL, AsyncAPI, and SOAP description files
 - **Documentation pages** - Markdown files
 - **API versions** - All versions of APIs are indexed and filtered based on the active version
+- **Multiple products** - All products in multi-product projects are indexed and filtered based on the active product
 
 When you have multiple versions of an API, the AI assistant shows results from the active version by default.
 Results also include default versions from other APIs and non-versioned content.
+
+In projects with [multiple products](./products.md) configured, opening the AI assistant from a product page automatically restricts searches and answers to that product based on the current URL.
+Users can remove the product filter in the search dialog to search across all products.
 
 The index includes content that RBAC protects.
 The AI assistant serves users only the content that they can access.
