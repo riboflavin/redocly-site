@@ -112,6 +112,8 @@ Nobody can edit a synced team in Redocly.
 SCIM never changes the teams you manage, including a team with the same name as a group.
 
 When your IdP changes a group's members, Redocly changes only that group's team.
+Role and team changes from a group push are applied before Redocly answers the request.
+A group can have any number of members.
 Renaming or deleting the group renames or deletes the team.
 A group with no members has no team.
 Turning off SCIM on the identity provider, or deleting the identity provider, deletes its SCIM teams.
