@@ -61594,7 +61594,6 @@ reunite:
     timestamp: 1793205800000
     changes:
       minor:
-        - Combined identity-provider-synced and manually managed teams in Reunite’s Teams list, with each team’s source identified.
         - Added the `trigger` option to the `feedback` and `discovery` duties in `reunite.agent`, so each duty runs on its own cron schedule in UTC.
         - >-
           Added guidance to project creation in Reunite when GitHub lists no organizations for your account, with steps to install the Redocly GitHub
