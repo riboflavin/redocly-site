@@ -34138,6 +34138,18 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.69.0:
+    timestamp: 1793189408000
+    changes:
+      minor:
+        - >-
+          Added the `diff`, `oas3_0Diff`, `oas3_1Diff`, `oas3_2Diff`, and `async3Diff` keys to the root configuration schema to set the impact of each
+          rule of the experimental `diff` command.
+        - >-
+          Added `rules` and `sourceRepositories` options to the feedback and discovery duties in `reunite.agent`, so each duty can follow its own
+          instructions and use only the specified source repositories.
+      patch: []
+    dependencies: {}
   0.68.0:
     timestamp: 1793101829000
     changes:
