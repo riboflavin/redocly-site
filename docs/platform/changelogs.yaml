@@ -61576,6 +61576,20 @@ reunite:
         - Fixed an issue that prevented deleting some organizations in Reunite.
         - Updated `@redocly/openapi-core` to version `2.71.2`.
     dependencies: {}
+  v2026-10-28.2:
+    timestamp: 1793190253000
+    changes:
+      minor:
+        - >-
+          Added support for identity provider groups of any size in Reunite SCIM provisioning. A group push with more than 1000 members was previously
+          rejected.
+      patch:
+        - Fixed an issue where the AI assistant and Realm AI search listed the same page section more than once under "Based on N resources".
+        - >-
+          Fixed the legacy plan migration banner in Reunite billing, which stayed visible after the customer moved to a Pro, Scale, or Enterprise
+          plan.
+        - Fixed API monitoring to apply configured defaults when environment variables are unset and to preserve unresolved variables in the run log.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
