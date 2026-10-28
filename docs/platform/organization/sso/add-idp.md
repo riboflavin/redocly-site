@@ -80,7 +80,7 @@ When users assigned to those groups in your IdP log in to Redocly, they have the
 ### Default team
 
 Enter a **Default Team** name to add everyone who logs in with this IdP to a synced team with that name.
-The team appears in the synced section of the **Teams** page.
+The team appears on the **Teams** page with the identity provider as its source.
 A sign-in that carries no group claim keeps the person in the default team and removes them from the other synced teams of this IdP.
 Use a team name from the `rbac` configuration in `redocly.yaml` to grant its roles.
 

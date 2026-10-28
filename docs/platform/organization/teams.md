@@ -11,27 +11,27 @@ You can assign users to more than one team and manage team composition to contro
 
 ## Teams you manage and teams your identity provider syncs
 
-The **Teams** page has three tabs.
+The **Teams** page lists every team of the organization in one list.
+Apart from the automatic teams, a team is either managed in Redocly or synced from an identity provider, and a synced team shows its source next to its name.
 
-**Managed:**
+**Teams managed in Redocly:**
 
 - Owners and team managers create these teams, add and remove members, and rename or delete them.
 - Signing in and directory sync never change them.
 
-**Synced from IdP:**
+**Teams synced from an identity provider:**
 
-- Only owners see this tab.
 - These teams come from an identity provider group claim or from a SCIM group.
 - Each team displays where it comes from and when it last synced.
 - They are read-only in the Redocly platform.
   To change their members, change the group in your identity provider.
 - Each sign-in through an identity provider replaces the person's teams from that identity provider.
   A sign-in that carries no group claim removes the person from that identity provider's teams but keeps them in its default team.
+- An API key can belong to a synced team.
+  Sign-ins and directory sync leave it there.
 
-**Automatic:**
-
-- Teams the platform fills on its own: `authenticated` holds everyone who signs in, and each organization role has a team with the people who have that role.
-- You can't edit them, but you can grant them roles in `redocly.yaml` like any other team.
+The list starts with the teams the platform fills on its own: `authenticated` holds everyone who signs in, and each organization role has a team with the people who have that role.
+You can't edit them, but you can grant them roles in `redocly.yaml` like any other team.
 
 A synced team with the same name as a team you manage is a separate team.
 Both grant the roles configured for that name in `redocly.yaml`.
@@ -152,9 +152,7 @@ Change their members in your identity provider (for example, Okta or Microsoft E
 Only users with an Owner organization role and members assigned as team managers can access the **Teams** page.
 Team managers can only view and manage their assigned teams.
 
-Use the tabs above the list to switch between **Managed**, **Synced from IdP** and **Automatic** teams.
-
-Synced teams show their identity provider or SCIM and the time of their last sync.
+Synced teams show their identity provider or SCIM next to their name and the time of their last sync.
 
 The **Teams** page does not include options for determining who has access to projects.
 Project access is determined by the permissions of the teams users are members of.

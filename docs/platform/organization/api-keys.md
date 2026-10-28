@@ -179,6 +179,7 @@ Use the **Quick select** buttons above each list to set permissions in bulk:
 ### RBAC permission model
 
 When you select the **RBAC** model, you assign the key to one or more [teams](./teams.md) instead of selecting individual permissions.
+You can pick teams managed in Redocly and teams synced from your identity provider.
 The key is granted the same access as a member of those teams, following the roles assigned to them.
 
 The access logic follows the same principles as standard [RBAC configuration](../access/rbac.md).
