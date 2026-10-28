@@ -98,6 +98,18 @@ With `pointer`:
 
 ---
 
+- options
+- object
+- Overrides the API's [`openapi` configuration](../../config/openapi/index.md) for this code sample.
+  Options that you don't set keep their values from the API configuration.
+  Commonly overridden options:
+  - `codeSamples.skipOptionalParameters` - excludes optional headers, query parameters, and cookies from the code sample.
+  - `codeSamples.languages` - lists the [languages](../../config/openapi/code-samples.md) to render, in order.
+    The `language` attribute takes precedence over this option.
+  - [`generatedSamplesMaxDepth`](../../config/openapi/generated-samples-max-depth.md) - sets how many schema levels appear in the generated request body.
+
+---
+
 - environment
 - string
 - Limits the environment picker in the code sample to a specific server defined in the OpenAPI description.
@@ -128,7 +140,7 @@ By prefilling security credentials for logged in users, you can provide code sam
 For example:
 
 {% markdoc-example %}
-  ``` {% process=false %}
+  ```markdoc {% process=false %}
   {% openapi-code-sample
     descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
@@ -148,8 +160,8 @@ For example:
 
 By default, the tag renders a code sample in multiple languages for a specific API operation, as in the following example:
 
-{% markdoc-example %}
-  ``` {% process=false %}
+{% markdoc-example renderDemo=true %}
+  ```markdoc
   {% openapi-code-sample
     descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
@@ -157,18 +169,13 @@ By default, the tag renders a code sample in multiple languages for a specific A
   ```
 {% /markdoc-example %}
 
-{% openapi-code-sample
-  descriptionFile="../../openapi-files/redocly-museum.yaml"
-  operationId="createSpecialEvent"
-/%}
-
 ### With single language
 
 You can restrict the code sample to a specific language using the `language` attribute.
 The following example limits the code sample to JavaScript:
 
-{% markdoc-example %}
-  ``` {% process=false %}
+{% markdoc-example renderDemo=true %}
+  ```markdoc
   {% openapi-code-sample
     descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="createSpecialEvent"
@@ -177,19 +184,13 @@ The following example limits the code sample to JavaScript:
   ```
 {% /markdoc-example %}
 
-{% openapi-code-sample
-  descriptionFile="../../openapi-files/redocly-museum.yaml"
-  operationId="createSpecialEvent"
-  language="JavaScript"
-/%}
-
 ### With pre-defined values
 
 You can use various attributes to provide values that resolve to the rendered element.
 The following example includes pre-defined parameters and environment variables.
 
-{% markdoc-example %}
-  ``` {% process=false %}
+{% markdoc-example renderDemo=true %}
+  ```markdoc
   {% openapi-code-sample
     descriptionFile="../../openapi-files/redocly-museum.yaml"
     operationId="deleteSpecialEvent"
@@ -210,23 +211,26 @@ The following example includes pre-defined parameters and environment variables.
   ```
 {% /markdoc-example %}
 
-{% openapi-code-sample
-  descriptionFile="../../openapi-files/redocly-museum.yaml"
-  operationId="deleteSpecialEvent"
-  language="curl"
-  parameters={
-    path: {
-      eventId: "dad4bce8-f5cb-4078-a211-995864315e39"
+### Without optional parameters
+
+By default, the code sample includes all parameters that the operation defines, unless the API's `openapi` configuration sets `codeSamples.skipOptionalParameters`.
+To exclude optional parameters from one code sample only, set `codeSamples.skipOptionalParameters` in the `options` attribute.
+The following example excludes the optional `startDate`, `page`, and `limit` query parameters of the `getMuseumHours` operation:
+
+{% markdoc-example renderDemo=true %}
+  ```markdoc
+  {% openapi-code-sample
+    descriptionFile="../../openapi-files/redocly-museum.yaml"
+    operationId="getMuseumHours"
+    language="curl"
+    options={
+      codeSamples: {
+        skipOptionalParameters: true
+      }
     }
-  }
-  environment="https://api.fake-museum-example.com/v1"
-  environments={
-    "https://api.fake-museum-example.com/v1": {
-      "MuseumPlaceholderAuth_username": "custom-username",
-      "MuseumPlaceholderAuth_password": "custom-password"
-    }
-  }
-/%}
+  /%}
+  ```
+{% /markdoc-example %}
 
 ## Best practices
 
@@ -245,3 +249,4 @@ This way you can help your users to successfully build with your API.
 
 - **[Markdoc overview for technical writers](https://redocly.com/learn/markdoc)** - Learn how to use Markdoc in your documentation
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags
+- **[`codeSamples` configuration](../../config/openapi/code-samples.md)** - Configure the languages and parameters of generated code samples for the whole API
