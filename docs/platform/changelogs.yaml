@@ -61590,6 +61590,23 @@ reunite:
           plan.
         - Fixed API monitoring to apply configured defaults when environment variables are unset and to preserve unresolved variables in the run log.
     dependencies: {}
+  v2026-10-28.4:
+    timestamp: 1793205800000
+    changes:
+      minor:
+        - Combined identity-provider-synced and manually managed teams in Reunite’s Teams list, with each team’s source identified.
+        - Added the `trigger` option to the `feedback` and `discovery` duties in `reunite.agent`, so each duty runs on its own cron schedule in UTC.
+        - >-
+          Added guidance to project creation in Reunite when GitHub lists no organizations for your account, with steps to install the Redocly GitHub
+          App or invite a teammate who has access.
+      patch:
+        - |-
+          Fixed keyboard and screen reader issues in Reunite.
+          For example, the `Enter` key opens billing from upgrade tags, and screen readers reach the menu on project cards.
+        - >-
+          Fixed an issue in Reunite where clicking some links, such as the project build link on the organization overview, opened the page in two new
+          tabs.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
