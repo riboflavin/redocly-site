@@ -63,6 +63,19 @@ function example() {
 ```
 ````
 
+### Comments
+
+To add notes or comment out content in Markdown files, use standard HTML comments.
+Comments are not displayed on the published page.
+
+```markdown
+<!-- Single-line comment -->
+
+<!--
+Multi-line comment or commented-out content
+-->
+```
+
 ## Redocly enhancements
 
 Redocly extends standard Markdown with additional capabilities:
