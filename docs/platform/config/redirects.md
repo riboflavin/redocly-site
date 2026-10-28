@@ -39,6 +39,9 @@ When redirects are configured in both locations, the `redocly.yaml` configuratio
   Alternatively it may use a wildcard at the end of the absolute path; for example: `/sample/*`.
   The wildcard symbol (`*`) is only supported as the last path segment.
 
+  For exact sources, matching ignores trailing slashes and letter case.
+  Redocly appends incoming request query parameters to the destination URL.
+
   If you are redirecting from files named `index.*`, omit `index/` from the path.
 
 {% /table %}
