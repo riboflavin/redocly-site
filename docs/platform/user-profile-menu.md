@@ -16,6 +16,10 @@ Your profile settings apply only to the currently selected organization.
 
 ## Set email notification preferences
 
+You can configure Redocly to send you email notifications when specific events happen in the project.
+The platform does not send you notifications about pull request and deployment events that you trigger.
+If a remote content auto-merge fails, the platform also notifies the user who triggered it.
+
 To choose which email notifications you receive from Redocly:
 
 1. Open the user profile menu.
@@ -84,7 +88,7 @@ Log out from Redocly when you finish your work or when you want to switch to ano
 To log out:
 
 1. Open the user profile menu.
-2. In the bottom-left corner, click **Logout**.
+1. In the bottom-left corner, click **Logout**.
 
 Your session ends and you are redirected to the Login screen.
 
