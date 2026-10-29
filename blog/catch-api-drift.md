@@ -132,7 +132,7 @@ redocly drift ./cafe.har --api ./cafe-openapi.json
 ```
 
 The error is the discrepancy we planted: the API returns a number where the description now promises a string.
-The warning is a bonus we didn't plant at all. 
+The warning is a bonus we didn't plant at all.
 The `category` query parameter we sent isn't documented anywhere in the Cafe description.
 Two requests of traffic, and drift already surfaced something real.
 

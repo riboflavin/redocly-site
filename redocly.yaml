@@ -321,3 +321,283 @@ banner:
   - content: '<span class="banner-wide">✨ Early access: [**Reviewer**](/pages/reviewer/reviewer.page.tsx) - expert feedback on every docs PR · [**Writer**](/pages/writer/writer.page.tsx) - docs that fix themselves</span><span class="banner-narrow">✨ Early access: [**Reviewer**](/pages/reviewer/reviewer.page.tsx) · [**Writer**](/pages/writer/writer.page.tsx)</span>'
     target: '**'
     dismissible: true
+
+# Markdown and prose linting: `npm run recheck` runs `redocly recheck` with these rules.
+recheck:
+  # Parse Markdoc tags, so rules skip tag syntax, see `{% id %}` anchors, and `--fix` never rewrites a tag.
+  markdoc: true
+  rules:
+    recheck/us-spelling:
+      severity: error
+      message: 'Use the US spelling "%s" instead of British "%s".'
+      link: https://docs.microsoft.com/en-us/style-guide/word-choice/use-us-spelling-avoid-non-english-words
+      fix: false
+      assertions:
+        swap:
+          ignoreCase: true
+          wordBoundary: true
+          pairs:
+            aeon: eon
+            aeroplane: airplane
+            ageing: aging
+            aluminium: aluminum
+            anaemia: anemia
+            anaesthesia: anesthesia
+            analyse: analyze
+            annexe: annex
+            apologise: apologize
+            behaviour: behavior
+            busses: buses
+            calibre: caliber
+            cancelled: canceled
+            cancellation: cancelation
+            catalogue: catalog
+            categorise: categorize
+            categorised: categorized
+            categorises: categorizes
+            categorising: categorizing
+            centre: center
+            cheque: check
+            civilisation: civilization
+            civilise: civilize
+            colour: color
+            cosy: cozy
+            cypher: cipher
+            dependant: dependent
+            defence: defense
+            distil: distill
+            draught: draft
+            encyclopaedia: encyclopedia
+            enquiry: inquiry
+            enrol: enroll
+            enrolment: enrollment
+            enthral: enthrall
+            expiry: expiration
+            favourite: favorite
+            fibre: fiber
+            fillet: filet
+            flavour: flavor
+            furore: furor
+            fulfil: fulfill
+            gaol: jail
+            grey: gray
+            humour: humor
+            honour: honor
+            initialled: initialed
+            initialling: initialing
+            instil: instill
+            jewellery: jewelry
+            labelling: labeling
+            labelled: labeled
+            labour: labor
+            libellous: libelous
+            licence: license
+            likeable: likable
+            liveable: livable
+            lustre: luster
+            manoeuvre: maneuver
+            marvellous: marvelous
+            matt: matte
+            meagre: meager
+            metre: meter
+            modelling: modeling
+            moustache: mustache
+            neighbour: neighbor
+            normalise: normalize
+            offence: offense
+            organise: organize
+            organisation: organization
+            orientated: oriented
+            paralyse: paralyze
+            plough: plow
+            pretence: pretense
+            programme: program
+            pyjamas: pajamas
+            rateable: ratable
+            realise: realize
+            recognise: recognize
+            reconnoitre: reconnoiter
+            rumour: rumor
+            sabre: saber
+            saleable: salable
+            saltpetre: saltpeter
+            sceptic: skeptic
+            sepulchre: sepulcher
+            signalling: signaling
+            sizeable: sizable
+            skilful: skillful
+            sombre: somber
+            smoulder: smolder
+            speciality: specialty
+            spectre: specter
+            splendour: splendor
+            standardise: standardize
+            standardised: standardized
+            sulphur: sulfur
+            theatre: theater
+            travelled: traveled
+            traveller: traveler
+            travelling: traveling
+            unshakeable: unshakable
+            wilful: willful
+            yoghurt: yogurt
+      exceptions:
+        files:
+          - docs/platform/branding/**
+          - docs/redoc/@v3.x/deployment/html.md
+          - docs/platform/customization/react-components/list/tag.md
+
+    # Off: the old recheck.yaml had no `pairs` key here, so this rule never reported anything.
+    # As written it matches GitHub URLs (tree/master), the verb "master", and pronouns of named people.
+    recheck/inclusion-gender-culture:
+      severity: off
+      message: 'Use inclusive language. Consider "%s" instead of "%s".'
+      # The suggestions need a human choice, for example "primary, main".
+      fix: false
+      assertions:
+        swap:
+          wordBoundary: true
+          keysAreRegex: true
+          pairs:
+            he: they
+            his: their
+            she: they
+            hers: their
+            'blacklist(?:ed|ing|s)?': blocklist
+            'whitelist(?:ed|ing|s)?': allowlist
+            master: primary, main
+            slave: replica
+            he/she: they
+            s/he: they
+
+    recheck/no-gerund-headings:
+      severity: error
+      scope: heading
+      message: 'Do not start headings with a gerund.'
+      assertions:
+        pattern:
+          ignoreCase: true
+          tokens:
+            - '^\w*ing\b'
+      exceptions:
+        lines:
+          - According
+          - Betting
+          - Billing
+          - Branding
+          - Breaking
+          - Dogfooding
+          - Engineering
+          - Hiring
+          - Hosting
+          - Landing
+          - Marketing
+          - Monitoring
+          - Naming
+          - Onboarding
+          - Packaging
+          - Pricing
+          - Reasoning
+          - Recruiting
+          - Reporting
+          - Settings
+          - Training
+          - Troubleshooting
+          - Testing
+          - Writing
+          - hideLoading
+          - Routing
+
+    recheck/oxford-comma:
+      severity: error
+      scope: sentence
+      message: "Use the Oxford comma in '%s'."
+      assertions:
+        pattern:
+          tokens:
+            - '(?:[^\s,]+,){1,} \w+ (?:and|or) \w+[.?!]'
+
+    recheck/line-length:
+      severity: warn
+      assertions:
+        line-length:
+          lineLength: 400
+          codeBlocks: false
+          tables: false
+
+    recheck/no-trailing-spaces:
+      severity: error
+      assertions:
+        no-trailing-spaces:
+          strict: true
+
+    recheck/single-trailing-newline:
+      severity: error
+      assertions:
+        single-trailing-newline: {}
+
+    recheck/ul-style:
+      severity: error
+      assertions:
+        ul-style:
+          style: dash
+
+    recheck/semantic-line-breaks:
+      severity: error
+      message: 'Use semantic line breaks (%s mode).'
+      assertions:
+        semantic-line-breaks:
+          mode: sentence
+          ignoreCodeBlocks: true
+          ignoreTables: true
+
+    recheck/no-hard-tabs:
+      severity: error
+      assertions:
+        no-hard-tabs:
+          codeBlocks: false
+          spacesPerTab: 2
+
+    recheck/no-duplicate-heading:
+      severity: warn
+      assertions:
+        no-duplicate-heading:
+          caseSensitive: false
+          ignoreCommonHeadings: false
+          respectSections: true
+
+    recheck/link-fragments:
+      severity: error
+      fix: false
+      assertions:
+        link-fragments:
+          crossFile: true
+          # Realm serves these from versioned folders (@v1, @v2), which recheck cannot resolve.
+          ignoredTargets:
+            - 'docs/cli'
+            - 'docs/cli/**'
+            - 'cli'
+            - 'cli/**'
+            - 'docs/redoc'
+            - 'docs/redoc/**'
+            - 'redoc'
+            - 'redoc/**'
+      exceptions:
+        lines:
+          - '#stage-3.-offer'
+          - '#3.-hr-interview'
+          - '#input/output-types'
+          # Anchors from Markdoc `{% id %}` annotations and partials, which recheck does not resolve.
+          - '#redocly-tag-badge'
+          - '#annotation-example-id'
+          - '#connect-a-monorepo'
+        files:
+          - '**/_partials/**'
+
+    recheck/optimize-images:
+      severity: error
+      message: 'Image too large: %s'
+      assertions:
+        max-image-size:
+          maxSizeKB: 100
+          extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']
