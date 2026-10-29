@@ -86,6 +86,9 @@ Redocly escapes angle brackets inside link text, such as `[Array<T>](https://exa
 - [string]
 - "Open in" actions displayed as a split button in the header.
   Accepts any combination of `cursor`, `claude`, and `chatgpt`.
+  Each action opens a desktop app: `cursor` opens a cursor.com page that opens Cursor, `claude` starts a Claude Code session in the Claude desktop app, and `chatgpt` opens the ChatGPT desktop app.
+  The reader must have the app installed.
+  Without the app, the `claude` and `chatgpt` actions do nothing, or the browser shows an alert.
   The first action is the main button.
   The remaining actions are in the dropdown menu.
   Default: `[]`.
