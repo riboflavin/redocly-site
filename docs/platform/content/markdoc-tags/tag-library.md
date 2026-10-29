@@ -314,6 +314,32 @@ Additional information and syntax: [Tabs tag](./tabs.md)
   {% /tab %}
 {% /tabs %}
 
+---
+
+## Visibility
+
+Use the Visibility tag to route content to one audience: people reading the page, or AI agents reading the page's Markdown version.
+Content marked `for="humans"` renders on the page, but the Markdown version leaves it out.
+Content marked `for="agents"` appears only in the Markdown version, not on the rendered page.
+
+Additional information and syntax: [Visibility tag](./visibility.md)
+
+**Example visibility element:**
+
+{% markdoc-example renderDemo=true %}
+
+```markdoc
+{% visibility for="humans" %}
+Click **Create order** in the dashboard.
+{% /visibility %}
+
+{% visibility for="agents" %}
+POST /v1/orders with a JSON body.
+{% /visibility %}
+```
+
+{% /markdoc-example %}
+
 ## Resources
 
 - **[Markdoc tags](./index.md)** - See the full list of supported Markdoc tags

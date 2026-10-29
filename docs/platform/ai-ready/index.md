@@ -17,7 +17,7 @@ Readers ask a question and get an answer grounded in your documentation.
 
 AI clients connect to your documentation and query it as a data source.
 Redocly also creates an `llms.txt` file for your site.
-It lists your pages and links a clean Markdown copy of each, in the [llmstxt.org](https://llmstxt.org) format that LLM tools read.
+It lists your pages and links a clean Markdown version of each, in the [llmstxt.org](https://llmstxt.org) format that LLM tools read.
 For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 
 - **[MCP server](../customization/mcp-server/index.md)** - Serve your documentation and API descriptions to AI clients over the Model Context Protocol
@@ -26,6 +26,7 @@ For a real one, see [Redocly's llms.txt](https://redocly.com/llms.txt).
 - **[Custom tools](../customization/mcp-server/custom-tools.md)** - Add your own functions to the MCP server with code that you write
 - **[Agent skills](../customization/agent-skills/index.md)** - Package task instructions that agents load on demand
 - **[llms.txt configuration](../config/seo.md#llmstxt-object)** - Set the file's title, description, and sections, or turn it off
+- **[Visibility tag](../content/markdoc-tags/visibility.md)** - Target content at humans or agents, and control what reaches the Markdown version
 - **[x-mcp extension](../content/api-docs/openapi-extensions/x-mcp.md)** - Choose which API operations the MCP server exposes to AI clients
 - **[Page actions](../config/navigation.md#pageaction-object)** - Copy or view any page as Markdown, ask ChatGPT or Claude about it, or connect an AI client to your MCP server
 - **[WebMCP tools](../customization/webmcp/index.md)** - Publish tools to the AI agent in the reader's own browser, so it can search, read, and open your pages
