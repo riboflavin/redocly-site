@@ -108,12 +108,12 @@ The export runs in the background.
   {% numbered-item %}
   Check the `status` field in the response, which returns one of three values:
 
-  - `IN_PROGRESS`: the export is still running.
-    Send the request again in a few seconds.
-  - `COMPLETED`: the file is ready to download.
-  - `FAILED`: the export did not finish.
-    Start a new job, and contact support if the failure repeats.
-  {% /numbered-item %}
+- `IN_PROGRESS`: the export is still running.
+  Send the request again in a few seconds.
+- `COMPLETED`: the file is ready to download.
+- `FAILED`: the export did not finish.
+  Start a new job, and contact support if the failure repeats.
+{% /numbered-item %}
 {% /numbered-list %}
 
 ### Download the export file
