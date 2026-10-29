@@ -101,7 +101,7 @@ Use the **Quick select** buttons above each list to set permissions in bulk:
 
 - `org.auditLogs.read`
 - Read
-- Export organization audit logs.
+- View and export the organization audit logs.
 
 ---
 
