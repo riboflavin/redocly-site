@@ -62036,6 +62036,29 @@ reunite:
         - Combined identity-provider-synced and manually managed teams in Reunite’s Teams list, with each team’s source identified.
       patch: []
     dependencies: {}
+  v2026-10-29.2:
+    timestamp: 1793288147000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the Platform editor could open a branch at an older commit than the remote after the branch's working copy was
+          recreated.
+        - Fixed the editor incorrectly reporting successful file reverts and branch merges when those operations failed.
+        - Updated `@redocly/cli` and `@redocly/openapi-core` to version `2.72.1`.
+        - >-
+          Fixed an issue where renaming a Reunite organization to an existing slug returned an internal error instead of indicating that the slug was
+          unavailable.
+        - >-
+          Changed the rate-limit feedback for sign-in, registration, and password recovery requests to notifications instead of form field errors to
+          match the rest of the Redocly platform.
+        - Fixed the **Docs** tab in the Platform editor, which showed a "Something went missing" page instead of the Redocly documentation.
+        - Removed the **Beta** label from the **Docs** tab in the Platform editor. External links in the tab open in a new browser tab.
+        - Improved login page load times in the Platform.
+        - Improved how fast the Platform opens a project page.
+        - Updated `@redocly/openapi-core` to version `2.72.1`.
+        - Improved Redocly platform page load times.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
