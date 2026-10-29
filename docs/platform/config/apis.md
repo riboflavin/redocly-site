@@ -45,7 +45,9 @@ If your project contains multiple APIs, you can use the `apis` configuration sec
 - root
 - string
 - **REQUIRED**.
-  Path to the root API description file.
+  Path to the root API description file within the project.
+  External URLs are not supported directly in `root`.
+  To use an external API description, add it as [remote content from a URL](../project/remote-content/url.md) and specify the path to the synced file.
 
 ---
 
@@ -127,3 +129,4 @@ When running `redocly bundle` with this config, the bundled API descriptions are
 - **[Decorators](./openapi/decorators.md)** - Apply transformations to your OpenAPI documents for enhanced functionality and custom modifications
 - **[Per-API configuration examples](https://redocly.com/docs/cli/configuration/apis)** - Detailed information and examples for configuring individual APIs with specific settings
 - **[Configuration options](./index.md)** - Explore other project configuration options for comprehensive documentation and platform customization
+- **[Add remote content from a URL](../project/remote-content/url.md)** - Include an external API description file hosted at a URL in your project
