@@ -50,6 +50,8 @@ breadcrumbs:
 feedback:
   type: mood
 mcp:
+  apiCalls:
+    hide: true
   docs:
     name: Redocly
     ignore:
