@@ -54,6 +54,9 @@ All standard Markdown syntax works in Redocly projects:
 
 ### Code blocks
 
+Specify the language after the opening backticks to enable syntax highlighting.
+For all language names and aliases you can use, see [Supported languages](./markdoc-tags/code-snippet.md#supported-languages).
+
 ````markdown
 ```javascript
 // Syntax highlighting for many languages
