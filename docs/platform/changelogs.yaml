@@ -160,6 +160,20 @@
         - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the page of a schema that other schemas extend through `allOf` never finished rendering when its
+          properties reached schemas that refer back to those extensions.
+        - >-
+          Fixed an issue in OpenAPI docs where a page never finished rendering when two discriminator schemas listed the same variants and both
+          declared the properties the variants inherit.
+        - Fixed an issue where the Docs MCP server in projects with large configurations used too much memory and responded slowly.
+    dependencies:
+      '@redocly/api-docs': 0.4.2
   0.139.3:
     timestamp: 1792763482000
     changes:
@@ -506,6 +520,20 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the page of a schema that other schemas extend through `allOf` never finished rendering when its
+          properties reached schemas that refer back to those extensions.
+        - >-
+          Fixed an issue in OpenAPI docs where a page never finished rendering when two discriminator schemas listed the same variants and both
+          declared the properties the variants inherit.
+        - Fixed an issue where the Docs MCP server in projects with large configurations used too much memory and responded slowly.
+    dependencies:
+      '@redocly/api-docs': 0.4.2
   0.139.3:
     timestamp: 1792763482000
     changes:
@@ -9053,6 +9081,14 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Docs MCP server in projects with large configurations used too much memory and responded slowly.
+    dependencies:
+      '@redocly/api-docs': 0.4.2
   0.139.3:
     timestamp: 1792763482000
     changes:
@@ -16135,6 +16171,14 @@
         - Fixed security vulnerability `CVE-2026-111757` by upgrading `hono` to version `4.13.13`.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where the Docs MCP server in projects with large configurations used too much memory and responded slowly.
+    dependencies:
+      '@redocly/api-docs': 0.4.2
   0.139.3:
     timestamp: 1792763482000
     changes:
@@ -23277,6 +23321,20 @@
           no `flows` in the API description.
     dependencies:
       '@redocly/api-docs': 0.5.0-next.0
+  0.139.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the page of a schema that other schemas extend through `allOf` never finished rendering when its
+          properties reached schemas that refer back to those extensions.
+        - >-
+          Fixed an issue in OpenAPI docs where a page never finished rendering when two discriminator schemas listed the same variants and both
+          declared the properties the variants inherit.
+        - Fixed an issue where the Docs MCP server in projects with large configurations used too much memory and responded slowly.
+    dependencies:
+      '@redocly/api-docs': 0.4.2
   0.139.3:
     timestamp: 1792763482000
     changes:
@@ -35343,6 +35401,25 @@
         - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
     dependencies:
       '@redocly/replay': 0.31.0-next.0
+  0.4.2:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue in OpenAPI docs where the page of a schema that other schemas extend through `allOf` never finished rendering when its
+          properties reached schemas that refer back to those extensions.
+        - >-
+          Fixed an issue in OpenAPI docs where a page never finished rendering when two discriminator schemas listed the same variants and both
+          declared the properties the variants inherit.
+    dependencies: {}
+  0.4.1:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where OpenAPI pages that use `allOf` inheritance with a `oneOf` discriminator caused the server to stop responding.
+    dependencies: {}
   0.4.0:
     timestamp: 1792664891000
     changes:
@@ -37457,6 +37534,16 @@
       '@redocly/redoc': 0.140.0-next.0
       '@redocly/redoc-reef': 0.140.0-next.0
       '@redocly/redoc-revel': 0.140.0-next.0
+  1.22.4:
+    timestamp: 1793284456903
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.139.4
+      '@redocly/redoc': 0.139.4
+      '@redocly/redoc-reef': 0.139.4
+      '@redocly/redoc-revel': 0.139.4
   1.22.3:
     timestamp: 1792763482000
     changes:
