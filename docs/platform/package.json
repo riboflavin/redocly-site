@@ -9,7 +9,7 @@
     "start:docs": "realm develop -p 3000"
   },
   "dependencies": {
-    "@redocly/realm-plus": "0.1.21",
+    "@redocly/realm-plus": "0.1.25",
     "styled-components": "^6.4.2",
     "@markdoc/markdoc": "0.5.1",
     "highlight-words-core": "1.2.2",
