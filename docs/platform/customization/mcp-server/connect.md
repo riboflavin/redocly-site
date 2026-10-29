@@ -14,6 +14,7 @@ The MCP server of your project is available at `/mcp` on your project root URL, 
 When your project has a path prefix, the URL includes the prefix, for example `https://example.com/<prefix>/mcp`.
 AI clients connect to it as a remote server over the Streamable HTTP transport.
 When your readers open `/mcp` in a browser, the setup page shows them connection snippets for several AI clients.
+To change this page, [eject](../eject-components/eject-components-using-cli.md) the `layouts/McpNotAllowed.tsx` component.
 Readers can also connect Claude, VS Code, or Cursor with the [page actions](../../config/navigation.md#pageaction-object) on each page.
 The **Copy MCP server URL** page action (`copy-mcp-url`) copies the server URL and is on by default.
 If you set [`navigation.actions.items`](../../config/navigation.md#pageaction-object), include `copy-mcp-url` in the list.
