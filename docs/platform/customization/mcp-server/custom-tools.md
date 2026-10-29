@@ -134,6 +134,8 @@ The `execute` function receives three arguments:
 - args
 - object
 - Input arguments from the AI client, validated against `inputSchema`.
+  The arguments can have up to 10,000 array elements and object keys in total.
+  See [Limits and what Redocly logs](./index.md#limits-and-what-redocly-logs).
 
 ---
 

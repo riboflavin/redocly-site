@@ -182,6 +182,9 @@ To restrict content to teams, see [Control access to the MCP server](./access.md
 
 By default, the server accepts 600 requests per minute and 20,000 requests per day from one client IP address.
 Above that, it returns HTTP 429 with a `Retry-After` header.
+The server accepts a request body of up to 1 MiB and returns HTTP `413` for a larger one.
+A tool call can have up to 10,000 array elements and object keys in total in its arguments.
+Above that, the AI client gets a tool error.
 
 For each tool call, Redocly records the tool name, the duration, the response size, and the name and version of the AI client.
 Redocly also keeps a security audit log of tool calls.
