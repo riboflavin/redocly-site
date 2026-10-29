@@ -1373,6 +1373,17 @@ components:
             Unique identifier of the request that produced this problem.
             Share it with support when reporting the error.
           example: req-abc-123
+        code:
+          type: string
+          description: |
+            Machine-readable identifier of the problem, stable across wording changes of `title` and `detail`.
+            Present only for problems a client is expected to branch on; such a problem explains the occurrence in `detail`.
+          example: usageLimitExceeded
+        reason:
+          type: string
+          description: |
+            Machine-readable refinement of `code` that names which rule produced the problem.
+          example: MAX_ACTIVE_RUNS_PER_ORGANIZATION_REACHED
         errors:
           type: array
           description: |
