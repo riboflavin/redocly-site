@@ -62346,6 +62346,22 @@ reunite:
           Aligned Reunite feedback exports with the **List all feedback** API response by adding `object` and `uri`, removing `spamTestedAt`, and
           matching the CSV column order.
     dependencies: {}
+  v2026-10-30.5:
+    timestamp: 1793371930000
+    changes:
+      minor:
+        - >-
+          Added support for the `platform` option and the `access.rbac.platform` scope in `redocly.yaml`, which replace the deprecated `reunite`
+          option and scope.
+
+          Projects that use `reunite` continue to work, and the configuration form in the editor offers `platform` to projects on Realm 0.140.0 or
+          later.
+      patch:
+        - Fixed an issue where Reunite date filters with a `0` or longer than 100 years time range, such as `Last 0 days`, failed to load results.
+        - >-
+          Fixed an issue where the Platform’s **Deployments** page showed a loading indicator instead of the deployment list when returning from a
+          deployment’s details.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
