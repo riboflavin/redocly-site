@@ -13,6 +13,12 @@ When `x-rbac` is applied to a Parameter object or Schema object property, it rem
 This includes users who have access to this object.
 {% /admonition %}
 
+{% admonition name="Incompatibility with requiresLogin" type="warning" %}
+The `x-rbac` extension cannot be used in projects configured with [`requiresLogin`](../../../config/access/requires-login.md), as `requiresLogin` and RBAC are mutually exclusive.
+When `requiresLogin: true` is configured without RBAC in `redocly.yaml`, authenticated users can access all endpoints regardless of `x-rbac`.
+To require authentication across your project while using `x-rbac`, configure [RBAC in redocly.yaml](../../../config/access/rbac.md#require-authentication) instead of `requiresLogin`.
+{% /admonition %}
+
 ## Options
 
 {% table %}
