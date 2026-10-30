@@ -861,6 +861,9 @@ paths:
             Export file.
             Media type depends on the `format` query parameter.
 
+            Each CSV row or JSON item has the fields of a feedback item in a **List all feedback** response.
+            In CSV, `metadata` is a JSON string.
+
             The response is sent as a download: `Content-Disposition` is `attachment` with a generated filename unless the server chooses otherwise.
 
             Default filename pattern: `feedback_export_{orgId}_{projectId}_{timestamp}.{format}`, where `{timestamp}` is milliseconds since the Unix epoch and `{format}` is either `csv` or `json`.
