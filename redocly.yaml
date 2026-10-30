@@ -226,6 +226,7 @@ responseHeaders:
           https://api.github.com
           https://api.rebilly.com
           https://*.google-analytics.com
+          https://cdn.usefathom.com
           https://cdn.jsdelivr.net
           https://app.loops.so/api/newsletter-form/;
         form-action
