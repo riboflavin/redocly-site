@@ -107,6 +107,34 @@ By default, the [page actions](../../config/navigation.md#pageaction-object) on 
 Another page action copies the server URL.
 To add a connect button to a page, use the [Connect MCP tag](../../content/markdoc-tags/connect-mcp.md).
 
+To customize the setup page, eject the `layouts/McpNotAllowed.tsx` component:
+
+{% tabs %}
+
+  {% tab label="Redocly editor" %}
+
+To [eject in the Redocly editor](../eject-components/eject-components-in-platform.md):
+
+1. Select **Editor** on the left side navigation.
+1. In the **Files** section, select **Theme components**.
+1. In the `layouts` folder, select the eject icon next to `McpNotAllowed.tsx`.
+
+  {% /tab %}
+
+  {% tab label="CLI" %}
+
+To [eject using Redocly CLI](../eject-components/eject-components-using-cli.md), run:
+
+```bash
+npx @redocly/cli eject component 'layouts/McpNotAllowed.tsx'
+```
+
+  {% /tab %}
+
+{% /tabs %}
+
+The ejected component is placed at `@theme/layouts/McpNotAllowed.tsx`, where you can modify the layout, styling, and content of the page.
+
 ### MCP server card
 
 The server card lets AI clients and registries discover the server with one request.
@@ -198,4 +226,5 @@ For the details of these records, see [What does Redocly log for MCP tool calls?
 - **[Control access to the MCP server](./access.md)** - Restrict the server to teams and serve public content without a sign-in
 - **[Custom tools](./custom-tools.md)** - Add your own functions to the server with code that you write
 - **[`mcp` configuration](../../config/mcp.md)** - Turn the server off, rename it, and remove content from it
+- **[Eject components](../eject-components/index.md)** - Learn how to eject and customize built-in components
 - **[Use Redocly with your AI client](../../ai-ready/use-redocly-with-ai-clients.md)** - Install the Redocly skills and documentation in Claude, Claude Code, ChatGPT, Codex, Cursor, or VS Code
