@@ -64,8 +64,8 @@ const PREVIEW_LAYOUT_STYLE = `
   input, textarea { font-size: var(--search-ai-conversation-input-font-size, 14px) !important; }
 }
 [data-testid='ai-assistant-panel'] {
-  --ai-assistant-widget-panel-width-mobile: var(--ai-assistant-widget-panel-width, 380px);
-  --ai-assistant-widget-panel-width-mobile-full: var(--ai-assistant-widget-panel-width, 380px);
+  --ai-assistant-widget-panel-width-mobile: var(--ai-assistant-widget-panel-width, 400px);
+  --ai-assistant-widget-panel-width-mobile-full: var(--ai-assistant-widget-panel-width, 400px);
 }`;
 
 const PREVIEW_LAYOUT_ATTRIBUTE = 'data-preview-layout';
@@ -504,7 +504,7 @@ export function AiAssistantPlayground({
                     id="playground-width"
                     label="Width"
                     value={config.width}
-                    placeholder="380px"
+                    placeholder="400px"
                     onChange={(value) => update('width', value)}
                   />
                   <TextRow

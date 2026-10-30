@@ -558,7 +558,7 @@ The assistant also uses other variables internally, and any release can rename o
 - --ai-assistant-widget-panel-width
 - The width of the `widget` window.
   On screens 768px wide or less, the `widget` window fits the width of the screen instead.
-- `380px`
+- `400px`
 
 ---
 
