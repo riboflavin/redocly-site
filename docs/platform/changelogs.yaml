@@ -1,4 +1,30 @@
 '@redocly/framework':
+  0.140.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved keyboard navigation in catalog entity version history.
+
+          The arrow keys open the version list and move between versions, the `Escape` key closes the list, and the focused version shows a focus
+          ring.
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+        - Fixed a security vulnerability that could allow a request to the Docs MCP server to consume excessive memory.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/api-docs': 0.5.0-next.6
   0.140.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -348,6 +374,32 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved keyboard navigation in catalog entity version history.
+
+          The arrow keys open the version list and move between versions, the `Escape` key closes the list, and the focused version shows a focus
+          ring.
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+        - Fixed a security vulnerability that could allow a request to the Docs MCP server to consume excessive memory.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/api-docs': 0.5.0-next.6
   0.140.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -8955,6 +9007,32 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved keyboard navigation in catalog entity version history.
+
+          The arrow keys open the version list and move between versions, the `Escape` key closes the list, and the focused version shows a focus
+          ring.
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+        - Fixed a security vulnerability that could allow a request to the Docs MCP server to consume excessive memory.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/api-docs': 0.5.0-next.6
   0.140.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -16043,6 +16121,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+        - Fixed a security vulnerability that could allow a request to the Docs MCP server to consume excessive memory.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/api-docs': 0.5.0-next.6
   0.140.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -23151,6 +23250,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+        - Fixed a security vulnerability that could allow a request to the Docs MCP server to consume excessive memory.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/api-docs': 0.5.0-next.6
   0.140.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -30769,6 +30889,29 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.5:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Improved keyboard navigation in catalog entity version history.
+
+          The arrow keys open the version list and move between versions, the `Escape` key closes the list, and the focused version shows a focus
+          ring.
+        - Fixed an issue where reaction-specific reasons in page feedback forms did not use the configured labels or components.
+        - >-
+          Fixed an issue where the `rating` and `sentiment` page feedback forms accepted invalid email addresses without prompting users to correct
+          them.
+        - Improved page feedback forms so that screen readers announce the comment and email fields with their labels.
+        - Fixed the `mood` form to show its reaction-specific default comment label when `comment` is not configured.
+        - >-
+          Fixed an issue where the `sentiment` and `mood` page feedback forms sent the reasons a user selected for one reaction after they switched to
+          another reaction.
+        - >-
+          Fixed the **Cancel** button in the `scale` page feedback form so it uses the same translation key as other feedback forms. If you translated
+          `feedback.settings.comment.cancel` for this button, move that translation to `feedback.cancel`.
+    dependencies: {}
   0.72.0-next.4:
     timestamp: 1793274539000
     changes:
@@ -34454,6 +34597,15 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.69.1:
+    timestamp: 1793362522000
+    changes:
+      minor: []
+      patch:
+        - |-
+          Removed the unsupported `reasons` value from `feedback.type`; configurations using it fail validation.
+          To collect reasons, set `feedback.settings.reasons` with a supported type: `sentiment`, `rating`, `mood`, or `scale`.
+    dependencies: {}
   0.69.0:
     timestamp: 1793189408000
     changes:
@@ -35317,6 +35469,14 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.6:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/replay': 0.31.0-next.6
   0.5.0-next.5:
     timestamp: 1793274539000
     changes:
@@ -37449,6 +37609,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.8:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
+      '@redocly/realm': 0.140.0-next.8
+      '@redocly/redoc-reef': 0.140.0-next.8
+      '@redocly/redoc': 0.140.0-next.8
+      '@redocly/redoc-revel': 0.140.0-next.8
   1.23.0-next.7:
     timestamp: 1793274539000
     changes:
@@ -47022,6 +47193,13 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.6:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
   0.31.0-next.5:
     timestamp: 1793274539000
     changes:
@@ -49961,6 +50139,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.5:
+    timestamp: 1793362882000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.5
   0.23.0-next.4:
     timestamp: 1793274539000
     changes:
@@ -58764,6 +58949,13 @@
       '@redocly/theme': 0.53.0-next.3
       '@redocly/openapi-docs': 3.9.0-next.3
 '@redocly/ai-assistant':
+  1.1.0:
+    timestamp: 1793362522000
+    changes:
+      minor:
+        - Added the tool calls of an answer to the `onAISearchComplete` callback of the AI assistant.
+      patch: []
+    dependencies: {}
   1.0.2:
     timestamp: 1793003182000
     changes:
