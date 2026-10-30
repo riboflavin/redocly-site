@@ -118,6 +118,13 @@ To require SSO authentication:
 After you save, organization members must authenticate with an IdP to access the platform.
 If they do not have SSO credentials, they lose access to the organization.
 
+## IP allow lists
+
+If you use a self-hosted identity provider or an identity provider with an IP allow list, allow these IP addresses.
+Redocly connects from them to reach your identity provider:
+
+{% partial file="../../_partials/ip-allow-lists.md" /%}
+
 ## Resources
 
 - **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (early access on request)

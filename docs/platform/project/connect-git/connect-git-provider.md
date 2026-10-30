@@ -29,19 +29,7 @@ You can connect these Git providers:
 If you use self-managed GitLab, GitHub Enterprise, or a GitHub organization with an IP allow list, allow these IP addresses.
 Redocly connects from them to deploy previews and production updates:
 
-**US region:**
-```sh
-3.211.34.228
-44.206.14.241
-54.156.60.142
-```
-
-**EU region:**
-```sh
-3.78.112.49
-52.58.255.31
-3.66.111.193
-```
+{% partial file="../../_partials/ip-allow-lists.md" /%}
 
 ## Resources
 
