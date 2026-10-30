@@ -62274,6 +62274,15 @@ reunite:
           Fixed the message shown after saving Slack notification events without selecting a channel. The message now correctly indicates that Slack
           notifications were not activated.
     dependencies: {}
+  v2026-10-30.4:
+    timestamp: 1793363463000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Aligned Reunite feedback exports with the **List all feedback** API response by adding `object` and `uri`, removing `spamTestedAt`, and
+          matching the CSV column order.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
