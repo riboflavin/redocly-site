@@ -62059,29 +62059,6 @@ reunite:
         - Updated `@redocly/openapi-core` to version `2.72.1`.
         - Improved Redocly platform page load times.
     dependencies: {}
-  v2026-10-30.1:
-    timestamp: 1793347312000
-    changes:
-      minor: []
-      patch:
-        - >-
-          Fixed an issue that could let a sign-in initiated from a portal visit open an organization in Reunite with an authentication method the
-          organization doesn't allow, such as a password when the organization requires SSO.
-        - Fixed an issue where Reunite did not start the trial of an organization whose name or owner's name looks like a payment card number.
-        - >-
-          Fixed an issue in Reunite where a member demoted to viewer or billing kept their committer linked, so the seat the committer still took did
-          not show under the **Paid seat** filter on the **People** page. Changing a role to viewer or billing unlinks the member's committers, and
-          Reunite also unlinks committers that were already linked to viewer or billing members.
-        - >-
-          Fixed an issue that caused the Respect Monitoring notification settings dialog in Reunite to close after a save failure, so users can
-          correct settings and try again.
-        - >-
-          Fixed an issue in Reunite where saving the Respect Monitoring notification settings stored only the changes on the open tab and discarded
-          the changes on the other tabs.
-        - >-
-          Fixed the message shown after saving Slack notification events without selecting a channel. The message now correctly indicates that Slack
-          notifications were not activated.
-    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
