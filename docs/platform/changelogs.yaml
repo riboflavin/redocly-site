@@ -34597,6 +34597,14 @@
         - 'Improve "LastUpdated" component: support `format` and improve print styling'
     dependencies: {}
 '@redocly/config':
+  0.70.0:
+    timestamp: 1793369413000
+    changes:
+      minor:
+        - Deprecated the `reunite` option and the `access.rbac.reunite` scope and replaced them with `platform` and `access.rbac.platform`.
+      patch:
+        - Added the `platform.agent.supportDesks` option with the `provider`, `apiToken`, `signingSecret`, and `disabled` parameters.
+    dependencies: {}
   0.69.1:
     timestamp: 1793362522000
     changes:
