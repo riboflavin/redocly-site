@@ -14,15 +14,13 @@ SCIM keeps organization membership, roles, and teams in sync with your directory
 You can enable SCIM for one [identity provider you added in the Redocly platform](./add-idp.md) (Corporate or Guest, SAML 2 or OpenID Connect).
 An organization can have SCIM on only one identity provider at a time.
 
-{% partial file="../../_partials/early-access.md" /%}
-
 ## Before you begin
 
 Make sure you have the following:
 
 - a SAML 2 or OpenID Connect identity provider [added in Redocly](./add-idp.md) for the organization you want to provision users into
 - `owner` role in your organization
-- confirmation from Redocly that SCIM is available for your organization
+- the Enterprise plan, or the SCIM add-on on the Scale plan
 
 ## Enable SCIM in Redocly
 
@@ -53,6 +51,23 @@ You can keep up to five active tokens, so you can put a new token in your IdP be
 To revoke a token, click **Revoke** next to it.
 Your IdP's SCIM requests that use a revoked or expired token fail, and provisioning stops until you configure a valid token.
 Turning off **Enable SCIM 2.0** revokes every active token.
+
+## When your plan does not include SCIM
+
+If your organization moves to a plan without SCIM, Redocly keeps your SCIM configuration and limits what your identity provider can do.
+Your identity provider can still read users and groups, deactivate people, remove them from your organization, remove members from groups, and delete groups, so people who leave your company lose access.
+
+Redocly refuses these changes with the `403` status code:
+
+- provisioning a new person
+- reactivating a deactivated person
+- creating, renaming or replacing a group, and adding members to a group
+- generating a SCIM token
+- turning on **Enable SCIM 2.0** for an identity provider
+
+On the identity provider form, **Enable SCIM 2.0** and **Generate token** are unavailable, a lock icon shows next to **Enable SCIM**, and a notice under it links to an upgrade and to the plan comparison.
+Your existing tokens keep working.
+When you upgrade, your identity provider can provision and reactivate people again.
 
 ## Supported SCIM attributes
 

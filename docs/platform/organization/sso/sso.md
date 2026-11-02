@@ -95,4 +95,4 @@ Logout does not end the session at the identity provider itself, so users stay l
 - **[SSO configuration reference](../../config/access/sso.md)** - Complete technical reference for all SSO configuration options and settings in your redocly.yaml file
 - **[Logout return URL](../../config/access/logout-return-url.md)** - Configure the page users are redirected to after they log out of a project
 - **[Multi-tenant SSO: Federated identity management](./sso-multi-tenant.md)** - Implement federated identity management for organizations with multiple tenants and complex authentication requirements
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider (early access on request)
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 directory provisioning for an identity provider

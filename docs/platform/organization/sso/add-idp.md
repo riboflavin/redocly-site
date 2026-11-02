@@ -127,7 +127,7 @@ Redocly connects from them to reach your identity provider:
 
 ## Resources
 
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider (early access on request)
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 provisioning and deprovisioning for an identity provider
 - **[Configure project SSO](./configure-sso.md)** - Specify which identity providers users can access or disable SSO entirely for your project authentication settings
 - **[Control site access](../../access/index.md)** - Limit user access to specific pages and features in your project and Redocly using role-based access control
 - **[SSO configuration reference](../../config/access/sso.md)** - Complete technical reference for all available SSO configuration options and implementation details

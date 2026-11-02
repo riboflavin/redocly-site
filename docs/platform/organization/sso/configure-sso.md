@@ -71,4 +71,4 @@ Disabling SSO removes the login page, but does not disable `rbac`.
 - **[Single sign-on and login](./sso.md)** - Understand different identity provider types and implementation approaches for your project authentication needs
 - **[Role-based access control](../../access/rbac.md)** - Understand how RBAC works in projects and Redocly for comprehensive access management
 - **[RBAC configuration reference](../../config/access/rbac.md)** - Complete reference for configuring RBAC options in your redocly.yaml file with examples and implementation details
-- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 user provisioning for your SSO identity provider (early access on request)
+- **[Configure SCIM](./configure-scim.md)** - Enable SCIM 2.0 user provisioning for your SSO identity provider
