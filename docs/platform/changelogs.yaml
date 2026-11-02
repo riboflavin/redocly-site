@@ -62362,6 +62362,13 @@ reunite:
           Fixed an issue where the Platform’s **Deployments** page showed a loading indicator instead of the deployment list when returning from a
           deployment’s details.
     dependencies: {}
+  v2026-11-02.4:
+    timestamp: 1793620507000
+    changes:
+      minor: []
+      patch:
+        - Fixed long branch names pushing the `Create pull request` button out of view on the Platform Pull requests page.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
