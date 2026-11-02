@@ -303,7 +303,7 @@ const NavbarContainer = styled.nav<{
       transform: translateY(0);
     `};
   border-bottom: 1px solid transparent;
-  width: 100vw;
+  width: 100%;
   --text-color: var(--navbar-text-color);
   box-sizing: border-box;
   display: flex;

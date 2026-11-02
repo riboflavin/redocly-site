@@ -91,7 +91,7 @@ const FooterContainer = styled.footer<{ grey2Background?: boolean; grey1Backgrou
     return 'transparent';
   }};
   border-top: 1px solid transparent;
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   position: relative;
   bottom: 0;
