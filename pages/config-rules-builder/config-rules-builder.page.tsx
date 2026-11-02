@@ -10,6 +10,7 @@ export const frontmatter = {
   slug: '/config-rules-builder',
 };
 
+const CAFE_SPEC_URL = 'https://redocly.github.io/redoc/cafe.yaml';
 const PAGE_PADDING = 24;
 const MIN_BUILDER_HEIGHT = 480;
 // Below this width the builder stacks its panels and ignores `height`.
@@ -17,15 +18,28 @@ const STACKED_LAYOUT_MAX_WIDTH = 1024;
 
 export default function RulesBuilderPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isClientSide, setIsClientSide] = useState(false);
+  const [spec, setSpec] = useState<string>();
+  const [loadError, setLoadError] = useState<string>();
   const [builderHeight, setBuilderHeight] = useState(MIN_BUILDER_HEIGHT);
 
-  useEffect(() => setIsClientSide(true), []);
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(CAFE_SPEC_URL, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        return response.text();
+      })
+      .then(setSpec)
+      .catch((error: Error) => {
+        if (error.name !== 'AbortError') setLoadError(error.message);
+      });
+    return () => controller.abort();
+  }, []);
 
   // The `height` prop sizes only the two-panel area; the builder's own header sits above it.
   // Measure how much the rendered builder exceeds that height and subtract it from the viewport.
   useLayoutEffect(() => {
-    if (!isClientSide) return;
+    if (spec === undefined) return;
 
     const fit = () => {
       const builder = containerRef.current?.firstElementChild;
@@ -42,15 +56,17 @@ export default function RulesBuilderPage() {
     fit();
     window.addEventListener('resize', fit);
     return () => window.removeEventListener('resize', fit);
-  }, [isClientSide, builderHeight]);
+  }, [spec, builderHeight]);
 
   return (
     <PageBackground>
       <PageContainer ref={containerRef}>
-        {isClientSide ? (
-          <RulesBuilder height={builderHeight} />
+        {spec !== undefined ? (
+          <RulesBuilder defaultSpec={spec} defaultSpecFileName="cafe.yaml" height={builderHeight} />
         ) : (
-          <div style={{ minHeight: MIN_BUILDER_HEIGHT }} />
+          <div style={{ minHeight: MIN_BUILDER_HEIGHT }}>
+            {loadError && <p>Could not load the Cafe API sample: {loadError}</p>}
+          </div>
         )}
       </PageContainer>
     </PageBackground>
