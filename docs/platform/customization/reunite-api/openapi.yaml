@@ -26,7 +26,7 @@ info:
     Authentication requirements are defined per operation in the API description.
 
     API keys are intended for server-to-server integration.
-    API keys are created as described in [Manage API keys](https://redocly.com/docs/realm/reunite/organization/api-keys).
+    API keys are created as described in [Manage API keys](https://redocly.com/docs/platform/organization/api-keys).
     The key is transmitted as a Bearer token:
 
     ```http
