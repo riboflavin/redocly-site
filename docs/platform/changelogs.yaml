@@ -62367,12 +62367,6 @@ reunite:
     changes:
       minor: []
       patch:
-        - |-
-          Fixed an issue where SSO login failed on projects hosted in the EU region unless `access.residency` was set in `redocly.yaml`.
-          Projects on Realm 0.132.0 or later use the login service of the region they are hosted in.
-        - >-
-          Fixed an issue in Reunite where the organization switcher returned users to their previous organization after they signed in to an
-          organization that requires SSO, instead of opening that organization.
         - Fixed long branch names pushing the `Create pull request` button out of view on the Platform Pull requests page.
     dependencies: {}
 replay:
