@@ -58,6 +58,9 @@ Redocly escapes angle brackets inside link text, such as `[Array<T>](https://exa
 - string
 - Text displayed in the header of the prompt block.
   Search indexes the title, but not the prompt text.
+  Without a title, the prompt text moves up into the header.
+  On a wide block, it sits next to the buttons.
+  With `hidePrompt`, **Show prompt** opens it under the header.
 
 ---
 
@@ -84,13 +87,13 @@ Redocly escapes angle brackets inside link text, such as `[Array<T>](https://exa
 
 - actions
 - [string]
-- "Open in" actions displayed as a split button in the header.
+- "Open in" actions in the menu of the **Copy prompt** split button.
+  The menu lists **Copy prompt** first, then the actions in the given order.
   Accepts any combination of `cursor`, `claude`, and `chatgpt`.
   Each action opens a desktop app: `cursor` opens a cursor.com page that opens Cursor, `claude` starts a Claude Code session in the Claude desktop app, and `chatgpt` opens the ChatGPT desktop app.
   The reader must have the app installed.
   Without the app, the `claude` and `chatgpt` actions do nothing, or the browser shows an alert.
-  The first action is the main button.
-  The remaining actions are in the dropdown menu.
+  The menu button shows the icons of the actions.
   Default: `[]`.
 
 ---
@@ -145,8 +148,8 @@ Give one line per page: the file path, the tag, and the reason.
 ### Prompt with actions
 
 Add a title and let readers open the prompt in an AI tool.
-The first action is the main button.
-The remaining actions are in the dropdown menu:
+**Copy prompt** is the main button.
+Its dropdown menu lists **Copy prompt** first, then the actions:
 
 {% markdoc-example renderDemo=true %}
 ```markdoc

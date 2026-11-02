@@ -1051,8 +1051,14 @@ This page contains the list of all predefined translation keys used in default U
 ---
 
 - promptTag.copy.buttonText
-- Copy button label of the prompt tag in the button-only mode
+- Label of the prompt tag copy button and of the copy item in its menu
 - Copy prompt
+
+---
+
+- promptTag.copy.description
+- Description of the copy item in the prompt tag menu
+- Copy this prompt to the clipboard
 
 ---
 

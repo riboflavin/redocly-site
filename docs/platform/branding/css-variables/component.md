@@ -1662,13 +1662,37 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --prompt-border-width: var(--border-width);
 --prompt-border-radius: var(--border-radius-xl);
 --prompt-margin: var(--spacing-base) 0;
---prompt-padding-vertical: var(--spacing-sm);
+--prompt-padding-vertical: var(--spacing-base);
 --prompt-padding-horizontal: var(--spacing-base);
 --prompt-gap: var(--spacing-sm);
 --prompt-border-highlight-color-start: var(--search-ai-gradient-start-color, var(--search-ai-gradient-start-color-legacy));
 --prompt-border-highlight-color-end: var(--search-ai-gradient-end-color, var(--search-ai-gradient-end-color-legacy));
 --prompt-border-highlight-size: 120px;
 --prompt-border-highlight-transition: opacity 0.2s ease-out;
+--prompt-glow-size: 48px;
+--prompt-glow-intensity: 0.7;
+--prompt-glow-color-strong: color-mix(in srgb, var(--prompt-border-highlight-color-start) calc(50% * var(--prompt-glow-intensity)), transparent);
+--prompt-glow-color-medium: color-mix(in srgb, var(--prompt-border-highlight-color-start) calc(35% * var(--prompt-glow-intensity)), transparent);
+--prompt-glow-color-soft: color-mix(in srgb, var(--prompt-border-highlight-color-end) calc(20% * var(--prompt-glow-intensity)), transparent);
+--prompt-glow-color-faint: color-mix(in srgb, var(--prompt-border-highlight-color-end) calc(10% * var(--prompt-glow-intensity)), transparent);
+--prompt-glow-tint-opacity: 0.12;
+--prompt-glow-tint-blend-mode: normal;
+--prompt-rest-highlight-size: 160px 40px;
+--prompt-rest-highlight-opacity: 0.3;
+--prompt-rest-highlight-transition: opacity 0.3s ease-out;
+```
+
+</details>
+
+<details>
+<summary>Prompt copy button</summary>
+
+```css
+--prompt-copy-button-border-radius: var(--border-radius-md);
+--prompt-copy-button-glow-size: 20px;
+--prompt-copy-button-ring-opacity: 0.7;
+--prompt-copy-button-glow-opacity: 0.6;
+--prompt-copy-button-done-icon-color: var(--color-success-base);
 ```
 
 </details>
@@ -1679,7 +1703,6 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 ```css
 --prompt-header-gap: var(--spacing-xs);
 --prompt-header-actions-gap: var(--spacing-xxs);
---prompt-header-copy-button-padding: var(--spacing-xxs);
 --prompt-icon-size: 18px;
 --prompt-icon-color: var(--color-primary-base, var(--color-warm-grey-11));
 --prompt-title-font-size: var(--font-size-base);
@@ -1694,14 +1717,9 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 <summary>Prompt body</summary>
 
 ```css
---prompt-body-bg-color: var(--color-primary-bg, var(--color-warm-grey-2));
---prompt-body-border-radius: var(--border-radius-lg);
---prompt-body-padding-vertical: var(--spacing-xs);
---prompt-body-padding-horizontal: var(--spacing-sm);
---prompt-body-gap: var(--spacing-xxs);
 --prompt-body-font-size: var(--font-size-base);
 --prompt-body-line-height: var(--line-height-base);
---prompt-body-text-color: var(--text-color-primary);
+--prompt-body-text-color: var(--text-color-secondary);
 --prompt-body-max-lines: 5;
 --prompt-body-toggle-gap: var(--spacing-xxs);
 ```
@@ -2413,6 +2431,21 @@ The SVG Viewer is a fullscreen lightbox component used for viewing SVG diagrams 
 --menu-select-option-external-icon-size: var(--menu-item-external-icon-size);
 --menu-select-option-checkmark-size: 14px;
 --menu-select-option-checkmark-offset: calc((var(--menu-select-option-padding-left) - var(--menu-select-option-checkmark-size)) / 2);
+```
+
+</details>
+
+## Split button
+
+<details>
+<summary>Split button toggle icons</summary>
+
+```css
+--split-button-toggle-icon-box-size: 16px;
+--split-button-toggle-icon-size: 12px;
+--split-button-toggle-icon-overlap: 6px;
+--split-button-toggle-icon-gap: 1px;
+--split-button-toggle-icon-border-color: color-mix(in srgb, currentColor 20%, transparent);
 ```
 
 </details>
