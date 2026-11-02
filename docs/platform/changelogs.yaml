@@ -1,4 +1,35 @@
 '@redocly/framework':
+  0.140.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - >-
+          Fixed an issue where the **Try it** console and code samples did not send a parameter declared with `content` and a JSON media type as one
+          JSON value.
+        - >-
+          Fixed an issue where an invalid value in an OpenAPI or AsyncAPI description, such as a server without `url` or an empty `required:` in an
+          `allOf` part, crashed the API docs page. The invalid part is skipped, the rest of the page renders, and the error is reported to telemetry.
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+        - >-
+          Fixed an issue where OIDC login failed with a misleading `400 Invalid JSON` error when the identity provider returned an error status or a
+          non-JSON response, such as an "Access Denied" page from a firewall.
+
+          The login returns a `502 Bad Gateway` error, and the server logs show the identity provider host and the HTTP status of its response.
+        - >-
+          Fixed an issue where the **Try it** console and Replay displayed wrong values or did not load when a server, environment, or parameter had a
+          name such as `constructor` or `toString`.
+        - Fixed an issue that caused array and object query parameters in the **Try it** console to ignore `style` and `explode` settings.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.7
+      '@redocly/theme': 0.72.0-next.6
   0.140.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -383,6 +414,37 @@
       '@redocly/realm-asyncapi-sdk': 0.17.0
       '@redocly/portal-plugin-mock-server': 0.24.0
 '@redocly/realm':
+  0.140.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - >-
+          Fixed an issue where the **Try it** console and code samples did not send a parameter declared with `content` and a JSON media type as one
+          JSON value.
+        - >-
+          Fixed an issue where an invalid value in an OpenAPI or AsyncAPI description, such as a server without `url` or an empty `required:` in an
+          `allOf` part, crashed the API docs page. The invalid part is skipped, the rest of the page renders, and the error is reported to telemetry.
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+        - >-
+          Fixed an issue where OIDC login failed with a misleading `400 Invalid JSON` error when the identity provider returned an error status or a
+          non-JSON response, such as an "Access Denied" page from a firewall.
+
+          The login returns a `502 Bad Gateway` error, and the server logs show the identity provider host and the HTTP status of its response.
+        - >-
+          Fixed an issue where the **Try it** console and Replay displayed wrong values or did not load when a server, environment, or parameter had a
+          name such as `constructor` or `toString`.
+        - Fixed an issue that caused array and object query parameters in the **Try it** console to ignore `style` and `explode` settings.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.7
+      '@redocly/theme': 0.72.0-next.6
   0.140.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -9025,6 +9087,27 @@
       '@redocly/openapi-docs': 3.0.0-alpha.67
       '@redocly/portal-plugin-mock-server': 0.0.59
 '@redocly/reef':
+  0.140.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+        - >-
+          Fixed an issue where OIDC login failed with a misleading `400 Invalid JSON` error when the identity provider returned an error status or a
+          non-JSON response, such as an "Access Denied" page from a firewall.
+
+          The login returns a `502 Bad Gateway` error, and the server logs show the identity provider host and the HTTP status of its response.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.7
+      '@redocly/theme': 0.72.0-next.6
   0.140.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -16148,6 +16231,27 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/revel':
+  0.140.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+        - >-
+          Fixed an issue where OIDC login failed with a misleading `400 Invalid JSON` error when the identity provider returned an error status or a
+          non-JSON response, such as an "Access Denied" page from a firewall.
+
+          The login returns a `502 Bad Gateway` error, and the server logs show the identity provider host and the HTTP status of its response.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.7
+      '@redocly/theme': 0.72.0-next.6
   0.140.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -23286,6 +23390,37 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/redoc':
+  0.140.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - >-
+          Fixed an issue where the **Try it** console and code samples did not send a parameter declared with `content` and a JSON media type as one
+          JSON value.
+        - >-
+          Fixed an issue where an invalid value in an OpenAPI or AsyncAPI description, such as a server without `url` or an empty `required:` in an
+          `allOf` part, crashed the API docs page. The invalid part is skipped, the rest of the page renders, and the error is reported to telemetry.
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+        - >-
+          Fixed an issue where OIDC login failed with a misleading `400 Invalid JSON` error when the identity provider returned an error status or a
+          non-JSON response, such as an "Access Denied" page from a firewall.
+
+          The login returns a `502 Bad Gateway` error, and the server logs show the identity provider host and the HTTP status of its response.
+        - >-
+          Fixed an issue where the **Try it** console and Replay displayed wrong values or did not load when a server, environment, or parameter had a
+          name such as `constructor` or `toString`.
+        - Fixed an issue that caused array and object query parameters in the **Try it** console to ignore `style` and `explode` settings.
+    dependencies:
+      '@redocly/api-docs': 0.5.0-next.7
+      '@redocly/theme': 0.72.0-next.6
   0.140.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -30934,6 +31069,21 @@
     dependencies:
       '@redocly/portal-plugin-mock-server': 0.1.0
 '@redocly/theme':
+  0.72.0-next.6:
+    timestamp: 1793635842000
+    changes:
+      minor:
+        - >-
+          Improved the design of the `prompt` Markdoc tag: **Copy prompt** is the main button, and its menu lists the `actions` with their icons on
+          the menu button.
+
+          Without a `title` configuration, the prompt text appears in the header.
+      patch:
+        - Added a disabled state to the catalog version history button.
+        - >-
+          Fixed an issue where the AI assistant chat was jumping to the end of the conversation while a response was streaming, even after the user
+          scrolled up to read earlier messages.
+    dependencies: {}
   0.72.0-next.5:
     timestamp: 1793362882000
     changes:
@@ -35522,6 +35672,21 @@
       patch: []
     dependencies: {}
 '@redocly/api-docs':
+  0.5.0-next.7:
+    timestamp: 1793635842000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the **Try it** console and code samples did not send a parameter declared with `content` and a JSON media type as one
+          JSON value.
+        - >-
+          Fixed an issue where an invalid value in an OpenAPI or AsyncAPI description, such as a server without `url` or an empty `required:` in an
+          `allOf` part, crashed the API docs page. The invalid part is skipped, the rest of the page renders, and the error is reported to telemetry.
+        - Fixed an issue that caused array and object query parameters in the **Try it** console to ignore `style` and `explode` settings.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.6
+      '@redocly/replay': 0.31.0-next.7
   0.5.0-next.6:
     timestamp: 1793362882000
     changes:
@@ -37662,6 +37827,17 @@
       patch: []
     dependencies: {}
 '@redocly/portal-plugin-async-api':
+  1.23.0-next.10:
+    timestamp: 1793635842000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/realm': 0.140.0-next.10
+      '@redocly/redoc': 0.140.0-next.10
+      '@redocly/redoc-revel': 0.140.0-next.10
+      '@redocly/redoc-reef': 0.140.0-next.10
+      '@redocly/theme': 0.72.0-next.6
   1.23.0-next.9:
     timestamp: 1793371236000
     changes:
@@ -47256,6 +47432,17 @@
     dependencies:
       '@redocly/mock-server': 0.0.3
 '@redocly/replay':
+  0.31.0-next.7:
+    timestamp: 1793635842000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where the **Try it** console and Replay displayed wrong values or did not load when a server, environment, or parameter had a
+          name such as `constructor` or `toString`.
+        - Fixed an issue that caused array and object query parameters in the **Try it** console to ignore `style` and `explode` settings.
+    dependencies:
+      '@redocly/theme': 0.72.0-next.6
   0.31.0-next.6:
     timestamp: 1793362882000
     changes:
@@ -50202,6 +50389,13 @@
     dependencies:
       '@redocly/theme': 0.37.0
 '@redocly/theme-experimental':
+  0.23.0-next.6:
+    timestamp: 1793635842000
+    changes:
+      minor: []
+      patch: []
+    dependencies:
+      '@redocly/theme': 0.72.0-next.6
   0.23.0-next.5:
     timestamp: 1793362882000
     changes:
