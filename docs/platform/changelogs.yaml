@@ -62381,6 +62381,19 @@ reunite:
           Fixed an issue in Reunite where the organization switcher returned users to their previous organization after they signed in to an
           organization that requires SSO, instead of opening that organization.
     dependencies: {}
+  v2026-11-02.6:
+    timestamp: 1793625565000
+    changes:
+      minor: []
+      patch:
+        - >-
+          Fixed an issue where Runtime logs showed logs older than the plan allows. Organizations on a plan with a 30-minute range now get the last 30
+          minutes, even when a bookmarked link asks for a longer range, and the range selector shows the range that is applied.
+        - Fixed an issue where the Runtime logs API returned only the last 5 minutes for `since=1-month`.
+        - >-
+          Fixed an issue where the Reunite team page hid existing team managers after the organization moved to a plan without team managers. Owners
+          can also demote those managers on every plan.
+    dependencies: {}
 replay:
   0.0.2:
     timestamp: 1744365678000
