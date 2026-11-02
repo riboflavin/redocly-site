@@ -118,6 +118,14 @@ A card only works as a child of `cards`.
 
 ---
 
+- iconColor
+- string
+- Color palette name for the icon.
+  The supported values are `red`, `green`, `blue`, `grey`, `turquoise`, `magenta`, `purple`, `carrot`, `raspberry`, `orange`, `grass`, `persian-green`, `sky`, and `blueberry`.
+  To set a custom color or SVG fill color, override the `--card-icon-color` CSS variable in your `@theme/styles.css` file.
+
+---
+
 - lineClamp
 - string
 - Limits the number of lines of text displayed in the card content.
@@ -281,7 +289,8 @@ Each card variant has unique hover styles for cards as links.
 
 ### Icon cards
 
-Use the `icon` attribute to add an icon to a card and choose its styles with `iconVariant`.
+Use the `icon` attribute to add an icon to a card, choose its styles with `iconVariant`, and set preset palette colors with `iconColor`.
+To set a custom color or SVG fill color, define the `--card-icon-color` CSS variable in your `@theme/styles.css` file.
 
 {% cards columns=4 cardMinWidth=180 %}
 
